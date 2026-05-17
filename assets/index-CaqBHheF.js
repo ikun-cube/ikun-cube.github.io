@@ -1,6 +1,6 @@
-import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e as h1}from"./vendor-CbFPICe_.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function e(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(r){if(r.ep)return;r.ep=!0;const s=e(r);fetch(r.href,s)}})();const br=globalThis,Ji=br.ShadowRoot&&(br.ShadyCSS===void 0||br.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,Qi=Symbol(),bs=new WeakMap;let da=class{constructor(t,e,i){if(this._$cssResult$=!0,i!==Qi)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if(Ji&&t===void 0){const i=e!==void 0&&e.length===1;i&&(t=bs.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),i&&bs.set(e,t))}return t}toString(){return this.cssText}};const c1=o=>new da(typeof o=="string"?o:o+"",void 0,Qi),j=(o,...t)=>{const e=o.length===1?o[0]:t.reduce((i,r,s)=>i+(n=>{if(n._$cssResult$===!0)return n.cssText;if(typeof n=="number")return n;throw Error("Value passed to 'css' function must be a 'css' function result: "+n+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(r)+o[s+1],o[0]);return new da(e,o,Qi)},p1=(o,t)=>{if(Ji)o.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const e of t){const i=document.createElement("style"),r=br.litNonce;r!==void 0&&i.setAttribute("nonce",r),i.textContent=e.cssText,o.appendChild(i)}},Cs=Ji?o=>o:o=>o instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return c1(e)})(o):o;const{is:u1,defineProperty:w1,getOwnPropertyDescriptor:g1,getOwnPropertyNames:v1,getOwnPropertySymbols:k1,getPrototypeOf:m1}=Object,Kt=globalThis,Bs=Kt.trustedTypes,x1=Bs?Bs.emptyScript:"",f1=Kt.reactiveElementPolyfillSupport,Yo=(o,t)=>o,Br={toAttribute(o,t){switch(t){case Boolean:o=o?x1:null;break;case Object:case Array:o=o==null?o:JSON.stringify(o)}return o},fromAttribute(o,t){let e=o;switch(t){case Boolean:e=o!==null;break;case Number:e=o===null?null:Number(o);break;case Object:case Array:try{e=JSON.parse(o)}catch{e=null}}return e}},ts=(o,t)=>!u1(o,t),js={attribute:!0,type:String,converter:Br,reflect:!1,useDefault:!1,hasChanged:ts};Symbol.metadata??(Symbol.metadata=Symbol("metadata")),Kt.litPropertyMetadata??(Kt.litPropertyMetadata=new WeakMap);let We=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??(this.l=[])).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=js){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){const i=Symbol(),r=this.getPropertyDescriptor(t,i,e);r!==void 0&&w1(this.prototype,t,r)}}static getPropertyDescriptor(t,e,i){const{get:r,set:s}=g1(this.prototype,t)??{get(){return this[e]},set(n){this[e]=n}};return{get:r,set(n){const d=r?.call(this);s?.call(this,n),this.requestUpdate(t,d,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??js}static _$Ei(){if(this.hasOwnProperty(Yo("elementProperties")))return;const t=m1(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(Yo("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(Yo("properties"))){const e=this.properties,i=[...v1(e),...k1(e)];for(const r of i)this.createProperty(r,e[r])}const t=this[Symbol.metadata];if(t!==null){const e=litPropertyMetadata.get(t);if(e!==void 0)for(const[i,r]of e)this.elementProperties.set(i,r)}this._$Eh=new Map;for(const[e,i]of this.elementProperties){const r=this._$Eu(e,i);r!==void 0&&this._$Eh.set(r,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const r of i)e.unshift(Cs(r))}else t!==void 0&&e.push(Cs(t));return e}static _$Eu(t,e){const i=e.attribute;return i===!1?void 0:typeof i=="string"?i:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??(this._$EO=new Set)).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){const t=new Map,e=this.constructor.elementProperties;for(const i of e.keys())this.hasOwnProperty(i)&&(t.set(i,this[i]),delete this[i]);t.size>0&&(this._$Ep=t)}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return p1(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$ET(t,e){const i=this.constructor.elementProperties.get(t),r=this.constructor._$Eu(t,i);if(r!==void 0&&i.reflect===!0){const s=(i.converter?.toAttribute!==void 0?i.converter:Br).toAttribute(e,i.type);this._$Em=t,s==null?this.removeAttribute(r):this.setAttribute(r,s),this._$Em=null}}_$AK(t,e){const i=this.constructor,r=i._$Eh.get(t);if(r!==void 0&&this._$Em!==r){const s=i.getPropertyOptions(r),n=typeof s.converter=="function"?{fromAttribute:s.converter}:s.converter?.fromAttribute!==void 0?s.converter:Br;this._$Em=r;const d=n.fromAttribute(e,s.type);this[r]=d??this._$Ej?.get(r)??d,this._$Em=null}}requestUpdate(t,e,i,r=!1,s){if(t!==void 0){const n=this.constructor;if(r===!1&&(s=this[t]),i??(i=n.getPropertyOptions(t)),!((i.hasChanged??ts)(s,e)||i.useDefault&&i.reflect&&s===this._$Ej?.get(t)&&!this.hasAttribute(n._$Eu(t,i))))return;this.C(t,e,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:i,reflect:r,wrapped:s},n){i&&!(this._$Ej??(this._$Ej=new Map)).has(t)&&(this._$Ej.set(t,n??e??this[t]),s!==!0||n!==void 0)||(this._$AL.has(t)||(this.hasUpdated||i||(e=void 0),this._$AL.set(t,e)),r===!0&&this._$Em!==t&&(this._$Eq??(this._$Eq=new Set)).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??(this.renderRoot=this.createRenderRoot()),this._$Ep){for(const[r,s]of this._$Ep)this[r]=s;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[r,s]of i){const{wrapped:n}=s,d=this[r];n!==!0||this._$AL.has(r)||d===void 0||this.C(r,void 0,s,d)}}let t=!1;const e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(e)):this._$EM()}catch(i){throw t=!1,this._$EM(),i}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&(this._$Eq=this._$Eq.forEach(e=>this._$ET(e,this[e]))),this._$EM()}updated(t){}firstUpdated(t){}};We.elementStyles=[],We.shadowRootOptions={mode:"open"},We[Yo("elementProperties")]=new Map,We[Yo("finalized")]=new Map,f1?.({ReactiveElement:We}),(Kt.reactiveElementVersions??(Kt.reactiveElementVersions=[])).push("2.1.2");const Oo=globalThis,As=o=>o,jr=Oo.trustedTypes,Ls=jr?jr.createPolicy("lit-html",{createHTML:o=>o}):void 0,ha="$lit$",_t=`lit$${Math.random().toFixed(9).slice(2)}$`,ca="?"+_t,M1=`<${ca}>`,Re=document,Wo=()=>Re.createComment(""),Ko=o=>o===null||typeof o!="object"&&typeof o!="function",es=Array.isArray,y1=o=>es(o)||typeof o?.[Symbol.iterator]=="function",Kr=`[ 	
+import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e as p1}from"./vendor-CbFPICe_.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function e(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(r){if(r.ep)return;r.ep=!0;const s=e(r);fetch(r.href,s)}})();const br=globalThis,Ji=br.ShadowRoot&&(br.ShadyCSS===void 0||br.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,Qi=Symbol(),bs=new WeakMap;let ca=class{constructor(t,e,i){if(this._$cssResult$=!0,i!==Qi)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if(Ji&&t===void 0){const i=e!==void 0&&e.length===1;i&&(t=bs.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),i&&bs.set(e,t))}return t}toString(){return this.cssText}};const u1=o=>new ca(typeof o=="string"?o:o+"",void 0,Qi),j=(o,...t)=>{const e=o.length===1?o[0]:t.reduce((i,r,s)=>i+(n=>{if(n._$cssResult$===!0)return n.cssText;if(typeof n=="number")return n;throw Error("Value passed to 'css' function must be a 'css' function result: "+n+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(r)+o[s+1],o[0]);return new ca(e,o,Qi)},w1=(o,t)=>{if(Ji)o.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const e of t){const i=document.createElement("style"),r=br.litNonce;r!==void 0&&i.setAttribute("nonce",r),i.textContent=e.cssText,o.appendChild(i)}},Cs=Ji?o=>o:o=>o instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return u1(e)})(o):o;const{is:g1,defineProperty:v1,getOwnPropertyDescriptor:k1,getOwnPropertyNames:m1,getOwnPropertySymbols:x1,getPrototypeOf:f1}=Object,Kt=globalThis,Bs=Kt.trustedTypes,M1=Bs?Bs.emptyScript:"",y1=Kt.reactiveElementPolyfillSupport,Yo=(o,t)=>o,Br={toAttribute(o,t){switch(t){case Boolean:o=o?M1:null;break;case Object:case Array:o=o==null?o:JSON.stringify(o)}return o},fromAttribute(o,t){let e=o;switch(t){case Boolean:e=o!==null;break;case Number:e=o===null?null:Number(o);break;case Object:case Array:try{e=JSON.parse(o)}catch{e=null}}return e}},ts=(o,t)=>!g1(o,t),js={attribute:!0,type:String,converter:Br,reflect:!1,useDefault:!1,hasChanged:ts};Symbol.metadata??(Symbol.metadata=Symbol("metadata")),Kt.litPropertyMetadata??(Kt.litPropertyMetadata=new WeakMap);let We=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??(this.l=[])).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=js){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){const i=Symbol(),r=this.getPropertyDescriptor(t,i,e);r!==void 0&&v1(this.prototype,t,r)}}static getPropertyDescriptor(t,e,i){const{get:r,set:s}=k1(this.prototype,t)??{get(){return this[e]},set(n){this[e]=n}};return{get:r,set(n){const d=r?.call(this);s?.call(this,n),this.requestUpdate(t,d,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??js}static _$Ei(){if(this.hasOwnProperty(Yo("elementProperties")))return;const t=f1(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(Yo("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(Yo("properties"))){const e=this.properties,i=[...m1(e),...x1(e)];for(const r of i)this.createProperty(r,e[r])}const t=this[Symbol.metadata];if(t!==null){const e=litPropertyMetadata.get(t);if(e!==void 0)for(const[i,r]of e)this.elementProperties.set(i,r)}this._$Eh=new Map;for(const[e,i]of this.elementProperties){const r=this._$Eu(e,i);r!==void 0&&this._$Eh.set(r,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const r of i)e.unshift(Cs(r))}else t!==void 0&&e.push(Cs(t));return e}static _$Eu(t,e){const i=e.attribute;return i===!1?void 0:typeof i=="string"?i:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??(this._$EO=new Set)).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){const t=new Map,e=this.constructor.elementProperties;for(const i of e.keys())this.hasOwnProperty(i)&&(t.set(i,this[i]),delete this[i]);t.size>0&&(this._$Ep=t)}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return w1(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$ET(t,e){const i=this.constructor.elementProperties.get(t),r=this.constructor._$Eu(t,i);if(r!==void 0&&i.reflect===!0){const s=(i.converter?.toAttribute!==void 0?i.converter:Br).toAttribute(e,i.type);this._$Em=t,s==null?this.removeAttribute(r):this.setAttribute(r,s),this._$Em=null}}_$AK(t,e){const i=this.constructor,r=i._$Eh.get(t);if(r!==void 0&&this._$Em!==r){const s=i.getPropertyOptions(r),n=typeof s.converter=="function"?{fromAttribute:s.converter}:s.converter?.fromAttribute!==void 0?s.converter:Br;this._$Em=r;const d=n.fromAttribute(e,s.type);this[r]=d??this._$Ej?.get(r)??d,this._$Em=null}}requestUpdate(t,e,i,r=!1,s){if(t!==void 0){const n=this.constructor;if(r===!1&&(s=this[t]),i??(i=n.getPropertyOptions(t)),!((i.hasChanged??ts)(s,e)||i.useDefault&&i.reflect&&s===this._$Ej?.get(t)&&!this.hasAttribute(n._$Eu(t,i))))return;this.C(t,e,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:i,reflect:r,wrapped:s},n){i&&!(this._$Ej??(this._$Ej=new Map)).has(t)&&(this._$Ej.set(t,n??e??this[t]),s!==!0||n!==void 0)||(this._$AL.has(t)||(this.hasUpdated||i||(e=void 0),this._$AL.set(t,e)),r===!0&&this._$Em!==t&&(this._$Eq??(this._$Eq=new Set)).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??(this.renderRoot=this.createRenderRoot()),this._$Ep){for(const[r,s]of this._$Ep)this[r]=s;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[r,s]of i){const{wrapped:n}=s,d=this[r];n!==!0||this._$AL.has(r)||d===void 0||this.C(r,void 0,s,d)}}let t=!1;const e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(e)):this._$EM()}catch(i){throw t=!1,this._$EM(),i}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&(this._$Eq=this._$Eq.forEach(e=>this._$ET(e,this[e]))),this._$EM()}updated(t){}firstUpdated(t){}};We.elementStyles=[],We.shadowRootOptions={mode:"open"},We[Yo("elementProperties")]=new Map,We[Yo("finalized")]=new Map,y1?.({ReactiveElement:We}),(Kt.reactiveElementVersions??(Kt.reactiveElementVersions=[])).push("2.1.2");const Oo=globalThis,As=o=>o,jr=Oo.trustedTypes,Ls=jr?jr.createPolicy("lit-html",{createHTML:o=>o}):void 0,pa="$lit$",_t=`lit$${Math.random().toFixed(9).slice(2)}$`,ua="?"+_t,b1=`<${ua}>`,Re=document,Wo=()=>Re.createComment(""),Ko=o=>o===null||typeof o!="object"&&typeof o!="function",es=Array.isArray,C1=o=>es(o)||typeof o?.[Symbol.iterator]=="function",Kr=`[ 	
 \f\r]`,Fo=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Ss=/-->/g,Hs=/>/g,Ce=RegExp(`>|${Kr}(?:([^\\s"'>=/]+)(${Kr}*=${Kr}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`,"g"),Rs=/'/g,Vs=/"/g,pa=/^(?:script|style|textarea|title)$/i,b1=o=>(t,...e)=>({_$litType$:o,strings:t,values:e}),p=b1(1),Ve=Symbol.for("lit-noChange"),k=Symbol.for("lit-nothing"),zs=new WeakMap,Le=Re.createTreeWalker(Re,129);function ua(o,t){if(!es(o)||!o.hasOwnProperty("raw"))throw Error("invalid template strings array");return Ls!==void 0?Ls.createHTML(t):t}const C1=(o,t)=>{const e=o.length-1,i=[];let r,s=t===2?"<svg>":t===3?"<math>":"",n=Fo;for(let d=0;d<e;d++){const a=o[d];let c,u,w=-1,C=0;for(;C<a.length&&(n.lastIndex=C,u=n.exec(a),u!==null);)C=n.lastIndex,n===Fo?u[1]==="!--"?n=Ss:u[1]!==void 0?n=Hs:u[2]!==void 0?(pa.test(u[2])&&(r=RegExp("</"+u[2],"g")),n=Ce):u[3]!==void 0&&(n=Ce):n===Ce?u[0]===">"?(n=r??Fo,w=-1):u[1]===void 0?w=-2:(w=n.lastIndex-u[2].length,c=u[1],n=u[3]===void 0?Ce:u[3]==='"'?Vs:Rs):n===Vs||n===Rs?n=Ce:n===Ss||n===Hs?n=Fo:(n=Ce,r=void 0);const m=n===Ce&&o[d+1].startsWith("/>")?" ":"";s+=n===Fo?a+M1:w>=0?(i.push(c),a.slice(0,w)+ha+a.slice(w)+_t+m):a+_t+(w===-2?d:m)}return[ua(o,s+(o[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),i]};class Xo{constructor({strings:t,_$litType$:e},i){let r;this.parts=[];let s=0,n=0;const d=t.length-1,a=this.parts,[c,u]=C1(t,e);if(this.el=Xo.createElement(c,i),Le.currentNode=this.el.content,e===2||e===3){const w=this.el.content.firstChild;w.replaceWith(...w.childNodes)}for(;(r=Le.nextNode())!==null&&a.length<d;){if(r.nodeType===1){if(r.hasAttributes())for(const w of r.getAttributeNames())if(w.endsWith(ha)){const C=u[n++],m=r.getAttribute(w).split(_t),S=/([.?@])?(.*)/.exec(C);a.push({type:1,index:s,name:S[2],strings:m,ctor:S[1]==="."?j1:S[1]==="?"?A1:S[1]==="@"?L1:Ur}),r.removeAttribute(w)}else w.startsWith(_t)&&(a.push({type:6,index:s}),r.removeAttribute(w));if(pa.test(r.tagName)){const w=r.textContent.split(_t),C=w.length-1;if(C>0){r.textContent=jr?jr.emptyScript:"";for(let m=0;m<C;m++)r.append(w[m],Wo()),Le.nextNode(),a.push({type:2,index:++s});r.append(w[C],Wo())}}}else if(r.nodeType===8)if(r.data===ca)a.push({type:2,index:s});else{let w=-1;for(;(w=r.data.indexOf(_t,w+1))!==-1;)a.push({type:7,index:s}),w+=_t.length-1}s++}}static createElement(t,e){const i=Re.createElement("template");return i.innerHTML=t,i}}function bo(o,t,e=o,i){if(t===Ve)return t;let r=i!==void 0?e._$Co?.[i]:e._$Cl;const s=Ko(t)?void 0:t._$litDirective$;return r?.constructor!==s&&(r?._$AO?.(!1),s===void 0?r=void 0:(r=new s(o),r._$AT(o,e,i)),i!==void 0?(e._$Co??(e._$Co=[]))[i]=r:e._$Cl=r),r!==void 0&&(t=bo(o,r._$AS(o,t.values),r,i)),t}class B1{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:e},parts:i}=this._$AD,r=(t?.creationScope??Re).importNode(e,!0);Le.currentNode=r;let s=Le.nextNode(),n=0,d=0,a=i[0];for(;a!==void 0;){if(n===a.index){let c;a.type===2?c=new Qo(s,s.nextSibling,this,t):a.type===1?c=new a.ctor(s,a.name,a.strings,this,t):a.type===6&&(c=new S1(s,this,t)),this._$AV.push(c),a=i[++d]}n!==a?.index&&(s=Le.nextNode(),n++)}return Le.currentNode=Re,r}p(t){let e=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class Qo{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,i,r){this.type=2,this._$AH=k,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=r,this._$Cv=r?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=bo(this,t,e),Ko(t)?t===k||t==null||t===""?(this._$AH!==k&&this._$AR(),this._$AH=k):t!==this._$AH&&t!==Ve&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):y1(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==k&&Ko(this._$AH)?this._$AA.nextSibling.data=t:this.T(Re.createTextNode(t)),this._$AH=t}$(t){const{values:e,_$litType$:i}=t,r=typeof i=="number"?this._$AC(t):(i.el===void 0&&(i.el=Xo.createElement(ua(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===r)this._$AH.p(e);else{const s=new B1(r,this),n=s.u(this.options);s.p(e),this.T(n),this._$AH=s}}_$AC(t){let e=zs.get(t.strings);return e===void 0&&zs.set(t.strings,e=new Xo(t)),e}k(t){es(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,r=0;for(const s of t)r===e.length?e.push(i=new Qo(this.O(Wo()),this.O(Wo()),this,this.options)):i=e[r],i._$AI(s),r++;r<e.length&&(this._$AR(i&&i._$AB.nextSibling,r),e.length=r)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){const i=As(t).nextSibling;As(t).remove(),t=i}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}}class Ur{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,i,r,s){this.type=1,this._$AH=k,this._$AN=void 0,this.element=t,this.name=e,this._$AM=r,this.options=s,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=k}_$AI(t,e=this,i,r){const s=this.strings;let n=!1;if(s===void 0)t=bo(this,t,e,0),n=!Ko(t)||t!==this._$AH&&t!==Ve,n&&(this._$AH=t);else{const d=t;let a,c;for(t=s[0],a=0;a<s.length-1;a++)c=bo(this,d[i+a],e,a),c===Ve&&(c=this._$AH[a]),n||(n=!Ko(c)||c!==this._$AH[a]),c===k?t=k:t!==k&&(t+=(c??"")+s[a+1]),this._$AH[a]=c}n&&!r&&this.j(t)}j(t){t===k?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}}class j1 extends Ur{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===k?void 0:t}}class A1 extends Ur{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==k)}}class L1 extends Ur{constructor(t,e,i,r,s){super(t,e,i,r,s),this.type=5}_$AI(t,e=this){if((t=bo(this,t,e,0)??k)===Ve)return;const i=this._$AH,r=t===k&&i!==k||t.capture!==i.capture||t.once!==i.once||t.passive!==i.passive,s=t!==k&&(i===k||r);r&&this.element.removeEventListener(this.name,this,i),s&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}}class S1{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){bo(this,t)}}const H1=Oo.litHtmlPolyfillSupport;H1?.(Xo,Qo),(Oo.litHtmlVersions??(Oo.litHtmlVersions=[])).push("3.3.2");const R1=(o,t,e)=>{const i=e?.renderBefore??t;let r=i._$litPart$;if(r===void 0){const s=e?.renderBefore??null;i._$litPart$=r=new Qo(t.insertBefore(Wo(),s),s,void 0,e??{})}return r._$AI(o),r};const Io=globalThis;let Xt=class extends We{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var e;const t=super.createRenderRoot();return(e=this.renderOptions).renderBefore??(e.renderBefore=t.firstChild),t}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=R1(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Ve}};Xt._$litElement$=!0,Xt.finalized=!0,Io.litElementHydrateSupport?.({LitElement:Xt});const V1=Io.litElementPolyfillSupport;V1?.({LitElement:Xt});(Io.litElementVersions??(Io.litElementVersions=[])).push("4.2.2");const z1=o=>(t,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(o,t)}):customElements.define(o,t)};const $1={attribute:!0,type:String,converter:Br,reflect:!1,hasChanged:ts},D1=(o=$1,t,e)=>{const{kind:i,metadata:r}=e;let s=globalThis.litPropertyMetadata.get(r);if(s===void 0&&globalThis.litPropertyMetadata.set(r,s=new Map),i==="setter"&&((o=Object.create(o)).wrapped=!0),s.set(e.name,o),i==="accessor"){const{name:n}=e;return{set(d){const a=t.get.call(this);t.set.call(this,d),this.requestUpdate(n,a,o,!0,d)},init(d){return d!==void 0&&this.C(n,void 0,o,d),d}}}if(i==="setter"){const{name:n}=e;return function(d){const a=this[n];t.call(this,d),this.requestUpdate(n,a,o,!0,d)}}throw Error("Unsupported decorator location: "+i)};function h(o){return(t,e)=>typeof e=="object"?D1(o,t,e):((i,r,s)=>{const n=r.hasOwnProperty(s);return r.constructor.createProperty(s,i),n?Object.getOwnPropertyDescriptor(r,s):void 0})(o,t,e)}function O(o){return h({...o,state:!0,attribute:!1})}const U1=(o,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(o,t,e),e);function Fr(o,t){return(e,i,r)=>{const s=n=>n.renderRoot?.querySelector(o)??null;return U1(e,i,{get(){return s(this)}})}}const wa={CHILD:2},ga=o=>(...t)=>({_$litDirective$:o,values:t});class va{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}let Ci=class extends va{constructor(t){if(super(t),this.it=k,t.type!==wa.CHILD)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(t){if(t===k||t==null)return this._t=void 0,this.it=t;if(t===Ve)return t;if(typeof t!="string")throw Error(this.constructor.directiveName+"() called with a non-string value");if(t===this.it)return this._t;this.it=t;const e=[t];return e.raw=e,this._t={_$litType$:this.constructor.resultType,strings:e,values:[]}}};Ci.directiveName="unsafeHTML",Ci.resultType=1;class Bi extends Ci{}Bi.directiveName="unsafeSVG",Bi.resultType=2;const F1=ga(Bi),os=new Map,Xr=new Map;function P1(o){Object.entries(o).forEach(([t,e])=>{os.set(t,e)})}function E1(o){return os.get(o)}function T1(o){return os.has(o)}async function Y1(o){if(Xr.has(o))return Xr.get(o);const t=await fetch(o);if(!t.ok)throw new Error(`Failed to load icon from ${o}: ${t.statusText}`);const e=await t.text();return Xr.set(o,e),e}var O1=Object.defineProperty,I1=Object.getOwnPropertyDescriptor,ke=(o,t,e,i)=>{for(var r=i>1?void 0:i?I1(t,e):t,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=(i?n(t,e,r):n(r))||r);return i&&r&&O1(t,e,r),r};const $s={xs:"12px",sm:"14px",md:"16px",lg:"20px",xl:"24px"};let mt=class extends Xt{constructor(){super(...arguments),this.name="",this.src="",this.size="md",this.spin=!1,this.rotate=0,this.svgContent=""}willUpdate(o){(o.has("name")||o.has("src"))&&this.loadIcon()}async loadIcon(){if(this.name){T1(this.name)?(this.svgContent=E1(this.name),this.dispatchEvent(new CustomEvent("ik-load",{detail:{name:this.name},bubbles:!1}))):(this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{name:this.name,error:"Icon not registered"},bubbles:!1})));return}if(this.src){try{this.svgContent=await Y1(this.src),this.dispatchEvent(new CustomEvent("ik-load",{detail:{src:this.src},bubbles:!1}))}catch(o){this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{src:this.src,error:String(o)},bubbles:!1}))}return}this.svgContent=""}get sizeValue(){return typeof this.size=="number"?`${this.size}px`:$s[this.size]||$s.md}get iconStyle(){const o=[];return o.push(`width: ${this.sizeValue}`),o.push(`height: ${this.sizeValue}`),this.color&&o.push(`color: ${this.color}`),this.rotate&&!this.spin&&o.push(`transform: rotate(${this.rotate}deg)`),o.join("; ")}render(){return this.svgContent?p`
+\f\r"'\`<>=]|("|')|))|$)`,"g"),Rs=/'/g,Vs=/"/g,wa=/^(?:script|style|textarea|title)$/i,B1=o=>(t,...e)=>({_$litType$:o,strings:t,values:e}),p=B1(1),Ve=Symbol.for("lit-noChange"),k=Symbol.for("lit-nothing"),zs=new WeakMap,Le=Re.createTreeWalker(Re,129);function ga(o,t){if(!es(o)||!o.hasOwnProperty("raw"))throw Error("invalid template strings array");return Ls!==void 0?Ls.createHTML(t):t}const j1=(o,t)=>{const e=o.length-1,i=[];let r,s=t===2?"<svg>":t===3?"<math>":"",n=Fo;for(let d=0;d<e;d++){const a=o[d];let c,u,w=-1,C=0;for(;C<a.length&&(n.lastIndex=C,u=n.exec(a),u!==null);)C=n.lastIndex,n===Fo?u[1]==="!--"?n=Ss:u[1]!==void 0?n=Hs:u[2]!==void 0?(wa.test(u[2])&&(r=RegExp("</"+u[2],"g")),n=Ce):u[3]!==void 0&&(n=Ce):n===Ce?u[0]===">"?(n=r??Fo,w=-1):u[1]===void 0?w=-2:(w=n.lastIndex-u[2].length,c=u[1],n=u[3]===void 0?Ce:u[3]==='"'?Vs:Rs):n===Vs||n===Rs?n=Ce:n===Ss||n===Hs?n=Fo:(n=Ce,r=void 0);const m=n===Ce&&o[d+1].startsWith("/>")?" ":"";s+=n===Fo?a+b1:w>=0?(i.push(c),a.slice(0,w)+pa+a.slice(w)+_t+m):a+_t+(w===-2?d:m)}return[ga(o,s+(o[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),i]};class Xo{constructor({strings:t,_$litType$:e},i){let r;this.parts=[];let s=0,n=0;const d=t.length-1,a=this.parts,[c,u]=j1(t,e);if(this.el=Xo.createElement(c,i),Le.currentNode=this.el.content,e===2||e===3){const w=this.el.content.firstChild;w.replaceWith(...w.childNodes)}for(;(r=Le.nextNode())!==null&&a.length<d;){if(r.nodeType===1){if(r.hasAttributes())for(const w of r.getAttributeNames())if(w.endsWith(pa)){const C=u[n++],m=r.getAttribute(w).split(_t),S=/([.?@])?(.*)/.exec(C);a.push({type:1,index:s,name:S[2],strings:m,ctor:S[1]==="."?L1:S[1]==="?"?S1:S[1]==="@"?H1:Dr}),r.removeAttribute(w)}else w.startsWith(_t)&&(a.push({type:6,index:s}),r.removeAttribute(w));if(wa.test(r.tagName)){const w=r.textContent.split(_t),C=w.length-1;if(C>0){r.textContent=jr?jr.emptyScript:"";for(let m=0;m<C;m++)r.append(w[m],Wo()),Le.nextNode(),a.push({type:2,index:++s});r.append(w[C],Wo())}}}else if(r.nodeType===8)if(r.data===ua)a.push({type:2,index:s});else{let w=-1;for(;(w=r.data.indexOf(_t,w+1))!==-1;)a.push({type:7,index:s}),w+=_t.length-1}s++}}static createElement(t,e){const i=Re.createElement("template");return i.innerHTML=t,i}}function bo(o,t,e=o,i){if(t===Ve)return t;let r=i!==void 0?e._$Co?.[i]:e._$Cl;const s=Ko(t)?void 0:t._$litDirective$;return r?.constructor!==s&&(r?._$AO?.(!1),s===void 0?r=void 0:(r=new s(o),r._$AT(o,e,i)),i!==void 0?(e._$Co??(e._$Co=[]))[i]=r:e._$Cl=r),r!==void 0&&(t=bo(o,r._$AS(o,t.values),r,i)),t}class A1{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:e},parts:i}=this._$AD,r=(t?.creationScope??Re).importNode(e,!0);Le.currentNode=r;let s=Le.nextNode(),n=0,d=0,a=i[0];for(;a!==void 0;){if(n===a.index){let c;a.type===2?c=new Qo(s,s.nextSibling,this,t):a.type===1?c=new a.ctor(s,a.name,a.strings,this,t):a.type===6&&(c=new R1(s,this,t)),this._$AV.push(c),a=i[++d]}n!==a?.index&&(s=Le.nextNode(),n++)}return Le.currentNode=Re,r}p(t){let e=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class Qo{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,i,r){this.type=2,this._$AH=k,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=r,this._$Cv=r?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=bo(this,t,e),Ko(t)?t===k||t==null||t===""?(this._$AH!==k&&this._$AR(),this._$AH=k):t!==this._$AH&&t!==Ve&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):C1(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==k&&Ko(this._$AH)?this._$AA.nextSibling.data=t:this.T(Re.createTextNode(t)),this._$AH=t}$(t){const{values:e,_$litType$:i}=t,r=typeof i=="number"?this._$AC(t):(i.el===void 0&&(i.el=Xo.createElement(ga(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===r)this._$AH.p(e);else{const s=new A1(r,this),n=s.u(this.options);s.p(e),this.T(n),this._$AH=s}}_$AC(t){let e=zs.get(t.strings);return e===void 0&&zs.set(t.strings,e=new Xo(t)),e}k(t){es(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,r=0;for(const s of t)r===e.length?e.push(i=new Qo(this.O(Wo()),this.O(Wo()),this,this.options)):i=e[r],i._$AI(s),r++;r<e.length&&(this._$AR(i&&i._$AB.nextSibling,r),e.length=r)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){const i=As(t).nextSibling;As(t).remove(),t=i}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}}class Dr{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,i,r,s){this.type=1,this._$AH=k,this._$AN=void 0,this.element=t,this.name=e,this._$AM=r,this.options=s,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=k}_$AI(t,e=this,i,r){const s=this.strings;let n=!1;if(s===void 0)t=bo(this,t,e,0),n=!Ko(t)||t!==this._$AH&&t!==Ve,n&&(this._$AH=t);else{const d=t;let a,c;for(t=s[0],a=0;a<s.length-1;a++)c=bo(this,d[i+a],e,a),c===Ve&&(c=this._$AH[a]),n||(n=!Ko(c)||c!==this._$AH[a]),c===k?t=k:t!==k&&(t+=(c??"")+s[a+1]),this._$AH[a]=c}n&&!r&&this.j(t)}j(t){t===k?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}}class L1 extends Dr{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===k?void 0:t}}class S1 extends Dr{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==k)}}class H1 extends Dr{constructor(t,e,i,r,s){super(t,e,i,r,s),this.type=5}_$AI(t,e=this){if((t=bo(this,t,e,0)??k)===Ve)return;const i=this._$AH,r=t===k&&i!==k||t.capture!==i.capture||t.once!==i.once||t.passive!==i.passive,s=t!==k&&(i===k||r);r&&this.element.removeEventListener(this.name,this,i),s&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}}class R1{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){bo(this,t)}}const V1=Oo.litHtmlPolyfillSupport;V1?.(Xo,Qo),(Oo.litHtmlVersions??(Oo.litHtmlVersions=[])).push("3.3.2");const z1=(o,t,e)=>{const i=e?.renderBefore??t;let r=i._$litPart$;if(r===void 0){const s=e?.renderBefore??null;i._$litPart$=r=new Qo(t.insertBefore(Wo(),s),s,void 0,e??{})}return r._$AI(o),r};const Io=globalThis;let Xt=class extends We{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var e;const t=super.createRenderRoot();return(e=this.renderOptions).renderBefore??(e.renderBefore=t.firstChild),t}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=z1(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Ve}};Xt._$litElement$=!0,Xt.finalized=!0,Io.litElementHydrateSupport?.({LitElement:Xt});const $1=Io.litElementPolyfillSupport;$1?.({LitElement:Xt});(Io.litElementVersions??(Io.litElementVersions=[])).push("4.2.2");const U1=o=>(t,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(o,t)}):customElements.define(o,t)};const D1={attribute:!0,type:String,converter:Br,reflect:!1,hasChanged:ts},F1=(o=D1,t,e)=>{const{kind:i,metadata:r}=e;let s=globalThis.litPropertyMetadata.get(r);if(s===void 0&&globalThis.litPropertyMetadata.set(r,s=new Map),i==="setter"&&((o=Object.create(o)).wrapped=!0),s.set(e.name,o),i==="accessor"){const{name:n}=e;return{set(d){const a=t.get.call(this);t.set.call(this,d),this.requestUpdate(n,a,o,!0,d)},init(d){return d!==void 0&&this.C(n,void 0,o,d),d}}}if(i==="setter"){const{name:n}=e;return function(d){const a=this[n];t.call(this,d),this.requestUpdate(n,a,o,!0,d)}}throw Error("Unsupported decorator location: "+i)};function h(o){return(t,e)=>typeof e=="object"?F1(o,t,e):((i,r,s)=>{const n=r.hasOwnProperty(s);return r.constructor.createProperty(s,i),n?Object.getOwnPropertyDescriptor(r,s):void 0})(o,t,e)}function O(o){return h({...o,state:!0,attribute:!1})}const P1=(o,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(o,t,e),e);function Fr(o,t){return(e,i,r)=>{const s=n=>n.renderRoot?.querySelector(o)??null;return P1(e,i,{get(){return s(this)}})}}const va={CHILD:2},ka=o=>(...t)=>({_$litDirective$:o,values:t});class ma{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}let Ci=class extends ma{constructor(t){if(super(t),this.it=k,t.type!==va.CHILD)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(t){if(t===k||t==null)return this._t=void 0,this.it=t;if(t===Ve)return t;if(typeof t!="string")throw Error(this.constructor.directiveName+"() called with a non-string value");if(t===this.it)return this._t;this.it=t;const e=[t];return e.raw=e,this._t={_$litType$:this.constructor.resultType,strings:e,values:[]}}};Ci.directiveName="unsafeHTML",Ci.resultType=1;class Bi extends Ci{}Bi.directiveName="unsafeSVG",Bi.resultType=2;const E1=ka(Bi),os=new Map,Xr=new Map;function T1(o){Object.entries(o).forEach(([t,e])=>{os.set(t,e)})}function Y1(o){return os.get(o)}function O1(o){return os.has(o)}async function I1(o){if(Xr.has(o))return Xr.get(o);const t=await fetch(o);if(!t.ok)throw new Error(`Failed to load icon from ${o}: ${t.statusText}`);const e=await t.text();return Xr.set(o,e),e}var q1=Object.defineProperty,N1=Object.getOwnPropertyDescriptor,ke=(o,t,e,i)=>{for(var r=i>1?void 0:i?N1(t,e):t,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=(i?n(t,e,r):n(r))||r);return i&&r&&q1(t,e,r),r};const $s={xs:"12px",sm:"14px",md:"16px",lg:"20px",xl:"24px"};let mt=class extends Xt{constructor(){super(...arguments),this.name="",this.src="",this.size="md",this.spin=!1,this.rotate=0,this.svgContent=""}willUpdate(o){(o.has("name")||o.has("src"))&&this.loadIcon()}async loadIcon(){if(this.name){O1(this.name)?(this.svgContent=Y1(this.name),this.dispatchEvent(new CustomEvent("ik-load",{detail:{name:this.name},bubbles:!1}))):(this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{name:this.name,error:"Icon not registered"},bubbles:!1})));return}if(this.src){try{this.svgContent=await I1(this.src),this.dispatchEvent(new CustomEvent("ik-load",{detail:{src:this.src},bubbles:!1}))}catch(o){this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{src:this.src,error:String(o)},bubbles:!1}))}return}this.svgContent=""}get sizeValue(){return typeof this.size=="number"?`${this.size}px`:$s[this.size]||$s.md}get iconStyle(){const o=[];return o.push(`width: ${this.sizeValue}`),o.push(`height: ${this.sizeValue}`),this.color&&o.push(`color: ${this.color}`),this.rotate&&!this.spin&&o.push(`transform: rotate(${this.rotate}deg)`),o.join("; ")}render(){return this.svgContent?p`
       <span
         part="icon"
         class="icon${this.spin?" icon-spin":""}"
@@ -8,7 +8,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         role="img"
         aria-label="${this.name||"icon"}"
       >
-        ${F1(this.svgContent)}
+        ${E1(this.svgContent)}
       </span>
     `:p`
         <span
@@ -53,7 +53,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         transform: rotate(360deg);
       }
     }
-  `;ke([h({type:String})],mt.prototype,"name",2);ke([h({type:String})],mt.prototype,"src",2);ke([h()],mt.prototype,"size",2);ke([h({type:String})],mt.prototype,"color",2);ke([h({type:Boolean})],mt.prototype,"spin",2);ke([h({type:Number})],mt.prototype,"rotate",2);ke([O()],mt.prototype,"svgContent",2);mt=ke([z1("ik-icon")],mt);const q1=`
+  `;ke([h({type:String})],mt.prototype,"name",2);ke([h({type:String})],mt.prototype,"src",2);ke([h()],mt.prototype,"size",2);ke([h({type:String})],mt.prototype,"color",2);ke([h({type:Boolean})],mt.prototype,"spin",2);ke([h({type:Number})],mt.prototype,"rotate",2);ke([O()],mt.prototype,"svgContent",2);mt=ke([U1("ik-icon")],mt);const _1=`
 <svg
   class="lucide lucide-a-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />
   <path d="M3.304 13h6.392" />
 </svg>
-`;const N1=`
+`;const Z1=`
 <svg
   class="lucide lucide-a-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />
   <path d="M3.304 13h6.392" />
 </svg>
-`;const _1=`
+`;const G1=`
 <svg
   class="lucide lucide-a-large-small"
   xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.697 14h5.606" />
   <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />
   <path d="M3.304 13h6.392" />
-</svg>`;const Z1=`
+</svg>`;const W1=`
 <svg
   class="lucide lucide-accessibility"
   xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +125,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />
   <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
 </svg>
-`;const G1=`
+`;const K1=`
 <svg
   class="lucide lucide-activity"
   xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" />
 </svg>
-`;const W1=`
+`;const X1=`
 <svg
   class="lucide lucide-air-vent"
   xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 8h12" />
   <path d="M6.6 15.572A2 2 0 1 0 10 17v-5" />
 </svg>
-`;const K1=`
+`;const J1=`
 <svg
   class="lucide lucide-airplay"
   xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" />
   <path d="m12 15 5 6H7Z" />
 </svg>
-`;const Ds=`
+`;const Us=`
 <svg
   class="lucide lucide-alarm-clock-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +194,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.64 18.67 20 21" />
   <path d="m9 13 2 2 4-4" />
 </svg>
-`;const Us=`
+`;const Ds=`
 <svg
   class="lucide lucide-alarm-clock-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -214,7 +214,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.64 18.67 20 21" />
   <path d="M9 13h6" />
 </svg>
-`;const X1=`
+`;const Q1=`
 <svg
   class="lucide lucide-alarm-clock-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +255,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 10v6" />
   <path d="M9 13h6" />
 </svg>
-`;const J1=`
+`;const td=`
 <svg
   class="lucide lucide-alarm-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -275,7 +275,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.38 18.7 4 21" />
   <path d="M17.64 18.67 20 21" />
 </svg>
-`;const Q1=`
+`;const ed=`
 <svg
   class="lucide lucide-alarm-smoke"
   xmlns="http://www.w3.org/2000/svg"
@@ -294,7 +294,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 3a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a1 1 0 0 1 1-1z" />
   <path d="M6 21c0-2.5 2-2.5 2-5" />
 </svg>
-`;const td=`
+`;const od=`
 <svg
   class="lucide lucide-album"
   xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +310,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
   <polyline points="11 3 11 11 14 8 17 11 17 3" />
 </svg>
-`;const ed=`
+`;const rd=`
 <svg
   class="lucide lucide-align-center-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -329,7 +329,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 16v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1" />
   <path d="M14 8V7c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v1" />
 </svg>
-`;const od=`
+`;const id=`
 <svg
   class="lucide lucide-align-center-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +348,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 20H7a2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2h1" />
   <path d="M16 14h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1" />
 </svg>
-`;const rd=`
+`;const sd=`
 <svg
   class="lucide lucide-align-end-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -365,7 +365,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="6" height="9" x="14" y="9" rx="2" />
   <path d="M22 22H2" />
 </svg>
-`;const id=`
+`;const nd=`
 <svg
   class="lucide lucide-align-end-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -382,7 +382,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="9" height="6" x="9" y="14" rx="2" />
   <path d="M22 22V2" />
 </svg>
-`;const sd=`
+`;const ld=`
 <svg
   class="lucide lucide-align-horizontal-distribute-center"
   xmlns="http://www.w3.org/2000/svg"
@@ -402,7 +402,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 22v-3" />
   <path d="M7 5V2" />
 </svg>
-`;const nd=`
+`;const ad=`
 <svg
   class="lucide lucide-align-horizontal-distribute-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +420,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 2v20" />
   <path d="M20 2v20" />
 </svg>
-`;const ld=`
+`;const dd=`
 <svg
   class="lucide lucide-align-horizontal-distribute-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -438,7 +438,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 2v20" />
   <path d="M14 2v20" />
 </svg>
-`;const ad=`
+`;const hd=`
 <svg
   class="lucide lucide-align-horizontal-justify-center"
   xmlns="http://www.w3.org/2000/svg"
@@ -455,7 +455,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="6" height="10" x="16" y="7" rx="2" />
   <path d="M12 2v20" />
 </svg>
-`;const dd=`
+`;const cd=`
 <svg
   class="lucide lucide-align-horizontal-justify-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -472,7 +472,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="6" height="10" x="12" y="7" rx="2" />
   <path d="M22 2v20" />
 </svg>
-`;const hd=`
+`;const pd=`
 <svg
   class="lucide lucide-align-horizontal-justify-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -489,7 +489,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="6" height="10" x="16" y="7" rx="2" />
   <path d="M2 2v20" />
 </svg>
-`;const cd=`
+`;const ud=`
 <svg
   class="lucide lucide-align-horizontal-space-around"
   xmlns="http://www.w3.org/2000/svg"
@@ -506,7 +506,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 22V2" />
   <path d="M20 22V2" />
 </svg>
-`;const pd=`
+`;const wd=`
 <svg
   class="lucide lucide-align-horizontal-space-between"
   xmlns="http://www.w3.org/2000/svg"
@@ -524,7 +524,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 2v20" />
   <path d="M21 2v20" />
 </svg>
-`;const ud=`
+`;const gd=`
 <svg
   class="lucide lucide-align-start-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -541,7 +541,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="16" height="6" x="6" y="4" rx="2" />
   <path d="M2 2v20" />
 </svg>
-`;const wd=`
+`;const vd=`
 <svg
   class="lucide lucide-align-start-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -558,7 +558,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="6" height="9" x="14" y="6" rx="2" />
   <path d="M22 2H2" />
 </svg>
-`;const gd=`
+`;const kd=`
 <svg
   class="lucide lucide-align-vertical-distribute-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -576,7 +576,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 20h20" />
   <path d="M2 10h20" />
 </svg>
-`;const vd=`
+`;const md=`
 <svg
   class="lucide lucide-align-vertical-distribute-center"
   xmlns="http://www.w3.org/2000/svg"
@@ -596,7 +596,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="5" y="14" width="14" height="6" rx="2" />
   <rect x="7" y="4" width="10" height="6" rx="2" />
 </svg>
-`;const kd=`
+`;const xd=`
 <svg
   class="lucide lucide-align-vertical-distribute-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -614,7 +614,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 14h20" />
   <path d="M2 4h20" />
 </svg>
-`;const md=`
+`;const fd=`
 <svg
   class="lucide lucide-align-vertical-justify-center"
   xmlns="http://www.w3.org/2000/svg"
@@ -631,7 +631,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="10" height="6" x="7" y="2" rx="2" />
   <path d="M2 12h20" />
 </svg>
-`;const xd=`
+`;const Md=`
 <svg
   class="lucide lucide-align-vertical-justify-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -648,7 +648,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="10" height="6" x="7" y="2" rx="2" />
   <path d="M2 22h20" />
 </svg>
-`;const fd=`
+`;const yd=`
 <svg
   class="lucide lucide-align-vertical-space-around"
   xmlns="http://www.w3.org/2000/svg"
@@ -665,7 +665,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 20H2" />
   <path d="M22 4H2" />
 </svg>
-`;const Md=`
+`;const bd=`
 <svg
   class="lucide lucide-align-vertical-justify-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -682,7 +682,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="10" height="6" x="7" y="6" rx="2" />
   <path d="M2 2h20" />
 </svg>
-`;const yd=`
+`;const Cd=`
 <svg
   class="lucide lucide-align-vertical-space-between"
   xmlns="http://www.w3.org/2000/svg"
@@ -700,7 +700,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 21h20" />
   <path d="M2 3h20" />
 </svg>
-`;const bd=`
+`;const Bd=`
 <svg
   class="lucide lucide-ambulance"
   xmlns="http://www.w3.org/2000/svg"
@@ -721,7 +721,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 18h6" />
   <circle cx="17" cy="18" r="2" />
   <circle cx="7" cy="18" r="2" />
-</svg>`;const Cd=`
+</svg>`;const jd=`
 <svg
   class="lucide lucide-amphora"
   xmlns="http://www.w3.org/2000/svg"
@@ -741,7 +741,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 22H6" />
   <path d="M9 2h6" />
 </svg>
-`;const Bd=`
+`;const Ad=`
 <svg
   class="lucide lucide-ampersand"
   xmlns="http://www.w3.org/2000/svg"
@@ -757,7 +757,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 12h3" />
   <path d="M17.5 12a8 8 0 0 1-8 8A4.5 4.5 0 0 1 5 15.5c0-6 8-4 8-8.5a3 3 0 1 0-6 0c0 3 2.5 8.5 12 13" />
 </svg>
-`;const jd=`
+`;const Ld=`
 <svg
   class="lucide lucide-ampersands"
   xmlns="http://www.w3.org/2000/svg"
@@ -773,7 +773,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 17c-5-3-7-7-7-9a2 2 0 0 1 4 0c0 2.5-5 2.5-5 6 0 1.7 1.3 3 3 3 2.8 0 5-2.2 5-5" />
   <path d="M22 17c-5-3-7-7-7-9a2 2 0 0 1 4 0c0 2.5-5 2.5-5 6 0 1.7 1.3 3 3 3 2.8 0 5-2.2 5-5" />
 </svg>
-`;const Ad=`
+`;const Sd=`
 <svg
   class="lucide lucide-anchor"
   xmlns="http://www.w3.org/2000/svg"
@@ -791,7 +791,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 11h6" />
   <circle cx="12" cy="4" r="2" />
 </svg>
-`;const Ld=`
+`;const Hd=`
 <svg
   class="lucide lucide-annoyed"
   xmlns="http://www.w3.org/2000/svg"
@@ -809,7 +809,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 9h2" />
   <path d="M14 9h2" />
 </svg>
-`;const Sd=`
+`;const Rd=`
 <svg
   class="lucide lucide-angry"
   xmlns="http://www.w3.org/2000/svg"
@@ -829,7 +829,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 10h.01" />
   <path d="M15 10h.01" />
 </svg>
-`;const Hd=`
+`;const Vd=`
 <svg
   class="lucide lucide-antenna"
   xmlns="http://www.w3.org/2000/svg"
@@ -849,7 +849,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.5 7h15" />
   <path d="M12 16v6" />
 </svg>
-`;const Rd=`
+`;const zd=`
 <svg
   class="lucide lucide-anvil"
   xmlns="http://www.w3.org/2000/svg"
@@ -868,7 +868,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 12v5" />
   <path d="M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3 1 1 0 0 1-1 1H6a1 1 0 0 1-1-1" />
 </svg>
-`;const Vd=`
+`;const $d=`
 <svg
   class="lucide lucide-aperture"
   xmlns="http://www.w3.org/2000/svg"
@@ -889,7 +889,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14.31 16H2.83" />
   <path d="m16.62 12-5.74 9.94" />
 </svg>
-`;const zd=`
+`;const Ud=`
 <svg
   class="lucide lucide-app-window-mac"
   xmlns="http://www.w3.org/2000/svg"
@@ -907,7 +907,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 8h.01" />
   <path d="M14 8h.01" />
 </svg>
-`;const $d=`
+`;const Dd=`
 <svg
   class="lucide lucide-app-window"
   xmlns="http://www.w3.org/2000/svg"
@@ -925,7 +925,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 8h20" />
   <path d="M6 4v4" />
 </svg>
-`;const Dd=`
+`;const Fd=`
 <svg
   class="lucide lucide-apple"
   xmlns="http://www.w3.org/2000/svg"
@@ -941,7 +941,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6.528V3a1 1 0 0 1 1-1h0" />
   <path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21" />
 </svg>
-`;const Ud=`
+`;const Pd=`
 <svg
   class="lucide lucide-archive-restore"
   xmlns="http://www.w3.org/2000/svg"
@@ -960,7 +960,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 15 3-3 3 3" />
   <path d="M12 12v9" />
 </svg>
-`;const Fd=`
+`;const Ed=`
 <svg
   class="lucide lucide-archive-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -978,7 +978,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.5 17 5-5" />
   <path d="m9.5 12 5 5" />
 </svg>
-`;const Pd=`
+`;const Td=`
 <svg
   class="lucide lucide-archive"
   xmlns="http://www.w3.org/2000/svg"
@@ -995,7 +995,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
   <path d="M10 12h4" />
 </svg>
-`;const Ed=`
+`;const Yd=`
 <svg
   class="lucide lucide-armchair"
   xmlns="http://www.w3.org/2000/svg"
@@ -1013,7 +1013,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 18v2" />
   <path d="M19 18v2" />
 </svg>
-`;const Td=`
+`;const Od=`
 <svg
   class="lucide lucide-arrow-big-down-dash"
   xmlns="http://www.w3.org/2000/svg"
@@ -1029,7 +1029,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 11a1 1 0 0 0 1 1h2.939a1 1 0 0 1 .75 1.811l-6.835 6.836a1.207 1.207 0 0 1-1.707 0L4.31 13.81a1 1 0 0 1 .75-1.811H8a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1z" />
   <path d="M9 4h6" />
 </svg>
-`;const Yd=`
+`;const Id=`
 <svg
   class="lucide lucide-arrow-big-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -1044,7 +1044,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M15 11a1 1 0 0 0 1 1h2.939a1 1 0 0 1 .75 1.811l-6.835 6.836a1.207 1.207 0 0 1-1.707 0L4.31 13.81a1 1 0 0 1 .75-1.811H8a1 1 0 0 0 1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1z" />
 </svg>
-`;const Od=`
+`;const qd=`
 <svg
   class="lucide lucide-arrow-big-left-dash"
   xmlns="http://www.w3.org/2000/svg"
@@ -1060,7 +1060,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 9a1 1 0 0 1-1-1V5.061a1 1 0 0 0-1.811-.75l-6.835 6.836a1.207 1.207 0 0 0 0 1.707l6.835 6.835a1 1 0 0 0 1.811-.75V16a1 1 0 0 1 1-1h2a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z" />
   <path d="M20 9v6" />
 </svg>
-`;const Id=`
+`;const Nd=`
 <svg
   class="lucide lucide-arrow-big-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -1075,7 +1075,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M13 9a1 1 0 0 1-1-1V5.061a1 1 0 0 0-1.811-.75l-6.835 6.836a1.207 1.207 0 0 0 0 1.707l6.835 6.835a1 1 0 0 0 1.811-.75V16a1 1 0 0 1 1-1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z" />
 </svg>
-`;const qd=`
+`;const _d=`
 <svg
   class="lucide lucide-arrow-big-right-dash"
   xmlns="http://www.w3.org/2000/svg"
@@ -1091,7 +1091,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H9a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z" />
   <path d="M4 9v6" />
 </svg>
-`;const Nd=`
+`;const Zd=`
 <svg
   class="lucide lucide-arrow-big-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -1106,7 +1106,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z" />
 </svg>
-`;const _d=`
+`;const Gd=`
 <svg
   class="lucide lucide-arrow-big-up-dash"
   xmlns="http://www.w3.org/2000/svg"
@@ -1122,7 +1122,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 13a1 1 0 0 0-1-1H5.061a1 1 0 0 1-.75-1.811l6.836-6.835a1.207 1.207 0 0 1 1.707 0l6.835 6.835a1 1 0 0 1-.75 1.811H16a1 1 0 0 0-1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z" />
   <path d="M9 20h6" />
 </svg>
-`;const Zd=`
+`;const Wd=`
 <svg
   class="lucide lucide-arrow-big-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -1137,7 +1137,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M9 13a1 1 0 0 0-1-1H5.061a1 1 0 0 1-.75-1.811l6.836-6.835a1.207 1.207 0 0 1 1.707 0l6.835 6.835a1 1 0 0 1-.75 1.811H16a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z" />
 </svg>
-`;const Gd=`
+`;const Kd=`
 <svg
   class="lucide lucide-arrow-down-0-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -1156,7 +1156,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 20v-6h-2" />
   <path d="M15 20h4" />
 </svg>
-`;const Wd=`
+`;const Xd=`
 <svg
   class="lucide lucide-arrow-down-1-0"
   xmlns="http://www.w3.org/2000/svg"
@@ -1194,7 +1194,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10" />
   <path d="M15 14h5l-5 6h5" />
 </svg>
-`;const Kd=`
+`;const Jd=`
 <svg
   class="lucide lucide-arrow-down-from-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1211,7 +1211,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 21V7" />
   <path d="m6 15 6 6 6-6" />
 </svg>
-`;const Xd=`
+`;const Qd=`
 <svg
   class="lucide lucide-arrow-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -1227,7 +1227,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 7 7 17" />
   <path d="M17 17H7V7" />
 </svg>
-`;const Jd=`
+`;const th=`
 <svg
   class="lucide lucide-arrow-down-narrow-wide"
   xmlns="http://www.w3.org/2000/svg"
@@ -1246,7 +1246,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 8h7" />
   <path d="M11 12h10" />
 </svg>
-`;const Qd=`
+`;const eh=`
 <svg
   class="lucide lucide-arrow-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -1262,7 +1262,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 7 10 10" />
   <path d="M17 7v10H7" />
 </svg>
-`;const th=`
+`;const oh=`
 <svg
   class="lucide lucide-arrow-down-to-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1279,7 +1279,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 11 6 6 6-6" />
   <path d="M19 21H5" />
 </svg>
-`;const eh=`
+`;const rh=`
 <svg
   class="lucide lucide-arrow-down-to-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -1296,7 +1296,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m19 9-7 7-7-7" />
   <circle cx="12" cy="21" r="1" />
 </svg>
-`;const oh=`
+`;const ih=`
 <svg
   class="lucide lucide-arrow-down-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -1352,7 +1352,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20" />
   <path d="M20 18h-5" />
 </svg>
-`;const rh=`
+`;const sh=`
 <svg
   class="lucide lucide-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -1368,7 +1368,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 5v14" />
   <path d="m19 12-7 7-7-7" />
 </svg>
-`;const ih=`
+`;const nh=`
 <svg
   class="lucide lucide-arrow-left-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -1386,7 +1386,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 21 4-4-4-4" />
   <path d="M20 17H4" />
 </svg>
-`;const sh=`
+`;const lh=`
 <svg
   class="lucide lucide-arrow-left-from-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1403,7 +1403,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 12h14" />
   <path d="M21 19V5" />
 </svg>
-`;const nh=`
+`;const ah=`
 <svg
   class="lucide lucide-arrow-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -1419,7 +1419,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 19-7-7 7-7" />
   <path d="M19 12H5" />
 </svg>
-`;const lh=`
+`;const dh=`
 <svg
   class="lucide lucide-arrow-left-to-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1436,7 +1436,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m13 6-6 6 6 6" />
   <path d="M7 12h14" />
 </svg>
-`;const ah=`
+`;const hh=`
 <svg
   class="lucide lucide-arrow-right-from-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1453,7 +1453,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12H7" />
   <path d="m15 18 6-6-6-6" />
 </svg>
-`;const dh=`
+`;const ch=`
 <svg
   class="lucide lucide-arrow-right-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -1471,7 +1471,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 21-4-4 4-4" />
   <path d="M4 17h16" />
 </svg>
-`;const hh=`
+`;const ph=`
 <svg
   class="lucide lucide-arrow-right-to-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1488,7 +1488,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m11 18 6-6-6-6" />
   <path d="M21 5v14" />
 </svg>
-`;const ch=`
+`;const uh=`
 <svg
   class="lucide lucide-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -1504,7 +1504,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" />
 </svg>
-`;const ph=`
+`;const wh=`
 <svg
   class="lucide lucide-arrow-up-0-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -1523,7 +1523,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 20v-6h-2" />
   <path d="M15 20h4" />
 </svg>
-`;const uh=`
+`;const gh=`
 <svg
   class="lucide lucide-arrow-up-1-0"
   xmlns="http://www.w3.org/2000/svg"
@@ -1561,7 +1561,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10" />
   <path d="M15 14h5l-5 6h5" />
 </svg>
-`;const wh=`
+`;const vh=`
 <svg
   class="lucide lucide-arrow-up-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -1579,7 +1579,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 8 4-4 4 4" />
   <path d="M7 4v16" />
 </svg>
-`;const gh=`
+`;const kh=`
 <svg
   class="lucide lucide-arrow-up-from-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -1596,7 +1596,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 16V2" />
   <circle cx="12" cy="21" r="1" />
 </svg>
-`;const vh=`
+`;const mh=`
 <svg
   class="lucide lucide-arrow-up-from-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1613,7 +1613,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 3v14" />
   <path d="M5 21h14" />
 </svg>
-`;const kh=`
+`;const xh=`
 <svg
   class="lucide lucide-arrow-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -1648,7 +1648,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 16h7" />
   <path d="M11 20h10" />
 </svg>
-`;const mh=`
+`;const fh=`
 <svg
   class="lucide lucide-arrow-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -1664,7 +1664,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 7h10v10" />
   <path d="M7 17 17 7" />
 </svg>
-`;const xh=`
+`;const Mh=`
 <svg
   class="lucide lucide-arrow-up-to-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1681,7 +1681,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18 13-6-6-6 6" />
   <path d="M12 7v14" />
 </svg>
-`;const fh=`
+`;const yh=`
 <svg
   class="lucide lucide-arrow-up-wide-narrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -1719,7 +1719,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20" />
   <path d="M20 18h-5" />
 </svg>
-`;const Mh=`
+`;const bh=`
 <svg
   class="lucide lucide-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -1735,7 +1735,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 12 7-7 7 7" />
   <path d="M12 19V5" />
 </svg>
-`;const yh=`
+`;const Ch=`
 <svg
   class="lucide lucide-arrows-up-from-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -1754,7 +1754,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 17V3" />
   <path d="M4 21h16" />
 </svg>
-`;const bh=`
+`;const Bh=`
 <svg
   class="lucide lucide-asterisk"
   xmlns="http://www.w3.org/2000/svg"
@@ -1771,7 +1771,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.196 9 6.804 15" />
   <path d="m6.804 9 10.392 6" />
 </svg>
-`;const Ch=`
+`;const jh=`
 <svg
   class="lucide lucide-at-sign"
   xmlns="http://www.w3.org/2000/svg"
@@ -1787,7 +1787,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="4" />
   <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
 </svg>
-`;const Bh=`
+`;const Ah=`
 <svg
   class="lucide lucide-atom"
   xmlns="http://www.w3.org/2000/svg"
@@ -1804,7 +1804,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z" />
   <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z" />
 </svg>
-`;const jh=`
+`;const Lh=`
 <svg
   class="lucide lucide-audio-lines"
   xmlns="http://www.w3.org/2000/svg"
@@ -1824,7 +1824,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 5v13" />
   <path d="M22 10v3" />
 </svg>
-`;const Ah=`
+`;const Sh=`
 <svg
   class="lucide lucide-audio-waveform"
   xmlns="http://www.w3.org/2000/svg"
@@ -1839,7 +1839,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2" />
 </svg>
-`;const Lh=`
+`;const Hh=`
 <svg
   class="lucide lucide-award"
   xmlns="http://www.w3.org/2000/svg"
@@ -1855,7 +1855,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
   <circle cx="12" cy="8" r="6" />
 </svg>
-`;const Sh=`
+`;const Rh=`
 <svg
   class="lucide lucide-axe"
   xmlns="http://www.w3.org/2000/svg"
@@ -1889,7 +1889,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.293 19.707 6 18" />
   <path d="m9 15 1.5-1.5" />
 </svg>
-`;const Hh=`
+`;const Vh=`
 <svg
   class="lucide lucide-baby"
   xmlns="http://www.w3.org/2000/svg"
@@ -1907,7 +1907,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1" />
   <path d="M9 12h.01" />
 </svg>
-`;const Rh=`
+`;const zh=`
 <svg
   class="lucide lucide-backpack"
   xmlns="http://www.w3.org/2000/svg"
@@ -1926,7 +1926,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" />
   <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
 </svg>
-`;const Vh=`
+`;const $h=`
 <svg
   class="lucide lucide-badge-cent"
   xmlns="http://www.w3.org/2000/svg"
@@ -1943,7 +1943,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 7v10" />
   <path d="M15.4 10a4 4 0 1 0 0 4" />
 </svg>
-`;const zh=`
+`;const Uh=`
 <svg
   class="lucide lucide-badge-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -1976,7 +1976,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
   <path d="m9 12 2 2 4-4" />
 </svg>
-`;const $h=`
+`;const Dh=`
 <svg
   class="lucide lucide-badge-dollar-sign"
   xmlns="http://www.w3.org/2000/svg"
@@ -1993,7 +1993,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
   <path d="M12 18V6" />
 </svg>
-`;const Dh=`
+`;const Fh=`
 <svg
   class="lucide lucide-badge-euro"
   xmlns="http://www.w3.org/2000/svg"
@@ -2010,7 +2010,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 12h5" />
   <path d="M15 9.4a4 4 0 1 0 0 5.2" />
 </svg>
-`;const Uh=`
+`;const Ph=`
 <svg
   class="lucide lucide-badge-indian-rupee"
   xmlns="http://www.w3.org/2000/svg"
@@ -2028,7 +2028,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h8" />
   <path d="m13 17-5-1h1a4 4 0 0 0 0-8" />
 </svg>
-`;const Fh=`
+`;const Eh=`
 <svg
   class="lucide lucide-badge-info"
   xmlns="http://www.w3.org/2000/svg"
@@ -2045,7 +2045,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="16" y2="12" />
   <line x1="12" x2="12.01" y1="8" y2="8" />
 </svg>
-`;const Ph=`
+`;const Th=`
 <svg
   class="lucide lucide-badge-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2061,7 +2061,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
   <line x1="8" x2="16" y1="12" y2="12" />
 </svg>
-`;const Eh=`
+`;const Yh=`
 <svg
   class="lucide lucide-badge-japanese-yen"
   xmlns="http://www.w3.org/2000/svg"
@@ -2080,7 +2080,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 12h6" />
   <path d="M9 16h6" />
 </svg>
-`;const Th=`
+`;const Oh=`
 <svg
   class="lucide lucide-badge-percent"
   xmlns="http://www.w3.org/2000/svg"
@@ -2098,7 +2098,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 9h.01" />
   <path d="M15 15h.01" />
 </svg>
-`;const Yh=`
+`;const Ih=`
 <svg
   class="lucide lucide-badge-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2115,7 +2115,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="8" y2="16" />
   <line x1="8" x2="16" y1="12" y2="12" />
 </svg>
-`;const Oh=`
+`;const qh=`
 <svg
   class="lucide lucide-badge-pound-sterling"
   xmlns="http://www.w3.org/2000/svg"
@@ -2150,7 +2150,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
   <line x1="12" x2="12.01" y1="17" y2="17" />
 </svg>
-`;const Ih=`
+`;const Nh=`
 <svg
   class="lucide lucide-badge-russian-ruble"
   xmlns="http://www.w3.org/2000/svg"
@@ -2167,7 +2167,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 16h5" />
   <path d="M9 12h5a2 2 0 1 0 0-4h-3v9" />
 </svg>
-`;const qh=`
+`;const _h=`
 <svg
   class="lucide lucide-badge-swiss-franc"
   xmlns="http://www.w3.org/2000/svg"
@@ -2185,7 +2185,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 12h3" />
   <path d="M9 16h4" />
 </svg>
-`;const Nh=`
+`;const Zh=`
 <svg
   class="lucide lucide-badge-turkish-lira"
   xmlns="http://www.w3.org/2000/svg"
@@ -2202,7 +2202,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 8-6 3" />
   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76" />
 </svg>
-`;const _h=`
+`;const Gh=`
 <svg
   class="lucide lucide-badge-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -2219,7 +2219,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="15" x2="9" y1="9" y2="15" />
   <line x1="9" x2="15" y1="9" y2="15" />
 </svg>
-`;const Zh=`
+`;const Wh=`
 <svg
   class="lucide lucide-badge"
   xmlns="http://www.w3.org/2000/svg"
@@ -2234,7 +2234,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
 </svg>
-`;const Gh=`
+`;const Kh=`
 <svg
   class="lucide lucide-baggage-claim"
   xmlns="http://www.w3.org/2000/svg"
@@ -2253,7 +2253,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="20" r="2" />
   <circle cx="9" cy="20" r="2" />
 </svg>
-`;const Wh=`
+`;const Xh=`
 <svg
   class="lucide lucide-balloon"
   xmlns="http://www.w3.org/2000/svg"
@@ -2270,7 +2270,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6a2 2 0 0 1 2 2" />
   <path d="M18 8c0 4-3.5 8-6 8s-6-4-6-8a6 6 0 0 1 12 0" />
 </svg>
-`;const Kh=`
+`;const Jh=`
 <svg
   class="lucide lucide-ban"
   xmlns="http://www.w3.org/2000/svg"
@@ -2286,7 +2286,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.929 4.929 19.07 19.071" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Xh=`
+`;const Qh=`
 <svg
   class="lucide lucide-banana"
   xmlns="http://www.w3.org/2000/svg"
@@ -2302,7 +2302,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 13c3.5-2 8-2 10 2a5.5 5.5 0 0 1 8 5" />
   <path d="M5.15 17.89c5.52-1.52 8.65-6.89 7-12C11.55 4 11.5 2 13 2c3.22 0 5 5.5 5 8 0 6.5-4.2 12-10.49 12C5.11 22 2 22 2 20c0-1.5 1.14-1.55 3.15-2.11Z" />
 </svg>
-`;const Jh=`
+`;const tc=`
 <svg
   class="lucide lucide-bandage"
   xmlns="http://www.w3.org/2000/svg"
@@ -2323,7 +2323,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 6v12" />
   <rect x="2" y="6" width="20" height="12" rx="2" />
 </svg>
-`;const Qh=`
+`;const ec=`
 <svg
   class="lucide lucide-banknote-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -2343,7 +2343,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 12h.01" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const tc=`
+`;const oc=`
 <svg
   class="lucide lucide-banknote-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -2363,7 +2363,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 12h.01" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const ec=`
+`;const rc=`
 <svg
   class="lucide lucide-banknote-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -2383,7 +2383,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 12h.01" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const oc=`
+`;const ic=`
 <svg
   class="lucide lucide-banknote"
   xmlns="http://www.w3.org/2000/svg"
@@ -2400,7 +2400,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="2" />
   <path d="M6 12h.01M18 12h.01" />
 </svg>
-`;const rc=`
+`;const sc=`
 <svg
   class="lucide lucide-barcode"
   xmlns="http://www.w3.org/2000/svg"
@@ -2419,7 +2419,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 5v14" />
   <path d="M21 5v14" />
 </svg>
-`;const ic=`
+`;const nc=`
 <svg
   class="lucide lucide-barrel"
   xmlns="http://www.w3.org/2000/svg"
@@ -2438,7 +2438,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.84 17h16.32" />
   <path d="M3.84 7h16.32" />
 </svg>
-`;const sc=`
+`;const lc=`
 <svg
   class="lucide lucide-bath"
   xmlns="http://www.w3.org/2000/svg"
@@ -2457,7 +2457,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 19v2" />
   <path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" />
 </svg>
-`;const nc=`
+`;const ac=`
 <svg
   class="lucide lucide-baseline"
   xmlns="http://www.w3.org/2000/svg"
@@ -2474,7 +2474,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 16 6-12 6 12" />
   <path d="M8 12h8" />
 </svg>
-`;const lc=`
+`;const dc=`
 <svg
   class="lucide lucide-battery-charging"
   xmlns="http://www.w3.org/2000/svg"
@@ -2492,7 +2492,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 14v-4" />
   <path d="M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936" />
 </svg>
-`;const ac=`
+`;const hc=`
 <svg
   class="lucide lucide-battery-full"
   xmlns="http://www.w3.org/2000/svg"
@@ -2511,7 +2511,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 10v4" />
   <rect x="2" y="6" width="16" height="12" rx="2" />
 </svg>
-`;const dc=`
+`;const cc=`
 <svg
   class="lucide lucide-battery-low"
   xmlns="http://www.w3.org/2000/svg"
@@ -2528,7 +2528,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 14v-4" />
   <rect x="2" y="6" width="16" height="12" rx="2" />
 </svg>
-`;const hc=`
+`;const pc=`
 <svg
   class="lucide lucide-battery-medium"
   xmlns="http://www.w3.org/2000/svg"
@@ -2546,7 +2546,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 14v-4" />
   <rect x="2" y="6" width="16" height="12" rx="2" />
 </svg>
-`;const cc=`
+`;const uc=`
 <svg
   class="lucide lucide-battery-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2565,7 +2565,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 12h6" />
   <path d="M7.606 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.606" />
 </svg>
-`;const pc=`
+`;const wc=`
 <svg
   class="lucide lucide-battery-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -2584,7 +2584,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 14v-4" />
   <path d="M6 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2" />
 </svg>
-`;const uc=`
+`;const gc=`
 <svg
   class="lucide lucide-battery"
   xmlns="http://www.w3.org/2000/svg"
@@ -2600,7 +2600,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M 22 14 L 22 10" />
   <rect x="2" y="6" width="16" height="12" rx="2" />
 </svg>
-`;const wc=`
+`;const vc=`
 <svg
   class="lucide lucide-beaker"
   xmlns="http://www.w3.org/2000/svg"
@@ -2617,7 +2617,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3" />
   <path d="M6 14h12" />
 </svg>
-`;const gc=`
+`;const kc=`
 <svg
   class="lucide lucide-bean-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -2635,7 +2635,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5.341 10.62a4 4 0 0 0 6.487 1.208M10.62 5.341a4.015 4.015 0 0 1 2.039 2.04" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const vc=`
+`;const mc=`
 <svg
   class="lucide lucide-bean"
   xmlns="http://www.w3.org/2000/svg"
@@ -2651,7 +2651,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.165 6.598C9.954 7.478 9.64 8.36 9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22c7.732 0 14-6.268 14-14a6 6 0 0 0-11.835-1.402Z" />
   <path d="M5.341 10.62a4 4 0 1 0 5.279-5.28" />
 </svg>
-`;const kc=`
+`;const xc=`
 <svg
   class="lucide lucide-bed-double"
   xmlns="http://www.w3.org/2000/svg"
@@ -2669,7 +2669,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 4v6" />
   <path d="M2 18h20" />
 </svg>
-`;const mc=`
+`;const fc=`
 <svg
   class="lucide lucide-bed-single"
   xmlns="http://www.w3.org/2000/svg"
@@ -2686,7 +2686,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4" />
   <path d="M3 18h18" />
 </svg>
-`;const xc=`
+`;const Mc=`
 <svg
   class="lucide lucide-bed"
   xmlns="http://www.w3.org/2000/svg"
@@ -2704,7 +2704,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 17h20" />
   <path d="M6 8v9" />
 </svg>
-`;const fc=`
+`;const yc=`
 <svg
   class="lucide lucide-beef"
   xmlns="http://www.w3.org/2000/svg"
@@ -2721,7 +2721,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18.5 6 2.19 4.5a6.48 6.48 0 0 1-2.29 7.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.68-1.66L2.4 16.5" />
   <circle cx="12.5" cy="8.5" r="2.5" />
 </svg>
-`;const Mc=`
+`;const bc=`
 <svg
   class="lucide lucide-beer-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -2743,7 +2743,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.727 3.204C9.306 2.767 9.885 2 11 2c1.56 0 2 1.5 3 1.5s1.72-.5 2.5-.5a1 1 0 1 1 0 5c-.78 0-1.5-.5-2.5-.5a3.149 3.149 0 0 0-.842.12" />
   <path d="M9 14.6V18" />
 </svg>
-`;const yc=`
+`;const Cc=`
 <svg
   class="lucide lucide-beer"
   xmlns="http://www.w3.org/2000/svg"
@@ -2762,7 +2762,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z" />
   <path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
 </svg>
-`;const bc=`
+`;const Bc=`
 <svg
   class="lucide lucide-bell-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -2779,7 +2779,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13.916 2.314A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.74 7.327A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673 9 9 0 0 1-.585-.665" />
   <circle cx="18" cy="8" r="3" />
 </svg>
-`;const Cc=`
+`;const jc=`
 <svg
   class="lucide lucide-bell-electric"
   xmlns="http://www.w3.org/2000/svg"
@@ -2799,7 +2799,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="9" r="7" />
   <rect x="4" y="16" width="10" height="6" rx="2" />
 </svg>
-`;const Bc=`
+`;const Ac=`
 <svg
   class="lucide lucide-bell-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2816,7 +2816,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 8h6" />
   <path d="M16.243 3.757A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673A9.4 9.4 0 0 1 18.667 12" />
 </svg>
-`;const jc=`
+`;const Lc=`
 <svg
   class="lucide lucide-bell-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -2834,7 +2834,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M8.668 3.01A6 6 0 0 1 18 8c0 2.687.77 4.653 1.707 6.05" />
 </svg>
-`;const Ac=`
+`;const Sc=`
 <svg
   class="lucide lucide-bell-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2852,7 +2852,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 5v6" />
   <path d="M20.002 14.464a9 9 0 0 0 .738.863A1 1 0 0 1 20 17H4a1 1 0 0 1-.74-1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 8.75-5.332" />
 </svg>
-`;const Lc=`
+`;const Hc=`
 <svg
   class="lucide lucide-bell-ring"
   xmlns="http://www.w3.org/2000/svg"
@@ -2870,7 +2870,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
   <path d="M4 2C2.8 3.7 2 5.7 2 8" />
 </svg>
-`;const Sc=`
+`;const Rc=`
 <svg
   class="lucide lucide-bell"
   xmlns="http://www.w3.org/2000/svg"
@@ -2920,7 +2920,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 9 3 3-3 3" />
   <rect width="13" height="7" x="8" y="14" rx="1" />
 </svg>
-`;const Hc=`
+`;const Vc=`
 <svg
   class="lucide lucide-between-vertical-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -2937,7 +2937,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 22 3-3 3 3" />
   <rect width="7" height="13" x="14" y="3" rx="1" />
 </svg>
-`;const Rc=`
+`;const zc=`
 <svg
   class="lucide lucide-between-vertical-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -2954,7 +2954,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 2-3 3-3-3" />
   <rect width="7" height="13" x="14" y="8" rx="1" />
 </svg>
-`;const Vc=`
+`;const $c=`
 <svg
   class="lucide lucide-biceps-flexed"
   xmlns="http://www.w3.org/2000/svg"
@@ -2971,7 +2971,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 14a5 5 0 0 0-7.584 2" />
   <path d="M9.964 6.825C8.019 7.977 9.5 13 8 15" />
 </svg>
-`;const zc=`
+`;const Uc=`
 <svg
   class="lucide lucide-bike"
   xmlns="http://www.w3.org/2000/svg"
@@ -2989,7 +2989,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="15" cy="5" r="1" />
   <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
 </svg>
-`;const $c=`
+`;const Dc=`
 <svg
   class="lucide lucide-binary"
   xmlns="http://www.w3.org/2000/svg"
@@ -3009,7 +3009,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 14h2v6" />
   <path d="M14 4h2v6" />
 </svg>
-`;const Dc=`
+`;const Fc=`
 <svg
   class="lucide lucide-binoculars"
   xmlns="http://www.w3.org/2000/svg"
@@ -3029,7 +3029,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z" />
   <path d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3" />
 </svg>
-`;const Uc=`
+`;const Pc=`
 <svg
   class="lucide lucide-biohazard"
   xmlns="http://www.w3.org/2000/svg"
@@ -3053,7 +3053,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 16.4c.7-.7 1.2-1.6 1.5-2.5" />
   <path d="M5.5 13.9c.3.9.8 1.8 1.5 2.5" />
 </svg>
-`;const Fc=`
+`;const Ec=`
 <svg
   class="lucide lucide-bird"
   xmlns="http://www.w3.org/2000/svg"
@@ -3073,7 +3073,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 17.75V21" />
   <path d="M7 18a6 6 0 0 0 3.84-10.61" />
 </svg>
-`;const Pc=`
+`;const Tc=`
 <svg
   class="lucide lucide-birdhouse"
   xmlns="http://www.w3.org/2000/svg"
@@ -3093,7 +3093,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 18 5.044 6.532" />
   <circle cx="12" cy="10" r="2" />
 </svg>
-`;const Ec=`
+`;const Yc=`
 <svg
   class="lucide lucide-bitcoin"
   xmlns="http://www.w3.org/2000/svg"
@@ -3108,7 +3108,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727" />
 </svg>
-`;const Tc=`
+`;const Oc=`
 <svg
   class="lucide lucide-blend"
   xmlns="http://www.w3.org/2000/svg"
@@ -3124,7 +3124,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="9" r="7" />
   <circle cx="15" cy="15" r="7" />
 </svg>
-`;const Yc=`
+`;const Ic=`
 <svg
   class="lucide lucide-blinds"
   xmlns="http://www.w3.org/2000/svg"
@@ -3145,7 +3145,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 3v14" />
   <circle cx="4" cy="19" r="2" />
 </svg>
-`;const Oc=`
+`;const qc=`
 <svg
   class="lucide lucide-blocks"
   xmlns="http://www.w3.org/2000/svg"
@@ -3161,7 +3161,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
   <rect x="14" y="2" width="8" height="8" rx="1" />
 </svg>
-`;const Ic=`
+`;const Nc=`
 <svg
   class="lucide lucide-bluetooth-connected"
   xmlns="http://www.w3.org/2000/svg"
@@ -3178,7 +3178,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="18" x2="21" y1="12" y2="12" />
   <line x1="3" x2="6" y1="12" y2="12" />
 </svg>
-`;const qc=`
+`;const _c=`
 <svg
   class="lucide lucide-bluetooth-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -3195,7 +3195,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M14.5 9.5 17 7l-5-5v4.5" />
 </svg>
-`;const Nc=`
+`;const Zc=`
 <svg
   class="lucide lucide-bluetooth-searching"
   xmlns="http://www.w3.org/2000/svg"
@@ -3212,7 +3212,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.83 14.83a4 4 0 0 0 0-5.66" />
   <path d="M18 12h.01" />
 </svg>
-`;const _c=`
+`;const Gc=`
 <svg
   class="lucide lucide-bluetooth"
   xmlns="http://www.w3.org/2000/svg"
@@ -3227,7 +3227,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m7 7 10 10-5 5V2l5 5L7 17" />
 </svg>
-`;const Zc=`
+`;const Wc=`
 <svg
   class="lucide lucide-bold"
   xmlns="http://www.w3.org/2000/svg"
@@ -3242,7 +3242,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8" />
 </svg>
-`;const Gc=`
+`;const Kc=`
 <svg
   class="lucide lucide-bolt"
   xmlns="http://www.w3.org/2000/svg"
@@ -3258,7 +3258,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
   <circle cx="12" cy="12" r="4" />
 </svg>
-`;const Wc=`
+`;const Xc=`
 <svg
   class="lucide lucide-bomb"
   xmlns="http://www.w3.org/2000/svg"
@@ -3275,7 +3275,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14.35 4.65 16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95" />
   <path d="m22 2-1.5 1.5" />
 </svg>
-`;const Kc=`
+`;const Jc=`
 <svg
   class="lucide lucide-bone"
   xmlns="http://www.w3.org/2000/svg"
@@ -3290,7 +3290,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z" />
 </svg>
-`;const Xc=`
+`;const Qc=`
 <svg
   class="lucide lucide-book-a"
   xmlns="http://www.w3.org/2000/svg"
@@ -3307,7 +3307,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 13 4-7 4 7" />
   <path d="M9.1 11h5.7" />
 </svg>
-`;const Jc=`
+`;const t4=`
 <svg
   class="lucide lucide-book-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -3324,7 +3324,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v3" />
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const Qc=`
+`;const e4=`
 <svg
   class="lucide lucide-book-audio"
   xmlns="http://www.w3.org/2000/svg"
@@ -3342,7 +3342,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M8 8v3" />
 </svg>
-`;const t4=`
+`;const o4=`
 <svg
   class="lucide lucide-book-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -3358,7 +3358,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9 9.5 2 2 4-4" />
 </svg>
-`;const e4=`
+`;const r4=`
 <svg
   class="lucide lucide-book-copy"
   xmlns="http://www.w3.org/2000/svg"
@@ -3400,7 +3400,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H8" />
   <path d="M8 22H6.5a1 1 0 0 1 0-5H8" />
 </svg>
-`;const o4=`
+`;const i4=`
 <svg
   class="lucide lucide-book-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -3417,7 +3417,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9 10 3 3 3-3" />
 </svg>
-`;const r4=`
+`;const s4=`
 <svg
   class="lucide lucide-book-headphones"
   xmlns="http://www.w3.org/2000/svg"
@@ -3435,7 +3435,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="15" cy="12" r="1" />
   <circle cx="9" cy="12" r="1" />
 </svg>
-`;const i4=`
+`;const n4=`
 <svg
   class="lucide lucide-book-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -3451,7 +3451,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
 </svg>
-`;const s4=`
+`;const l4=`
 <svg
   class="lucide lucide-book-image"
   xmlns="http://www.w3.org/2000/svg"
@@ -3468,7 +3468,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <circle cx="10" cy="8" r="2" />
 </svg>
-`;const n4=`
+`;const a4=`
 <svg
   class="lucide lucide-book-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -3487,7 +3487,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2h7.844" />
   <circle cx="14" cy="8" r="2" />
 </svg>
-`;const l4=`
+`;const d4=`
 <svg
   class="lucide lucide-book-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -3505,7 +3505,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10" />
   <rect x="12" y="6" width="8" height="5" rx="1" />
 </svg>
-`;const a4=`
+`;const h4=`
 <svg
   class="lucide lucide-book-marked"
   xmlns="http://www.w3.org/2000/svg"
@@ -3521,7 +3521,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 2v8l3-3 3 3V2" />
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const d4=`
+`;const c4=`
 <svg
   class="lucide lucide-book-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3537,7 +3537,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M9 10h6" />
 </svg>
-`;const h4=`
+`;const p4=`
 <svg
   class="lucide lucide-book-open-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -3557,7 +3557,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 12h2" />
   <path d="M6 8h2" />
 </svg>
-`;const c4=`
+`;const u4=`
 <svg
   class="lucide lucide-book-open-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -3574,7 +3574,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 12 2 2 4-4" />
   <path d="M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3" />
 </svg>
-`;const p4=`
+`;const w4=`
 <svg
   class="lucide lucide-book-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -3590,7 +3590,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 7v14" />
   <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
 </svg>
-`;const u4=`
+`;const g4=`
 <svg
   class="lucide lucide-book-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3607,7 +3607,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M9 10h6" />
 </svg>
-`;const w4=`
+`;const v4=`
 <svg
   class="lucide lucide-book-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -3625,7 +3625,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 19.5v-15A2.5 2.5 0 0 1 5.5 2H18a1 1 0 0 1 1 1v8" />
   <circle cx="17" cy="18" r="3" />
 </svg>
-`;const g4=`
+`;const k4=`
 <svg
   class="lucide lucide-book-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -3642,7 +3642,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 11h8" />
   <path d="M8 7h6" />
 </svg>
-`;const v4=`
+`;const m4=`
 <svg
   class="lucide lucide-book-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -3660,7 +3660,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 8V6H8v2" />
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const k4=`
+`;const x4=`
 <svg
   class="lucide lucide-book-up-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -3679,7 +3679,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 10 3-3 3 3" />
   <path d="m9 5 3-3 3 3" />
 </svg>
-`;const m4=`
+`;const f4=`
 <svg
   class="lucide lucide-book-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -3696,7 +3696,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9 10 3-3 3 3" />
 </svg>
-`;const x4=`
+`;const M4=`
 <svg
   class="lucide lucide-book-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -3713,7 +3713,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <circle cx="12" cy="8" r="2" />
 </svg>
-`;const f4=`
+`;const y4=`
 <svg
   class="lucide lucide-book-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -3730,7 +3730,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9.5 7 5 5" />
 </svg>
-`;const M4=`
+`;const b4=`
 <svg
   class="lucide lucide-bookmark-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -3746,7 +3746,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
   <path d="m9 10 2 2 4-4" />
 </svg>
-`;const y4=`
+`;const C4=`
 <svg
   class="lucide lucide-book"
   xmlns="http://www.w3.org/2000/svg"
@@ -3761,7 +3761,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const b4=`
+`;const B4=`
 <svg
   class="lucide lucide-bookmark-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3777,7 +3777,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
   <line x1="15" x2="9" y1="10" y2="10" />
 </svg>
-`;const C4=`
+`;const j4=`
 <svg
   class="lucide lucide-bookmark-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3794,7 +3794,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="7" y2="13" />
   <line x1="15" x2="9" y1="10" y2="10" />
 </svg>
-`;const B4=`
+`;const A4=`
 <svg
   class="lucide lucide-bookmark-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -3811,7 +3811,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.5 7.5-5 5" />
   <path d="m9.5 7.5 5 5" />
 </svg>
-`;const j4=`
+`;const L4=`
 <svg
   class="lucide lucide-bookmark"
   xmlns="http://www.w3.org/2000/svg"
@@ -3826,7 +3826,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
 </svg>
-`;const A4=`
+`;const S4=`
 <svg
   class="lucide lucide-boom-box"
   xmlns="http://www.w3.org/2000/svg"
@@ -3847,7 +3847,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="8" cy="15" r="2" />
   <circle cx="16" cy="15" r="2" />
 </svg>
-`;const L4=`
+`;const H4=`
 <svg
   class="lucide lucide-bot-message-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -3867,7 +3867,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 16a2 2 0 0 1-2 2H8.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 4 20.286V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" />
   <path d="M9 11v2" />
 </svg>
-`;const S4=`
+`;const R4=`
 <svg
   class="lucide lucide-bot-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -3887,7 +3887,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 8H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 1.414-.586" />
   <path d="M9 13v2" />
   <path d="M9.67 4H12v2.33" />
-</svg>`;const H4=`
+</svg>`;const V4=`
 <svg
   class="lucide lucide-bot"
   xmlns="http://www.w3.org/2000/svg"
@@ -3907,7 +3907,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 13v2" />
   <path d="M9 13v2" />
 </svg>
-`;const R4=`
+`;const z4=`
 <svg
   class="lucide lucide-bottle-wine"
   xmlns="http://www.w3.org/2000/svg"
@@ -3923,7 +3923,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a6 6 0 0 0 1.2 3.6l.6.8A6 6 0 0 1 17 13v8a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-8a6 6 0 0 1 1.2-3.6l.6-.8A6 6 0 0 0 10 5z" />
   <path d="M17 13h-4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4" />
 </svg>
-`;const V4=`
+`;const $4=`
 <svg
   class="lucide lucide-bow-arrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -3942,7 +3942,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 14a1.7 1.7 0 0 0-1.207.5l-2.646 2.646A.5.5 0 0 0 3.5 18H5a1 1 0 0 1 1 1v1.5a.5.5 0 0 0 .854.354L9.5 18.207A1.7 1.7 0 0 0 10 17v-2a1 1 0 0 0-1-1z" />
   <path d="M9.707 14.293 21 3" />
 </svg>
-`;const z4=`
+`;const U4=`
 <svg
   class="lucide lucide-box"
   xmlns="http://www.w3.org/2000/svg"
@@ -3959,7 +3959,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3.3 7 8.7 5 8.7-5" />
   <path d="M12 22V12" />
 </svg>
-`;const $4=`
+`;const D4=`
 <svg
   class="lucide lucide-boxes"
   xmlns="http://www.w3.org/2000/svg"
@@ -4001,7 +4001,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1" />
   <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1" />
 </svg>
-`;const D4=`
+`;const F4=`
 <svg
   class="lucide lucide-brackets"
   xmlns="http://www.w3.org/2000/svg"
@@ -4017,7 +4017,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 3h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-3" />
   <path d="M8 21H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3" />
 </svg>
-`;const U4=`
+`;const P4=`
 <svg
   class="lucide lucide-brain-circuit"
   xmlns="http://www.w3.org/2000/svg"
@@ -4044,7 +4044,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="20" cy="21" r=".5" />
   <circle cx="20" cy="8" r=".5" />
 </svg>
-`;const F4=`
+`;const E4=`
 <svg
   class="lucide lucide-brain-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -4073,7 +4073,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.228 13.148-.923.383" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const P4=`
+`;const T4=`
 <svg
   class="lucide lucide-brain"
   xmlns="http://www.w3.org/2000/svg"
@@ -4095,7 +4095,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18a4 4 0 0 1-2-7.464" />
   <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
 </svg>
-`;const E4=`
+`;const Y4=`
 <svg
   class="lucide lucide-brick-wall-fire"
   xmlns="http://www.w3.org/2000/svg"
@@ -4116,7 +4116,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15v6" />
   <path d="M8 3v6" />
 </svg>
-`;const T4=`
+`;const O4=`
 <svg
   class="lucide lucide-brick-wall-shield"
   xmlns="http://www.w3.org/2000/svg"
@@ -4138,7 +4138,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15v6" />
   <path d="M8 3v6" />
 </svg>
-`;const Y4=`
+`;const I4=`
 <svg
   class="lucide lucide-brick-wall"
   xmlns="http://www.w3.org/2000/svg"
@@ -4160,7 +4160,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15v6" />
   <path d="M8 3v6" />
 </svg>
-`;const O4=`
+`;const q4=`
 <svg
   class="lucide lucide-briefcase-business"
   xmlns="http://www.w3.org/2000/svg"
@@ -4178,7 +4178,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 13a18.15 18.15 0 0 1-20 0" />
   <rect width="20" height="14" x="2" y="6" rx="2" />
 </svg>
-`;const I4=`
+`;const N4=`
 <svg
   class="lucide lucide-briefcase-medical"
   xmlns="http://www.w3.org/2000/svg"
@@ -4198,7 +4198,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 6v14" />
   <rect width="20" height="14" x="2" y="6" rx="2" />
 </svg>
-`;const q4=`
+`;const _4=`
 <svg
   class="lucide lucide-briefcase-conveyor-belt"
   xmlns="http://www.w3.org/2000/svg"
@@ -4219,7 +4219,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 16V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v12" />
   <rect x="4" y="6" width="16" height="10" rx="2" />
 </svg>
-`;const N4=`
+`;const Z4=`
 <svg
   class="lucide lucide-briefcase"
   xmlns="http://www.w3.org/2000/svg"
@@ -4235,7 +4235,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
   <rect width="20" height="14" x="2" y="6" rx="2" />
 </svg>
-`;const _4=`
+`;const G4=`
 <svg
   class="lucide lucide-bring-to-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -4252,7 +4252,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 10a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2" />
   <path d="M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2" />
 </svg>
-`;const Z4=`
+`;const W4=`
 <svg
   class="lucide lucide-brush-cleaning"
   xmlns="http://www.w3.org/2000/svg"
@@ -4270,7 +4270,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 14H5l-1.973 6.767A1 1 0 0 0 4 22h16a1 1 0 0 0 .973-1.233z" />
   <path d="m8 22 1-4" />
 </svg>
-`;const G4=`
+`;const K4=`
 <svg
   class="lucide lucide-bubbles"
   xmlns="http://www.w3.org/2000/svg"
@@ -4288,7 +4288,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="7.5" cy="16.5" r="5.5" />
   <circle cx="7.5" cy="4.5" r="2.5" />
 </svg>
-`;const W4=`
+`;const X4=`
 <svg
   class="lucide lucide-brush"
   xmlns="http://www.w3.org/2000/svg"
@@ -4305,7 +4305,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z" />
   <path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031" />
 </svg>
-`;const K4=`
+`;const J4=`
 <svg
   class="lucide lucide-bug-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -4329,7 +4329,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 13H2" />
   <path d="M7.7 7.7A4 4 0 0 0 6 11v3a6 6 0 0 0 11.13 3.13" />
 </svg>
-`;const X4=`
+`;const Q4=`
 <svg
   class="lucide lucide-bug-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -4352,7 +4352,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 2 1.88 1.88" />
   <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
 </svg>
-`;const J4=`
+`;const tp=`
 <svg
   class="lucide lucide-bug"
   xmlns="http://www.w3.org/2000/svg"
@@ -4377,7 +4377,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 2 1.88 1.88" />
   <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
 </svg>
-`;const Q4=`
+`;const ep=`
 <svg
   class="lucide lucide-building-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4396,7 +4396,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
   <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
 </svg>
-`;const tp=`
+`;const op=`
 <svg
   class="lucide lucide-building"
   xmlns="http://www.w3.org/2000/svg"
@@ -4421,7 +4421,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
   <rect x="4" y="2" width="16" height="20" rx="2" />
 </svg>
-`;const ep=`
+`;const rp=`
 <svg
   class="lucide lucide-bus-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -4444,7 +4444,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 19v2" />
   <path d="M18 21v-2" />
 </svg>
-`;const op=`
+`;const ip=`
 <svg
   class="lucide lucide-bus"
   xmlns="http://www.w3.org/2000/svg"
@@ -4465,7 +4465,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 18h5" />
   <circle cx="16" cy="18" r="2" />
 </svg>
-`;const rp=`
+`;const sp=`
 <svg
   class="lucide lucide-cable-car"
   xmlns="http://www.w3.org/2000/svg"
@@ -4487,7 +4487,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 12v5" />
   <path d="M4 17h16" />
 </svg>
-`;const ip=`
+`;const np=`
 <svg
   class="lucide lucide-cable"
   xmlns="http://www.w3.org/2000/svg"
@@ -4508,7 +4508,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 10a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2z" />
   <path d="M7 5V3" />
 </svg>
-`;const sp=`
+`;const lp=`
 <svg
   class="lucide lucide-cake-slice"
   xmlns="http://www.w3.org/2000/svg"
@@ -4526,7 +4526,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6" />
   <circle cx="9" cy="7" r="2" />
 </svg>
-`;const np=`
+`;const ap=`
 <svg
   class="lucide lucide-cake"
   xmlns="http://www.w3.org/2000/svg"
@@ -4549,7 +4549,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 4h.01" />
   <path d="M17 4h.01" />
 </svg>
-`;const lp=`
+`;const dp=`
 <svg
   class="lucide lucide-calculator"
   xmlns="http://www.w3.org/2000/svg"
@@ -4573,7 +4573,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18h.01" />
   <path d="M8 18h.01" />
 </svg>
-`;const ap=`
+`;const hp=`
 <svg
   class="lucide lucide-calendar-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -4592,7 +4592,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 2v4" />
   <rect x="3" y="4" width="18" height="18" rx="2" />
 </svg>
-`;const dp=`
+`;const cp=`
 <svg
   class="lucide lucide-calendar-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -4612,7 +4612,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const hp=`
+`;const pp=`
 <svg
   class="lucide lucide-calendar-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -4632,7 +4632,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const cp=`
+`;const up=`
 <svg
   class="lucide lucide-calendar-check-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4651,7 +4651,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="m16 20 2 2 4-4" />
 </svg>
-`;const pp=`
+`;const wp=`
 <svg
   class="lucide lucide-calendar-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -4670,7 +4670,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="m9 16 2 2 4-4" />
 </svg>
-`;const up=`
+`;const gp=`
 <svg
   class="lucide lucide-calendar-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -4690,7 +4690,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 2v4" />
   <circle cx="16" cy="16" r="6" />
 </svg>
-`;const wp=`
+`;const vp=`
 <svg
   class="lucide lucide-calendar-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -4717,7 +4717,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 2v4" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const gp=`
+`;const kp=`
 <svg
   class="lucide lucide-calendar-days"
   xmlns="http://www.w3.org/2000/svg"
@@ -4741,7 +4741,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18h.01" />
   <path d="M16 18h.01" />
 </svg>
-`;const vp=`
+`;const mp=`
 <svg
   class="lucide lucide-calendar-fold"
   xmlns="http://www.w3.org/2000/svg"
@@ -4760,7 +4760,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 2v4" />
   <path d="M3 10h18" />
 </svg>
-`;const kp=`
+`;const xp=`
 <svg
   class="lucide lucide-calendar-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -4779,7 +4779,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const mp=`
+`;const fp=`
 <svg
   class="lucide lucide-calendar-minus-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4798,7 +4798,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="M10 16h4" />
 </svg>
-`;const xp=`
+`;const Mp=`
 <svg
   class="lucide lucide-calendar-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -4817,7 +4817,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const fp=`
+`;const yp=`
 <svg
   class="lucide lucide-calendar-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -4837,7 +4837,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 10h-5.5" />
   <path d="m2 2 20 20" />
 </svg>
-`;const Mp=`
+`;const bp=`
 <svg
   class="lucide lucide-calendar-plus-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4857,7 +4857,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 16h4" />
   <path d="M12 14v4" />
 </svg>
-`;const yp=`
+`;const Cp=`
 <svg
   class="lucide lucide-calendar-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -4877,7 +4877,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const bp=`
+`;const Bp=`
 <svg
   class="lucide lucide-calendar-range"
   xmlns="http://www.w3.org/2000/svg"
@@ -4899,7 +4899,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 14h.01" />
   <path d="M17 18h.01" />
 </svg>
-`;const Cp=`
+`;const jp=`
 <svg
   class="lucide lucide-calendar-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -4919,7 +4919,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 2v4" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const Bp=`
+`;const Ap=`
 <svg
   class="lucide lucide-calendar-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -4941,7 +4941,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10h4" />
   <path d="M8 2v4" />
 </svg>
-`;const jp=`
+`;const Lp=`
 <svg
   class="lucide lucide-calendar-x-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4961,7 +4961,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 22 5-5" />
   <path d="m17 17 5 5" />
 </svg>
-`;const Ap=`
+`;const Sp=`
 <svg
   class="lucide lucide-calendar-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -4981,7 +4981,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 14-4 4" />
   <path d="m10 14 4 4" />
 </svg>
-`;const Lp=`
+`;const Hp=`
 <svg
   class="lucide lucide-calendar"
   xmlns="http://www.w3.org/2000/svg"
@@ -4999,7 +4999,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="4" rx="2" />
   <path d="M3 10h18" />
 </svg>
-`;const Sp=`
+`;const Rp=`
 <svg
   class="lucide lucide-calendars"
   xmlns="http://www.w3.org/2000/svg"
@@ -5019,7 +5019,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 8h14" />
   <rect x="8" y="3" width="14" height="14" rx="2" />
 </svg>
-`;const Hp=`
+`;const Vp=`
 <svg
   class="lucide lucide-camera-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5037,7 +5037,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 .819-.175" />
   <path d="M9.695 4.024A2 2 0 0 1 10.004 4h3.993a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v7.344" />
 </svg>
-`;const Rp=`
+`;const zp=`
 <svg
   class="lucide lucide-camera"
   xmlns="http://www.w3.org/2000/svg"
@@ -5053,7 +5053,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" />
   <circle cx="12" cy="13" r="3" />
 </svg>
-`;const Vp=`
+`;const $p=`
 <svg
   class="lucide lucide-candy-cane"
   xmlns="http://www.w3.org/2000/svg"
@@ -5072,7 +5072,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7.9 9.7 2 4.4" />
   <path d="M4.9 14.7 7 18.9" />
 </svg>
-`;const zp=`
+`;const Up=`
 <svg
   class="lucide lucide-candy-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5093,7 +5093,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4" />
 </svg>
-`;const $p=`
+`;const Dp=`
 <svg
   class="lucide lucide-candy"
   xmlns="http://www.w3.org/2000/svg"
@@ -5112,7 +5112,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.536 7.465a5 5 0 0 0-7.072 0l-2 2a5 5 0 0 0 0 7.07 5 5 0 0 0 7.072 0l2-2a5 5 0 0 0 0-7.07" />
   <path d="M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4" />
 </svg>
-`;const Dp=`
+`;const Fp=`
 <svg
   class="lucide lucide-cannabis-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5132,7 +5132,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.024 15.378A15 15 0 0 0 22 15c-.426-1.279-2.67-2.557-4.25-2.907" />
   <path d="M6.995 6.992C5.714 6.4 4.29 6 3 6c0 2 2.5 5 4 6-1.5 0-4.5 1.5-5 3 3.5 1.5 6 1 6 1-1.5 1.5-2 3.5-2 5 2.5 0 4.5-1.5 6-3" />
 </svg>
-`;const Up=`
+`;const Pp=`
 <svg
   class="lucide lucide-cannabis"
   xmlns="http://www.w3.org/2000/svg"
@@ -5148,7 +5148,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 22v-4" />
   <path d="M7 12c-1.5 0-4.5 1.5-5 3 3.5 1.5 6 1 6 1-1.5 1.5-2 3.5-2 5 2.5 0 4.5-1.5 6-3 1.5 1.5 3.5 3 6 3 0-1.5-.5-3.5-2-5 0 0 2.5.5 6-1-.5-1.5-3.5-3-5-3 1.5-1 4-4 4-6-2.5 0-5.5 1.5-7 3 0-2.5-.5-5-2-7-1.5 2-2 4.5-2 7-1.5-1.5-4.5-3-7-3 0 2 2.5 5 4 6" />
 </svg>
-`;const Fp=`
+`;const Ep=`
 <svg
   class="lucide lucide-captions-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5183,7 +5183,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <rect width="18" height="14" x="3" y="5" rx="2" ry="2" />
   <path d="M7 15h4M15 15h2M7 11h2M13 11h4" />
-</svg>`;const Pp=`
+</svg>`;const Tp=`
 <svg
   class="lucide lucide-car-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -5203,7 +5203,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 18v2" />
   <path d="M19 18v2" />
 </svg>
-`;const Ep=`
+`;const Yp=`
 <svg
   class="lucide lucide-car-taxi-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -5224,7 +5224,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 18v2" />
   <path d="M19 18v2" />
 </svg>
-`;const Tp=`
+`;const Op=`
 <svg
   class="lucide lucide-car"
   xmlns="http://www.w3.org/2000/svg"
@@ -5242,7 +5242,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 17h6" />
   <circle cx="17" cy="17" r="2" />
 </svg>
-`;const Yp=`
+`;const Ip=`
 <svg
   class="lucide lucide-caravan"
   xmlns="http://www.w3.org/2000/svg"
@@ -5260,7 +5260,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 17v1a1 1 0 0 1-1 1H10v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9" />
   <circle cx="8" cy="19" r="2" />
 </svg>
-`;const Op=`
+`;const qp=`
 <svg
   class="lucide lucide-card-sim"
   xmlns="http://www.w3.org/2000/svg"
@@ -5278,7 +5278,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14h8" />
   <rect x="8" y="10" width="8" height="8" rx="1" />
 </svg>
-`;const Ip=`
+`;const Np=`
 <svg
   class="lucide lucide-carrot"
   xmlns="http://www.w3.org/2000/svg"
@@ -5295,7 +5295,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z" />
   <path d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z" />
 </svg>
-`;const qp=`
+`;const _p=`
 <svg
   class="lucide lucide-case-lower"
   xmlns="http://www.w3.org/2000/svg"
@@ -5313,7 +5313,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="17.5" cy="12.5" r="3.5" />
   <circle cx="6.5" cy="12.5" r="3.5" />
 </svg>
-`;const Np=`
+`;const Zp=`
 <svg
   class="lucide lucide-case-sensitive"
   xmlns="http://www.w3.org/2000/svg"
@@ -5331,7 +5331,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.304 13h6.392" />
   <circle cx="18.5" cy="12.5" r="3.5" />
 </svg>
-`;const _p=`
+`;const Gp=`
 <svg
   class="lucide lucide-case-upper"
   xmlns="http://www.w3.org/2000/svg"
@@ -5348,7 +5348,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />
   <path d="M3.304 13h6.392" />
 </svg>
-`;const Zp=`
+`;const Wp=`
 <svg
   class="lucide lucide-cassette-tape"
   xmlns="http://www.w3.org/2000/svg"
@@ -5367,7 +5367,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="16" cy="10" r="2" />
   <path d="m6 20 .7-2.9A1.4 1.4 0 0 1 8.1 16h7.8a1.4 1.4 0 0 1 1.4 1l.7 3" />
 </svg>
-`;const Gp=`
+`;const Kp=`
 <svg
   class="lucide lucide-cast"
   xmlns="http://www.w3.org/2000/svg"
@@ -5385,7 +5385,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 16a5 5 0 0 1 4 4" />
   <line x1="2" x2="2.01" y1="20" y2="20" />
 </svg>
-`;const Wp=`
+`;const Xp=`
 <svg
   class="lucide lucide-castle"
   xmlns="http://www.w3.org/2000/svg"
@@ -5407,7 +5407,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9" />
   <path d="M6 3v8" />
 </svg>
-`;const Kp=`
+`;const Jp=`
 <svg
   class="lucide lucide-cat"
   xmlns="http://www.w3.org/2000/svg"
@@ -5425,7 +5425,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 14v.5" />
   <path d="M11.25 16.25h1.5L12 17l-.75-.75Z" />
 </svg>
-`;const Xp=`
+`;const Qp=`
 <svg
   class="lucide lucide-cctv"
   xmlns="http://www.w3.org/2000/svg"
@@ -5477,7 +5477,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="7" y="13" width="9" height="4" rx="1" />
   <rect x="7" y="5" width="12" height="4" rx="1" />
 </svg>
-`;const Jp=`
+`;const tu=`
 <svg
   class="lucide lucide-chart-bar-increasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -5495,7 +5495,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 16h12" />
   <path d="M7 6h3" />
 </svg>
-`;const Qp=`
+`;const eu=`
 <svg
   class="lucide lucide-chart-bar-decreasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -5513,7 +5513,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 16h3" />
   <path d="M7 6h12" />
 </svg>
-`;const tu=`
+`;const ou=`
 <svg
   class="lucide lucide-chart-bar-stacked"
   xmlns="http://www.w3.org/2000/svg"
@@ -5588,7 +5588,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="15" y="5" width="4" height="12" rx="1" />
   <rect x="7" y="8" width="4" height="9" rx="1" />
 </svg>
-`;const eu=`
+`;const ru=`
 <svg
   class="lucide lucide-chart-column-decreasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -5624,7 +5624,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
   <path d="M8 17v-3" />
 </svg>
-`;const ou=`
+`;const iu=`
 <svg
   class="lucide lucide-chart-column-stacked"
   xmlns="http://www.w3.org/2000/svg"
@@ -5661,7 +5661,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 17V5" />
   <path d="M8 17v-3" />
 </svg>
-`;const ru=`
+`;const su=`
 <svg
   class="lucide lucide-chart-gantt"
   xmlns="http://www.w3.org/2000/svg"
@@ -5695,7 +5695,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
   <path d="m19 9-5 5-4-4-3 3" />
 </svg>
-`;const iu=`
+`;const nu=`
 <svg
   class="lucide lucide-chart-network"
   xmlns="http://www.w3.org/2000/svg"
@@ -5716,7 +5716,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="16" cy="12" r="2" />
   <circle cx="9" cy="15" r="2" />
 </svg>
-`;const su=`
+`;const lu=`
 <svg
   class="lucide lucide-chart-no-axes-column-decreasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -5767,7 +5767,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 21V3" />
   <path d="M19 21V9" />
 </svg>
-`;const nu=`
+`;const au=`
 <svg
   class="lucide lucide-chart-no-axes-combined"
   xmlns="http://www.w3.org/2000/svg"
@@ -5840,7 +5840,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="17.5" cy="14.5" r=".5" fill="currentColor" />
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
 </svg>
-`;const lu=`
+`;const du=`
 <svg
   class="lucide lucide-chart-spline"
   xmlns="http://www.w3.org/2000/svg"
@@ -5856,7 +5856,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
   <path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7" />
 </svg>
-`;const au=`
+`;const hu=`
 <svg
   class="lucide lucide-check-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -5872,7 +5872,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 6 7 17l-5-5" />
   <path d="m22 10-7.5 7.5L13 16" />
 </svg>
-`;const du=`
+`;const cu=`
 <svg
   class="lucide lucide-check-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -5889,7 +5889,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 19L3 19" />
   <path d="M9 15L4 10" />
 </svg>
-`;const hu=`
+`;const pu=`
 <svg
   class="lucide lucide-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -5904,7 +5904,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M20 6 9 17l-5-5" />
 </svg>
-`;const cu=`
+`;const uu=`
 <svg
   class="lucide lucide-cherry"
   xmlns="http://www.w3.org/2000/svg"
@@ -5922,7 +5922,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12" />
   <path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z" />
 </svg>
-`;const pu=`
+`;const wu=`
 <svg
   class="lucide lucide-chef-hat"
   xmlns="http://www.w3.org/2000/svg"
@@ -5938,7 +5938,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
   <path d="M6 17h12" />
 </svg>
-`;const uu=`
+`;const gu=`
 <svg
   class="lucide lucide-chess-bishop"
   xmlns="http://www.w3.org/2000/svg"
@@ -5956,7 +5956,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 7-2.5 2.5" />
   <path d="M9 2h6" />
 </svg>
-`;const wu=`
+`;const vu=`
 <svg
   class="lucide lucide-chess-king"
   xmlns="http://www.w3.org/2000/svg"
@@ -5974,7 +5974,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 4h4" />
   <path d="M12 2v6.818" />
 </svg>
-`;const gu=`
+`;const ku=`
 <svg
   class="lucide lucide-chess-knight"
   xmlns="http://www.w3.org/2000/svg"
@@ -5993,7 +5993,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 8 1.53-1.53" />
   <path d="M9.713 12.185 7 18" />
 </svg>
-`;const vu=`
+`;const mu=`
 <svg
   class="lucide lucide-chess-pawn"
   xmlns="http://www.w3.org/2000/svg"
@@ -6012,7 +6012,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 18 1.5-8" />
   <circle cx="12" cy="6" r="4" />
 </svg>
-`;const ku=`
+`;const xu=`
 <svg
   class="lucide lucide-chess-queen"
   xmlns="http://www.w3.org/2000/svg"
@@ -6034,7 +6034,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="20" cy="7" r="2" />
   <circle cx="4" cy="7" r="2" />
 </svg>
-`;const mu=`
+`;const fu=`
 <svg
   class="lucide lucide-chevron-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6049,7 +6049,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m6 9 6 6 6-6" />
 </svg>
-`;const xu=`
+`;const Mu=`
 <svg
   class="lucide lucide-chess-rook"
   xmlns="http://www.w3.org/2000/svg"
@@ -6070,7 +6070,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 4h12" />
   <path d="m7 18 1-9" />
 </svg>
-`;const fu=`
+`;const yu=`
 <svg
   class="lucide lucide-chevron-first"
   xmlns="http://www.w3.org/2000/svg"
@@ -6086,7 +6086,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 18-6-6 6-6" />
   <path d="M7 6v12" />
 </svg>
-`;const Mu=`
+`;const bu=`
 <svg
   class="lucide lucide-chevron-last"
   xmlns="http://www.w3.org/2000/svg"
@@ -6102,7 +6102,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 18 6-6-6-6" />
   <path d="M17 6v12" />
 </svg>
-`;const yu=`
+`;const Cu=`
 <svg
   class="lucide lucide-chevron-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6117,7 +6117,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m15 18-6-6 6-6" />
 </svg>
-`;const bu=`
+`;const Bu=`
 <svg
   class="lucide lucide-chevron-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6132,7 +6132,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m9 18 6-6-6-6" />
 </svg>
-`;const Cu=`
+`;const ju=`
 <svg
   class="lucide lucide-chevron-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6147,7 +6147,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m18 15-6-6-6 6" />
 </svg>
-`;const Bu=`
+`;const Au=`
 <svg
   class="lucide lucide-chevrons-down-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6163,7 +6163,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 20 5-5 5 5" />
   <path d="m7 4 5 5 5-5" />
 </svg>
-`;const ju=`
+`;const Lu=`
 <svg
   class="lucide lucide-chevrons-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6179,7 +6179,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 6 5 5 5-5" />
   <path d="m7 13 5 5 5-5" />
 </svg>
-`;const Au=`
+`;const Su=`
 <svg
   class="lucide lucide-chevrons-left-right-ellipsis"
   xmlns="http://www.w3.org/2000/svg"
@@ -6198,7 +6198,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 7-5 5 5 5" />
   <path d="M8 12h.01" />
 </svg>
-`;const Lu=`
+`;const Hu=`
 <svg
   class="lucide lucide-chevrons-left-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6214,7 +6214,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 7-5 5 5 5" />
   <path d="m15 7 5 5-5 5" />
 </svg>
-`;const Su=`
+`;const Ru=`
 <svg
   class="lucide lucide-chevrons-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6230,7 +6230,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m11 17-5-5 5-5" />
   <path d="m18 17-5-5 5-5" />
 </svg>
-`;const Hu=`
+`;const Vu=`
 <svg
   class="lucide lucide-chevrons-right-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6246,7 +6246,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m20 17-5-5 5-5" />
   <path d="m4 17 5-5-5-5" />
 </svg>
-`;const Ru=`
+`;const zu=`
 <svg
   class="lucide lucide-chevrons-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6262,7 +6262,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 17 5-5-5-5" />
   <path d="m13 17 5-5-5-5" />
 </svg>
-`;const Vu=`
+`;const $u=`
 <svg
   class="lucide lucide-chevrons-up-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6278,7 +6278,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 15 5 5 5-5" />
   <path d="m7 9 5-5 5 5" />
 </svg>
-`;const zu=`
+`;const Uu=`
 <svg
   class="lucide lucide-chevrons-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6313,7 +6313,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <circle cx="12" cy="12" r="4" />
 </svg>
-`;const $u=`
+`;const Du=`
 <svg
   class="lucide lucide-church"
   xmlns="http://www.w3.org/2000/svg"
@@ -6332,7 +6332,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18 9 3.52 2.147a1 1 0 0 1 .48.854V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6.999a1 1 0 0 1 .48-.854L6 9" />
   <path d="M6 21V7a1 1 0 0 1 .376-.782l5-3.999a1 1 0 0 1 1.249.001l5 4A1 1 0 0 1 18 7v14" />
 </svg>
-`;const Du=`
+`;const Fu=`
 <svg
   class="lucide lucide-cigarette"
   xmlns="http://www.w3.org/2000/svg"
@@ -6351,7 +6351,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 8c0-2.5-2-2.5-2-5" />
   <path d="M7 12v4" />
 </svg>
-`;const Uu=`
+`;const Pu=`
 <svg
   class="lucide lucide-cigarette-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -6620,7 +6620,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="m8 14 4-4 4 4" />
 </svg>
-`;const Fu=`
+`;const Eu=`
 <svg
   class="lucide lucide-circle-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -6660,7 +6660,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="8" y2="8" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Pu=`
+`;const Tu=`
 <svg
   class="lucide lucide-circle-dollar-sign"
   xmlns="http://www.w3.org/2000/svg"
@@ -6677,7 +6677,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
   <path d="M12 18V6" />
 </svg>
-`;const Eu=`
+`;const Yu=`
 <svg
   class="lucide lucide-circle-dot-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -6700,7 +6700,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69" />
   <circle cx="12" cy="12" r="1" />
 </svg>
-`;const Tu=`
+`;const Ou=`
 <svg
   class="lucide lucide-circle-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -6716,7 +6716,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <circle cx="12" cy="12" r="1" />
 </svg>
-`;const Yu=`
+`;const Iu=`
 <svg
   class="lucide lucide-circle-ellipsis"
   xmlns="http://www.w3.org/2000/svg"
@@ -6734,7 +6734,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 12h.01" />
   <path d="M7 12h.01" />
 </svg>
-`;const Ou=`
+`;const qu=`
 <svg
   class="lucide lucide-circle-equal"
   xmlns="http://www.w3.org/2000/svg"
@@ -6751,7 +6751,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 14h10" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Iu=`
+`;const Nu=`
 <svg
   class="lucide lucide-circle-fading-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6772,7 +6772,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
   <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
 </svg>
-`;const qu=`
+`;const _u=`
 <svg
   class="lucide lucide-circle-fading-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -6825,7 +6825,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M8 12h8" />
 </svg>
-`;const Nu=`
+`;const Zu=`
 <svg
   class="lucide lucide-circle-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -6913,7 +6913,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 9h.01" />
   <path d="M15 15h.01" />
 </svg>
-`;const _u=`
+`;const Gu=`
 <svg
   class="lucide lucide-circle-pile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -6939,7 +6939,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const D2=`
+`;const U2=`
 <svg
   class="lucide lucide-circle-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -6956,7 +6956,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h8" />
   <path d="M12 8v8" />
 </svg>
-`;const Zu=`
+`;const Wu=`
 <svg
   class="lucide lucide-circle-pound-sterling"
   xmlns="http://www.w3.org/2000/svg"
@@ -6974,7 +6974,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 16h7" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const U2=`
+`;const D2=`
 <svg
   class="lucide lucide-circle-power"
   xmlns="http://www.w3.org/2000/svg"
@@ -7024,7 +7024,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 2 2 22" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Gu=`
+`;const Ku=`
 <svg
   class="lucide lucide-circle-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -7040,7 +7040,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <line x1="9" x2="15" y1="15" y2="9" />
 </svg>
-`;const Wu=`
+`;const Xu=`
 <svg
   class="lucide lucide-circle-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -7056,7 +7056,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.051 7.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.867l-1.156-1.152a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Ku=`
+`;const Ju=`
 <svg
   class="lucide lucide-circle-small"
   xmlns="http://www.w3.org/2000/svg"
@@ -7138,7 +7138,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 9-6 6" />
   <path d="m9 9 6 6" />
 </svg>
-`;const Xu=`
+`;const Qu=`
 <svg
   class="lucide lucide-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -7153,7 +7153,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Ju=`
+`;const tw=`
 <svg
   class="lucide lucide-circuit-board"
   xmlns="http://www.w3.org/2000/svg"
@@ -7172,7 +7172,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21v-4a2 2 0 0 1 2-2h4" />
   <circle cx="15" cy="15" r="2" />
 </svg>
-`;const Qu=`
+`;const ew=`
 <svg
   class="lucide lucide-citrus"
   xmlns="http://www.w3.org/2000/svg"
@@ -7190,7 +7190,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 10-5.5 5.5" />
   <path d="M14 17.85V10H6.15" />
 </svg>
-`;const tw=`
+`;const ow=`
 <svg
   class="lucide lucide-clapperboard"
   xmlns="http://www.w3.org/2000/svg"
@@ -7208,7 +7208,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12.4 3.4 3.1 4" />
   <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
 </svg>
-`;const ew=`
+`;const rw=`
 <svg
   class="lucide lucide-clipboard-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -7225,7 +7225,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
   <path d="m9 14 2 2 4-4" />
 </svg>
-`;const ow=`
+`;const iw=`
 <svg
   class="lucide lucide-clipboard-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -7244,7 +7244,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="16" cy="16" r="6" />
   <rect x="8" y="2" width="8" height="4" rx="1" />
 </svg>
-`;const rw=`
+`;const sw=`
 <svg
   class="lucide lucide-clipboard-copy"
   xmlns="http://www.w3.org/2000/svg"
@@ -7263,7 +7263,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 14H11" />
   <path d="m15 10-4 4 4 4" />
 </svg>
-`;const iw=`
+`;const nw=`
 <svg
   class="lucide lucide-clipboard-list"
   xmlns="http://www.w3.org/2000/svg"
@@ -7283,7 +7283,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 11h.01" />
   <path d="M8 16h.01" />
 </svg>
-`;const sw=`
+`;const lw=`
 <svg
   class="lucide lucide-clipboard-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -7300,7 +7300,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
   <path d="M9 14h6" />
 </svg>
-`;const nw=`
+`;const aw=`
 <svg
   class="lucide lucide-clipboard-paste"
   xmlns="http://www.w3.org/2000/svg"
@@ -7356,7 +7356,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 13.5V6a2 2 0 0 1 2-2h2" />
   <path d="M13.378 15.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
 </svg>
-`;const lw=`
+`;const dw=`
 <svg
   class="lucide lucide-clipboard-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -7374,7 +7374,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 14h6" />
   <path d="M12 17v-6" />
 </svg>
-`;const aw=`
+`;const hw=`
 <svg
   class="lucide lucide-clipboard-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -7393,7 +7393,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 17h2" />
   <path d="M12 11v6" />
 </svg>
-`;const dw=`
+`;const cw=`
 <svg
   class="lucide lucide-clipboard-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -7411,7 +7411,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 11-6 6" />
   <path d="m9 11 6 6" />
 </svg>
-`;const hw=`
+`;const pw=`
 <svg
   class="lucide lucide-clipboard"
   xmlns="http://www.w3.org/2000/svg"
@@ -7427,7 +7427,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
   <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
 </svg>
-`;const cw=`
+`;const uw=`
 <svg
   class="lucide lucide-clock-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -7443,7 +7443,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l2-4" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const pw=`
+`;const ww=`
 <svg
   class="lucide lucide-clock-10"
   xmlns="http://www.w3.org/2000/svg"
@@ -7459,7 +7459,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l-4-2" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const uw=`
+`;const gw=`
 <svg
   class="lucide lucide-clock-11"
   xmlns="http://www.w3.org/2000/svg"
@@ -7475,7 +7475,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l-2-4" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const ww=`
+`;const vw=`
 <svg
   class="lucide lucide-clock-12"
   xmlns="http://www.w3.org/2000/svg"
@@ -7491,7 +7491,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const gw=`
+`;const kw=`
 <svg
   class="lucide lucide-clock-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -7507,7 +7507,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l4-2" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const vw=`
+`;const mw=`
 <svg
   class="lucide lucide-clock-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -7523,7 +7523,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6h4" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const kw=`
+`;const xw=`
 <svg
   class="lucide lucide-clock-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -7539,7 +7539,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l4 2" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const mw=`
+`;const fw=`
 <svg
   class="lucide lucide-clock-5"
   xmlns="http://www.w3.org/2000/svg"
@@ -7555,7 +7555,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l2 4" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const xw=`
+`;const Mw=`
 <svg
   class="lucide lucide-clock-6"
   xmlns="http://www.w3.org/2000/svg"
@@ -7571,7 +7571,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v10" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const fw=`
+`;const yw=`
 <svg
   class="lucide lucide-clock-7"
   xmlns="http://www.w3.org/2000/svg"
@@ -7587,7 +7587,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l-2 4" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Mw=`
+`;const bw=`
 <svg
   class="lucide lucide-clock-8"
   xmlns="http://www.w3.org/2000/svg"
@@ -7603,7 +7603,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l-4 2" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const yw=`
+`;const Cw=`
 <svg
   class="lucide lucide-clock-9"
   xmlns="http://www.w3.org/2000/svg"
@@ -7619,7 +7619,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6H8" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const bw=`
+`;const Bw=`
 <svg
   class="lucide lucide-clock-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -7637,7 +7637,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 21h.01" />
   <path d="M21.25 8.2A10 10 0 1 0 16 21.16" />
 </svg>
-`;const Cw=`
+`;const jw=`
 <svg
   class="lucide lucide-clock-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -7655,7 +7655,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 18 4 4 4-4" />
   <path d="M18 14v8" />
 </svg>
-`;const Bw=`
+`;const Aw=`
 <svg
   class="lucide lucide-clock-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -7673,7 +7673,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 18 4-4 4 4" />
   <path d="M18 22v-8" />
 </svg>
-`;const jw=`
+`;const Lw=`
 <svg
   class="lucide lucide-clock-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -7690,7 +7690,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 12a10 10 0 1 0-11 9.95" />
   <path d="m22 16-5.5 5.5L14 19" />
 </svg>
-`;const Aw=`
+`;const Sw=`
 <svg
   class="lucide lucide-clock-fading"
   xmlns="http://www.w3.org/2000/svg"
@@ -7710,7 +7710,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
   <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
 </svg>
-`;const Lw=`
+`;const Hw=`
 <svg
   class="lucide lucide-clock-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -7728,7 +7728,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 16v6" />
   <path d="M21.92 13.267a10 10 0 1 0-8.653 8.653" />
 </svg>
-`;const Sw=`
+`;const Rw=`
 <svg
   class="lucide lucide-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -7744,7 +7744,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6v6l4 2" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Hw=`
+`;const Vw=`
 <svg
   class="lucide lucide-closed-caption"
   xmlns="http://www.w3.org/2000/svg"
@@ -7761,7 +7761,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 9.17a3 3 0 1 0 0 5.66" />
   <rect x="2" y="5" width="20" height="14" rx="2" />
 </svg>
-`;const Rw=`
+`;const zw=`
 <svg
   class="lucide lucide-cloud-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -7778,7 +7778,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 20h.01" />
   <path d="M17 18h.5a1 1 0 0 0 0-9h-1.79A7 7 0 1 0 7 17.708" />
 </svg>
-`;const Vw=`
+`;const $w=`
 <svg
   class="lucide lucide-cloud-backup"
   xmlns="http://www.w3.org/2000/svg"
@@ -7795,7 +7795,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 11v4h4" />
   <path d="M8 19a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5 4.82 4.82 0 0 0-3.41 1.41L7 15" />
 </svg>
-`;const zw=`
+`;const Uw=`
 <svg
   class="lucide lucide-cloud-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -7811,7 +7811,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 15-5.5 5.5L9 18" />
   <path d="M5 17.743A7 7 0 1 1 15.71 10h1.79a4.5 4.5 0 0 1 1.5 8.742" />
 </svg>
-`;const $w=`
+`;const Dw=`
 <svg
   class="lucide lucide-cloud-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -7851,7 +7851,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 21 4-4" />
   <path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284" />
 </svg>
-`;const Dw=`
+`;const Fw=`
 <svg
   class="lucide lucide-cloud-drizzle"
   xmlns="http://www.w3.org/2000/svg"
@@ -7872,7 +7872,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 21v1" />
   <path d="M12 16v1" />
 </svg>
-`;const Uw=`
+`;const Pw=`
 <svg
   class="lucide lucide-cloud-fog"
   xmlns="http://www.w3.org/2000/svg"
@@ -7889,7 +7889,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 17H7" />
   <path d="M17 21H9" />
 </svg>
-`;const Fw=`
+`;const Ew=`
 <svg
   class="lucide lucide-cloud-hail"
   xmlns="http://www.w3.org/2000/svg"
@@ -7910,7 +7910,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 16v2" />
   <path d="M12 22h.01" />
 </svg>
-`;const Pw=`
+`;const Tw=`
 <svg
   class="lucide lucide-cloud-lightning"
   xmlns="http://www.w3.org/2000/svg"
@@ -7926,7 +7926,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973" />
   <path d="m13 12-3 5h4l-3 5" />
 </svg>
-`;const Ew=`
+`;const Yw=`
 <svg
   class="lucide lucide-cloud-moon"
   xmlns="http://www.w3.org/2000/svg"
@@ -7942,7 +7942,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 16a3 3 0 0 1 0 6H7a5 5 0 1 1 4.9-6z" />
   <path d="M18.376 14.512a6 6 0 0 0 3.461-4.127c.148-.625-.659-.97-1.248-.714a4 4 0 0 1-5.259-5.26c.255-.589-.09-1.395-.716-1.248a6 6 0 0 0-4.594 5.36" />
 </svg>
-`;const Tw=`
+`;const Ow=`
 <svg
   class="lucide lucide-cloud-moon-rain"
   xmlns="http://www.w3.org/2000/svg"
@@ -7960,7 +7960,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24" />
   <path d="M7 19v2" />
 </svg>
-`;const Yw=`
+`;const Iw=`
 <svg
   class="lucide lucide-cloud-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -7977,7 +7977,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193" />
   <path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07" />
 </svg>
-`;const Ow=`
+`;const qw=`
 <svg
   class="lucide lucide-cloud-rain-wind"
   xmlns="http://www.w3.org/2000/svg"
@@ -7995,7 +7995,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 13-3 7" />
   <path d="m17 13-3 7" />
 </svg>
-`;const Iw=`
+`;const Nw=`
 <svg
   class="lucide lucide-cloud-rain"
   xmlns="http://www.w3.org/2000/svg"
@@ -8013,7 +8013,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14v6" />
   <path d="M12 16v6" />
 </svg>
-`;const qw=`
+`;const _w=`
 <svg
   class="lucide lucide-cloud-snow"
   xmlns="http://www.w3.org/2000/svg"
@@ -8034,7 +8034,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 15h.01" />
   <path d="M16 19h.01" />
 </svg>
-`;const Nw=`
+`;const Zw=`
 <svg
   class="lucide lucide-cloud-sun-rain"
   xmlns="http://www.w3.org/2000/svg"
@@ -8056,7 +8056,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 20v2" />
   <path d="M7 19v2" />
 </svg>
-`;const _w=`
+`;const Gw=`
 <svg
   class="lucide lucide-cloud-sun"
   xmlns="http://www.w3.org/2000/svg"
@@ -8076,7 +8076,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128" />
   <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" />
 </svg>
-`;const Zw=`
+`;const Ww=`
 <svg
   class="lucide lucide-cloud-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -8112,7 +8112,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
   <path d="m8 17 4-4 4 4" />
 </svg>
-`;const Gw=`
+`;const Kw=`
 <svg
   class="lucide lucide-cloud"
   xmlns="http://www.w3.org/2000/svg"
@@ -8127,7 +8127,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
 </svg>
-`;const Ww=`
+`;const Xw=`
 <svg
   class="lucide lucide-cloudy"
   xmlns="http://www.w3.org/2000/svg"
@@ -8143,7 +8143,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.5 21H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
   <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5" />
 </svg>
-`;const Kw=`
+`;const Jw=`
 <svg
   class="lucide lucide-clover"
   xmlns="http://www.w3.org/2000/svg"
@@ -8160,7 +8160,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12" />
   <path d="m7.83 7.83 8.34 8.34" />
 </svg>
-`;const Xw=`
+`;const Qw=`
 <svg
   class="lucide lucide-club"
   xmlns="http://www.w3.org/2000/svg"
@@ -8193,7 +8193,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 8-4 4 4 4" />
   <path d="m14.5 4-5 16" />
 </svg>
-`;const Jw=`
+`;const tg=`
 <svg
   class="lucide lucide-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -8209,7 +8209,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 18 6-6-6-6" />
   <path d="m8 6-6 6 6 6" />
 </svg>
-`;const Qw=`
+`;const eg=`
 <svg
   class="lucide lucide-codepen"
   xmlns="http://www.w3.org/2000/svg"
@@ -8228,7 +8228,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="2 15.5 12 8.5 22 15.5" />
   <line x1="12" x2="12" y1="2" y2="8.5" />
 </svg>
-`;const tg=`
+`;const og=`
 <svg
   class="lucide lucide-codesandbox"
   xmlns="http://www.w3.org/2000/svg"
@@ -8248,7 +8248,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
   <line x1="12" x2="12" y1="22.08" y2="12" />
 </svg>
-`;const eg=`
+`;const rg=`
 <svg
   class="lucide lucide-coffee"
   xmlns="http://www.w3.org/2000/svg"
@@ -8266,7 +8266,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
   <path d="M6 2v2" />
 </svg>
-`;const og=`
+`;const ig=`
 <svg
   class="lucide lucide-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -8294,7 +8294,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="2" />
   <circle cx="12" cy="12" r="8" />
 </svg>
-`;const rg=`
+`;const sg=`
 <svg
   class="lucide lucide-coins"
   xmlns="http://www.w3.org/2000/svg"
@@ -8370,7 +8370,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 3v18" />
   <path d="M15 3v18" />
 </svg>
-`;const ig=`
+`;const ng=`
 <svg
   class="lucide lucide-columns-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -8388,7 +8388,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 3v18" />
   <path d="M16.5 3v18" />
 </svg>
-`;const sg=`
+`;const lg=`
 <svg
   class="lucide lucide-combine"
   xmlns="http://www.w3.org/2000/svg"
@@ -8408,7 +8408,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="14" y="14" width="7" height="7" rx="1" />
   <rect x="3" y="3" width="7" height="7" rx="1" />
 </svg>
-`;const ng=`
+`;const ag=`
 <svg
   class="lucide lucide-command"
   xmlns="http://www.w3.org/2000/svg"
@@ -8423,7 +8423,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
 </svg>
-`;const lg=`
+`;const dg=`
 <svg
   class="lucide lucide-compass"
   xmlns="http://www.w3.org/2000/svg"
@@ -8439,7 +8439,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const ag=`
+`;const hg=`
 <svg
   class="lucide lucide-component"
   xmlns="http://www.w3.org/2000/svg"
@@ -8457,7 +8457,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" />
   <path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
 </svg>
-`;const dg=`
+`;const cg=`
 <svg
   class="lucide lucide-computer"
   xmlns="http://www.w3.org/2000/svg"
@@ -8475,7 +8475,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18h2" />
   <path d="M12 18h6" />
 </svg>
-`;const hg=`
+`;const pg=`
 <svg
   class="lucide lucide-concierge-bell"
   xmlns="http://www.w3.org/2000/svg"
@@ -8493,7 +8493,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 4v4" />
   <path d="M10 4h4" />
 </svg>
-`;const cg=`
+`;const ug=`
 <svg
   class="lucide lucide-cone"
   xmlns="http://www.w3.org/2000/svg"
@@ -8509,7 +8509,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98" />
   <ellipse cx="12" cy="19" rx="9" ry="3" />
 </svg>
-`;const pg=`
+`;const wg=`
 <svg
   class="lucide lucide-construction"
   xmlns="http://www.w3.org/2000/svg"
@@ -8550,7 +8550,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="4" />
   <rect x="3" y="4" width="18" height="18" rx="2" />
 </svg>
-`;const ug=`
+`;const gg=`
 <svg
   class="lucide lucide-contact"
   xmlns="http://www.w3.org/2000/svg"
@@ -8569,7 +8569,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="11" r="3" />
   <rect x="3" y="4" width="18" height="18" rx="2" />
 </svg>
-`;const wg=`
+`;const vg=`
 <svg
   class="lucide lucide-container"
   xmlns="http://www.w3.org/2000/svg"
@@ -8588,7 +8588,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 19.8v-8.1" />
   <path d="M18 17.5V9.4" />
 </svg>
-`;const gg=`
+`;const kg=`
 <svg
   class="lucide lucide-contrast"
   xmlns="http://www.w3.org/2000/svg"
@@ -8604,7 +8604,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M12 18a6 6 0 0 0 0-12v12z" />
 </svg>
-`;const vg=`
+`;const mg=`
 <svg
   class="lucide lucide-cookie"
   xmlns="http://www.w3.org/2000/svg"
@@ -8624,7 +8624,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 17v.01" />
   <path d="M7 14v.01" />
 </svg>
-`;const kg=`
+`;const xg=`
 <svg
   class="lucide lucide-cooking-pot"
   xmlns="http://www.w3.org/2000/svg"
@@ -8642,7 +8642,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m4 8 16-4" />
   <path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8" />
 </svg>
-`;const mg=`
+`;const fg=`
 <svg
   class="lucide lucide-copy-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -8659,7 +8659,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
 </svg>
-`;const xg=`
+`;const Mg=`
 <svg
   class="lucide lucide-copy-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -8676,7 +8676,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
 </svg>
-`;const fg=`
+`;const yg=`
 <svg
   class="lucide lucide-copy-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -8694,7 +8694,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
 </svg>
-`;const Mg=`
+`;const bg=`
 <svg
   class="lucide lucide-copy-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -8711,7 +8711,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
 </svg>
-`;const yg=`
+`;const Cg=`
 <svg
   class="lucide lucide-copy-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -8729,7 +8729,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
 </svg>
-`;const bg=`
+`;const Bg=`
 <svg
   class="lucide lucide-copy"
   xmlns="http://www.w3.org/2000/svg"
@@ -8745,7 +8745,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
 </svg>
-`;const Cg=`
+`;const jg=`
 <svg
   class="lucide lucide-copyleft"
   xmlns="http://www.w3.org/2000/svg"
@@ -8761,7 +8761,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M9.17 14.83a4 4 0 1 0 0-5.66" />
 </svg>
-`;const Bg=`
+`;const Ag=`
 <svg
   class="lucide lucide-copyright"
   xmlns="http://www.w3.org/2000/svg"
@@ -8777,7 +8777,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
 </svg>
-`;const jg=`
+`;const Lg=`
 <svg
   class="lucide lucide-corner-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -8793,7 +8793,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 4v7a4 4 0 0 1-4 4H4" />
   <path d="m9 10-5 5 5 5" />
 </svg>
-`;const Ag=`
+`;const Sg=`
 <svg
   class="lucide lucide-corner-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -8809,7 +8809,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 10 5 5-5 5" />
   <path d="M4 4v7a4 4 0 0 0 4 4h12" />
 </svg>
-`;const Lg=`
+`;const Hg=`
 <svg
   class="lucide lucide-corner-left-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -8825,7 +8825,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 15-5 5-5-5" />
   <path d="M20 4h-7a4 4 0 0 0-4 4v12" />
 </svg>
-`;const Sg=`
+`;const Rg=`
 <svg
   class="lucide lucide-corner-left-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -8841,7 +8841,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 9 9 4 4 9" />
   <path d="M20 20h-7a4 4 0 0 1-4-4V4" />
 </svg>
-`;const Hg=`
+`;const Vg=`
 <svg
   class="lucide lucide-corner-right-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -8857,7 +8857,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 15 5 5 5-5" />
   <path d="M4 4h7a4 4 0 0 1 4 4v12" />
 </svg>
-`;const Rg=`
+`;const zg=`
 <svg
   class="lucide lucide-corner-right-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -8873,7 +8873,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 9 5-5 5 5" />
   <path d="M4 20h7a4 4 0 0 0 4-4V4" />
 </svg>
-`;const Vg=`
+`;const $g=`
 <svg
   class="lucide lucide-corner-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -8889,7 +8889,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
   <path d="M9 14 4 9l5-5" />
 </svg>
-`;const zg=`
+`;const Ug=`
 <svg
   class="lucide lucide-corner-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -8905,7 +8905,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 14 5-5-5-5" />
   <path d="M4 20v-7a4 4 0 0 1 4-4h12" />
 </svg>
-`;const $g=`
+`;const Dg=`
 <svg
   class="lucide lucide-cpu"
   xmlns="http://www.w3.org/2000/svg"
@@ -8933,7 +8933,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="4" y="4" width="16" height="16" rx="2" />
   <rect x="8" y="8" width="8" height="8" rx="1" />
 </svg>
-`;const Dg=`
+`;const Fg=`
 <svg
   class="lucide lucide-credit-card"
   xmlns="http://www.w3.org/2000/svg"
@@ -8949,7 +8949,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="20" height="14" x="2" y="5" rx="2" />
   <line x1="2" x2="22" y1="10" y2="10" />
 </svg>
-`;const Ug=`
+`;const Pg=`
 <svg
   class="lucide lucide-croissant"
   xmlns="http://www.w3.org/2000/svg"
@@ -8968,7 +8968,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14" />
   <path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676" />
 </svg>
-`;const Fg=`
+`;const Eg=`
 <svg
   class="lucide lucide-creative-commons"
   xmlns="http://www.w3.org/2000/svg"
@@ -8985,7 +8985,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 9.3a2.8 2.8 0 0 0-3.5 1 3.1 3.1 0 0 0 0 3.4 2.7 2.7 0 0 0 3.5 1" />
   <path d="M17 9.3a2.8 2.8 0 0 0-3.5 1 3.1 3.1 0 0 0 0 3.4 2.7 2.7 0 0 0 3.5 1" />
 </svg>
-`;const Pg=`
+`;const Tg=`
 <svg
   class="lucide lucide-crop"
   xmlns="http://www.w3.org/2000/svg"
@@ -9001,7 +9001,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 2v14a2 2 0 0 0 2 2h14" />
   <path d="M18 22V8a2 2 0 0 0-2-2H2" />
 </svg>
-`;const Eg=`
+`;const Yg=`
 <svg
   class="lucide lucide-cross"
   xmlns="http://www.w3.org/2000/svg"
@@ -9016,7 +9016,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z" />
 </svg>
-`;const Tg=`
+`;const Og=`
 <svg
   class="lucide lucide-crosshair"
   xmlns="http://www.w3.org/2000/svg"
@@ -9035,7 +9035,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="6" y2="2" />
   <line x1="12" x2="12" y1="22" y2="18" />
 </svg>
-`;const Yg=`
+`;const Ig=`
 <svg
   class="lucide lucide-crown"
   xmlns="http://www.w3.org/2000/svg"
@@ -9051,7 +9051,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" />
   <path d="M5 21h14" />
 </svg>
-`;const Og=`
+`;const qg=`
 <svg
   class="lucide lucide-cuboid"
   xmlns="http://www.w3.org/2000/svg"
@@ -9068,7 +9068,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 22v-8L2.25 9.15" />
   <path d="m10 14 11.77-6.87" />
 </svg>
-`;const Ig=`
+`;const Ng=`
 <svg
   class="lucide lucide-cup-soda"
   xmlns="http://www.w3.org/2000/svg"
@@ -9086,7 +9086,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0" />
   <path d="m12 8 1-6h2" />
 </svg>
-`;const qg=`
+`;const _g=`
 <svg
   class="lucide lucide-currency"
   xmlns="http://www.w3.org/2000/svg"
@@ -9105,7 +9105,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="3" x2="6" y1="21" y2="18" />
   <line x1="21" x2="18" y1="21" y2="18" />
 </svg>
-`;const Ng=`
+`;const Zg=`
 <svg
   class="lucide lucide-cylinder"
   xmlns="http://www.w3.org/2000/svg"
@@ -9121,7 +9121,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <ellipse cx="12" cy="5" rx="9" ry="3" />
   <path d="M3 5v14a9 3 0 0 0 18 0V5" />
 </svg>
-`;const _g=`
+`;const Gg=`
 <svg
   class="lucide lucide-dam"
   xmlns="http://www.w3.org/2000/svg"
@@ -9142,7 +9142,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 6h4" />
   <path d="M7 3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1L10 4a1 1 0 0 0-1-1z" />
 </svg>
-`;const Zg=`
+`;const Wg=`
 <svg
   class="lucide lucide-database-backup"
   xmlns="http://www.w3.org/2000/svg"
@@ -9162,7 +9162,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 12v4h4" />
   <path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16" />
 </svg>
-`;const Gg=`
+`;const Kg=`
 <svg
   class="lucide lucide-database-zap"
   xmlns="http://www.w3.org/2000/svg"
@@ -9181,7 +9181,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12L18 17H22L19 22" />
   <path d="M3 12A9 3 0 0 0 14.59 14.87" />
 </svg>
-`;const Wg=`
+`;const Xg=`
 <svg
   class="lucide lucide-database"
   xmlns="http://www.w3.org/2000/svg"
@@ -9198,7 +9198,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 5V19A9 3 0 0 0 21 19V5" />
   <path d="M3 12A9 3 0 0 0 21 12" />
 </svg>
-`;const Kg=`
+`;const Jg=`
 <svg
   class="lucide lucide-decimals-arrow-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -9216,7 +9216,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 11h.01" />
   <rect x="6" y="3" width="5" height="8" rx="2.5" />
 </svg>
-`;const Xg=`
+`;const Qg=`
 <svg
   class="lucide lucide-decimals-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -9235,7 +9235,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="15" y="3" width="5" height="8" rx="2.5" />
   <rect x="6" y="3" width="5" height="8" rx="2.5" />
 </svg>
-`;const Jg=`
+`;const tv=`
 <svg
   class="lucide lucide-delete"
   xmlns="http://www.w3.org/2000/svg"
@@ -9252,7 +9252,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 9 6 6" />
   <path d="m18 9-6 6" />
 </svg>
-`;const Qg=`
+`;const ev=`
 <svg
   class="lucide lucide-dessert"
   xmlns="http://www.w3.org/2000/svg"
@@ -9269,7 +9269,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.804 14.869a9 9 0 0 1-17.608 0" />
   <circle cx="12" cy="4" r="2" />
 </svg>
-`;const tv=`
+`;const ov=`
 <svg
   class="lucide lucide-diameter"
   xmlns="http://www.w3.org/2000/svg"
@@ -9288,7 +9288,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6.41 6.41 11.18 11.18" />
   <path d="M3.66 6.48a10 10 0 0 0 13.86 13.86" />
 </svg>
-`;const ev=`
+`;const rv=`
 <svg
   class="lucide lucide-diamond-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -9321,7 +9321,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.5 9.5-5 5" />
   <path d="M14.7 14.8h.01" />
 </svg>
-`;const ov=`
+`;const iv=`
 <svg
   class="lucide lucide-diamond-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -9337,7 +9337,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v8" />
   <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z" />
   <path d="M8 12h8" />
-</svg>`;const rv=`
+</svg>`;const sv=`
 <svg
   class="lucide lucide-diamond"
   xmlns="http://www.w3.org/2000/svg"
@@ -9352,7 +9352,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z" />
 </svg>
-`;const iv=`
+`;const nv=`
 <svg
   class="lucide lucide-dice-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -9369,7 +9369,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 9h.01" />
   <path d="M9 15h.01" />
 </svg>
-`;const sv=`
+`;const lv=`
 <svg
   class="lucide lucide-dice-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -9385,7 +9385,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
   <path d="M12 12h.01" />
 </svg>
-`;const nv=`
+`;const av=`
 <svg
   class="lucide lucide-dice-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -9403,7 +9403,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 12h.01" />
   <path d="M8 16h.01" />
 </svg>
-`;const lv=`
+`;const dv=`
 <svg
   class="lucide lucide-dice-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -9422,7 +9422,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 16h.01" />
   <path d="M16 16h.01" />
 </svg>
-`;const av=`
+`;const hv=`
 <svg
   class="lucide lucide-dice-5"
   xmlns="http://www.w3.org/2000/svg"
@@ -9442,7 +9442,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 16h.01" />
   <path d="M12 12h.01" />
 </svg>
-`;const dv=`
+`;const cv=`
 <svg
   class="lucide lucide-dice-6"
   xmlns="http://www.w3.org/2000/svg"
@@ -9463,7 +9463,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h.01" />
   <path d="M8 16h.01" />
 </svg>
-`;const hv=`
+`;const pv=`
 <svg
   class="lucide lucide-dices"
   xmlns="http://www.w3.org/2000/svg"
@@ -9483,7 +9483,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 6h.01" />
   <path d="M18 9h.01" />
 </svg>
-`;const cv=`
+`;const uv=`
 <svg
   class="lucide lucide-diff"
   xmlns="http://www.w3.org/2000/svg"
@@ -9500,7 +9500,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 10h14" />
   <path d="M5 21h14" />
 </svg>
-`;const pv=`
+`;const wv=`
 <svg
   class="lucide lucide-disc-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -9517,7 +9517,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="4" />
   <path d="M12 12h.01" />
 </svg>
-`;const uv=`
+`;const gv=`
 <svg
   class="lucide lucide-disc-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -9535,7 +9535,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="2" />
   <path d="M18 12c0 1.7-.7 3.2-1.8 4.2" />
 </svg>
-`;const wv=`
+`;const vv=`
 <svg
   class="lucide lucide-disc-album"
   xmlns="http://www.w3.org/2000/svg"
@@ -9552,7 +9552,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="5" />
   <path d="M12 12h.01" />
 </svg>
-`;const gv=`
+`;const kv=`
 <svg
   class="lucide lucide-disc"
   xmlns="http://www.w3.org/2000/svg"
@@ -9568,7 +9568,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const vv=`
+`;const mv=`
 <svg
   class="lucide lucide-divide"
   xmlns="http://www.w3.org/2000/svg"
@@ -9585,7 +9585,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="5" x2="19" y1="12" y2="12" />
   <circle cx="12" cy="18" r="1" />
 </svg>
-`;const kv=`
+`;const xv=`
 <svg
   class="lucide lucide-dna-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -9609,7 +9609,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 18 2.891 2.891" />
   <path d="M9 22c1.35-1.5 2.092-3 2.5-4.5L10 16" />
 </svg>
-`;const mv=`
+`;const fv=`
 <svg
   class="lucide lucide-dna"
   xmlns="http://www.w3.org/2000/svg"
@@ -9634,7 +9634,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 18 2.891 2.891" />
   <path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993" />
 </svg>
-`;const xv=`
+`;const Mv=`
 <svg
   class="lucide lucide-dock"
   xmlns="http://www.w3.org/2000/svg"
@@ -9651,7 +9651,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="20" height="16" x="2" y="4" rx="2" />
   <path d="M6 16h12" />
 </svg>
-`;const fv=`
+`;const yv=`
 <svg
   class="lucide lucide-dog"
   xmlns="http://www.w3.org/2000/svg"
@@ -9670,7 +9670,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14v.5" />
   <path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5" />
 </svg>
-`;const Mv=`
+`;const bv=`
 <svg
   class="lucide lucide-dollar-sign"
   xmlns="http://www.w3.org/2000/svg"
@@ -9686,7 +9686,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="2" y2="22" />
   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
 </svg>
-`;const yv=`
+`;const Cv=`
 <svg
   class="lucide lucide-donut"
   xmlns="http://www.w3.org/2000/svg"
@@ -9702,7 +9702,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.5 10a2.5 2.5 0 0 1-2.4-3H18a2.95 2.95 0 0 1-2.6-4.4 10 10 0 1 0 6.3 7.1c-.3.2-.8.3-1.2.3" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const bv=`
+`;const Bv=`
 <svg
   class="lucide lucide-door-closed-locked"
   xmlns="http://www.w3.org/2000/svg"
@@ -9721,7 +9721,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 17v-2a2 2 0 1 0-4 0v2" />
   <rect x="14" y="17" width="8" height="5" rx="1" />
 </svg>
-`;const Cv=`
+`;const jv=`
 <svg
   class="lucide lucide-door-closed"
   xmlns="http://www.w3.org/2000/svg"
@@ -9738,7 +9738,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14" />
   <path d="M2 20h20" />
 </svg>
-`;const Bv=`
+`;const Av=`
 <svg
   class="lucide lucide-door-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -9757,7 +9757,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 12h.01" />
   <path d="M22 20h-3" />
 </svg>
-`;const jv=`
+`;const Lv=`
 <svg
   class="lucide lucide-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -9772,7 +9772,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <circle cx="12.1" cy="12.1" r="1" />
 </svg>
-`;const Av=`
+`;const Sv=`
 <svg
   class="lucide lucide-download"
   xmlns="http://www.w3.org/2000/svg"
@@ -9789,7 +9789,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
   <path d="m7 10 5 5 5-5" />
 </svg>
-`;const Lv=`
+`;const Hv=`
 <svg
   class="lucide lucide-drafting-compass"
   xmlns="http://www.w3.org/2000/svg"
@@ -9808,7 +9808,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 21 8.02-14.26" />
   <circle cx="12" cy="5" r="2" />
 </svg>
-`;const Sv=`
+`;const Rv=`
 <svg
   class="lucide lucide-drama"
   xmlns="http://www.w3.org/2000/svg"
@@ -9830,7 +9830,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7" />
   <path d="M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4" />
 </svg>
-`;const Hv=`
+`;const Vv=`
 <svg
   class="lucide lucide-dribbble"
   xmlns="http://www.w3.org/2000/svg"
@@ -9848,7 +9848,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
   <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" />
 </svg>
-`;const Rv=`
+`;const zv=`
 <svg
   class="lucide lucide-drill"
   xmlns="http://www.w3.org/2000/svg"
@@ -9868,7 +9868,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 10-2 8" />
   <path d="m7 18 2-8" />
 </svg>
-`;const Vv=`
+`;const $v=`
 <svg
   class="lucide lucide-drone"
   xmlns="http://www.w3.org/2000/svg"
@@ -9891,7 +9891,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.795 19.862a4 4 0 1 1-5.429-5.873" />
   <rect x="10" y="8" width="4" height="8" rx="1" />
 </svg>
-`;const zv=`
+`;const Uv=`
 <svg
   class="lucide lucide-droplet"
   xmlns="http://www.w3.org/2000/svg"
@@ -9906,7 +9906,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
 </svg>
-`;const $v=`
+`;const Dv=`
 <svg
   class="lucide lucide-droplet-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -9923,7 +9923,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M8.795 8.797A11 11 0 0 1 8 9.5C6 11.1 5 13 5 15a7 7 0 0 0 13.222 3.208" />
 </svg>
-`;const Dv=`
+`;const Fv=`
 <svg
   class="lucide lucide-droplets"
   xmlns="http://www.w3.org/2000/svg"
@@ -9939,7 +9939,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
   <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
 </svg>
-`;const Uv=`
+`;const Pv=`
 <svg
   class="lucide lucide-drum"
   xmlns="http://www.w3.org/2000/svg"
@@ -9960,7 +9960,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 13.4v7.9" />
   <path d="M2 9v8a10 5 0 0 0 20 0V9" />
 </svg>
-`;const Fv=`
+`;const Ev=`
 <svg
   class="lucide lucide-dumbbell"
   xmlns="http://www.w3.org/2000/svg"
@@ -9979,7 +9979,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z" />
   <path d="m9.6 14.4 4.8-4.8" />
 </svg>
-`;const Pv=`
+`;const Tv=`
 <svg
   class="lucide lucide-drumstick"
   xmlns="http://www.w3.org/2000/svg"
@@ -9995,7 +9995,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.4 15.63a7.875 6 135 1 1 6.23-6.23 4.5 3.43 135 0 0-6.23 6.23" />
   <path d="m8.29 12.71-2.6 2.6a2.5 2.5 0 1 0-1.65 4.65A2.5 2.5 0 1 0 8.7 18.3l2.59-2.59" />
 </svg>
-`;const Ev=`
+`;const Yv=`
 <svg
   class="lucide lucide-ear-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -10014,7 +10014,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12.5 6A2.5 2.5 0 0 1 15 8.5M10 13a2 2 0 0 0 1.82-1.18" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const Tv=`
+`;const Ov=`
 <svg
   class="lucide lucide-ear"
   xmlns="http://www.w3.org/2000/svg"
@@ -10030,7 +10030,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
   <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4" />
 </svg>
-`;const Yv=`
+`;const Iv=`
 <svg
   class="lucide lucide-earth-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -10068,7 +10068,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Ov=`
+`;const qv=`
 <svg
   class="lucide lucide-eclipse"
   xmlns="http://www.w3.org/2000/svg"
@@ -10084,7 +10084,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M12 2a7 7 0 1 0 10 10" />
 </svg>
-`;const Iv=`
+`;const Nv=`
 <svg
   class="lucide lucide-egg-fried"
   xmlns="http://www.w3.org/2000/svg"
@@ -10100,7 +10100,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="11.5" cy="12.5" r="3.5" />
   <path d="M3 8c0-3.5 2.5-6 6.5-6 5 0 4.83 3 7.5 5s5 2 5 6c0 4.5-2.5 6.5-7 6.5-2.5 0-2.5 2.5-6 2.5s-7-2-7-5.5c0-3 1.5-3 1.5-5C3.5 10 3 9 3 8Z" />
 </svg>
-`;const qv=`
+`;const _v=`
 <svg
   class="lucide lucide-egg-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -10117,7 +10117,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 14.347V14c0-6-4-12-8-12-1.078 0-2.157.436-3.157 1.19" />
   <path d="M6.206 6.21C4.871 8.4 4 11.2 4 14a8 8 0 0 0 14.568 4.568" />
 </svg>
-`;const Nv=`
+`;const Zv=`
 <svg
   class="lucide lucide-egg"
   xmlns="http://www.w3.org/2000/svg"
@@ -10166,7 +10166,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="12" r="1" />
   <circle cx="5" cy="12" r="1" />
 </svg>
-`;const _v=`
+`;const Gv=`
 <svg
   class="lucide lucide-equal-approximately"
   xmlns="http://www.w3.org/2000/svg"
@@ -10182,7 +10182,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 15a6.5 6.5 0 0 1 7 0 6.5 6.5 0 0 0 7 0" />
   <path d="M5 9a6.5 6.5 0 0 1 7 0 6.5 6.5 0 0 0 7 0" />
 </svg>
-`;const Zv=`
+`;const Wv=`
 <svg
   class="lucide lucide-equal-not"
   xmlns="http://www.w3.org/2000/svg"
@@ -10199,7 +10199,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="5" x2="19" y1="15" y2="15" />
   <line x1="19" x2="5" y1="5" y2="19" />
 </svg>
-`;const Gv=`
+`;const Kv=`
 <svg
   class="lucide lucide-equal"
   xmlns="http://www.w3.org/2000/svg"
@@ -10215,7 +10215,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="5" x2="19" y1="9" y2="9" />
   <line x1="5" x2="19" y1="15" y2="15" />
 </svg>
-`;const Wv=`
+`;const Xv=`
 <svg
   class="lucide lucide-eraser"
   xmlns="http://www.w3.org/2000/svg"
@@ -10231,7 +10231,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 21H8a2 2 0 0 1-1.42-.587l-3.994-3.999a2 2 0 0 1 0-2.828l10-10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21" />
   <path d="m5.082 11.09 8.828 8.828" />
 </svg>
-`;const Kv=`
+`;const Jv=`
 <svg
   class="lucide lucide-ethernet-port"
   xmlns="http://www.w3.org/2000/svg"
@@ -10250,7 +10250,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 8v1" />
   <path d="M18 8v1" />
 </svg>
-`;const Xv=`
+`;const Qv=`
 <svg
   class="lucide lucide-euro"
   xmlns="http://www.w3.org/2000/svg"
@@ -10267,7 +10267,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 14h9" />
   <path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2" />
 </svg>
-`;const Jv=`
+`;const t3=`
 <svg
   class="lucide lucide-ev-charger"
   xmlns="http://www.w3.org/2000/svg"
@@ -10286,7 +10286,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 7h11" />
   <path d="m9 11-2 3h3l-2 3" />
 </svg>
-`;const Qv=`
+`;const e3=`
 <svg
   class="lucide lucide-expand"
   xmlns="http://www.w3.org/2000/svg"
@@ -10308,7 +10308,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 8V3h5" />
   <path d="M9 9 3 3" />
 </svg>
-`;const t3=`
+`;const o3=`
 <svg
   class="lucide lucide-external-link"
   xmlns="http://www.w3.org/2000/svg"
@@ -10325,7 +10325,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 14 21 3" />
   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
 </svg>
-`;const e3=`
+`;const r3=`
 <svg
   class="lucide lucide-eye-closed"
   xmlns="http://www.w3.org/2000/svg"
@@ -10344,7 +10344,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m4 15 1.726-2.05" />
   <path d="m9 18 .722-3.25" />
 </svg>
-`;const o3=`
+`;const i3=`
 <svg
   class="lucide lucide-eye-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -10362,7 +10362,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
   <path d="m2 2 20 20" />
 </svg>
-`;const r3=`
+`;const s3=`
 <svg
   class="lucide lucide-eye"
   xmlns="http://www.w3.org/2000/svg"
@@ -10378,7 +10378,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const i3=`
+`;const n3=`
 <svg
   class="lucide lucide-facebook"
   xmlns="http://www.w3.org/2000/svg"
@@ -10393,7 +10393,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
 </svg>
-`;const s3=`
+`;const l3=`
 <svg
   class="lucide lucide-factory"
   xmlns="http://www.w3.org/2000/svg"
@@ -10411,7 +10411,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
   <path d="M8 16h.01" />
 </svg>
-`;const n3=`
+`;const a3=`
 <svg
   class="lucide lucide-fan"
   xmlns="http://www.w3.org/2000/svg"
@@ -10427,7 +10427,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z" />
   <path d="M12 12v.01" />
 </svg>
-`;const l3=`
+`;const d3=`
 <svg
   class="lucide lucide-fast-forward"
   xmlns="http://www.w3.org/2000/svg"
@@ -10443,7 +10443,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18z" />
   <path d="M2 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z" />
 </svg>
-`;const a3=`
+`;const h3=`
 <svg
   class="lucide lucide-feather"
   xmlns="http://www.w3.org/2000/svg"
@@ -10460,7 +10460,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 8 2 22" />
   <path d="M17.5 15H9" />
 </svg>
-`;const d3=`
+`;const c3=`
 <svg
   class="lucide lucide-fence"
   xmlns="http://www.w3.org/2000/svg"
@@ -10481,7 +10481,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 18h4" />
   <path d="m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z" />
 </svg>
-`;const h3=`
+`;const p3=`
 <svg
   class="lucide lucide-ferris-wheel"
   xmlns="http://www.w3.org/2000/svg"
@@ -10504,7 +10504,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 22h8" />
   <path d="M18 18.7a9 9 0 1 0-12 0" />
 </svg>
-`;const c3=`
+`;const u3=`
 <svg
   class="lucide lucide-figma"
   xmlns="http://www.w3.org/2000/svg"
@@ -10523,7 +10523,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
   <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
 </svg>
-`;const p3=`
+`;const w3=`
 <svg
   class="lucide lucide-file-archive"
   xmlns="http://www.w3.org/2000/svg"
@@ -10579,7 +10579,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7.69 16.479 1.29 4.88a.5.5 0 0 1-.698.591l-1.843-.849a1 1 0 0 0-.879.001l-1.846.85a.5.5 0 0 1-.692-.593l1.29-4.88" />
   <circle cx="6" cy="14" r="3" />
 </svg>
-`;const u3=`
+`;const g3=`
 <svg
   class="lucide lucide-file-box"
   xmlns="http://www.w3.org/2000/svg"
@@ -10724,7 +10724,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="m14 20 2 2 4-4" />
 </svg>
-`;const w3=`
+`;const v3=`
 <svg
   class="lucide lucide-file-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -10741,7 +10741,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="m9 15 2 2 4-4" />
 </svg>
-`;const g3=`
+`;const k3=`
 <svg
   class="lucide lucide-file-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -10777,7 +10777,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 16-3 3 3 3" />
   <path d="m9 22 3-3-3-3" />
 </svg>
-`;const v3=`
+`;const m3=`
 <svg
   class="lucide lucide-file-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -10820,7 +10820,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.773 19.148.922.383" />
   <circle cx="7" cy="18" r="3" />
 </svg>
-`;const k3=`
+`;const x3=`
 <svg
   class="lucide lucide-file-diff"
   xmlns="http://www.w3.org/2000/svg"
@@ -10838,7 +10838,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 13V7" />
   <path d="M9 17h6" />
 </svg>
-`;const m3=`
+`;const f3=`
 <svg
   class="lucide lucide-file-digit"
   xmlns="http://www.w3.org/2000/svg"
@@ -10857,7 +10857,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 22h4" />
   <rect x="2" y="16" width="4" height="6" rx="2" />
 </svg>
-`;const x3=`
+`;const M3=`
 <svg
   class="lucide lucide-file-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -10909,7 +10909,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M2 19a2 2 0 0 1 4 0v1a2 2 0 0 1-4 0v-4a6 6 0 0 1 12 0v4a2 2 0 0 1-4 0v-1a2 2 0 0 1 4 0" />
 </svg>
-`;const f3=`
+`;const y3=`
 <svg
   class="lucide lucide-file-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -10926,7 +10926,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M3.62 18.8A2.25 2.25 0 1 1 7 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a1 1 0 0 1-1.507 0z" />
 </svg>
-`;const M3=`
+`;const b3=`
 <svg
   class="lucide lucide-file-image"
   xmlns="http://www.w3.org/2000/svg"
@@ -10944,7 +10944,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="10" cy="12" r="2" />
   <path d="m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22" />
 </svg>
-`;const y3=`
+`;const C3=`
 <svg
   class="lucide lucide-file-input"
   xmlns="http://www.w3.org/2000/svg"
@@ -11016,7 +11016,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M14 18h6" />
 </svg>
-`;const b3=`
+`;const B3=`
 <svg
   class="lucide lucide-file-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -11033,7 +11033,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M9 15h6" />
 </svg>
-`;const C3=`
+`;const j3=`
 <svg
   class="lucide lucide-file-music"
   xmlns="http://www.w3.org/2000/svg"
@@ -11068,7 +11068,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
   <path d="M8 18h1" />
 </svg>
-`;const B3=`
+`;const A3=`
 <svg
   class="lucide lucide-file-output"
   xmlns="http://www.w3.org/2000/svg"
@@ -11138,7 +11138,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 19h6" />
   <path d="M17 16v6" />
 </svg>
-`;const j3=`
+`;const L3=`
 <svg
   class="lucide lucide-file-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -11173,7 +11173,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17h.01" />
   <path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3" />
 </svg>
-`;const A3=`
+`;const S3=`
 <svg
   class="lucide lucide-file-scan"
   xmlns="http://www.w3.org/2000/svg"
@@ -11230,7 +11230,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.5 13.5a2.5 2.5 0 0 1 0 3" />
   <path d="M15 12a5 5 0 0 1 0 6" />
 </svg>
-`;const L3=`
+`;const H3=`
 <svg
   class="lucide lucide-file-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -11248,7 +11248,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="11.5" cy="14.5" r="2.5" />
   <path d="M13.3 16.3 15 18" />
 </svg>
-`;const S3=`
+`;const R3=`
 <svg
   class="lucide lucide-file-sliders"
   xmlns="http://www.w3.org/2000/svg"
@@ -11268,7 +11268,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 17h8" />
   <path d="M14 16v2" />
 </svg>
-`;const H3=`
+`;const V3=`
 <svg
   class="lucide lucide-file-spreadsheet"
   xmlns="http://www.w3.org/2000/svg"
@@ -11288,7 +11288,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 17h2" />
   <path d="M14 17h2" />
 </svg>
-`;const R3=`
+`;const z3=`
 <svg
   class="lucide lucide-file-stack"
   xmlns="http://www.w3.org/2000/svg"
@@ -11305,7 +11305,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 16a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1" />
   <path d="M21 6a2 2 0 0 0-.586-1.414l-2-2A2 2 0 0 0 17 2h-3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1z" />
 </svg>
-`;const V3=`
+`;const $3=`
 <svg
   class="lucide lucide-file-symlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -11322,7 +11322,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="m10 18 3-3-3-3" />
 </svg>
-`;const z3=`
+`;const U3=`
 <svg
   class="lucide lucide-file-terminal"
   xmlns="http://www.w3.org/2000/svg"
@@ -11340,7 +11340,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 16 2-2-2-2" />
   <path d="M12 18h4" />
 </svg>
-`;const $3=`
+`;const D3=`
 <svg
   class="lucide lucide-file-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -11359,7 +11359,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 13H8" />
   <path d="M16 17H8" />
 </svg>
-`;const D3=`
+`;const F3=`
 <svg
   class="lucide lucide-file-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -11397,7 +11397,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 22h2" />
   <path d="M7 14v8" />
 </svg>
-`;const U3=`
+`;const P3=`
 <svg
   class="lucide lucide-file-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -11415,7 +11415,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 22a4 4 0 0 0-8 0" />
   <circle cx="12" cy="15" r="3" />
 </svg>
-`;const F3=`
+`;const E3=`
 <svg
   class="lucide lucide-file-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -11451,7 +11451,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 17.843 3.033-1.755a.64.64 0 0 1 .967.56v4.704a.65.65 0 0 1-.967.56L10 20.157" />
   <rect width="7" height="6" x="3" y="16" rx="1" />
 </svg>
-`;const P3=`
+`;const T3=`
 <svg
   class="lucide lucide-file-volume"
   xmlns="http://www.w3.org/2000/svg"
@@ -11487,7 +11487,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 17 5 5" />
   <path d="m20 17-5 5" />
 </svg>
-`;const E3=`
+`;const Y3=`
 <svg
   class="lucide lucide-file-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -11505,7 +11505,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.5 12.5-5 5" />
   <path d="m9.5 12.5 5 5" />
 </svg>
-`;const T3=`
+`;const O3=`
 <svg
   class="lucide lucide-file"
   xmlns="http://www.w3.org/2000/svg"
@@ -11521,7 +11521,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
 </svg>
-`;const Y3=`
+`;const I3=`
 <svg
   class="lucide lucide-files"
   xmlns="http://www.w3.org/2000/svg"
@@ -11538,7 +11538,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.706 2.706A2.4 2.4 0 0 0 15 2v5a1 1 0 0 0 1 1h5a2.4 2.4 0 0 0-.706-1.706z" />
   <path d="M5 7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 1.732-1" />
 </svg>
-`;const O3=`
+`;const q3=`
 <svg
   class="lucide lucide-film"
   xmlns="http://www.w3.org/2000/svg"
@@ -11583,7 +11583,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.65 22c.21-.66.45-1.32.57-2" />
   <path d="M9 6.8a6 6 0 0 1 9 5.2v2" />
 </svg>
-`;const I3=`
+`;const N3=`
 <svg
   class="lucide lucide-fire-extinguisher"
   xmlns="http://www.w3.org/2000/svg"
@@ -11603,7 +11603,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 13h4" />
   <path d="M17 10a4 4 0 0 0-8 0v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z" />
 </svg>
-`;const q3=`
+`;const _3=`
 <svg
   class="lucide lucide-fish-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -11620,7 +11620,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33m7.48-4.372A9.77 9.77 0 0 1 16 6.07m0 11.86a9.77 9.77 0 0 1-1.728-3.618" />
   <path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98M8.53 3h5.27a2 2 0 0 1 1.98 1.67l.23 1.4M2 2l20 20" />
 </svg>
-`;const N3=`
+`;const Z3=`
 <svg
   class="lucide lucide-fish-symbol"
   xmlns="http://www.w3.org/2000/svg"
@@ -11635,7 +11635,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2 16s9-15 20-4C11 23 2 8 2 8" />
 </svg>
-`;const _3=`
+`;const G3=`
 <svg
   class="lucide lucide-fish"
   xmlns="http://www.w3.org/2000/svg"
@@ -11655,7 +11655,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4" />
   <path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98" />
 </svg>
-`;const Z3=`
+`;const W3=`
 <svg
   class="lucide lucide-fishing-hook"
   xmlns="http://www.w3.org/2000/svg"
@@ -11672,7 +11672,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.414 8.586 22 7" />
   <circle cx="19" cy="10" r="2" />
 </svg>
-`;const G3=`
+`;const K3=`
 <svg
   class="lucide lucide-flag-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -11690,7 +11690,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 22V4" />
   <path d="M7.656 2H8c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10.347" />
 </svg>
-`;const W3=`
+`;const X3=`
 <svg
   class="lucide lucide-flag-triangle-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -11704,7 +11704,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   stroke-linejoin="round"
 >
   <path d="M18 22V2.8a.8.8 0 0 0-1.17-.71L5.45 7.78a.8.8 0 0 0 0 1.44L18 15.5" />
-</svg>`;const K3=`
+</svg>`;const J3=`
 <svg
   class="lucide lucide-flag-triangle-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -11719,7 +11719,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M6 22V2.8a.8.8 0 0 1 1.17-.71l11.38 5.69a.8.8 0 0 1 0 1.44L6 15.5" />
 </svg>
-`;const X3=`
+`;const Q3=`
 <svg
   class="lucide lucide-flag"
   xmlns="http://www.w3.org/2000/svg"
@@ -11734,7 +11734,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
 </svg>
-`;const J3=`
+`;const t5=`
 <svg
   class="lucide lucide-flame-kindling"
   xmlns="http://www.w3.org/2000/svg"
@@ -11751,7 +11751,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 22 14-4" />
   <path d="m5 18 14 4" />
 </svg>
-`;const Q3=`
+`;const e5=`
 <svg
   class="lucide lucide-flame"
   xmlns="http://www.w3.org/2000/svg"
@@ -11766,7 +11766,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
 </svg>
-`;const t5=`
+`;const o5=`
 <svg
   class="lucide lucide-flashlight"
   xmlns="http://www.w3.org/2000/svg"
@@ -11783,7 +11783,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 2a1 1 0 0 1 1 1v4a3 3 0 0 1-.6 1.8l-.6.8A4 4 0 0 0 16 12v8a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-8a4 4 0 0 0-.8-2.4l-.6-.8A3 3 0 0 1 6 7V3a1 1 0 0 1 1-1z" />
   <path d="M6 6h12" />
 </svg>
-`;const e5=`
+`;const r5=`
 <svg
   class="lucide lucide-flashlight-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -11802,7 +11802,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M7.649 2H17a1 1 0 0 1 1 1v4a3 3 0 0 1-.6 1.8l-.6.8a4 4 0 0 0-.55 1.007" />
 </svg>
-`;const o5=`
+`;const i5=`
 <svg
   class="lucide lucide-flask-conical-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -11822,7 +11822,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.453 15H15" />
   <path d="M8.5 2h7" />
 </svg>
-`;const r5=`
+`;const s5=`
 <svg
   class="lucide lucide-flask-conical"
   xmlns="http://www.w3.org/2000/svg"
@@ -11839,7 +11839,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.453 15h11.094" />
   <path d="M8.5 2h7" />
 </svg>
-`;const i5=`
+`;const n5=`
 <svg
   class="lucide lucide-flask-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -11856,7 +11856,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 15h14" />
   <path d="M8.5 2h7" />
 </svg>
-`;const s5=`
+`;const l5=`
 <svg
   class="lucide lucide-flip-horizontal-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -11876,7 +11876,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v2" />
   <path d="M12 2v2" />
 </svg>
-`;const n5=`
+`;const a5=`
 <svg
   class="lucide lucide-flip-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -11896,7 +11896,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v2" />
   <path d="M12 2v2" />
 </svg>
-`;const l5=`
+`;const d5=`
 <svg
   class="lucide lucide-flip-vertical-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -11916,7 +11916,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 12h-2" />
   <path d="M22 12h-2" />
 </svg>
-`;const a5=`
+`;const h5=`
 <svg
   class="lucide lucide-flip-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -11936,7 +11936,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 12h-2" />
   <path d="M22 12h-2" />
 </svg>
-`;const d5=`
+`;const c5=`
 <svg
   class="lucide lucide-flower-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -11955,7 +11955,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" />
   <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" />
 </svg>
-`;const h5=`
+`;const p5=`
 <svg
   class="lucide lucide-flower"
   xmlns="http://www.w3.org/2000/svg"
@@ -11979,7 +11979,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 16 1.88-1.88" />
   <path d="M14.12 14.12 16 16" />
 </svg>
-`;const c5=`
+`;const u5=`
 <svg
   class="lucide lucide-focus"
   xmlns="http://www.w3.org/2000/svg"
@@ -11998,7 +11998,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
   <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
 </svg>
-`;const p5=`
+`;const w5=`
 <svg
   class="lucide lucide-fold-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -12020,7 +12020,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m19 9-3 3 3 3" />
   <path d="m5 15 3-3-3-3" />
 </svg>
-`;const u5=`
+`;const g5=`
 <svg
   class="lucide lucide-fold-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -12042,7 +12042,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 19-3-3-3 3" />
   <path d="m15 5-3 3-3-3" />
 </svg>
-`;const w5=`
+`;const v5=`
 <svg
   class="lucide lucide-folder-archive"
   xmlns="http://www.w3.org/2000/svg"
@@ -12060,7 +12060,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 11v-1" />
   <path d="M15 17v-2" />
 </svg>
-`;const g5=`
+`;const k5=`
 <svg
   class="lucide lucide-folder-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -12076,7 +12076,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
   <path d="m9 13 2 2 4-4" />
 </svg>
-`;const v5=`
+`;const m5=`
 <svg
   class="lucide lucide-folder-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -12093,7 +12093,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2" />
   <circle cx="16" cy="16" r="6" />
 </svg>
-`;const k5=`
+`;const x5=`
 <svg
   class="lucide lucide-folder-closed"
   xmlns="http://www.w3.org/2000/svg"
@@ -12109,7 +12109,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
   <path d="M2 10h20" />
 </svg>
-`;const m5=`
+`;const f5=`
 <svg
   class="lucide lucide-folder-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -12150,7 +12150,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m20.772 19.148.924.383" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const x5=`
+`;const M5=`
 <svg
   class="lucide lucide-folder-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -12166,7 +12166,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
   <circle cx="12" cy="13" r="1" />
 </svg>
-`;const f5=`
+`;const y5=`
 <svg
   class="lucide lucide-folder-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -12183,7 +12183,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 10v6" />
   <path d="m15 13-3 3-3-3" />
 </svg>
-`;const M5=`
+`;const b5=`
 <svg
   class="lucide lucide-folder-git-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -12201,7 +12201,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="13" cy="12" r="2" />
   <circle cx="20" cy="19" r="2" />
 </svg>
-`;const y5=`
+`;const C5=`
 <svg
   class="lucide lucide-folder-git"
   xmlns="http://www.w3.org/2000/svg"
@@ -12219,7 +12219,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 13h3" />
   <path d="M7 13h3" />
 </svg>
-`;const b5=`
+`;const B5=`
 <svg
   class="lucide lucide-folder-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -12235,7 +12235,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.638 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.417" />
   <path d="M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
 </svg>
-`;const C5=`
+`;const j5=`
 <svg
   class="lucide lucide-folder-input"
   xmlns="http://www.w3.org/2000/svg"
@@ -12252,7 +12252,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 13h10" />
   <path d="m9 16 3-3-3-3" />
 </svg>
-`;const B5=`
+`;const A5=`
 <svg
   class="lucide lucide-folder-kanban"
   xmlns="http://www.w3.org/2000/svg"
@@ -12270,7 +12270,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 10v2" />
   <path d="M16 10v6" />
 </svg>
-`;const j5=`
+`;const L5=`
 <svg
   class="lucide lucide-folder-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -12288,7 +12288,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 14-4.5 4.5" />
   <path d="m21 15 1 1" />
 </svg>
-`;const A5=`
+`;const S5=`
 <svg
   class="lucide lucide-folder-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -12305,7 +12305,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5" />
   <path d="M20 17v-2a2 2 0 1 0-4 0v2" />
 </svg>
-`;const L5=`
+`;const H5=`
 <svg
   class="lucide lucide-folder-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -12321,7 +12321,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 13h6" />
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
 </svg>
-`;const S5=`
+`;const R5=`
 <svg
   class="lucide lucide-folder-open-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -12337,7 +12337,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2" />
   <circle cx="14" cy="15" r="1" />
 </svg>
-`;const H5=`
+`;const V5=`
 <svg
   class="lucide lucide-folder-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -12352,7 +12352,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" />
 </svg>
-`;const R5=`
+`;const z5=`
 <svg
   class="lucide lucide-folder-output"
   xmlns="http://www.w3.org/2000/svg"
@@ -12385,7 +12385,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 11.5V5a2 2 0 0 1 2-2h3.9c.7 0 1.3.3 1.7.9l.8 1.2c.4.6 1 .9 1.7.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5" />
   <path d="M11.378 13.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
 </svg>
-`;const V5=`
+`;const $5=`
 <svg
   class="lucide lucide-folder-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -12402,7 +12402,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 13h6" />
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
 </svg>
-`;const z5=`
+`;const U5=`
 <svg
   class="lucide lucide-folder-root"
   xmlns="http://www.w3.org/2000/svg"
@@ -12419,7 +12419,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="13" r="2" />
   <path d="M12 15v5" />
 </svg>
-`;const $5=`
+`;const D5=`
 <svg
   class="lucide lucide-folder-search-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -12436,7 +12436,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
   <path d="M13.3 14.3 15 16" />
 </svg>
-`;const D5=`
+`;const F5=`
 <svg
   class="lucide lucide-folder-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -12453,7 +12453,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 21-1.9-1.9" />
   <circle cx="17" cy="17" r="3" />
 </svg>
-`;const U5=`
+`;const P5=`
 <svg
   class="lucide lucide-folder-symlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -12469,7 +12469,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 9.35V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h7" />
   <path d="m8 16 3-3-3-3" />
 </svg>
-`;const F5=`
+`;const E5=`
 <svg
   class="lucide lucide-folder-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -12488,7 +12488,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 22v-4h-4" />
   <path d="m22 18-1.535 1.605a5 5 0 0 1-8-1.5" />
 </svg>
-`;const P5=`
+`;const T5=`
 <svg
   class="lucide lucide-folder-tree"
   xmlns="http://www.w3.org/2000/svg"
@@ -12506,7 +12506,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 5a2 2 0 0 0 2 2h3" />
   <path d="M3 3v13a2 2 0 0 0 2 2h3" />
 </svg>
-`;const E5=`
+`;const Y5=`
 <svg
   class="lucide lucide-folder-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -12523,7 +12523,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 10v6" />
   <path d="m9 13 3-3 3 3" />
 </svg>
-`;const T5=`
+`;const O5=`
 <svg
   class="lucide lucide-folder-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -12540,7 +12540,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.5 10.5 5 5" />
   <path d="m14.5 10.5-5 5" />
 </svg>
-`;const Y5=`
+`;const I5=`
 <svg
   class="lucide lucide-folder"
   xmlns="http://www.w3.org/2000/svg"
@@ -12555,7 +12555,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
 </svg>
-`;const O5=`
+`;const q5=`
 <svg
   class="lucide lucide-folders"
   xmlns="http://www.w3.org/2000/svg"
@@ -12571,7 +12571,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 5a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2.5a1.5 1.5 0 0 1 1.2.6l.6.8a1.5 1.5 0 0 0 1.2.6z" />
   <path d="M3 8.268a2 2 0 0 0-1 1.738V19a2 2 0 0 0 2 2h11a2 2 0 0 0 1.732-1" />
 </svg>
-`;const I5=`
+`;const N5=`
 <svg
   class="lucide lucide-footprints"
   xmlns="http://www.w3.org/2000/svg"
@@ -12589,7 +12589,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 17h4" />
   <path d="M4 13h4" />
 </svg>
-`;const q5=`
+`;const _5=`
 <svg
   class="lucide lucide-form"
   xmlns="http://www.w3.org/2000/svg"
@@ -12607,7 +12607,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="4" y="18" width="16" height="4" rx="1" />
   <rect x="4" y="6" width="16" height="4" rx="1" />
 </svg>
-`;const N5=`
+`;const Z5=`
 <svg
   class="lucide lucide-forklift"
   xmlns="http://www.w3.org/2000/svg"
@@ -12625,7 +12625,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="5" cy="19" r="2" />
   <path d="M8 19h3m5-17v17h6M6 12V7c0-1.1.9-2 2-2h3l5 5" />
 </svg>
-`;const _5=`
+`;const G5=`
 <svg
   class="lucide lucide-forward"
   xmlns="http://www.w3.org/2000/svg"
@@ -12641,7 +12641,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 17 5-5-5-5" />
   <path d="M4 18v-2a4 4 0 0 1 4-4h12" />
 </svg>
-`;const Z5=`
+`;const W5=`
 <svg
   class="lucide lucide-frame"
   xmlns="http://www.w3.org/2000/svg"
@@ -12659,7 +12659,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="6" x2="6" y1="2" y2="22" />
   <line x1="18" x2="18" y1="2" y2="22" />
 </svg>
-`;const G5=`
+`;const K5=`
 <svg
   class="lucide lucide-framer"
   xmlns="http://www.w3.org/2000/svg"
@@ -12674,7 +12674,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M5 16V9h14V2H5l14 14h-7m-7 0 7 7v-7m-7 0h7" />
 </svg>
-`;const W5=`
+`;const X5=`
 <svg
   class="lucide lucide-frown"
   xmlns="http://www.w3.org/2000/svg"
@@ -12692,7 +12692,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="9" x2="9.01" y1="9" y2="9" />
   <line x1="15" x2="15.01" y1="9" y2="9" />
 </svg>
-`;const K5=`
+`;const J5=`
 <svg
   class="lucide lucide-fuel"
   xmlns="http://www.w3.org/2000/svg"
@@ -12710,7 +12710,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 21h13" />
   <path d="M3 9h11" />
 </svg>
-`;const X5=`
+`;const Q5=`
 <svg
   class="lucide lucide-fullscreen"
   xmlns="http://www.w3.org/2000/svg"
@@ -12729,7 +12729,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
   <rect width="10" height="8" x="7" y="8" rx="1" />
 </svg>
-`;const J5=`
+`;const tk=`
 <svg
   class="lucide lucide-funnel-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -12778,7 +12778,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z" />
 </svg>
-`;const Q5=`
+`;const ek=`
 <svg
   class="lucide lucide-gallery-horizontal-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -12795,7 +12795,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 5v14" />
   <rect width="12" height="18" x="10" y="3" rx="2" />
 </svg>
-`;const tk=`
+`;const ok=`
 <svg
   class="lucide lucide-gallery-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -12812,7 +12812,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="12" height="18" x="6" y="3" rx="2" />
   <path d="M22 3v18" />
 </svg>
-`;const ek=`
+`;const rk=`
 <svg
   class="lucide lucide-gallery-thumbnails"
   xmlns="http://www.w3.org/2000/svg"
@@ -12831,7 +12831,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 21h1" />
   <path d="M19 21h1" />
 </svg>
-`;const ok=`
+`;const ik=`
 <svg
   class="lucide lucide-gallery-vertical-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -12848,7 +12848,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 6h14" />
   <rect width="18" height="12" x="3" y="10" rx="2" />
 </svg>
-`;const rk=`
+`;const sk=`
 <svg
   class="lucide lucide-gallery-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -12865,7 +12865,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="12" x="3" y="6" rx="2" />
   <path d="M3 22h18" />
 </svg>
-`;const ik=`
+`;const nk=`
 <svg
   class="lucide lucide-gamepad-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -12884,7 +12884,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="18" x2="18.01" y1="10" y2="10" />
   <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
 </svg>
-`;const sk=`
+`;const lk=`
 <svg
   class="lucide lucide-gamepad-directional" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -12896,7 +12896,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     d="M6.586 14.414A2 2 0 0 1 5.172 15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.172a2 2 0 0 1 1.414.586l1.56 1.56a1.207 1.207 0 0 1 0 1.708z" />
   <path
     d="M9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.172a2 2 0 0 1-.586 1.414l-1.56 1.56a1.207 1.207 0 0 1-1.708 0l-1.56-1.56A2 2 0 0 1 9 5.172z" />
-</svg>`;const nk=`
+</svg>`;const ak=`
 <svg
   class="lucide lucide-gamepad"
   xmlns="http://www.w3.org/2000/svg"
@@ -12915,7 +12915,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="18" x2="18.01" y1="11" y2="11" />
   <rect width="20" height="12" x="2" y="6" rx="2" />
 </svg>
-`;const lk=`
+`;const dk=`
 <svg
   class="lucide lucide-gauge"
   xmlns="http://www.w3.org/2000/svg"
@@ -12931,7 +12931,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 14 4-4" />
   <path d="M3.34 19a10 10 0 1 1 17.32 0" />
 </svg>
-`;const ak=`
+`;const hk=`
 <svg
   class="lucide lucide-gavel"
   xmlns="http://www.w3.org/2000/svg"
@@ -12950,7 +12950,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 8 6-6" />
   <path d="m8.5 7.5 8 8" />
 </svg>
-`;const dk=`
+`;const ck=`
 <svg
   class="lucide lucide-gem"
   xmlns="http://www.w3.org/2000/svg"
@@ -12967,7 +12967,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z" />
   <path d="M2 9h20" />
 </svg>
-`;const hk=`
+`;const pk=`
 <svg
   class="lucide lucide-georgian-lari"
   xmlns="http://www.w3.org/2000/svg"
@@ -12985,7 +12985,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 21h16" />
   <path d="M9 12V3" />
 </svg>
-`;const ck=`
+`;const uk=`
 <svg
   class="lucide lucide-ghost"
   xmlns="http://www.w3.org/2000/svg"
@@ -13002,7 +13002,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 10h.01" />
   <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z" />
 </svg>
-`;const pk=`
+`;const wk=`
 <svg
   class="lucide lucide-gift"
   xmlns="http://www.w3.org/2000/svg"
@@ -13020,7 +13020,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
   <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
 </svg>
-`;const uk=`
+`;const gk=`
 <svg
   class="lucide lucide-git-branch-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -13038,7 +13038,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="6" r="3" />
   <circle cx="6" cy="18" r="3" />
 </svg>
-`;const wk=`
+`;const vk=`
 <svg
   class="lucide lucide-git-branch-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -13058,7 +13058,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 15v6" />
   <path d="M21 18h-6" />
 </svg>
-`;const gk=`
+`;const kk=`
 <svg
   class="lucide lucide-git-branch"
   xmlns="http://www.w3.org/2000/svg"
@@ -13093,7 +13093,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="3" x2="9" y1="12" y2="12" />
   <line x1="15" x2="21" y1="12" y2="12" />
 </svg>
-`;const vk=`
+`;const mk=`
 <svg
   class="lucide lucide-git-commit-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -13110,7 +13110,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="3" />
   <path d="M12 15v6" />
 </svg>
-`;const kk=`
+`;const xk=`
 <svg
   class="lucide lucide-git-compare-arrows"
   xmlns="http://www.w3.org/2000/svg"
@@ -13130,7 +13130,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18H7a2 2 0 0 1-2-2V9" />
   <path d="m9 15 3 3-3 3" />
 </svg>
-`;const mk=`
+`;const fk=`
 <svg
   class="lucide lucide-git-compare"
   xmlns="http://www.w3.org/2000/svg"
@@ -13148,7 +13148,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 6h3a2 2 0 0 1 2 2v7" />
   <path d="M11 18H8a2 2 0 0 1-2-2V9" />
 </svg>
-`;const xk=`
+`;const Mk=`
 <svg
   class="lucide lucide-git-fork"
   xmlns="http://www.w3.org/2000/svg"
@@ -13167,7 +13167,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9" />
   <path d="M12 12v3" />
 </svg>
-`;const fk=`
+`;const yk=`
 <svg
   class="lucide lucide-git-graph"
   xmlns="http://www.w3.org/2000/svg"
@@ -13187,7 +13187,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="6" r="3" />
   <path d="M16 15.7A9 9 0 0 0 19 9" />
 </svg>
-`;const Mk=`
+`;const bk=`
 <svg
   class="lucide lucide-git-merge"
   xmlns="http://www.w3.org/2000/svg"
@@ -13204,7 +13204,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="6" cy="6" r="3" />
   <path d="M6 21V9a9 9 0 0 0 9 9" />
 </svg>
-`;const yk=`
+`;const Ck=`
 <svg
   class="lucide lucide-git-pull-request-arrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -13223,7 +13223,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 9-3-3 3-3" />
   <path d="M12 6h5a2 2 0 0 1 2 2v7" />
 </svg>
-`;const bk=`
+`;const Bk=`
 <svg
   class="lucide lucide-git-pull-request-closed"
   xmlns="http://www.w3.org/2000/svg"
@@ -13243,7 +13243,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 11.5V15" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const Ck=`
+`;const jk=`
 <svg
   class="lucide lucide-git-pull-request-create-arrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -13263,7 +13263,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 15v6" />
   <path d="M22 18h-6" />
 </svg>
-`;const Bk=`
+`;const Ak=`
 <svg
   class="lucide lucide-git-pull-request-create"
   xmlns="http://www.w3.org/2000/svg"
@@ -13282,7 +13282,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 15v6" />
   <path d="M21 18h-6" />
 </svg>
-`;const jk=`
+`;const Lk=`
 <svg
   class="lucide lucide-git-pull-request-draft"
   xmlns="http://www.w3.org/2000/svg"
@@ -13301,7 +13301,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 11v-1" />
   <line x1="6" x2="6" y1="9" y2="21" />
 </svg>
-`;const Ak=`
+`;const Sk=`
 <svg
   class="lucide lucide-git-pull-request"
   xmlns="http://www.w3.org/2000/svg"
@@ -13319,7 +13319,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 6h3a2 2 0 0 1 2 2v7" />
   <line x1="6" x2="6" y1="9" y2="21" />
 </svg>
-`;const Lk=`
+`;const Hk=`
 <svg
   class="lucide lucide-github"
   xmlns="http://www.w3.org/2000/svg"
@@ -13335,7 +13335,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
   <path d="M9 18c-4.51 2-5-2-7-2" />
 </svg>
-`;const Sk=`
+`;const Rk=`
 <svg
   class="lucide lucide-gitlab"
   xmlns="http://www.w3.org/2000/svg"
@@ -13350,7 +13350,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z" />
 </svg>
-`;const Hk=`
+`;const Vk=`
 <svg
   class="lucide lucide-glass-water"
   xmlns="http://www.w3.org/2000/svg"
@@ -13366,7 +13366,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z" />
   <path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0" />
 </svg>
-`;const Rk=`
+`;const zk=`
 <svg
   class="lucide lucide-glasses"
   xmlns="http://www.w3.org/2000/svg"
@@ -13385,7 +13385,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2" />
   <path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2" />
 </svg>
-`;const Vk=`
+`;const $k=`
 <svg
   class="lucide lucide-globe-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -13403,7 +13403,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 6V4a2 2 0 1 0-4 0v2" />
   <rect width="8" height="5" x="14" y="6" rx="1" />
 </svg>
-`;const zk=`
+`;const Uk=`
 <svg
   class="lucide lucide-globe"
   xmlns="http://www.w3.org/2000/svg"
@@ -13420,7 +13420,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
   <path d="M2 12h20" />
 </svg>
-`;const $k=`
+`;const Dk=`
 <svg
   class="lucide lucide-goal"
   xmlns="http://www.w3.org/2000/svg"
@@ -13437,7 +13437,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.561 10.222a9 9 0 1 1-12.55-5.29" />
   <path d="M8.002 9.997a5 5 0 1 0 8.9 2.02" />
 </svg>
-`;const Dk=`
+`;const Fk=`
 <svg
   class="lucide lucide-gpu"
   xmlns="http://www.w3.org/2000/svg"
@@ -13455,7 +13455,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 17v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3" />
   <circle cx="16" cy="11" r="2" />
   <circle cx="8" cy="11" r="2" />
-</svg>`;const Uk=`
+</svg>`;const Pk=`
 <svg
   class="lucide lucide-graduation-cap"
   xmlns="http://www.w3.org/2000/svg"
@@ -13472,7 +13472,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 10v6" />
   <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
 </svg>
-`;const Fk=`
+`;const Ek=`
 <svg
   class="lucide lucide-grape"
   xmlns="http://www.w3.org/2000/svg"
@@ -13545,7 +13545,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 16 5 5" />
   <path d="m16 21 5-5" />
 </svg>
-`;const Dn=`
+`;const Un=`
 <svg
   class="lucide lucide-grid-2x2"
   xmlns="http://www.w3.org/2000/svg"
@@ -13562,7 +13562,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 12h18" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const Pk=`
+`;const Tk=`
 <svg
   class="lucide lucide-grid-3x2"
   xmlns="http://www.w3.org/2000/svg"
@@ -13599,7 +13599,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 3v18" />
   <path d="M15 3v18" />
 </svg>
-`;const Ek=`
+`;const Yk=`
 <svg
   class="lucide lucide-grip-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -13619,7 +13619,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="15" r="1" />
   <circle cx="5" cy="15" r="1" />
 </svg>
-`;const Tk=`
+`;const Ok=`
 <svg
   class="lucide lucide-grip-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -13639,7 +13639,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="15" cy="5" r="1" />
   <circle cx="15" cy="19" r="1" />
 </svg>
-`;const Yk=`
+`;const Ik=`
 <svg
   class="lucide lucide-grip"
   xmlns="http://www.w3.org/2000/svg"
@@ -13662,7 +13662,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="19" r="1" />
   <circle cx="5" cy="19" r="1" />
 </svg>
-`;const Ok=`
+`;const qk=`
 <svg
   class="lucide lucide-group"
   xmlns="http://www.w3.org/2000/svg"
@@ -13682,7 +13682,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="7" height="5" x="7" y="7" rx="1" />
   <rect width="7" height="5" x="10" y="12" rx="1" />
 </svg>
-`;const Ik=`
+`;const Nk=`
 <svg
   class="lucide lucide-guitar"
   xmlns="http://www.w3.org/2000/svg"
@@ -13700,7 +13700,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 16 2 2" />
   <path d="M8.23 9.85A3 3 0 0 1 11 8a5 5 0 0 1 5 5 3 3 0 0 1-1.85 2.77l-.92.38A2 2 0 0 0 12 18a4 4 0 0 1-4 4 6 6 0 0 1-6-6 4 4 0 0 1 4-4 2 2 0 0 0 1.85-1.23z" />
 </svg>
-`;const qk=`
+`;const _k=`
 <svg
   class="lucide lucide-ham"
   xmlns="http://www.w3.org/2000/svg"
@@ -13718,7 +13718,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.565 10.435 18.6 8.4a2.501 2.501 0 1 0 1.65-4.65 2.5 2.5 0 1 0-4.66 1.66l-2.024 2.025" />
   <path d="m8.5 16.5-1-1" />
 </svg>
-`;const Nk=`
+`;const Zk=`
 <svg
   class="lucide lucide-hamburger"
   xmlns="http://www.w3.org/2000/svg"
@@ -13736,7 +13736,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 16a2 2 0 0 0-2 2 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 2 2 0 0 0-2-2q0 0 0 0" />
   <path d="m6.67 12 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
 </svg>
-`;const _k=`
+`;const Gk=`
 <svg
   class="lucide lucide-hammer"
   xmlns="http://www.w3.org/2000/svg"
@@ -13753,7 +13753,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18 15 4-4" />
   <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" />
 </svg>
-`;const Zk=`
+`;const Wk=`
 <svg
   class="lucide lucide-hand-fist"
   xmlns="http://www.w3.org/2000/svg"
@@ -13771,7 +13771,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 5A2 2 0 1 0 5 5V10" />
   <path d="M9 7V4A2 2 0 1 1 13 4V7.268" />
 </svg>
-`;const Gk=`
+`;const Kk=`
 <svg
   class="lucide lucide-hand-coins"
   xmlns="http://www.w3.org/2000/svg"
@@ -13790,7 +13790,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="16" cy="9" r="2.9" />
   <circle cx="6" cy="5" r="3" />
 </svg>
-`;const Un=`
+`;const Dn=`
 <svg
   class="lucide lucide-hand-grab"
   xmlns="http://www.w3.org/2000/svg"
@@ -13809,7 +13809,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 14a2 2 0 0 0-2-2a2 2 0 0 0-2 2" />
   <path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8 2 2 0 1 1 4 0" />
 </svg>
-`;const Wk=`
+`;const Xk=`
 <svg
   class="lucide lucide-hand-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -13844,7 +13844,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
   <path d="m2 13 6 6" />
 </svg>
-`;const Kk=`
+`;const Jk=`
 <svg
   class="lucide lucide-hand-metal"
   xmlns="http://www.w3.org/2000/svg"
@@ -13862,7 +13862,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 10.5V5a2 2 0 1 0-4 0v9" />
   <path d="m7 15-1.76-1.76a2 2 0 0 0-2.83 2.82l3.6 3.6C7.5 21.14 9.2 22 12 22h2a8 8 0 0 0 8-8V7a2 2 0 1 0-4 0v5" />
 </svg>
-`;const Xk=`
+`;const Qk=`
 <svg
   class="lucide lucide-hand-platter"
   xmlns="http://www.w3.org/2000/svg"
@@ -13882,7 +13882,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 10a7 7 0 0 1 14 0" />
   <path d="M5 14v6a1 1 0 0 1-1 1H2" />
 </svg>
-`;const Jk=`
+`;const tm=`
 <svg
   class="lucide lucide-hand"
   xmlns="http://www.w3.org/2000/svg"
@@ -13900,7 +13900,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" />
   <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
 </svg>
-`;const Qk=`
+`;const em=`
 <svg
   class="lucide lucide-handbag"
   xmlns="http://www.w3.org/2000/svg"
@@ -13916,7 +13916,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.048 18.566A2 2 0 0 0 4 21h16a2 2 0 0 0 1.952-2.434l-2-9A2 2 0 0 0 18 8H6a2 2 0 0 0-1.952 1.566z" />
   <path d="M8 11V6a4 4 0 0 1 8 0v5" />
 </svg>
-`;const tm=`
+`;const om=`
 <svg
   class="lucide lucide-handshake"
   xmlns="http://www.w3.org/2000/svg"
@@ -13935,7 +13935,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
   <path d="M3 4h8" />
 </svg>
-`;const em=`
+`;const rm=`
 <svg
   class="lucide lucide-hard-drive-download"
   xmlns="http://www.w3.org/2000/svg"
@@ -13954,7 +13954,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18h.01" />
   <path d="M10 18h.01" />
 </svg>
-`;const om=`
+`;const im=`
 <svg
   class="lucide lucide-hard-drive-upload"
   xmlns="http://www.w3.org/2000/svg"
@@ -13973,7 +13973,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18h.01" />
   <path d="M10 18h.01" />
 </svg>
-`;const rm=`
+`;const sm=`
 <svg
   class="lucide lucide-hard-drive"
   xmlns="http://www.w3.org/2000/svg"
@@ -13991,7 +13991,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="6" x2="6.01" y1="16" y2="16" />
   <line x1="10" x2="10.01" y1="16" y2="16" />
 </svg>
-`;const im=`
+`;const nm=`
 <svg
   class="lucide lucide-hard-hat"
   xmlns="http://www.w3.org/2000/svg"
@@ -14009,7 +14009,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 15v-3a6 6 0 0 1 6-6" />
   <rect x="2" y="15" width="20" height="4" rx="1" />
 </svg>
-`;const sm=`
+`;const lm=`
 <svg
   class="lucide lucide-hat-glasses"
   xmlns="http://www.w3.org/2000/svg"
@@ -14028,7 +14028,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="17" cy="18" r="3" />
   <circle cx="7" cy="18" r="3" />
 </svg>
-`;const nm=`
+`;const am=`
 <svg
   class="lucide lucide-hash"
   xmlns="http://www.w3.org/2000/svg"
@@ -14046,7 +14046,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="10" x2="8" y1="3" y2="21" />
   <line x1="16" x2="14" y1="3" y2="21" />
 </svg>
-`;const lm=`
+`;const dm=`
 <svg
   class="lucide lucide-hdmi-port"
   xmlns="http://www.w3.org/2000/svg"
@@ -14062,7 +14062,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 9a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1l2 2h12l2-2h1a1 1 0 0 0 1-1Z" />
   <path d="M7.5 12h9" />
 </svg>
-`;const am=`
+`;const hm=`
 <svg
   class="lucide lucide-haze"
   xmlns="http://www.w3.org/2000/svg"
@@ -14084,7 +14084,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 13a4 4 0 0 0-8 0" />
   <path d="M12 5V2.5" />
 </svg>
-`;const dm=`
+`;const cm=`
 <svg
   class="lucide lucide-hd"
   xmlns="http://www.w3.org/2000/svg"
@@ -14103,7 +14103,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 15V9" />
   <rect x="2" y="5" width="20" height="14" rx="2" />
 </svg>
-`;const hm=`
+`;const pm=`
 <svg
   class="lucide lucide-heading-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -14121,7 +14121,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18V6" />
   <path d="m17 12 3-2v8" />
 </svg>
-`;const cm=`
+`;const um=`
 <svg
   class="lucide lucide-heading-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -14139,7 +14139,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18V6" />
   <path d="M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1" />
 </svg>
-`;const pm=`
+`;const wm=`
 <svg
   class="lucide lucide-heading-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -14158,7 +14158,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.5 10.5c1.7-1 3.5 0 3.5 1.5a2 2 0 0 1-2 2" />
   <path d="M17 17.5c2 1.5 4 .3 4-1.5a2 2 0 0 0-2-2" />
 </svg>
-`;const um=`
+`;const gm=`
 <svg
   class="lucide lucide-heading-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -14177,7 +14177,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 12h8" />
   <path d="M4 18V6" />
 </svg>
-`;const wm=`
+`;const vm=`
 <svg
   class="lucide lucide-heading-5"
   xmlns="http://www.w3.org/2000/svg"
@@ -14196,7 +14196,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 13v-3h4" />
   <path d="M17 17.7c.4.2.8.3 1.3.3 1.5 0 2.7-1.1 2.7-2.5S19.8 13 18.3 13H17" />
 </svg>
-`;const gm=`
+`;const km=`
 <svg
   class="lucide lucide-heading-6"
   xmlns="http://www.w3.org/2000/svg"
@@ -14215,7 +14215,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="16" r="2" />
   <path d="M20 10c-2 2-3 3.5-3 6" />
 </svg>
-`;const vm=`
+`;const mm=`
 <svg
   class="lucide lucide-heading"
   xmlns="http://www.w3.org/2000/svg"
@@ -14232,7 +14232,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 20V4" />
   <path d="M18 20V4" />
 </svg>
-`;const km=`
+`;const xm=`
 <svg
   class="lucide lucide-headphone-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -14251,7 +14251,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.414 20.414A2 2 0 0 1 19 21h-1a2 2 0 0 1-2-2v-3" />
   <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 2.636-6.364" />
 </svg>
-`;const mm=`
+`;const fm=`
 <svg
   class="lucide lucide-headphones"
   xmlns="http://www.w3.org/2000/svg"
@@ -14266,7 +14266,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
 </svg>
-`;const xm=`
+`;const Mm=`
 <svg
   class="lucide lucide-headset"
   xmlns="http://www.w3.org/2000/svg"
@@ -14282,7 +14282,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
   <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
 </svg>
-`;const fm=`
+`;const ym=`
 <svg
   class="lucide lucide-heart-crack"
   xmlns="http://www.w3.org/2000/svg"
@@ -14298,7 +14298,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12.409 5.824c-.702.792-1.15 1.496-1.415 2.166l2.153 2.156a.5.5 0 0 1 0 .707l-2.293 2.293a.5.5 0 0 0 0 .707L12 15" />
   <path d="M13.508 20.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.677.6.6 0 0 0 .818.001A5.5 5.5 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5z" />
 </svg>
-`;const Mm=`
+`;const bm=`
 <svg
   class="lucide lucide-heart-handshake"
   xmlns="http://www.w3.org/2000/svg"
@@ -14313,7 +14313,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762" />
 </svg>
-`;const ym=`
+`;const Cm=`
 <svg
   class="lucide lucide-heart-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -14329,7 +14329,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.876 18.99-1.368 1.323a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.244 1.572" />
   <path d="M15 15h6" />
 </svg>
-`;const bm=`
+`;const Bm=`
 <svg
   class="lucide lucide-heart-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -14346,7 +14346,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16.967 16.967-3.459 3.346a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 2.747-4.761" />
   <path d="m2 2 20 20" />
 </svg>
-`;const Cm=`
+`;const jm=`
 <svg
   class="lucide lucide-heart-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -14363,7 +14363,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 15h6" />
   <path d="M18 12v6" />
 </svg>
-`;const Bm=`
+`;const Am=`
 <svg
   class="lucide lucide-heart-pulse"
   xmlns="http://www.w3.org/2000/svg"
@@ -14379,7 +14379,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
   <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
 </svg>
-`;const jm=`
+`;const Lm=`
 <svg
   class="lucide lucide-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -14394,7 +14394,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
 </svg>
-`;const Am=`
+`;const Sm=`
 <svg
   class="lucide lucide-heater"
   xmlns="http://www.w3.org/2000/svg"
@@ -14418,7 +14418,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 20v2" />
   <path d="M19 20v2" />
 </svg>
-`;const Lm=`
+`;const Hm=`
 <svg
   class="lucide lucide-helicopter"
   xmlns="http://www.w3.org/2000/svg"
@@ -14440,7 +14440,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21h14" />
   <path d="M8 13H2" />
 </svg>
-`;const Sm=`
+`;const Rm=`
 <svg
   class="lucide lucide-hexagon"
   xmlns="http://www.w3.org/2000/svg"
@@ -14455,7 +14455,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
 </svg>
-`;const Hm=`
+`;const Vm=`
 <svg
   class="lucide lucide-highlighter"
   xmlns="http://www.w3.org/2000/svg"
@@ -14471,7 +14471,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 11-6 6v3h9l3-3" />
   <path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4" />
 </svg>
-`;const Rm=`
+`;const zm=`
 <svg
   class="lucide lucide-history"
   xmlns="http://www.w3.org/2000/svg"
@@ -14488,7 +14488,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3v5h5" />
   <path d="M12 7v5l4 2" />
 </svg>
-`;const Vm=`
+`;const $m=`
 <svg
   class="lucide lucide-hop-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -14511,7 +14511,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.35 2.68a10 10 0 0 1 9.98 1.58c.43.35.4.96-.12 1.17-1.5.6-4.3.98-6.07 1.05" />
   <path d="m2 2 20 20" />
 </svg>
-`;const zm=`
+`;const Um=`
 <svg
   class="lucide lucide-hop"
   xmlns="http://www.w3.org/2000/svg"
@@ -14533,7 +14533,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.93 4.93 3 3a.7.7 0 0 1 0-1" />
   <path d="M9.58 12.18c1.24 2.98 1.77 5.95 1.57 8.28a.8.8 0 0 1-1.13.68 20.82 20.82 0 0 1-4.5-3.15" />
 </svg>
-`;const $m=`
+`;const Dm=`
 <svg
   class="lucide lucide-hospital"
   xmlns="http://www.w3.org/2000/svg"
@@ -14552,7 +14552,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 11h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" />
   <path d="M18 21V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16" />
 </svg>
-`;const Dm=`
+`;const Fm=`
 <svg
   class="lucide lucide-hotel"
   xmlns="http://www.w3.org/2000/svg"
@@ -14576,7 +14576,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 7h.01" />
   <rect x="4" y="2" width="16" height="20" rx="2" />
 </svg>
-`;const Um=`
+`;const Pm=`
 <svg
   class="lucide lucide-hourglass"
   xmlns="http://www.w3.org/2000/svg"
@@ -14594,7 +14594,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
   <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
 </svg>
-`;const Fm=`
+`;const Em=`
 <svg
   class="lucide lucide-house-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -14610,7 +14610,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.62 13.8A2.25 2.25 0 1 1 12 10.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
   <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
 </svg>
-`;const Pm=`
+`;const Tm=`
 <svg
   class="lucide lucide-house-plug"
   xmlns="http://www.w3.org/2000/svg"
@@ -14628,7 +14628,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 12a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2a1 1 0 0 1 1-1z" />
   <path d="M8.5 21H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-2" />
 </svg>
-`;const Em=`
+`;const Ym=`
 <svg
   class="lucide lucide-house-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -14646,7 +14646,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 18h6" />
   <path d="M18 15v6" />
 </svg>
-`;const Tm=`
+`;const Om=`
 <svg
   class="lucide lucide-house-wifi"
   xmlns="http://www.w3.org/2000/svg"
@@ -14714,7 +14714,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 7A5 5 0 0 0 7 7" />
   <path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4" />
 </svg>
-`;const Ym=`
+`;const Im=`
 <svg
   class="lucide lucide-id-card-lanyard"
   xmlns="http://www.w3.org/2000/svg"
@@ -14732,7 +14732,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.899 22A5 5 0 0 0 7.1 22" />
   <path d="m9 2 3 6" />
   <circle cx="12" cy="15" r="3" />
-</svg>`;const Om=`
+</svg>`;const qm=`
 <svg
   class="lucide lucide-id-card"
   xmlns="http://www.w3.org/2000/svg"
@@ -14751,7 +14751,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="11" r="2" />
   <rect x="2" y="5" width="20" height="14" rx="2" />
 </svg>
-`;const Im=`
+`;const Nm=`
 <svg
   class="lucide lucide-image-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -14769,7 +14769,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 22 3-3" />
   <circle cx="9" cy="9" r="2" />
 </svg>
-`;const qm=`
+`;const _m=`
 <svg
   class="lucide lucide-image-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -14787,7 +14787,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="9" r="2" />
   <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
 </svg>
-`;const Nm=`
+`;const Zm=`
 <svg
   class="lucide lucide-image-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -14807,7 +14807,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.59 3.59A1.99 1.99 0 0 0 3 5v14a2 2 0 0 0 2 2h14c.55 0 1.052-.22 1.41-.59" />
   <path d="M21 15V5a2 2 0 0 0-2-2H9" />
 </svg>
-`;const _m=`
+`;const Gm=`
 <svg
   class="lucide lucide-image-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -14825,7 +14825,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 21 5-5" />
   <circle cx="9" cy="9" r="2" />
 </svg>
-`;const Zm=`
+`;const Wm=`
 <svg
   class="lucide lucide-image-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -14844,7 +14844,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
   <circle cx="9" cy="9" r="2" />
 </svg>
-`;const Gm=`
+`;const Km=`
 <svg
   class="lucide lucide-image-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -14862,7 +14862,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 22v-5.5" />
   <circle cx="9" cy="9" r="2" />
 </svg>
-`;const Wm=`
+`;const Xm=`
 <svg
   class="lucide lucide-image-upscale"
   xmlns="http://www.w3.org/2000/svg"
@@ -14884,7 +14884,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 3h3" />
   <rect x="3" y="11" width="10" height="10" rx="1" />
 </svg>
-`;const Km=`
+`;const Jm=`
 <svg
   class="lucide lucide-image"
   xmlns="http://www.w3.org/2000/svg"
@@ -14901,7 +14901,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="9" r="2" />
   <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
 </svg>
-`;const Xm=`
+`;const Qm=`
 <svg
   class="lucide lucide-images"
   xmlns="http://www.w3.org/2000/svg"
@@ -14919,7 +14919,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="13" cy="7" r="1" fill="currentColor" />
   <rect x="8" y="2" width="14" height="14" rx="2" />
 </svg>
-`;const Jm=`
+`;const tx=`
 <svg
   class="lucide lucide-import"
   xmlns="http://www.w3.org/2000/svg"
@@ -14936,7 +14936,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 11 4 4 4-4" />
   <path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4" />
 </svg>
-`;const Qm=`
+`;const ex=`
 <svg
   class="lucide lucide-inbox"
   xmlns="http://www.w3.org/2000/svg"
@@ -14952,7 +14952,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
   <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
 </svg>
-`;const tx=`
+`;const ox=`
 <svg
   class="lucide lucide-indian-rupee"
   xmlns="http://www.w3.org/2000/svg"
@@ -14971,7 +14971,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 13h3" />
   <path d="M9 13c6.667 0 6.667-10 0-10" />
 </svg>
-`;const ex=`
+`;const rx=`
 <svg
   class="lucide lucide-infinity"
   xmlns="http://www.w3.org/2000/svg"
@@ -14986,7 +14986,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8" />
 </svg>
-`;const ox=`
+`;const ix=`
 <svg
   class="lucide lucide-info"
   xmlns="http://www.w3.org/2000/svg"
@@ -15003,7 +15003,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 16v-4" />
   <path d="M12 8h.01" />
 </svg>
-`;const rx=`
+`;const sx=`
 <svg
   class="lucide lucide-inspection-panel"
   xmlns="http://www.w3.org/2000/svg"
@@ -15022,7 +15022,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 17h.01" />
   <path d="M17 17h.01" />
 </svg>
-`;const ix=`
+`;const nx=`
 <svg
   class="lucide lucide-instagram"
   xmlns="http://www.w3.org/2000/svg"
@@ -15039,7 +15039,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
 </svg>
-`;const sx=`
+`;const lx=`
 <svg
   class="lucide lucide-italic"
   xmlns="http://www.w3.org/2000/svg"
@@ -15056,7 +15056,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="14" x2="5" y1="20" y2="20" />
   <line x1="15" x2="9" y1="4" y2="20" />
 </svg>
-`;const nx=`
+`;const ax=`
 <svg
   class="lucide lucide-iteration-ccw"
   xmlns="http://www.w3.org/2000/svg"
@@ -15072,7 +15072,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 14 4 4-4 4" />
   <path d="M20 10a8 8 0 1 0-8 8h8" />
 </svg>
-`;const lx=`
+`;const dx=`
 <svg
   class="lucide lucide-iteration-cw"
   xmlns="http://www.w3.org/2000/svg"
@@ -15088,7 +15088,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 10a8 8 0 1 1 8 8H4" />
   <path d="m8 22-4-4 4-4" />
 </svg>
-`;const ax=`
+`;const hx=`
 <svg
   class="lucide lucide-japanese-yen"
   xmlns="http://www.w3.org/2000/svg"
@@ -15105,7 +15105,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 15h12" />
   <path d="M6 11h12" />
 </svg>
-`;const dx=`
+`;const cx=`
 <svg
   class="lucide lucide-joystick"
   xmlns="http://www.w3.org/2000/svg"
@@ -15123,7 +15123,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 15V9" />
   <circle cx="12" cy="6" r="3" />
 </svg>
-`;const hx=`
+`;const px=`
 <svg
   class="lucide lucide-kanban"
   xmlns="http://www.w3.org/2000/svg"
@@ -15140,7 +15140,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 3v8" />
   <path d="M19 3v18" />
 </svg>
-`;const cx=`
+`;const ux=`
 <svg
   class="lucide lucide-kayak"
   xmlns="http://www.w3.org/2000/svg"
@@ -15158,7 +15158,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6.707 6.707 10.586 10.586" />
   <path d="M7 5a2 2 0 1 0-2 2h1a1 1 0 0 0 1-1z" />
 </svg>
-`;const px=`
+`;const wx=`
 <svg
   class="lucide lucide-key-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -15175,7 +15175,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 7 3 3" />
   <path d="m9.4 10.6-6.814 6.814A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814" />
 </svg>
-`;const ux=`
+`;const gx=`
 <svg
   class="lucide lucide-key-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -15191,7 +15191,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" />
   <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
 </svg>
-`;const wx=`
+`;const vx=`
 <svg
   class="lucide lucide-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -15208,7 +15208,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 2-9.6 9.6" />
   <circle cx="7.5" cy="15.5" r="5.5" />
 </svg>
-`;const gx=`
+`;const kx=`
 <svg
   class="lucide lucide-keyboard-music"
   xmlns="http://www.w3.org/2000/svg"
@@ -15231,7 +15231,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 12v4" />
   <path d="M18 12v4" />
 </svg>
-`;const vx=`
+`;const mx=`
 <svg
   class="lucide lucide-keyboard-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -15254,7 +15254,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2" />
   <path d="M6 8h.01" />
   <path d="M8 12h.01" />
-</svg>`;const kx=`
+</svg>`;const xx=`
 <svg
   class="lucide lucide-keyboard"
   xmlns="http://www.w3.org/2000/svg"
@@ -15277,7 +15277,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h.01" />
   <rect width="20" height="16" x="2" y="4" rx="2" />
 </svg>
-`;const mx=`
+`;const fx=`
 <svg
   class="lucide lucide-lamp-ceiling"
   xmlns="http://www.w3.org/2000/svg"
@@ -15294,7 +15294,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14.829 15.998a3 3 0 1 1-5.658 0" />
   <path d="M20.92 14.606A1 1 0 0 1 20 16H4a1 1 0 0 1-.92-1.394l3-7A1 1 0 0 1 7 7h10a1 1 0 0 1 .92.606z" />
 </svg>
-`;const xx=`
+`;const Mx=`
 <svg
   class="lucide lucide-lamp-desk"
   xmlns="http://www.w3.org/2000/svg"
@@ -15312,7 +15312,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
   <path d="m9.086 6.5-4.793 4.793a1 1 0 0 0-.18 1.17L7 18" />
 </svg>
-`;const fx=`
+`;const yx=`
 <svg
   class="lucide lucide-lamp-floor"
   xmlns="http://www.w3.org/2000/svg"
@@ -15329,7 +15329,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.929 7.629A1 1 0 0 1 17 9H7a1 1 0 0 1-.928-1.371l2-5A1 1 0 0 1 9 2h6a1 1 0 0 1 .928.629z" />
   <path d="M9 22h6" />
 </svg>
-`;const Mx=`
+`;const bx=`
 <svg
   class="lucide lucide-lamp-wall-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -15346,7 +15346,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
   <path d="M8 6h4a2 2 0 0 1 2 2v5" />
 </svg>
-`;const yx=`
+`;const Cx=`
 <svg
   class="lucide lucide-lamp-wall-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -15363,7 +15363,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 15a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z" />
   <path d="M8 18h4a2 2 0 0 0 2-2v-5" />
 </svg>
-`;const bx=`
+`;const Bx=`
 <svg
   class="lucide lucide-lamp"
   xmlns="http://www.w3.org/2000/svg"
@@ -15380,7 +15380,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.077 10.615A1 1 0 0 0 5 12h14a1 1 0 0 0 .923-1.385l-3.077-7.384A2 2 0 0 0 15 2H9a2 2 0 0 0-1.846 1.23Z" />
   <path d="M8 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z" />
 </svg>
-`;const Cx=`
+`;const jx=`
 <svg
   class="lucide lucide-land-plot"
   xmlns="http://www.w3.org/2000/svg"
@@ -15398,7 +15398,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6.49 12.85 11.02 6.3" />
   <path d="M17.51 12.85 6.5 19.15" />
 </svg>
-`;const Bx=`
+`;const Ax=`
 <svg
   class="lucide lucide-languages"
   xmlns="http://www.w3.org/2000/svg"
@@ -15418,7 +15418,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 22-5-10-5 10" />
   <path d="M14 18h6" />
 </svg>
-`;const jx=`
+`;const Lx=`
 <svg
   class="lucide lucide-landmark"
   xmlns="http://www.w3.org/2000/svg"
@@ -15438,7 +15438,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 22h18" />
   <path d="M6 18v-7" />
 </svg>
-`;const Ax=`
+`;const Sx=`
 <svg
   class="lucide lucide-laptop-minimal-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -15471,7 +15471,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="12" x="3" y="4" rx="2" ry="2" />
   <line x1="2" x2="22" y1="20" y2="20" />
 </svg>
-`;const Lx=`
+`;const Hx=`
 <svg
   class="lucide lucide-laptop"
   xmlns="http://www.w3.org/2000/svg"
@@ -15487,7 +15487,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />
   <path d="M20.054 15.987H3.946" />
 </svg>
-`;const Sx=`
+`;const Rx=`
 <svg
   class="lucide lucide-lasso-select"
   xmlns="http://www.w3.org/2000/svg"
@@ -15506,7 +15506,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
   <path d="M14.33 22h-.09a.35.35 0 0 1-.24-.32v-10a.34.34 0 0 1 .33-.34c.08 0 .15.03.21.08l7.34 6a.33.33 0 0 1-.21.59h-4.49l-2.57 3.85a.35.35 0 0 1-.28.14z" />
 </svg>
-`;const Hx=`
+`;const Vx=`
 <svg
   class="lucide lucide-lasso"
   xmlns="http://www.w3.org/2000/svg"
@@ -15523,7 +15523,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 22a5 5 0 0 1-2-3.994" />
   <circle cx="5" cy="16" r="2" />
 </svg>
-`;const Rx=`
+`;const zx=`
 <svg
   class="lucide lucide-laugh"
   xmlns="http://www.w3.org/2000/svg"
@@ -15541,7 +15541,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="9" x2="9.01" y1="9" y2="9" />
   <line x1="15" x2="15.01" y1="9" y2="9" />
 </svg>
-`;const Vx=`
+`;const $x=`
 <svg
   class="lucide lucide-layers-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -15557,7 +15557,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74z" />
   <path d="m20 14.285 1.5.845a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74l1.5-.845" />
 </svg>
-`;const zx=`
+`;const Ux=`
 <svg
   class="lucide lucide-layers-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -15592,7 +15592,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
   <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
 </svg>
-`;const $x=`
+`;const Dx=`
 <svg
   class="lucide lucide-layout-dashboard"
   xmlns="http://www.w3.org/2000/svg"
@@ -15610,7 +15610,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="7" height="9" x="14" y="12" rx="1" />
   <rect width="7" height="5" x="3" y="16" rx="1" />
 </svg>
-`;const Dx=`
+`;const Fx=`
 <svg
   class="lucide lucide-layout-grid"
   xmlns="http://www.w3.org/2000/svg"
@@ -15628,7 +15628,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="7" height="7" x="14" y="14" rx="1" />
   <rect width="7" height="7" x="3" y="14" rx="1" />
 </svg>
-`;const Ux=`
+`;const Px=`
 <svg
   class="lucide lucide-layout-list"
   xmlns="http://www.w3.org/2000/svg"
@@ -15648,7 +15648,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 15h7" />
   <path d="M14 20h7" />
 </svg>
-`;const Fx=`
+`;const Ex=`
 <svg
   class="lucide lucide-layout-panel-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -15665,7 +15665,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="7" height="7" x="14" y="3" rx="1" />
   <rect width="7" height="7" x="14" y="14" rx="1" />
 </svg>
-`;const Px=`
+`;const Tx=`
 <svg
   class="lucide lucide-layout-panel-top"
   xmlns="http://www.w3.org/2000/svg"
@@ -15682,7 +15682,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="7" height="7" x="3" y="14" rx="1" />
   <rect width="7" height="7" x="14" y="14" rx="1" />
 </svg>
-`;const Ex=`
+`;const Yx=`
 <svg
   class="lucide lucide-layout-template"
   xmlns="http://www.w3.org/2000/svg"
@@ -15699,7 +15699,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="9" height="7" x="3" y="14" rx="1" />
   <rect width="5" height="7" x="16" y="14" rx="1" />
 </svg>
-`;const Tx=`
+`;const Ox=`
 <svg
   class="lucide lucide-leaf"
   xmlns="http://www.w3.org/2000/svg"
@@ -15715,7 +15715,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
   <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
 </svg>
-`;const Yx=`
+`;const Ix=`
 <svg
   class="lucide lucide-leafy-green"
   xmlns="http://www.w3.org/2000/svg"
@@ -15731,7 +15731,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 22c1.25-.987 2.27-1.975 3.9-2.2a5.56 5.56 0 0 1 3.8 1.5 4 4 0 0 0 6.187-2.353 3.5 3.5 0 0 0 3.69-5.116A3.5 3.5 0 0 0 20.95 8 3.5 3.5 0 1 0 16 3.05a3.5 3.5 0 0 0-5.831 1.373 3.5 3.5 0 0 0-5.116 3.69 4 4 0 0 0-2.348 6.155C3.499 15.42 4.409 16.712 4.2 18.1 3.926 19.743 3.014 20.732 2 22" />
   <path d="M2 22 17 7" />
 </svg>
-`;const Ox=`
+`;const qx=`
 <svg
   class="lucide lucide-lectern"
   xmlns="http://www.w3.org/2000/svg"
@@ -15748,7 +15748,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 6V3a1 1 0 0 0-1-1h-3" />
   <rect width="8" height="12" x="8" y="10" rx="1" />
 </svg>
-`;const Ix=`
+`;const Nx=`
 <svg
   class="lucide lucide-library-big"
   xmlns="http://www.w3.org/2000/svg"
@@ -15765,7 +15765,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 3v18" />
   <path d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z" />
 </svg>
-`;const qx=`
+`;const _x=`
 <svg
   class="lucide lucide-library"
   xmlns="http://www.w3.org/2000/svg"
@@ -15783,7 +15783,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 8v12" />
   <path d="M4 4v16" />
 </svg>
-`;const Nx=`
+`;const Zx=`
 <svg
   class="lucide lucide-life-buoy"
   xmlns="http://www.w3.org/2000/svg"
@@ -15803,7 +15803,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.17 14.83-4.24 4.24" />
   <circle cx="12" cy="12" r="4" />
 </svg>
-`;const _x=`
+`;const Gx=`
 <svg
   class="lucide lucide-ligature"
   xmlns="http://www.w3.org/2000/svg"
@@ -15822,7 +15822,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 20h4" />
   <path d="M8 20V8a4 4 0 0 1 7.464-2" />
 </svg>
-`;const Zx=`
+`;const Wx=`
 <svg
   class="lucide lucide-lightbulb-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -15841,7 +15841,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 18h6" />
   <path d="M10 22h4" />
 </svg>
-`;const Gx=`
+`;const Kx=`
 <svg
   class="lucide lucide-lightbulb"
   xmlns="http://www.w3.org/2000/svg"
@@ -15858,7 +15858,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 18h6" />
   <path d="M10 22h4" />
 </svg>
-`;const Wx=`
+`;const Xx=`
 <svg
   class="lucide lucide-line-squiggle"
   xmlns="http://www.w3.org/2000/svg"
@@ -15872,7 +15872,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   stroke-linejoin="round"
 >
   <path d="M7 3.5c5-2 7 2.5 3 4C1.5 10 2 15 5 16c5 2 9-10 14-7s.5 13.5-4 12c-5-2.5.5-11 6-2" />
-</svg>`;const Kx=`
+</svg>`;const Jx=`
 <svg
   class="lucide lucide-link-2-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -15890,7 +15890,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="8" x2="12" y1="12" y2="12" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const Xx=`
+`;const Qx=`
 <svg
   class="lucide lucide-link-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -15907,7 +15907,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 7h2a5 5 0 1 1 0 10h-2" />
   <line x1="8" x2="16" y1="12" y2="12" />
 </svg>
-`;const Jx=`
+`;const t6=`
 <svg
   class="lucide lucide-link"
   xmlns="http://www.w3.org/2000/svg"
@@ -15923,7 +15923,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
 </svg>
-`;const Qx=`
+`;const e6=`
 <svg
   class="lucide lucide-linkedin"
   xmlns="http://www.w3.org/2000/svg"
@@ -15940,7 +15940,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="4" height="12" x="2" y="9" />
   <circle cx="4" cy="4" r="2" />
 </svg>
-`;const t6=`
+`;const o6=`
 <svg
   class="lucide lucide-list-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -15958,7 +15958,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 19H3" />
   <path d="m15 18 2 2 4-4" />
 </svg>
-`;const e6=`
+`;const r6=`
 <svg
   class="lucide lucide-list-checks"
   xmlns="http://www.w3.org/2000/svg"
@@ -15977,7 +15977,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 17 2 2 4-4" />
   <path d="m3 7 2 2 4-4" />
 </svg>
-`;const o6=`
+`;const i6=`
 <svg
   class="lucide lucide-list-chevrons-down-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -15996,7 +15996,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 5 3 3 3-3" />
   <path d="m15 19 3-3 3 3" />
 </svg>
-`;const r6=`
+`;const s6=`
 <svg
   class="lucide lucide-list-chevrons-up-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -16015,7 +16015,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 8 3-3 3 3" />
   <path d="m15 16 3 3 3-3" />
 </svg>
-`;const i6=`
+`;const n6=`
 <svg
   class="lucide lucide-list-collapse"
   xmlns="http://www.w3.org/2000/svg"
@@ -16034,7 +16034,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 10 3-3-3-3" />
   <path d="m3 20 3-3-3-3" />
 </svg>
-`;const s6=`
+`;const l6=`
 <svg
   class="lucide lucide-list-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -16053,7 +16053,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 16-3 3 3 3" />
   <path d="M21 5v12a2 2 0 0 1-2 2h-6" />
 </svg>
-`;const n6=`
+`;const a6=`
 <svg
   class="lucide lucide-list-filter-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16072,7 +16072,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 5h6" />
   <path d="M19 8V2" />
 </svg>
-`;const l6=`
+`;const d6=`
 <svg
   class="lucide lucide-list-filter"
   xmlns="http://www.w3.org/2000/svg"
@@ -16125,7 +16125,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 19H11" />
   <path d="m3 8 4 4-4 4" />
 </svg>
-`;const a6=`
+`;const h6=`
 <svg
   class="lucide lucide-list-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16143,7 +16143,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 19H3" />
   <path d="M21 12h-6" />
 </svg>
-`;const d6=`
+`;const c6=`
 <svg
   class="lucide lucide-list-music"
   xmlns="http://www.w3.org/2000/svg"
@@ -16162,7 +16162,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 16V5" />
   <circle cx="18" cy="16" r="3" />
 </svg>
-`;const h6=`
+`;const p6=`
 <svg
   class="lucide lucide-list-ordered"
   xmlns="http://www.w3.org/2000/svg"
@@ -16182,7 +16182,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 9h2" />
   <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" />
 </svg>
-`;const c6=`
+`;const u6=`
 <svg
   class="lucide lucide-list-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16201,7 +16201,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 9v6" />
   <path d="M21 12h-6" />
 </svg>
-`;const p6=`
+`;const w6=`
 <svg
   class="lucide lucide-list-restart"
   xmlns="http://www.w3.org/2000/svg"
@@ -16220,7 +16220,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L11 14" />
   <path d="M11 10v4h4" />
 </svg>
-`;const u6=`
+`;const g6=`
 <svg
   class="lucide lucide-list-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -16239,7 +16239,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 8-3-3 3-3" />
   <path d="M21 19V7a2 2 0 0 0-2-2h-6" />
 </svg>
-`;const w6=`
+`;const v6=`
 <svg
   class="lucide lucide-list-todo"
   xmlns="http://www.w3.org/2000/svg"
@@ -16258,7 +16258,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 17 2 2 4-4" />
   <rect x="3" y="4" width="6" height="6" rx="1" />
 </svg>
-`;const g6=`
+`;const k6=`
 <svg
   class="lucide lucide-list-tree"
   xmlns="http://www.w3.org/2000/svg"
@@ -16277,7 +16277,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 10a2 2 0 0 0 2 2h3" />
   <path d="M3 5v12a2 2 0 0 0 2 2h3" />
 </svg>
-`;const v6=`
+`;const m6=`
 <svg
   class="lucide lucide-list-video"
   xmlns="http://www.w3.org/2000/svg"
@@ -16295,7 +16295,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 19H3" />
   <path d="M15 12.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1-1.517-.86z" />
 </svg>
-`;const k6=`
+`;const x6=`
 <svg
   class="lucide lucide-list-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -16314,7 +16314,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15.5 9.5 5 5" />
   <path d="m20.5 9.5-5 5" />
 </svg>
-`;const m6=`
+`;const f6=`
 <svg
   class="lucide lucide-list"
   xmlns="http://www.w3.org/2000/svg"
@@ -16349,7 +16349,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M21 12a9 9 0 1 1-6.219-8.56" />
 </svg>
-`;const x6=`
+`;const M6=`
 <svg
   class="lucide lucide-loader-pinwheel"
   xmlns="http://www.w3.org/2000/svg"
@@ -16367,7 +16367,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 3.3a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const f6=`
+`;const y6=`
 <svg
   class="lucide lucide-loader"
   xmlns="http://www.w3.org/2000/svg"
@@ -16389,7 +16389,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 12h4" />
   <path d="m4.9 4.9 2.9 2.9" />
 </svg>
-`;const M6=`
+`;const b6=`
 <svg
   class="lucide lucide-locate-fixed"
   xmlns="http://www.w3.org/2000/svg"
@@ -16409,7 +16409,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="7" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const y6=`
+`;const C6=`
 <svg
   class="lucide lucide-locate-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -16430,7 +16430,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M7.05 7.05a7 7 0 0 0 9.9 9.9" />
 </svg>
-`;const b6=`
+`;const B6=`
 <svg
   class="lucide lucide-locate"
   xmlns="http://www.w3.org/2000/svg"
@@ -16466,7 +16466,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="12" x="3" y="10" rx="2" />
   <path d="M7 10V7a5 5 0 0 1 9.33-2.5" />
 </svg>
-`;const C6=`
+`;const j6=`
 <svg
   class="lucide lucide-lock-keyhole"
   xmlns="http://www.w3.org/2000/svg"
@@ -16499,7 +16499,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
   <path d="M7 11V7a5 5 0 0 1 9.9-1" />
 </svg>
-`;const B6=`
+`;const A6=`
 <svg
   class="lucide lucide-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -16515,7 +16515,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
 </svg>
-`;const j6=`
+`;const L6=`
 <svg
   class="lucide lucide-log-in"
   xmlns="http://www.w3.org/2000/svg"
@@ -16532,7 +16532,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 12H3" />
   <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
 </svg>
-`;const A6=`
+`;const S6=`
 <svg
   class="lucide lucide-log-out"
   xmlns="http://www.w3.org/2000/svg"
@@ -16549,7 +16549,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12H9" />
   <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
 </svg>
-`;const L6=`
+`;const H6=`
 <svg
   class="lucide lucide-logs"
   xmlns="http://www.w3.org/2000/svg"
@@ -16572,7 +16572,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 12h8" />
   <path d="M13 19h8" />
 </svg>
-`;const S6=`
+`;const R6=`
 <svg
   class="lucide lucide-lollipop"
   xmlns="http://www.w3.org/2000/svg"
@@ -16589,7 +16589,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 21-4.3-4.3" />
   <path d="M11 11a2 2 0 0 0 4 0 4 4 0 0 0-8 0 6 6 0 0 0 12 0" />
 </svg>
-`;const H6=`
+`;const V6=`
 <svg
   class="lucide lucide-luggage"
   xmlns="http://www.w3.org/2000/svg"
@@ -16608,7 +16608,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="16" cy="20" r="2" />
   <circle cx="8" cy="20" r="2" />
 </svg>
-`;const R6=`
+`;const z6=`
 <svg
   class="lucide lucide-magnet"
   xmlns="http://www.w3.org/2000/svg"
@@ -16625,7 +16625,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.029-6.029a1 1 0 1 1 3 3l-6.029 6.029a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.365-6.367A1 1 0 0 0 8.716 4.282z" />
   <path d="m5 8 4 4" />
 </svg>
-`;const V6=`
+`;const $6=`
 <svg
   class="lucide lucide-mail-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -16642,7 +16642,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   <path d="m16 19 2 2 4-4" />
 </svg>
-`;const z6=`
+`;const U6=`
 <svg
   class="lucide lucide-mail-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16659,7 +16659,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   <path d="M16 19h6" />
 </svg>
-`;const $6=`
+`;const D6=`
 <svg
   class="lucide lucide-mail-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -16675,7 +16675,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
   <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
 </svg>
-`;const D6=`
+`;const F6=`
 <svg
   class="lucide lucide-mail-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16711,7 +16711,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 15.28c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2" />
   <path d="M20 22v.01" />
 </svg>
-`;const U6=`
+`;const P6=`
 <svg
   class="lucide lucide-mail-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -16730,7 +16730,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="18" r="3" />
   <path d="m22 22-1.5-1.5" />
 </svg>
-`;const F6=`
+`;const E6=`
 <svg
   class="lucide lucide-mail-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -16748,7 +16748,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 14v4" />
   <path d="M20 22v.01" />
 </svg>
-`;const P6=`
+`;const T6=`
 <svg
   class="lucide lucide-mail-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -16766,7 +16766,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 17 4 4" />
   <path d="m21 17-4 4" />
 </svg>
-`;const E6=`
+`;const Y6=`
 <svg
   class="lucide lucide-mail"
   xmlns="http://www.w3.org/2000/svg"
@@ -16782,7 +16782,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
   <rect x="2" y="4" width="20" height="16" rx="2" />
 </svg>
-`;const T6=`
+`;const O6=`
 <svg
   class="lucide lucide-mailbox"
   xmlns="http://www.w3.org/2000/svg"
@@ -16800,7 +16800,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2" />
   <line x1="6" x2="7" y1="10" y2="10" />
 </svg>
-`;const Y6=`
+`;const I6=`
 <svg
   class="lucide lucide-mails"
   xmlns="http://www.w3.org/2000/svg"
@@ -16817,7 +16817,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 5.5-6.419 4.179a2 2 0 0 1-2.162 0L7 5.5" />
   <rect x="7" y="3" width="15" height="12" rx="2" />
 </svg>
-`;const O6=`
+`;const q6=`
 <svg
   class="lucide lucide-map-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16835,7 +16835,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 18h-6" />
   <path d="M9 3.236v15" />
 </svg>
-`;const I6=`
+`;const N6=`
 <svg
   class="lucide lucide-map-pin-check-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -16851,7 +16851,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <path d="m9 10 2 2 4-4" />
 </svg>
-`;const q6=`
+`;const _6=`
 <svg
   class="lucide lucide-map-pin-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -16868,7 +16868,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="10" r="3" />
   <path d="m16 18 2 2 4-4" />
 </svg>
-`;const N6=`
+`;const Z6=`
 <svg
   class="lucide lucide-map-pin-house"
   xmlns="http://www.w3.org/2000/svg"
@@ -16886,7 +16886,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 22v-3" />
   <circle cx="10" cy="10" r="3" />
 </svg>
-`;const _6=`
+`;const G6=`
 <svg
   class="lucide lucide-map-pin-minus-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -16902,7 +16902,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <path d="M9 10h6" />
 </svg>
-`;const Z6=`
+`;const W6=`
 <svg
   class="lucide lucide-map-pin-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16919,7 +16919,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="10" r="3" />
   <path d="M16 18h6" />
 </svg>
-`;const G6=`
+`;const K6=`
 <svg
   class="lucide lucide-map-pin-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -16955,7 +16955,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
   <circle cx="10" cy="10" r="3" />
 </svg>
-`;const W6=`
+`;const X6=`
 <svg
   class="lucide lucide-map-pin-plus-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -16972,7 +16972,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 7v6" />
   <path d="M9 10h6" />
 </svg>
-`;const K6=`
+`;const J6=`
 <svg
   class="lucide lucide-map-pin-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16990,7 +16990,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 18h6" />
   <path d="M19 15v6" />
 </svg>
-`;const X6=`
+`;const Q6=`
 <svg
   class="lucide lucide-map-pin-x-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -17007,7 +17007,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.5 7.5-5 5" />
   <path d="m9.5 7.5 5 5" />
 </svg>
-`;const J6=`
+`;const t8=`
 <svg
   class="lucide lucide-map-pin-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -17025,7 +17025,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21.5 15.5-5 5" />
   <path d="m21.5 20.5-5-5" />
 </svg>
-`;const Q6=`
+`;const e8=`
 <svg
   class="lucide lucide-map-pin"
   xmlns="http://www.w3.org/2000/svg"
@@ -17041,7 +17041,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <circle cx="12" cy="10" r="3" />
 </svg>
-`;const t8=`
+`;const o8=`
 <svg
   class="lucide lucide-map-pinned"
   xmlns="http://www.w3.org/2000/svg"
@@ -17058,7 +17058,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="8" r="2" />
   <path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712" />
 </svg>
-`;const e8=`
+`;const r8=`
 <svg
   class="lucide lucide-map-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -17077,7 +17077,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 18h-6" />
   <path d="M9 3.236v15" />
 </svg>
-`;const o8=`
+`;const i8=`
 <svg
   class="lucide lucide-map"
   xmlns="http://www.w3.org/2000/svg"
@@ -17094,7 +17094,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 5.764v15" />
   <path d="M9 3.236v15" />
 </svg>
-`;const r8=`
+`;const s8=`
 <svg
   class="lucide lucide-mars-stroke"
   xmlns="http://www.w3.org/2000/svg"
@@ -17112,7 +17112,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 3-7.75 7.75" />
   <circle cx="9" cy="15" r="6" />
 </svg>
-`;const i8=`
+`;const n8=`
 <svg
   class="lucide lucide-mars"
   xmlns="http://www.w3.org/2000/svg"
@@ -17129,7 +17129,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 3-6.75 6.75" />
   <circle cx="10" cy="14" r="6" />
 </svg>
-`;const s8=`
+`;const l8=`
 <svg
   class="lucide lucide-martini"
   xmlns="http://www.w3.org/2000/svg"
@@ -17146,7 +17146,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 11v11" />
   <path d="m19 3-7 8-7-8Z" />
 </svg>
-`;const n8=`
+`;const a8=`
 <svg
   class="lucide lucide-maximize-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -17164,7 +17164,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 21 7-7" />
   <path d="M9 21H3v-6" />
 </svg>
-`;const l8=`
+`;const d8=`
 <svg
   class="lucide lucide-maximize"
   xmlns="http://www.w3.org/2000/svg"
@@ -17182,7 +17182,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 16v3a2 2 0 0 0 2 2h3" />
   <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
 </svg>
-`;const a8=`
+`;const h8=`
 <svg
   class="lucide lucide-medal"
   xmlns="http://www.w3.org/2000/svg"
@@ -17202,7 +17202,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="17" r="5" />
   <path d="M12 18v-2h-.5" />
 </svg>
-`;const d8=`
+`;const c8=`
 <svg
   class="lucide lucide-megaphone-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17221,7 +17221,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
   <path d="M8 8v6" />
 </svg>
-`;const h8=`
+`;const p8=`
 <svg
   class="lucide lucide-megaphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -17238,7 +17238,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
   <path d="M8 6v8" />
 </svg>
-`;const c8=`
+`;const u8=`
 <svg
   class="lucide lucide-meh"
   xmlns="http://www.w3.org/2000/svg"
@@ -17256,7 +17256,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="9" x2="9.01" y1="9" y2="9" />
   <line x1="15" x2="15.01" y1="9" y2="9" />
 </svg>
-`;const p8=`
+`;const w8=`
 <svg
   class="lucide lucide-memory-stick"
   xmlns="http://www.w3.org/2000/svg"
@@ -17281,7 +17281,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 18v-2" />
   <rect x="2" y="6" width="20" height="10" rx="2" />
 </svg>
-`;const u8=`
+`;const g8=`
 <svg
   class="lucide lucide-menu"
   xmlns="http://www.w3.org/2000/svg"
@@ -17298,7 +17298,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 12h16" />
   <path d="M4 19h16" />
 </svg>
-`;const w8=`
+`;const v8=`
 <svg
   class="lucide lucide-merge"
   xmlns="http://www.w3.org/2000/svg"
@@ -17315,7 +17315,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
   <path d="m20 22-5-5" />
 </svg>
-`;const g8=`
+`;const k8=`
 <svg
   class="lucide lucide-message-circle-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -17332,7 +17332,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 15 3-3-3-3" />
   <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
 </svg>
-`;const v8=`
+`;const m8=`
 <svg
   class="lucide lucide-message-circle-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -17354,7 +17354,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.721 6.391a10 10 0 0 1 2.7-2.69" />
   <path d="m6.163 21.117-2.906.85a1 1 0 0 1-1.236-1.169l.965-2.98" />
 </svg>
-`;const k8=`
+`;const x8=`
 <svg
   class="lucide lucide-message-circle-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -17370,7 +17370,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
   <path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z" />
 </svg>
-`;const m8=`
+`;const f8=`
 <svg
   class="lucide lucide-message-circle-more"
   xmlns="http://www.w3.org/2000/svg"
@@ -17388,7 +17388,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 12h.01" />
   <path d="M16 12h.01" />
 </svg>
-`;const x8=`
+`;const M8=`
 <svg
   class="lucide lucide-message-circle-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17405,7 +17405,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4.93 4.929a10 10 0 0 0-1.938 11.412 2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 0 0 11.302-1.989" />
   <path d="M8.35 2.69A10 10 0 0 1 21.3 15.65" />
 </svg>
-`;const f8=`
+`;const y8=`
 <svg
   class="lucide lucide-message-circle-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -17439,7 +17439,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
   <path d="M12 17h.01" />
 </svg>
-`;const M8=`
+`;const b8=`
 <svg
   class="lucide lucide-message-circle-reply"
   xmlns="http://www.w3.org/2000/svg"
@@ -17456,7 +17456,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 15-3-3 3-3" />
   <path d="M7 12h8a2 2 0 0 1 2 2v1" />
 </svg>
-`;const y8=`
+`;const C8=`
 <svg
   class="lucide lucide-message-circle-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -17473,7 +17473,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v4" />
   <path d="M12 16h.01" />
 </svg>
-`;const b8=`
+`;const B8=`
 <svg
   class="lucide lucide-message-circle-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -17490,7 +17490,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 9-6 6" />
   <path d="m9 9 6 6" />
 </svg>
-`;const C8=`
+`;const j8=`
 <svg
   class="lucide lucide-message-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -17505,7 +17505,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
 </svg>
-`;const B8=`
+`;const A8=`
 <svg
   class="lucide lucide-message-square-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -17522,7 +17522,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 8-3 3 3 3" />
   <path d="m14 14 3-3-3-3" />
 </svg>
-`;const j8=`
+`;const L8=`
 <svg
   class="lucide lucide-message-square-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -17549,7 +17549,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 9h.01" />
   <path d="M8 3h.01" />
 </svg>
-`;const A8=`
+`;const S8=`
 <svg
   class="lucide lucide-message-square-diff"
   xmlns="http://www.w3.org/2000/svg"
@@ -17567,7 +17567,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 9h4" />
   <path d="M12 7v4" />
 </svg>
-`;const L8=`
+`;const H8=`
 <svg
   class="lucide lucide-message-square-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -17583,7 +17583,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12.7 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4.7" />
   <circle cx="19" cy="6" r="3" />
 </svg>
-`;const S8=`
+`;const R8=`
 <svg
   class="lucide lucide-message-square-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -17599,7 +17599,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
   <path d="M7.5 9.5c0 .687.265 1.383.697 1.844l3.009 3.264a1.14 1.14 0 0 0 .407.314 1 1 0 0 0 .783-.004 1.14 1.14 0 0 0 .398-.31l3.008-3.264A2.77 2.77 0 0 0 16.5 9.5 2.5 2.5 0 0 0 12 8a2.5 2.5 0 0 0-4.5 1.5" />
 </svg>
-`;const H8=`
+`;const V8=`
 <svg
   class="lucide lucide-message-square-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -17616,7 +17616,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 15v-2a2 2 0 0 0-4 0v2" />
   <rect x="14" y="15" width="8" height="5" rx="1" />
 </svg>
-`;const R8=`
+`;const z8=`
 <svg
   class="lucide lucide-message-square-more"
   xmlns="http://www.w3.org/2000/svg"
@@ -17634,7 +17634,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 11h.01" />
   <path d="M8 11h.01" />
 </svg>
-`;const V8=`
+`;const $8=`
 <svg
   class="lucide lucide-message-square-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17651,7 +17651,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M8.656 3H20a2 2 0 0 1 2 2v11.344" />
 </svg>
-`;const z8=`
+`;const U8=`
 <svg
   class="lucide lucide-message-square-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -17668,7 +17668,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v6" />
   <path d="M9 11h6" />
 </svg>
-`;const $8=`
+`;const D8=`
 <svg
   class="lucide lucide-message-square-quote"
   xmlns="http://www.w3.org/2000/svg"
@@ -17685,7 +17685,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
   <path d="M8 14a2 2 0 0 0 2-2V8H8" />
 </svg>
-`;const D8=`
+`;const F8=`
 <svg
   class="lucide lucide-message-square-reply"
   xmlns="http://www.w3.org/2000/svg"
@@ -17702,7 +17702,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 8-3 3 3 3" />
   <path d="M17 14v-1a2 2 0 0 0-2-2H7" />
 </svg>
-`;const U8=`
+`;const P8=`
 <svg
   class="lucide lucide-message-square-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -17720,7 +17720,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 15h6" />
   <path d="M7 7h8" />
 </svg>
-`;const F8=`
+`;const E8=`
 <svg
   class="lucide lucide-message-square-share"
   xmlns="http://www.w3.org/2000/svg"
@@ -17737,7 +17737,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 3h6v6" />
   <path d="m16 9 6-6" />
 </svg>
-`;const P8=`
+`;const T8=`
 <svg
   class="lucide lucide-message-square-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -17754,7 +17754,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 15h.01" />
   <path d="M12 7v4" />
 </svg>
-`;const E8=`
+`;const Y8=`
 <svg
   class="lucide lucide-message-square-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -17771,7 +17771,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.5 8.5-5 5" />
   <path d="m9.5 8.5 5 5" />
 </svg>
-`;const T8=`
+`;const O8=`
 <svg
   class="lucide lucide-message-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -17786,7 +17786,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
 </svg>
-`;const Y8=`
+`;const I8=`
 <svg
   class="lucide lucide-messages-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -17802,7 +17802,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
   <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" />
 </svg>
-`;const O8=`
+`;const q8=`
 <svg
   class="lucide lucide-mic-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17839,7 +17839,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5" />
   <circle cx="16" cy="7" r="5" />
 </svg>
-`;const I8=`
+`;const N8=`
 <svg
   class="lucide lucide-mic"
   xmlns="http://www.w3.org/2000/svg"
@@ -17856,7 +17856,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
   <rect x="9" y="2" width="6" height="13" rx="3" />
 </svg>
-`;const q8=`
+`;const _8=`
 <svg
   class="lucide lucide-microchip"
   xmlns="http://www.w3.org/2000/svg"
@@ -17880,7 +17880,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 6h2" />
   <rect x="6" y="2" width="12" height="20" rx="2" />
 </svg>
-`;const N8=`
+`;const Z8=`
 <svg
   class="lucide lucide-microscope"
   xmlns="http://www.w3.org/2000/svg"
@@ -17900,7 +17900,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
   <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
 </svg>
-`;const _8=`
+`;const G8=`
 <svg
   class="lucide lucide-microwave"
   xmlns="http://www.w3.org/2000/svg"
@@ -17919,7 +17919,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 19v2" />
   <path d="M18 19v2" />
 </svg>
-`;const Z8=`
+`;const W8=`
 <svg
   class="lucide lucide-milestone"
   xmlns="http://www.w3.org/2000/svg"
@@ -17936,7 +17936,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 3v3" />
   <path d="M4 6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h13a2 2 0 0 0 1.152-.365l3.424-2.317a1 1 0 0 0 0-1.635l-3.424-2.318A2 2 0 0 0 17 6z" />
 </svg>
-`;const G8=`
+`;const K8=`
 <svg
   class="lucide lucide-milk-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17954,7 +17954,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 15a6.47 6.47 0 0 1 5 0 6.472 6.472 0 0 0 3.435.435" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const W8=`
+`;const X8=`
 <svg
   class="lucide lucide-milk"
   xmlns="http://www.w3.org/2000/svg"
@@ -17971,7 +17971,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2" />
   <path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0" />
 </svg>
-`;const K8=`
+`;const J8=`
 <svg
   class="lucide lucide-minimize-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -17989,7 +17989,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 21 7-7" />
   <path d="M4 14h6v6" />
 </svg>
-`;const X8=`
+`;const Q8=`
 <svg
   class="lucide lucide-minimize"
   xmlns="http://www.w3.org/2000/svg"
@@ -18007,7 +18007,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 16h3a2 2 0 0 1 2 2v3" />
   <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
 </svg>
-`;const J8=`
+`;const tf=`
 <svg
   class="lucide lucide-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -18022,7 +18022,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M5 12h14" />
 </svg>
-`;const Q8=`
+`;const ef=`
 <svg
   class="lucide lucide-monitor-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -18040,7 +18040,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const tf=`
+`;const of=`
 <svg
   class="lucide lucide-monitor-cloud"
   xmlns="http://www.w3.org/2000/svg"
@@ -18058,7 +18058,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 21h8" />
   <rect x="2" y="3" width="20" height="14" rx="2" />
 </svg>
-`;const ef=`
+`;const rf=`
 <svg
   class="lucide lucide-monitor-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -18084,7 +18084,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 21h8" />
   <circle cx="18" cy="6" r="3" />
 </svg>
-`;const of=`
+`;const sf=`
 <svg
   class="lucide lucide-monitor-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -18102,7 +18102,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 21h8" />
   <circle cx="19" cy="6" r="3" />
 </svg>
-`;const rf=`
+`;const nf=`
 <svg
   class="lucide lucide-monitor-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -18121,7 +18121,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const sf=`
+`;const lf=`
 <svg
   class="lucide lucide-monitor-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18140,7 +18140,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v4" />
   <path d="m2 2 20 20" />
 </svg>
-`;const nf=`
+`;const af=`
 <svg
   class="lucide lucide-monitor-pause"
   xmlns="http://www.w3.org/2000/svg"
@@ -18159,7 +18159,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const lf=`
+`;const df=`
 <svg
   class="lucide lucide-monitor-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -18177,7 +18177,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 21h8" />
   <rect x="2" y="3" width="20" height="14" rx="2" />
 </svg>
-`;const af=`
+`;const hf=`
 <svg
   class="lucide lucide-monitor-smartphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -18195,7 +18195,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 19h5" />
   <rect width="6" height="10" x="16" y="12" rx="2" />
 </svg>
-`;const df=`
+`;const cf=`
 <svg
   class="lucide lucide-monitor-speaker"
   xmlns="http://www.w3.org/2000/svg"
@@ -18214,7 +18214,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4" />
   <circle cx="17" cy="15" r="1" />
 </svg>
-`;const hf=`
+`;const pf=`
 <svg
   class="lucide lucide-monitor-stop"
   xmlns="http://www.w3.org/2000/svg"
@@ -18232,7 +18232,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="2" y="3" width="20" height="14" rx="2" />
   <rect x="9" y="7" width="6" height="6" rx="1" />
 </svg>
-`;const cf=`
+`;const uf=`
 <svg
   class="lucide lucide-monitor-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -18251,7 +18251,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const pf=`
+`;const wf=`
 <svg
   class="lucide lucide-monitor-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -18270,7 +18270,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const uf=`
+`;const gf=`
 <svg
   class="lucide lucide-monitor"
   xmlns="http://www.w3.org/2000/svg"
@@ -18287,7 +18287,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="8" x2="16" y1="21" y2="21" />
   <line x1="12" x2="12" y1="17" y2="21" />
 </svg>
-`;const wf=`
+`;const vf=`
 <svg
   class="lucide lucide-moon-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -18304,7 +18304,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 3v4" />
   <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
 </svg>
-`;const gf=`
+`;const kf=`
 <svg
   class="lucide lucide-moon"
   xmlns="http://www.w3.org/2000/svg"
@@ -18319,7 +18319,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
 </svg>
-`;const vf=`
+`;const mf=`
 <svg
   class="lucide lucide-motorbike"
   xmlns="http://www.w3.org/2000/svg"
@@ -18338,7 +18338,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="17" r="3" />
   <circle cx="5" cy="17" r="3" />
 </svg>
-`;const kf=`
+`;const xf=`
 <svg
   class="lucide lucide-mountain-snow"
   xmlns="http://www.w3.org/2000/svg"
@@ -18354,7 +18354,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
   <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19" />
 </svg>
-`;const mf=`
+`;const ff=`
 <svg
   class="lucide lucide-mountain"
   xmlns="http://www.w3.org/2000/svg"
@@ -18369,7 +18369,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
 </svg>
-`;const xf=`
+`;const Mf=`
 <svg
   class="lucide lucide-mouse-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18387,7 +18387,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 13.343V9A7 7 0 0 0 8.56 2.902" />
   <path d="M22 22 2 2" />
 </svg>
-`;const ff=`
+`;const yf=`
 <svg
   class="lucide lucide-mouse-pointer-2-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18404,7 +18404,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 2 2 22" />
   <path d="m6.816 11.528-2.779-6.84a.495.495 0 0 1 .651-.651l6.84 2.779" />
 </svg>
-`;const Mf=`
+`;const bf=`
 <svg
   class="lucide lucide-mouse-pointer-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18419,7 +18419,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
 </svg>
-`;const yf=`
+`;const Cf=`
 <svg
   class="lucide lucide-mouse-pointer-ban"
   xmlns="http://www.w3.org/2000/svg"
@@ -18436,7 +18436,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="16" cy="16" r="6" />
   <path d="m11.8 11.8 8.4 8.4" />
 </svg>
-`;const bf=`
+`;const Bf=`
 <svg
   class="lucide lucide-mouse-pointer-click"
   xmlns="http://www.w3.org/2000/svg"
@@ -18455,7 +18455,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7.2 2.2 8 5.1" />
   <path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z" />
 </svg>
-`;const Cf=`
+`;const jf=`
 <svg
   class="lucide lucide-mouse-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -18471,7 +18471,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12.586 12.586 19 19" />
   <path d="M3.688 3.037a.497.497 0 0 0-.651.651l6.5 15.999a.501.501 0 0 0 .947-.062l1.569-6.083a2 2 0 0 1 1.448-1.479l6.124-1.579a.5.5 0 0 0 .063-.947z" />
 </svg>
-`;const Bf=`
+`;const Af=`
 <svg
   class="lucide lucide-mouse"
   xmlns="http://www.w3.org/2000/svg"
@@ -18505,7 +18505,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 6 3-3 3 3" />
   <path d="m18 16 3 3-3 3" />
 </svg>
-`;const jf=`
+`;const Lf=`
 <svg
   class="lucide lucide-move-diagonal-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18522,7 +18522,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 11V5h6" />
   <path d="m5 5 14 14" />
 </svg>
-`;const Af=`
+`;const Sf=`
 <svg
   class="lucide lucide-move-diagonal"
   xmlns="http://www.w3.org/2000/svg"
@@ -18539,7 +18539,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 5h6v6" />
   <path d="M19 5 5 19" />
 </svg>
-`;const Lf=`
+`;const Hf=`
 <svg
   class="lucide lucide-move-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -18555,7 +18555,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 19H5V13" />
   <path d="M19 5L5 19" />
 </svg>
-`;const Sf=`
+`;const Rf=`
 <svg
   class="lucide lucide-move-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -18571,7 +18571,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 13V19H13" />
   <path d="M5 5L19 19" />
 </svg>
-`;const Hf=`
+`;const Vf=`
 <svg
   class="lucide lucide-move-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -18587,7 +18587,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 18L12 22L16 18" />
   <path d="M12 2V22" />
 </svg>
-`;const Rf=`
+`;const zf=`
 <svg
   class="lucide lucide-move-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -18604,7 +18604,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 12h20" />
   <path d="m6 8-4 4 4 4" />
 </svg>
-`;const Vf=`
+`;const $f=`
 <svg
   class="lucide lucide-move-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -18620,7 +18620,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 8L2 12L6 16" />
   <path d="M2 12H22" />
 </svg>
-`;const zf=`
+`;const Uf=`
 <svg
   class="lucide lucide-move-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -18636,7 +18636,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 8L22 12L18 16" />
   <path d="M2 12H22" />
 </svg>
-`;const $f=`
+`;const Df=`
 <svg
   class="lucide lucide-move-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -18652,7 +18652,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 11V5H11" />
   <path d="M5 5L19 19" />
 </svg>
-`;const Df=`
+`;const Ff=`
 <svg
   class="lucide lucide-move-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -18668,7 +18668,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 5H19V11" />
   <path d="M19 5L5 19" />
 </svg>
-`;const Uf=`
+`;const Pf=`
 <svg
   class="lucide lucide-move-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -18684,7 +18684,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 6L12 2L16 6" />
   <path d="M12 2V22" />
 </svg>
-`;const Ff=`
+`;const Ef=`
 <svg
   class="lucide lucide-move-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -18701,7 +18701,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 18 4 4 4-4" />
   <path d="m8 6 4-4 4 4" />
 </svg>
-`;const Pf=`
+`;const Tf=`
 <svg
   class="lucide lucide-move"
   xmlns="http://www.w3.org/2000/svg"
@@ -18721,7 +18721,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 9-3 3 3 3" />
   <path d="m9 5 3-3 3 3" />
 </svg>
-`;const Ef=`
+`;const Yf=`
 <svg
   class="lucide lucide-music-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18737,7 +18737,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="8" cy="18" r="4" />
   <path d="M12 18V2l7 4" />
 </svg>
-`;const Tf=`
+`;const Of=`
 <svg
   class="lucide lucide-music-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -18753,7 +18753,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="18" r="4" />
   <path d="M16 18V2" />
 </svg>
-`;const Yf=`
+`;const If=`
 <svg
   class="lucide lucide-music-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -18771,7 +18771,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="6" cy="18" r="3" />
   <circle cx="18" cy="16" r="3" />
 </svg>
-`;const Of=`
+`;const qf=`
 <svg
   class="lucide lucide-music"
   xmlns="http://www.w3.org/2000/svg"
@@ -18788,7 +18788,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="6" cy="18" r="3" />
   <circle cx="18" cy="16" r="3" />
 </svg>
-`;const If=`
+`;const Nf=`
 <svg
   class="lucide lucide-navigation-2-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18805,7 +18805,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14.53 8.88 12 2l-1.17 3.17" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const qf=`
+`;const _f=`
 <svg
   class="lucide lucide-navigation-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18820,7 +18820,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <polygon points="12 2 19 21 12 17 5 21 12 2" />
 </svg>
-`;const Nf=`
+`;const Zf=`
 <svg
   class="lucide lucide-navigation-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18837,7 +18837,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.39 11.73 22 2l-9.73 4.61" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const _f=`
+`;const Gf=`
 <svg
   class="lucide lucide-navigation"
   xmlns="http://www.w3.org/2000/svg"
@@ -18852,7 +18852,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <polygon points="3 11 22 2 13 21 11 13 3 11" />
 </svg>
-`;const Zf=`
+`;const Wf=`
 <svg
   class="lucide lucide-network"
   xmlns="http://www.w3.org/2000/svg"
@@ -18871,7 +18871,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
   <path d="M12 12V8" />
 </svg>
-`;const Gf=`
+`;const Kf=`
 <svg
   class="lucide lucide-newspaper"
   xmlns="http://www.w3.org/2000/svg"
@@ -18889,7 +18889,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
   <rect width="8" height="4" x="10" y="6" rx="1" />
 </svg>
-`;const Wf=`
+`;const Xf=`
 <svg
   class="lucide lucide-nfc"
   xmlns="http://www.w3.org/2000/svg"
@@ -18907,7 +18907,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12.91 4.1a15.91 15.91 0 0 1 .01 15.8" />
   <path d="M16.37 2a20.16 20.16 0 0 1 0 20" />
 </svg>
-`;const Kf=`
+`;const Jf=`
 <svg
   class="lucide lucide-non-binary"
   xmlns="http://www.w3.org/2000/svg"
@@ -18925,7 +18925,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8.5 8 7-4" />
   <circle cx="12" cy="17" r="5" />
 </svg>
-`;const Xf=`
+`;const Qf=`
 <svg
   class="lucide lucide-notebook-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -18945,7 +18945,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 18h4" />
   <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
 </svg>
-`;const Jf=`
+`;const t7=`
 <svg
   class="lucide lucide-notebook-tabs"
   xmlns="http://www.w3.org/2000/svg"
@@ -18968,7 +18968,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 12h5" />
   <path d="M15 17h5" />
 </svg>
-`;const Qf=`
+`;const e7=`
 <svg
   class="lucide lucide-notebook-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -18990,7 +18990,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.5 12H16" />
   <path d="M9.5 16H14" />
 </svg>
-`;const t7=`
+`;const o7=`
 <svg
   class="lucide lucide-notebook"
   xmlns="http://www.w3.org/2000/svg"
@@ -19010,7 +19010,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="16" height="20" x="4" y="2" rx="2" />
   <path d="M16 2v20" />
 </svg>
-`;const e7=`
+`;const r7=`
 <svg
   class="lucide lucide-notepad-text-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19037,7 +19037,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14h8" />
   <path d="M8 18h5" />
 </svg>
-`;const o7=`
+`;const i7=`
 <svg
   class="lucide lucide-nut-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -19056,7 +19056,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 12c-1.349-.573-1.905-1.005-2.5-2-.546.902-1.048 1.353-2.5 2-1.018-.644-1.46-1.08-2-2-1.028.71-1.69.918-3 1 1.081-1.048 1.757-2.03 2-3 .194-.776.84-1.551 1.79-2.21m11.654 5.997c.887-.457 1.28-.891 1.556-1.787 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4-.74 0-1.461.068-2.15.192" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const r7=`
+`;const s7=`
 <svg
   class="lucide lucide-notepad-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -19077,7 +19077,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14h8" />
   <path d="M8 18h5" />
 </svg>
-`;const i7=`
+`;const n7=`
 <svg
   class="lucide lucide-nut"
   xmlns="http://www.w3.org/2000/svg"
@@ -19111,7 +19111,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v4" />
   <path d="M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z" />
 </svg>
-`;const s7=`
+`;const l7=`
 <svg
   class="lucide lucide-octagon-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -19161,7 +19161,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z" />
   <path d="m9 9 6 6" />
 </svg>
-`;const n7=`
+`;const a7=`
 <svg
   class="lucide lucide-octagon"
   xmlns="http://www.w3.org/2000/svg"
@@ -19176,7 +19176,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z" />
 </svg>
-`;const l7=`
+`;const d7=`
 <svg
   class="lucide lucide-omega"
   xmlns="http://www.w3.org/2000/svg"
@@ -19191,7 +19191,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21" />
 </svg>
-`;const a7=`
+`;const h7=`
 <svg
   class="lucide lucide-option"
   xmlns="http://www.w3.org/2000/svg"
@@ -19207,7 +19207,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3h6l6 18h6" />
   <path d="M14 3h7" />
 </svg>
-`;const d7=`
+`;const c7=`
 <svg
   class="lucide lucide-orbit"
   xmlns="http://www.w3.org/2000/svg"
@@ -19226,7 +19226,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="5" r="2" />
   <circle cx="5" cy="19" r="2" />
 </svg>
-`;const h7=`
+`;const p7=`
 <svg
   class="lucide lucide-origami"
   xmlns="http://www.w3.org/2000/svg"
@@ -19243,7 +19243,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 21-7.414-7.414A2 2 0 0 1 4 12.172V6.415a1.002 1.002 0 0 1 1.707-.707L20 20.009" />
   <path d="m12.214 3.381 8.414 14.966a1 1 0 0 1-.167 1.199l-1.168 1.163a1 1 0 0 1-.706.291H6.351a1 1 0 0 1-.625-.219L3.25 18.8a1 1 0 0 1 .631-1.781l4.165.027" />
 </svg>
-`;const c7=`
+`;const u7=`
 <svg
   class="lucide lucide-package-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -19260,7 +19260,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.76 3a2 2 0 0 1 1.8 1.1l2.23 4.479a2 2 0 0 1 .21.891V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.472a2 2 0 0 1 .211-.894L5.45 4.1A2 2 0 0 1 7.24 3z" />
   <path d="M3.054 9.013h17.893" />
 </svg>
-`;const p7=`
+`;const w7=`
 <svg
   class="lucide lucide-package-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -19279,7 +19279,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="3.29 7 12 12 20.71 7" />
   <line x1="12" x2="12" y1="22" y2="12" />
 </svg>
-`;const u7=`
+`;const g7=`
 <svg
   class="lucide lucide-package-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -19298,7 +19298,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="3.29 7 12 12 20.71 7" />
   <line x1="12" x2="12" y1="22" y2="12" />
 </svg>
-`;const w7=`
+`;const v7=`
 <svg
   class="lucide lucide-package-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19316,7 +19316,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13" />
   <path d="M21 12.43a1.93 1.93 0 0 0 0-3.36L8.83 2.2a1.64 1.64 0 0 0-1.63 0L3 4.57a1.93 1.93 0 0 0 0 3.36l12.18 6.86a1.636 1.636 0 0 0 1.63 0z" />
 </svg>
-`;const g7=`
+`;const k7=`
 <svg
   class="lucide lucide-package-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -19336,7 +19336,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="3.29 7 12 12 20.71 7" />
   <line x1="12" x2="12" y1="22" y2="12" />
 </svg>
-`;const v7=`
+`;const m7=`
 <svg
   class="lucide lucide-package-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -19356,7 +19356,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18.5" cy="15.5" r="2.5" />
   <path d="M20.27 17.27 22 19" />
 </svg>
-`;const k7=`
+`;const x7=`
 <svg
   class="lucide lucide-package-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -19375,7 +19375,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="12" y1="22" y2="12" />
   <path d="m17 13 5 5m-5 0 5-5" />
 </svg>
-`;const m7=`
+`;const f7=`
 <svg
   class="lucide lucide-package"
   xmlns="http://www.w3.org/2000/svg"
@@ -19393,7 +19393,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <polyline points="3.29 7 12 12 20.71 7" />
   <path d="m7.5 4.27 9 5.15" />
 </svg>
-`;const x7=`
+`;const M7=`
 <svg
   class="lucide lucide-paint-bucket"
   xmlns="http://www.w3.org/2000/svg"
@@ -19411,7 +19411,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.145 18.38A3.34 3.34 0 0 1 20 16.5a3.3 3.3 0 0 1-1.145 1.88c-.575.46-.855 1.02-.855 1.595A2 2 0 0 0 20 22a2 2 0 0 0 2-2.025c0-.58-.285-1.13-.855-1.595" />
   <path d="m8.5 4.5 2.148-2.148a1.205 1.205 0 0 1 1.704 0l7.296 7.296a1.205 1.205 0 0 1 0 1.704l-7.592 7.592a3.615 3.615 0 0 1-5.112 0l-3.888-3.888a3.615 3.615 0 0 1 0-5.112L5.67 7.33" />
 </svg>
-`;const f7=`
+`;const y7=`
 <svg
   class="lucide lucide-paint-roller"
   xmlns="http://www.w3.org/2000/svg"
@@ -19446,7 +19446,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z" />
   <path d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1" />
 </svg>
-`;const M7=`
+`;const b7=`
 <svg
   class="lucide lucide-paintbrush"
   xmlns="http://www.w3.org/2000/svg"
@@ -19463,7 +19463,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z" />
   <path d="M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15" />
 </svg>
-`;const y7=`
+`;const C7=`
 <svg
   class="lucide lucide-palette"
   xmlns="http://www.w3.org/2000/svg"
@@ -19482,7 +19482,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
   <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
 </svg>
-`;const b7=`
+`;const B7=`
 <svg
   class="lucide lucide-panda"
   xmlns="http://www.w3.org/2000/svg"
@@ -19502,7 +19502,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 6.5a.495.495 0 0 1 .5-.5" />
   <path d="m9 12-2 2" />
 </svg>
-`;const C7=`
+`;const j7=`
 <svg
   class="lucide lucide-panel-bottom-close"
   xmlns="http://www.w3.org/2000/svg"
@@ -19519,7 +19519,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 15h18" />
   <path d="m15 8-3 3-3-3" />
 </svg>
-`;const B7=`
+`;const A7=`
 <svg
   class="lucide lucide-panel-bottom-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19555,7 +19555,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 15h2" />
   <path d="M9 15h1" />
 </svg>
-`;const j7=`
+`;const L7=`
 <svg
   class="lucide lucide-panel-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -19624,7 +19624,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 3v2" />
   <path d="M9 9v1" />
 </svg>
-`;const A7=`
+`;const S7=`
 <svg
   class="lucide lucide-panel-left-right-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19663,7 +19663,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M9 3v18" />
 </svg>
-`;const L7=`
+`;const H7=`
 <svg
   class="lucide lucide-panel-right-close"
   xmlns="http://www.w3.org/2000/svg"
@@ -19680,7 +19680,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 3v18" />
   <path d="m8 9 3 3-3 3" />
 </svg>
-`;const S7=`
+`;const R7=`
 <svg
   class="lucide lucide-panel-right-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19716,7 +19716,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 3v2" />
   <path d="M15 9v1" />
 </svg>
-`;const H7=`
+`;const V7=`
 <svg
   class="lucide lucide-panel-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -19732,7 +19732,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M15 3v18" />
 </svg>
-`;const R7=`
+`;const z7=`
 <svg
   class="lucide lucide-panel-top-bottom-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19755,7 +19755,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 9h1" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const V7=`
+`;const $7=`
 <svg
   class="lucide lucide-panel-top-close"
   xmlns="http://www.w3.org/2000/svg"
@@ -19791,7 +19791,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 9h2" />
   <path d="M9 9h1" />
 </svg>
-`;const z7=`
+`;const U7=`
 <svg
   class="lucide lucide-panel-top-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19808,7 +19808,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 9h18" />
   <path d="m15 14-3 3-3-3" />
 </svg>
-`;const $7=`
+`;const D7=`
 <svg
   class="lucide lucide-panel-top"
   xmlns="http://www.w3.org/2000/svg"
@@ -19824,7 +19824,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M3 9h18" />
 </svg>
-`;const D7=`
+`;const F7=`
 <svg
   class="lucide lucide-panels-left-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -19841,7 +19841,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 3v18" />
   <path d="M9 15h12" />
 </svg>
-`;const U7=`
+`;const P7=`
 <svg
   class="lucide lucide-panels-right-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -19875,7 +19875,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 9h18" />
   <path d="M9 21V9" />
 </svg>
-`;const F7=`
+`;const E7=`
 <svg
   class="lucide lucide-paperclip"
   xmlns="http://www.w3.org/2000/svg"
@@ -19890,7 +19890,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551" />
 </svg>
-`;const P7=`
+`;const T7=`
 <svg
   class="lucide lucide-parentheses"
   xmlns="http://www.w3.org/2000/svg"
@@ -19906,7 +19906,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 21s-4-3-4-9 4-9 4-9" />
   <path d="M16 3s4 3 4 9-4 9-4 9" />
 </svg>
-`;const E7=`
+`;const Y7=`
 <svg
   class="lucide lucide-parking-meter"
   xmlns="http://www.w3.org/2000/svg"
@@ -19925,7 +19925,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.282 19a1 1 0 0 0 .948-.68l2.37-6.988a7 7 0 1 0-13.2 0l2.37 6.988a1 1 0 0 0 .948.68z" />
   <path d="M9 9a3 3 0 1 1 6 0" />
 </svg>
-`;const T7=`
+`;const O7=`
 <svg
   class="lucide lucide-party-popper"
   xmlns="http://www.w3.org/2000/svg"
@@ -19948,7 +19948,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" />
   <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" />
 </svg>
-`;const Y7=`
+`;const I7=`
 <svg
   class="lucide lucide-pause"
   xmlns="http://www.w3.org/2000/svg"
@@ -19964,7 +19964,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="14" y="3" width="5" height="18" rx="1" />
   <rect x="5" y="3" width="5" height="18" rx="1" />
 </svg>
-`;const O7=`
+`;const q7=`
 <svg
   class="lucide lucide-paw-print"
   xmlns="http://www.w3.org/2000/svg"
@@ -19982,7 +19982,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="20" cy="16" r="2" />
   <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" />
 </svg>
-`;const I7=`
+`;const N7=`
 <svg
   class="lucide lucide-pc-case"
   xmlns="http://www.w3.org/2000/svg"
@@ -20016,7 +20016,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 21h8" />
   <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
 </svg>
-`;const q7=`
+`;const _7=`
 <svg
   class="lucide lucide-pen-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20033,7 +20033,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12.829 7.172 4.359-4.346a1 1 0 1 1 3.986 3.986l-4.353 4.353" />
   <path d="m2 2 20 20" />
 </svg>
-`;const N7=`
+`;const Z7=`
 <svg
   class="lucide lucide-pen-tool"
   xmlns="http://www.w3.org/2000/svg"
@@ -20066,7 +20066,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
 </svg>
-`;const _7=`
+`;const G7=`
 <svg
   class="lucide lucide-pencil-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -20083,7 +20083,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 5 4 4" />
   <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
 </svg>
-`;const Z7=`
+`;const W7=`
 <svg
   class="lucide lucide-pencil-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20101,7 +20101,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 5 4 4" />
   <path d="m2 2 20 20" />
 </svg>
-`;const G7=`
+`;const K7=`
 <svg
   class="lucide lucide-pencil-ruler"
   xmlns="http://www.w3.org/2000/svg"
@@ -20121,7 +20121,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
   <path d="m15 5 4 4" />
 </svg>
-`;const W7=`
+`;const X7=`
 <svg
   class="lucide lucide-pencil"
   xmlns="http://www.w3.org/2000/svg"
@@ -20137,7 +20137,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
   <path d="m15 5 4 4" />
 </svg>
-`;const K7=`
+`;const J7=`
 <svg
   class="lucide lucide-pentagon"
   xmlns="http://www.w3.org/2000/svg"
@@ -20152,7 +20152,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M10.83 2.38a2 2 0 0 1 2.34 0l8 5.74a2 2 0 0 1 .73 2.25l-3.04 9.26a2 2 0 0 1-1.9 1.37H7.04a2 2 0 0 1-1.9-1.37L2.1 10.37a2 2 0 0 1 .73-2.25z" />
 </svg>
-`;const X7=`
+`;const Q7=`
 <svg
   class="lucide lucide-percent"
   xmlns="http://www.w3.org/2000/svg"
@@ -20169,7 +20169,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="6.5" cy="6.5" r="2.5" />
   <circle cx="17.5" cy="17.5" r="2.5" />
 </svg>
-`;const J7=`
+`;const tM=`
 <svg
   class="lucide lucide-person-standing"
   xmlns="http://www.w3.org/2000/svg"
@@ -20187,7 +20187,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 8 6 2 6-2" />
   <path d="M12 10v4" />
 </svg>
-`;const Q7=`
+`;const eM=`
 <svg
   class="lucide lucide-philippine-peso"
   xmlns="http://www.w3.org/2000/svg"
@@ -20204,7 +20204,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 7H4" />
   <path d="M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7" />
 </svg>
-`;const tM=`
+`;const oM=`
 <svg
   class="lucide lucide-phone-call"
   xmlns="http://www.w3.org/2000/svg"
@@ -20221,7 +20221,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 6a5 5 0 0 1 5 5" />
   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 </svg>
-`;const eM=`
+`;const rM=`
 <svg
   class="lucide lucide-phone-forwarded"
   xmlns="http://www.w3.org/2000/svg"
@@ -20238,7 +20238,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18 2 4 4-4 4" />
   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 </svg>
-`;const oM=`
+`;const iM=`
 <svg
   class="lucide lucide-phone-incoming"
   xmlns="http://www.w3.org/2000/svg"
@@ -20255,7 +20255,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 2-6 6" />
   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 </svg>
-`;const rM=`
+`;const sM=`
 <svg
   class="lucide lucide-phone-missed"
   xmlns="http://www.w3.org/2000/svg"
@@ -20272,7 +20272,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 2-6 6" />
   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 </svg>
-`;const iM=`
+`;const nM=`
 <svg
   class="lucide lucide-phone-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20289,7 +20289,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 2 2 22" />
   <path d="M4.76 13.582A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 .244.473" />
 </svg>
-`;const sM=`
+`;const lM=`
 <svg
   class="lucide lucide-phone-outgoing"
   xmlns="http://www.w3.org/2000/svg"
@@ -20306,7 +20306,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 8V2h-6" />
   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 </svg>
-`;const nM=`
+`;const aM=`
 <svg
   class="lucide lucide-phone"
   xmlns="http://www.w3.org/2000/svg"
@@ -20321,7 +20321,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
 </svg>
-`;const lM=`
+`;const dM=`
 <svg
   class="lucide lucide-pi"
   xmlns="http://www.w3.org/2000/svg"
@@ -20338,7 +20338,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 7c0-1.7 1.3-3 3-3h13" />
   <path d="M18 20c-1.7 0-3-1.3-3-3V4" />
 </svg>
-`;const aM=`
+`;const hM=`
 <svg
   class="lucide lucide-piano"
   xmlns="http://www.w3.org/2000/svg"
@@ -20358,7 +20358,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 14v4" />
   <path d="M18 14v4" />
 </svg>
-`;const dM=`
+`;const cM=`
 <svg
   class="lucide lucide-pickaxe"
   xmlns="http://www.w3.org/2000/svg"
@@ -20376,7 +20376,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.001 11.999a19.9 19.9 0 0 1 3.024 5.824c.444 1.369 2.26 1.676 2.603.278A13 13 0 0 0 20 8.069" />
   <path d="M18.352 3.352a1.205 1.205 0 0 0-1.704 0l-5.296 5.296a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l5.296-5.296a1.205 1.205 0 0 0 0-1.704z" />
 </svg>
-`;const hM=`
+`;const pM=`
 <svg
   class="lucide lucide-picture-in-picture-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -20392,7 +20392,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 9V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h4" />
   <rect width="10" height="7" x="12" y="13" rx="2" />
 </svg>
-`;const cM=`
+`;const uM=`
 <svg
   class="lucide lucide-picture-in-picture"
   xmlns="http://www.w3.org/2000/svg"
@@ -20411,7 +20411,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 14v2a2 2 0 0 0 2 2h3" />
   <rect x="12" y="14" width="10" height="7" rx="1" />
 </svg>
-`;const pM=`
+`;const wM=`
 <svg
   class="lucide lucide-piggy-bank"
   xmlns="http://www.w3.org/2000/svg"
@@ -20428,7 +20428,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 10h.01" />
   <path d="M2 8v1a2 2 0 0 0 2 2h1" />
 </svg>
-`;const uM=`
+`;const gM=`
 <svg
   class="lucide lucide-pilcrow-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -20447,7 +20447,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 18H2l4-4" />
   <path d="m6 22-4-4" />
 </svg>
-`;const wM=`
+`;const vM=`
 <svg
   class="lucide lucide-pilcrow-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -20465,7 +20465,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 3v11" />
   <path d="m18 14 4 4H2" />
   <path d="m22 18-4 4" />
-</svg>`;const gM=`
+</svg>`;const kM=`
 <svg
   class="lucide lucide-pilcrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -20482,7 +20482,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 4v16" />
   <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
 </svg>
-`;const vM=`
+`;const mM=`
 <svg
   class="lucide lucide-pill-bottle"
   xmlns="http://www.w3.org/2000/svg"
@@ -20499,7 +20499,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7" />
   <rect width="16" height="5" x="4" y="2" rx="1" />
 </svg>
-`;const kM=`
+`;const xM=`
 <svg
   class="lucide lucide-pill"
   xmlns="http://www.w3.org/2000/svg"
@@ -20515,7 +20515,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
   <path d="m8.5 8.5 7 7" />
 </svg>
-`;const mM=`
+`;const fM=`
 <svg
   class="lucide lucide-pin-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20533,7 +20533,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M9 9v1.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h11" />
 </svg>
-`;const xM=`
+`;const MM=`
 <svg
   class="lucide lucide-pin"
   xmlns="http://www.w3.org/2000/svg"
@@ -20549,7 +20549,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17v5" />
   <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z" />
 </svg>
-`;const fM=`
+`;const yM=`
 <svg
   class="lucide lucide-pipette"
   xmlns="http://www.w3.org/2000/svg"
@@ -20566,7 +20566,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18 9 .4.4a1 1 0 1 1-3 3l-3.8-3.8a1 1 0 1 1 3-3l.4.4 3.4-3.4a1 1 0 1 1 3 3z" />
   <path d="m2 22 .414-.414" />
 </svg>
-`;const MM=`
+`;const bM=`
 <svg
   class="lucide lucide-pizza"
   xmlns="http://www.w3.org/2000/svg"
@@ -20585,7 +20585,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18.8 9.3a1 1 0 0 0 2.1 7.7" />
   <path d="M21.964 20.732a1 1 0 0 1-1.232 1.232l-18-5a1 1 0 0 1-.695-1.232A19.68 19.68 0 0 1 15.732 2.037a1 1 0 0 1 1.232.695z" />
 </svg>
-`;const yM=`
+`;const CM=`
 <svg
   class="lucide lucide-plane-landing"
   xmlns="http://www.w3.org/2000/svg"
@@ -20601,7 +20601,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 22h20" />
   <path d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" />
 </svg>
-`;const bM=`
+`;const BM=`
 <svg
   class="lucide lucide-plane-takeoff"
   xmlns="http://www.w3.org/2000/svg"
@@ -20617,7 +20617,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 22h20" />
   <path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z" />
 </svg>
-`;const CM=`
+`;const jM=`
 <svg
   class="lucide lucide-plane"
   xmlns="http://www.w3.org/2000/svg"
@@ -20632,7 +20632,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
 </svg>
-`;const BM=`
+`;const AM=`
 <svg
   class="lucide lucide-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -20647,7 +20647,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
 </svg>
-`;const jM=`
+`;const LM=`
 <svg
   class="lucide lucide-plug-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -20685,7 +20685,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.5 16.5 13 14" />
   <path d="m18 3-4 4h6l-4 4" />
 </svg>
-`;const AM=`
+`;const SM=`
 <svg
   class="lucide lucide-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -20701,7 +20701,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 12h14" />
   <path d="M12 5v14" />
 </svg>
-`;const LM=`
+`;const HM=`
 <svg
   class="lucide lucide-plug"
   xmlns="http://www.w3.org/2000/svg"
@@ -20719,7 +20719,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" />
   <path d="M9 8V2" />
 </svg>
-`;const SM=`
+`;const RM=`
 <svg
   class="lucide lucide-pocket-knife"
   xmlns="http://www.w3.org/2000/svg"
@@ -20738,7 +20738,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z" />
   <path d="M18 11.66V22a4 4 0 0 0 4-4V6" />
 </svg>
-`;const HM=`
+`;const VM=`
 <svg
   class="lucide lucide-pocket"
   xmlns="http://www.w3.org/2000/svg"
@@ -20754,7 +20754,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 3a2 2 0 0 1 2 2v6a1 1 0 0 1-20 0V5a2 2 0 0 1 2-2z" />
   <path d="m8 10 4 4 4-4" />
 </svg>
-`;const RM=`
+`;const zM=`
 <svg
   class="lucide lucide-podcast"
   xmlns="http://www.w3.org/2000/svg"
@@ -20772,7 +20772,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14a5 5 0 1 1 8 0" />
   <circle cx="12" cy="11" r="1" fill="currentColor" />
 </svg>
-`;const VM=`
+`;const $M=`
 <svg
   class="lucide lucide-pointer-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20792,7 +20792,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 6v8" />
   <path d="m2 2 20 20" />
 </svg>
-`;const zM=`
+`;const UM=`
 <svg
   class="lucide lucide-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -20811,7 +20811,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10" />
   <path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
 </svg>
-`;const $M=`
+`;const DM=`
 <svg
   class="lucide lucide-popcorn"
   xmlns="http://www.w3.org/2000/svg"
@@ -20829,7 +20829,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 22 1-14" />
   <path d="M20 8c.5 0 .9.4.8 1l-2.6 12c-.1.5-.7 1-1.2 1H7c-.6 0-1.1-.4-1.2-1L3.2 9c-.1-.6.3-1 .8-1Z" />
 </svg>
-`;const DM=`
+`;const FM=`
 <svg
   class="lucide lucide-popsicle"
   xmlns="http://www.w3.org/2000/svg"
@@ -20845,7 +20845,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18.6 14.4c.8-.8.8-2 0-2.8l-8.1-8.1a4.95 4.95 0 1 0-7.1 7.1l8.1 8.1c.9.7 2.1.7 2.9-.1Z" />
   <path d="m22 22-5.5-5.5" />
 </svg>
-`;const UM=`
+`;const PM=`
 <svg
   class="lucide lucide-pound-sterling"
   xmlns="http://www.w3.org/2000/svg"
@@ -20863,7 +20863,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 21h12" />
   <path d="M6 13h10" />
 </svg>
-`;const FM=`
+`;const EM=`
 <svg
   class="lucide lucide-power-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20881,7 +20881,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 2v4" />
   <path d="m2 2 20 20" />
 </svg>
-`;const PM=`
+`;const TM=`
 <svg
   class="lucide lucide-power"
   xmlns="http://www.w3.org/2000/svg"
@@ -20897,7 +20897,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 2v10" />
   <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
 </svg>
-`;const EM=`
+`;const YM=`
 <svg
   class="lucide lucide-presentation"
   xmlns="http://www.w3.org/2000/svg"
@@ -20914,7 +20914,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
   <path d="m7 21 5-5 5 5" />
 </svg>
-`;const TM=`
+`;const OM=`
 <svg
   class="lucide lucide-printer-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -20932,7 +20932,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2" />
   <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
 </svg>
-`;const YM=`
+`;const IM=`
 <svg
   class="lucide lucide-proportions"
   xmlns="http://www.w3.org/2000/svg"
@@ -20949,7 +20949,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 9v11" />
   <path d="M2 9h13a2 2 0 0 1 2 2v9" />
 </svg>
-`;const OM=`
+`;const qM=`
 <svg
   class="lucide lucide-printer"
   xmlns="http://www.w3.org/2000/svg"
@@ -20966,7 +20966,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
   <rect x="6" y="14" width="12" height="8" rx="1" />
 </svg>
-`;const IM=`
+`;const NM=`
 <svg
   class="lucide lucide-projector"
   xmlns="http://www.w3.org/2000/svg"
@@ -20986,7 +20986,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17" />
   <path d="M16 16h2" />
 </svg>
-`;const qM=`
+`;const _M=`
 <svg
   class="lucide lucide-puzzle"
   xmlns="http://www.w3.org/2000/svg"
@@ -21001,7 +21001,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" />
 </svg>
-`;const NM=`
+`;const ZM=`
 <svg
   class="lucide lucide-pyramid"
   xmlns="http://www.w3.org/2000/svg"
@@ -21017,7 +21017,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.5 16.88a1 1 0 0 1-.32-1.43l9-13.02a1 1 0 0 1 1.64 0l9 13.01a1 1 0 0 1-.32 1.44l-8.51 4.86a2 2 0 0 1-1.98 0Z" />
   <path d="M12 2v20" />
 </svg>
-`;const _M=`
+`;const GM=`
 <svg
   class="lucide lucide-qr-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -21043,7 +21043,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12v.01" />
   <path d="M12 21v-1" />
 </svg>
-`;const ZM=`
+`;const WM=`
 <svg
   class="lucide lucide-quote"
   xmlns="http://www.w3.org/2000/svg"
@@ -21059,7 +21059,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
   <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
 </svg>
-`;const GM=`
+`;const KM=`
 <svg
   class="lucide lucide-rabbit"
   xmlns="http://www.w3.org/2000/svg"
@@ -21078,7 +21078,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 8.54V4a2 2 0 1 0-4 0v3" />
   <path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
 </svg>
-`;const WM=`
+`;const XM=`
 <svg
   class="lucide lucide-radar"
   xmlns="http://www.w3.org/2000/svg"
@@ -21100,7 +21100,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="2" />
   <path d="m13.41 10.59 5.66-5.66" />
 </svg>
-`;const KM=`
+`;const JM=`
 <svg
   class="lucide lucide-radiation"
   xmlns="http://www.w3.org/2000/svg"
@@ -21118,7 +21118,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 12a4 4 0 0 0-2-3.464l2.472-4.282a1 1 0 0 1 1.46-.305 10 10 0 0 1 4.006 6.94A1 1 0 0 1 21 12z" />
   <path d="M8 12a4 4 0 0 1 2-3.464L7.528 4.254a1 1 0 0 0-1.46-.305 10 10 0 0 0-4.006 6.94A1 1 0 0 0 3 12z" />
 </svg>
-`;const XM=`
+`;const QM=`
 <svg
   class="lucide lucide-radical"
   xmlns="http://www.w3.org/2000/svg"
@@ -21133,7 +21133,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M3 12h3.28a1 1 0 0 1 .948.684l2.298 7.934a.5.5 0 0 0 .96-.044L13.82 4.771A1 1 0 0 1 14.792 4H21" />
 </svg>
-`;const JM=`
+`;const t9=`
 <svg
   class="lucide lucide-radio-receiver"
   xmlns="http://www.w3.org/2000/svg"
@@ -21151,7 +21151,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="20" height="8" x="2" y="8" rx="2" />
   <path d="M18 12h.01" />
 </svg>
-`;const QM=`
+`;const e9=`
 <svg
   class="lucide lucide-radio-tower"
   xmlns="http://www.w3.org/2000/svg"
@@ -21172,7 +21172,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.5 18h5" />
   <path d="m8 22 4-11 4 11" />
 </svg>
-`;const t9=`
+`;const o9=`
 <svg
   class="lucide lucide-radio"
   xmlns="http://www.w3.org/2000/svg"
@@ -21191,7 +21191,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7.753 16.239a6 6 0 0 1 0-8.478" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const e9=`
+`;const r9=`
 <svg
   class="lucide lucide-radius"
   xmlns="http://www.w3.org/2000/svg"
@@ -21209,7 +21209,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m13.41 13.41 4.18 4.18" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const o9=`
+`;const i9=`
 <svg
   class="lucide lucide-rail-symbol"
   xmlns="http://www.w3.org/2000/svg"
@@ -21226,7 +21226,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 9h14" />
   <path d="m14 20-5-5 6-6-5-5" />
 </svg>
-`;const r9=`
+`;const s9=`
 <svg
   class="lucide lucide-rainbow"
   xmlns="http://www.w3.org/2000/svg"
@@ -21243,7 +21243,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 17a6 6 0 0 1 12 0" />
   <path d="M10 17a2 2 0 0 1 4 0" />
 </svg>
-`;const i9=`
+`;const n9=`
 <svg
   class="lucide lucide-rat"
   xmlns="http://www.w3.org/2000/svg"
@@ -21262,7 +21262,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.82 3.94a3 3 0 1 1 3.237 4.868l1.815 2.587a1.5 1.5 0 0 1-1.5 2.1l-2.872-.453a3 3 0 0 0-3.5 3" />
   <path d="M17 4.988a3 3 0 1 0-5.2 2.052A7 7 0 0 0 4 14.015 4 4 0 0 0 8 18" />
 </svg>
-`;const s9=`
+`;const l9=`
 <svg
   class="lucide lucide-ratio"
   xmlns="http://www.w3.org/2000/svg"
@@ -21278,7 +21278,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="12" height="20" x="6" y="2" rx="2" />
   <rect width="20" height="12" x="2" y="6" rx="2" />
 </svg>
-`;const n9=`
+`;const a9=`
 <svg
   class="lucide lucide-receipt-cent"
   xmlns="http://www.w3.org/2000/svg"
@@ -21295,7 +21295,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6.5v11" />
   <path d="M15 9.4a4 4 0 1 0 0 5.2" />
 </svg>
-`;const l9=`
+`;const d9=`
 <svg
   class="lucide lucide-receipt-euro"
   xmlns="http://www.w3.org/2000/svg"
@@ -21312,7 +21312,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h5" />
   <path d="M16 9.5a4 4 0 1 0 0 5.2" />
 </svg>
-`;const a9=`
+`;const h9=`
 <svg
   class="lucide lucide-receipt-indian-rupee"
   xmlns="http://www.w3.org/2000/svg"
@@ -21330,7 +21330,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17.5 8 15h1a4 4 0 0 0 0-8" />
   <path d="M8 11h8" />
 </svg>
-`;const d9=`
+`;const c9=`
 <svg
   class="lucide lucide-receipt-japanese-yen"
   xmlns="http://www.w3.org/2000/svg"
@@ -21349,7 +21349,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 11h6" />
   <path d="M9 15h6" />
 </svg>
-`;const h9=`
+`;const p9=`
 <svg
   class="lucide lucide-receipt-pound-sterling"
   xmlns="http://www.w3.org/2000/svg"
@@ -21367,7 +21367,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 17V9.5a2.5 2.5 0 0 1 5 0" />
   <path d="M8 17h7" />
 </svg>
-`;const c9=`
+`;const u9=`
 <svg
   class="lucide lucide-receipt-russian-ruble"
   xmlns="http://www.w3.org/2000/svg"
@@ -21384,7 +21384,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15h5" />
   <path d="M8 11h5a2 2 0 1 0 0-4h-3v10" />
 </svg>
-`;const p9=`
+`;const w9=`
 <svg
   class="lucide lucide-receipt-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -21402,7 +21402,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 12H8" />
   <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" />
 </svg>
-`;const u9=`
+`;const g9=`
 <svg
   class="lucide lucide-receipt-swiss-franc"
   xmlns="http://www.w3.org/2000/svg"
@@ -21420,7 +21420,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 11h4" />
   <path d="M8 15h5" />
 </svg>
-`;const w9=`
+`;const v9=`
 <svg
   class="lucide lucide-receipt-turkish-lira"
   xmlns="http://www.w3.org/2000/svg"
@@ -21437,7 +21437,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 8-6 3" />
   <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
 </svg>
-`;const g9=`
+`;const k9=`
 <svg
   class="lucide lucide-receipt"
   xmlns="http://www.w3.org/2000/svg"
@@ -21454,7 +21454,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
   <path d="M12 17.5v-11" />
 </svg>
-`;const v9=`
+`;const m9=`
 <svg
   class="lucide lucide-rectangle-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -21488,7 +21488,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 12h.01" />
   <path d="M7 12h.01" />
 </svg>
-`;const k9=`
+`;const x9=`
 <svg
   class="lucide lucide-rectangle-goggles"
   xmlns="http://www.w3.org/2000/svg"
@@ -21503,7 +21503,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M20 6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8l-1.6-2.13a1 1 0 0 0-1.6 0L9.6 17.2A2 2 0 0 1 8 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" />
 </svg>
-`;const m9=`
+`;const f9=`
 <svg
   class="lucide lucide-rectangle-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -21518,7 +21518,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <rect width="20" height="12" x="2" y="6" rx="2" />
 </svg>
-`;const x9=`
+`;const M9=`
 <svg
   class="lucide lucide-rectangle-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -21533,7 +21533,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <rect width="12" height="20" x="6" y="2" rx="2" />
 </svg>
-`;const f9=`
+`;const y9=`
 <svg
   class="lucide lucide-recycle"
   xmlns="http://www.w3.org/2000/svg"
@@ -21553,7 +21553,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843" />
   <path d="m13.378 9.633 4.096 1.098 1.097-4.096" />
 </svg>
-`;const M9=`
+`;const b9=`
 <svg
   class="lucide lucide-redo-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -21569,7 +21569,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 14 5-5-5-5" />
   <path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13" />
 </svg>
-`;const y9=`
+`;const C9=`
 <svg
   class="lucide lucide-redo-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -21586,7 +21586,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 7v6h-6" />
   <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7" />
 </svg>
-`;const b9=`
+`;const B9=`
 <svg
   class="lucide lucide-redo"
   xmlns="http://www.w3.org/2000/svg"
@@ -21602,7 +21602,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 7v6h-6" />
   <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7" />
 </svg>
-`;const C9=`
+`;const j9=`
 <svg
   class="lucide lucide-refresh-ccw-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -21621,7 +21621,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 16h5v5" />
   <circle cx="12" cy="12" r="1" />
 </svg>
-`;const B9=`
+`;const A9=`
 <svg
   class="lucide lucide-refresh-ccw"
   xmlns="http://www.w3.org/2000/svg"
@@ -21639,7 +21639,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
   <path d="M16 16h5v5" />
 </svg>
-`;const j9=`
+`;const L9=`
 <svg
   class="lucide lucide-refresh-cw-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -21660,7 +21660,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 3v5h-5" />
   <path d="M22 22 2 2" />
 </svg>
-`;const A9=`
+`;const S9=`
 <svg
   class="lucide lucide-refresh-cw"
   xmlns="http://www.w3.org/2000/svg"
@@ -21678,7 +21678,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
   <path d="M8 16H3v5" />
 </svg>
-`;const L9=`
+`;const H9=`
 <svg
   class="lucide lucide-refrigerator"
   xmlns="http://www.w3.org/2000/svg"
@@ -21695,7 +21695,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 10h14" />
   <path d="M15 7v6" />
 </svg>
-`;const S9=`
+`;const R9=`
 <svg
   class="lucide lucide-regex"
   xmlns="http://www.w3.org/2000/svg"
@@ -21713,7 +21713,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12.67 10.5 8.66-5" />
   <path d="M9 17a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2z" />
 </svg>
-`;const H9=`
+`;const V9=`
 <svg
   class="lucide lucide-remove-formatting"
   xmlns="http://www.w3.org/2000/svg"
@@ -21732,7 +21732,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 15 5 5" />
   <path d="m20 15-5 5" />
 </svg>
-`;const R9=`
+`;const z9=`
 <svg
   class="lucide lucide-repeat-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -21751,7 +21751,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 13v1a4 4 0 0 1-4 4H3" />
   <path d="M11 10h1v4" />
 </svg>
-`;const V9=`
+`;const $9=`
 <svg
   class="lucide lucide-repeat-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -21769,7 +21769,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 15-3 3-3-3" />
   <path d="M11 6h6a2 2 0 0 1 2 2v10" />
 </svg>
-`;const z9=`
+`;const U9=`
 <svg
   class="lucide lucide-repeat"
   xmlns="http://www.w3.org/2000/svg"
@@ -21787,7 +21787,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 22-4-4 4-4" />
   <path d="M21 13v1a4 4 0 0 1-4 4H3" />
 </svg>
-`;const $9=`
+`;const D9=`
 <svg
   class="lucide lucide-replace-all"
   xmlns="http://www.w3.org/2000/svg"
@@ -21810,7 +21810,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 10V5a2 2 0 0 1 2-2h2" />
   <rect x="3" y="14" width="7" height="7" rx="1" />
 </svg>
-`;const D9=`
+`;const F9=`
 <svg
   class="lucide lucide-replace"
   xmlns="http://www.w3.org/2000/svg"
@@ -21831,7 +21831,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 10V5a2 2 0 0 1 2-2h2" />
   <rect x="3" y="14" width="7" height="7" rx="1" />
 </svg>
-`;const U9=`
+`;const P9=`
 <svg
   class="lucide lucide-reply-all"
   xmlns="http://www.w3.org/2000/svg"
@@ -21848,7 +21848,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 18v-2a4 4 0 0 0-4-4H7" />
   <path d="m7 17-5-5 5-5" />
 </svg>
-`;const F9=`
+`;const E9=`
 <svg
   class="lucide lucide-reply"
   xmlns="http://www.w3.org/2000/svg"
@@ -21864,7 +21864,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 18v-2a4 4 0 0 0-4-4H4" />
   <path d="m9 17-5-5 5-5" />
 </svg>
-`;const P9=`
+`;const T9=`
 <svg
   class="lucide lucide-rewind"
   xmlns="http://www.w3.org/2000/svg"
@@ -21880,7 +21880,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 12 18z" />
   <path d="M22 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 22 18z" />
 </svg>
-`;const E9=`
+`;const Y9=`
 <svg
   class="lucide lucide-ribbon"
   xmlns="http://www.w3.org/2000/svg"
@@ -21899,7 +21899,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.35 14.53 12 11.22" />
   <path d="M9.35 14.53C7.728 12.246 6 10.221 6 7a6 5 0 0 1 12 0c-.005 3.22-1.778 5.235-3.43 7.5l3.557 4.527a1 1 0 0 1-.203 1.43l-1.894 1.36a1 1 0 0 1-1.384-.215L12 18l-2.679 3.593a1 1 0 0 1-1.39.213l-1.865-1.353a1 1 0 0 1-.203-1.422z" />
 </svg>
-`;const T9=`
+`;const O9=`
 <svg
   class="lucide lucide-rocket"
   xmlns="http://www.w3.org/2000/svg"
@@ -21917,7 +21917,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
   <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
 </svg>
-`;const Y9=`
+`;const I9=`
 <svg
   class="lucide lucide-rocking-chair"
   xmlns="http://www.w3.org/2000/svg"
@@ -21935,7 +21935,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="15" x2="18.5" y1="12.5" y2="20" />
   <path d="M2.75 18a13 13 0 0 0 18.5 0" />
 </svg>
-`;const O9=`
+`;const q9=`
 <svg
   class="lucide lucide-roller-coaster"
   xmlns="http://www.w3.org/2000/svg"
@@ -21956,7 +21956,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 19V9" />
   <path d="M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65" />
 </svg>
-`;const I9=`
+`;const N9=`
 <svg
   class="lucide lucide-rose"
   xmlns="http://www.w3.org/2000/svg"
@@ -21992,7 +21992,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15.194 13.707 3.814 1.86-1.86 3.814" />
   <path d="M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4" />
 </svg>
-`;const q9=`
+`;const _9=`
 <svg
   class="lucide lucide-rotate-ccw-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -22011,7 +22011,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 3v5h5" />
   <circle cx="10" cy="14" r="2" />
 </svg>
-`;const N9=`
+`;const Z9=`
 <svg
   class="lucide lucide-rotate-ccw-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -22028,7 +22028,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 2-3 3 3 3" />
   <path d="M20 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2" />
 </svg>
-`;const _9=`
+`;const G9=`
 <svg
   class="lucide lucide-rotate-ccw"
   xmlns="http://www.w3.org/2000/svg"
@@ -22044,7 +22044,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
   <path d="M3 3v5h5" />
 </svg>
-`;const Z9=`
+`;const W9=`
 <svg
   class="lucide lucide-rotate-cw-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -22061,7 +22061,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 8 3-3-3-3" />
   <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
 </svg>
-`;const G9=`
+`;const K9=`
 <svg
   class="lucide lucide-rotate-cw"
   xmlns="http://www.w3.org/2000/svg"
@@ -22077,7 +22077,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
   <path d="M21 3v5h-5" />
 </svg>
-`;const W9=`
+`;const X9=`
 <svg
   class="lucide lucide-route-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -22098,7 +22098,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 5h-4.3" />
   <circle cx="18" cy="5" r="3" />
 </svg>
-`;const K9=`
+`;const J9=`
 <svg
   class="lucide lucide-route"
   xmlns="http://www.w3.org/2000/svg"
@@ -22115,7 +22115,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
   <circle cx="18" cy="5" r="3" />
 </svg>
-`;const X9=`
+`;const Q9=`
 <svg
   class="lucide lucide-router"
   xmlns="http://www.w3.org/2000/svg"
@@ -22168,7 +22168,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 9H3" />
   <path d="M21 15H3" />
 </svg>
-`;const J9=`
+`;const ty=`
 <svg
   class="lucide lucide-rows-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -22186,7 +22186,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12H3" />
   <path d="M21 16.5H3" />
 </svg>
-`;const Q9=`
+`;const ey=`
 <svg
   class="lucide lucide-ruler-dimension-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -22208,7 +22208,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 15v-3" />
   <rect x="2" y="12" width="20" height="8" rx="2" />
 </svg>
-`;const ty=`
+`;const oy=`
 <svg
   class="lucide lucide-rss"
   xmlns="http://www.w3.org/2000/svg"
@@ -22225,7 +22225,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 4a16 16 0 0 1 16 16" />
   <circle cx="5" cy="19" r="1" />
 </svg>
-`;const ey=`
+`;const ry=`
 <svg
   class="lucide lucide-ruler"
   xmlns="http://www.w3.org/2000/svg"
@@ -22244,7 +22244,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8.5 6.5 2-2" />
   <path d="m17.5 15.5 2-2" />
 </svg>
-`;const oy=`
+`;const iy=`
 <svg
   class="lucide lucide-russian-ruble"
   xmlns="http://www.w3.org/2000/svg"
@@ -22260,7 +22260,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 11h8a4 4 0 0 0 0-8H9v18" />
   <path d="M6 15h8" />
 </svg>
-`;const ry=`
+`;const sy=`
 <svg
   class="lucide lucide-sailboat"
   xmlns="http://www.w3.org/2000/svg"
@@ -22277,7 +22277,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 22a4 4 0 0 1-4-4 1 1 0 0 1 1-1h16a1 1 0 0 1 1 1 4 4 0 0 1-4 4z" />
   <path d="M9.159 2.46a1 1 0 0 1 1.521-.193l9.977 8.98A1 1 0 0 1 20 13H4a1 1 0 0 1-.824-1.567z" />
 </svg>
-`;const iy=`
+`;const ny=`
 <svg
   class="lucide lucide-salad"
   xmlns="http://www.w3.org/2000/svg"
@@ -22296,7 +22296,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m13 12 4-4" />
   <path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2" />
 </svg>
-`;const sy=`
+`;const ly=`
 <svg
   class="lucide lucide-sandwich"
   xmlns="http://www.w3.org/2000/svg"
@@ -22315,7 +22315,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6.67 15 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
   <rect width="20" height="4" x="2" y="11" rx="1" />
 </svg>
-`;const ny=`
+`;const ay=`
 <svg
   class="lucide lucide-satellite-dish"
   xmlns="http://www.w3.org/2000/svg"
@@ -22333,7 +22333,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 13a6 6 0 0 0-6-6" />
   <path d="M21 13A10 10 0 0 0 11 3" />
 </svg>
-`;const ly=`
+`;const dy=`
 <svg
   class="lucide lucide-satellite"
   xmlns="http://www.w3.org/2000/svg"
@@ -22352,7 +22352,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 21a6 6 0 0 0-6-6" />
   <path d="M9.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l4.296-4.296a1.205 1.205 0 0 0 0-1.704l-2.296-2.296a1.205 1.205 0 0 0-1.704 0z" />
 </svg>
-`;const ay=`
+`;const hy=`
 <svg
   class="lucide lucide-saudi-riyal"
   xmlns="http://www.w3.org/2000/svg"
@@ -22370,7 +22370,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2.978 19.351 5.549-1.363A2 2 0 0 0 10 16V2" />
   <path d="M20 10 4 13.5" />
 </svg>
-`;const dy=`
+`;const cy=`
 <svg
   class="lucide lucide-save-all"
   xmlns="http://www.w3.org/2000/svg"
@@ -22388,7 +22388,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 22H4a2 2 0 0 1-2-2V6" />
   <path d="M8 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9.172a2 2 0 0 1 1.414.586l2.828 2.828A2 2 0 0 1 22 6.828V16a2 2 0 0 1-2.01 2z" />
 </svg>
-`;const hy=`
+`;const py=`
 <svg
   class="lucide lucide-save-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -22409,7 +22409,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M29.5 11.5s5 5 4 5" />
   <path d="M9 3h6.2a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V15" />
 </svg>
-`;const cy=`
+`;const uy=`
 <svg
   class="lucide lucide-save"
   xmlns="http://www.w3.org/2000/svg"
@@ -22444,7 +22444,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="19" r="2" />
   <circle cx="5" cy="5" r="2" />
 </svg>
-`;const py=`
+`;const wy=`
 <svg
   class="lucide lucide-scale"
   xmlns="http://www.w3.org/2000/svg"
@@ -22463,7 +22463,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
   <path d="M7 21h10" />
 </svg>
-`;const uy=`
+`;const gy=`
 <svg
   class="lucide lucide-scaling"
   xmlns="http://www.w3.org/2000/svg"
@@ -22481,7 +22481,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 3h5v5" />
   <path d="M21 3 9 15" />
 </svg>
-`;const wy=`
+`;const vy=`
 <svg
   class="lucide lucide-scan-barcode"
   xmlns="http://www.w3.org/2000/svg"
@@ -22502,7 +22502,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 7v10" />
   <path d="M17 7v10" />
 </svg>
-`;const gy=`
+`;const ky=`
 <svg
   class="lucide lucide-scan-eye"
   xmlns="http://www.w3.org/2000/svg"
@@ -22522,7 +22522,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="1" />
   <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
 </svg>
-`;const vy=`
+`;const my=`
 <svg
   class="lucide lucide-scan-face"
   xmlns="http://www.w3.org/2000/svg"
@@ -22543,7 +22543,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 9h.01" />
   <path d="M15 9h.01" />
 </svg>
-`;const ky=`
+`;const xy=`
 <svg
   class="lucide lucide-scan-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -22562,7 +22562,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
   <path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 4.172 4.306l-3.447 3.62a1 1 0 0 1-1.449 0z" />
 </svg>
-`;const my=`
+`;const fy=`
 <svg
   class="lucide lucide-scan-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -22581,7 +22581,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
   <path d="M7 12h10" />
 </svg>
-`;const xy=`
+`;const My=`
 <svg
   class="lucide lucide-scan-qr-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -22603,7 +22603,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
   <rect x="7" y="7" width="5" height="5" rx="1" />
 </svg>
-`;const fy=`
+`;const yy=`
 <svg
   class="lucide lucide-scan-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -22623,7 +22623,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="3" />
   <path d="m16 16-1.9-1.9" />
 </svg>
-`;const My=`
+`;const by=`
 <svg
   class="lucide lucide-scan-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -22644,7 +22644,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 12h10" />
   <path d="M7 16h6" />
 </svg>
-`;const yy=`
+`;const Cy=`
 <svg
   class="lucide lucide-scan"
   xmlns="http://www.w3.org/2000/svg"
@@ -22662,7 +22662,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
   <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
 </svg>
-`;const by=`
+`;const By=`
 <svg
   class="lucide lucide-school"
   xmlns="http://www.w3.org/2000/svg"
@@ -22682,7 +22682,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 5v16" />
   <circle cx="12" cy="9" r="2" />
 </svg>
-`;const Cy=`
+`;const jy=`
 <svg
   class="lucide lucide-scissors-line-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -22703,7 +22703,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 12h-2" />
   <path d="M22 12h-2" />
 </svg>
-`;const By=`
+`;const Ay=`
 <svg
   class="lucide lucide-scissors"
   xmlns="http://www.w3.org/2000/svg"
@@ -22722,7 +22722,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="6" cy="18" r="3" />
   <path d="M14.8 14.8 20 20" />
 </svg>
-`;const jy=`
+`;const Ly=`
 <svg
   class="lucide lucide-scooter"
   xmlns="http://www.w3.org/2000/svg"
@@ -22739,7 +22739,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.95 17h5.142c.523 0 .95-.406 1.063-.916a6.5 6.5 0 0 1 5.345-5.009" />
   <circle cx="19.5" cy="17.5" r="2.5" />
   <circle cx="4.5" cy="17.5" r="2.5" />
-</svg>`;const Ay=`
+</svg>`;const Sy=`
 <svg
   class="lucide lucide-screen-share"
   xmlns="http://www.w3.org/2000/svg"
@@ -22758,7 +22758,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 8 5-5" />
   <path d="M17 3h5v5" />
 </svg>
-`;const Ly=`
+`;const Hy=`
 <svg
   class="lucide lucide-screen-share-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -22777,7 +22777,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 3-5 5" />
   <path d="m17 3 5 5" />
 </svg>
-`;const Sy=`
+`;const Ry=`
 <svg
   class="lucide lucide-scroll-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -22795,7 +22795,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 17V5a2 2 0 0 0-2-2H4" />
   <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
 </svg>
-`;const Hy=`
+`;const Vy=`
 <svg
   class="lucide lucide-scroll"
   xmlns="http://www.w3.org/2000/svg"
@@ -22811,7 +22811,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 17V5a2 2 0 0 0-2-2H4" />
   <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
 </svg>
-`;const Ry=`
+`;const zy=`
 <svg
   class="lucide lucide-search-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -22828,7 +22828,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 21-4.3-4.3" />
   <path d="M11 7v4" />
   <path d="M11 15h.01" />
-</svg>`;const Vy=`
+</svg>`;const $y=`
 <svg
   class="lucide lucide-search-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -22845,7 +22845,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="11" cy="11" r="8" />
   <path d="m21 21-4.3-4.3" />
 </svg>
-`;const zy=`
+`;const Uy=`
 <svg
   class="lucide lucide-search-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -22862,7 +22862,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="11" cy="11" r="8" />
   <path d="m21 21-4.3-4.3" />
 </svg>
-`;const $y=`
+`;const Dy=`
 <svg
   class="lucide lucide-search-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -22880,7 +22880,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 8.5 7 11l2 2.5" />
   <circle cx="11" cy="11" r="8" />
 </svg>
-`;const Dy=`
+`;const Fy=`
 <svg
   class="lucide lucide-search-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -22898,7 +22898,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="11" cy="11" r="8" />
   <path d="m21 21-4.3-4.3" />
 </svg>
-`;const Uy=`
+`;const Py=`
 <svg
   class="lucide lucide-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -22914,7 +22914,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 21-4.34-4.34" />
   <circle cx="11" cy="11" r="8" />
 </svg>
-`;const Fy=`
+`;const Ey=`
 <svg
   class="lucide lucide-section"
   xmlns="http://www.w3.org/2000/svg"
@@ -22946,7 +22946,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z" />
   <path d="M6 12h16" />
 </svg>
-`;const Py=`
+`;const Ty=`
 <svg
   class="lucide lucide-send-to-back"
   xmlns="http://www.w3.org/2000/svg"
@@ -22964,7 +22964,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 14v1a2 2 0 0 0 2 2h1" />
   <path d="M14 7h1a2 2 0 0 1 2 2v1" />
 </svg>
-`;const Ey=`
+`;const Yy=`
 <svg
   class="lucide lucide-send"
   xmlns="http://www.w3.org/2000/svg"
@@ -22980,7 +22980,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
   <path d="m21.854 2.147-10.94 10.939" />
 </svg>
-`;const Ty=`
+`;const Oy=`
 <svg
   class="lucide lucide-separator-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -22997,7 +22997,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 12h18" />
   <path d="m8 8 4-4 4 4" />
 </svg>
-`;const Yy=`
+`;const Iy=`
 <svg
   class="lucide lucide-separator-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -23014,7 +23014,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 16 4-4-4-4" />
   <path d="m8 8-4 4 4 4" />
 </svg>
-`;const Oy=`
+`;const qy=`
 <svg
   class="lucide lucide-server-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -23040,7 +23040,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.228 10.852-.923-.383" />
   <path d="m9.228 13.148-.923.383" />
 </svg>
-`;const Iy=`
+`;const Ny=`
 <svg
   class="lucide lucide-server-crash"
   xmlns="http://www.w3.org/2000/svg"
@@ -23059,7 +23059,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18h.01" />
   <path d="m13 6-4 6h6l-4 6" />
 </svg>
-`;const qy=`
+`;const _y=`
 <svg
   class="lucide lucide-server-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -23079,7 +23079,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 18h.01" />
   <path d="m2 2 20 20" />
 </svg>
-`;const Ny=`
+`;const Zy=`
 <svg
   class="lucide lucide-server"
   xmlns="http://www.w3.org/2000/svg"
@@ -23097,7 +23097,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="6" x2="6.01" y1="6" y2="6" />
   <line x1="6" x2="6.01" y1="18" y2="18" />
 </svg>
-`;const _y=`
+`;const Gy=`
 <svg
   class="lucide lucide-settings-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -23115,7 +23115,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="17" cy="17" r="3" />
   <circle cx="7" cy="7" r="3" />
 </svg>
-`;const Zy=`
+`;const Wy=`
 <svg
   class="lucide lucide-settings"
   xmlns="http://www.w3.org/2000/svg"
@@ -23131,7 +23131,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const Gy=`
+`;const Ky=`
 <svg
   class="lucide lucide-shapes"
   xmlns="http://www.w3.org/2000/svg"
@@ -23148,7 +23148,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="3" y="14" width="7" height="7" rx="1" />
   <circle cx="17.5" cy="17.5" r="3.5" />
 </svg>
-`;const Wy=`
+`;const Xy=`
 <svg
   class="lucide lucide-share-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -23167,7 +23167,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />
   <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
 </svg>
-`;const Ky=`
+`;const Jy=`
 <svg
   class="lucide lucide-share"
   xmlns="http://www.w3.org/2000/svg"
@@ -23184,7 +23184,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 6-4-4-4 4" />
   <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
 </svg>
-`;const Xy=`
+`;const Qy=`
 <svg
   class="lucide lucide-sheet"
   xmlns="http://www.w3.org/2000/svg"
@@ -23203,7 +23203,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="9" x2="9" y1="9" y2="21" />
   <line x1="15" x2="15" y1="9" y2="21" />
 </svg>
-`;const Jy=`
+`;const tb=`
 <svg
   class="lucide lucide-shell"
   xmlns="http://www.w3.org/2000/svg"
@@ -23218,7 +23218,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M14 11a2 2 0 1 1-4 0 4 4 0 0 1 8 0 6 6 0 0 1-12 0 8 8 0 0 1 16 0 10 10 0 1 1-20 0 11.93 11.93 0 0 1 2.42-7.22 2 2 0 1 1 3.16 2.44" />
 </svg>
-`;const Qy=`
+`;const eb=`
 <svg
   class="lucide lucide-shield-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -23235,7 +23235,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 8v4" />
   <path d="M12 16h.01" />
 </svg>
-`;const tb=`
+`;const ob=`
 <svg
   class="lucide lucide-shield-ban"
   xmlns="http://www.w3.org/2000/svg"
@@ -23251,7 +23251,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
   <path d="m4.243 5.21 14.39 12.472" />
 </svg>
-`;const eb=`
+`;const rb=`
 <svg
   class="lucide lucide-shield-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -23267,7 +23267,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
   <path d="m9 12 2 2 4-4" />
 </svg>
-`;const ob=`
+`;const ib=`
 <svg
   class="lucide lucide-shield-ellipsis"
   xmlns="http://www.w3.org/2000/svg"
@@ -23285,7 +23285,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 12h.01" />
   <path d="M16 12h.01" />
 </svg>
-`;const rb=`
+`;const sb=`
 <svg
   class="lucide lucide-shield-half"
   xmlns="http://www.w3.org/2000/svg"
@@ -23301,7 +23301,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
   <path d="M12 22V2" />
 </svg>
-`;const ib=`
+`;const nb=`
 <svg
   class="lucide lucide-shield-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -23317,7 +23317,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
   <path d="M9 12h6" />
 </svg>
-`;const sb=`
+`;const lb=`
 <svg
   class="lucide lucide-shield-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -23334,7 +23334,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 12h6" />
   <path d="M12 9v6" />
 </svg>
-`;const nb=`
+`;const ab=`
 <svg
   class="lucide lucide-shield-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -23368,7 +23368,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3" />
   <path d="M12 17h.01" />
 </svg>
-`;const lb=`
+`;const db=`
 <svg
   class="lucide lucide-shield-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -23402,7 +23402,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14.5 9.5-5 5" />
   <path d="m9.5 9.5 5 5" />
 </svg>
-`;const ab=`
+`;const hb=`
 <svg
   class="lucide lucide-shield"
   xmlns="http://www.w3.org/2000/svg"
@@ -23417,7 +23417,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
 </svg>
-`;const db=`
+`;const cb=`
 <svg
   class="lucide lucide-ship-wheel"
   xmlns="http://www.w3.org/2000/svg"
@@ -23441,7 +23441,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.23 10.23 5 5" />
   <circle cx="12" cy="12" r="2.5" />
 </svg>
-`;const hb=`
+`;const pb=`
 <svg
   class="lucide lucide-ship"
   xmlns="http://www.w3.org/2000/svg"
@@ -23460,7 +23460,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76" />
   <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
 </svg>
-`;const cb=`
+`;const ub=`
 <svg
   class="lucide lucide-shirt"
   xmlns="http://www.w3.org/2000/svg"
@@ -23475,7 +23475,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
 </svg>
-`;const pb=`
+`;const wb=`
 <svg
   class="lucide lucide-shopping-bag"
   xmlns="http://www.w3.org/2000/svg"
@@ -23492,7 +23492,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3.103 6.034h17.794" />
   <path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" />
 </svg>
-`;const ub=`
+`;const gb=`
 <svg
   class="lucide lucide-shopping-basket"
   xmlns="http://www.w3.org/2000/svg"
@@ -23513,7 +23513,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 11 4-7" />
   <path d="m9 11 1 9" />
 </svg>
-`;const wb=`
+`;const vb=`
 <svg
   class="lucide lucide-shopping-cart"
   xmlns="http://www.w3.org/2000/svg"
@@ -23530,7 +23530,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="19" cy="21" r="1" />
   <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
 </svg>
-`;const gb=`
+`;const kb=`
 <svg
   class="lucide lucide-shovel"
   xmlns="http://www.w3.org/2000/svg"
@@ -23547,7 +23547,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 22a1 1 0 0 1-1-1v-3.586a1 1 0 0 1 .293-.707l3.355-3.355a1.205 1.205 0 0 1 1.704 0l3.296 3.296a1.205 1.205 0 0 1 0 1.704l-3.355 3.355a1 1 0 0 1-.707.293z" />
   <path d="m9 15 7.879-7.878" />
 </svg>
-`;const vb=`
+`;const mb=`
 <svg
   class="lucide lucide-shower-head"
   xmlns="http://www.w3.org/2000/svg"
@@ -23571,7 +23571,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 14v.01" />
   <path d="M20 11v.01" />
 </svg>
-`;const kb=`
+`;const xb=`
 <svg
   class="lucide lucide-shredder"
   xmlns="http://www.w3.org/2000/svg"
@@ -23592,7 +23592,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 13h20" />
   <path d="M6 20v-3" />
 </svg>
-`;const mb=`
+`;const fb=`
 <svg
   class="lucide lucide-shrimp"
   xmlns="http://www.w3.org/2000/svg"
@@ -23611,7 +23611,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 8a8.5 8.5 0 0 1 0 8" />
   <path d="M16 16c2 0 4.5-4 4-6" />
 </svg>
-`;const xb=`
+`;const Mb=`
 <svg
   class="lucide lucide-shrink"
   xmlns="http://www.w3.org/2000/svg"
@@ -23629,7 +23629,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 4.2V9m0 0h4.8M15 9l6-6" />
   <path d="M9 4.2V9m0 0H4.2M9 9 3 3" />
 </svg>
-`;const fb=`
+`;const yb=`
 <svg
   class="lucide lucide-shrub"
   xmlns="http://www.w3.org/2000/svg"
@@ -23646,7 +23646,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14.5 14.5 12 17" />
   <path d="M17 8.8A6 6 0 0 1 13.8 20H10A6.5 6.5 0 0 1 7 8a5 5 0 0 1 10 0z" />
 </svg>
-`;const Mb=`
+`;const bb=`
 <svg
   class="lucide lucide-sigma"
   xmlns="http://www.w3.org/2000/svg"
@@ -23661,7 +23661,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2" />
 </svg>
-`;const yb=`
+`;const Cb=`
 <svg
   class="lucide lucide-shuffle"
   xmlns="http://www.w3.org/2000/svg"
@@ -23680,7 +23680,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 6h1.972a4 4 0 0 1 3.6 2.2" />
   <path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45" />
 </svg>
-`;const bb=`
+`;const Bb=`
 <svg
   class="lucide lucide-signal-high"
   xmlns="http://www.w3.org/2000/svg"
@@ -23698,7 +23698,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 20v-8" />
   <path d="M17 20V8" />
 </svg>
-`;const Cb=`
+`;const jb=`
 <svg
   class="lucide lucide-signal-low"
   xmlns="http://www.w3.org/2000/svg"
@@ -23714,7 +23714,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 20h.01" />
   <path d="M7 20v-4" />
 </svg>
-`;const Bb=`
+`;const Ab=`
 <svg
   class="lucide lucide-signal-medium"
   xmlns="http://www.w3.org/2000/svg"
@@ -23731,7 +23731,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 20v-4" />
   <path d="M12 20v-8" />
 </svg>
-`;const jb=`
+`;const Lb=`
 <svg
   class="lucide lucide-signal-zero"
   xmlns="http://www.w3.org/2000/svg"
@@ -23746,7 +23746,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M2 20h.01" />
 </svg>
-`;const Ab=`
+`;const Sb=`
 <svg
   class="lucide lucide-signal"
   xmlns="http://www.w3.org/2000/svg"
@@ -23765,7 +23765,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 20V8" />
   <path d="M22 4v16" />
 </svg>
-`;const Lb=`
+`;const Hb=`
 <svg
   class="lucide lucide-signature"
   xmlns="http://www.w3.org/2000/svg"
@@ -23781,7 +23781,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284" />
   <path d="M3 21h18" />
 </svg>
-`;const Sb=`
+`;const Rb=`
 <svg
   class="lucide lucide-signpost-big"
   xmlns="http://www.w3.org/2000/svg"
@@ -23799,7 +23799,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 22V4a2 2 0 1 1 4 0v18" />
   <path d="M8 22h8" />
 </svg>
-`;const Hb=`
+`;const Vb=`
 <svg
   class="lucide lucide-signpost"
   xmlns="http://www.w3.org/2000/svg"
@@ -23816,7 +23816,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 3v3" />
   <path d="M18 6a2 2 0 0 1 1.387.56l2.307 2.22a1 1 0 0 1 0 1.44l-2.307 2.22A2 2 0 0 1 18 13H6a2 2 0 0 1-1.387-.56l-2.306-2.22a1 1 0 0 1 0-1.44l2.306-2.22A2 2 0 0 1 6 6z" />
 </svg>
-`;const Rb=`
+`;const zb=`
 <svg
   class="lucide lucide-siren"
   xmlns="http://www.w3.org/2000/svg"
@@ -23838,7 +23838,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m4.929 4.929.707.707" />
   <path d="M12 12v6" />
 </svg>
-`;const Vb=`
+`;const $b=`
 <svg
   class="lucide lucide-skip-back"
   xmlns="http://www.w3.org/2000/svg"
@@ -23854,7 +23854,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
   <path d="M3 20V4" />
 </svg>
-`;const zb=`
+`;const Ub=`
 <svg
   class="lucide lucide-skip-forward"
   xmlns="http://www.w3.org/2000/svg"
@@ -23870,7 +23870,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 4v16" />
   <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
 </svg>
-`;const $b=`
+`;const Db=`
 <svg
   class="lucide lucide-skull"
   xmlns="http://www.w3.org/2000/svg"
@@ -23888,7 +23888,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="15" cy="12" r="1" />
   <circle cx="9" cy="12" r="1" />
 </svg>
-`;const Db=`
+`;const Fb=`
 <svg
   class="lucide lucide-slack"
   xmlns="http://www.w3.org/2000/svg"
@@ -23910,7 +23910,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="8" height="3" x="2" y="8" rx="1.5" />
   <path d="M8.5 5H10V3.5A1.5 1.5 0 1 0 8.5 5" />
 </svg>
-`;const Ub=`
+`;const Pb=`
 <svg
   class="lucide lucide-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -23925,7 +23925,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M22 2 2 22" />
 </svg>
-`;const Fb=`
+`;const Eb=`
 <svg
   class="lucide lucide-sliders-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -23948,7 +23948,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 10v4" />
   <path d="M8 12H3" />
 </svg>
-`;const Pb=`
+`;const Tb=`
 <svg
   class="lucide lucide-slice"
   xmlns="http://www.w3.org/2000/svg"
@@ -23986,7 +23986,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 10V3" />
   <path d="M5 21v-7" />
 </svg>
-`;const Eb=`
+`;const Yb=`
 <svg
   class="lucide lucide-smartphone-charging"
   xmlns="http://www.w3.org/2000/svg"
@@ -24002,7 +24002,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
   <path d="M12.667 8 10 12h4l-2.667 4" />
 </svg>
-`;const Tb=`
+`;const Ob=`
 <svg
   class="lucide lucide-smartphone-nfc"
   xmlns="http://www.w3.org/2000/svg"
@@ -24020,7 +24020,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.46 6.21a11.76 11.76 0 0 1 0 11.58" />
   <path d="M19.91 4.1a15.91 15.91 0 0 1 .01 15.8" />
 </svg>
-`;const Yb=`
+`;const Ib=`
 <svg
   class="lucide lucide-smartphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -24036,7 +24036,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
   <path d="M12 18h.01" />
 </svg>
-`;const Ob=`
+`;const qb=`
 <svg
   class="lucide lucide-smile-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -24056,7 +24056,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 5h6" />
   <path d="M19 2v6" />
 </svg>
-`;const Ib=`
+`;const Nb=`
 <svg
   class="lucide lucide-smile"
   xmlns="http://www.w3.org/2000/svg"
@@ -24074,7 +24074,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="9" x2="9.01" y1="9" y2="9" />
   <line x1="15" x2="15.01" y1="9" y2="9" />
 </svg>
-`;const qb=`
+`;const _b=`
 <svg
   class="lucide lucide-snowflake"
   xmlns="http://www.w3.org/2000/svg"
@@ -24100,7 +24100,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 21 3-6-1.5-3" />
   <path d="m7 3 3 6h4" />
 </svg>
-`;const Nb=`
+`;const Zb=`
 <svg
   class="lucide lucide-snail"
   xmlns="http://www.w3.org/2000/svg"
@@ -24119,7 +24119,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 3 19.1 5.2" />
   <path d="M22 3 20.9 5.2" />
 </svg>
-`;const _b=`
+`;const Gb=`
 <svg
   class="lucide lucide-soap-dispenser-droplet"
   xmlns="http://www.w3.org/2000/svg"
@@ -24137,7 +24137,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19.29 14.76A6.67 6.67 0 0 1 17 11a6.6 6.6 0 0 1-2.29 3.76c-1.15.92-1.71 2.04-1.71 3.19 0 2.22 1.8 4.05 4 4.05s4-1.83 4-4.05c0-1.16-.57-2.26-1.71-3.19" />
   <path d="M9.607 21H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h7V7a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
 </svg>
-`;const Zb=`
+`;const Wb=`
 <svg
   class="lucide lucide-sofa"
   xmlns="http://www.w3.org/2000/svg"
@@ -24156,7 +24156,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 18v2" />
   <path d="M12 4v9" />
 </svg>
-`;const Gb=`
+`;const Kb=`
 <svg
   class="lucide lucide-solar-panel"
   xmlns="http://www.w3.org/2000/svg"
@@ -24177,7 +24177,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 2a4 4 0 0 1-4 4" />
   <path d="m8.66 7.66 1.41 1.41" />
 </svg>
-`;const Wb=`
+`;const Xb=`
 <svg
   class="lucide lucide-soup"
   xmlns="http://www.w3.org/2000/svg"
@@ -24197,7 +24197,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62" />
   <path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62" />
 </svg>
-`;const Kb=`
+`;const Jb=`
 <svg
   class="lucide lucide-space"
   xmlns="http://www.w3.org/2000/svg"
@@ -24212,7 +24212,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1" />
 </svg>
-`;const Xb=`
+`;const Qb=`
 <svg
   class="lucide lucide-spade"
   xmlns="http://www.w3.org/2000/svg"
@@ -24228,7 +24228,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 18v4" />
   <path d="M2 14.499a5.5 5.5 0 0 0 9.591 3.675.6.6 0 0 1 .818.001A5.5 5.5 0 0 0 22 14.5c0-2.29-1.5-4-3-5.5l-5.492-5.312a2 2 0 0 0-3-.02L5 8.999c-1.5 1.5-3 3.2-3 5.5" />
 </svg>
-`;const Jb=`
+`;const tC=`
 <svg
   class="lucide lucide-sparkle"
   xmlns="http://www.w3.org/2000/svg"
@@ -24261,7 +24261,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 4h-4" />
   <circle cx="4" cy="20" r="2" />
 </svg>
-`;const Qb=`
+`;const eC=`
 <svg
   class="lucide lucide-speaker"
   xmlns="http://www.w3.org/2000/svg"
@@ -24279,7 +24279,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="14" r="4" />
   <path d="M12 14h.01" />
 </svg>
-`;const tC=`
+`;const oC=`
 <svg
   class="lucide lucide-speech"
   xmlns="http://www.w3.org/2000/svg"
@@ -24296,7 +24296,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19.8 17.8a7.5 7.5 0 0 0 .003-10.603" />
   <path d="M17 15a3.5 3.5 0 0 0-.025-4.975" />
 </svg>
-`;const eC=`
+`;const rC=`
 <svg
   class="lucide lucide-spell-check-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -24313,7 +24313,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h8" />
   <path d="M4 21c1.1 0 1.1-1 2.3-1s1.1 1 2.3 1c1.1 0 1.1-1 2.3-1 1.1 0 1.1 1 2.3 1 1.1 0 1.1-1 2.3-1 1.1 0 1.1 1 2.3 1 1.1 0 1.1-1 2.3-1" />
 </svg>
-`;const oC=`
+`;const iC=`
 <svg
   class="lucide lucide-spell-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -24330,7 +24330,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h8" />
   <path d="m16 20 2 2 4-4" />
 </svg>
-`;const rC=`
+`;const sC=`
 <svg
   class="lucide lucide-spline-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -24347,7 +24347,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 17A12 12 0 0 1 17 5" />
   <circle cx="19" cy="5" r="2" />
   <circle cx="5" cy="19" r="2" />
-</svg>`;const iC=`
+</svg>`;const nC=`
 <svg
   class="lucide lucide-spline"
   xmlns="http://www.w3.org/2000/svg"
@@ -24364,7 +24364,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="5" cy="19" r="2" />
   <path d="M5 17A12 12 0 0 1 17 5" />
 </svg>
-`;const sC=`
+`;const lC=`
 <svg
   class="lucide lucide-split"
   xmlns="http://www.w3.org/2000/svg"
@@ -24382,7 +24382,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
   <path d="m15 9 6-6" />
 </svg>
-`;const nC=`
+`;const aC=`
 <svg
   class="lucide lucide-spool"
   xmlns="http://www.w3.org/2000/svg"
@@ -24398,7 +24398,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 13.44 4.442 17.082A2 2 0 0 0 4.982 21H19a2 2 0 0 0 .558-3.921l-1.115-.32A2 2 0 0 1 17 14.837V7.66" />
   <path d="m7 10.56 12.558-3.642A2 2 0 0 0 19.018 3H5a2 2 0 0 0-.558 3.921l1.115.32A2 2 0 0 1 7 9.163v7.178" />
 </svg>
-`;const lC=`
+`;const dC=`
 <svg
   class="lucide lucide-spotlight"
   xmlns="http://www.w3.org/2000/svg"
@@ -24417,7 +24417,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7.61 6.3a3 3 0 0 0-3.92 1.3l-1.38 2.79a3 3 0 0 0 1.3 3.91l6.89 3.597a1 1 0 0 0 1.342-.447l3.106-6.211a1 1 0 0 0-.447-1.341z" />
   <path d="M8 9V2" />
 </svg>
-`;const aC=`
+`;const hC=`
 <svg
   class="lucide lucide-spray-can"
   xmlns="http://www.w3.org/2000/svg"
@@ -24441,7 +24441,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m13 14 8-2" />
   <path d="m13 19 8-2" />
 </svg>
-`;const dC=`
+`;const cC=`
 <svg
   class="lucide lucide-sprout"
   xmlns="http://www.w3.org/2000/svg"
@@ -24678,7 +24678,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 12-4-4-4 4" />
   <path d="M12 16V8" />
 </svg>
-`;const Dl=`
+`;const Ul=`
 <svg
   class="lucide lucide-square-asterisk"
   xmlns="http://www.w3.org/2000/svg"
@@ -24696,7 +24696,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8.5 14 7-4" />
   <path d="m8.5 10 7 4" />
 </svg>
-`;const Ul=`
+`;const Dl=`
 <svg
   class="lucide lucide-square-bottom-dashed-scissors"
   xmlns="http://www.w3.org/2000/svg"
@@ -24855,7 +24855,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 15 3-3-3-3" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const hC=`
+`;const pC=`
 <svg
   class="lucide lucide-square-dashed-bottom-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -24874,7 +24874,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2" />
   <path d="M9 21h1" />
 </svg>
-`;const cC=`
+`;const uC=`
 <svg
   class="lucide lucide-square-dashed-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -24944,7 +24944,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 9v2" />
   <path d="M3 14v1" />
 </svg>
-`;const pC=`
+`;const wC=`
 <svg
   class="lucide lucide-square-dashed-top-solid"
   xmlns="http://www.w3.org/2000/svg"
@@ -25198,7 +25198,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
 </svg>
-`;const uC=`
+`;const gC=`
 <svg
   class="lucide lucide-square-pause"
   xmlns="http://www.w3.org/2000/svg"
@@ -25335,7 +25335,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7.998 9.003a5 5 0 1 0 8-.005" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const wC=`
+`;const vC=`
 <svg
   class="lucide lucide-square-radical"
   xmlns="http://www.w3.org/2000/svg"
@@ -25351,7 +25351,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 12h2l2 5 2-10h4" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const gC=`
+`;const kC=`
 <svg
   class="lucide lucide-square-round-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -25453,7 +25453,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 16v3c0 1-1 2-2 2H7c-1 0-2-1-2-2v-3" />
   <line x1="4" x2="20" y1="12" y2="12" />
 </svg>
-`;const vC=`
+`;const mC=`
 <svg
   class="lucide lucide-square-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -25469,7 +25469,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="3" y="3" width="18" height="18" rx="2" />
   <rect x="8" y="8" width="8" height="8" rx="1" />
 </svg>
-`;const kC=`
+`;const xC=`
 <svg
   class="lucide lucide-square-stack"
   xmlns="http://www.w3.org/2000/svg"
@@ -25486,7 +25486,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2" />
   <rect width="8" height="8" x="14" y="14" rx="2" />
 </svg>
-`;const mC=`
+`;const fC=`
 <svg
   class="lucide lucide-square-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -25502,7 +25502,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.035 7.69a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const xC=`
+`;const MC=`
 <svg
   class="lucide lucide-square-stop"
   xmlns="http://www.w3.org/2000/svg"
@@ -25586,7 +25586,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 9-6 6" />
   <path d="m9 9 6 6" />
 </svg>
-`;const fC=`
+`;const yC=`
 <svg
   class="lucide lucide-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -25601,7 +25601,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <rect width="18" height="18" x="3" y="3" rx="2" />
 </svg>
-`;const MC=`
+`;const bC=`
 <svg
   class="lucide lucide-squares-exclude"
   xmlns="http://www.w3.org/2000/svg"
@@ -25616,7 +25616,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M16 12v2a2 2 0 0 1-2 2H9a1 1 0 0 0-1 1v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h0" />
   <path d="M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1h-5a2 2 0 0 0-2 2v2" />
-</svg>`;const yC=`
+</svg>`;const CC=`
 <svg
   class="lucide lucide-squares-intersect"
   xmlns="http://www.w3.org/2000/svg"
@@ -25640,7 +25640,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 16a2 2 0 0 1-2-2" />
   <path d="M8 10a2 2 0 0 1 2-2h5a1 1 0 0 1 1 1v5a2 2 0 0 1-2 2H9a1 1 0 0 1-1-1z" />
   <path d="M8 2h2" />
-</svg>`;const bC=`
+</svg>`;const BC=`
 <svg
   class="lucide lucide-squares-subtract"
   xmlns="http://www.w3.org/2000/svg"
@@ -25659,7 +25659,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 8a2 2 0 0 1 2 2" />
   <path d="M22 14v2" />
   <path d="M22 20a2 2 0 0 1-2 2" />
-</svg>`;const CC=`
+</svg>`;const jC=`
 <svg
   class="lucide lucide-squares-unite"
   xmlns="http://www.w3.org/2000/svg"
@@ -25673,7 +25673,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   stroke-linejoin="round"
 >
   <path d="M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3a1 1 0 0 0 1 1h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-3a1 1 0 0 0-1-1z" />
-</svg>`;const BC=`
+</svg>`;const AC=`
 <svg
   class="lucide lucide-squircle-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -25695,7 +25695,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.26 20.179c-1.15-.508-1.93-1.29-2.44-2.438" />
   <path d="M6.26 3.82c-1.149.51-1.93 1.291-2.44 2.44" />
 </svg>
-`;const jC=`
+`;const LC=`
 <svg
   class="lucide lucide-squircle"
   xmlns="http://www.w3.org/2000/svg"
@@ -25710,7 +25710,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9" />
 </svg>
-`;const AC=`
+`;const SC=`
 <svg
   class="lucide lucide-squirrel"
   xmlns="http://www.w3.org/2000/svg"
@@ -25728,7 +25728,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 13h.01" />
   <path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10" />
 </svg>
-`;const LC=`
+`;const HC=`
 <svg
   class="lucide lucide-stamp"
   xmlns="http://www.w3.org/2000/svg"
@@ -25745,7 +25745,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z" />
   <path d="M5 22h14" />
 </svg>
-`;const SC=`
+`;const RC=`
 <svg
   class="lucide lucide-star-half"
   xmlns="http://www.w3.org/2000/svg"
@@ -25760,7 +25760,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M12 18.338a2.1 2.1 0 0 0-.987.244L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16l2.309-4.679A.53.53 0 0 1 12 2" />
 </svg>
-`;const HC=`
+`;const VC=`
 <svg
   class="lucide lucide-star-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -25777,7 +25777,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18.42 12.76 22 9.27l-6.91-1L12 2l-1.44 2.91" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const RC=`
+`;const zC=`
 <svg
   class="lucide lucide-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -25792,7 +25792,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
 </svg>
-`;const VC=`
+`;const $C=`
 <svg
   class="lucide lucide-step-back"
   xmlns="http://www.w3.org/2000/svg"
@@ -25808,7 +25808,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13.971 4.285A2 2 0 0 1 17 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
   <path d="M21 20V4" />
 </svg>
-`;const zC=`
+`;const UC=`
 <svg
   class="lucide lucide-step-forward"
   xmlns="http://www.w3.org/2000/svg"
@@ -25824,7 +25824,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.029 4.285A2 2 0 0 0 7 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
   <path d="M3 4v16" />
 </svg>
-`;const $C=`
+`;const DC=`
 <svg
   class="lucide lucide-stethoscope"
   xmlns="http://www.w3.org/2000/svg"
@@ -25843,7 +25843,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15a6 6 0 0 0 12 0v-3" />
   <circle cx="20" cy="10" r="2" />
 </svg>
-`;const DC=`
+`;const FC=`
 <svg
   class="lucide lucide-sticky-note"
   xmlns="http://www.w3.org/2000/svg"
@@ -25859,7 +25859,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z" />
   <path d="M15 3v5a1 1 0 0 0 1 1h5" />
 </svg>
-`;const UC=`
+`;const PC=`
 <svg
   class="lucide lucide-sticker"
   xmlns="http://www.w3.org/2000/svg"
@@ -25878,7 +25878,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 13h.01" />
   <path d="M10 16s.8 1 2 1c1.3 0 2-1 2-1" />
 </svg>
-`;const FC=`
+`;const EC=`
 <svg
   class="lucide lucide-stone"
   xmlns="http://www.w3.org/2000/svg"
@@ -25895,7 +25895,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11.99 22 14 12l7.822 3.184" />
   <path d="M14 12 8.47 2.302" />
 </svg>
-`;const PC=`
+`;const TC=`
 <svg
   class="lucide lucide-store"
   xmlns="http://www.w3.org/2000/svg"
@@ -25912,7 +25912,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244" />
   <path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05" />
 </svg>
-`;const EC=`
+`;const YC=`
 <svg
   class="lucide lucide-stretch-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -25928,7 +25928,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="20" height="6" x="2" y="4" rx="2" />
   <rect width="20" height="6" x="2" y="14" rx="2" />
 </svg>
-`;const TC=`
+`;const OC=`
 <svg
   class="lucide lucide-stretch-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -25944,7 +25944,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="6" height="20" x="4" y="2" rx="2" />
   <rect width="6" height="20" x="14" y="2" rx="2" />
 </svg>
-`;const YC=`
+`;const IC=`
 <svg
   class="lucide lucide-strikethrough"
   xmlns="http://www.w3.org/2000/svg"
@@ -25961,7 +25961,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 12a4 4 0 0 1 0 8H6" />
   <line x1="4" x2="20" y1="12" y2="12" />
 </svg>
-`;const OC=`
+`;const qC=`
 <svg
   class="lucide lucide-subscript"
   xmlns="http://www.w3.org/2000/svg"
@@ -25978,7 +25978,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 5-8 8" />
   <path d="M20 19h-4c0-1.5.44-2 1.5-2.5S20 15.33 20 14c0-.47-.17-.93-.48-1.29a2.11 2.11 0 0 0-2.62-.44c-.42.24-.74.62-.9 1.07" />
 </svg>
-`;const IC=`
+`;const NC=`
 <svg
   class="lucide lucide-sun-dim"
   xmlns="http://www.w3.org/2000/svg"
@@ -26001,7 +26001,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.343 17.657h.01" />
   <path d="M6.343 6.343h.01" />
 </svg>
-`;const qC=`
+`;const _C=`
 <svg
   class="lucide lucide-sun-medium"
   xmlns="http://www.w3.org/2000/svg"
@@ -26024,7 +26024,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5.636 5.636.707.707" />
   <path d="m17.657 17.657.707.707" />
 </svg>
-`;const NC=`
+`;const ZC=`
 <svg
   class="lucide lucide-sun-moon"
   xmlns="http://www.w3.org/2000/svg"
@@ -26043,7 +26043,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m19 5-1.256 1.256" />
   <path d="M20 12h2" />
 </svg>
-`;const _C=`
+`;const GC=`
 <svg
   class="lucide lucide-sun-snow"
   xmlns="http://www.w3.org/2000/svg"
@@ -26068,7 +26068,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3.64 18.36.7-.7" />
   <path d="m4.34 6.34-.7-.7" />
 </svg>
-`;const ZC=`
+`;const WC=`
 <svg
   class="lucide lucide-sun"
   xmlns="http://www.w3.org/2000/svg"
@@ -26091,7 +26091,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6.34 17.66-1.41 1.41" />
   <path d="m19.07 4.93-1.41 1.41" />
 </svg>
-`;const GC=`
+`;const KC=`
 <svg
   class="lucide lucide-sunrise"
   xmlns="http://www.w3.org/2000/svg"
@@ -26113,7 +26113,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 6 4-4 4 4" />
   <path d="M16 18a4 4 0 0 0-8 0" />
 </svg>
-`;const WC=`
+`;const XC=`
 <svg
   class="lucide lucide-sunset"
   xmlns="http://www.w3.org/2000/svg"
@@ -26135,7 +26135,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 6-4 4-4-4" />
   <path d="M16 18a4 4 0 0 0-8 0" />
 </svg>
-`;const KC=`
+`;const JC=`
 <svg
   class="lucide lucide-superscript"
   xmlns="http://www.w3.org/2000/svg"
@@ -26152,7 +26152,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 19-8-8" />
   <path d="M20 12h-4c0-1.5.442-2 1.5-2.5S20 8.334 20 7.002c0-.472-.17-.93-.484-1.29a2.105 2.105 0 0 0-2.617-.436c-.42.239-.738.614-.899 1.06" />
 </svg>
-`;const XC=`
+`;const QC=`
 <svg
   class="lucide lucide-swatch-book"
   xmlns="http://www.w3.org/2000/svg"
@@ -26170,7 +26170,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M 7 17h.01" />
   <path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8" />
 </svg>
-`;const JC=`
+`;const tB=`
 <svg
   class="lucide lucide-swiss-franc"
   xmlns="http://www.w3.org/2000/svg"
@@ -26187,7 +26187,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 16h9" />
   <path d="M10 9.5h7" />
 </svg>
-`;const QC=`
+`;const eB=`
 <svg
   class="lucide lucide-switch-camera"
   xmlns="http://www.w3.org/2000/svg"
@@ -26206,7 +26206,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18 22-3-3 3-3" />
   <path d="m6 2 3 3-3 3" />
 </svg>
-`;const tB=`
+`;const oB=`
 <svg
   class="lucide lucide-sword"
   xmlns="http://www.w3.org/2000/svg"
@@ -26224,7 +26224,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 16-4 4" />
   <path d="M9.5 17.5 21 6V3h-3L6.5 14.5" />
 </svg>
-`;const eB=`
+`;const rB=`
 <svg
   class="lucide lucide-swords"
   xmlns="http://www.w3.org/2000/svg"
@@ -26246,7 +26246,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="7" x2="4" y1="17" y2="20" />
   <line x1="3" x2="5" y1="19" y2="21" />
 </svg>
-`;const oB=`
+`;const iB=`
 <svg
   class="lucide lucide-syringe"
   xmlns="http://www.w3.org/2000/svg"
@@ -26266,7 +26266,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m5 19-3 3" />
   <path d="m14 4 6 6" />
 </svg>
-`;const rB=`
+`;const sB=`
 <svg
   class="lucide lucide-table-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -26281,7 +26281,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18" />
 </svg>
-`;const iB=`
+`;const nB=`
 <svg
   class="lucide lucide-table-cells-merge"
   xmlns="http://www.w3.org/2000/svg"
@@ -26300,7 +26300,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 9h18" />
   <rect width="18" height="18" x="3" y="3" rx="2" />
 </svg>
-`;const sB=`
+`;const lB=`
 <svg
   class="lucide lucide-table-cells-split"
   xmlns="http://www.w3.org/2000/svg"
@@ -26318,7 +26318,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 9h18" />
   <rect width="18" height="18" x="3" y="3" rx="2" />
 </svg>
-`;const nB=`
+`;const aB=`
 <svg
   class="lucide lucide-table-columns-split"
   xmlns="http://www.w3.org/2000/svg"
@@ -26343,7 +26343,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 9h-4" />
   <path d="M5 3v18" />
 </svg>
-`;const lB=`
+`;const dB=`
 <svg
   class="lucide lucide-table-of-contents"
   xmlns="http://www.w3.org/2000/svg"
@@ -26363,7 +26363,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 12h.01" />
   <path d="M21 19h.01" />
 </svg>
-`;const aB=`
+`;const hB=`
 <svg
   class="lucide lucide-table-properties"
   xmlns="http://www.w3.org/2000/svg"
@@ -26381,7 +26381,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 9H3" />
   <path d="M21 15H3" />
 </svg>
-`;const dB=`
+`;const cB=`
 <svg
   class="lucide lucide-table-rows-split"
   xmlns="http://www.w3.org/2000/svg"
@@ -26406,7 +26406,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 22v-8" />
   <path d="M9 2v4" />
 </svg>
-`;const hB=`
+`;const pB=`
 <svg
   class="lucide lucide-table"
   xmlns="http://www.w3.org/2000/svg"
@@ -26424,7 +26424,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 9h18" />
   <path d="M3 15h18" />
 </svg>
-`;const cB=`
+`;const uB=`
 <svg
   class="lucide lucide-tablet-smartphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -26441,7 +26441,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4" />
   <path d="M8 18h.01" />
 </svg>
-`;const pB=`
+`;const wB=`
 <svg
   class="lucide lucide-tablets"
   xmlns="http://www.w3.org/2000/svg"
@@ -26459,7 +26459,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 17h10" />
   <path d="m3.46 10.54 7.08-7.08" />
 </svg>
-`;const uB=`
+`;const gB=`
 <svg
   class="lucide lucide-tablet"
   xmlns="http://www.w3.org/2000/svg"
@@ -26475,7 +26475,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
   <line x1="12" x2="12.01" y1="18" y2="18" />
 </svg>
-`;const wB=`
+`;const vB=`
 <svg
   class="lucide lucide-tag"
   xmlns="http://www.w3.org/2000/svg"
@@ -26491,7 +26491,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
   <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
 </svg>
-`;const gB=`
+`;const kB=`
 <svg
   class="lucide lucide-tags"
   xmlns="http://www.w3.org/2000/svg"
@@ -26508,7 +26508,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193" />
   <circle cx="10.5" cy="6.5" r=".5" fill="currentColor" />
 </svg>
-`;const vB=`
+`;const mB=`
 <svg
   class="lucide lucide-tally-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -26523,7 +26523,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M4 4v16" />
 </svg>
-`;const kB=`
+`;const xB=`
 <svg
   class="lucide lucide-tally-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -26539,7 +26539,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 4v16" />
   <path d="M9 4v16" />
 </svg>
-`;const mB=`
+`;const fB=`
 <svg
   class="lucide lucide-tally-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -26556,7 +26556,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 4v16" />
   <path d="M14 4v16" />
 </svg>
-`;const xB=`
+`;const MB=`
 <svg
   class="lucide lucide-tally-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -26574,7 +26574,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 4v16" />
   <path d="M19 4v16" />
 </svg>
-`;const fB=`
+`;const yB=`
 <svg
   class="lucide lucide-tally-5"
   xmlns="http://www.w3.org/2000/svg"
@@ -26593,7 +26593,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 4v16" />
   <path d="M22 6 2 18" />
 </svg>
-`;const MB=`
+`;const bB=`
 <svg
   class="lucide lucide-tangent"
   xmlns="http://www.w3.org/2000/svg"
@@ -26611,7 +26611,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="4" cy="17" r="2" />
   <path d="M12 22s-4-9-1.5-11.5S22 12 22 12" />
 </svg>
-`;const yB=`
+`;const CB=`
 <svg
   class="lucide lucide-target"
   xmlns="http://www.w3.org/2000/svg"
@@ -26628,7 +26628,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="6" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const bB=`
+`;const BB=`
 <svg
   class="lucide lucide-telescope"
   xmlns="http://www.w3.org/2000/svg"
@@ -26649,7 +26649,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m8 21 3.105-6.21" />
   <circle cx="12" cy="13" r="2" />
 </svg>
-`;const CB=`
+`;const jB=`
 <svg
   class="lucide lucide-tent-tree"
   xmlns="http://www.w3.org/2000/svg"
@@ -26670,7 +26670,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 14v8" />
   <path d="m9 14 5 8" />
 </svg>
-`;const BB=`
+`;const AB=`
 <svg
   class="lucide lucide-tent"
   xmlns="http://www.w3.org/2000/svg"
@@ -26688,7 +26688,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.5 21 12 15l-3.5 6" />
   <path d="M2 21h20" />
 </svg>
-`;const jB=`
+`;const LB=`
 <svg
   class="lucide lucide-terminal"
   xmlns="http://www.w3.org/2000/svg"
@@ -26721,7 +26721,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 2 6 6" />
   <path d="M12 16H4" />
 </svg>
-`;const AB=`
+`;const SB=`
 <svg
   class="lucide lucide-test-tube"
   xmlns="http://www.w3.org/2000/svg"
@@ -26738,7 +26738,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.5 2h7" />
   <path d="M14.5 16h-5" />
 </svg>
-`;const LB=`
+`;const HB=`
 <svg
   class="lucide lucide-test-tubes"
   xmlns="http://www.w3.org/2000/svg"
@@ -26826,7 +26826,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 12H3" />
   <path d="M17 19H3" />
 </svg>
-`;const SB=`
+`;const RB=`
 <svg
   class="lucide lucide-text-cursor-input"
   xmlns="http://www.w3.org/2000/svg"
@@ -26845,7 +26845,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1" />
   <path d="M9 6v12" />
 </svg>
-`;const HB=`
+`;const VB=`
 <svg
   class="lucide lucide-text-cursor"
   xmlns="http://www.w3.org/2000/svg"
@@ -26881,7 +26881,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 12 3.553-7.724a.5.5 0 0 1 .894 0L11 12" />
   <path d="M3.92 10h6.16" />
 </svg>
-`;const RB=`
+`;const zB=`
 <svg
   class="lucide lucide-text-quote"
   xmlns="http://www.w3.org/2000/svg"
@@ -26899,7 +26899,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 19H8" />
   <path d="M3 12v7" />
 </svg>
-`;const VB=`
+`;const $B=`
 <svg
   class="lucide lucide-text-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -26965,7 +26965,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 19h6" />
   <path d="M3 5h18" />
 </svg>
-`;const zB=`
+`;const UB=`
 <svg
   class="lucide lucide-theater"
   xmlns="http://www.w3.org/2000/svg"
@@ -26988,7 +26988,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1" />
   <path d="M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1" />
 </svg>
-`;const $B=`
+`;const DB=`
 <svg
   class="lucide lucide-thermometer-snowflake"
   xmlns="http://www.w3.org/2000/svg"
@@ -27010,7 +27010,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 21 3-6-1.5-3" />
   <path d="m7 3 3 6h2" />
 </svg>
-`;const DB=`
+`;const FB=`
 <svg
   class="lucide lucide-thermometer-sun"
   xmlns="http://www.w3.org/2000/svg"
@@ -27030,7 +27030,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m4.93 4.93 1.41 1.41" />
   <path d="m6.34 17.66-1.41 1.41" />
 </svg>
-`;const UB=`
+`;const PB=`
 <svg
   class="lucide lucide-thermometer"
   xmlns="http://www.w3.org/2000/svg"
@@ -27045,7 +27045,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
 </svg>
-`;const FB=`
+`;const EB=`
 <svg
   class="lucide lucide-thumbs-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -27061,7 +27061,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" />
   <path d="M17 14V2" />
 </svg>
-`;const PB=`
+`;const TB=`
 <svg
   class="lucide lucide-thumbs-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -27077,7 +27077,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
   <path d="M7 10v12" />
 </svg>
-`;const EB=`
+`;const YB=`
 <svg
   class="lucide lucide-ticket-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -27093,7 +27093,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
   <path d="m9 12 2 2 4-4" />
 </svg>
-`;const TB=`
+`;const OB=`
 <svg
   class="lucide lucide-ticket-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -27109,7 +27109,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
   <path d="M9 12h6" />
 </svg>
-`;const YB=`
+`;const IB=`
 <svg
   class="lucide lucide-ticket-percent"
   xmlns="http://www.w3.org/2000/svg"
@@ -27127,7 +27127,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 9-6 6" />
   <path d="M15 15h.01" />
 </svg>
-`;const OB=`
+`;const qB=`
 <svg
   class="lucide lucide-ticket-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -27144,7 +27144,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 12h6" />
   <path d="M12 9v6" />
 </svg>
-`;const IB=`
+`;const NB=`
 <svg
   class="lucide lucide-ticket-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -27160,7 +27160,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
   <path d="m9.5 14.5 5-5" />
 </svg>
-`;const qB=`
+`;const _B=`
 <svg
   class="lucide lucide-ticket-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -27177,7 +27177,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9.5 14.5 5-5" />
   <path d="m9.5 9.5 5 5" />
 </svg>
-`;const NB=`
+`;const ZB=`
 <svg
   class="lucide lucide-ticket"
   xmlns="http://www.w3.org/2000/svg"
@@ -27195,7 +27195,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 17v2" />
   <path d="M13 11v2" />
 </svg>
-`;const _B=`
+`;const GB=`
 <svg
   class="lucide lucide-tickets-plane"
   xmlns="http://www.w3.org/2000/svg"
@@ -27216,7 +27216,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 19v2" />
   <rect x="2" y="8" width="20" height="13" rx="2" />
 </svg>
-`;const ZB=`
+`;const WB=`
 <svg
   class="lucide lucide-tickets"
   xmlns="http://www.w3.org/2000/svg"
@@ -27235,7 +27235,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 19v2" />
   <rect x="2" y="8" width="20" height="13" rx="2" />
 </svg>
-`;const GB=`
+`;const KB=`
 <svg
   class="lucide lucide-timer-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -27254,7 +27254,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M12 12v-2" />
 </svg>
-`;const WB=`
+`;const XB=`
 <svg
   class="lucide lucide-timer-reset"
   xmlns="http://www.w3.org/2000/svg"
@@ -27272,7 +27272,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6" />
   <path d="M9 17H4v5" />
 </svg>
-`;const KB=`
+`;const JB=`
 <svg
   class="lucide lucide-timer"
   xmlns="http://www.w3.org/2000/svg"
@@ -27289,7 +27289,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="12" x2="15" y1="14" y2="11" />
   <circle cx="12" cy="14" r="8" />
 </svg>
-`;const XB=`
+`;const QB=`
 <svg
   class="lucide lucide-toggle-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -27305,7 +27305,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="12" r="3" />
   <rect width="20" height="14" x="2" y="5" rx="7" />
 </svg>
-`;const JB=`
+`;const tj=`
 <svg
   class="lucide lucide-toggle-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -27321,7 +27321,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="15" cy="12" r="3" />
   <rect width="20" height="14" x="2" y="5" rx="7" />
 </svg>
-`;const QB=`
+`;const ej=`
 <svg
   class="lucide lucide-toilet"
   xmlns="http://www.w3.org/2000/svg"
@@ -27336,7 +27336,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18" />
   <path d="M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8" />
-</svg>`;const tj=`
+</svg>`;const oj=`
 <svg
   class="lucide lucide-tool-case"
   xmlns="http://www.w3.org/2000/svg"
@@ -27354,7 +27354,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m18.822 10.995 2.26-5.38a1 1 0 0 0-.557-1.318L16.954 2.9a1 1 0 0 0-1.281.533l-.924 2.122" />
   <path d="M4 12.006A1 1 0 0 1 4.994 11H19a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
 </svg>
-`;const ej=`
+`;const rj=`
 <svg
   class="lucide lucide-toolbox"
   xmlns="http://www.w3.org/2000/svg"
@@ -27373,7 +27373,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 14h20" />
   <path d="M8 12v4" />
 </svg>
-`;const oj=`
+`;const ij=`
 <svg
   class="lucide lucide-tornado"
   xmlns="http://www.w3.org/2000/svg"
@@ -27392,7 +27392,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 16h-6" />
   <path d="M11 20H9" />
 </svg>
-`;const rj=`
+`;const sj=`
 <svg
   class="lucide lucide-torus"
   xmlns="http://www.w3.org/2000/svg"
@@ -27408,7 +27408,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <ellipse cx="12" cy="11" rx="3" ry="2" />
   <ellipse cx="12" cy="12.5" rx="10" ry="8.5" />
 </svg>
-`;const ij=`
+`;const nj=`
 <svg
   class="lucide lucide-touchpad-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -27428,7 +27428,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2" />
   <path d="M9.656 4H20a2 2 0 0 1 2 2v10.344" />
 </svg>
-`;const sj=`
+`;const lj=`
 <svg
   class="lucide lucide-touchpad"
   xmlns="http://www.w3.org/2000/svg"
@@ -27445,7 +27445,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 14h20" />
   <path d="M12 20v-6" />
 </svg>
-`;const nj=`
+`;const aj=`
 <svg
   class="lucide lucide-tower-control"
   xmlns="http://www.w3.org/2000/svg"
@@ -27466,7 +27466,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 6V2" />
   <path d="M13 2h-2" />
 </svg>
-`;const lj=`
+`;const dj=`
 <svg
   class="lucide lucide-toy-brick"
   xmlns="http://www.w3.org/2000/svg"
@@ -27483,7 +27483,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10 8V5c0-.6-.4-1-1-1H6a1 1 0 0 0-1 1v3" />
   <path d="M19 8V5c0-.6-.4-1-1-1h-3a1 1 0 0 0-1 1v3" />
 </svg>
-`;const aj=`
+`;const hj=`
 <svg
   class="lucide lucide-tractor"
   xmlns="http://www.w3.org/2000/svg"
@@ -27506,7 +27506,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="18" r="2" />
   <circle cx="7" cy="15" r="5" />
 </svg>
-`;const dj=`
+`;const cj=`
 <svg
   class="lucide lucide-traffic-cone"
   xmlns="http://www.w3.org/2000/svg"
@@ -27524,7 +27524,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z" />
   <path d="M9.194 6.57a5 2.5 0 0 0 5.61 0" />
 </svg>
-`;const hj=`
+`;const pj=`
 <svg
   class="lucide lucide-train-front-tunnel"
   xmlns="http://www.w3.org/2000/svg"
@@ -27545,7 +27545,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m9 19-2 3" />
   <path d="m15 19 2 3" />
 </svg>
-`;const cj=`
+`;const uj=`
 <svg
   class="lucide lucide-train-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -27586,7 +27586,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15h.01" />
   <path d="M16 15h.01" />
 </svg>
-`;const pj=`
+`;const wj=`
 <svg
   class="lucide lucide-train-track"
   xmlns="http://www.w3.org/2000/svg"
@@ -27607,7 +27607,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m14 2 8 8" />
   <path d="M7 22 22 7" />
 </svg>
-`;const uj=`
+`;const gj=`
 <svg
   class="lucide lucide-transgender"
   xmlns="http://www.w3.org/2000/svg"
@@ -27629,7 +27629,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 5 5 8" />
   <circle cx="12" cy="12" r="4" />
 </svg>
-`;const wj=`
+`;const vj=`
 <svg
   class="lucide lucide-trash-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -27648,7 +27648,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 6h18" />
   <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
 </svg>
-`;const gj=`
+`;const kj=`
 <svg
   class="lucide lucide-trash"
   xmlns="http://www.w3.org/2000/svg"
@@ -27665,7 +27665,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 6h18" />
   <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
 </svg>
-`;const vj=`
+`;const mj=`
 <svg
   class="lucide lucide-tree-deciduous"
   xmlns="http://www.w3.org/2000/svg"
@@ -27699,7 +27699,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35" />
   <path d="M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14" />
 </svg>
-`;const kj=`
+`;const xj=`
 <svg
   class="lucide lucide-tree-pine"
   xmlns="http://www.w3.org/2000/svg"
@@ -27715,7 +27715,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z" />
   <path d="M12 22v-3" />
 </svg>
-`;const mj=`
+`;const fj=`
 <svg
   class="lucide lucide-trees"
   xmlns="http://www.w3.org/2000/svg"
@@ -27733,7 +27733,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M13 19v3" />
   <path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5" />
 </svg>
-`;const xj=`
+`;const Mj=`
 <svg
   class="lucide lucide-trello"
   xmlns="http://www.w3.org/2000/svg"
@@ -27750,7 +27750,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="3" height="9" x="7" y="7" />
   <rect width="3" height="5" x="14" y="7" />
 </svg>
-`;const fj=`
+`;const yj=`
 <svg
   class="lucide lucide-trending-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -27766,7 +27766,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 17h6v-6" />
   <path d="m22 17-8.5-8.5-5 5L2 7" />
 </svg>
-`;const Mj=`
+`;const bj=`
 <svg
   class="lucide lucide-trending-up-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -27784,7 +27784,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 3-9 9-4-4-6 6" />
   <path d="M21 8V3h-5" />
 </svg>
-`;const yj=`
+`;const Cj=`
 <svg
   class="lucide lucide-trending-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -27817,7 +27817,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 9v4" />
   <path d="M12 17h.01" />
 </svg>
-`;const bj=`
+`;const Bj=`
 <svg
   class="lucide lucide-triangle-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -27840,7 +27840,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 21h2" />
   <path d="m8.102 7.743-1 1.732" />
 </svg>
-`;const Cj=`
+`;const jj=`
 <svg
   class="lucide lucide-triangle-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -27855,7 +27855,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M22 18a2 2 0 0 1-2 2H3c-1.1 0-1.3-.6-.4-1.3L20.4 4.3c.9-.7 1.6-.4 1.6.7Z" />
 </svg>
-`;const Bj=`
+`;const Aj=`
 <svg
   class="lucide lucide-triangle"
   xmlns="http://www.w3.org/2000/svg"
@@ -27870,7 +27870,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
 </svg>
-`;const jj=`
+`;const Lj=`
 <svg
   class="lucide lucide-truck-electric"
   xmlns="http://www.w3.org/2000/svg"
@@ -27891,7 +27891,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="17" cy="19" r="2" />
   <circle cx="7" cy="19" r="2" />
 </svg>
-`;const Aj=`
+`;const Sj=`
 <svg
   class="lucide lucide-trophy"
   xmlns="http://www.w3.org/2000/svg"
@@ -27911,7 +27911,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
   <path d="M6 9H4.5a1 1 0 0 1 0-5H6" />
 </svg>
-`;const Lj=`
+`;const Hj=`
 <svg
   class="lucide lucide-truck"
   xmlns="http://www.w3.org/2000/svg"
@@ -27929,7 +27929,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
   <circle cx="17" cy="18" r="2" />
   <circle cx="7" cy="18" r="2" />
-</svg>`;const Sj=`
+</svg>`;const Rj=`
 <svg
   class="lucide lucide-turkish-lira"
   xmlns="http://www.w3.org/2000/svg"
@@ -27946,7 +27946,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m15 8.5-10 5" />
   <path d="M18 12a9 9 0 0 1-9 9V3" />
 </svg>
-`;const Hj=`
+`;const Vj=`
 <svg
   class="lucide lucide-turntable"
   xmlns="http://www.w3.org/2000/svg"
@@ -27964,7 +27964,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="10" cy="12" r="4" />
   <rect x="2" y="4" width="20" height="16" rx="2" />
 </svg>
-`;const Rj=`
+`;const zj=`
 <svg
   class="lucide lucide-turtle"
   xmlns="http://www.w3.org/2000/svg"
@@ -27982,7 +27982,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.18 7.9 12 10" />
   <path d="M16.93 10H20a2 2 0 0 1 0 4H2" />
 </svg>
-`;const Vj=`
+`;const $j=`
 <svg
   class="lucide lucide-tv-minimal-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -28015,7 +28015,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 21h10" />
   <rect width="20" height="14" x="2" y="3" rx="2" />
 </svg>
-`;const zj=`
+`;const Uj=`
 <svg
   class="lucide lucide-tv"
   xmlns="http://www.w3.org/2000/svg"
@@ -28031,7 +28031,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 2-5 5-5-5" />
   <rect width="20" height="15" x="2" y="7" rx="2" />
 </svg>
-`;const $j=`
+`;const Dj=`
 <svg
   class="lucide lucide-twitch"
   xmlns="http://www.w3.org/2000/svg"
@@ -28046,7 +28046,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
 </svg>
-`;const Dj=`
+`;const Fj=`
 <svg
   class="lucide lucide-twitter"
   xmlns="http://www.w3.org/2000/svg"
@@ -28061,7 +28061,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
 </svg>
-`;const Uj=`
+`;const Pj=`
 <svg
   class="lucide lucide-type-outline"
   xmlns="http://www.w3.org/2000/svg"
@@ -28076,7 +28076,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M14 16.5a.5.5 0 0 0 .5.5h.5a2 2 0 0 1 0 4H9a2 2 0 0 1 0-4h.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V8a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5Z" />
 </svg>
-`;const Fj=`
+`;const Ej=`
 <svg
   class="lucide lucide-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -28093,7 +28093,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2" />
   <path d="M9 20h6" />
 </svg>
-`;const Pj=`
+`;const Tj=`
 <svg
   class="lucide lucide-umbrella-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -28112,7 +28112,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m2 2 20 20" />
   <path d="M5.961 5.957a10.28 10.28 0 0 0-3.922 5.769A1 1 0 0 0 3 13h10" />
 </svg>
-`;const Ej=`
+`;const Yj=`
 <svg
   class="lucide lucide-umbrella"
   xmlns="http://www.w3.org/2000/svg"
@@ -28129,7 +28129,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 2v2" />
   <path d="M20.992 13a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-19.923 0A1 1 0 0 0 3 13z" />
 </svg>
-`;const Tj=`
+`;const Oj=`
 <svg
   class="lucide lucide-underline"
   xmlns="http://www.w3.org/2000/svg"
@@ -28145,7 +28145,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 4v6a6 6 0 0 0 12 0V4" />
   <line x1="4" x2="20" y1="20" y2="20" />
 </svg>
-`;const Yj=`
+`;const Ij=`
 <svg
   class="lucide lucide-undo-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -28161,7 +28161,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 14 4 9l5-5" />
   <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" />
 </svg>
-`;const Oj=`
+`;const qj=`
 <svg
   class="lucide lucide-undo-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -28178,7 +28178,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 7v6h6" />
   <circle cx="12" cy="17" r="1" />
 </svg>
-`;const Ij=`
+`;const Nj=`
 <svg
   class="lucide lucide-undo"
   xmlns="http://www.w3.org/2000/svg"
@@ -28194,7 +28194,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M3 7v6h6" />
   <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
 </svg>
-`;const qj=`
+`;const _j=`
 <svg
   class="lucide lucide-unfold-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -28216,7 +28216,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m19 15 3-3-3-3" />
   <path d="m5 9-3 3 3 3" />
 </svg>
-`;const Nj=`
+`;const Zj=`
 <svg
   class="lucide lucide-ungroup"
   xmlns="http://www.w3.org/2000/svg"
@@ -28232,7 +28232,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect width="8" height="6" x="5" y="4" rx="1" />
   <rect width="8" height="6" x="11" y="14" rx="1" />
 </svg>
-`;const _j=`
+`;const Gj=`
 <svg
   class="lucide lucide-unfold-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -28275,7 +28275,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 16h.01" />
   <circle cx="12" cy="10" r="2" />
 </svg>
-`;const Zj=`
+`;const Wj=`
 <svg
   class="lucide lucide-unlink-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -28290,7 +28290,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M15 7h2a5 5 0 0 1 0 10h-2m-6 0H7A5 5 0 0 1 7 7h2" />
 </svg>
-`;const Gj=`
+`;const Kj=`
 <svg
   class="lucide lucide-unlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -28310,7 +28310,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="16" x2="16" y1="19" y2="22" />
   <line x1="19" x2="22" y1="16" y2="16" />
 </svg>
-`;const Wj=`
+`;const Xj=`
 <svg
   class="lucide lucide-unplug"
   xmlns="http://www.w3.org/2000/svg"
@@ -28330,7 +28330,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M10.5 16.5 13 14" />
   <path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z" />
 </svg>
-`;const Kj=`
+`;const Jj=`
 <svg
   class="lucide lucide-upload"
   xmlns="http://www.w3.org/2000/svg"
@@ -28347,7 +28347,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m17 8-5-5-5 5" />
   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
 </svg>
-`;const Xj=`
+`;const Qj=`
 <svg
   class="lucide lucide-usb"
   xmlns="http://www.w3.org/2000/svg"
@@ -28368,7 +28368,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m10 14 5 2 3.5-3.5" />
   <path d="m18 12 1-1 1 1-1 1Z" />
 </svg>
-`;const Jj=`
+`;const tA=`
 <svg
   class="lucide lucide-user-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -28385,7 +28385,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
   <circle cx="9" cy="7" r="4" />
 </svg>
-`;const Qj=`
+`;const eA=`
 <svg
   class="lucide lucide-user-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -28410,7 +28410,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="15" r="3" />
   <circle cx="9" cy="7" r="4" />
 </svg>
-`;const tA=`
+`;const oA=`
 <svg
   class="lucide lucide-user-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -28428,7 +28428,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15 15.5V14a2 2 0 0 1 4 0v1.5" />
   <rect width="8" height="5" x="13" y="16" rx=".899" />
 </svg>
-`;const eA=`
+`;const rA=`
 <svg
   class="lucide lucide-user-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -28445,7 +28445,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="9" cy="7" r="4" />
   <line x1="22" x2="16" y1="11" y2="11" />
 </svg>
-`;const oA=`
+`;const iA=`
 <svg
   class="lucide lucide-user-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -28462,7 +28462,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
   <circle cx="10" cy="7" r="4" />
 </svg>
-`;const rA=`
+`;const sA=`
 <svg
   class="lucide lucide-user-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -28539,7 +28539,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="10" cy="8" r="5" />
   <path d="M22 19h-6" />
 </svg>
-`;const iA=`
+`;const nA=`
 <svg
   class="lucide lucide-user-round-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -28556,7 +28556,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
   <circle cx="10" cy="8" r="5" />
 </svg>
-`;const D0=`
+`;const U0=`
 <svg
   class="lucide lucide-user-round-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -28574,7 +28574,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 16v6" />
   <path d="M22 19h-6" />
 </svg>
-`;const sA=`
+`;const lA=`
 <svg
   class="lucide lucide-user-round-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -28592,7 +28592,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="18" r="3" />
   <path d="m22 22-1.9-1.9" />
 </svg>
-`;const U0=`
+`;const D0=`
 <svg
   class="lucide lucide-user-round-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -28626,7 +28626,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="8" r="5" />
   <path d="M20 21a8 8 0 0 0-16 0" />
 </svg>
-`;const nA=`
+`;const aA=`
 <svg
   class="lucide lucide-user-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -28644,7 +28644,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="17" cy="17" r="3" />
   <path d="m21 21-1.9-1.9" />
 </svg>
-`;const lA=`
+`;const dA=`
 <svg
   class="lucide lucide-user-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -28661,7 +28661,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 15H7a4 4 0 0 0-4 4v2" />
   <circle cx="10" cy="7" r="4" />
 </svg>
-`;const aA=`
+`;const hA=`
 <svg
   class="lucide lucide-user-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -28679,7 +28679,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="17" x2="22" y1="8" y2="13" />
   <line x1="22" x2="17" y1="8" y2="13" />
 </svg>
-`;const dA=`
+`;const cA=`
 <svg
   class="lucide lucide-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -28712,7 +28712,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="10" cy="8" r="5" />
   <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
 </svg>
-`;const hA=`
+`;const pA=`
 <svg
   class="lucide lucide-users"
   xmlns="http://www.w3.org/2000/svg"
@@ -28765,7 +28765,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 2v20" />
   <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
 </svg>
-`;const cA=`
+`;const uA=`
 <svg
   class="lucide lucide-utility-pole"
   xmlns="http://www.w3.org/2000/svg"
@@ -28786,7 +28786,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 3v2" />
   <path d="m19 5-7 7-7-7" />
 </svg>
-`;const pA=`
+`;const wA=`
 <svg
   class="lucide lucide-van"
   xmlns="http://www.w3.org/2000/svg"
@@ -28804,7 +28804,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 18h5" />
   <circle cx="16" cy="18" r="2" />
   <circle cx="7" cy="18" r="2" />
-</svg>`;const uA=`
+</svg>`;const gA=`
 <svg
   class="lucide lucide-variable"
   xmlns="http://www.w3.org/2000/svg"
@@ -28822,7 +28822,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="15" x2="9" y1="9" y2="15" />
   <line x1="9" x2="15" y1="9" y2="15" />
 </svg>
-`;const wA=`
+`;const vA=`
 <svg
   class="lucide lucide-vault"
   xmlns="http://www.w3.org/2000/svg"
@@ -28846,7 +28846,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m13.4 13.4 2.7 2.7" />
   <circle cx="12" cy="12" r="2" />
 </svg>
-`;const gA=`
+`;const kA=`
 <svg
   class="lucide lucide-vector-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -28868,7 +28868,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <rect x="2" y="17" width="5" height="5" rx="1" />
   <rect x="2" y="2" width="5" height="5" rx="1" />
 </svg>
-`;const vA=`
+`;const mA=`
 <svg
   class="lucide lucide-venetian-mask"
   xmlns="http://www.w3.org/2000/svg"
@@ -28885,7 +28885,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M4 6a2 2 0 0 0-2 2v4a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V8a2 2 0 0 0-2-2h-3a8 8 0 0 0-5 2 8 8 0 0 0-5-2z" />
   <path d="M6 11c1.5 0 2.5.5 3 2" />
 </svg>
-`;const kA=`
+`;const xA=`
 <svg
   class="lucide lucide-vegan"
   xmlns="http://www.w3.org/2000/svg"
@@ -28902,7 +28902,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.41 3.59a10 10 0 1 0 3 3" />
   <path d="M2 2a26.6 26.6 0 0 1 10 20c.9-6.82 1.5-9.5 4-14" />
 </svg>
-`;const mA=`
+`;const fA=`
 <svg
   class="lucide lucide-venus-and-mars"
   xmlns="http://www.w3.org/2000/svg"
@@ -28921,7 +28921,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m21 2-5.46 5.46" />
   <circle cx="12" cy="11" r="5" />
 </svg>
-`;const xA=`
+`;const MA=`
 <svg
   class="lucide lucide-venus"
   xmlns="http://www.w3.org/2000/svg"
@@ -28938,7 +28938,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M9 19h6" />
   <circle cx="12" cy="9" r="6" />
 </svg>
-`;const fA=`
+`;const yA=`
 <svg
   class="lucide lucide-vibrate-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -28957,7 +28957,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 10.34V6c0-.55-.45-1-1-1h-4.34" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const MA=`
+`;const bA=`
 <svg
   class="lucide lucide-vibrate"
   xmlns="http://www.w3.org/2000/svg"
@@ -28974,7 +28974,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m22 8-2 2 2 2-2 2 2 2" />
   <rect width="8" height="14" x="8" y="5" rx="1" />
 </svg>
-`;const yA=`
+`;const CA=`
 <svg
   class="lucide lucide-video-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -28991,7 +28991,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2" />
   <path d="m2 2 20 20" />
 </svg>
-`;const bA=`
+`;const BA=`
 <svg
   class="lucide lucide-video"
   xmlns="http://www.w3.org/2000/svg"
@@ -29007,7 +29007,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
   <rect x="2" y="6" width="14" height="12" rx="2" />
 </svg>
-`;const CA=`
+`;const jA=`
 <svg
   class="lucide lucide-voicemail"
   xmlns="http://www.w3.org/2000/svg"
@@ -29024,7 +29024,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="18" cy="12" r="4" />
   <line x1="6" x2="18" y1="16" y2="16" />
 </svg>
-`;const BA=`
+`;const AA=`
 <svg
   class="lucide lucide-videotape"
   xmlns="http://www.w3.org/2000/svg"
@@ -29043,7 +29043,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8 12h8" />
   <circle cx="16" cy="14" r="2" />
 </svg>
-`;const jA=`
+`;const LA=`
 <svg
   class="lucide lucide-view"
   xmlns="http://www.w3.org/2000/svg"
@@ -29061,7 +29061,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="12" r="1" />
   <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
 </svg>
-`;const AA=`
+`;const SA=`
 <svg
   class="lucide lucide-volleyball"
   xmlns="http://www.w3.org/2000/svg"
@@ -29081,7 +29081,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6.3 3.8a16.55 16.55 0 0 0 1.9 11.5" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const LA=`
+`;const HA=`
 <svg
   class="lucide lucide-volume-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -29097,7 +29097,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
   <path d="M16 9a5 5 0 0 1 0 6" />
 </svg>
-`;const SA=`
+`;const RA=`
 <svg
   class="lucide lucide-volume-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -29114,7 +29114,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16 9a5 5 0 0 1 0 6" />
   <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
 </svg>
-`;const HA=`
+`;const VA=`
 <svg
   class="lucide lucide-volume-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -29131,7 +29131,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="22" x2="16" y1="9" y2="15" />
   <line x1="16" x2="22" y1="9" y2="15" />
 </svg>
-`;const RA=`
+`;const zA=`
 <svg
   class="lucide lucide-volume-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29150,7 +29150,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7 7-.587.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298V11" />
   <path d="M9.828 4.172A.686.686 0 0 1 11 4.657v.686" />
 </svg>
-`;const VA=`
+`;const $A=`
 <svg
   class="lucide lucide-volume"
   xmlns="http://www.w3.org/2000/svg"
@@ -29165,7 +29165,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
 </svg>
-`;const zA=`
+`;const UA=`
 <svg
   class="lucide lucide-vote"
   xmlns="http://www.w3.org/2000/svg"
@@ -29182,7 +29182,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z" />
   <path d="M22 19H2" />
 </svg>
-`;const $A=`
+`;const DA=`
 <svg
   class="lucide lucide-wallet-cards"
   xmlns="http://www.w3.org/2000/svg"
@@ -29215,7 +29215,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17 14h.01" />
   <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14" />
 </svg>
-`;const DA=`
+`;const FA=`
 <svg
   class="lucide lucide-wallet"
   xmlns="http://www.w3.org/2000/svg"
@@ -29231,7 +29231,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
   <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
 </svg>
-`;const UA=`
+`;const PA=`
 <svg
   class="lucide lucide-wallpaper"
   xmlns="http://www.w3.org/2000/svg"
@@ -29272,7 +29272,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M21 16h-4" />
   <path d="M11 3H9" />
 </svg>
-`;const FA=`
+`;const EA=`
 <svg
   class="lucide lucide-wand"
   xmlns="http://www.w3.org/2000/svg"
@@ -29295,7 +29295,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m3 21 9-9" />
   <path d="M12.2 6.2 11 5" />
 </svg>
-`;const PA=`
+`;const TA=`
 <svg
   class="lucide lucide-warehouse"
   xmlns="http://www.w3.org/2000/svg"
@@ -29313,7 +29313,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M6 13h12" />
   <path d="M6 17h12" />
 </svg>
-`;const EA=`
+`;const YA=`
 <svg
   class="lucide lucide-washing-machine"
   xmlns="http://www.w3.org/2000/svg"
@@ -29332,7 +29332,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="13" r="5" />
   <path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5" />
 </svg>
-`;const TA=`
+`;const OA=`
 <svg
   class="lucide lucide-watch"
   xmlns="http://www.w3.org/2000/svg"
@@ -29350,7 +29350,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05" />
   <circle cx="12" cy="12" r="6" />
 </svg>
-`;const YA=`
+`;const IA=`
 <svg
   class="lucide lucide-waves-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -29368,7 +29368,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
   <path d="m8 6 4-4 4 4" />
 </svg>
-`;const OA=`
+`;const qA=`
 <svg
   class="lucide lucide-waves-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -29386,7 +29386,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 15C2.6 15.5 3.2 16 4.5 16C7 16 7 14 9.5 14C12.1 14 11.9 16 14.5 16C17 16 17 14 19.5 14C20.8 14 21.4 14.5 22 15" />
   <path d="M2 21C2.6 21.5 3.2 22 4.5 22C7 22 7 20 9.5 20C12.1 20 11.9 22 14.5 22C17 22 17 20 19.5 20C20.8 20 21.4 20.5 22 21" />
 </svg>
-`;const IA=`
+`;const NA=`
 <svg
   class="lucide lucide-waves-ladder"
   xmlns="http://www.w3.org/2000/svg"
@@ -29405,7 +29405,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 9h10" />
   <path d="M9 5a2 2 0 0 0-2 2v11" />
 </svg>
-`;const qA=`
+`;const _A=`
 <svg
   class="lucide lucide-waypoints"
   xmlns="http://www.w3.org/2000/svg"
@@ -29426,7 +29426,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m13.8 17.7 3.9-3.9" />
   <circle cx="12" cy="19.5" r="2.5" />
 </svg>
-`;const NA=`
+`;const ZA=`
 <svg
   class="lucide lucide-waves"
   xmlns="http://www.w3.org/2000/svg"
@@ -29443,7 +29443,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
   <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
 </svg>
-`;const _A=`
+`;const GA=`
 <svg
   class="lucide lucide-webcam"
   xmlns="http://www.w3.org/2000/svg"
@@ -29461,7 +29461,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 22h10" />
   <path d="M12 22v-4" />
 </svg>
-`;const ZA=`
+`;const WA=`
 <svg
   class="lucide lucide-webhook-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29482,7 +29482,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m12 6 .6 1" />
   <path d="m2 2 20 20" />
 </svg>
-`;const GA=`
+`;const KA=`
 <svg
   class="lucide lucide-webhook"
   xmlns="http://www.w3.org/2000/svg"
@@ -29499,7 +29499,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06" />
   <path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8" />
 </svg>
-`;const WA=`
+`;const XA=`
 <svg
   class="lucide lucide-weight-tilde"
   xmlns="http://www.w3.org/2000/svg"
@@ -29516,7 +29516,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7.999 15a2.5 2.5 0 0 1 4 0 2.5 2.5 0 0 0 4 0" />
   <circle cx="12" cy="5" r="3" />
 </svg>
-`;const KA=`
+`;const JA=`
 <svg
   class="lucide lucide-weight"
   xmlns="http://www.w3.org/2000/svg"
@@ -29532,7 +29532,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <circle cx="12" cy="5" r="3" />
   <path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z" />
 </svg>
-`;const XA=`
+`;const QA=`
 <svg
   class="lucide lucide-wheat-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29556,7 +29556,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18.74 13.09c.26-.15.51-.34.73-.56L21 11l-1.53-1.53a3.5 3.5 0 0 0-4.62-.28" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const JA=`
+`;const tL=`
 <svg
   class="lucide lucide-wifi-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -29582,7 +29582,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M8.5 15.429a5 5 0 0 1 2.413-1.31" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const QA=`
+`;const eL=`
 <svg
   class="lucide lucide-wheat"
   xmlns="http://www.w3.org/2000/svg"
@@ -29604,7 +29604,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
   <path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
 </svg>
-`;const tL=`
+`;const oL=`
 <svg
   class="lucide lucide-whole-word"
   xmlns="http://www.w3.org/2000/svg"
@@ -29623,7 +29623,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M14 7v8" />
   <path d="M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1" />
 </svg>
-`;const eL=`
+`;const rL=`
 <svg
   class="lucide lucide-wifi-high"
   xmlns="http://www.w3.org/2000/svg"
@@ -29640,7 +29640,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 12.859a10 10 0 0 1 14 0" />
   <path d="M8.5 16.429a5 5 0 0 1 7 0" />
 </svg>
-`;const oL=`
+`;const iL=`
 <svg
   class="lucide lucide-wifi-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29661,7 +29661,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M22 8.82a15 15 0 0 0-11.288-3.764" />
   <path d="m2 2 20 20" />
 </svg>
-`;const rL=`
+`;const sL=`
 <svg
   class="lucide lucide-wifi-low"
   xmlns="http://www.w3.org/2000/svg"
@@ -29677,7 +29677,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 20h.01" />
   <path d="M8.5 16.429a5 5 0 0 1 7 0" />
 </svg>
-`;const iL=`
+`;const nL=`
 <svg
   class="lucide lucide-wifi-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -29695,7 +29695,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 12.859a10 10 0 0 1 10.5-2.222" />
   <path d="M8.5 16.429a5 5 0 0 1 3-1.406" />
 </svg>
-`;const sL=`
+`;const lL=`
 <svg
   class="lucide lucide-wifi-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -29716,7 +29716,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 12.86a10 10 0 0 1 3-2.032" />
   <path d="M8.5 16.429h.01" />
 </svg>
-`;const nL=`
+`;const aL=`
 <svg
   class="lucide lucide-wifi-zero"
   xmlns="http://www.w3.org/2000/svg"
@@ -29731,7 +29731,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M12 20h.01" />
 </svg>
-`;const lL=`
+`;const dL=`
 <svg
   class="lucide lucide-wifi"
   xmlns="http://www.w3.org/2000/svg"
@@ -29749,7 +29749,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M5 12.859a10 10 0 0 1 14 0" />
   <path d="M8.5 16.429a5 5 0 0 1 7 0" />
 </svg>
-`;const aL=`
+`;const hL=`
 <svg
   class="lucide lucide-wind-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -29767,7 +29767,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.5 10a2.5 2.5 0 1 1 2 4H2" />
   <path d="m6 6 4 4 4-4" />
 </svg>
-`;const dL=`
+`;const cL=`
 <svg
   class="lucide lucide-wind"
   xmlns="http://www.w3.org/2000/svg"
@@ -29784,7 +29784,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" />
   <path d="M9.8 4.4A2 2 0 1 1 11 8H2" />
 </svg>
-`;const hL=`
+`;const pL=`
 <svg
   class="lucide lucide-wine-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29803,7 +29803,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7.307 7.307A12.33 12.33 0 0 0 7 10a5 5 0 0 0 7.391 4.391M8.638 2.981C8.75 2.668 8.872 2.34 9 2h6c1.5 4 2 6 2 8 0 .407-.05.809-.145 1.198" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const cL=`
+`;const uL=`
 <svg
   class="lucide lucide-wine"
   xmlns="http://www.w3.org/2000/svg"
@@ -29821,7 +29821,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M12 15v7" />
   <path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z" />
 </svg>
-`;const pL=`
+`;const wL=`
 <svg
   class="lucide lucide-workflow"
   xmlns="http://www.w3.org/2000/svg"
@@ -29838,7 +29838,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M7 11v4a2 2 0 0 0 2 2h4" />
   <rect width="8" height="8" x="13" y="13" rx="2" />
 </svg>
-`;const uL=`
+`;const gL=`
 <svg
   class="lucide lucide-worm"
   xmlns="http://www.w3.org/2000/svg"
@@ -29855,7 +29855,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M19.63 18.81 22 20" />
   <path d="M6.47 8.23a1.68 1.68 0 0 1 2.44 1.93l-.64 2.08a6.76 6.76 0 0 0 10.16 7.67l.42-.27a1 1 0 1 0-2.73-4.21l-.42.27a1.76 1.76 0 0 1-2.63-1.99l.64-2.08A6.66 6.66 0 0 0 3.94 3.9l-.7.4a1 1 0 1 0 2.55 4.34z" />
 </svg>
-`;const wL=`
+`;const vL=`
 <svg
   class="lucide lucide-wrench"
   xmlns="http://www.w3.org/2000/svg"
@@ -29870,7 +29870,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
 </svg>
-`;const gL=`
+`;const kL=`
 <svg
   class="lucide lucide-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -29886,7 +29886,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M18 6 6 18" />
   <path d="m6 6 12 12" />
 </svg>
-`;const vL=`
+`;const mL=`
 <svg
   class="lucide lucide-youtube"
   xmlns="http://www.w3.org/2000/svg"
@@ -29902,7 +29902,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
   <path d="m10 15 5-3-5-3z" />
 </svg>
-`;const kL=`
+`;const xL=`
 <svg
   class="lucide lucide-zap-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29920,7 +29920,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <path d="M16.273 16.273 10.88 21.83a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4a1 1 0 0 1-.78-1.63l4.507-4.643" />
   <path d="m2 2 20 20" />
 </svg>
-`;const mL=`
+`;const fL=`
 <svg
   class="lucide lucide-zap"
   xmlns="http://www.w3.org/2000/svg"
@@ -29935,7 +29935,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
 >
   <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
 </svg>
-`;const xL=`
+`;const ML=`
 <svg
   class="lucide lucide-zoom-in"
   xmlns="http://www.w3.org/2000/svg"
@@ -29953,7 +29953,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="11" x2="11" y1="8" y2="14" />
   <line x1="8" x2="14" y1="11" y2="11" />
 </svg>
-`;const fL=`
+`;const yL=`
 <svg
   class="lucide lucide-zoom-out"
   xmlns="http://www.w3.org/2000/svg"
@@ -29970,7 +29970,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   <line x1="21" x2="16.65" y1="21" y2="16.65" />
   <line x1="8" x2="14" y1="11" y2="11" />
 </svg>
-`;const ML=Object.freeze(Object.defineProperty({__proto__:null,AArrowDown:q1,AArrowUp:N1,ALargeSmall:_1,Accessibility:Z1,Activity:G1,ActivitySquare:yl,AirVent:W1,Airplay:K1,AlarmCheck:Ds,AlarmClock:J1,AlarmClockCheck:Ds,AlarmClockMinus:Us,AlarmClockOff:X1,AlarmClockPlus:Fs,AlarmMinus:Us,AlarmPlus:Fs,AlarmSmoke:Q1,Album:td,AlertCircle:p2,AlertOctagon:Xn,AlertTriangle:S0,AlignCenter:M0,AlignCenterHorizontal:ed,AlignCenterVertical:od,AlignEndHorizontal:rd,AlignEndVertical:id,AlignHorizontalDistributeCenter:sd,AlignHorizontalDistributeEnd:nd,AlignHorizontalDistributeStart:ld,AlignHorizontalJustifyCenter:ad,AlignHorizontalJustifyEnd:dd,AlignHorizontalJustifyStart:hd,AlignHorizontalSpaceAround:cd,AlignHorizontalSpaceBetween:pd,AlignJustify:b0,AlignLeft:si,AlignRight:y0,AlignStartHorizontal:wd,AlignStartVertical:ud,AlignVerticalDistributeCenter:vd,AlignVerticalDistributeEnd:gd,AlignVerticalDistributeStart:kd,AlignVerticalJustifyCenter:md,AlignVerticalJustifyEnd:xd,AlignVerticalJustifyStart:Md,AlignVerticalSpaceAround:fd,AlignVerticalSpaceBetween:yd,Ambulance:bd,Ampersand:Bd,Ampersands:jd,Amphora:Cd,Anchor:Ad,Angry:Sd,Annoyed:Ld,Antenna:Hd,Anvil:Rd,Aperture:Vd,AppWindow:$d,AppWindowMac:zd,Apple:Dd,Archive:Pd,ArchiveRestore:Ud,ArchiveX:Fd,AreaChart:Js,Armchair:Ed,ArrowBigDown:Yd,ArrowBigDownDash:Td,ArrowBigLeft:Id,ArrowBigLeftDash:Od,ArrowBigRight:Nd,ArrowBigRightDash:qd,ArrowBigUp:Zd,ArrowBigUpDash:_d,ArrowDown:rh,ArrowDown01:Gd,ArrowDown10:Wd,ArrowDownAZ:Ps,ArrowDownAz:Ps,ArrowDownCircle:u2,ArrowDownFromLine:Kd,ArrowDownLeft:Xd,ArrowDownLeftFromCircle:g2,ArrowDownLeftFromSquare:Al,ArrowDownLeftSquare:bl,ArrowDownNarrowWide:Jd,ArrowDownRight:Qd,ArrowDownRightFromCircle:v2,ArrowDownRightFromSquare:Ll,ArrowDownRightSquare:Cl,ArrowDownSquare:Bl,ArrowDownToDot:eh,ArrowDownToLine:th,ArrowDownUp:oh,ArrowDownWideNarrow:Es,ArrowDownZA:Ts,ArrowDownZa:Ts,ArrowLeft:nh,ArrowLeftCircle:w2,ArrowLeftFromLine:sh,ArrowLeftRight:ih,ArrowLeftSquare:jl,ArrowLeftToLine:lh,ArrowRight:ch,ArrowRightCircle:x2,ArrowRightFromLine:ah,ArrowRightLeft:dh,ArrowRightSquare:Rl,ArrowRightToLine:hh,ArrowUp:Mh,ArrowUp01:ph,ArrowUp10:uh,ArrowUpAZ:Ys,ArrowUpAz:Ys,ArrowUpCircle:f2,ArrowUpDown:wh,ArrowUpFromDot:gh,ArrowUpFromLine:vh,ArrowUpLeft:kh,ArrowUpLeftFromCircle:k2,ArrowUpLeftFromSquare:Sl,ArrowUpLeftSquare:Vl,ArrowUpNarrowWide:Os,ArrowUpRight:mh,ArrowUpRightFromCircle:m2,ArrowUpRightFromSquare:Hl,ArrowUpRightSquare:zl,ArrowUpSquare:$l,ArrowUpToLine:xh,ArrowUpWideNarrow:fh,ArrowUpZA:Is,ArrowUpZa:Is,ArrowsUpFromLine:yh,Asterisk:bh,AsteriskSquare:Dl,AtSign:Ch,Atom:Bh,AudioLines:jh,AudioWaveform:Ah,Award:Lh,Axe:Sh,Axis3D:qs,Axis3d:qs,Baby:Hh,Backpack:Rh,Badge:Zh,BadgeAlert:zh,BadgeCent:Vh,BadgeCheck:Ns,BadgeDollarSign:$h,BadgeEuro:Dh,BadgeHelp:_s,BadgeIndianRupee:Uh,BadgeInfo:Fh,BadgeJapaneseYen:Eh,BadgeMinus:Ph,BadgePercent:Th,BadgePlus:Yh,BadgePoundSterling:Oh,BadgeQuestionMark:_s,BadgeRussianRuble:Ih,BadgeSwissFranc:qh,BadgeTurkishLira:Nh,BadgeX:_h,BaggageClaim:Gh,Balloon:Wh,Ban:Kh,Banana:Xh,Bandage:Jh,Banknote:oc,BanknoteArrowDown:Qh,BanknoteArrowUp:ec,BanknoteX:tc,BarChart:n2,BarChart2:l2,BarChart3:i2,BarChart4:r2,BarChartBig:o2,BarChartHorizontal:t2,BarChartHorizontalBig:Qs,Barcode:rc,Barrel:ic,Baseline:nc,Bath:sc,Battery:uc,BatteryCharging:lc,BatteryFull:ac,BatteryLow:dc,BatteryMedium:hc,BatteryPlus:cc,BatteryWarning:pc,Beaker:wc,Bean:vc,BeanOff:gc,Bed:xc,BedDouble:kc,BedSingle:mc,Beef:fc,Beer:yc,BeerOff:Mc,Bell:Sc,BellDot:bc,BellElectric:Cc,BellMinus:Bc,BellOff:jc,BellPlus:Ac,BellRing:Lc,BetweenHorizonalEnd:Zs,BetweenHorizonalStart:Gs,BetweenHorizontalEnd:Zs,BetweenHorizontalStart:Gs,BetweenVerticalEnd:Hc,BetweenVerticalStart:Rc,BicepsFlexed:Vc,Bike:zc,Binary:$c,Binoculars:Dc,Biohazard:Uc,Bird:Fc,Birdhouse:Pc,Bitcoin:Ec,Blend:Tc,Blinds:Yc,Blocks:Oc,Bluetooth:_c,BluetoothConnected:Ic,BluetoothOff:qc,BluetoothSearching:Nc,Bold:Zc,Bolt:Gc,Bomb:Wc,Bone:Kc,Book:y4,BookA:Xc,BookAlert:Jc,BookAudio:Qc,BookCheck:t4,BookCopy:e4,BookDashed:Ws,BookDown:o4,BookHeadphones:r4,BookHeart:i4,BookImage:s4,BookKey:n4,BookLock:l4,BookMarked:a4,BookMinus:d4,BookOpen:p4,BookOpenCheck:c4,BookOpenText:h4,BookPlus:u4,BookSearch:w4,BookTemplate:Ws,BookText:g4,BookType:v4,BookUp:m4,BookUp2:k4,BookUser:x4,BookX:f4,Bookmark:j4,BookmarkCheck:M4,BookmarkMinus:b4,BookmarkPlus:C4,BookmarkX:B4,BoomBox:A4,Bot:H4,BotMessageSquare:L4,BotOff:S4,BottleWine:R4,BowArrow:V4,Box:z4,BoxSelect:_l,Boxes:$4,Braces:Ks,Brackets:D4,Brain:P4,BrainCircuit:U4,BrainCog:F4,BrickWall:Y4,BrickWallFire:E4,BrickWallShield:T4,Briefcase:N4,BriefcaseBusiness:O4,BriefcaseConveyorBelt:q4,BriefcaseMedical:I4,BringToFront:_4,Brush:W4,BrushCleaning:Z4,Bubbles:G4,Bug:J4,BugOff:K4,BugPlay:X4,Building:tp,Building2:Q4,Bus:op,BusFront:ep,Cable:ip,CableCar:rp,Cake:np,CakeSlice:sp,Calculator:lp,Calendar:Lp,Calendar1:ap,CalendarArrowDown:dp,CalendarArrowUp:hp,CalendarCheck:pp,CalendarCheck2:cp,CalendarClock:up,CalendarCog:wp,CalendarDays:gp,CalendarFold:vp,CalendarHeart:kp,CalendarMinus:xp,CalendarMinus2:mp,CalendarOff:fp,CalendarPlus:yp,CalendarPlus2:Mp,CalendarRange:bp,CalendarSearch:Cp,CalendarSync:Bp,CalendarX:Ap,CalendarX2:jp,Calendars:Sp,Camera:Rp,CameraOff:Hp,CandlestickChart:e2,Candy:$p,CandyCane:Vp,CandyOff:zp,Cannabis:Up,CannabisOff:Dp,Captions:Xs,CaptionsOff:Fp,Car:Tp,CarFront:Pp,CarTaxiFront:Ep,Caravan:Yp,CardSim:Op,Carrot:Ip,CaseLower:qp,CaseSensitive:Np,CaseUpper:_p,CassetteTape:Zp,Cast:Gp,Castle:Wp,Cat:Kp,Cctv:Xp,ChartArea:Js,ChartBar:t2,ChartBarBig:Qs,ChartBarDecreasing:Qp,ChartBarIncreasing:Jp,ChartBarStacked:tu,ChartCandlestick:e2,ChartColumn:i2,ChartColumnBig:o2,ChartColumnDecreasing:eu,ChartColumnIncreasing:r2,ChartColumnStacked:ou,ChartGantt:ru,ChartLine:s2,ChartNetwork:iu,ChartNoAxesColumn:l2,ChartNoAxesColumnDecreasing:su,ChartNoAxesColumnIncreasing:n2,ChartNoAxesCombined:nu,ChartNoAxesGantt:a2,ChartPie:d2,ChartScatter:h2,ChartSpline:lu,Check:hu,CheckCheck:au,CheckCircle:M2,CheckCircle2:y2,CheckLine:du,CheckSquare:Fl,CheckSquare2:Pl,ChefHat:pu,Cherry:cu,ChessBishop:uu,ChessKing:wu,ChessKnight:gu,ChessPawn:vu,ChessQueen:ku,ChessRook:xu,ChevronDown:mu,ChevronDownCircle:b2,ChevronDownSquare:El,ChevronFirst:fu,ChevronLast:Mu,ChevronLeft:yu,ChevronLeftCircle:C2,ChevronLeftSquare:Tl,ChevronRight:bu,ChevronRightCircle:B2,ChevronRightSquare:Yl,ChevronUp:Cu,ChevronUpCircle:j2,ChevronUpSquare:Ol,ChevronsDown:ju,ChevronsDownUp:Bu,ChevronsLeft:Su,ChevronsLeftRight:Lu,ChevronsLeftRightEllipsis:Au,ChevronsRight:Ru,ChevronsRightLeft:Hu,ChevronsUp:zu,ChevronsUpDown:Vu,Chrome:c2,Chromium:c2,Church:$u,Cigarette:Du,CigaretteOff:Uu,Circle:Xu,CircleAlert:p2,CircleArrowDown:u2,CircleArrowLeft:w2,CircleArrowOutDownLeft:g2,CircleArrowOutDownRight:v2,CircleArrowOutUpLeft:k2,CircleArrowOutUpRight:m2,CircleArrowRight:x2,CircleArrowUp:f2,CircleCheck:y2,CircleCheckBig:M2,CircleChevronDown:b2,CircleChevronLeft:C2,CircleChevronRight:B2,CircleChevronUp:j2,CircleDashed:Fu,CircleDivide:A2,CircleDollarSign:Pu,CircleDot:Tu,CircleDotDashed:Eu,CircleEllipsis:Yu,CircleEqual:Ou,CircleFadingArrowUp:Iu,CircleFadingPlus:qu,CircleGauge:L2,CircleHelp:Jr,CircleMinus:S2,CircleOff:Nu,CircleParking:R2,CircleParkingOff:H2,CirclePause:V2,CirclePercent:z2,CirclePile:_u,CirclePlay:$2,CirclePlus:D2,CirclePoundSterling:Zu,CirclePower:U2,CircleQuestionMark:Jr,CircleSlash:Gu,CircleSlash2:F2,CircleSlashed:F2,CircleSmall:Ku,CircleStar:Wu,CircleStop:P2,CircleUser:T2,CircleUserRound:E2,CircleX:Y2,CircuitBoard:Ju,Citrus:Qu,Clapperboard:tw,Clipboard:hw,ClipboardCheck:ew,ClipboardClock:ow,ClipboardCopy:rw,ClipboardEdit:I2,ClipboardList:iw,ClipboardMinus:sw,ClipboardPaste:nw,ClipboardPen:I2,ClipboardPenLine:O2,ClipboardPlus:lw,ClipboardSignature:O2,ClipboardType:aw,ClipboardX:dw,Clock:Sw,Clock1:cw,Clock10:pw,Clock11:uw,Clock12:ww,Clock2:gw,Clock3:vw,Clock4:kw,Clock5:mw,Clock6:xw,Clock7:fw,Clock8:Mw,Clock9:yw,ClockAlert:bw,ClockArrowDown:Cw,ClockArrowUp:Bw,ClockCheck:jw,ClockFading:Aw,ClockPlus:Lw,ClosedCaption:Hw,Cloud:Gw,CloudAlert:Rw,CloudBackup:Vw,CloudCheck:zw,CloudCog:$w,CloudDownload:q2,CloudDrizzle:Dw,CloudFog:Uw,CloudHail:Fw,CloudLightning:Pw,CloudMoon:Ew,CloudMoonRain:Tw,CloudOff:Yw,CloudRain:Iw,CloudRainWind:Ow,CloudSnow:qw,CloudSun:_w,CloudSunRain:Nw,CloudSync:Zw,CloudUpload:N2,Cloudy:Ww,Clover:Kw,Club:Xw,Code:Jw,Code2:_2,CodeSquare:Il,CodeXml:_2,Codepen:Qw,Codesandbox:tg,Coffee:eg,Cog:og,Coins:rg,Columns:Z2,Columns2:Z2,Columns3:G2,Columns3Cog:Qr,Columns4:ig,ColumnsSettings:Qr,Combine:sg,Command:ng,Compass:lg,Component:ag,Computer:dg,ConciergeBell:hg,Cone:cg,Construction:pg,Contact:ug,Contact2:W2,ContactRound:W2,Container:wg,Contrast:gg,Cookie:vg,CookingPot:kg,Copy:bg,CopyCheck:mg,CopyMinus:xg,CopyPlus:fg,CopySlash:Mg,CopyX:yg,Copyleft:Cg,Copyright:Bg,CornerDownLeft:jg,CornerDownRight:Ag,CornerLeftDown:Lg,CornerLeftUp:Sg,CornerRightDown:Hg,CornerRightUp:Rg,CornerUpLeft:Vg,CornerUpRight:zg,Cpu:$g,CreativeCommons:Fg,CreditCard:Dg,Croissant:Ug,Crop:Pg,Cross:Eg,Crosshair:Tg,Crown:Yg,Cuboid:Og,CupSoda:Ig,CurlyBraces:Ks,Currency:qg,Cylinder:Ng,Dam:_g,Database:Wg,DatabaseBackup:Zg,DatabaseZap:Gg,DecimalsArrowLeft:Kg,DecimalsArrowRight:Xg,Delete:Jg,Dessert:Qg,Diameter:tv,Diamond:rv,DiamondMinus:ev,DiamondPercent:K2,DiamondPlus:ov,Dice1:sv,Dice2:iv,Dice3:nv,Dice4:lv,Dice5:av,Dice6:dv,Dices:hv,Diff:cv,Disc:gv,Disc2:pv,Disc3:uv,DiscAlbum:wv,Divide:vv,DivideCircle:A2,DivideSquare:Zl,Dna:mv,DnaOff:kv,Dock:xv,Dog:fv,DollarSign:Mv,Donut:yv,DoorClosed:Cv,DoorClosedLocked:bv,DoorOpen:Bv,Dot:jv,DotSquare:Gl,Download:Av,DownloadCloud:q2,DraftingCompass:Lv,Drama:Sv,Dribbble:Hv,Drill:Rv,Drone:Vv,Droplet:zv,DropletOff:$v,Droplets:Dv,Drum:Uv,Drumstick:Pv,Dumbbell:Fv,Ear:Tv,EarOff:Ev,Earth:X2,EarthLock:Yv,Eclipse:Ov,Edit:vr,Edit2:hl,Edit3:dl,Egg:Nv,EggFried:Iv,EggOff:qv,Ellipsis:Q2,EllipsisVertical:J2,Equal:Gv,EqualApproximately:_v,EqualNot:Zv,EqualSquare:Wl,Eraser:Wv,EthernetPort:Kv,Euro:Xv,EvCharger:Jv,Expand:Qv,ExternalLink:t3,Eye:r3,EyeClosed:e3,EyeOff:o3,Facebook:i3,Factory:s3,Fan:n3,FastForward:l3,Feather:a3,Fence:d3,FerrisWheel:h3,Figma:c3,File:T3,FileArchive:p3,FileAudio:ti,FileAudio2:ti,FileAxis3D:tn,FileAxis3d:tn,FileBadge:en,FileBadge2:en,FileBarChart:sn,FileBarChart2:nn,FileBox:u3,FileBraces:rn,FileBracesCorner:on,FileChartColumn:nn,FileChartColumnIncreasing:sn,FileChartLine:ln,FileChartPie:an,FileCheck:w3,FileCheck2:dn,FileCheckCorner:dn,FileClock:g3,FileCode:v3,FileCode2:hn,FileCodeCorner:hn,FileCog:cn,FileCog2:cn,FileDiff:k3,FileDigit:m3,FileDown:x3,FileEdit:kn,FileExclamationPoint:pn,FileHeadphone:ti,FileHeart:f3,FileImage:M3,FileInput:y3,FileJson:rn,FileJson2:on,FileKey:un,FileKey2:un,FileLineChart:ln,FileLock:wn,FileLock2:wn,FileMinus:b3,FileMinus2:gn,FileMinusCorner:gn,FileMusic:C3,FileOutput:B3,FilePen:kn,FilePenLine:vn,FilePieChart:an,FilePlay:mn,FilePlus:j3,FilePlus2:xn,FilePlusCorner:xn,FileQuestion:fn,FileQuestionMark:fn,FileScan:A3,FileSearch:L3,FileSearch2:Mn,FileSearchCorner:Mn,FileSignal:yn,FileSignature:vn,FileSliders:S3,FileSpreadsheet:H3,FileStack:R3,FileSymlink:V3,FileTerminal:z3,FileText:$3,FileType:D3,FileType2:bn,FileTypeCorner:bn,FileUp:F3,FileUser:U3,FileVideo:mn,FileVideo2:Cn,FileVideoCamera:Cn,FileVolume:P3,FileVolume2:yn,FileWarning:pn,FileX:E3,FileX2:Bn,FileXCorner:Bn,Files:Y3,Film:O3,Filter:Hn,FilterX:Sn,Fingerprint:jn,FingerprintPattern:jn,FireExtinguisher:I3,Fish:_3,FishOff:q3,FishSymbol:N3,FishingHook:Z3,Flag:X3,FlagOff:G3,FlagTriangleLeft:W3,FlagTriangleRight:K3,Flame:Q3,FlameKindling:J3,Flashlight:t5,FlashlightOff:e5,FlaskConical:r5,FlaskConicalOff:o5,FlaskRound:i5,FlipHorizontal:n5,FlipHorizontal2:s5,FlipVertical:a5,FlipVertical2:l5,Flower:h5,Flower2:d5,Focus:c5,FoldHorizontal:p5,FoldVertical:u5,Folder:Y5,FolderArchive:w5,FolderCheck:g5,FolderClock:v5,FolderClosed:k5,FolderCode:m5,FolderCog:An,FolderCog2:An,FolderDot:x5,FolderDown:f5,FolderEdit:Ln,FolderGit:y5,FolderGit2:M5,FolderHeart:b5,FolderInput:C5,FolderKanban:B5,FolderKey:j5,FolderLock:A5,FolderMinus:L5,FolderOpen:H5,FolderOpenDot:S5,FolderOutput:R5,FolderPen:Ln,FolderPlus:V5,FolderRoot:z5,FolderSearch:D5,FolderSearch2:$5,FolderSymlink:U5,FolderSync:F5,FolderTree:P5,FolderUp:E5,FolderX:T5,Folders:O5,Footprints:I5,ForkKnife:T0,ForkKnifeCrossed:E0,Forklift:N5,Form:q5,FormInput:pl,Forward:_5,Frame:Z5,Framer:G5,Frown:W5,Fuel:K5,Fullscreen:X5,FunctionSquare:Kl,Funnel:Hn,FunnelPlus:J5,FunnelX:Sn,GalleryHorizontal:tk,GalleryHorizontalEnd:Q5,GalleryThumbnails:ek,GalleryVertical:rk,GalleryVerticalEnd:ok,Gamepad:nk,Gamepad2:ik,GamepadDirectional:sk,GanttChart:a2,GanttChartSquare:ii,Gauge:lk,GaugeCircle:L2,Gavel:ak,Gem:dk,GeorgianLari:hk,Ghost:ck,Gift:pk,GitBranch:gk,GitBranchMinus:uk,GitBranchPlus:wk,GitCommit:Rn,GitCommitHorizontal:Rn,GitCommitVertical:vk,GitCompare:mk,GitCompareArrows:kk,GitFork:xk,GitGraph:fk,GitMerge:Mk,GitPullRequest:Ak,GitPullRequestArrow:yk,GitPullRequestClosed:bk,GitPullRequestCreate:Bk,GitPullRequestCreateArrow:Ck,GitPullRequestDraft:jk,Github:Lk,Gitlab:Sk,GlassWater:Hk,Glasses:Rk,Globe:zk,Globe2:X2,GlobeLock:Vk,Goal:$k,Gpu:Dk,Grab:Un,GraduationCap:Uk,Grape:Fk,Grid:ei,Grid2X2:Dn,Grid2X2Check:Vn,Grid2X2Plus:zn,Grid2X2X:$n,Grid2x2:Dn,Grid2x2Check:Vn,Grid2x2Plus:zn,Grid2x2X:$n,Grid3X3:ei,Grid3x2:Pk,Grid3x3:ei,Grip:Yk,GripHorizontal:Ek,GripVertical:Tk,Group:Ok,Guitar:Ik,Ham:qk,Hamburger:Nk,Hammer:_k,Hand:Jk,HandCoins:Gk,HandFist:Zk,HandGrab:Un,HandHeart:Wk,HandHelping:Fn,HandMetal:Kk,HandPlatter:Xk,Handbag:Qk,Handshake:tm,HardDrive:rm,HardDriveDownload:em,HardDriveUpload:om,HardHat:im,Hash:nm,HatGlasses:sm,Haze:am,Hd:dm,HdmiPort:lm,Heading:vm,Heading1:hm,Heading2:cm,Heading3:pm,Heading4:um,Heading5:wm,Heading6:gm,HeadphoneOff:km,Headphones:mm,Headset:xm,Heart:jm,HeartCrack:fm,HeartHandshake:Mm,HeartMinus:ym,HeartOff:bm,HeartPlus:Cm,HeartPulse:Bm,Heater:Am,Helicopter:Lm,HelpCircle:Jr,HelpingHand:Fn,Hexagon:Sm,Highlighter:Hm,History:Rm,Home:Pn,Hop:zm,HopOff:Vm,Hospital:$m,Hotel:Dm,Hourglass:Um,House:Pn,HouseHeart:Fm,HousePlug:Pm,HousePlus:Em,HouseWifi:Tm,IceCream:Tn,IceCream2:En,IceCreamBowl:En,IceCreamCone:Tn,IdCard:Om,IdCardLanyard:Ym,Image:Km,ImageDown:Im,ImageMinus:qm,ImageOff:Nm,ImagePlay:_m,ImagePlus:Zm,ImageUp:Gm,ImageUpscale:Wm,Images:Xm,Import:Jm,Inbox:Qm,Indent:ri,IndentDecrease:oi,IndentIncrease:ri,IndianRupee:tx,Infinity:ex,Info:ox,Inspect:o0,InspectionPanel:rx,Instagram:ix,Italic:sx,IterationCcw:nx,IterationCw:lx,JapaneseYen:ax,Joystick:dx,Kanban:hx,KanbanSquare:Xl,KanbanSquareDashed:ql,Kayak:cx,Key:wx,KeyRound:ux,KeySquare:px,Keyboard:kx,KeyboardMusic:gx,KeyboardOff:vx,Lamp:bx,LampCeiling:mx,LampDesk:xx,LampFloor:fx,LampWallDown:Mx,LampWallUp:yx,LandPlot:Cx,Landmark:jx,Languages:Bx,Laptop:Lx,Laptop2:Yn,LaptopMinimal:Yn,LaptopMinimalCheck:Ax,Lasso:Hx,LassoSelect:Sx,Laugh:Rx,Layers:On,Layers2:Vx,Layers3:On,LayersPlus:zx,Layout:al,LayoutDashboard:$x,LayoutGrid:Dx,LayoutList:Ux,LayoutPanelLeft:Fx,LayoutPanelTop:Px,LayoutTemplate:Ex,Leaf:Tx,LeafyGreen:Yx,Lectern:Ox,LetterText:C0,Library:qx,LibraryBig:Ix,LibrarySquare:Jl,LifeBuoy:Nx,Ligature:_x,Lightbulb:Gx,LightbulbOff:Zx,LineChart:s2,LineSquiggle:Wx,Link:Jx,Link2:Xx,Link2Off:Kx,Linkedin:Qx,List:m6,ListCheck:t6,ListChecks:e6,ListChevronsDownUp:o6,ListChevronsUpDown:r6,ListCollapse:i6,ListEnd:s6,ListFilter:l6,ListFilterPlus:n6,ListIndentDecrease:oi,ListIndentIncrease:ri,ListMinus:a6,ListMusic:d6,ListOrdered:h6,ListPlus:c6,ListRestart:p6,ListStart:u6,ListTodo:w6,ListTree:g6,ListVideo:v6,ListX:k6,Loader:f6,Loader2:In,LoaderCircle:In,LoaderPinwheel:x6,Locate:b6,LocateFixed:M6,LocateOff:y6,LocationEdit:Zn,Lock:B6,LockKeyhole:C6,LockKeyholeOpen:qn,LockOpen:Nn,LogIn:j6,LogOut:A6,Logs:L6,Lollipop:S6,Luggage:H6,MSquare:Ql,Magnet:R6,Mail:E6,MailCheck:V6,MailMinus:z6,MailOpen:$6,MailPlus:D6,MailQuestion:_n,MailQuestionMark:_n,MailSearch:U6,MailWarning:F6,MailX:P6,Mailbox:T6,Mails:Y6,Map:o8,MapMinus:O6,MapPin:Q6,MapPinCheck:q6,MapPinCheckInside:I6,MapPinHouse:N6,MapPinMinus:Z6,MapPinMinusInside:_6,MapPinOff:G6,MapPinPen:Zn,MapPinPlus:K6,MapPinPlusInside:W6,MapPinX:J6,MapPinXInside:X6,MapPinned:t8,MapPlus:e8,Mars:i8,MarsStroke:r8,Martini:s8,Maximize:l8,Maximize2:n8,Medal:a8,Megaphone:h8,MegaphoneOff:d8,Meh:c8,MemoryStick:p8,Menu:u8,MenuSquare:t0,Merge:w8,MessageCircle:C8,MessageCircleCode:g8,MessageCircleDashed:v8,MessageCircleHeart:k8,MessageCircleMore:m8,MessageCircleOff:x8,MessageCirclePlus:f8,MessageCircleQuestion:Gn,MessageCircleQuestionMark:Gn,MessageCircleReply:M8,MessageCircleWarning:y8,MessageCircleX:b8,MessageSquare:T8,MessageSquareCode:B8,MessageSquareDashed:j8,MessageSquareDiff:A8,MessageSquareDot:L8,MessageSquareHeart:S8,MessageSquareLock:H8,MessageSquareMore:R8,MessageSquareOff:V8,MessageSquarePlus:z8,MessageSquareQuote:$8,MessageSquareReply:D8,MessageSquareShare:F8,MessageSquareText:U8,MessageSquareWarning:P8,MessageSquareX:E8,MessagesSquare:Y8,Mic:I8,Mic2:Wn,MicOff:O8,MicVocal:Wn,Microchip:q8,Microscope:N8,Microwave:_8,Milestone:Z8,Milk:W8,MilkOff:G8,Minimize:X8,Minimize2:K8,Minus:J8,MinusCircle:S2,MinusSquare:e0,Monitor:uf,MonitorCheck:Q8,MonitorCloud:tf,MonitorCog:ef,MonitorDot:of,MonitorDown:rf,MonitorOff:sf,MonitorPause:nf,MonitorPlay:lf,MonitorSmartphone:af,MonitorSpeaker:df,MonitorStop:hf,MonitorUp:cf,MonitorX:pf,Moon:gf,MoonStar:wf,MoreHorizontal:Q2,MoreVertical:J2,Motorbike:vf,Mountain:mf,MountainSnow:kf,Mouse:Bf,MouseOff:xf,MousePointer:Cf,MousePointer2:Mf,MousePointer2Off:ff,MousePointerBan:yf,MousePointerClick:bf,MousePointerSquareDashed:Nl,Move:Pf,Move3D:Kn,Move3d:Kn,MoveDiagonal:Af,MoveDiagonal2:jf,MoveDown:Hf,MoveDownLeft:Lf,MoveDownRight:Sf,MoveHorizontal:Rf,MoveLeft:Vf,MoveRight:zf,MoveUp:Uf,MoveUpLeft:$f,MoveUpRight:Df,MoveVertical:Ff,Music:Of,Music2:Ef,Music3:Tf,Music4:Yf,Navigation:_f,Navigation2:qf,Navigation2Off:If,NavigationOff:Nf,Network:Zf,Newspaper:Gf,Nfc:Wf,NonBinary:Kf,Notebook:t7,NotebookPen:Xf,NotebookTabs:Jf,NotebookText:Qf,NotepadText:r7,NotepadTextDashed:e7,Nut:i7,NutOff:o7,Octagon:n7,OctagonAlert:Xn,OctagonMinus:s7,OctagonPause:Jn,OctagonX:Qn,Omega:l7,Option:a7,Orbit:d7,Origami:h7,Outdent:oi,Package:m7,Package2:c7,PackageCheck:p7,PackageMinus:u7,PackageOpen:w7,PackagePlus:g7,PackageSearch:v7,PackageX:k7,PaintBucket:x7,PaintRoller:f7,Paintbrush:M7,Paintbrush2:tl,PaintbrushVertical:tl,Palette:y7,Palmtree:L0,Panda:b7,PanelBottom:j7,PanelBottomClose:C7,PanelBottomDashed:el,PanelBottomInactive:el,PanelBottomOpen:B7,PanelLeft:sl,PanelLeftClose:ol,PanelLeftDashed:il,PanelLeftInactive:il,PanelLeftOpen:rl,PanelLeftRightDashed:A7,PanelRight:H7,PanelRightClose:L7,PanelRightDashed:nl,PanelRightInactive:nl,PanelRightOpen:S7,PanelTop:$7,PanelTopBottomDashed:R7,PanelTopClose:V7,PanelTopDashed:ll,PanelTopInactive:ll,PanelTopOpen:z7,PanelsLeftBottom:D7,PanelsLeftRight:G2,PanelsRightBottom:U7,PanelsTopBottom:gl,PanelsTopLeft:al,Paperclip:F7,Parentheses:P7,ParkingCircle:R2,ParkingCircleOff:H2,ParkingMeter:E7,ParkingSquare:i0,ParkingSquareOff:r0,PartyPopper:T7,Pause:Y7,PauseCircle:V2,PauseOctagon:Jn,PawPrint:O7,PcCase:I7,Pen:hl,PenBox:vr,PenLine:dl,PenOff:q7,PenSquare:vr,PenTool:N7,Pencil:W7,PencilLine:_7,PencilOff:Z7,PencilRuler:G7,Pentagon:K7,Percent:X7,PercentCircle:z2,PercentDiamond:K2,PercentSquare:s0,PersonStanding:J7,PhilippinePeso:Q7,Phone:nM,PhoneCall:tM,PhoneForwarded:eM,PhoneIncoming:oM,PhoneMissed:rM,PhoneOff:iM,PhoneOutgoing:sM,Pi:lM,PiSquare:n0,Piano:aM,Pickaxe:dM,PictureInPicture:cM,PictureInPicture2:hM,PieChart:d2,PiggyBank:pM,Pilcrow:gM,PilcrowLeft:uM,PilcrowRight:wM,PilcrowSquare:l0,Pill:kM,PillBottle:vM,Pin:xM,PinOff:mM,Pipette:fM,Pizza:MM,Plane:CM,PlaneLanding:yM,PlaneTakeoff:bM,Play:BM,PlayCircle:$2,PlaySquare:a0,Plug:LM,Plug2:jM,PlugZap:cl,PlugZap2:cl,Plus:AM,PlusCircle:D2,PlusSquare:d0,Pocket:HM,PocketKnife:SM,Podcast:RM,Pointer:zM,PointerOff:VM,Popcorn:$M,Popsicle:DM,PoundSterling:UM,Power:PM,PowerCircle:U2,PowerOff:FM,PowerSquare:h0,Presentation:EM,Printer:OM,PrinterCheck:TM,Projector:IM,Proportions:YM,Puzzle:qM,Pyramid:NM,QrCode:_M,Quote:ZM,Rabbit:GM,Radar:WM,Radiation:KM,Radical:XM,Radio:t9,RadioReceiver:JM,RadioTower:QM,Radius:e9,RailSymbol:o9,Rainbow:r9,Rat:i9,Ratio:s9,Receipt:g9,ReceiptCent:n9,ReceiptEuro:l9,ReceiptIndianRupee:a9,ReceiptJapaneseYen:d9,ReceiptPoundSterling:h9,ReceiptRussianRuble:c9,ReceiptSwissFranc:u9,ReceiptText:p9,ReceiptTurkishLira:w9,RectangleCircle:v9,RectangleEllipsis:pl,RectangleGoggles:k9,RectangleHorizontal:m9,RectangleVertical:x9,Recycle:f9,Redo:b9,Redo2:M9,RedoDot:y9,RefreshCcw:B9,RefreshCcwDot:C9,RefreshCw:A9,RefreshCwOff:j9,Refrigerator:L9,Regex:S9,RemoveFormatting:H9,Repeat:z9,Repeat1:R9,Repeat2:V9,Replace:D9,ReplaceAll:$9,Reply:F9,ReplyAll:U9,Rewind:P9,Ribbon:E9,Rocket:T9,RockingChair:Y9,RollerCoaster:O9,Rose:I9,Rotate3D:ul,Rotate3d:ul,RotateCcw:_9,RotateCcwKey:q9,RotateCcwSquare:N9,RotateCw:G9,RotateCwSquare:Z9,Route:K9,RouteOff:W9,Router:X9,Rows:wl,Rows2:wl,Rows3:gl,Rows4:J9,Rss:ty,Ruler:ey,RulerDimensionLine:Q9,RussianRuble:oy,Sailboat:ry,Salad:iy,Sandwich:sy,Satellite:ly,SatelliteDish:ny,SaudiRiyal:ay,Save:cy,SaveAll:dy,SaveOff:hy,Scale:py,Scale3D:vl,Scale3d:vl,Scaling:uy,Scan:yy,ScanBarcode:wy,ScanEye:gy,ScanFace:vy,ScanHeart:ky,ScanLine:my,ScanQrCode:xy,ScanSearch:fy,ScanText:My,ScatterChart:h2,School:by,School2:R0,Scissors:By,ScissorsLineDashed:Cy,ScissorsSquare:c0,ScissorsSquareDashedBottom:Ul,Scooter:jy,ScreenShare:Ay,ScreenShareOff:Ly,Scroll:Hy,ScrollText:Sy,Search:Uy,SearchAlert:Ry,SearchCheck:Vy,SearchCode:$y,SearchSlash:zy,SearchX:Dy,Section:Fy,Send:Ey,SendHorizonal:kl,SendHorizontal:kl,SendToBack:Py,SeparatorHorizontal:Ty,SeparatorVertical:Yy,Server:Ny,ServerCog:Oy,ServerCrash:Iy,ServerOff:qy,Settings:Zy,Settings2:_y,Shapes:Gy,Share:Ky,Share2:Wy,Sheet:Xy,Shell:Jy,Shield:ab,ShieldAlert:Qy,ShieldBan:tb,ShieldCheck:eb,ShieldClose:xl,ShieldEllipsis:ob,ShieldHalf:rb,ShieldMinus:ib,ShieldOff:nb,ShieldPlus:sb,ShieldQuestion:ml,ShieldQuestionMark:ml,ShieldUser:lb,ShieldX:xl,Ship:hb,ShipWheel:db,Shirt:cb,ShoppingBag:pb,ShoppingBasket:ub,ShoppingCart:wb,Shovel:gb,ShowerHead:vb,Shredder:kb,Shrimp:mb,Shrink:xb,Shrub:fb,Shuffle:yb,Sidebar:sl,SidebarClose:ol,SidebarOpen:rl,Sigma:Mb,SigmaSquare:p0,Signal:Ab,SignalHigh:bb,SignalLow:Cb,SignalMedium:Bb,SignalZero:jb,Signature:Lb,Signpost:Hb,SignpostBig:Sb,Siren:Rb,SkipBack:Vb,SkipForward:zb,Skull:$b,Slack:Db,Slash:Ub,SlashSquare:u0,Slice:Pb,Sliders:fl,SlidersHorizontal:Fb,SlidersVertical:fl,Smartphone:Yb,SmartphoneCharging:Eb,SmartphoneNfc:Tb,Smile:Ib,SmilePlus:Ob,Snail:Nb,Snowflake:qb,SoapDispenserDroplet:_b,Sofa:Zb,SolarPanel:Gb,SortAsc:Os,SortDesc:Es,Soup:Wb,Space:Kb,Spade:Xb,Sparkle:Jb,Sparkles:Ml,Speaker:Qb,Speech:tC,SpellCheck:oC,SpellCheck2:eC,Spline:iC,SplinePointer:rC,Split:sC,SplitSquareHorizontal:w0,SplitSquareVertical:g0,Spool:nC,Spotlight:lC,SprayCan:aC,Sprout:dC,Square:fC,SquareActivity:yl,SquareArrowDown:Bl,SquareArrowDownLeft:bl,SquareArrowDownRight:Cl,SquareArrowLeft:jl,SquareArrowOutDownLeft:Al,SquareArrowOutDownRight:Ll,SquareArrowOutUpLeft:Sl,SquareArrowOutUpRight:Hl,SquareArrowRight:Rl,SquareArrowUp:$l,SquareArrowUpLeft:Vl,SquareArrowUpRight:zl,SquareAsterisk:Dl,SquareBottomDashedScissors:Ul,SquareChartGantt:ii,SquareCheck:Pl,SquareCheckBig:Fl,SquareChevronDown:El,SquareChevronLeft:Tl,SquareChevronRight:Yl,SquareChevronUp:Ol,SquareCode:Il,SquareDashed:_l,SquareDashedBottom:cC,SquareDashedBottomCode:hC,SquareDashedKanban:ql,SquareDashedMousePointer:Nl,SquareDashedTopSolid:pC,SquareDivide:Zl,SquareDot:Gl,SquareEqual:Wl,SquareFunction:Kl,SquareGanttChart:ii,SquareKanban:Xl,SquareLibrary:Jl,SquareM:Ql,SquareMenu:t0,SquareMinus:e0,SquareMousePointer:o0,SquareParking:i0,SquareParkingOff:r0,SquarePause:uC,SquarePen:vr,SquarePercent:s0,SquarePi:n0,SquarePilcrow:l0,SquarePlay:a0,SquarePlus:d0,SquarePower:h0,SquareRadical:wC,SquareRoundCorner:gC,SquareScissors:c0,SquareSigma:p0,SquareSlash:u0,SquareSplitHorizontal:w0,SquareSplitVertical:g0,SquareSquare:vC,SquareStack:kC,SquareStar:mC,SquareStop:xC,SquareTerminal:v0,SquareUser:m0,SquareUserRound:k0,SquareX:x0,SquaresExclude:MC,SquaresIntersect:yC,SquaresSubtract:bC,SquaresUnite:CC,Squircle:jC,SquircleDashed:BC,Squirrel:AC,Stamp:LC,Star:RC,StarHalf:SC,StarOff:HC,Stars:Ml,StepBack:VC,StepForward:zC,Stethoscope:$C,Sticker:UC,StickyNote:DC,Stone:FC,StopCircle:P2,Store:PC,StretchHorizontal:EC,StretchVertical:TC,Strikethrough:YC,Subscript:OC,Subtitles:Xs,Sun:ZC,SunDim:IC,SunMedium:qC,SunMoon:NC,SunSnow:_C,Sunrise:GC,Sunset:WC,Superscript:KC,SwatchBook:XC,SwissFranc:JC,SwitchCamera:QC,Sword:tB,Swords:eB,Syringe:oB,Table:hB,Table2:rB,TableCellsMerge:iB,TableCellsSplit:sB,TableColumnsSplit:nB,TableConfig:Qr,TableOfContents:lB,TableProperties:aB,TableRowsSplit:dB,Tablet:uB,TabletSmartphone:cB,Tablets:pB,Tag:wB,Tags:gB,Tally1:vB,Tally2:kB,Tally3:mB,Tally4:xB,Tally5:fB,Tangent:MB,Target:yB,Telescope:bB,Tent:BB,TentTree:CB,Terminal:jB,TerminalSquare:v0,TestTube:AB,TestTube2:f0,TestTubeDiagonal:f0,TestTubes:LB,Text:si,TextAlignCenter:M0,TextAlignEnd:y0,TextAlignJustify:b0,TextAlignStart:si,TextCursor:HB,TextCursorInput:SB,TextInitial:C0,TextQuote:RB,TextSearch:VB,TextSelect:B0,TextSelection:B0,TextWrap:j0,Theater:zB,Thermometer:UB,ThermometerSnowflake:$B,ThermometerSun:DB,ThumbsDown:FB,ThumbsUp:PB,Ticket:NB,TicketCheck:EB,TicketMinus:TB,TicketPercent:YB,TicketPlus:OB,TicketSlash:IB,TicketX:qB,Tickets:ZB,TicketsPlane:_B,Timer:KB,TimerOff:GB,TimerReset:WB,ToggleLeft:XB,ToggleRight:JB,Toilet:QB,ToolCase:tj,Toolbox:ej,Tornado:oj,Torus:rj,Touchpad:sj,TouchpadOff:ij,TowerControl:nj,ToyBrick:lj,Tractor:aj,TrafficCone:dj,Train:A0,TrainFront:cj,TrainFrontTunnel:hj,TrainTrack:pj,TramFront:A0,Transgender:uj,Trash:gj,Trash2:wj,TreeDeciduous:vj,TreePalm:L0,TreePine:kj,Trees:mj,Trello:xj,TrendingDown:fj,TrendingUp:yj,TrendingUpDown:Mj,Triangle:Bj,TriangleAlert:S0,TriangleDashed:bj,TriangleRight:Cj,Trophy:Aj,Truck:Lj,TruckElectric:jj,TurkishLira:Sj,Turntable:Hj,Turtle:Rj,Tv:zj,Tv2:H0,TvMinimal:H0,TvMinimalPlay:Vj,Twitch:$j,Twitter:Dj,Type:Fj,TypeOutline:Uj,Umbrella:Ej,UmbrellaOff:Pj,Underline:Tj,Undo:Ij,Undo2:Yj,UndoDot:Oj,UnfoldHorizontal:qj,UnfoldVertical:_j,Ungroup:Nj,University:R0,Unlink:Gj,Unlink2:Zj,Unlock:Nn,UnlockKeyhole:qn,Unplug:Wj,Upload:Kj,UploadCloud:N2,Usb:Xj,User:dA,User2:F0,UserCheck:Jj,UserCheck2:V0,UserCircle:T2,UserCircle2:E2,UserCog:Qj,UserCog2:z0,UserLock:tA,UserMinus:eA,UserMinus2:$0,UserPen:oA,UserPlus:rA,UserPlus2:D0,UserRound:F0,UserRoundCheck:V0,UserRoundCog:z0,UserRoundMinus:$0,UserRoundPen:iA,UserRoundPlus:D0,UserRoundSearch:sA,UserRoundX:U0,UserSearch:nA,UserSquare:m0,UserSquare2:k0,UserStar:lA,UserX:aA,UserX2:U0,Users:hA,Users2:P0,UsersRound:P0,Utensils:T0,UtensilsCrossed:E0,UtilityPole:cA,Van:pA,Variable:uA,Vault:wA,VectorSquare:gA,Vegan:kA,VenetianMask:vA,Venus:xA,VenusAndMars:mA,Verified:Ns,Vibrate:MA,VibrateOff:fA,Video:bA,VideoOff:yA,Videotape:BA,View:jA,Voicemail:CA,Volleyball:AA,Volume:VA,Volume1:LA,Volume2:SA,VolumeOff:RA,VolumeX:HA,Vote:zA,Wallet:DA,Wallet2:Y0,WalletCards:$A,WalletMinimal:Y0,Wallpaper:UA,Wand:FA,Wand2:O0,WandSparkles:O0,Warehouse:PA,WashingMachine:EA,Watch:TA,Waves:NA,WavesArrowDown:OA,WavesArrowUp:YA,WavesLadder:IA,Waypoints:qA,Webcam:_A,Webhook:GA,WebhookOff:ZA,Weight:KA,WeightTilde:WA,Wheat:QA,WheatOff:XA,WholeWord:tL,Wifi:lL,WifiCog:JA,WifiHigh:eL,WifiLow:rL,WifiOff:oL,WifiPen:iL,WifiSync:sL,WifiZero:nL,Wind:dL,WindArrowDown:aL,Wine:cL,WineOff:hL,Workflow:pL,Worm:uL,WrapText:j0,Wrench:wL,X:gL,XCircle:Y2,XOctagon:Qn,XSquare:x0,Youtube:vL,Zap:mL,ZapOff:kL,ZoomIn:xL,ZoomOut:fL},Symbol.toStringTag,{value:"Module"}));function yL(o){return o.replace(/([a-z])([A-Z])/g,"$1-$2").replace(/([A-Z])([A-Z][a-z])/g,"$1-$2").replace(/([a-zA-Z])(\d)/g,"$1-$2").replace(/(\d)([a-zA-Z])/g,"$1-$2").toLowerCase()}function bL(){const o={};for(const[t,e]of Object.entries(ML))typeof e=="string"&&e.includes("<svg")&&(o[yL(t)]=e);return o}const ka=bL();Object.keys(ka).toSorted();function CL(){P1(ka)}const ma={prefix:"ik"};let rs={...ma};function BL(o={}){rs={...ma,...o}}function xa(){return rs}function X(o){return`${rs.prefix}-${o}`}function $(o){const t=o.baseName;return e=>{const i=e||X(t);return customElements.get(i)||customElements.define(i,o),i}}const et="ik";class jL extends Xt{get config(){return xa()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}createRenderRoot(){return this}}class _ extends Xt{get config(){return xa()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}}const AL=o=>o.strings===void 0;const qo=(o,t)=>{const e=o._$AN;if(e===void 0)return!1;for(const i of e)i._$AO?.(t,!1),qo(i,t);return!0},Ar=o=>{let t,e;do{if((t=o._$AM)===void 0)break;e=t._$AN,e.delete(o),o=t}while(e?.size===0)},fa=o=>{for(let t;t=o._$AM;o=t){let e=t._$AN;if(e===void 0)t._$AN=e=new Set;else if(e.has(o))break;e.add(o),HL(t)}};function LL(o){this._$AN!==void 0?(Ar(this),this._$AM=o,fa(this)):this._$AM=o}function SL(o,t=!1,e=0){const i=this._$AH,r=this._$AN;if(r!==void 0&&r.size!==0)if(t)if(Array.isArray(i))for(let s=e;s<i.length;s++)qo(i[s],!1),Ar(i[s]);else i!=null&&(qo(i,!1),Ar(i));else qo(this,o)}const HL=o=>{o.type==wa.CHILD&&(o._$AP??(o._$AP=SL),o._$AQ??(o._$AQ=LL))};class RL extends va{constructor(){super(...arguments),this._$AN=void 0}_$AT(t,e,i){super._$AT(t,e,i),fa(this),this.isConnected=t._$AU}_$AO(t,e=!0){t!==this.isConnected&&(this.isConnected=t,t?this.reconnected?.():this.disconnected?.()),e&&(qo(this,t),Ar(this))}setValue(t){if(AL(this._$Ct))this._$Ct._$AI(t,this);else{const e=[...this._$Ct._$AH];e[this._$Ci]=t,this._$Ct._$AI(e,this,0)}}disconnected(){}reconnected(){}}const ni=()=>new VL;class VL{}const li=new WeakMap,ai=ga(class extends RL{render(o){return k}update(o,[t]){const e=t!==this.G;return e&&this.G!==void 0&&this.rt(void 0),(e||this.lt!==this.ct)&&(this.G=t,this.ht=o.options?.host,this.rt(this.ct=o.element)),k}rt(o){if(this.isConnected||(o=void 0),typeof this.G=="function"){const t=this.ht??globalThis;let e=li.get(t);e===void 0&&(e=new WeakMap,li.set(t,e)),e.get(this.G)!==void 0&&this.G.call(this.ht,void 0),e.set(this.G,o),o!==void 0&&this.G.call(this.ht,o)}else this.G.value=o}get lt(){return typeof this.G=="function"?li.get(this.ht??globalThis)?.get(this.G):this.G?.value}disconnected(){this.lt===this.ct&&this.rt(void 0)}reconnected(){this.rt(this.ct)}});function zL(o){const[t,e="center"]=o.split("-");return{side:t,alignment:e||"center"}}function $L(o){return{top:"bottom",bottom:"top",left:"right",right:"left"}[o]}function DL(o,t){return t==="center"?o:`${o}-${t}`}function Ma(o,t,e={}){const{placement:i="bottom",offset:r=4,flip:s=!0,padding:n=8,boundary:d="viewport",matchWidth:a=!1}=e,c=o.getBoundingClientRect(),u=t.getBoundingClientRect(),w=a?c.width:u.width,C=u.height,m=d==="viewport"?{top:n,left:n,right:window.innerWidth-n,bottom:window.innerHeight-n}:d.getBoundingClientRect();let{side:S,alignment:z}=zL(i);const D={top:c.top-m.top,bottom:m.bottom-c.bottom,left:c.left-m.left,right:m.right-c.right};if(s){const I=S==="top"||S==="bottom"?C+r:w+r;if(D[S]<I){const x=$L(S);D[x]>=I&&(S=x)}}let M,R;if(S==="top"||S==="bottom"){switch(R=S==="top"?c.top-C-r:c.bottom+r,z){case"start":M=c.left;break;case"end":M=c.right-w;break;default:M=c.left+(c.width-w)/2}M<m.left?M=m.left:M+w>m.right&&(M=m.right-w)}else{switch(M=S==="left"?c.left-w-r:c.right+r,z){case"start":R=c.top;break;case"end":R=c.bottom-C;break;default:R=c.top+(c.height-C)/2}R<m.top?R=m.top:R+C>m.bottom&&(R=m.bottom-C)}return{x:M,y:R,placement:DL(S,z),side:S,alignment:z}}function UL(o,t,e,i={}){const{scroll:r=!0,resize:s=!0,elementResize:n=!0}=i,d=[];if(e(),r){const a=()=>e();window.addEventListener("scroll",a,!0),d.push(()=>window.removeEventListener("scroll",a,!0))}if(s){const a=()=>e();window.addEventListener("resize",a),d.push(()=>window.removeEventListener("resize",a))}if(n&&typeof ResizeObserver<"u"){const a=new ResizeObserver(()=>e());a.observe(o),a.observe(t),d.push(()=>a.disconnect())}return()=>{d.forEach(a=>a())}}function FL(o,t,e={}){o.style.position="fixed",o.style.left=`${t.x}px`,o.style.top=`${t.y}px`,e.matchWidth!==void 0&&(o.style.width=`${e.matchWidth}px`),o.dataset.side=t.side,o.dataset.alignment=t.alignment,o.dataset.placement=t.placement}function PL(){const o=[];let t=null;function e(){if(t?.(),o.length===0){t=null;return}const i=s=>{const n=s.composedPath();for(let d=o.length-1;d>=0;d--){const a=o[d];if(n.includes(a.element))return;let c=!1;for(const u of a.exclude)if(n.includes(u)){c=!0;break}if(c)return;a.onDismiss("click-outside");return}},r=s=>{s.key==="Escape"&&o.length>0&&(s.preventDefault(),s.stopPropagation(),o[o.length-1].onDismiss("escape"))};document.addEventListener("mousedown",i,!0),document.addEventListener("keydown",r,!0),t=()=>{document.removeEventListener("mousedown",i,!0),document.removeEventListener("keydown",r,!0)}}return{add(i,r,s=[]){return o.push({element:i,onDismiss:r,exclude:s}),e(),()=>{const n=o.findIndex(d=>d.element===i);n!==-1&&(o.splice(n,1),e())}},remove(i){const r=o.findIndex(s=>s.element===i);r!==-1&&(o.splice(r,1),e())},clear(){o.length=0,e()},get size(){return o.length}}}const is=PL(),di=["a[href]","button:not([disabled])","input:not([disabled])","select:not([disabled])","textarea:not([disabled])",'[tabindex]:not([tabindex="-1"])','[contenteditable="true"]'].join(",");function ss(o){const t=[],e=o.shadowRoot||o;return e.querySelectorAll(di).forEach(s=>{const n=s;hi(n)&&!ci(n)&&t.push(n)}),e.querySelectorAll("slot").forEach(s=>{s.assignedElements({flatten:!0}).forEach(d=>{const a=d;a.matches?.(di)&&hi(a)&&!ci(a)&&t.push(a),d.querySelectorAll(di).forEach(u=>{const w=u;hi(w)&&!ci(w)&&t.push(w)})})}),t}function hi(o){return o.offsetParent!==null||o.offsetWidth>0||o.offsetHeight>0}function ci(o){return o.hasAttribute("disabled")||o.getAttribute("aria-disabled")==="true"}function pi(o){return ss(o)[0]||null}function EL(o){const t=ss(o);return t[t.length-1]||null}function TL(o,t={}){const{autoFocus:e=!0,restoreFocus:i=!0,initialFocus:r,finalFocus:s,allowOutsideFocus:n=!1}=t;let d=!1,a=null;function c(m){if(!d||m.key!=="Tab")return;const S=ss(o);if(S.length===0)return;const z=S[0],D=S[S.length-1];m.shiftKey?document.activeElement===z&&(m.preventDefault(),D.focus()):document.activeElement===D&&(m.preventDefault(),z.focus())}function u(m){if(!d||n)return;const S=m.relatedTarget;S&&!o.contains(S)&&(m.preventDefault(),pi(o)?.focus())}function w(){let m=null;r&&(typeof r=="string"?m=o.querySelector(r):m=r),m||(m=pi(o)),m?.focus()}function C(){let m=null;s?typeof s=="string"?m=document.querySelector(s):m=s:i&&a&&(m=a),m?.focus()}return{activate(){d||(d=!0,a=document.activeElement,document.addEventListener("keydown",c,!0),o.addEventListener("focusout",u),e&&requestAnimationFrame(()=>{w()}))},deactivate(){d&&(d=!1,document.removeEventListener("keydown",c,!0),o.removeEventListener("focusout",u),C())},get isActive(){return d},focusFirst(){pi(o)?.focus()},focusLast(){EL(o)?.focus()}}}let kr=0,Be=null;function YL(){const o=document.createElement("div");o.style.visibility="hidden",o.style.overflow="scroll",document.body.appendChild(o);const t=document.createElement("div");o.appendChild(t);const e=o.offsetWidth-t.offsetWidth;return o.remove(),e}function OL(){return document.documentElement.scrollHeight>window.innerHeight}function IL(){const o=document.body;if(kr===0&&(Be={originalOverflow:o.style.overflow,originalPaddingRight:o.style.paddingRight,scrollbarWidth:OL()?YL():0},o.style.overflow="hidden",Be.scrollbarWidth>0)){const e=parseInt(getComputedStyle(o).paddingRight,10)||0;o.style.paddingRight=`${e+Be.scrollbarWidth}px`}kr++;let t=!1;return()=>{t||(t=!0,kr--,kr===0&&Be&&(o.style.overflow=Be.originalOverflow,o.style.paddingRight=Be.originalPaddingRight,Be=null))}}var qL=Object.defineProperty,xt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&qL(t,e,r),r},Jt;const pt=(Jt=class extends _{constructor(){super(...arguments),this.optionElements=[],this.placeholder="请选择",this.disabled=!1,this.multiple=!1,this.searchable=!1,this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.placement="bottom-start",this.offset=4,this.triggerRef=ni(),this.dropdownRef=ni(),this.defaultSlotRef=ni(),this.cleanupScroll=null,this.cleanupDismissable=null,this.handleSlotChange=()=>{this.collectOptionElements()},this.handleOptionClick=t=>{const{value:e}=t.detail,i=this.optionElements.find(r=>r.value===e);!i||i.disabled||this.selectOptionByValue(e)},this.toggleDropdown=()=>{this.disabled||(this.open?this.closeDropdown():this.openDropdown())},this.updatePosition=()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;const i=Ma(t,e,{placement:this.placement,offset:this.offset,flip:!0,padding:8,matchWidth:!0}),r=t.getBoundingClientRect().width;e.style.position="fixed",e.style.left=`${i.x}px`,e.style.top=`${i.y}px`,e.style.width=`${r}px`,e.style.visibility="visible",e.style.pointerEvents="auto",e.dataset.side=i.side,e.dataset.placement=i.placement},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":if(t.preventDefault(),!this.open)this.openDropdown();else if(this.highlightedIndex>=0){const e=this.filteredOptions[this.highlightedIndex];e&&this.selectOptionByValue(e.value)}break;case"ArrowDown":t.preventDefault(),this.open?this.highlightNext():this.openDropdown();break;case"ArrowUp":t.preventDefault(),this.open?this.highlightPrevious():this.openDropdown();break;case"Escape":break;case"Home":this.open&&(t.preventDefault(),this.highlightedIndex=0,this.updateOptionStates());break;case"End":this.open&&(t.preventDefault(),this.highlightedIndex=this.filteredOptions.length-1,this.updateOptionStates());break}},this.handleSearchInput=t=>{const e=t.target;this.searchKeyword=e.value,this.highlightedIndex=0,this.updateOptionStates()}}get filteredOptions(){if(!this.searchable||!this.searchKeyword.trim())return this.optionElements;const t=this.searchKeyword.toLowerCase();return this.optionElements.filter(e=>{const i=e.displayLabel.toLowerCase(),r=e.value.toLowerCase();return i.includes(t)||r.includes(t)})}collectOptionElements(){const t=this.defaultSlotRef.value;if(!t)return;const e=t.assignedElements(),i=X("select-option");this.optionElements=e.filter(s=>s.tagName.toLowerCase()===i);const r=`${et}-option-click`;this.optionElements.forEach(s=>{s.removeEventListener(r,this.handleOptionClick),s.addEventListener(r,this.handleOptionClick)}),this.updateOptionStates()}updateOptionStates(){const t=new Set(this.filteredOptions);this.optionElements.forEach(e=>{const i=this.filteredOptions.indexOf(e);e.highlighted=i===this.highlightedIndex,e.hidden=!t.has(e)})}setupOpen(){requestAnimationFrame(()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;this.updatePosition();const i=r=>{e.contains(r.target)||this.closeDropdown()};window.addEventListener("scroll",i,!0),this.cleanupScroll=()=>{window.removeEventListener("scroll",i,!0)},this.cleanupDismissable=is.add(e,r=>{(r==="escape"||r==="click-outside")&&this.closeDropdown()},[this])})}cleanupOpen(){this.cleanupScroll?.(),this.cleanupScroll=null,this.cleanupDismissable?.(),this.cleanupDismissable=null}openDropdown(){if(!(this.disabled||this.open)&&(this.open=!0,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("open",void 0,{bubbles:!1}),!this.multiple)){const t=this.filteredOptions.findIndex(e=>e.selected);t!==-1&&(this.highlightedIndex=t,this.updateOptionStates())}}closeDropdown(){this.open&&(this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("close",void 0,{bubbles:!1}))}selectOptionByValue(t){const e=this.optionElements.find(i=>i.value===t);!e||e.disabled||(this.multiple?e.selected=!e.selected:(this.optionElements.forEach(i=>{i.selected=i===e}),this.closeDropdown()),this.requestUpdate(),this.emit("change",{value:e.value,selected:e.selected,option:{value:e.value,label:e.displayLabel,disabled:e.disabled,data:e.data}},{bubbles:!1}))}highlightNext(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex+1;for(;e<t.length&&t[e].disabled;)e++;if(e>=t.length)for(e=0;e<t.length&&t[e].disabled;)e++;e<t.length&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex-1;for(;e>=0&&t[e].disabled;)e--;if(e<0)for(e=t.length-1;e>=0&&t[e].disabled;)e--;e>=0&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.filteredOptions[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}renderTrigger(){return p`
+`;const bL=Object.freeze(Object.defineProperty({__proto__:null,AArrowDown:_1,AArrowUp:Z1,ALargeSmall:G1,Accessibility:W1,Activity:K1,ActivitySquare:yl,AirVent:X1,Airplay:J1,AlarmCheck:Us,AlarmClock:td,AlarmClockCheck:Us,AlarmClockMinus:Ds,AlarmClockOff:Q1,AlarmClockPlus:Fs,AlarmMinus:Ds,AlarmPlus:Fs,AlarmSmoke:ed,Album:od,AlertCircle:p2,AlertOctagon:Xn,AlertTriangle:S0,AlignCenter:M0,AlignCenterHorizontal:rd,AlignCenterVertical:id,AlignEndHorizontal:sd,AlignEndVertical:nd,AlignHorizontalDistributeCenter:ld,AlignHorizontalDistributeEnd:ad,AlignHorizontalDistributeStart:dd,AlignHorizontalJustifyCenter:hd,AlignHorizontalJustifyEnd:cd,AlignHorizontalJustifyStart:pd,AlignHorizontalSpaceAround:ud,AlignHorizontalSpaceBetween:wd,AlignJustify:b0,AlignLeft:si,AlignRight:y0,AlignStartHorizontal:vd,AlignStartVertical:gd,AlignVerticalDistributeCenter:md,AlignVerticalDistributeEnd:kd,AlignVerticalDistributeStart:xd,AlignVerticalJustifyCenter:fd,AlignVerticalJustifyEnd:Md,AlignVerticalJustifyStart:bd,AlignVerticalSpaceAround:yd,AlignVerticalSpaceBetween:Cd,Ambulance:Bd,Ampersand:Ad,Ampersands:Ld,Amphora:jd,Anchor:Sd,Angry:Rd,Annoyed:Hd,Antenna:Vd,Anvil:zd,Aperture:$d,AppWindow:Dd,AppWindowMac:Ud,Apple:Fd,Archive:Td,ArchiveRestore:Pd,ArchiveX:Ed,AreaChart:Js,Armchair:Yd,ArrowBigDown:Id,ArrowBigDownDash:Od,ArrowBigLeft:Nd,ArrowBigLeftDash:qd,ArrowBigRight:Zd,ArrowBigRightDash:_d,ArrowBigUp:Wd,ArrowBigUpDash:Gd,ArrowDown:sh,ArrowDown01:Kd,ArrowDown10:Xd,ArrowDownAZ:Ps,ArrowDownAz:Ps,ArrowDownCircle:u2,ArrowDownFromLine:Jd,ArrowDownLeft:Qd,ArrowDownLeftFromCircle:g2,ArrowDownLeftFromSquare:Al,ArrowDownLeftSquare:bl,ArrowDownNarrowWide:th,ArrowDownRight:eh,ArrowDownRightFromCircle:v2,ArrowDownRightFromSquare:Ll,ArrowDownRightSquare:Cl,ArrowDownSquare:Bl,ArrowDownToDot:rh,ArrowDownToLine:oh,ArrowDownUp:ih,ArrowDownWideNarrow:Es,ArrowDownZA:Ts,ArrowDownZa:Ts,ArrowLeft:ah,ArrowLeftCircle:w2,ArrowLeftFromLine:lh,ArrowLeftRight:nh,ArrowLeftSquare:jl,ArrowLeftToLine:dh,ArrowRight:uh,ArrowRightCircle:x2,ArrowRightFromLine:hh,ArrowRightLeft:ch,ArrowRightSquare:Rl,ArrowRightToLine:ph,ArrowUp:bh,ArrowUp01:wh,ArrowUp10:gh,ArrowUpAZ:Ys,ArrowUpAz:Ys,ArrowUpCircle:f2,ArrowUpDown:vh,ArrowUpFromDot:kh,ArrowUpFromLine:mh,ArrowUpLeft:xh,ArrowUpLeftFromCircle:k2,ArrowUpLeftFromSquare:Sl,ArrowUpLeftSquare:Vl,ArrowUpNarrowWide:Os,ArrowUpRight:fh,ArrowUpRightFromCircle:m2,ArrowUpRightFromSquare:Hl,ArrowUpRightSquare:zl,ArrowUpSquare:$l,ArrowUpToLine:Mh,ArrowUpWideNarrow:yh,ArrowUpZA:Is,ArrowUpZa:Is,ArrowsUpFromLine:Ch,Asterisk:Bh,AsteriskSquare:Ul,AtSign:jh,Atom:Ah,AudioLines:Lh,AudioWaveform:Sh,Award:Hh,Axe:Rh,Axis3D:qs,Axis3d:qs,Baby:Vh,Backpack:zh,Badge:Wh,BadgeAlert:Uh,BadgeCent:$h,BadgeCheck:Ns,BadgeDollarSign:Dh,BadgeEuro:Fh,BadgeHelp:_s,BadgeIndianRupee:Ph,BadgeInfo:Eh,BadgeJapaneseYen:Yh,BadgeMinus:Th,BadgePercent:Oh,BadgePlus:Ih,BadgePoundSterling:qh,BadgeQuestionMark:_s,BadgeRussianRuble:Nh,BadgeSwissFranc:_h,BadgeTurkishLira:Zh,BadgeX:Gh,BaggageClaim:Kh,Balloon:Xh,Ban:Jh,Banana:Qh,Bandage:tc,Banknote:ic,BanknoteArrowDown:ec,BanknoteArrowUp:rc,BanknoteX:oc,BarChart:n2,BarChart2:l2,BarChart3:i2,BarChart4:r2,BarChartBig:o2,BarChartHorizontal:t2,BarChartHorizontalBig:Qs,Barcode:sc,Barrel:nc,Baseline:ac,Bath:lc,Battery:gc,BatteryCharging:dc,BatteryFull:hc,BatteryLow:cc,BatteryMedium:pc,BatteryPlus:uc,BatteryWarning:wc,Beaker:vc,Bean:mc,BeanOff:kc,Bed:Mc,BedDouble:xc,BedSingle:fc,Beef:yc,Beer:Cc,BeerOff:bc,Bell:Rc,BellDot:Bc,BellElectric:jc,BellMinus:Ac,BellOff:Lc,BellPlus:Sc,BellRing:Hc,BetweenHorizonalEnd:Zs,BetweenHorizonalStart:Gs,BetweenHorizontalEnd:Zs,BetweenHorizontalStart:Gs,BetweenVerticalEnd:Vc,BetweenVerticalStart:zc,BicepsFlexed:$c,Bike:Uc,Binary:Dc,Binoculars:Fc,Biohazard:Pc,Bird:Ec,Birdhouse:Tc,Bitcoin:Yc,Blend:Oc,Blinds:Ic,Blocks:qc,Bluetooth:Gc,BluetoothConnected:Nc,BluetoothOff:_c,BluetoothSearching:Zc,Bold:Wc,Bolt:Kc,Bomb:Xc,Bone:Jc,Book:C4,BookA:Qc,BookAlert:t4,BookAudio:e4,BookCheck:o4,BookCopy:r4,BookDashed:Ws,BookDown:i4,BookHeadphones:s4,BookHeart:n4,BookImage:l4,BookKey:a4,BookLock:d4,BookMarked:h4,BookMinus:c4,BookOpen:w4,BookOpenCheck:u4,BookOpenText:p4,BookPlus:g4,BookSearch:v4,BookTemplate:Ws,BookText:k4,BookType:m4,BookUp:f4,BookUp2:x4,BookUser:M4,BookX:y4,Bookmark:L4,BookmarkCheck:b4,BookmarkMinus:B4,BookmarkPlus:j4,BookmarkX:A4,BoomBox:S4,Bot:V4,BotMessageSquare:H4,BotOff:R4,BottleWine:z4,BowArrow:$4,Box:U4,BoxSelect:_l,Boxes:D4,Braces:Ks,Brackets:F4,Brain:T4,BrainCircuit:P4,BrainCog:E4,BrickWall:I4,BrickWallFire:Y4,BrickWallShield:O4,Briefcase:Z4,BriefcaseBusiness:q4,BriefcaseConveyorBelt:_4,BriefcaseMedical:N4,BringToFront:G4,Brush:X4,BrushCleaning:W4,Bubbles:K4,Bug:tp,BugOff:J4,BugPlay:Q4,Building:op,Building2:ep,Bus:ip,BusFront:rp,Cable:np,CableCar:sp,Cake:ap,CakeSlice:lp,Calculator:dp,Calendar:Hp,Calendar1:hp,CalendarArrowDown:cp,CalendarArrowUp:pp,CalendarCheck:wp,CalendarCheck2:up,CalendarClock:gp,CalendarCog:vp,CalendarDays:kp,CalendarFold:mp,CalendarHeart:xp,CalendarMinus:Mp,CalendarMinus2:fp,CalendarOff:yp,CalendarPlus:Cp,CalendarPlus2:bp,CalendarRange:Bp,CalendarSearch:jp,CalendarSync:Ap,CalendarX:Sp,CalendarX2:Lp,Calendars:Rp,Camera:zp,CameraOff:Vp,CandlestickChart:e2,Candy:Dp,CandyCane:$p,CandyOff:Up,Cannabis:Pp,CannabisOff:Fp,Captions:Xs,CaptionsOff:Ep,Car:Op,CarFront:Tp,CarTaxiFront:Yp,Caravan:Ip,CardSim:qp,Carrot:Np,CaseLower:_p,CaseSensitive:Zp,CaseUpper:Gp,CassetteTape:Wp,Cast:Kp,Castle:Xp,Cat:Jp,Cctv:Qp,ChartArea:Js,ChartBar:t2,ChartBarBig:Qs,ChartBarDecreasing:eu,ChartBarIncreasing:tu,ChartBarStacked:ou,ChartCandlestick:e2,ChartColumn:i2,ChartColumnBig:o2,ChartColumnDecreasing:ru,ChartColumnIncreasing:r2,ChartColumnStacked:iu,ChartGantt:su,ChartLine:s2,ChartNetwork:nu,ChartNoAxesColumn:l2,ChartNoAxesColumnDecreasing:lu,ChartNoAxesColumnIncreasing:n2,ChartNoAxesCombined:au,ChartNoAxesGantt:a2,ChartPie:d2,ChartScatter:h2,ChartSpline:du,Check:pu,CheckCheck:hu,CheckCircle:M2,CheckCircle2:y2,CheckLine:cu,CheckSquare:Fl,CheckSquare2:Pl,ChefHat:wu,Cherry:uu,ChessBishop:gu,ChessKing:vu,ChessKnight:ku,ChessPawn:mu,ChessQueen:xu,ChessRook:Mu,ChevronDown:fu,ChevronDownCircle:b2,ChevronDownSquare:El,ChevronFirst:yu,ChevronLast:bu,ChevronLeft:Cu,ChevronLeftCircle:C2,ChevronLeftSquare:Tl,ChevronRight:Bu,ChevronRightCircle:B2,ChevronRightSquare:Yl,ChevronUp:ju,ChevronUpCircle:j2,ChevronUpSquare:Ol,ChevronsDown:Lu,ChevronsDownUp:Au,ChevronsLeft:Ru,ChevronsLeftRight:Hu,ChevronsLeftRightEllipsis:Su,ChevronsRight:zu,ChevronsRightLeft:Vu,ChevronsUp:Uu,ChevronsUpDown:$u,Chrome:c2,Chromium:c2,Church:Du,Cigarette:Fu,CigaretteOff:Pu,Circle:Qu,CircleAlert:p2,CircleArrowDown:u2,CircleArrowLeft:w2,CircleArrowOutDownLeft:g2,CircleArrowOutDownRight:v2,CircleArrowOutUpLeft:k2,CircleArrowOutUpRight:m2,CircleArrowRight:x2,CircleArrowUp:f2,CircleCheck:y2,CircleCheckBig:M2,CircleChevronDown:b2,CircleChevronLeft:C2,CircleChevronRight:B2,CircleChevronUp:j2,CircleDashed:Eu,CircleDivide:A2,CircleDollarSign:Tu,CircleDot:Ou,CircleDotDashed:Yu,CircleEllipsis:Iu,CircleEqual:qu,CircleFadingArrowUp:Nu,CircleFadingPlus:_u,CircleGauge:L2,CircleHelp:Jr,CircleMinus:S2,CircleOff:Zu,CircleParking:R2,CircleParkingOff:H2,CirclePause:V2,CirclePercent:z2,CirclePile:Gu,CirclePlay:$2,CirclePlus:U2,CirclePoundSterling:Wu,CirclePower:D2,CircleQuestionMark:Jr,CircleSlash:Ku,CircleSlash2:F2,CircleSlashed:F2,CircleSmall:Ju,CircleStar:Xu,CircleStop:P2,CircleUser:T2,CircleUserRound:E2,CircleX:Y2,CircuitBoard:tw,Citrus:ew,Clapperboard:ow,Clipboard:pw,ClipboardCheck:rw,ClipboardClock:iw,ClipboardCopy:sw,ClipboardEdit:I2,ClipboardList:nw,ClipboardMinus:lw,ClipboardPaste:aw,ClipboardPen:I2,ClipboardPenLine:O2,ClipboardPlus:dw,ClipboardSignature:O2,ClipboardType:hw,ClipboardX:cw,Clock:Rw,Clock1:uw,Clock10:ww,Clock11:gw,Clock12:vw,Clock2:kw,Clock3:mw,Clock4:xw,Clock5:fw,Clock6:Mw,Clock7:yw,Clock8:bw,Clock9:Cw,ClockAlert:Bw,ClockArrowDown:jw,ClockArrowUp:Aw,ClockCheck:Lw,ClockFading:Sw,ClockPlus:Hw,ClosedCaption:Vw,Cloud:Kw,CloudAlert:zw,CloudBackup:$w,CloudCheck:Uw,CloudCog:Dw,CloudDownload:q2,CloudDrizzle:Fw,CloudFog:Pw,CloudHail:Ew,CloudLightning:Tw,CloudMoon:Yw,CloudMoonRain:Ow,CloudOff:Iw,CloudRain:Nw,CloudRainWind:qw,CloudSnow:_w,CloudSun:Gw,CloudSunRain:Zw,CloudSync:Ww,CloudUpload:N2,Cloudy:Xw,Clover:Jw,Club:Qw,Code:tg,Code2:_2,CodeSquare:Il,CodeXml:_2,Codepen:eg,Codesandbox:og,Coffee:rg,Cog:ig,Coins:sg,Columns:Z2,Columns2:Z2,Columns3:G2,Columns3Cog:Qr,Columns4:ng,ColumnsSettings:Qr,Combine:lg,Command:ag,Compass:dg,Component:hg,Computer:cg,ConciergeBell:pg,Cone:ug,Construction:wg,Contact:gg,Contact2:W2,ContactRound:W2,Container:vg,Contrast:kg,Cookie:mg,CookingPot:xg,Copy:Bg,CopyCheck:fg,CopyMinus:Mg,CopyPlus:yg,CopySlash:bg,CopyX:Cg,Copyleft:jg,Copyright:Ag,CornerDownLeft:Lg,CornerDownRight:Sg,CornerLeftDown:Hg,CornerLeftUp:Rg,CornerRightDown:Vg,CornerRightUp:zg,CornerUpLeft:$g,CornerUpRight:Ug,Cpu:Dg,CreativeCommons:Eg,CreditCard:Fg,Croissant:Pg,Crop:Tg,Cross:Yg,Crosshair:Og,Crown:Ig,Cuboid:qg,CupSoda:Ng,CurlyBraces:Ks,Currency:_g,Cylinder:Zg,Dam:Gg,Database:Xg,DatabaseBackup:Wg,DatabaseZap:Kg,DecimalsArrowLeft:Jg,DecimalsArrowRight:Qg,Delete:tv,Dessert:ev,Diameter:ov,Diamond:sv,DiamondMinus:rv,DiamondPercent:K2,DiamondPlus:iv,Dice1:lv,Dice2:nv,Dice3:av,Dice4:dv,Dice5:hv,Dice6:cv,Dices:pv,Diff:uv,Disc:kv,Disc2:wv,Disc3:gv,DiscAlbum:vv,Divide:mv,DivideCircle:A2,DivideSquare:Zl,Dna:fv,DnaOff:xv,Dock:Mv,Dog:yv,DollarSign:bv,Donut:Cv,DoorClosed:jv,DoorClosedLocked:Bv,DoorOpen:Av,Dot:Lv,DotSquare:Gl,Download:Sv,DownloadCloud:q2,DraftingCompass:Hv,Drama:Rv,Dribbble:Vv,Drill:zv,Drone:$v,Droplet:Uv,DropletOff:Dv,Droplets:Fv,Drum:Pv,Drumstick:Tv,Dumbbell:Ev,Ear:Ov,EarOff:Yv,Earth:X2,EarthLock:Iv,Eclipse:qv,Edit:vr,Edit2:hl,Edit3:dl,Egg:Zv,EggFried:Nv,EggOff:_v,Ellipsis:Q2,EllipsisVertical:J2,Equal:Kv,EqualApproximately:Gv,EqualNot:Wv,EqualSquare:Wl,Eraser:Xv,EthernetPort:Jv,Euro:Qv,EvCharger:t3,Expand:e3,ExternalLink:o3,Eye:s3,EyeClosed:r3,EyeOff:i3,Facebook:n3,Factory:l3,Fan:a3,FastForward:d3,Feather:h3,Fence:c3,FerrisWheel:p3,Figma:u3,File:O3,FileArchive:w3,FileAudio:ti,FileAudio2:ti,FileAxis3D:tn,FileAxis3d:tn,FileBadge:en,FileBadge2:en,FileBarChart:sn,FileBarChart2:nn,FileBox:g3,FileBraces:rn,FileBracesCorner:on,FileChartColumn:nn,FileChartColumnIncreasing:sn,FileChartLine:ln,FileChartPie:an,FileCheck:v3,FileCheck2:dn,FileCheckCorner:dn,FileClock:k3,FileCode:m3,FileCode2:hn,FileCodeCorner:hn,FileCog:cn,FileCog2:cn,FileDiff:x3,FileDigit:f3,FileDown:M3,FileEdit:kn,FileExclamationPoint:pn,FileHeadphone:ti,FileHeart:y3,FileImage:b3,FileInput:C3,FileJson:rn,FileJson2:on,FileKey:un,FileKey2:un,FileLineChart:ln,FileLock:wn,FileLock2:wn,FileMinus:B3,FileMinus2:gn,FileMinusCorner:gn,FileMusic:j3,FileOutput:A3,FilePen:kn,FilePenLine:vn,FilePieChart:an,FilePlay:mn,FilePlus:L3,FilePlus2:xn,FilePlusCorner:xn,FileQuestion:fn,FileQuestionMark:fn,FileScan:S3,FileSearch:H3,FileSearch2:Mn,FileSearchCorner:Mn,FileSignal:yn,FileSignature:vn,FileSliders:R3,FileSpreadsheet:V3,FileStack:z3,FileSymlink:$3,FileTerminal:U3,FileText:D3,FileType:F3,FileType2:bn,FileTypeCorner:bn,FileUp:E3,FileUser:P3,FileVideo:mn,FileVideo2:Cn,FileVideoCamera:Cn,FileVolume:T3,FileVolume2:yn,FileWarning:pn,FileX:Y3,FileX2:Bn,FileXCorner:Bn,Files:I3,Film:q3,Filter:Hn,FilterX:Sn,Fingerprint:jn,FingerprintPattern:jn,FireExtinguisher:N3,Fish:G3,FishOff:_3,FishSymbol:Z3,FishingHook:W3,Flag:Q3,FlagOff:K3,FlagTriangleLeft:X3,FlagTriangleRight:J3,Flame:e5,FlameKindling:t5,Flashlight:o5,FlashlightOff:r5,FlaskConical:s5,FlaskConicalOff:i5,FlaskRound:n5,FlipHorizontal:a5,FlipHorizontal2:l5,FlipVertical:h5,FlipVertical2:d5,Flower:p5,Flower2:c5,Focus:u5,FoldHorizontal:w5,FoldVertical:g5,Folder:I5,FolderArchive:v5,FolderCheck:k5,FolderClock:m5,FolderClosed:x5,FolderCode:f5,FolderCog:An,FolderCog2:An,FolderDot:M5,FolderDown:y5,FolderEdit:Ln,FolderGit:C5,FolderGit2:b5,FolderHeart:B5,FolderInput:j5,FolderKanban:A5,FolderKey:L5,FolderLock:S5,FolderMinus:H5,FolderOpen:V5,FolderOpenDot:R5,FolderOutput:z5,FolderPen:Ln,FolderPlus:$5,FolderRoot:U5,FolderSearch:F5,FolderSearch2:D5,FolderSymlink:P5,FolderSync:E5,FolderTree:T5,FolderUp:Y5,FolderX:O5,Folders:q5,Footprints:N5,ForkKnife:T0,ForkKnifeCrossed:E0,Forklift:Z5,Form:_5,FormInput:pl,Forward:G5,Frame:W5,Framer:K5,Frown:X5,Fuel:J5,Fullscreen:Q5,FunctionSquare:Kl,Funnel:Hn,FunnelPlus:tk,FunnelX:Sn,GalleryHorizontal:ok,GalleryHorizontalEnd:ek,GalleryThumbnails:rk,GalleryVertical:sk,GalleryVerticalEnd:ik,Gamepad:ak,Gamepad2:nk,GamepadDirectional:lk,GanttChart:a2,GanttChartSquare:ii,Gauge:dk,GaugeCircle:L2,Gavel:hk,Gem:ck,GeorgianLari:pk,Ghost:uk,Gift:wk,GitBranch:kk,GitBranchMinus:gk,GitBranchPlus:vk,GitCommit:Rn,GitCommitHorizontal:Rn,GitCommitVertical:mk,GitCompare:fk,GitCompareArrows:xk,GitFork:Mk,GitGraph:yk,GitMerge:bk,GitPullRequest:Sk,GitPullRequestArrow:Ck,GitPullRequestClosed:Bk,GitPullRequestCreate:Ak,GitPullRequestCreateArrow:jk,GitPullRequestDraft:Lk,Github:Hk,Gitlab:Rk,GlassWater:Vk,Glasses:zk,Globe:Uk,Globe2:X2,GlobeLock:$k,Goal:Dk,Gpu:Fk,Grab:Dn,GraduationCap:Pk,Grape:Ek,Grid:ei,Grid2X2:Un,Grid2X2Check:Vn,Grid2X2Plus:zn,Grid2X2X:$n,Grid2x2:Un,Grid2x2Check:Vn,Grid2x2Plus:zn,Grid2x2X:$n,Grid3X3:ei,Grid3x2:Tk,Grid3x3:ei,Grip:Ik,GripHorizontal:Yk,GripVertical:Ok,Group:qk,Guitar:Nk,Ham:_k,Hamburger:Zk,Hammer:Gk,Hand:tm,HandCoins:Kk,HandFist:Wk,HandGrab:Dn,HandHeart:Xk,HandHelping:Fn,HandMetal:Jk,HandPlatter:Qk,Handbag:em,Handshake:om,HardDrive:sm,HardDriveDownload:rm,HardDriveUpload:im,HardHat:nm,Hash:am,HatGlasses:lm,Haze:hm,Hd:cm,HdmiPort:dm,Heading:mm,Heading1:pm,Heading2:um,Heading3:wm,Heading4:gm,Heading5:vm,Heading6:km,HeadphoneOff:xm,Headphones:fm,Headset:Mm,Heart:Lm,HeartCrack:ym,HeartHandshake:bm,HeartMinus:Cm,HeartOff:Bm,HeartPlus:jm,HeartPulse:Am,Heater:Sm,Helicopter:Hm,HelpCircle:Jr,HelpingHand:Fn,Hexagon:Rm,Highlighter:Vm,History:zm,Home:Pn,Hop:Um,HopOff:$m,Hospital:Dm,Hotel:Fm,Hourglass:Pm,House:Pn,HouseHeart:Em,HousePlug:Tm,HousePlus:Ym,HouseWifi:Om,IceCream:Tn,IceCream2:En,IceCreamBowl:En,IceCreamCone:Tn,IdCard:qm,IdCardLanyard:Im,Image:Jm,ImageDown:Nm,ImageMinus:_m,ImageOff:Zm,ImagePlay:Gm,ImagePlus:Wm,ImageUp:Km,ImageUpscale:Xm,Images:Qm,Import:tx,Inbox:ex,Indent:ri,IndentDecrease:oi,IndentIncrease:ri,IndianRupee:ox,Infinity:rx,Info:ix,Inspect:o0,InspectionPanel:sx,Instagram:nx,Italic:lx,IterationCcw:ax,IterationCw:dx,JapaneseYen:hx,Joystick:cx,Kanban:px,KanbanSquare:Xl,KanbanSquareDashed:ql,Kayak:ux,Key:vx,KeyRound:gx,KeySquare:wx,Keyboard:xx,KeyboardMusic:kx,KeyboardOff:mx,Lamp:Bx,LampCeiling:fx,LampDesk:Mx,LampFloor:yx,LampWallDown:bx,LampWallUp:Cx,LandPlot:jx,Landmark:Lx,Languages:Ax,Laptop:Hx,Laptop2:Yn,LaptopMinimal:Yn,LaptopMinimalCheck:Sx,Lasso:Vx,LassoSelect:Rx,Laugh:zx,Layers:On,Layers2:$x,Layers3:On,LayersPlus:Ux,Layout:al,LayoutDashboard:Dx,LayoutGrid:Fx,LayoutList:Px,LayoutPanelLeft:Ex,LayoutPanelTop:Tx,LayoutTemplate:Yx,Leaf:Ox,LeafyGreen:Ix,Lectern:qx,LetterText:C0,Library:_x,LibraryBig:Nx,LibrarySquare:Jl,LifeBuoy:Zx,Ligature:Gx,Lightbulb:Kx,LightbulbOff:Wx,LineChart:s2,LineSquiggle:Xx,Link:t6,Link2:Qx,Link2Off:Jx,Linkedin:e6,List:f6,ListCheck:o6,ListChecks:r6,ListChevronsDownUp:i6,ListChevronsUpDown:s6,ListCollapse:n6,ListEnd:l6,ListFilter:d6,ListFilterPlus:a6,ListIndentDecrease:oi,ListIndentIncrease:ri,ListMinus:h6,ListMusic:c6,ListOrdered:p6,ListPlus:u6,ListRestart:w6,ListStart:g6,ListTodo:v6,ListTree:k6,ListVideo:m6,ListX:x6,Loader:y6,Loader2:In,LoaderCircle:In,LoaderPinwheel:M6,Locate:B6,LocateFixed:b6,LocateOff:C6,LocationEdit:Zn,Lock:A6,LockKeyhole:j6,LockKeyholeOpen:qn,LockOpen:Nn,LogIn:L6,LogOut:S6,Logs:H6,Lollipop:R6,Luggage:V6,MSquare:Ql,Magnet:z6,Mail:Y6,MailCheck:$6,MailMinus:U6,MailOpen:D6,MailPlus:F6,MailQuestion:_n,MailQuestionMark:_n,MailSearch:P6,MailWarning:E6,MailX:T6,Mailbox:O6,Mails:I6,Map:i8,MapMinus:q6,MapPin:e8,MapPinCheck:_6,MapPinCheckInside:N6,MapPinHouse:Z6,MapPinMinus:W6,MapPinMinusInside:G6,MapPinOff:K6,MapPinPen:Zn,MapPinPlus:J6,MapPinPlusInside:X6,MapPinX:t8,MapPinXInside:Q6,MapPinned:o8,MapPlus:r8,Mars:n8,MarsStroke:s8,Martini:l8,Maximize:d8,Maximize2:a8,Medal:h8,Megaphone:p8,MegaphoneOff:c8,Meh:u8,MemoryStick:w8,Menu:g8,MenuSquare:t0,Merge:v8,MessageCircle:j8,MessageCircleCode:k8,MessageCircleDashed:m8,MessageCircleHeart:x8,MessageCircleMore:f8,MessageCircleOff:M8,MessageCirclePlus:y8,MessageCircleQuestion:Gn,MessageCircleQuestionMark:Gn,MessageCircleReply:b8,MessageCircleWarning:C8,MessageCircleX:B8,MessageSquare:O8,MessageSquareCode:A8,MessageSquareDashed:L8,MessageSquareDiff:S8,MessageSquareDot:H8,MessageSquareHeart:R8,MessageSquareLock:V8,MessageSquareMore:z8,MessageSquareOff:$8,MessageSquarePlus:U8,MessageSquareQuote:D8,MessageSquareReply:F8,MessageSquareShare:E8,MessageSquareText:P8,MessageSquareWarning:T8,MessageSquareX:Y8,MessagesSquare:I8,Mic:N8,Mic2:Wn,MicOff:q8,MicVocal:Wn,Microchip:_8,Microscope:Z8,Microwave:G8,Milestone:W8,Milk:X8,MilkOff:K8,Minimize:Q8,Minimize2:J8,Minus:tf,MinusCircle:S2,MinusSquare:e0,Monitor:gf,MonitorCheck:ef,MonitorCloud:of,MonitorCog:rf,MonitorDot:sf,MonitorDown:nf,MonitorOff:lf,MonitorPause:af,MonitorPlay:df,MonitorSmartphone:hf,MonitorSpeaker:cf,MonitorStop:pf,MonitorUp:uf,MonitorX:wf,Moon:kf,MoonStar:vf,MoreHorizontal:Q2,MoreVertical:J2,Motorbike:mf,Mountain:ff,MountainSnow:xf,Mouse:Af,MouseOff:Mf,MousePointer:jf,MousePointer2:bf,MousePointer2Off:yf,MousePointerBan:Cf,MousePointerClick:Bf,MousePointerSquareDashed:Nl,Move:Tf,Move3D:Kn,Move3d:Kn,MoveDiagonal:Sf,MoveDiagonal2:Lf,MoveDown:Vf,MoveDownLeft:Hf,MoveDownRight:Rf,MoveHorizontal:zf,MoveLeft:$f,MoveRight:Uf,MoveUp:Pf,MoveUpLeft:Df,MoveUpRight:Ff,MoveVertical:Ef,Music:qf,Music2:Yf,Music3:Of,Music4:If,Navigation:Gf,Navigation2:_f,Navigation2Off:Nf,NavigationOff:Zf,Network:Wf,Newspaper:Kf,Nfc:Xf,NonBinary:Jf,Notebook:o7,NotebookPen:Qf,NotebookTabs:t7,NotebookText:e7,NotepadText:s7,NotepadTextDashed:r7,Nut:n7,NutOff:i7,Octagon:a7,OctagonAlert:Xn,OctagonMinus:l7,OctagonPause:Jn,OctagonX:Qn,Omega:d7,Option:h7,Orbit:c7,Origami:p7,Outdent:oi,Package:f7,Package2:u7,PackageCheck:w7,PackageMinus:g7,PackageOpen:v7,PackagePlus:k7,PackageSearch:m7,PackageX:x7,PaintBucket:M7,PaintRoller:y7,Paintbrush:b7,Paintbrush2:tl,PaintbrushVertical:tl,Palette:C7,Palmtree:L0,Panda:B7,PanelBottom:L7,PanelBottomClose:j7,PanelBottomDashed:el,PanelBottomInactive:el,PanelBottomOpen:A7,PanelLeft:sl,PanelLeftClose:ol,PanelLeftDashed:il,PanelLeftInactive:il,PanelLeftOpen:rl,PanelLeftRightDashed:S7,PanelRight:V7,PanelRightClose:H7,PanelRightDashed:nl,PanelRightInactive:nl,PanelRightOpen:R7,PanelTop:D7,PanelTopBottomDashed:z7,PanelTopClose:$7,PanelTopDashed:ll,PanelTopInactive:ll,PanelTopOpen:U7,PanelsLeftBottom:F7,PanelsLeftRight:G2,PanelsRightBottom:P7,PanelsTopBottom:gl,PanelsTopLeft:al,Paperclip:E7,Parentheses:T7,ParkingCircle:R2,ParkingCircleOff:H2,ParkingMeter:Y7,ParkingSquare:i0,ParkingSquareOff:r0,PartyPopper:O7,Pause:I7,PauseCircle:V2,PauseOctagon:Jn,PawPrint:q7,PcCase:N7,Pen:hl,PenBox:vr,PenLine:dl,PenOff:_7,PenSquare:vr,PenTool:Z7,Pencil:X7,PencilLine:G7,PencilOff:W7,PencilRuler:K7,Pentagon:J7,Percent:Q7,PercentCircle:z2,PercentDiamond:K2,PercentSquare:s0,PersonStanding:tM,PhilippinePeso:eM,Phone:aM,PhoneCall:oM,PhoneForwarded:rM,PhoneIncoming:iM,PhoneMissed:sM,PhoneOff:nM,PhoneOutgoing:lM,Pi:dM,PiSquare:n0,Piano:hM,Pickaxe:cM,PictureInPicture:uM,PictureInPicture2:pM,PieChart:d2,PiggyBank:wM,Pilcrow:kM,PilcrowLeft:gM,PilcrowRight:vM,PilcrowSquare:l0,Pill:xM,PillBottle:mM,Pin:MM,PinOff:fM,Pipette:yM,Pizza:bM,Plane:jM,PlaneLanding:CM,PlaneTakeoff:BM,Play:AM,PlayCircle:$2,PlaySquare:a0,Plug:HM,Plug2:LM,PlugZap:cl,PlugZap2:cl,Plus:SM,PlusCircle:U2,PlusSquare:d0,Pocket:VM,PocketKnife:RM,Podcast:zM,Pointer:UM,PointerOff:$M,Popcorn:DM,Popsicle:FM,PoundSterling:PM,Power:TM,PowerCircle:D2,PowerOff:EM,PowerSquare:h0,Presentation:YM,Printer:qM,PrinterCheck:OM,Projector:NM,Proportions:IM,Puzzle:_M,Pyramid:ZM,QrCode:GM,Quote:WM,Rabbit:KM,Radar:XM,Radiation:JM,Radical:QM,Radio:o9,RadioReceiver:t9,RadioTower:e9,Radius:r9,RailSymbol:i9,Rainbow:s9,Rat:n9,Ratio:l9,Receipt:k9,ReceiptCent:a9,ReceiptEuro:d9,ReceiptIndianRupee:h9,ReceiptJapaneseYen:c9,ReceiptPoundSterling:p9,ReceiptRussianRuble:u9,ReceiptSwissFranc:g9,ReceiptText:w9,ReceiptTurkishLira:v9,RectangleCircle:m9,RectangleEllipsis:pl,RectangleGoggles:x9,RectangleHorizontal:f9,RectangleVertical:M9,Recycle:y9,Redo:B9,Redo2:b9,RedoDot:C9,RefreshCcw:A9,RefreshCcwDot:j9,RefreshCw:S9,RefreshCwOff:L9,Refrigerator:H9,Regex:R9,RemoveFormatting:V9,Repeat:U9,Repeat1:z9,Repeat2:$9,Replace:F9,ReplaceAll:D9,Reply:E9,ReplyAll:P9,Rewind:T9,Ribbon:Y9,Rocket:O9,RockingChair:I9,RollerCoaster:q9,Rose:N9,Rotate3D:ul,Rotate3d:ul,RotateCcw:G9,RotateCcwKey:_9,RotateCcwSquare:Z9,RotateCw:K9,RotateCwSquare:W9,Route:J9,RouteOff:X9,Router:Q9,Rows:wl,Rows2:wl,Rows3:gl,Rows4:ty,Rss:oy,Ruler:ry,RulerDimensionLine:ey,RussianRuble:iy,Sailboat:sy,Salad:ny,Sandwich:ly,Satellite:dy,SatelliteDish:ay,SaudiRiyal:hy,Save:uy,SaveAll:cy,SaveOff:py,Scale:wy,Scale3D:vl,Scale3d:vl,Scaling:gy,Scan:Cy,ScanBarcode:vy,ScanEye:ky,ScanFace:my,ScanHeart:xy,ScanLine:fy,ScanQrCode:My,ScanSearch:yy,ScanText:by,ScatterChart:h2,School:By,School2:R0,Scissors:Ay,ScissorsLineDashed:jy,ScissorsSquare:c0,ScissorsSquareDashedBottom:Dl,Scooter:Ly,ScreenShare:Sy,ScreenShareOff:Hy,Scroll:Vy,ScrollText:Ry,Search:Py,SearchAlert:zy,SearchCheck:$y,SearchCode:Dy,SearchSlash:Uy,SearchX:Fy,Section:Ey,Send:Yy,SendHorizonal:kl,SendHorizontal:kl,SendToBack:Ty,SeparatorHorizontal:Oy,SeparatorVertical:Iy,Server:Zy,ServerCog:qy,ServerCrash:Ny,ServerOff:_y,Settings:Wy,Settings2:Gy,Shapes:Ky,Share:Jy,Share2:Xy,Sheet:Qy,Shell:tb,Shield:hb,ShieldAlert:eb,ShieldBan:ob,ShieldCheck:rb,ShieldClose:xl,ShieldEllipsis:ib,ShieldHalf:sb,ShieldMinus:nb,ShieldOff:ab,ShieldPlus:lb,ShieldQuestion:ml,ShieldQuestionMark:ml,ShieldUser:db,ShieldX:xl,Ship:pb,ShipWheel:cb,Shirt:ub,ShoppingBag:wb,ShoppingBasket:gb,ShoppingCart:vb,Shovel:kb,ShowerHead:mb,Shredder:xb,Shrimp:fb,Shrink:Mb,Shrub:yb,Shuffle:Cb,Sidebar:sl,SidebarClose:ol,SidebarOpen:rl,Sigma:bb,SigmaSquare:p0,Signal:Sb,SignalHigh:Bb,SignalLow:jb,SignalMedium:Ab,SignalZero:Lb,Signature:Hb,Signpost:Vb,SignpostBig:Rb,Siren:zb,SkipBack:$b,SkipForward:Ub,Skull:Db,Slack:Fb,Slash:Pb,SlashSquare:u0,Slice:Tb,Sliders:fl,SlidersHorizontal:Eb,SlidersVertical:fl,Smartphone:Ib,SmartphoneCharging:Yb,SmartphoneNfc:Ob,Smile:Nb,SmilePlus:qb,Snail:Zb,Snowflake:_b,SoapDispenserDroplet:Gb,Sofa:Wb,SolarPanel:Kb,SortAsc:Os,SortDesc:Es,Soup:Xb,Space:Jb,Spade:Qb,Sparkle:tC,Sparkles:Ml,Speaker:eC,Speech:oC,SpellCheck:iC,SpellCheck2:rC,Spline:nC,SplinePointer:sC,Split:lC,SplitSquareHorizontal:w0,SplitSquareVertical:g0,Spool:aC,Spotlight:dC,SprayCan:hC,Sprout:cC,Square:yC,SquareActivity:yl,SquareArrowDown:Bl,SquareArrowDownLeft:bl,SquareArrowDownRight:Cl,SquareArrowLeft:jl,SquareArrowOutDownLeft:Al,SquareArrowOutDownRight:Ll,SquareArrowOutUpLeft:Sl,SquareArrowOutUpRight:Hl,SquareArrowRight:Rl,SquareArrowUp:$l,SquareArrowUpLeft:Vl,SquareArrowUpRight:zl,SquareAsterisk:Ul,SquareBottomDashedScissors:Dl,SquareChartGantt:ii,SquareCheck:Pl,SquareCheckBig:Fl,SquareChevronDown:El,SquareChevronLeft:Tl,SquareChevronRight:Yl,SquareChevronUp:Ol,SquareCode:Il,SquareDashed:_l,SquareDashedBottom:uC,SquareDashedBottomCode:pC,SquareDashedKanban:ql,SquareDashedMousePointer:Nl,SquareDashedTopSolid:wC,SquareDivide:Zl,SquareDot:Gl,SquareEqual:Wl,SquareFunction:Kl,SquareGanttChart:ii,SquareKanban:Xl,SquareLibrary:Jl,SquareM:Ql,SquareMenu:t0,SquareMinus:e0,SquareMousePointer:o0,SquareParking:i0,SquareParkingOff:r0,SquarePause:gC,SquarePen:vr,SquarePercent:s0,SquarePi:n0,SquarePilcrow:l0,SquarePlay:a0,SquarePlus:d0,SquarePower:h0,SquareRadical:vC,SquareRoundCorner:kC,SquareScissors:c0,SquareSigma:p0,SquareSlash:u0,SquareSplitHorizontal:w0,SquareSplitVertical:g0,SquareSquare:mC,SquareStack:xC,SquareStar:fC,SquareStop:MC,SquareTerminal:v0,SquareUser:m0,SquareUserRound:k0,SquareX:x0,SquaresExclude:bC,SquaresIntersect:CC,SquaresSubtract:BC,SquaresUnite:jC,Squircle:LC,SquircleDashed:AC,Squirrel:SC,Stamp:HC,Star:zC,StarHalf:RC,StarOff:VC,Stars:Ml,StepBack:$C,StepForward:UC,Stethoscope:DC,Sticker:PC,StickyNote:FC,Stone:EC,StopCircle:P2,Store:TC,StretchHorizontal:YC,StretchVertical:OC,Strikethrough:IC,Subscript:qC,Subtitles:Xs,Sun:WC,SunDim:NC,SunMedium:_C,SunMoon:ZC,SunSnow:GC,Sunrise:KC,Sunset:XC,Superscript:JC,SwatchBook:QC,SwissFranc:tB,SwitchCamera:eB,Sword:oB,Swords:rB,Syringe:iB,Table:pB,Table2:sB,TableCellsMerge:nB,TableCellsSplit:lB,TableColumnsSplit:aB,TableConfig:Qr,TableOfContents:dB,TableProperties:hB,TableRowsSplit:cB,Tablet:gB,TabletSmartphone:uB,Tablets:wB,Tag:vB,Tags:kB,Tally1:mB,Tally2:xB,Tally3:fB,Tally4:MB,Tally5:yB,Tangent:bB,Target:CB,Telescope:BB,Tent:AB,TentTree:jB,Terminal:LB,TerminalSquare:v0,TestTube:SB,TestTube2:f0,TestTubeDiagonal:f0,TestTubes:HB,Text:si,TextAlignCenter:M0,TextAlignEnd:y0,TextAlignJustify:b0,TextAlignStart:si,TextCursor:VB,TextCursorInput:RB,TextInitial:C0,TextQuote:zB,TextSearch:$B,TextSelect:B0,TextSelection:B0,TextWrap:j0,Theater:UB,Thermometer:PB,ThermometerSnowflake:DB,ThermometerSun:FB,ThumbsDown:EB,ThumbsUp:TB,Ticket:ZB,TicketCheck:YB,TicketMinus:OB,TicketPercent:IB,TicketPlus:qB,TicketSlash:NB,TicketX:_B,Tickets:WB,TicketsPlane:GB,Timer:JB,TimerOff:KB,TimerReset:XB,ToggleLeft:QB,ToggleRight:tj,Toilet:ej,ToolCase:oj,Toolbox:rj,Tornado:ij,Torus:sj,Touchpad:lj,TouchpadOff:nj,TowerControl:aj,ToyBrick:dj,Tractor:hj,TrafficCone:cj,Train:A0,TrainFront:uj,TrainFrontTunnel:pj,TrainTrack:wj,TramFront:A0,Transgender:gj,Trash:kj,Trash2:vj,TreeDeciduous:mj,TreePalm:L0,TreePine:xj,Trees:fj,Trello:Mj,TrendingDown:yj,TrendingUp:Cj,TrendingUpDown:bj,Triangle:Aj,TriangleAlert:S0,TriangleDashed:Bj,TriangleRight:jj,Trophy:Sj,Truck:Hj,TruckElectric:Lj,TurkishLira:Rj,Turntable:Vj,Turtle:zj,Tv:Uj,Tv2:H0,TvMinimal:H0,TvMinimalPlay:$j,Twitch:Dj,Twitter:Fj,Type:Ej,TypeOutline:Pj,Umbrella:Yj,UmbrellaOff:Tj,Underline:Oj,Undo:Nj,Undo2:Ij,UndoDot:qj,UnfoldHorizontal:_j,UnfoldVertical:Gj,Ungroup:Zj,University:R0,Unlink:Kj,Unlink2:Wj,Unlock:Nn,UnlockKeyhole:qn,Unplug:Xj,Upload:Jj,UploadCloud:N2,Usb:Qj,User:cA,User2:F0,UserCheck:tA,UserCheck2:V0,UserCircle:T2,UserCircle2:E2,UserCog:eA,UserCog2:z0,UserLock:oA,UserMinus:rA,UserMinus2:$0,UserPen:iA,UserPlus:sA,UserPlus2:U0,UserRound:F0,UserRoundCheck:V0,UserRoundCog:z0,UserRoundMinus:$0,UserRoundPen:nA,UserRoundPlus:U0,UserRoundSearch:lA,UserRoundX:D0,UserSearch:aA,UserSquare:m0,UserSquare2:k0,UserStar:dA,UserX:hA,UserX2:D0,Users:pA,Users2:P0,UsersRound:P0,Utensils:T0,UtensilsCrossed:E0,UtilityPole:uA,Van:wA,Variable:gA,Vault:vA,VectorSquare:kA,Vegan:xA,VenetianMask:mA,Venus:MA,VenusAndMars:fA,Verified:Ns,Vibrate:bA,VibrateOff:yA,Video:BA,VideoOff:CA,Videotape:AA,View:LA,Voicemail:jA,Volleyball:SA,Volume:$A,Volume1:HA,Volume2:RA,VolumeOff:zA,VolumeX:VA,Vote:UA,Wallet:FA,Wallet2:Y0,WalletCards:DA,WalletMinimal:Y0,Wallpaper:PA,Wand:EA,Wand2:O0,WandSparkles:O0,Warehouse:TA,WashingMachine:YA,Watch:OA,Waves:ZA,WavesArrowDown:qA,WavesArrowUp:IA,WavesLadder:NA,Waypoints:_A,Webcam:GA,Webhook:KA,WebhookOff:WA,Weight:JA,WeightTilde:XA,Wheat:eL,WheatOff:QA,WholeWord:oL,Wifi:dL,WifiCog:tL,WifiHigh:rL,WifiLow:sL,WifiOff:iL,WifiPen:nL,WifiSync:lL,WifiZero:aL,Wind:cL,WindArrowDown:hL,Wine:uL,WineOff:pL,Workflow:wL,Worm:gL,WrapText:j0,Wrench:vL,X:kL,XCircle:Y2,XOctagon:Qn,XSquare:x0,Youtube:mL,Zap:fL,ZapOff:xL,ZoomIn:ML,ZoomOut:yL},Symbol.toStringTag,{value:"Module"}));function CL(o){return o.replace(/([a-z])([A-Z])/g,"$1-$2").replace(/([A-Z])([A-Z][a-z])/g,"$1-$2").replace(/([a-zA-Z])(\d)/g,"$1-$2").replace(/(\d)([a-zA-Z])/g,"$1-$2").toLowerCase()}function BL(){const o={};for(const[t,e]of Object.entries(bL))typeof e=="string"&&e.includes("<svg")&&(o[CL(t)]=e);return o}const xa=BL();Object.keys(xa).toSorted();function jL(){T1(xa)}const fa={prefix:"ik"};let rs={...fa};function AL(o={}){rs={...fa,...o}}function Ma(){return rs}function X(o){return`${rs.prefix}-${o}`}function $(o){const t=o.baseName;return e=>{const i=e||X(t);return customElements.get(i)||customElements.define(i,o),i}}const et="ik";class LL extends Xt{get config(){return Ma()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}createRenderRoot(){return this}}class _ extends Xt{get config(){return Ma()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}}const SL=o=>o.strings===void 0;const qo=(o,t)=>{const e=o._$AN;if(e===void 0)return!1;for(const i of e)i._$AO?.(t,!1),qo(i,t);return!0},Ar=o=>{let t,e;do{if((t=o._$AM)===void 0)break;e=t._$AN,e.delete(o),o=t}while(e?.size===0)},ya=o=>{for(let t;t=o._$AM;o=t){let e=t._$AN;if(e===void 0)t._$AN=e=new Set;else if(e.has(o))break;e.add(o),VL(t)}};function HL(o){this._$AN!==void 0?(Ar(this),this._$AM=o,ya(this)):this._$AM=o}function RL(o,t=!1,e=0){const i=this._$AH,r=this._$AN;if(r!==void 0&&r.size!==0)if(t)if(Array.isArray(i))for(let s=e;s<i.length;s++)qo(i[s],!1),Ar(i[s]);else i!=null&&(qo(i,!1),Ar(i));else qo(this,o)}const VL=o=>{o.type==va.CHILD&&(o._$AP??(o._$AP=RL),o._$AQ??(o._$AQ=HL))};class zL extends ma{constructor(){super(...arguments),this._$AN=void 0}_$AT(t,e,i){super._$AT(t,e,i),ya(this),this.isConnected=t._$AU}_$AO(t,e=!0){t!==this.isConnected&&(this.isConnected=t,t?this.reconnected?.():this.disconnected?.()),e&&(qo(this,t),Ar(this))}setValue(t){if(SL(this._$Ct))this._$Ct._$AI(t,this);else{const e=[...this._$Ct._$AH];e[this._$Ci]=t,this._$Ct._$AI(e,this,0)}}disconnected(){}reconnected(){}}const ni=()=>new $L;class $L{}const li=new WeakMap,ai=ka(class extends zL{render(o){return k}update(o,[t]){const e=t!==this.G;return e&&this.G!==void 0&&this.rt(void 0),(e||this.lt!==this.ct)&&(this.G=t,this.ht=o.options?.host,this.rt(this.ct=o.element)),k}rt(o){if(this.isConnected||(o=void 0),typeof this.G=="function"){const t=this.ht??globalThis;let e=li.get(t);e===void 0&&(e=new WeakMap,li.set(t,e)),e.get(this.G)!==void 0&&this.G.call(this.ht,void 0),e.set(this.G,o),o!==void 0&&this.G.call(this.ht,o)}else this.G.value=o}get lt(){return typeof this.G=="function"?li.get(this.ht??globalThis)?.get(this.G):this.G?.value}disconnected(){this.lt===this.ct&&this.rt(void 0)}reconnected(){this.rt(this.ct)}});function UL(o){const[t,e="center"]=o.split("-");return{side:t,alignment:e||"center"}}function DL(o){return{top:"bottom",bottom:"top",left:"right",right:"left"}[o]}function FL(o,t){return t==="center"?o:`${o}-${t}`}function ba(o,t,e={}){const{placement:i="bottom",offset:r=4,flip:s=!0,padding:n=8,boundary:d="viewport",matchWidth:a=!1}=e,c=o.getBoundingClientRect(),u=t.getBoundingClientRect(),w=a?c.width:u.width,C=u.height,m=d==="viewport"?{top:n,left:n,right:window.innerWidth-n,bottom:window.innerHeight-n}:d.getBoundingClientRect();let{side:S,alignment:z}=UL(i);const U={top:c.top-m.top,bottom:m.bottom-c.bottom,left:c.left-m.left,right:m.right-c.right};if(s){const I=S==="top"||S==="bottom"?C+r:w+r;if(U[S]<I){const x=DL(S);U[x]>=I&&(S=x)}}let M,V;if(S==="top"||S==="bottom"){switch(V=S==="top"?c.top-C-r:c.bottom+r,z){case"start":M=c.left;break;case"end":M=c.right-w;break;default:M=c.left+(c.width-w)/2}M<m.left?M=m.left:M+w>m.right&&(M=m.right-w)}else{switch(M=S==="left"?c.left-w-r:c.right+r,z){case"start":V=c.top;break;case"end":V=c.bottom-C;break;default:V=c.top+(c.height-C)/2}V<m.top?V=m.top:V+C>m.bottom&&(V=m.bottom-C)}return{x:M,y:V,placement:FL(S,z),side:S,alignment:z}}function PL(o,t,e,i={}){const{scroll:r=!0,resize:s=!0,elementResize:n=!0}=i,d=[];if(e(),r){const a=()=>e();window.addEventListener("scroll",a,!0),d.push(()=>window.removeEventListener("scroll",a,!0))}if(s){const a=()=>e();window.addEventListener("resize",a),d.push(()=>window.removeEventListener("resize",a))}if(n&&typeof ResizeObserver<"u"){const a=new ResizeObserver(()=>e());a.observe(o),a.observe(t),d.push(()=>a.disconnect())}return()=>{d.forEach(a=>a())}}function EL(o,t,e={}){o.style.position="fixed",o.style.left=`${t.x}px`,o.style.top=`${t.y}px`,e.matchWidth!==void 0&&(o.style.width=`${e.matchWidth}px`),o.dataset.side=t.side,o.dataset.alignment=t.alignment,o.dataset.placement=t.placement}function TL(){const o=[];let t=null;function e(){if(t?.(),o.length===0){t=null;return}const i=s=>{const n=s.composedPath();for(let d=o.length-1;d>=0;d--){const a=o[d];if(n.includes(a.element))return;let c=!1;for(const u of a.exclude)if(n.includes(u)){c=!0;break}if(c)return;a.onDismiss("click-outside");return}},r=s=>{s.key==="Escape"&&o.length>0&&(s.preventDefault(),s.stopPropagation(),o[o.length-1].onDismiss("escape"))};document.addEventListener("mousedown",i,!0),document.addEventListener("keydown",r,!0),t=()=>{document.removeEventListener("mousedown",i,!0),document.removeEventListener("keydown",r,!0)}}return{add(i,r,s=[]){return o.push({element:i,onDismiss:r,exclude:s}),e(),()=>{const n=o.findIndex(d=>d.element===i);n!==-1&&(o.splice(n,1),e())}},remove(i){const r=o.findIndex(s=>s.element===i);r!==-1&&(o.splice(r,1),e())},clear(){o.length=0,e()},get size(){return o.length}}}const is=TL(),di=["a[href]","button:not([disabled])","input:not([disabled])","select:not([disabled])","textarea:not([disabled])",'[tabindex]:not([tabindex="-1"])','[contenteditable="true"]'].join(",");function ss(o){const t=[],e=o.shadowRoot||o;return e.querySelectorAll(di).forEach(s=>{const n=s;hi(n)&&!ci(n)&&t.push(n)}),e.querySelectorAll("slot").forEach(s=>{s.assignedElements({flatten:!0}).forEach(d=>{const a=d;a.matches?.(di)&&hi(a)&&!ci(a)&&t.push(a),d.querySelectorAll(di).forEach(u=>{const w=u;hi(w)&&!ci(w)&&t.push(w)})})}),t}function hi(o){return o.offsetParent!==null||o.offsetWidth>0||o.offsetHeight>0}function ci(o){return o.hasAttribute("disabled")||o.getAttribute("aria-disabled")==="true"}function pi(o){return ss(o)[0]||null}function YL(o){const t=ss(o);return t[t.length-1]||null}function OL(o,t={}){const{autoFocus:e=!0,restoreFocus:i=!0,initialFocus:r,finalFocus:s,allowOutsideFocus:n=!1}=t;let d=!1,a=null;function c(m){if(!d||m.key!=="Tab")return;const S=ss(o);if(S.length===0)return;const z=S[0],U=S[S.length-1];m.shiftKey?document.activeElement===z&&(m.preventDefault(),U.focus()):document.activeElement===U&&(m.preventDefault(),z.focus())}function u(m){if(!d||n)return;const S=m.relatedTarget;S&&!o.contains(S)&&(m.preventDefault(),pi(o)?.focus())}function w(){let m=null;r&&(typeof r=="string"?m=o.querySelector(r):m=r),m||(m=pi(o)),m?.focus()}function C(){let m=null;s?typeof s=="string"?m=document.querySelector(s):m=s:i&&a&&(m=a),m?.focus()}return{activate(){d||(d=!0,a=document.activeElement,document.addEventListener("keydown",c,!0),o.addEventListener("focusout",u),e&&requestAnimationFrame(()=>{w()}))},deactivate(){d&&(d=!1,document.removeEventListener("keydown",c,!0),o.removeEventListener("focusout",u),C())},get isActive(){return d},focusFirst(){pi(o)?.focus()},focusLast(){YL(o)?.focus()}}}let kr=0,Be=null;function IL(){const o=document.createElement("div");o.style.visibility="hidden",o.style.overflow="scroll",document.body.appendChild(o);const t=document.createElement("div");o.appendChild(t);const e=o.offsetWidth-t.offsetWidth;return o.remove(),e}function qL(){return document.documentElement.scrollHeight>window.innerHeight}function NL(){const o=document.body;if(kr===0&&(Be={originalOverflow:o.style.overflow,originalPaddingRight:o.style.paddingRight,scrollbarWidth:qL()?IL():0},o.style.overflow="hidden",Be.scrollbarWidth>0)){const e=parseInt(getComputedStyle(o).paddingRight,10)||0;o.style.paddingRight=`${e+Be.scrollbarWidth}px`}kr++;let t=!1;return()=>{t||(t=!0,kr--,kr===0&&Be&&(o.style.overflow=Be.originalOverflow,o.style.paddingRight=Be.originalPaddingRight,Be=null))}}var _L=Object.defineProperty,xt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_L(t,e,r),r},Jt;const pt=(Jt=class extends _{constructor(){super(...arguments),this.optionElements=[],this.placeholder="请选择",this.disabled=!1,this.multiple=!1,this.searchable=!1,this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.placement="bottom-start",this.offset=4,this.triggerRef=ni(),this.dropdownRef=ni(),this.defaultSlotRef=ni(),this.cleanupScroll=null,this.cleanupDismissable=null,this.handleSlotChange=()=>{this.collectOptionElements()},this.handleOptionClick=t=>{const{value:e}=t.detail,i=this.optionElements.find(r=>r.value===e);!i||i.disabled||this.selectOptionByValue(e)},this.toggleDropdown=()=>{this.disabled||(this.open?this.closeDropdown():this.openDropdown())},this.updatePosition=()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;const i=ba(t,e,{placement:this.placement,offset:this.offset,flip:!0,padding:8,matchWidth:!0}),r=t.getBoundingClientRect().width;e.style.position="fixed",e.style.left=`${i.x}px`,e.style.top=`${i.y}px`,e.style.width=`${r}px`,e.style.visibility="visible",e.style.pointerEvents="auto",e.dataset.side=i.side,e.dataset.placement=i.placement},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":if(t.preventDefault(),!this.open)this.openDropdown();else if(this.highlightedIndex>=0){const e=this.filteredOptions[this.highlightedIndex];e&&this.selectOptionByValue(e.value)}break;case"ArrowDown":t.preventDefault(),this.open?this.highlightNext():this.openDropdown();break;case"ArrowUp":t.preventDefault(),this.open?this.highlightPrevious():this.openDropdown();break;case"Escape":break;case"Home":this.open&&(t.preventDefault(),this.highlightedIndex=0,this.updateOptionStates());break;case"End":this.open&&(t.preventDefault(),this.highlightedIndex=this.filteredOptions.length-1,this.updateOptionStates());break}},this.handleSearchInput=t=>{const e=t.target;this.searchKeyword=e.value,this.highlightedIndex=0,this.updateOptionStates()}}get filteredOptions(){if(!this.searchable||!this.searchKeyword.trim())return this.optionElements;const t=this.searchKeyword.toLowerCase();return this.optionElements.filter(e=>{const i=e.displayLabel.toLowerCase(),r=e.value.toLowerCase();return i.includes(t)||r.includes(t)})}collectOptionElements(){const t=this.defaultSlotRef.value;if(!t)return;const e=t.assignedElements(),i=X("select-option");this.optionElements=e.filter(s=>s.tagName.toLowerCase()===i);const r=`${et}-option-click`;this.optionElements.forEach(s=>{s.removeEventListener(r,this.handleOptionClick),s.addEventListener(r,this.handleOptionClick)}),this.updateOptionStates()}updateOptionStates(){const t=new Set(this.filteredOptions);this.optionElements.forEach(e=>{const i=this.filteredOptions.indexOf(e);e.highlighted=i===this.highlightedIndex,e.hidden=!t.has(e)})}setupOpen(){requestAnimationFrame(()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;this.updatePosition();const i=r=>{e.contains(r.target)||this.closeDropdown()};window.addEventListener("scroll",i,!0),this.cleanupScroll=()=>{window.removeEventListener("scroll",i,!0)},this.cleanupDismissable=is.add(e,r=>{(r==="escape"||r==="click-outside")&&this.closeDropdown()},[this])})}cleanupOpen(){this.cleanupScroll?.(),this.cleanupScroll=null,this.cleanupDismissable?.(),this.cleanupDismissable=null}openDropdown(){if(!(this.disabled||this.open)&&(this.open=!0,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("open",void 0,{bubbles:!1}),!this.multiple)){const t=this.filteredOptions.findIndex(e=>e.selected);t!==-1&&(this.highlightedIndex=t,this.updateOptionStates())}}closeDropdown(){this.open&&(this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("close",void 0,{bubbles:!1}))}selectOptionByValue(t){const e=this.optionElements.find(i=>i.value===t);!e||e.disabled||(this.multiple?e.selected=!e.selected:(this.optionElements.forEach(i=>{i.selected=i===e}),this.closeDropdown()),this.requestUpdate(),this.emit("change",{value:e.value,selected:e.selected,option:{value:e.value,label:e.displayLabel,disabled:e.disabled,data:e.data}},{bubbles:!1}))}highlightNext(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex+1;for(;e<t.length&&t[e].disabled;)e++;if(e>=t.length)for(e=0;e<t.length&&t[e].disabled;)e++;e<t.length&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex-1;for(;e>=0&&t[e].disabled;)e--;if(e<0)for(e=t.length-1;e>=0&&t[e].disabled;)e--;e>=0&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.filteredOptions[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}renderTrigger(){return p`
       <div
         ${ai(this.triggerRef)}
         part="trigger"
@@ -30019,7 +30019,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       <div part="container">
         ${this.renderTrigger()} ${this.renderDropdown()}
       </div>
-    `}},Jt.baseName="select",Jt.register=$(Jt),Jt);xt([O()],pt.prototype,"optionElements");xt([h({type:String})],pt.prototype,"placeholder");xt([h({type:Boolean,reflect:!0})],pt.prototype,"disabled");xt([h({type:Boolean})],pt.prototype,"multiple");xt([h({type:Boolean})],pt.prototype,"searchable");xt([O()],pt.prototype,"open");xt([O()],pt.prototype,"highlightedIndex");xt([O()],pt.prototype,"searchKeyword");xt([h({type:String})],pt.prototype,"placement");xt([h({type:Number})],pt.prototype,"offset");let NL=pt;var _L=Object.defineProperty,tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_L(t,e,r),r},Qt;const Bo=(Qt=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.highlighted=!1,this.handleClick=t=>{if(this.disabled){t.preventDefault(),t.stopPropagation();return}t.stopPropagation(),this.emit("option-click",{value:this.value,label:this.displayLabel,data:this.data},{bubbles:!1})}}get displayLabel(){return this.label||this.textContent?.trim()||this.value}render(){return p`
+    `}},Jt.baseName="select",Jt.register=$(Jt),Jt);xt([O()],pt.prototype,"optionElements");xt([h({type:String})],pt.prototype,"placeholder");xt([h({type:Boolean,reflect:!0})],pt.prototype,"disabled");xt([h({type:Boolean})],pt.prototype,"multiple");xt([h({type:Boolean})],pt.prototype,"searchable");xt([O()],pt.prototype,"open");xt([O()],pt.prototype,"highlightedIndex");xt([O()],pt.prototype,"searchKeyword");xt([h({type:String})],pt.prototype,"placement");xt([h({type:Number})],pt.prototype,"offset");let ZL=pt;var GL=Object.defineProperty,tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&GL(t,e,r),r},Qt;const Bo=(Qt=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.highlighted=!1,this.handleClick=t=>{if(this.disabled){t.preventDefault(),t.stopPropagation();return}t.stopPropagation(),this.emit("option-click",{value:this.value,label:this.displayLabel,data:this.data},{bubbles:!1})}}get displayLabel(){return this.label||this.textContent?.trim()||this.value}render(){return p`
       <div
         part="option"
         role="option"
@@ -30029,7 +30029,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       >
         <slot></slot>
       </div>
-    `}},Qt.baseName="select-option",Qt.register=$(Qt),Qt);tr([h({type:String})],Bo.prototype,"value");tr([h({type:String})],Bo.prototype,"label");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"disabled");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"selected");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"highlighted");let ZL=Bo;var GL=Object.defineProperty,me=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&GL(t,e,r),r},te;const Ot=(te=class extends _{constructor(){super(...arguments),this.mode="vertical",this.value="",this.collapsible=!1,this.collapsed=!1,this.submenuTrigger="hover",this.highlightedIndex=-1,this.menuItems=[],this.handleSlotChange=()=>{this.collectMenuItems()},this.handleItemClick=t=>{const{value:e,label:i,hasSubmenu:r}=t.detail;r?this.emit("open-change",{value:e,open:!0},{bubbles:!1}):(this.value=e,this.updateItemStates(),this.emit("change",{value:e,label:i},{bubbles:!1}))},this.handleItemHover=t=>{const{value:e}=t.detail,i=this.enabledItems.findIndex(r=>r.value===e);i!==-1&&(this.highlightedIndex=i,this.updateItemStates())},this.handleKeyDown=t=>{const e=this.enabledItems;if(e.length!==0)switch(t.key){case"ArrowDown":case"ArrowRight":t.preventDefault(),this.highlightNext();break;case"ArrowUp":case"ArrowLeft":t.preventDefault(),this.highlightPrevious();break;case"Enter":case" ":t.preventDefault(),this.highlightedIndex>=0&&this.highlightedIndex<e.length&&e[this.highlightedIndex].click();break;case"Home":t.preventDefault(),this.highlightedIndex=0,this.updateItemStates(),this.scrollToHighlighted();break;case"End":t.preventDefault(),this.highlightedIndex=e.length-1,this.updateItemStates(),this.scrollToHighlighted();break;case"Escape":this.highlightedIndex=-1,this.updateItemStates();break;default:t.key.length===1&&!t.ctrlKey&&!t.altKey&&!t.metaKey&&(t.preventDefault(),this.focusItemByChar(t.key));break}},this.handleSubmenuWillOpen=t=>{const e=t.detail.target;this.querySelectorAll("*").forEach(r=>{r.tagName.toLowerCase().endsWith("-menu-sub")&&r!==e&&r.closeImmediately()})}}get enabledItems(){return this.menuItems.filter(t=>!t.disabled)}collectMenuItems(){if(!this.defaultSlot)return;const t=this.defaultSlot.assignedElements({flatten:!0}),e=X("menu-item"),i=a=>{const c=[];return a.forEach(u=>{if(u.tagName.toLowerCase()===e&&c.push(u),u.children.length>0&&c.push(...i(Array.from(u.children))),u.shadowRoot){const w=u.shadowRoot.querySelector("slot");if(w){const C=w.assignedElements({flatten:!0});c.push(...i(C))}}}),c};this.menuItems=i(t);const r=`${et}-item-click`,s=`${et}-item-hover`;this.menuItems.forEach(a=>{a.removeEventListener(r,this.handleItemClick),a.removeEventListener(s,this.handleItemHover),a.addEventListener(r,this.handleItemClick),a.addEventListener(s,this.handleItemHover)});const n=X("menu-sub");Array.from(this.querySelectorAll(n)).forEach(a=>{a.hasAttribute("submenu-trigger")||(a.submenuTrigger=this.submenuTrigger)}),this.updateItemStates()}updateItemStates(){this.menuItems.forEach(t=>{t.selected=t.value===this.value}),this.enabledItems.forEach((t,e)=>{t.highlighted=e===this.highlightedIndex})}highlightNext(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=(this.highlightedIndex+1)%t.length,this.updateItemStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=this.highlightedIndex<=0?t.length-1:this.highlightedIndex-1,this.updateItemStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.enabledItems[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}focusItemByChar(t){const e=this.enabledItems;if(e.length===0)return;const i=t.toLowerCase(),r=this.highlightedIndex+1;for(let s=0;s<e.length;s++){const n=(r+s)%e.length;if(e[n].displayLabel.trim().toLowerCase().startsWith(i)){this.highlightedIndex=n,this.updateItemStates(),this.scrollToHighlighted();break}}}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectMenuItems(),0),this.setAttribute("role","menu"),this.setAttribute("tabindex","0"),this.addEventListener("keydown",this.handleKeyDown),this.addEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("keydown",this.handleKeyDown),this.removeEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}updated(t){super.updated(t),t.has("value")&&this.updateItemStates()}render(){return p`<slot @slotchange=${this.handleSlotChange}></slot>`}},te.baseName="menu",te.register=$(te),te);me([h({type:String,reflect:!0})],Ot.prototype,"mode");me([h({type:String})],Ot.prototype,"value");me([h({type:Boolean})],Ot.prototype,"collapsible");me([h({type:Boolean,reflect:!0})],Ot.prototype,"collapsed");me([h({type:String,attribute:"submenu-trigger"})],Ot.prototype,"submenuTrigger");me([O()],Ot.prototype,"highlightedIndex");me([O()],Ot.prototype,"menuItems");me([Fr("slot:not([name])")],Ot.prototype,"defaultSlot");let WL=Ot;var KL=Object.defineProperty,er=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&KL(t,e,r),r},ee;const jo=(ee=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.highlighted=!1,this.selected=!1,this.hasSubmenu=!1}get displayLabel(){return this.textContent?.trim()||this.value}handleClick(t){if(this.disabled){t.preventDefault(),t.stopPropagation();return}this.emit("item-click",{value:this.value,label:this.displayLabel,hasSubmenu:this.hasSubmenu},{bubbles:!1})}handleMouseEnter(){this.disabled||this.emit("item-hover",{value:this.value,hasSubmenu:this.hasSubmenu},{bubbles:!1})}render(){return p`
+    `}},Qt.baseName="select-option",Qt.register=$(Qt),Qt);tr([h({type:String})],Bo.prototype,"value");tr([h({type:String})],Bo.prototype,"label");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"disabled");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"selected");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"highlighted");let WL=Bo;var KL=Object.defineProperty,me=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&KL(t,e,r),r},te;const Ot=(te=class extends _{constructor(){super(...arguments),this.mode="vertical",this.value="",this.collapsible=!1,this.collapsed=!1,this.submenuTrigger="hover",this.highlightedIndex=-1,this.menuItems=[],this.handleSlotChange=()=>{this.collectMenuItems()},this.handleItemClick=t=>{const{value:e,label:i,hasSubmenu:r}=t.detail;r?this.emit("open-change",{value:e,open:!0},{bubbles:!1}):(this.value=e,this.updateItemStates(),this.emit("change",{value:e,label:i},{bubbles:!1}))},this.handleItemHover=t=>{const{value:e}=t.detail,i=this.enabledItems.findIndex(r=>r.value===e);i!==-1&&(this.highlightedIndex=i,this.updateItemStates())},this.handleKeyDown=t=>{const e=this.enabledItems;if(e.length!==0)switch(t.key){case"ArrowDown":case"ArrowRight":t.preventDefault(),this.highlightNext();break;case"ArrowUp":case"ArrowLeft":t.preventDefault(),this.highlightPrevious();break;case"Enter":case" ":t.preventDefault(),this.highlightedIndex>=0&&this.highlightedIndex<e.length&&e[this.highlightedIndex].click();break;case"Home":t.preventDefault(),this.highlightedIndex=0,this.updateItemStates(),this.scrollToHighlighted();break;case"End":t.preventDefault(),this.highlightedIndex=e.length-1,this.updateItemStates(),this.scrollToHighlighted();break;case"Escape":this.highlightedIndex=-1,this.updateItemStates();break;default:t.key.length===1&&!t.ctrlKey&&!t.altKey&&!t.metaKey&&(t.preventDefault(),this.focusItemByChar(t.key));break}},this.handleSubmenuWillOpen=t=>{const e=t.detail.target;this.querySelectorAll("*").forEach(r=>{r.tagName.toLowerCase().endsWith("-menu-sub")&&r!==e&&r.closeImmediately()})}}get enabledItems(){return this.menuItems.filter(t=>!t.disabled)}collectMenuItems(){if(!this.defaultSlot)return;const t=this.defaultSlot.assignedElements({flatten:!0}),e=X("menu-item"),i=a=>{const c=[];return a.forEach(u=>{if(u.tagName.toLowerCase()===e&&c.push(u),u.children.length>0&&c.push(...i(Array.from(u.children))),u.shadowRoot){const w=u.shadowRoot.querySelector("slot");if(w){const C=w.assignedElements({flatten:!0});c.push(...i(C))}}}),c};this.menuItems=i(t);const r=`${et}-item-click`,s=`${et}-item-hover`;this.menuItems.forEach(a=>{a.removeEventListener(r,this.handleItemClick),a.removeEventListener(s,this.handleItemHover),a.addEventListener(r,this.handleItemClick),a.addEventListener(s,this.handleItemHover)});const n=X("menu-sub");Array.from(this.querySelectorAll(n)).forEach(a=>{a.hasAttribute("submenu-trigger")||(a.submenuTrigger=this.submenuTrigger)}),this.updateItemStates()}updateItemStates(){this.menuItems.forEach(t=>{t.selected=t.value===this.value}),this.enabledItems.forEach((t,e)=>{t.highlighted=e===this.highlightedIndex})}highlightNext(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=(this.highlightedIndex+1)%t.length,this.updateItemStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=this.highlightedIndex<=0?t.length-1:this.highlightedIndex-1,this.updateItemStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.enabledItems[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}focusItemByChar(t){const e=this.enabledItems;if(e.length===0)return;const i=t.toLowerCase(),r=this.highlightedIndex+1;for(let s=0;s<e.length;s++){const n=(r+s)%e.length;if(e[n].displayLabel.trim().toLowerCase().startsWith(i)){this.highlightedIndex=n,this.updateItemStates(),this.scrollToHighlighted();break}}}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectMenuItems(),0),this.setAttribute("role","menu"),this.setAttribute("tabindex","0"),this.addEventListener("keydown",this.handleKeyDown),this.addEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("keydown",this.handleKeyDown),this.removeEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}updated(t){super.updated(t),t.has("value")&&this.updateItemStates()}render(){return p`<slot @slotchange=${this.handleSlotChange}></slot>`}},te.baseName="menu",te.register=$(te),te);me([h({type:String,reflect:!0})],Ot.prototype,"mode");me([h({type:String})],Ot.prototype,"value");me([h({type:Boolean})],Ot.prototype,"collapsible");me([h({type:Boolean,reflect:!0})],Ot.prototype,"collapsed");me([h({type:String,attribute:"submenu-trigger"})],Ot.prototype,"submenuTrigger");me([O()],Ot.prototype,"highlightedIndex");me([O()],Ot.prototype,"menuItems");me([Fr("slot:not([name])")],Ot.prototype,"defaultSlot");let XL=Ot;var JL=Object.defineProperty,er=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&JL(t,e,r),r},ee;const jo=(ee=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.highlighted=!1,this.selected=!1,this.hasSubmenu=!1}get displayLabel(){return this.textContent?.trim()||this.value}handleClick(t){if(this.disabled){t.preventDefault(),t.stopPropagation();return}this.emit("item-click",{value:this.value,label:this.displayLabel,hasSubmenu:this.hasSubmenu},{bubbles:!1})}handleMouseEnter(){this.disabled||this.emit("item-hover",{value:this.value,hasSubmenu:this.hasSubmenu},{bubbles:!1})}render(){return p`
       <div
         part="item${this.highlighted?" item-highlighted":""}${this.selected?" item-selected":""}${this.disabled?" item-disabled":""}"
         role="menuitem"
@@ -30048,16 +30048,16 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
                 `:k}
         </slot>
       </div>
-    `}},ee.baseName="menu-item",ee.register=$(ee),ee);er([h({type:String})],jo.prototype,"value");er([h({type:Boolean,reflect:!0})],jo.prototype,"disabled");er([h({type:Boolean,reflect:!0})],jo.prototype,"highlighted");er([h({type:Boolean,reflect:!0})],jo.prototype,"selected");er([h({type:Boolean,reflect:!0,attribute:"has-submenu"})],jo.prototype,"hasSubmenu");let XL=jo;var JL=Object.defineProperty,QL=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&JL(t,e,r),r},oe;const ya=(oe=class extends _{constructor(){super(...arguments),this.label=""}render(){return p`
+    `}},ee.baseName="menu-item",ee.register=$(ee),ee);er([h({type:String})],jo.prototype,"value");er([h({type:Boolean,reflect:!0})],jo.prototype,"disabled");er([h({type:Boolean,reflect:!0})],jo.prototype,"highlighted");er([h({type:Boolean,reflect:!0})],jo.prototype,"selected");er([h({type:Boolean,reflect:!0,attribute:"has-submenu"})],jo.prototype,"hasSubmenu");let QL=jo;var tS=Object.defineProperty,eS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&tS(t,e,r),r},oe;const Ca=(oe=class extends _{constructor(){super(...arguments),this.label=""}render(){return p`
       <div part="group" role="group" aria-label=${this.label}>
         ${this.label?p`<div part="group-label">${this.label}</div>`:""}
         <div part="group-items">
           <slot></slot>
         </div>
       </div>
-    `}},oe.baseName="menu-group",oe.register=$(oe),oe);QL([h({type:String})],ya.prototype,"label");let tS=ya;const Zo=class Zo extends _{render(){return p`
+    `}},oe.baseName="menu-group",oe.register=$(oe),oe);eS([h({type:String})],Ca.prototype,"label");let oS=Ca;const Zo=class Zo extends _{render(){return p`
       <div part="divider" role="separator"></div>
-    `}};Zo.baseName="menu-divider",Zo.register=$(Zo);let ji=Zo;var eS=Object.defineProperty,ze=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&eS(t,e,r),r},re;const xe=(re=class extends _{constructor(){super(...arguments),this.label="",this.disabled=!1,this.open=!1,this.placement="right",this.highlighted=!1,this.submenuTrigger="hover",this.closeTimer=null,this.handleTriggerClick=t=>{t.stopPropagation(),!this.disabled&&(this.submenuTrigger==="click"?this.open?this.closeSubmenu():this.openSubmenu():this.open||this.openSubmenu())},this.handleMouseEnter=()=>{this.submenuTrigger==="hover"&&this.openSubmenu()},this.handleMouseLeave=()=>{this.submenuTrigger==="hover"&&this.delayCloseSubmenu()},this.handleKeyDown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":case"ArrowRight":t.preventDefault(),t.stopPropagation(),this.openSubmenu();break;case"Escape":case"ArrowLeft":this.open&&(t.preventDefault(),t.stopPropagation(),this.closeSubmenu());break}}}openSubmenu(){this.disabled||(this.clearCloseTimer(),this.dispatchEvent(new CustomEvent("ik-submenu-will-open",{bubbles:!0,composed:!0,detail:{target:this}})),this.open=!0,this.emit("submenu-open",{label:this.label},{bubbles:!1}))}closeSubmenu(){this.open=!1,this.emit("submenu-close",{label:this.label},{bubbles:!1})}closeImmediately(){this.clearCloseTimer(),this.closeSubmenu()}delayCloseSubmenu(){this.closeTimer=window.setTimeout(()=>{this.closeSubmenu()},150)}clearCloseTimer(){this.closeTimer!==null&&(clearTimeout(this.closeTimer),this.closeTimer=null)}disconnectedCallback(){super.disconnectedCallback(),this.clearCloseTimer()}render(){return p`
+    `}};Zo.baseName="menu-divider",Zo.register=$(Zo);let ji=Zo;var rS=Object.defineProperty,ze=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&rS(t,e,r),r},re;const xe=(re=class extends _{constructor(){super(...arguments),this.label="",this.disabled=!1,this.open=!1,this.placement="right",this.highlighted=!1,this.submenuTrigger="hover",this.closeTimer=null,this.handleTriggerClick=t=>{t.stopPropagation(),!this.disabled&&(this.submenuTrigger==="click"?this.open?this.closeSubmenu():this.openSubmenu():this.open||this.openSubmenu())},this.handleMouseEnter=()=>{this.submenuTrigger==="hover"&&this.openSubmenu()},this.handleMouseLeave=()=>{this.submenuTrigger==="hover"&&this.delayCloseSubmenu()},this.handleKeyDown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":case"ArrowRight":t.preventDefault(),t.stopPropagation(),this.openSubmenu();break;case"Escape":case"ArrowLeft":this.open&&(t.preventDefault(),t.stopPropagation(),this.closeSubmenu());break}}}openSubmenu(){this.disabled||(this.clearCloseTimer(),this.dispatchEvent(new CustomEvent("ik-submenu-will-open",{bubbles:!0,composed:!0,detail:{target:this}})),this.open=!0,this.emit("submenu-open",{label:this.label},{bubbles:!1}))}closeSubmenu(){this.open=!1,this.emit("submenu-close",{label:this.label},{bubbles:!1})}closeImmediately(){this.clearCloseTimer(),this.closeSubmenu()}delayCloseSubmenu(){this.closeTimer=window.setTimeout(()=>{this.closeSubmenu()},150)}clearCloseTimer(){this.closeTimer!==null&&(clearTimeout(this.closeTimer),this.closeTimer=null)}disconnectedCallback(){super.disconnectedCallback(),this.clearCloseTimer()}render(){return p`
       <div
         part="submenu${this.open?" submenu-open":""}${this.disabled?" submenu-disabled":""}"
         @mouseenter=${this.handleMouseEnter}
@@ -30088,7 +30088,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
               </div>
             `:k}
       </div>
-    `}},re.baseName="menu-sub",re.register=$(re),re);ze([h({type:String})],xe.prototype,"label");ze([h({type:Boolean,reflect:!0})],xe.prototype,"disabled");ze([h({type:Boolean,reflect:!0})],xe.prototype,"open");ze([h({type:String})],xe.prototype,"placement");ze([h({type:Boolean,reflect:!0})],xe.prototype,"highlighted");ze([h({type:String,attribute:"submenu-trigger"})],xe.prototype,"submenuTrigger");ze([O()],xe.prototype,"closeTimer");let oS=xe;var rS=Object.defineProperty,ft=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&rS(t,e,r),r},ie;const ut=(ie=class extends _{constructor(){super(...arguments),this.orientation="horizontal",this.activationMode="automatic",this.disabled=!1,this.lazy=!0,this.internalValue="",this.initialized=!1,this.tabs=[],this.panels=[],this.focusedIndex=-1,this.handleTabClick=t=>{const{value:e}=t.detail;this.selectTab(e)},this.handleKeyDown=t=>{if(this.disabled)return;const e=this.enabledTabs;if(e.length===0)return;const i=t.target;if(!this.tabs.some(a=>a===i||a.contains(i)))return;const s=this.orientation==="horizontal",n=s?"ArrowRight":"ArrowDown",d=s?"ArrowLeft":"ArrowUp";switch(t.key){case n:t.preventDefault(),this.focusNext();break;case d:t.preventDefault(),this.focusPrevious();break;case"Home":t.preventDefault(),this.focusFirst();break;case"End":t.preventDefault(),this.focusLast();break;case"Enter":case" ":if(t.preventDefault(),this.focusedIndex>=0&&this.activationMode==="manual"){const a=e[this.focusedIndex];a&&this.selectTab(a.value)}break}},this.handleFocusIn=()=>{if(this.focusedIndex<0){const t=this.enabledTabs.findIndex(e=>e.value===this.currentValue);this.focusedIndex=t>=0?t:0,this.updateStates()}},this.handleFocusOut=t=>{const e=t.relatedTarget;this.contains(e)||(this.focusedIndex=-1,this.updateStates())}}get isControlled(){return this.value!==void 0}get currentValue(){return this.isControlled?this.value:this.internalValue}get enabledTabs(){return this.tabs.filter(t=>!t.disabled)}collectElementsByTagName(t,e){const i=[],r=X("tab-panel");return t.forEach(s=>{s.tagName.toLowerCase()===e&&i.push(s),s.children.length>0&&s.tagName.toLowerCase()!==r&&i.push(...this.collectElementsByTagName(Array.from(s.children),e))}),i}collectElements(){const t=Array.from(this.children),e=X("tab"),i=X("tab-panel");this.tabs=this.collectElementsByTagName(t,e),this.panels=this.collectElementsByTagName(t,i),this.tabs.forEach(s=>{s.getAttribute("slot")!=="tab"&&s.setAttribute("slot","tab")}),this.panels.forEach(s=>{s.getAttribute("slot")!=="panel"&&s.setAttribute("slot","panel")});const r=`${et}-tab-click`;this.tabs.forEach(s=>{s.removeEventListener(r,this.handleTabClick),s.addEventListener(r,this.handleTabClick)}),!this.initialized&&!this.isControlled&&(this.internalValue=this.defaultValue||(this.enabledTabs.length>0?this.enabledTabs[0].value:""),this.initialized=!0),this.updateStates()}selectTab(t){if(this.disabled)return;const e=this.tabs.find(r=>r.value===t);if(!e||e.disabled)return;const i=this.currentValue;i!==t&&(this.isControlled||(this.internalValue=t,this.updateStates()),this.emit("change",{value:t,previousValue:i},{bubbles:!1}))}updateStates(){const t=this.currentValue;this.tabs.forEach((e,i)=>{e.selected=e.value===t,e.focused=i===this.focusedIndex}),this.panels.forEach(e=>{e.lazy=this.lazy,e.active=e.value===t})}focusNext(){const t=this.enabledTabs;if(t.length===0)return;const i=((this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue))+1)%t.length;this.focusTab(i)}focusPrevious(){const t=this.enabledTabs;if(t.length===0)return;const e=this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue),i=e<=0?t.length-1:e-1;this.focusTab(i)}focusFirst(){this.focusTab(0)}focusLast(){this.focusTab(this.enabledTabs.length-1)}focusTab(t){const e=this.enabledTabs;if(t<0||t>=e.length)return;this.focusedIndex=t;const i=e[t];this.activationMode==="automatic"&&this.selectTab(i.value),this.updateStates(),i.focus()}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectElements(),0),this.observer=new MutationObserver(()=>{this.collectElements()}),this.observer.observe(this,{childList:!0,subtree:!0})}disconnectedCallback(){super.disconnectedCallback(),this.observer?.disconnect()}updated(t){super.updated(t),(t.has("value")||t.has("lazy"))&&this.updateStates()}render(){return p`
+    `}},re.baseName="menu-sub",re.register=$(re),re);ze([h({type:String})],xe.prototype,"label");ze([h({type:Boolean,reflect:!0})],xe.prototype,"disabled");ze([h({type:Boolean,reflect:!0})],xe.prototype,"open");ze([h({type:String})],xe.prototype,"placement");ze([h({type:Boolean,reflect:!0})],xe.prototype,"highlighted");ze([h({type:String,attribute:"submenu-trigger"})],xe.prototype,"submenuTrigger");ze([O()],xe.prototype,"closeTimer");let iS=xe;var sS=Object.defineProperty,ft=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sS(t,e,r),r},ie;const ut=(ie=class extends _{constructor(){super(...arguments),this.orientation="horizontal",this.activationMode="automatic",this.disabled=!1,this.lazy=!0,this.internalValue="",this.initialized=!1,this.tabs=[],this.panels=[],this.focusedIndex=-1,this.handleTabClick=t=>{const{value:e}=t.detail;this.selectTab(e)},this.handleKeyDown=t=>{if(this.disabled)return;const e=this.enabledTabs;if(e.length===0)return;const i=t.target;if(!this.tabs.some(a=>a===i||a.contains(i)))return;const s=this.orientation==="horizontal",n=s?"ArrowRight":"ArrowDown",d=s?"ArrowLeft":"ArrowUp";switch(t.key){case n:t.preventDefault(),this.focusNext();break;case d:t.preventDefault(),this.focusPrevious();break;case"Home":t.preventDefault(),this.focusFirst();break;case"End":t.preventDefault(),this.focusLast();break;case"Enter":case" ":if(t.preventDefault(),this.focusedIndex>=0&&this.activationMode==="manual"){const a=e[this.focusedIndex];a&&this.selectTab(a.value)}break}},this.handleFocusIn=()=>{if(this.focusedIndex<0){const t=this.enabledTabs.findIndex(e=>e.value===this.currentValue);this.focusedIndex=t>=0?t:0,this.updateStates()}},this.handleFocusOut=t=>{const e=t.relatedTarget;this.contains(e)||(this.focusedIndex=-1,this.updateStates())}}get isControlled(){return this.value!==void 0}get currentValue(){return this.isControlled?this.value:this.internalValue}get enabledTabs(){return this.tabs.filter(t=>!t.disabled)}collectElementsByTagName(t,e){const i=[],r=X("tab-panel");return t.forEach(s=>{s.tagName.toLowerCase()===e&&i.push(s),s.children.length>0&&s.tagName.toLowerCase()!==r&&i.push(...this.collectElementsByTagName(Array.from(s.children),e))}),i}collectElements(){const t=Array.from(this.children),e=X("tab"),i=X("tab-panel");this.tabs=this.collectElementsByTagName(t,e),this.panels=this.collectElementsByTagName(t,i),this.tabs.forEach(s=>{s.getAttribute("slot")!=="tab"&&s.setAttribute("slot","tab")}),this.panels.forEach(s=>{s.getAttribute("slot")!=="panel"&&s.setAttribute("slot","panel")});const r=`${et}-tab-click`;this.tabs.forEach(s=>{s.removeEventListener(r,this.handleTabClick),s.addEventListener(r,this.handleTabClick)}),!this.initialized&&!this.isControlled&&(this.internalValue=this.defaultValue||(this.enabledTabs.length>0?this.enabledTabs[0].value:""),this.initialized=!0),this.updateStates()}selectTab(t){if(this.disabled)return;const e=this.tabs.find(r=>r.value===t);if(!e||e.disabled)return;const i=this.currentValue;i!==t&&(this.isControlled||(this.internalValue=t,this.updateStates()),this.emit("change",{value:t,previousValue:i},{bubbles:!1}))}updateStates(){const t=this.currentValue;this.tabs.forEach((e,i)=>{e.selected=e.value===t,e.focused=i===this.focusedIndex}),this.panels.forEach(e=>{e.lazy=this.lazy,e.active=e.value===t})}focusNext(){const t=this.enabledTabs;if(t.length===0)return;const i=((this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue))+1)%t.length;this.focusTab(i)}focusPrevious(){const t=this.enabledTabs;if(t.length===0)return;const e=this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue),i=e<=0?t.length-1:e-1;this.focusTab(i)}focusFirst(){this.focusTab(0)}focusLast(){this.focusTab(this.enabledTabs.length-1)}focusTab(t){const e=this.enabledTabs;if(t<0||t>=e.length)return;this.focusedIndex=t;const i=e[t];this.activationMode==="automatic"&&this.selectTab(i.value),this.updateStates(),i.focus()}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectElements(),0),this.observer=new MutationObserver(()=>{this.collectElements()}),this.observer.observe(this,{childList:!0,subtree:!0})}disconnectedCallback(){super.disconnectedCallback(),this.observer?.disconnect()}updated(t){super.updated(t),(t.has("value")||t.has("lazy"))&&this.updateStates()}render(){return p`
       <div
         part="tabs tabs-${this.orientation}"
         @keydown=${this.handleKeyDown}
@@ -30102,7 +30102,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           <slot name="panel"></slot>
         </div>
       </div>
-    `}},ie.baseName="tabs",ie.register=$(ie),ie);ft([h({type:String,reflect:!0})],ut.prototype,"value");ft([h({type:String,attribute:"default-value"})],ut.prototype,"defaultValue");ft([h({type:String,reflect:!0})],ut.prototype,"orientation");ft([h({type:String})],ut.prototype,"activationMode");ft([h({type:Boolean,reflect:!0})],ut.prototype,"disabled");ft([h({type:Boolean})],ut.prototype,"lazy");ft([O()],ut.prototype,"internalValue");ft([O()],ut.prototype,"tabs");ft([O()],ut.prototype,"panels");ft([O()],ut.prototype,"focusedIndex");let iS=ut;var sS=Object.defineProperty,Pr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sS(t,e,r),r},se;const or=(se=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.focused=!1,this.handleClick=()=>{this.disabled||this.emit("tab-click",{value:this.value},{bubbles:!1})},this.handleKeyDown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.emit("tab-click",{value:this.value},{bubbles:!1}))}}render(){return p`
+    `}},ie.baseName="tabs",ie.register=$(ie),ie);ft([h({type:String,reflect:!0})],ut.prototype,"value");ft([h({type:String,attribute:"default-value"})],ut.prototype,"defaultValue");ft([h({type:String,reflect:!0})],ut.prototype,"orientation");ft([h({type:String})],ut.prototype,"activationMode");ft([h({type:Boolean,reflect:!0})],ut.prototype,"disabled");ft([h({type:Boolean})],ut.prototype,"lazy");ft([O()],ut.prototype,"internalValue");ft([O()],ut.prototype,"tabs");ft([O()],ut.prototype,"panels");ft([O()],ut.prototype,"focusedIndex");let nS=ut;var lS=Object.defineProperty,Pr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&lS(t,e,r),r},se;const or=(se=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.focused=!1,this.handleClick=()=>{this.disabled||this.emit("tab-click",{value:this.value},{bubbles:!1})},this.handleKeyDown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.emit("tab-click",{value:this.value},{bubbles:!1}))}}render(){return p`
       <button
         part="tab${this.selected?" tab-selected":""}${this.disabled?" tab-disabled":""}"
         role="tab"
@@ -30115,7 +30115,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       >
         <slot></slot>
       </button>
-    `}},se.baseName="tab",se.register=$(se),se);Pr([h({type:String,reflect:!0})],or.prototype,"value");Pr([h({type:Boolean,reflect:!0})],or.prototype,"disabled");Pr([h({type:Boolean,reflect:!0})],or.prototype,"selected");Pr([h({type:Boolean,reflect:!0})],or.prototype,"focused");let nS=or;var lS=Object.defineProperty,ns=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&lS(t,e,r),r},ne;const Er=(ne=class extends _{constructor(){super(...arguments),this.value="",this.active=!1,this.lazy=!0}render(){return this.lazy&&!this.active?k:p`
+    `}},se.baseName="tab",se.register=$(se),se);Pr([h({type:String,reflect:!0})],or.prototype,"value");Pr([h({type:Boolean,reflect:!0})],or.prototype,"disabled");Pr([h({type:Boolean,reflect:!0})],or.prototype,"selected");Pr([h({type:Boolean,reflect:!0})],or.prototype,"focused");let aS=or;var dS=Object.defineProperty,ns=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&dS(t,e,r),r},ne;const Er=(ne=class extends _{constructor(){super(...arguments),this.value="",this.active=!1,this.lazy=!0}render(){return this.lazy&&!this.active?k:p`
       <div
         part="tab-panel${this.active?" tab-panel-active":""}"
         role="tabpanel"
@@ -30124,7 +30124,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       >
         <slot></slot>
       </div>
-    `}},ne.baseName="tab-panel",ne.register=$(ne),ne);ns([h({type:String,reflect:!0})],Er.prototype,"value");ns([h({type:Boolean,reflect:!0})],Er.prototype,"active");ns([h({type:Boolean})],Er.prototype,"lazy");let aS=Er;var dS=Object.defineProperty,$e=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&dS(t,e,r),r},le;const fe=(le=class extends _{constructor(){super(...arguments),this.open=!1,this.type="info",this.title="",this.description="",this.closable=!0,this.closing=!1,this.preview=!1}handleCloseClick(){this.preview||this.emit("close",{},{bubbles:!1})}renderIcon(){return p`
+    `}},ne.baseName="tab-panel",ne.register=$(ne),ne);ns([h({type:String,reflect:!0})],Er.prototype,"value");ns([h({type:Boolean,reflect:!0})],Er.prototype,"active");ns([h({type:Boolean})],Er.prototype,"lazy");let hS=Er;var cS=Object.defineProperty,$e=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&cS(t,e,r),r},le;const fe=(le=class extends _{constructor(){super(...arguments),this.open=!1,this.type="info",this.title="",this.description="",this.closable=!0,this.closing=!1,this.preview=!1}handleCloseClick(){this.preview||this.emit("close",{},{bubbles:!1})}renderIcon(){return p`
       <slot name="icon"></slot>
     `}renderCloseIcon(){return p`
       <slot name="close-icon"></slot>
@@ -30148,7 +30148,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
               </button>
             `:k}
       </div>
-    `}},le.baseName="toast",le.register=$(le),le);$e([h({type:Boolean,reflect:!0})],fe.prototype,"open");$e([h({type:String,reflect:!0})],fe.prototype,"type");$e([h({type:String})],fe.prototype,"title");$e([h({type:String})],fe.prototype,"description");$e([h({type:Boolean})],fe.prototype,"closable");$e([h({type:Boolean,reflect:!0})],fe.prototype,"closing");$e([h({type:Boolean,reflect:!0})],fe.prototype,"preview");let hS=fe;class cS{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}show(t){const e=this.getRegion(t.target);if(e)return e.addToast(t)}close(t,e){this.getRegion(e)?.removeToast(t)}closeAll(t){if(t)this.getRegion(t)?.clearAll();else for(const e of this.regions.values())e.clearAll()}}const I0=new cS;var pS=Object.defineProperty,Tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&pS(t,e,r),r},Ct;const rr=(Ct=class extends _{constructor(){super(...arguments),this.name="default",this.max=5,this.autoHideDuration=3e3,this.position="top-center",this.toasts=[],this.toastIdCounter=0,this.positionContainers=new Map}connectedCallback(){super.connectedCallback(),I0.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),I0.unregisterRegion(this),this.clearAll();for(const t of this.positionContainers.values())t.remove();this.positionContainers.clear()}getPositionContainer(t){if(this.positionContainers.has(t))return this.positionContainers.get(t);const e=document.createElement("div");return e.setAttribute("data-toast-position",t),e.style.cssText=this.getPositionStyles(t),document.body.appendChild(e),this.positionContainers.set(t,e),e}getPositionStyles(t){const e=`
+    `}},le.baseName="toast",le.register=$(le),le);$e([h({type:Boolean,reflect:!0})],fe.prototype,"open");$e([h({type:String,reflect:!0})],fe.prototype,"type");$e([h({type:String})],fe.prototype,"title");$e([h({type:String})],fe.prototype,"description");$e([h({type:Boolean})],fe.prototype,"closable");$e([h({type:Boolean,reflect:!0})],fe.prototype,"closing");$e([h({type:Boolean,reflect:!0})],fe.prototype,"preview");let pS=fe;class uS{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}show(t){const e=this.getRegion(t.target);if(e)return e.addToast(t)}close(t,e){this.getRegion(e)?.removeToast(t)}closeAll(t){if(t)this.getRegion(t)?.clearAll();else for(const e of this.regions.values())e.clearAll()}}const I0=new uS;var wS=Object.defineProperty,Tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&wS(t,e,r),r},Ct;const rr=(Ct=class extends _{constructor(){super(...arguments),this.name="default",this.max=5,this.autoHideDuration=3e3,this.position="top-center",this.toasts=[],this.toastIdCounter=0,this.positionContainers=new Map}connectedCallback(){super.connectedCallback(),I0.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),I0.unregisterRegion(this),this.clearAll();for(const t of this.positionContainers.values())t.remove();this.positionContainers.clear()}getPositionContainer(t){if(this.positionContainers.has(t))return this.positionContainers.get(t);const e=document.createElement("div");return e.setAttribute("data-toast-position",t),e.style.cssText=this.getPositionStyles(t),document.body.appendChild(e),this.positionContainers.set(t,e),e}getPositionStyles(t){const e=`
       position: fixed;
       z-index: 9999;
       display: flex;
@@ -30162,7 +30162,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     :host {
       display: contents;
     }
-  `,Ct);Tr([h({type:String})],rr.prototype,"name");Tr([h({type:Number})],rr.prototype,"max");Tr([h({type:Number,attribute:"auto-hide-duration"})],rr.prototype,"autoHideDuration");Tr([h({type:String})],rr.prototype,"position");let uS=rr;var wS=Object.defineProperty,ba=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&wS(t,e,r),r},ae;const ls=(ae=class extends _{constructor(){super(...arguments),this.dialogTitle="",this.closable=!0,this.handleCloseClick=()=>{this.emit("close")}}renderCloseIcon(){return p`
+  `,Ct);Tr([h({type:String})],rr.prototype,"name");Tr([h({type:Number})],rr.prototype,"max");Tr([h({type:Number,attribute:"auto-hide-duration"})],rr.prototype,"autoHideDuration");Tr([h({type:String})],rr.prototype,"position");let gS=rr;var vS=Object.defineProperty,Ba=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vS(t,e,r),r},ae;const ls=(ae=class extends _{constructor(){super(...arguments),this.dialogTitle="",this.closable=!0,this.handleCloseClick=()=>{this.emit("close")}}renderCloseIcon(){return p`
       <slot name="close-icon"></slot>
     `}render(){return p`
       ${this.dialogTitle||this.closable?p`
@@ -30191,15 +30191,15 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       <div part="footer">
         <slot name="footer"></slot>
       </div>
-    `}},ae.baseName="dialog",ae.register=$(ae),ae);ba([h({type:String,attribute:"dialog-title"})],ls.prototype,"dialogTitle");ba([h({type:Boolean})],ls.prototype,"closable");let gS=ls;var vS=Object.defineProperty,Yr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vS(t,e,r),r},de;const ir=(de=class extends _{constructor(){super(...arguments),this.open=!1,this.closeOnBackdrop=!0,this.closeOnEscape=!0,this.enableScrollLock=!0,this.focusTrap=null,this.unlockScrollFn=null,this.cleanupDismissable=null,this.handleBackdropClick=t=>{t.composedPath()[0]===this&&this.closeOnBackdrop&&this.cancel()}}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this.handleBackdropClick)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this.handleBackdropClick),this.cleanupOpen()}updated(t){t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}show(){this.open||(this.open=!0)}close(){this.open&&(this.open=!1)}cancel(){!this.emit("cancel",{},{cancelable:!0})||this.close()}setupOpen(){requestAnimationFrame(()=>{this.enableScrollLock&&(this.unlockScrollFn=IL()),this.focusTrap=TL(this,{autoFocus:!0,restoreFocus:!0}),this.focusTrap.activate(),this.closeOnEscape&&(this.cleanupDismissable=is.add(this,t=>{t==="escape"&&this.cancel()},[])),this.emit("open")})}cleanupOpen(){this.focusTrap?.deactivate(),this.focusTrap=null,this.unlockScrollFn?.(),this.unlockScrollFn=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close")}render(){return p`
+    `}},ae.baseName="dialog",ae.register=$(ae),ae);Ba([h({type:String,attribute:"dialog-title"})],ls.prototype,"dialogTitle");Ba([h({type:Boolean})],ls.prototype,"closable");let kS=ls;var mS=Object.defineProperty,Yr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&mS(t,e,r),r},de;const ir=(de=class extends _{constructor(){super(...arguments),this.open=!1,this.closeOnBackdrop=!0,this.closeOnEscape=!0,this.enableScrollLock=!0,this.focusTrap=null,this.unlockScrollFn=null,this.cleanupDismissable=null,this.handleBackdropClick=t=>{t.composedPath()[0]===this&&this.closeOnBackdrop&&this.cancel()}}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this.handleBackdropClick)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this.handleBackdropClick),this.cleanupOpen()}updated(t){t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}show(){this.open||(this.open=!0)}close(){this.open&&(this.open=!1)}cancel(){!this.emit("cancel",{},{cancelable:!0})||this.close()}setupOpen(){requestAnimationFrame(()=>{this.enableScrollLock&&(this.unlockScrollFn=NL()),this.focusTrap=OL(this,{autoFocus:!0,restoreFocus:!0}),this.focusTrap.activate(),this.closeOnEscape&&(this.cleanupDismissable=is.add(this,t=>{t==="escape"&&this.cancel()},[])),this.emit("open")})}cleanupOpen(){this.focusTrap?.deactivate(),this.focusTrap=null,this.unlockScrollFn?.(),this.unlockScrollFn=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close")}render(){return p`
       <slot></slot>
-    `}},de.baseName="dialog-backdrop",de.register=$(de),de);Yr([h({type:Boolean,reflect:!0})],ir.prototype,"open");Yr([h({type:Boolean,attribute:"close-on-backdrop"})],ir.prototype,"closeOnBackdrop");Yr([h({type:Boolean,attribute:"close-on-escape"})],ir.prototype,"closeOnEscape");Yr([h({type:Boolean,attribute:"lock-scroll"})],ir.prototype,"enableScrollLock");let kS=ir;class mS{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}open(t){const e=this.getRegion(t.target);if(e)return e.openDialog(t)}async confirm(t){const e=this.getRegion(t.target);return e?e.showConfirm(t):!1}async alert(t){const e=this.getRegion(t.target);if(e)return e.showAlert(t)}close(t,e){this.getRegion(e)?.closeDialog(t)}closeAll(t){if(t)this.getRegion(t)?.closeAllDialogs();else for(const e of this.regions.values())e.closeAllDialogs()}}const Ae=new mS;function xS(){return{open:o=>Ae.open(o),confirm:o=>Ae.confirm(o),alert:o=>Ae.alert(o),close:(o,t)=>Ae.close(o,t),closeAll:o=>Ae.closeAll(o)}}const fS=xS();var MS=Object.defineProperty,yS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&MS(t,e,r),r},Bt;const Ca=(Bt=class extends _{constructor(){super(...arguments),this.name="default",this.dialogs=[],this.dialogIdCounter=0}connectedCallback(){super.connectedCallback(),Ae.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),Ae.unregisterRegion(this),this.closeAllDialogs()}getDialogBackdropTagName(){return X("dialog-backdrop")}getDialogTagName(){return X("dialog")}getButtonTagName(){return X("button")}createDialogPair(t,e){const i=this.getDialogBackdropTagName(),r=this.getDialogTagName(),s=document.createElement(i);s.setAttribute("data-dialog-id",t),e.closeOnBackdrop!==void 0&&s.setAttribute("close-on-backdrop",e.closeOnBackdrop.toString()),e.closeOnEscape!==void 0&&s.setAttribute("close-on-escape",e.closeOnEscape.toString());const n=document.createElement(r);if(e.title&&n.setAttribute("dialog-title",e.title),e.closable!==void 0&&(n.closable=e.closable),e.class&&(n.className=e.class),e.content){const d=document.createElement("div");d.innerHTML=e.content,n.appendChild(d)}return s.appendChild(n),{backdrop:s,dialog:n}}openDialog(t){const e=`dialog-${++this.dialogIdCounter}`;let i,r;const s=new Promise((c,u)=>{i=c,r=u}),{backdrop:n,dialog:d}=this.createDialogPair(e,t);n.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),n.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e,void 0,!0)}),d.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),document.body.appendChild(n),n.setAttribute("open","");const a={id:e,backdrop:n,dialog:d,resolve:i,reject:r};return this.dialogs.push(a),{id:e,close:c=>this.closeDialog(e,c),result:s}}async showConfirm(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1,closeOnBackdrop:t.closeOnBackdrop,closeOnEscape:t.closeOnEscape}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","ghost"),a.textContent=t.cancelText||"取消",a.addEventListener("click",()=>{this.closeDialog(e),r(!1)});const c=document.createElement(i);c.setAttribute("variant",t.confirmVariant||"primary"),c.textContent=t.confirmText||"确认",c.addEventListener("click",()=>{this.closeDialog(e),r(!0)}),d.appendChild(a),d.appendChild(c),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r(!1)}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}async showAlert(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","primary"),a.textContent=t.confirmText||"确定",a.addEventListener("click",()=>{this.closeDialog(e),r()}),d.appendChild(a),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r()}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}closeDialog(t,e,i=!1){const r=this.dialogs.findIndex(d=>d.id===t);if(r===-1)return;const s=this.dialogs[r];this.dialogs.splice(r,1),i?s.reject(new Error("Dialog cancelled")):s.resolve(e);const{backdrop:n}=s;n.removeAttribute("open"),setTimeout(()=>{n.remove()},200)}closeAllDialogs(){for(const t of this.dialogs)t.reject(new Error("Dialog cancelled")),t.backdrop.remove();this.dialogs=[]}render(){return p`
+    `}},de.baseName="dialog-backdrop",de.register=$(de),de);Yr([h({type:Boolean,reflect:!0})],ir.prototype,"open");Yr([h({type:Boolean,attribute:"close-on-backdrop"})],ir.prototype,"closeOnBackdrop");Yr([h({type:Boolean,attribute:"close-on-escape"})],ir.prototype,"closeOnEscape");Yr([h({type:Boolean,attribute:"lock-scroll"})],ir.prototype,"enableScrollLock");let xS=ir;class fS{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}open(t){const e=this.getRegion(t.target);if(e)return e.openDialog(t)}async confirm(t){const e=this.getRegion(t.target);return e?e.showConfirm(t):!1}async alert(t){const e=this.getRegion(t.target);if(e)return e.showAlert(t)}close(t,e){this.getRegion(e)?.closeDialog(t)}closeAll(t){if(t)this.getRegion(t)?.closeAllDialogs();else for(const e of this.regions.values())e.closeAllDialogs()}}const Ae=new fS;function MS(){return{open:o=>Ae.open(o),confirm:o=>Ae.confirm(o),alert:o=>Ae.alert(o),close:(o,t)=>Ae.close(o,t),closeAll:o=>Ae.closeAll(o)}}const yS=MS();var bS=Object.defineProperty,CS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&bS(t,e,r),r},Bt;const ja=(Bt=class extends _{constructor(){super(...arguments),this.name="default",this.dialogs=[],this.dialogIdCounter=0}connectedCallback(){super.connectedCallback(),Ae.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),Ae.unregisterRegion(this),this.closeAllDialogs()}getDialogBackdropTagName(){return X("dialog-backdrop")}getDialogTagName(){return X("dialog")}getButtonTagName(){return X("button")}createDialogPair(t,e){const i=this.getDialogBackdropTagName(),r=this.getDialogTagName(),s=document.createElement(i);s.setAttribute("data-dialog-id",t),e.closeOnBackdrop!==void 0&&s.setAttribute("close-on-backdrop",e.closeOnBackdrop.toString()),e.closeOnEscape!==void 0&&s.setAttribute("close-on-escape",e.closeOnEscape.toString());const n=document.createElement(r);if(e.title&&n.setAttribute("dialog-title",e.title),e.closable!==void 0&&(n.closable=e.closable),e.class&&(n.className=e.class),e.content){const d=document.createElement("div");d.innerHTML=e.content,n.appendChild(d)}return s.appendChild(n),{backdrop:s,dialog:n}}openDialog(t){const e=`dialog-${++this.dialogIdCounter}`;let i,r;const s=new Promise((c,u)=>{i=c,r=u}),{backdrop:n,dialog:d}=this.createDialogPair(e,t);n.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),n.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e,void 0,!0)}),d.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),document.body.appendChild(n),n.setAttribute("open","");const a={id:e,backdrop:n,dialog:d,resolve:i,reject:r};return this.dialogs.push(a),{id:e,close:c=>this.closeDialog(e,c),result:s}}async showConfirm(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1,closeOnBackdrop:t.closeOnBackdrop,closeOnEscape:t.closeOnEscape}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","ghost"),a.textContent=t.cancelText||"取消",a.addEventListener("click",()=>{this.closeDialog(e),r(!1)});const c=document.createElement(i);c.setAttribute("variant",t.confirmVariant||"primary"),c.textContent=t.confirmText||"确认",c.addEventListener("click",()=>{this.closeDialog(e),r(!0)}),d.appendChild(a),d.appendChild(c),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r(!1)}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}async showAlert(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","primary"),a.textContent=t.confirmText||"确定",a.addEventListener("click",()=>{this.closeDialog(e),r()}),d.appendChild(a),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r()}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}closeDialog(t,e,i=!1){const r=this.dialogs.findIndex(d=>d.id===t);if(r===-1)return;const s=this.dialogs[r];this.dialogs.splice(r,1),i?s.reject(new Error("Dialog cancelled")):s.resolve(e);const{backdrop:n}=s;n.removeAttribute("open"),setTimeout(()=>{n.remove()},200)}closeAllDialogs(){for(const t of this.dialogs)t.reject(new Error("Dialog cancelled")),t.backdrop.remove();this.dialogs=[]}render(){return p`
       <slot></slot>
     `}},Bt.baseName="dialog-region",Bt.register=$(Bt),Bt.styles=j`
     :host {
       display: contents;
     }
-  `,Bt);yS([h({type:String})],Ca.prototype,"name");let bS=Ca;var CS=Object.defineProperty,ot=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&CS(t,e,r),r},he;const J=(he=class extends _{constructor(){super(...arguments),this.open=!1,this.trigger="click",this.placement="bottom",this.offset=8,this.flip=!0,this.padding=8,this.openDelay=100,this.closeDelay=200,this.closeOnClickOutside=!0,this.closeOnEscape=!0,this.disabled=!1,this.position=null,this.cleanupAutoUpdate=null,this.cleanupDismissable=null,this.openTimer=null,this.closeTimer=null,this.updatePosition=()=>{if(!this.triggerRef||!this.contentRef)return;const t=Ma(this.triggerRef,this.contentRef,{placement:this.placement,offset:this.offset,flip:this.flip,padding:this.padding});this.position=t,FL(this.contentRef,t)},this.handleTriggerClick=()=>{this.disabled||this.trigger!=="click"||this.toggle()},this.handleTriggerKeydown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.trigger==="click"&&this.toggle())},this.handleTriggerMouseEnter=()=>{this.disabled||this.trigger!=="hover"||this.delayedShow()},this.handleTriggerMouseLeave=()=>{this.disabled||this.trigger!=="hover"||this.delayedHide()},this.handleContentMouseEnter=()=>{this.trigger==="hover"&&this.clearCloseTimer()},this.handleContentMouseLeave=()=>{this.trigger==="hover"&&this.delayedHide()},this.handleTriggerFocus=()=>{this.disabled||this.trigger!=="hover"||(this.clearTimers(),this.show())},this.handleTriggerBlur=t=>{if(this.trigger!=="hover")return;const e=t.relatedTarget;e&&this.contentRef?.contains(e)||this.delayedHide()}}show(){this.disabled||this.open||(this.clearTimers(),this.open=!0)}hide(){this.open&&(this.clearTimers(),this.open=!1)}toggle(){this.open?this.hide():this.show()}delayedShow(){this.clearCloseTimer(),!this.open&&(this.openTimer=setTimeout(()=>{this.show()},this.openDelay))}delayedHide(){this.clearOpenTimer(),this.open&&(this.closeTimer=setTimeout(()=>{this.hide()},this.closeDelay))}clearTimers(){this.clearOpenTimer(),this.clearCloseTimer()}clearOpenTimer(){this.openTimer&&(clearTimeout(this.openTimer),this.openTimer=null)}clearCloseTimer(){this.closeTimer&&(clearTimeout(this.closeTimer),this.closeTimer=null)}setupOpen(){requestAnimationFrame(()=>{this.contentRef&&(this.cleanupAutoUpdate=UL(this.triggerRef,this.contentRef,this.updatePosition),this.trigger!=="manual"&&(this.cleanupDismissable=is.add(this.contentRef,t=>{this.trigger==="hover"&&t==="click-outside"||t==="escape"&&!this.closeOnEscape||t==="click-outside"&&!this.closeOnClickOutside||this.hide()},[this.triggerRef])),this.emit("open",void 0,{bubbles:!1}))})}cleanupOpen(){this.cleanupAutoUpdate?.(),this.cleanupAutoUpdate=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close",void 0,{bubbles:!1})}updated(t){super.updated(t),t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupOpen(),this.clearTimers()}renderTrigger(){return p`
+  `,Bt);CS([h({type:String})],ja.prototype,"name");let BS=ja;var jS=Object.defineProperty,ot=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&jS(t,e,r),r},he;const J=(he=class extends _{constructor(){super(...arguments),this.open=!1,this.trigger="click",this.placement="bottom",this.offset=8,this.flip=!0,this.padding=8,this.openDelay=100,this.closeDelay=200,this.closeOnClickOutside=!0,this.closeOnEscape=!0,this.disabled=!1,this.position=null,this.cleanupAutoUpdate=null,this.cleanupDismissable=null,this.openTimer=null,this.closeTimer=null,this.updatePosition=()=>{if(!this.triggerRef||!this.contentRef)return;const t=ba(this.triggerRef,this.contentRef,{placement:this.placement,offset:this.offset,flip:this.flip,padding:this.padding});this.position=t,EL(this.contentRef,t)},this.handleTriggerClick=()=>{this.disabled||this.trigger!=="click"||this.toggle()},this.handleTriggerKeydown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.trigger==="click"&&this.toggle())},this.handleTriggerMouseEnter=()=>{this.disabled||this.trigger!=="hover"||this.delayedShow()},this.handleTriggerMouseLeave=()=>{this.disabled||this.trigger!=="hover"||this.delayedHide()},this.handleContentMouseEnter=()=>{this.trigger==="hover"&&this.clearCloseTimer()},this.handleContentMouseLeave=()=>{this.trigger==="hover"&&this.delayedHide()},this.handleTriggerFocus=()=>{this.disabled||this.trigger!=="hover"||(this.clearTimers(),this.show())},this.handleTriggerBlur=t=>{if(this.trigger!=="hover")return;const e=t.relatedTarget;e&&this.contentRef?.contains(e)||this.delayedHide()}}show(){this.disabled||this.open||(this.clearTimers(),this.open=!0)}hide(){this.open&&(this.clearTimers(),this.open=!1)}toggle(){this.open?this.hide():this.show()}delayedShow(){this.clearCloseTimer(),!this.open&&(this.openTimer=setTimeout(()=>{this.show()},this.openDelay))}delayedHide(){this.clearOpenTimer(),this.open&&(this.closeTimer=setTimeout(()=>{this.hide()},this.closeDelay))}clearTimers(){this.clearOpenTimer(),this.clearCloseTimer()}clearOpenTimer(){this.openTimer&&(clearTimeout(this.openTimer),this.openTimer=null)}clearCloseTimer(){this.closeTimer&&(clearTimeout(this.closeTimer),this.closeTimer=null)}setupOpen(){requestAnimationFrame(()=>{this.contentRef&&(this.cleanupAutoUpdate=PL(this.triggerRef,this.contentRef,this.updatePosition),this.trigger!=="manual"&&(this.cleanupDismissable=is.add(this.contentRef,t=>{this.trigger==="hover"&&t==="click-outside"||t==="escape"&&!this.closeOnEscape||t==="click-outside"&&!this.closeOnClickOutside||this.hide()},[this.triggerRef])),this.emit("open",void 0,{bubbles:!1}))})}cleanupOpen(){this.cleanupAutoUpdate?.(),this.cleanupAutoUpdate=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close",void 0,{bubbles:!1})}updated(t){super.updated(t),t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupOpen(),this.clearTimers()}renderTrigger(){return p`
       <div
         part="trigger"
         @click=${this.handleTriggerClick}
@@ -30226,7 +30226,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       <div part="container">
         ${this.renderTrigger()} ${this.renderContent()}
       </div>
-    `}},he.baseName="popover",he.register=$(he),he);ot([h({type:Boolean,reflect:!0})],J.prototype,"open");ot([h({type:String})],J.prototype,"trigger");ot([h({type:String})],J.prototype,"placement");ot([h({type:Number})],J.prototype,"offset");ot([h({type:Boolean})],J.prototype,"flip");ot([h({type:Number})],J.prototype,"padding");ot([h({type:Number,attribute:"open-delay"})],J.prototype,"openDelay");ot([h({type:Number,attribute:"close-delay"})],J.prototype,"closeDelay");ot([h({type:Boolean,attribute:"close-on-click-outside"})],J.prototype,"closeOnClickOutside");ot([h({type:Boolean,attribute:"close-on-escape"})],J.prototype,"closeOnEscape");ot([h({type:Boolean,reflect:!0})],J.prototype,"disabled");ot([O()],J.prototype,"position");ot([Fr('[part="trigger"]')],J.prototype,"triggerRef");ot([Fr('[part="content"]')],J.prototype,"contentRef");let as=J;var BS=Object.defineProperty,jS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&BS(t,e,r),r},ce;const Ba=(ce=class extends as{constructor(){super(),this.content="",this.trigger="hover",this.placement="top",this.offset=6,this.openDelay=200,this.closeDelay=0,this.closeOnClickOutside=!1,this.closeOnEscape=!0}renderTrigger(){return p`
+    `}},he.baseName="popover",he.register=$(he),he);ot([h({type:Boolean,reflect:!0})],J.prototype,"open");ot([h({type:String})],J.prototype,"trigger");ot([h({type:String})],J.prototype,"placement");ot([h({type:Number})],J.prototype,"offset");ot([h({type:Boolean})],J.prototype,"flip");ot([h({type:Number})],J.prototype,"padding");ot([h({type:Number,attribute:"open-delay"})],J.prototype,"openDelay");ot([h({type:Number,attribute:"close-delay"})],J.prototype,"closeDelay");ot([h({type:Boolean,attribute:"close-on-click-outside"})],J.prototype,"closeOnClickOutside");ot([h({type:Boolean,attribute:"close-on-escape"})],J.prototype,"closeOnEscape");ot([h({type:Boolean,reflect:!0})],J.prototype,"disabled");ot([O()],J.prototype,"position");ot([Fr('[part="trigger"]')],J.prototype,"triggerRef");ot([Fr('[part="content"]')],J.prototype,"contentRef");let as=J;var AS=Object.defineProperty,LS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&AS(t,e,r),r},ce;const Aa=(ce=class extends as{constructor(){super(),this.content="",this.trigger="hover",this.placement="top",this.offset=6,this.openDelay=200,this.closeDelay=0,this.closeOnClickOutside=!1,this.closeOnEscape=!0}renderTrigger(){return p`
       <div
         part="trigger"
         @click=${this.handleTriggerClick}
@@ -30251,7 +30251,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
                 <slot name="content"></slot>
               `}
       </div>
-    `:k}},ce.baseName="tooltip",ce.register=$(ce),ce);jS([h({type:String})],Ba.prototype,"content");let AS=Ba;var LS=Object.defineProperty,ja=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&LS(t,e,r),r},pe;const ds=(pe=class extends as{constructor(){super(),this.closeOnSelect=!0,this.menuRef=null,this.handleMenuChange=t=>{const{value:e,label:i}=t.detail;this.emit("select",{value:e,label:i},{bubbles:!1}),this.closeOnSelect&&this.hide()},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.toggle();break;case"ArrowDown":t.preventDefault(),this.open||this.show(),requestAnimationFrame(()=>{const e=this.findMenu();if(e){const i=e.shadowRoot?.querySelector('[part^="menu"]');i instanceof HTMLElement&&i.focus()}});break;case"Escape":this.open&&(t.preventDefault(),this.hide());break}},this.trigger="click",this.placement="bottom-start",this.offset=4,this.closeOnClickOutside=!0,this.closeOnEscape=!0}findMenu(){if(!this.menuSlot)return null;const t=this.menuSlot.assignedElements({flatten:!0});for(const e of t){if(e.tagName.toLowerCase().endsWith("-menu"))return e;const i=e.querySelector('[part="menu"]');if(i)return i.closest('[part="menu"]')?.parentElement}return null}setupMenuListeners(){this.menuRef=this.findMenu(),this.menuRef&&this.menuRef.addEventListener(`${et}-change`,this.handleMenuChange)}cleanupMenuListeners(){this.menuRef&&(this.menuRef.removeEventListener(`${et}-change`,this.handleMenuChange),this.menuRef=null)}updated(t){super.updated(t),t.has("open")&&(this.open?requestAnimationFrame(()=>{this.setupMenuListeners()}):this.cleanupMenuListeners())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupMenuListeners()}renderContent(){return this.open?p`
+    `:k}},ce.baseName="tooltip",ce.register=$(ce),ce);LS([h({type:String})],Aa.prototype,"content");let SS=Aa;var HS=Object.defineProperty,La=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&HS(t,e,r),r},pe;const ds=(pe=class extends as{constructor(){super(),this.closeOnSelect=!0,this.menuRef=null,this.handleMenuChange=t=>{const{value:e,label:i}=t.detail;this.emit("select",{value:e,label:i},{bubbles:!1}),this.closeOnSelect&&this.hide()},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.toggle();break;case"ArrowDown":t.preventDefault(),this.open||this.show(),requestAnimationFrame(()=>{const e=this.findMenu();if(e){const i=e.shadowRoot?.querySelector('[part^="menu"]');i instanceof HTMLElement&&i.focus()}});break;case"Escape":this.open&&(t.preventDefault(),this.hide());break}},this.trigger="click",this.placement="bottom-start",this.offset=4,this.closeOnClickOutside=!0,this.closeOnEscape=!0}findMenu(){if(!this.menuSlot)return null;const t=this.menuSlot.assignedElements({flatten:!0});for(const e of t){if(e.tagName.toLowerCase().endsWith("-menu"))return e;const i=e.querySelector('[part="menu"]');if(i)return i.closest('[part="menu"]')?.parentElement}return null}setupMenuListeners(){this.menuRef=this.findMenu(),this.menuRef&&this.menuRef.addEventListener(`${et}-change`,this.handleMenuChange)}cleanupMenuListeners(){this.menuRef&&(this.menuRef.removeEventListener(`${et}-change`,this.handleMenuChange),this.menuRef=null)}updated(t){super.updated(t),t.has("open")&&(this.open?requestAnimationFrame(()=>{this.setupMenuListeners()}):this.cleanupMenuListeners())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupMenuListeners()}renderContent(){return this.open?p`
       <div
         part="content"
         role="menu"
@@ -30262,7 +30262,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       >
         <slot name="menu"></slot>
       </div>
-    `:k}},pe.baseName="dropdown",pe.register=$(pe),pe);ja([h({type:Boolean,attribute:"close-on-select"})],ds.prototype,"closeOnSelect");ja([Fr('slot[name="menu"]')],ds.prototype,"menuSlot");let SS=ds;var HS=Object.defineProperty,De=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&HS(t,e,r),r},ue;const Ue=(ue=class extends jL{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal"}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r);const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`;return p`
+    `:k}},pe.baseName="dropdown",pe.register=$(pe),pe);La([h({type:Boolean,attribute:"close-on-select"})],ds.prototype,"closeOnSelect");La([Fr('slot[name="menu"]')],ds.prototype,"menuSlot");let RS=ds;var VS=Object.defineProperty,Ue=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&VS(t,e,r),r},ue;const De=(ue=class extends LL{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal"}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r);const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`;return p`
       <div
         part="${r}"
         role="slider"
@@ -30285,7 +30285,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
               ${this.renderThumb(this.valueArray[1],"end")}
             `:this.renderThumb(Array.isArray(this.value)?this.value[1]:this.value)}
       </div>
-    `}},ue.baseName="slider",ue.register=$(ue),ue);De([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],Ue.prototype,"value");De([h({type:Number})],Ue.prototype,"min");De([h({type:Number})],Ue.prototype,"max");De([h({type:Number})],Ue.prototype,"step");De([h({type:Boolean,reflect:!0})],Ue.prototype,"range");De([h({type:Boolean,reflect:!0})],Ue.prototype,"disabled");De([h({type:String,reflect:!0})],Ue.prototype,"orientation");const Aa=Symbol.for(""),RS=o=>{if(o?.r===Aa)return o?._$litStatic$},La=o=>({_$litStatic$:o,r:Aa}),q0=new Map,VS=o=>(t,...e)=>{const i=e.length;let r,s;const n=[],d=[];let a,c=0,u=!1;for(;c<i;){for(a=t[c];c<i&&(s=e[c],(r=RS(s))!==void 0);)a+=r+t[++c],u=!0;c!==i&&d.push(s),n.push(a),c++}if(c===i&&n.push(t[i]),u){const w=n.join("$$lit$$");(t=q0.get(w))===void 0&&(n.raw=n,q0.set(w,t=n)),e=d}return o(t,...e)},Lr=VS(p);var zS=Object.defineProperty,Ao=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&zS(t,e,r),r},we;const Fe=(we=class extends _{constructor(){super(...arguments),this.data=[],this.value="",this.expanded=[],this.disabled=!1,this.multiple=!1,this.showLine=!1,this.handleNodeToggle=t=>{t.stopPropagation();const{value:e,expanded:i}=t.detail;this.emit("expand",{value:e,expanded:i})},this.handleNodeSelect=t=>{t.stopPropagation();const e=t.detail.value;this.emit("select",{value:e})},this.handleNodeNavigate=t=>{t.stopPropagation();const{direction:e,value:i}=t.detail,r=this.getVisibleNodes(),s=r.findIndex(a=>a.value===i),n=X("tree-node");let d=null;switch(e){case"prev":s>0&&(d=r[s-1]);break;case"next":s<r.length-1&&(d=r[s+1]);break;case"parent":{const a=r[s];if(a){let c=a.parentElement;for(;c&&c!==this;){if(c.tagName.toLowerCase()===n){d=c;break}c=c.parentElement}}break}case"first-child":{const a=r[s];if(a&&a.expanded){const c=r[s+1];c&&c.depth>a.depth&&(d=c)}break}}d&&d.shadowRoot?.querySelector('[part="node-row"]')?.focus()}}get expandedSet(){return new Set(this.expanded)}getAllNodes(){const t=[],e=X("tree-node");return this.querySelectorAll("*").forEach(i=>{i.tagName.toLowerCase()===e&&t.push(i)}),t}getVisibleNodes(){const t=this.getAllNodes(),e=X("tree-node");return t.filter(i=>{let r=i.parentElement;for(;r&&r!==this;){if(r.tagName.toLowerCase()===e&&!r.expanded)return!1;r=r.parentElement}return!0})}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-node-toggle",this.handleNodeToggle),this.addEventListener("ik-node-select",this.handleNodeSelect),this.addEventListener("ik-node-navigate",this.handleNodeNavigate)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-node-toggle",this.handleNodeToggle),this.removeEventListener("ik-node-select",this.handleNodeSelect),this.removeEventListener("ik-node-navigate",this.handleNodeNavigate)}getNodeTagName(){return X("tree-node")}renderNode(t,e){const i=t.children&&t.children.length>0,r=this.expandedSet.has(t.value),s=this.value===t.value,n=this.disabled||t.disabled,d=La(this.getNodeTagName());return Lr`
+    `}},ue.baseName="slider",ue.register=$(ue),ue);Ue([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],De.prototype,"value");Ue([h({type:Number})],De.prototype,"min");Ue([h({type:Number})],De.prototype,"max");Ue([h({type:Number})],De.prototype,"step");Ue([h({type:Boolean,reflect:!0})],De.prototype,"range");Ue([h({type:Boolean,reflect:!0})],De.prototype,"disabled");Ue([h({type:String,reflect:!0})],De.prototype,"orientation");const Sa=Symbol.for(""),zS=o=>{if(o?.r===Sa)return o?._$litStatic$},Ha=o=>({_$litStatic$:o,r:Sa}),q0=new Map,$S=o=>(t,...e)=>{const i=e.length;let r,s;const n=[],d=[];let a,c=0,u=!1;for(;c<i;){for(a=t[c];c<i&&(s=e[c],(r=zS(s))!==void 0);)a+=r+t[++c],u=!0;c!==i&&d.push(s),n.push(a),c++}if(c===i&&n.push(t[i]),u){const w=n.join("$$lit$$");(t=q0.get(w))===void 0&&(n.raw=n,q0.set(w,t=n)),e=d}return o(t,...e)},Lr=$S(p);var US=Object.defineProperty,Ao=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&US(t,e,r),r},we;const Fe=(we=class extends _{constructor(){super(...arguments),this.data=[],this.value="",this.expanded=[],this.disabled=!1,this.multiple=!1,this.showLine=!1,this.handleNodeToggle=t=>{t.stopPropagation();const{value:e,expanded:i}=t.detail;this.emit("expand",{value:e,expanded:i})},this.handleNodeSelect=t=>{t.stopPropagation();const e=t.detail.value;this.emit("select",{value:e})},this.handleNodeNavigate=t=>{t.stopPropagation();const{direction:e,value:i}=t.detail,r=this.getVisibleNodes(),s=r.findIndex(a=>a.value===i),n=X("tree-node");let d=null;switch(e){case"prev":s>0&&(d=r[s-1]);break;case"next":s<r.length-1&&(d=r[s+1]);break;case"parent":{const a=r[s];if(a){let c=a.parentElement;for(;c&&c!==this;){if(c.tagName.toLowerCase()===n){d=c;break}c=c.parentElement}}break}case"first-child":{const a=r[s];if(a&&a.expanded){const c=r[s+1];c&&c.depth>a.depth&&(d=c)}break}}d&&d.shadowRoot?.querySelector('[part="node-row"]')?.focus()}}get expandedSet(){return new Set(this.expanded)}getAllNodes(){const t=[],e=X("tree-node");return this.querySelectorAll("*").forEach(i=>{i.tagName.toLowerCase()===e&&t.push(i)}),t}getVisibleNodes(){const t=this.getAllNodes(),e=X("tree-node");return t.filter(i=>{let r=i.parentElement;for(;r&&r!==this;){if(r.tagName.toLowerCase()===e&&!r.expanded)return!1;r=r.parentElement}return!0})}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-node-toggle",this.handleNodeToggle),this.addEventListener("ik-node-select",this.handleNodeSelect),this.addEventListener("ik-node-navigate",this.handleNodeNavigate)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-node-toggle",this.handleNodeToggle),this.removeEventListener("ik-node-select",this.handleNodeSelect),this.removeEventListener("ik-node-navigate",this.handleNodeNavigate)}getNodeTagName(){return X("tree-node")}renderNode(t,e){const i=t.children&&t.children.length>0,r=this.expandedSet.has(t.value),s=this.value===t.value,n=this.disabled||t.disabled,d=Ha(this.getNodeTagName());return Lr`
       <${d}
         value=${t.value}
         depth=${e}
@@ -30304,7 +30304,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
                 <slot></slot>
               `}
       </div>
-    `}},we.baseName="tree",we.register=$(we),we);Ao([h({type:Array})],Fe.prototype,"data");Ao([h({type:String})],Fe.prototype,"value");Ao([h({type:Array})],Fe.prototype,"expanded");Ao([h({type:Boolean,reflect:!0})],Fe.prototype,"disabled");Ao([h({type:Boolean})],Fe.prototype,"multiple");Ao([h({type:Boolean,attribute:"show-line"})],Fe.prototype,"showLine");let $S=Fe;const Sa=o=>o??k;var DS=Object.defineProperty,Pe=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&DS(t,e,r),r},ge;const Me=(ge=class extends _{constructor(){super(...arguments),this.value="",this.expanded=!1,this.selected=!1,this.disabled=!1,this.depth=0,this.showLine=!1,this.isLeaf=!1}get hasChildren(){return this.isLeaf?!1:Array.from(this.querySelectorAll("*")).some(t=>t.tagName.toLowerCase().endsWith("-tree-node"))}handleExpandClick(t){t.stopPropagation(),!this.disabled&&this.dispatchEvent(new CustomEvent("ik-node-toggle",{bubbles:!0,composed:!0,detail:{value:this.value,expanded:!this.expanded}}))}handleNodeClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-node-select",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.handleNodeClick();break;case"ArrowRight":t.preventDefault(),this.hasChildren&&!this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"first-child",value:this.value}}));break;case"ArrowLeft":t.preventDefault(),this.hasChildren&&this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"parent",value:this.value}}));break;case"ArrowUp":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"prev",value:this.value}}));break;case"ArrowDown":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"next",value:this.value}}));break}}renderIndent(){const t=[];for(let e=0;e<this.depth;e++)t.push(p`
+    `}},we.baseName="tree",we.register=$(we),we);Ao([h({type:Array})],Fe.prototype,"data");Ao([h({type:String})],Fe.prototype,"value");Ao([h({type:Array})],Fe.prototype,"expanded");Ao([h({type:Boolean,reflect:!0})],Fe.prototype,"disabled");Ao([h({type:Boolean})],Fe.prototype,"multiple");Ao([h({type:Boolean,attribute:"show-line"})],Fe.prototype,"showLine");let DS=Fe;const Ra=o=>o??k;var FS=Object.defineProperty,Pe=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&FS(t,e,r),r},ge;const Me=(ge=class extends _{constructor(){super(...arguments),this.value="",this.expanded=!1,this.selected=!1,this.disabled=!1,this.depth=0,this.showLine=!1,this.isLeaf=!1}get hasChildren(){return this.isLeaf?!1:Array.from(this.querySelectorAll("*")).some(t=>t.tagName.toLowerCase().endsWith("-tree-node"))}handleExpandClick(t){t.stopPropagation(),!this.disabled&&this.dispatchEvent(new CustomEvent("ik-node-toggle",{bubbles:!0,composed:!0,detail:{value:this.value,expanded:!this.expanded}}))}handleNodeClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-node-select",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.handleNodeClick();break;case"ArrowRight":t.preventDefault(),this.hasChildren&&!this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"first-child",value:this.value}}));break;case"ArrowLeft":t.preventDefault(),this.hasChildren&&this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"parent",value:this.value}}));break;case"ArrowUp":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"prev",value:this.value}}));break;case"ArrowDown":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"next",value:this.value}}));break}}renderIndent(){const t=[];for(let e=0;e<this.depth;e++)t.push(p`
           <span part="indent-unit"></span>
         `);return t}renderExpandButton(){return this.isLeaf||!this.hasChildren?p`
         <span part="expand-placeholder"></span>
@@ -30329,7 +30329,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         </slot>
       </button>
     `}render(){const t=this.hasChildren?String(this.expanded):void 0;return p`
-      <div part="node" role="treeitem" aria-expanded=${Sa(t)}>
+      <div part="node" role="treeitem" aria-expanded=${Ra(t)}>
         <div
           part="node-row"
           tabindex=${this.disabled?-1:0}
@@ -30346,7 +30346,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           <slot name="children"></slot>
         </div>
       </div>
-    `}},ge.baseName="tree-node",ge.register=$(ge),ge);Pe([h({type:String,reflect:!0})],Me.prototype,"value");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"expanded");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"selected");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"disabled");Pe([h({type:Number})],Me.prototype,"depth");Pe([h({type:Boolean,attribute:"show-line",reflect:!0})],Me.prototype,"showLine");Pe([h({type:Boolean,attribute:"is-leaf"})],Me.prototype,"isLeaf");let US=Me;var FS=Object.defineProperty,Mt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&FS(t,e,r),r},ve;const wt=(ve=class extends _{constructor(){super(...arguments),this.columns=[],this.data=[],this.selectionMode="none",this.selected=[],this.sortKey="",this.sortOrder="asc",this.stripe=!1,this.rowKey="id",this.disabled=!1,this.internalSelected=new Set}connectedCallback(){super.connectedCallback(),this.internalSelected=new Set(this.selected)}updated(t){super.updated(t),t.has("selected")&&(this.internalSelected=new Set(this.selected))}getRowId(t){return String(t[this.rowKey]??"")}isRowSelected(t){return this.internalSelected.has(this.getRowId(t))}get isAllSelected(){return this.data.length===0?!1:this.data.every(t=>this.isRowSelected(t))}get isIndeterminate(){const t=this.data.filter(e=>this.isRowSelected(e)).length;return t>0&&t<this.data.length}handleHeaderClick(t){if(!t.sortable||this.disabled)return;let e="asc";this.sortKey===t.key&&(e=this.sortOrder==="asc"?"desc":"asc"),this.emit("sort",{key:t.key,order:e})}handleRowClick(t,e){if(this.disabled)return;const i=this.getRowId(t);this.emit("row-click",{id:i,row:t}),this.selectionMode!=="none"&&(e.target.closest('[part="checkbox"]')||this.toggleRowSelection(i,t))}handleCheckboxChange(t,e){if(e.stopPropagation(),this.disabled)return;const i=this.getRowId(t);this.toggleRowSelection(i,t)}toggleRowSelection(t,e){const i=new Set(this.internalSelected);this.selectionMode==="single"?i.has(t)?i.clear():(i.clear(),i.add(t)):i.has(t)?i.delete(t):i.add(t),this.internalSelected=i,this.emit("select",{ids:Array.from(i),row:e})}handleSelectAll(t){if(t.stopPropagation(),this.disabled)return;const e=new Set;this.isAllSelected||this.data.forEach(i=>{e.add(this.getRowId(i))}),this.internalSelected=e,this.emit("select",{ids:Array.from(e)})}getGridTemplateColumns(){const t=[];return this.selectionMode!=="none"&&t.push("40px"),this.columns.forEach(e=>{t.push(e.width||"1fr")}),t.join(" ")}renderCheckbox(t,e,i,r){return Lr`
+    `}},ge.baseName="tree-node",ge.register=$(ge),ge);Pe([h({type:String,reflect:!0})],Me.prototype,"value");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"expanded");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"selected");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"disabled");Pe([h({type:Number})],Me.prototype,"depth");Pe([h({type:Boolean,attribute:"show-line",reflect:!0})],Me.prototype,"showLine");Pe([h({type:Boolean,attribute:"is-leaf"})],Me.prototype,"isLeaf");let PS=Me;var ES=Object.defineProperty,Mt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ES(t,e,r),r},ve;const wt=(ve=class extends _{constructor(){super(...arguments),this.columns=[],this.data=[],this.selectionMode="none",this.selected=[],this.sortKey="",this.sortOrder="asc",this.stripe=!1,this.rowKey="id",this.disabled=!1,this.internalSelected=new Set}connectedCallback(){super.connectedCallback(),this.internalSelected=new Set(this.selected)}updated(t){super.updated(t),t.has("selected")&&(this.internalSelected=new Set(this.selected))}getRowId(t){return String(t[this.rowKey]??"")}isRowSelected(t){return this.internalSelected.has(this.getRowId(t))}get isAllSelected(){return this.data.length===0?!1:this.data.every(t=>this.isRowSelected(t))}get isIndeterminate(){const t=this.data.filter(e=>this.isRowSelected(e)).length;return t>0&&t<this.data.length}handleHeaderClick(t){if(!t.sortable||this.disabled)return;let e="asc";this.sortKey===t.key&&(e=this.sortOrder==="asc"?"desc":"asc"),this.emit("sort",{key:t.key,order:e})}handleRowClick(t,e){if(this.disabled)return;const i=this.getRowId(t);this.emit("row-click",{id:i,row:t}),this.selectionMode!=="none"&&(e.target.closest('[part="checkbox"]')||this.toggleRowSelection(i,t))}handleCheckboxChange(t,e){if(e.stopPropagation(),this.disabled)return;const i=this.getRowId(t);this.toggleRowSelection(i,t)}toggleRowSelection(t,e){const i=new Set(this.internalSelected);this.selectionMode==="single"?i.has(t)?i.clear():(i.clear(),i.add(t)):i.has(t)?i.delete(t):i.add(t),this.internalSelected=i,this.emit("select",{ids:Array.from(i),row:e})}handleSelectAll(t){if(t.stopPropagation(),this.disabled)return;const e=new Set;this.isAllSelected||this.data.forEach(i=>{e.add(this.getRowId(i))}),this.internalSelected=e,this.emit("select",{ids:Array.from(e)})}getGridTemplateColumns(){const t=[];return this.selectionMode!=="none"&&t.push("40px"),this.columns.forEach(e=>{t.push(e.width||"1fr")}),t.join(" ")}renderCheckbox(t,e,i,r){return Lr`
       <input
         type="checkbox"
         part="checkbox"
@@ -30442,7 +30442,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       <div part="table" role="table">
         ${this.renderHeader()} ${this.renderBody()}
       </div>
-    `}},ve.baseName="table",ve.register=$(ve),ve);Mt([h({type:Array})],wt.prototype,"columns");Mt([h({type:Array})],wt.prototype,"data");Mt([h({type:String,attribute:"selection-mode"})],wt.prototype,"selectionMode");Mt([h({type:Array})],wt.prototype,"selected");Mt([h({type:String,attribute:"sort-key"})],wt.prototype,"sortKey");Mt([h({type:String,attribute:"sort-order"})],wt.prototype,"sortOrder");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"stripe");Mt([h({type:String,attribute:"row-key"})],wt.prototype,"rowKey");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"disabled");Mt([O()],wt.prototype,"internalSelected");let PS=wt;const N0="iku",Ha={prefix:N0,cssVarPrefix:N0};let Jo={...Ha};function ES(o={}){Jo={...Ha,...o},BL({prefix:Jo.prefix})}function TS(){return Jo}function No(o){return`${Jo.prefix}-${o}`}function YS(o){return`--${Jo.cssVarPrefix}-${o}`}function H(o){const t=o.baseName;return e=>{const i=e||No(t);return customElements.get(i)||customElements.define(i,o),i}}const OS="ik",ks=class ks extends Xt{get config(){return TS()}cssVar(t){return YS(t)}emit(t,e,i){const r=`${OS}-${t}`,s=new CustomEvent(r,{bubbles:!1,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}};ks.styles=j`
+    `}},ve.baseName="table",ve.register=$(ve),ve);Mt([h({type:Array})],wt.prototype,"columns");Mt([h({type:Array})],wt.prototype,"data");Mt([h({type:String,attribute:"selection-mode"})],wt.prototype,"selectionMode");Mt([h({type:Array})],wt.prototype,"selected");Mt([h({type:String,attribute:"sort-key"})],wt.prototype,"sortKey");Mt([h({type:String,attribute:"sort-order"})],wt.prototype,"sortOrder");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"stripe");Mt([h({type:String,attribute:"row-key"})],wt.prototype,"rowKey");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"disabled");Mt([O()],wt.prototype,"internalSelected");let TS=wt;const N0="iku",Va={prefix:N0,cssVarPrefix:N0};let Jo={...Va};function YS(o={}){Jo={...Va,...o},AL({prefix:Jo.prefix})}function OS(){return Jo}function No(o){return`${Jo.prefix}-${o}`}function IS(o){return`--${Jo.cssVarPrefix}-${o}`}function H(o){const t=o.baseName;return e=>{const i=e||No(t);return customElements.get(i)||customElements.define(i,o),i}}const qS="ik",ks=class ks extends Xt{get config(){return OS()}cssVar(t){return IS(t)}emit(t,e,i){const r=`${qS}-${t}`,s=new CustomEvent(r,{bubbles:!1,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}};ks.styles=j`
     :host {
       display: inline-block;
       box-sizing: border-box;
@@ -30462,7 +30462,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     *::after {
       box-sizing: inherit;
     }
-  `;let f=ks;const IS=j`
+  `;let f=ks;const NS=j`
   :host {
     display: block;
   }
@@ -30472,7 +30472,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     flex-direction: column;
     gap: var(--accordion-gap);
   }
-`,qS=j`
+`,_S=j`
   :host {
     display: block;
   }
@@ -30555,11 +30555,11 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     padding-top: 0;
     padding-bottom: 0;
   }
-`;var NS=Object.defineProperty,Or=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&NS(t,e,r),r},jt;const sr=(jt=class extends f{constructor(){super(...arguments),this.value="",this.multiple=!1,this.collapsible=!0,this.disabled=!1,this.handleItemToggle=t=>{t.stopPropagation();const e=t.detail.value;if(this.multiple){const i=Array.isArray(this.value)?[...this.value]:this.value?[this.value]:[],r=i.indexOf(e);r===-1?i.push(e):i.splice(r,1),this.value=i}else this.value===e?this.collapsible&&(this.value=""):this.value=e;this.updateItems(),this.emit("change",{value:this.value})}}get items(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-accordion-item"))}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-item-toggle",this.handleItemToggle)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-item-toggle",this.handleItemToggle)}updateItems(){const t=this.multiple?Array.isArray(this.value)?this.value:this.value?[this.value]:[]:this.value?[this.value]:[];this.items.forEach(e=>{e.expanded=t.includes(e.value),this.disabled&&(e.disabled=!0)})}updated(t){super.updated(t),(t.has("value")||t.has("disabled"))&&this.updateItems()}firstUpdated(){this.updateItems()}render(){return p`
+`;var ZS=Object.defineProperty,Or=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ZS(t,e,r),r},jt;const sr=(jt=class extends f{constructor(){super(...arguments),this.value="",this.multiple=!1,this.collapsible=!0,this.disabled=!1,this.handleItemToggle=t=>{t.stopPropagation();const e=t.detail.value;if(this.multiple){const i=Array.isArray(this.value)?[...this.value]:this.value?[this.value]:[],r=i.indexOf(e);r===-1?i.push(e):i.splice(r,1),this.value=i}else this.value===e?this.collapsible&&(this.value=""):this.value=e;this.updateItems(),this.emit("change",{value:this.value})}}get items(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-accordion-item"))}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-item-toggle",this.handleItemToggle)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-item-toggle",this.handleItemToggle)}updateItems(){const t=this.multiple?Array.isArray(this.value)?this.value:this.value?[this.value]:[]:this.value?[this.value]:[];this.items.forEach(e=>{e.expanded=t.includes(e.value),this.disabled&&(e.disabled=!0)})}updated(t){super.updated(t),(t.has("value")||t.has("disabled"))&&this.updateItems()}firstUpdated(){this.updateItems()}render(){return p`
       <div part="accordion" role="presentation">
         <slot></slot>
       </div>
-    `}},jt.baseName="accordion",jt.register=H(jt),jt.styles=[f.styles,IS],jt);Or([h({type:String})],sr.prototype,"value");Or([h({type:Boolean,reflect:!0})],sr.prototype,"multiple");Or([h({type:Boolean})],sr.prototype,"collapsible");Or([h({type:Boolean,reflect:!0})],sr.prototype,"disabled");let _S=sr;var ZS=Object.defineProperty,Ir=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ZS(t,e,r),r},At;const nr=(At=class extends f{constructor(){super(...arguments),this.value="",this.header="",this.expanded=!1,this.disabled=!1}handleTriggerClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-item-toggle",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handleTriggerClick())}render(){const t=`trigger-${this.value}`,e=`content-${this.value}`;return p`
+    `}},jt.baseName="accordion",jt.register=H(jt),jt.styles=[f.styles,NS],jt);Or([h({type:String})],sr.prototype,"value");Or([h({type:Boolean,reflect:!0})],sr.prototype,"multiple");Or([h({type:Boolean})],sr.prototype,"collapsible");Or([h({type:Boolean,reflect:!0})],sr.prototype,"disabled");let GS=sr;var WS=Object.defineProperty,Ir=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&WS(t,e,r),r},At;const nr=(At=class extends f{constructor(){super(...arguments),this.value="",this.header="",this.expanded=!1,this.disabled=!1}handleTriggerClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-item-toggle",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handleTriggerClick())}render(){const t=`trigger-${this.value}`,e=`content-${this.value}`;return p`
       <div part="item">
         <button
           part="trigger"
@@ -30599,7 +30599,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           </div>
         </div>
       </div>
-    `}},At.baseName="accordion-item",At.register=H(At),At.styles=[f.styles,qS],At);Ir([h({type:String,reflect:!0})],nr.prototype,"value");Ir([h({type:String})],nr.prototype,"header");Ir([h({type:Boolean,reflect:!0})],nr.prototype,"expanded");Ir([h({type:Boolean,reflect:!0})],nr.prototype,"disabled");let GS=nr;const WS=j`
+    `}},At.baseName="accordion-item",At.register=H(At),At.styles=[f.styles,_S],At);Ir([h({type:String,reflect:!0})],nr.prototype,"value");Ir([h({type:String})],nr.prototype,"header");Ir([h({type:Boolean,reflect:!0})],nr.prototype,"expanded");Ir([h({type:Boolean,reflect:!0})],nr.prototype,"disabled");let KS=nr;const XS=j`
   :host {
     display: block;
   }
@@ -30611,7 +30611,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     gap: var(--breadcrumb-gap, 8px);
     font-size: var(--breadcrumb-item-font-size, 14px);
   }
-`,KS=j`
+`,JS=j`
   :host {
     display: inline-flex;
     align-items: center;
@@ -30658,16 +30658,16 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   :host(:last-child) [part='separator'] {
     display: none;
   }
-`;var XS=Object.defineProperty,JS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&XS(t,e,r),r},Lt;const Ra=(Lt=class extends f{constructor(){super(...arguments),this.separator="/"}updateItems(){this.querySelectorAll("*").forEach(e=>{e.tagName.toLowerCase().endsWith("-breadcrumb-item")&&e.setAttribute("data-separator",this.separator)})}firstUpdated(){this.updateItems()}updated(t){t.has("separator")&&this.updateItems()}render(){return p`
+`;var QS=Object.defineProperty,tH=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&QS(t,e,r),r},Lt;const za=(Lt=class extends f{constructor(){super(...arguments),this.separator="/"}updateItems(){this.querySelectorAll("*").forEach(e=>{e.tagName.toLowerCase().endsWith("-breadcrumb-item")&&e.setAttribute("data-separator",this.separator)})}firstUpdated(){this.updateItems()}updated(t){t.has("separator")&&this.updateItems()}render(){return p`
       <nav part="breadcrumb" aria-label="Breadcrumb">
         <slot @slotchange=${this.updateItems}></slot>
       </nav>
-    `}},Lt.baseName="breadcrumb",Lt.register=H(Lt),Lt.styles=[f.styles,WS],Lt);JS([h({type:String})],Ra.prototype,"separator");let QS=Ra;var tH=Object.defineProperty,Va=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&tH(t,e,r),r},St;const hs=(St=class extends f{constructor(){super(...arguments),this.current=!1,this.separator="/"}render(){return p`
+    `}},Lt.baseName="breadcrumb",Lt.register=H(Lt),Lt.styles=[f.styles,XS],Lt);tH([h({type:String})],za.prototype,"separator");let eH=za;var oH=Object.defineProperty,$a=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&oH(t,e,r),r},St;const hs=(St=class extends f{constructor(){super(...arguments),this.current=!1,this.separator="/"}render(){return p`
       <span part="item" aria-current=${this.current?"page":"false"}>
         <slot></slot>
       </span>
       <span part="separator" aria-hidden="true">${this.separator}</span>
-    `}},St.baseName="breadcrumb-item",St.register=H(St),St.styles=[f.styles,KS],St);Va([h({type:Boolean,reflect:!0})],hs.prototype,"current");Va([h({type:String,attribute:"data-separator"})],hs.prototype,"separator");let eH=hs;const oH=j`
+    `}},St.baseName="breadcrumb-item",St.register=H(St),St.styles=[f.styles,JS],St);$a([h({type:Boolean,reflect:!0})],hs.prototype,"current");$a([h({type:String,attribute:"data-separator"})],hs.prototype,"separator");let rH=hs;const iH=j`
   :host {
     /* 布局 */
     display: inline-flex;
@@ -30838,14 +30838,14 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: rotate(360deg);
     }
   }
-`;var rH=Object.defineProperty,Lo=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&rH(t,e,r),r},Ht;const Ee=(Ht=class extends f{constructor(){super(...arguments),this.type="button",this.variant="default",this.size="md",this.disabled=!1,this.loading=!1,this.block=!1}connectedCallback(){super.connectedCallback(),this.setAttribute("role","button"),this.hasAttribute("tabindex")||this.setAttribute("tabindex","0")}render(){return p`
+`;var sH=Object.defineProperty,Lo=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sH(t,e,r),r},Ht;const Ee=(Ht=class extends f{constructor(){super(...arguments),this.type="button",this.variant="default",this.size="md",this.disabled=!1,this.loading=!1,this.block=!1}connectedCallback(){super.connectedCallback(),this.setAttribute("role","button"),this.hasAttribute("tabindex")||this.setAttribute("tabindex","0")}render(){return p`
       ${this.loading?p`
               <span class="loading-spinner"></span>
             `:k}
       <slot name="prefix"></slot>
       <slot></slot>
       <slot name="suffix"></slot>
-    `}},Ht.baseName="button",Ht.register=H(Ht),Ht.styles=[f.styles,oH],Ht);Lo([h({type:String})],Ee.prototype,"type");Lo([h({type:String,reflect:!0})],Ee.prototype,"variant");Lo([h({type:String,reflect:!0})],Ee.prototype,"size");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"disabled");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"loading");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"block");let iH=Ee;const sH=j`
+    `}},Ht.baseName="button",Ht.register=H(Ht),Ht.styles=[f.styles,iH],Ht);Lo([h({type:String})],Ee.prototype,"type");Lo([h({type:String,reflect:!0})],Ee.prototype,"variant");Lo([h({type:String,reflect:!0})],Ee.prototype,"size");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"disabled");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"loading");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"block");let nH=Ee;const lH=j`
   :host {
     display: inline-flex;
   }
@@ -31007,7 +31007,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   :host([size='lg']) [part='label'] {
     font-size: var(--checkbox-label-font-size-lg);
   }
-`;var nH=Object.defineProperty,So=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&nH(t,e,r),r},Rt;const Te=(Rt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.indeterminate=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.disabled||(this.checked=!this.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})))}render(){return p`
+`;var aH=Object.defineProperty,So=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&aH(t,e,r),r},Rt;const Te=(Rt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.indeterminate=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.disabled||(this.checked=!this.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})))}render(){return p`
       <label part="checkbox" class=${this.indeterminate?"indeterminate":""}>
         <input
           part="input"
@@ -31049,7 +31049,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           <slot></slot>
         </span>
       </label>
-    `}},Rt.baseName="checkbox",Rt.register=H(Rt),Rt.styles=[f.styles,sH],Rt);So([h({type:String,reflect:!0})],Te.prototype,"size");So([h({type:Boolean,reflect:!0})],Te.prototype,"checked");So([h({type:Boolean,reflect:!0})],Te.prototype,"disabled");So([h({type:Boolean,reflect:!0})],Te.prototype,"indeterminate");So([h({type:String})],Te.prototype,"name");So([h({type:String})],Te.prototype,"value");let lH=Te;const aH=j`
+    `}},Rt.baseName="checkbox",Rt.register=H(Rt),Rt.styles=[f.styles,lH],Rt);So([h({type:String,reflect:!0})],Te.prototype,"size");So([h({type:Boolean,reflect:!0})],Te.prototype,"checked");So([h({type:Boolean,reflect:!0})],Te.prototype,"disabled");So([h({type:Boolean,reflect:!0})],Te.prototype,"indeterminate");So([h({type:String})],Te.prototype,"name");So([h({type:String})],Te.prototype,"value");let dH=Te;const hH=j`
   :host {
     position: relative;
     display: flex;
@@ -31163,7 +31163,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: scale(1) translateY(0);
     }
   }
-`,Je=class Je extends gS{renderCloseIcon(){return p`
+`,Je=class Je extends kS{renderCloseIcon(){return p`
       <slot name="close-icon">
         <svg viewBox="0 0 16 16" fill="none">
           <path
@@ -31174,7 +31174,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           />
         </svg>
       </slot>
-    `}};Je.baseName="dialog",Je.register=H(Je),Je.styles=[f.styles,aH];let Ai=Je;const Qe=class Qe extends kS{};Qe.baseName="dialog-backdrop",Qe.register=H(Qe),Qe.styles=j`
+    `}};Je.baseName="dialog",Je.register=H(Je),Je.styles=[f.styles,hH];let Ai=Je;const Qe=class Qe extends xS{};Qe.baseName="dialog-backdrop",Qe.register=H(Qe),Qe.styles=j`
     :host {
       position: fixed;
       top: 0;
@@ -31191,11 +31191,11 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     :host([open]) {
       display: flex;
     }
-  `;let Li=Qe;const to=class to extends bS{getDialogBackdropTagName(){return No("dialog-backdrop")}getDialogTagName(){return No("dialog")}getButtonTagName(){return No("button")}};to.baseName="dialog-region",to.register=H(to),to.styles=j`
+  `;let Li=Qe;const to=class to extends BS{getDialogBackdropTagName(){return No("dialog-backdrop")}getDialogTagName(){return No("dialog")}getButtonTagName(){return No("button")}};to.baseName="dialog-region",to.register=H(to),to.styles=j`
     :host {
       display: contents;
     }
-  `;let Si=to;const dH=j`
+  `;let Si=to;const cH=j`
   :host {
     display: inline-block;
     position: relative;
@@ -31291,7 +31291,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: translateX(0);
     }
   }
-`,eo=class eo extends SS{};eo.baseName="dropdown",eo.register=H(eo),eo.styles=[f.styles,dH];let Hi=eo;const hH=j`
+`,eo=class eo extends RS{};eo.baseName="dropdown",eo.register=H(eo),eo.styles=[f.styles,cH];let Hi=eo;const pH=j`
   :host {
     /* 布局 */
     display: inline-flex;
@@ -31459,7 +31459,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     width: 18px;
     height: 18px;
   }
-`;var cH=Object.defineProperty,W=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&cH(t,e,r),r},Vt;const G=(Vt=class extends f{constructor(){super(...arguments),this.value="",this.type="text",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.clearable=!1,this.showPassword=!1,this.error=!1,this.name="",this.autofocus=!1,this.autocomplete="off",this.passwordVisible=!1,this.hasPrefix=!1,this.hasSuffix=!1}get inputType(){return this.type==="password"&&this.passwordVisible?"text":this.type}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value})}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}handleClear(){this.value="",this.emit("clear",{}),this.emit("input",{value:this.value}),this.emit("change",{value:this.value}),this.shadowRoot?.querySelector("input")?.focus()}togglePasswordVisibility(){this.passwordVisible=!this.passwordVisible}handleSlotChange(t,e){const r=t.target.assignedNodes().length>0;e==="prefix"?this.hasPrefix=r:this.hasSuffix=r}focus(){this.shadowRoot?.querySelector("input")?.focus()}blur(){this.shadowRoot?.querySelector("input")?.blur()}select(){this.shadowRoot?.querySelector("input")?.select()}render(){const t=this.clearable&&this.value&&!this.disabled&&!this.readonly,e=this.type==="password"&&this.showPassword;return p`
+`;var uH=Object.defineProperty,W=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&uH(t,e,r),r},Vt;const G=(Vt=class extends f{constructor(){super(...arguments),this.value="",this.type="text",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.clearable=!1,this.showPassword=!1,this.error=!1,this.name="",this.autofocus=!1,this.autocomplete="off",this.passwordVisible=!1,this.hasPrefix=!1,this.hasSuffix=!1}get inputType(){return this.type==="password"&&this.passwordVisible?"text":this.type}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value})}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}handleClear(){this.value="",this.emit("clear",{}),this.emit("input",{value:this.value}),this.emit("change",{value:this.value}),this.shadowRoot?.querySelector("input")?.focus()}togglePasswordVisibility(){this.passwordVisible=!this.passwordVisible}handleSlotChange(t,e){const r=t.target.assignedNodes().length>0;e==="prefix"?this.hasPrefix=r:this.hasSuffix=r}focus(){this.shadowRoot?.querySelector("input")?.focus()}blur(){this.shadowRoot?.querySelector("input")?.blur()}select(){this.shadowRoot?.querySelector("input")?.select()}render(){const t=this.clearable&&this.value&&!this.disabled&&!this.readonly,e=this.type==="password"&&this.showPassword;return p`
       <span part="prefix" ?hidden=${!this.hasPrefix}>
         <slot
           name="prefix"
@@ -31476,7 +31476,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         ?readonly=${this.readonly}
         ?autofocus=${this.autofocus}
         .autocomplete=${this.autocomplete}
-        maxlength=${Sa(this.maxlength)}
+        maxlength=${Ra(this.maxlength)}
         name=${this.name}
         @input=${this.handleInput}
         @change=${this.handleChange}
@@ -31539,7 +31539,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           @slotchange=${i=>this.handleSlotChange(i,"suffix")}
         ></slot>
       </span>
-    `}},Vt.baseName="input",Vt.register=H(Vt),Vt.styles=[f.styles,hH],Vt);W([h({type:String})],G.prototype,"value");W([h({type:String})],G.prototype,"type");W([h({type:String,reflect:!0})],G.prototype,"size");W([h({type:String})],G.prototype,"placeholder");W([h({type:Boolean,reflect:!0})],G.prototype,"disabled");W([h({type:Boolean,reflect:!0})],G.prototype,"readonly");W([h({type:Boolean})],G.prototype,"clearable");W([h({type:Boolean,attribute:"show-password"})],G.prototype,"showPassword");W([h({type:Boolean,reflect:!0})],G.prototype,"error");W([h({type:Number})],G.prototype,"maxlength");W([h({type:String})],G.prototype,"name");W([h({type:Boolean})],G.prototype,"autofocus");W([h({type:String})],G.prototype,"autocomplete");W([O()],G.prototype,"passwordVisible");W([O()],G.prototype,"hasPrefix");W([O()],G.prototype,"hasSuffix");let pH=G;const uH=j`
+    `}},Vt.baseName="input",Vt.register=H(Vt),Vt.styles=[f.styles,pH],Vt);W([h({type:String})],G.prototype,"value");W([h({type:String})],G.prototype,"type");W([h({type:String,reflect:!0})],G.prototype,"size");W([h({type:String})],G.prototype,"placeholder");W([h({type:Boolean,reflect:!0})],G.prototype,"disabled");W([h({type:Boolean,reflect:!0})],G.prototype,"readonly");W([h({type:Boolean})],G.prototype,"clearable");W([h({type:Boolean,attribute:"show-password"})],G.prototype,"showPassword");W([h({type:Boolean,reflect:!0})],G.prototype,"error");W([h({type:Number})],G.prototype,"maxlength");W([h({type:String})],G.prototype,"name");W([h({type:Boolean})],G.prototype,"autofocus");W([h({type:String})],G.prototype,"autocomplete");W([O()],G.prototype,"passwordVisible");W([O()],G.prototype,"hasPrefix");W([O()],G.prototype,"hasSuffix");let wH=G;const gH=j`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -31617,7 +31617,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       stroke-dashoffset: -124;
     }
   }
-`;var wH=Object.defineProperty,cs=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&wH(t,e,r),r},zt;const qr=(zt=class extends f{constructor(){super(...arguments),this.size="md",this.text="",this.fullscreen=!1}render(){return p`
+`;var vH=Object.defineProperty,cs=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vH(t,e,r),r},zt;const qr=(zt=class extends f{constructor(){super(...arguments),this.size="md",this.text="",this.fullscreen=!1}render(){return p`
       <div part="spinner">
         <svg viewBox="0 0 ${50} ${50}">
           <circle
@@ -31639,7 +31639,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         </svg>
       </div>
       ${this.text?p`<span part="text">${this.text}</span>`:k}
-    `}},zt.baseName="loading",zt.register=H(zt),zt.styles=[f.styles,uH],zt);cs([h({type:String,reflect:!0})],qr.prototype,"size");cs([h({type:String})],qr.prototype,"text");cs([h({type:Boolean,reflect:!0})],qr.prototype,"fullscreen");let gH=qr;const vH=j`
+    `}},zt.baseName="loading",zt.register=H(zt),zt.styles=[f.styles,gH],zt);cs([h({type:String,reflect:!0})],qr.prototype,"size");cs([h({type:String})],qr.prototype,"text");cs([h({type:Boolean,reflect:!0})],qr.prototype,"fullscreen");let kH=qr;const mH=j`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -31656,7 +31656,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     flex-direction: row;
     align-items: center;
   }
-`,kH=j`
+`,xH=j`
   :host {
     display: block;
   }
@@ -31714,7 +31714,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     font-size: 0.75rem;
     color: var(--menu-arrow-color);
   }
-`,mH=j`
+`,fH=j`
   :host {
     display: block;
   }
@@ -31737,7 +31737,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     display: flex;
     flex-direction: column;
   }
-`,xH=j`
+`,MH=j`
   :host {
     display: block;
   }
@@ -31747,7 +31747,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     margin: var(--menu-divider-margin);
     background-color: var(--menu-divider-color);
   }
-`,fH=j`
+`,yH=j`
   :host {
     display: block;
     position: relative;
@@ -31822,7 +31822,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     top: 100%;
     margin-top: var(--menu-submenu-offset);
   }
-`,oo=class oo extends WL{};oo.baseName="menu",oo.register=H(oo),oo.styles=[f.styles,vH];let Ri=oo;const ro=class ro extends XL{};ro.baseName="menu-item",ro.register=H(ro),ro.styles=[f.styles,kH];let Vi=ro;const io=class io extends tS{};io.baseName="menu-group",io.register=H(io),io.styles=[f.styles,mH];let zi=io;const so=class so extends ji{};so.baseName="menu-divider",so.register=H(so),so.styles=[f.styles,xH];let $i=so;const no=class no extends oS{};no.baseName="menu-sub",no.register=H(no),no.styles=[f.styles,fH];let Di=no;const MH=j`
+`,oo=class oo extends XL{};oo.baseName="menu",oo.register=H(oo),oo.styles=[f.styles,mH];let Ri=oo;const ro=class ro extends QL{};ro.baseName="menu-item",ro.register=H(ro),ro.styles=[f.styles,xH];let Vi=ro;const io=class io extends oS{};io.baseName="menu-group",io.register=H(io),io.styles=[f.styles,fH];let zi=io;const so=class so extends ji{};so.baseName="menu-divider",so.register=H(so),so.styles=[f.styles,MH];let $i=so;const no=class no extends iS{};no.baseName="menu-sub",no.register=H(no),no.styles=[f.styles,yH];let Ui=no;const bH=j`
   :host {
     display: inline-flex;
   }
@@ -31966,7 +31966,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     opacity: var(--pagination-disabled-opacity);
     cursor: not-allowed;
   }
-`;var yH=Object.defineProperty,Ye=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&yH(t,e,r),r};function bH(o,t,e){const i=e*2+5;if(t<=i)return Array.from({length:t},(c,u)=>u+1);const r=Math.max(o-e,1),s=Math.min(o+e,t),n=r>2,d=s<t-1,a=[];if(a.push(1),n)a.push(-1);else for(let c=2;c<r;c++)a.push(c);for(let c=r;c<=s;c++)c!==1&&c!==t&&a.push(c);if(d)a.push(-1);else for(let c=s+1;c<t;c++)a.push(c);return t>1&&a.push(t),a}var $t;const ye=($t=class extends f{constructor(){super(...arguments),this.current=1,this.total=1,this.siblings=1,this.simple=!1,this.hideControls=!1,this.showJumper=!1,this.disabled=!1}handlePageClick(t){this.disabled||t===this.current||t<1||t>this.total||(this.current=t,this.emit("change",{page:t}))}handlePrev(){this.current>1&&this.handlePageClick(this.current-1)}handleNext(){this.current<this.total&&this.handlePageClick(this.current+1)}handleKeyDown(t,e){(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handlePageClick(e))}handleJumperKeyDown(t){if(t.key==="Enter"){const e=t.target,i=parseInt(e.value,10);!isNaN(i)&&i>=1&&i<=this.total&&this.handlePageClick(i),e.value=""}}renderJumper(){return this.showJumper?p`
+`;var CH=Object.defineProperty,Ye=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&CH(t,e,r),r};function BH(o,t,e){const i=e*2+5;if(t<=i)return Array.from({length:t},(c,u)=>u+1);const r=Math.max(o-e,1),s=Math.min(o+e,t),n=r>2,d=s<t-1,a=[];if(a.push(1),n)a.push(-1);else for(let c=2;c<r;c++)a.push(c);for(let c=r;c<=s;c++)c!==1&&c!==t&&a.push(c);if(d)a.push(-1);else for(let c=s+1;c<t;c++)a.push(c);return t>1&&a.push(t),a}var $t;const ye=($t=class extends f{constructor(){super(...arguments),this.current=1,this.total=1,this.siblings=1,this.simple=!1,this.hideControls=!1,this.showJumper=!1,this.disabled=!1}handlePageClick(t){this.disabled||t===this.current||t<1||t>this.total||(this.current=t,this.emit("change",{page:t}))}handlePrev(){this.current>1&&this.handlePageClick(this.current-1)}handleNext(){this.current<this.total&&this.handlePageClick(this.current+1)}handleKeyDown(t,e){(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handlePageClick(e))}handleJumperKeyDown(t){if(t.key==="Enter"){const e=t.target,i=parseInt(e.value,10);!isNaN(i)&&i>=1&&i<=this.total&&this.handlePageClick(i),e.value=""}}renderJumper(){return this.showJumper?p`
       <span part="jumper">
         <span part="jumper-text">跳至</span>
         <input
@@ -32031,7 +32031,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
             `}
         ${this.renderJumper()}
       </nav>
-    `}render(){if(this.simple)return this.renderSimple();const t=bH(this.current,this.total,this.siblings);return p`
+    `}render(){if(this.simple)return this.renderSimple();const t=BH(this.current,this.total,this.siblings);return p`
       <nav part="pagination" role="navigation" aria-label="Pagination">
         ${this.hideControls?k:p`
               <button
@@ -32090,7 +32090,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
             `}
         ${this.renderJumper()}
       </nav>
-    `}},$t.baseName="pagination",$t.register=H($t),$t.styles=[f.styles,MH],$t);Ye([h({type:Number,reflect:!0})],ye.prototype,"current");Ye([h({type:Number})],ye.prototype,"total");Ye([h({type:Number})],ye.prototype,"siblings");Ye([h({type:Boolean,reflect:!0})],ye.prototype,"simple");Ye([h({type:Boolean,attribute:"hide-controls",reflect:!0})],ye.prototype,"hideControls");Ye([h({type:Boolean,attribute:"show-jumper"})],ye.prototype,"showJumper");Ye([h({type:Boolean,reflect:!0})],ye.prototype,"disabled");let CH=ye;const BH=j`
+    `}},$t.baseName="pagination",$t.register=H($t),$t.styles=[f.styles,bH],$t);Ye([h({type:Number,reflect:!0})],ye.prototype,"current");Ye([h({type:Number})],ye.prototype,"total");Ye([h({type:Number})],ye.prototype,"siblings");Ye([h({type:Boolean,reflect:!0})],ye.prototype,"simple");Ye([h({type:Boolean,attribute:"hide-controls",reflect:!0})],ye.prototype,"hideControls");Ye([h({type:Boolean,attribute:"show-jumper"})],ye.prototype,"showJumper");Ye([h({type:Boolean,reflect:!0})],ye.prototype,"disabled");let jH=ye;const AH=j`
   :host {
     display: inline-block;
     position: relative;
@@ -32200,7 +32200,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: translateX(0);
     }
   }
-`,lo=class lo extends as{};lo.baseName="popover",lo.register=H(lo),lo.styles=[f.styles,BH];let Ui=lo;const jH=j`
+`,lo=class lo extends as{};lo.baseName="popover",lo.register=H(lo),lo.styles=[f.styles,AH];let Di=lo;const LH=j`
   :host {
     display: block;
     width: 100%;
@@ -32318,7 +32318,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     min-width: auto;
     text-align: center;
   }
-`;var AH=Object.defineProperty,Ho=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&AH(t,e,r),r},Dt;const Oe=(Dt=class extends f{constructor(){super(...arguments),this.value=0,this.type="line",this.status="normal",this.showText=!0,this.indeterminate=!1}get percentage(){return Math.max(0,Math.min(100,this.value))}get displayText(){return this.format?this.format(this.percentage):`${this.percentage}%`}renderLineProgress(){return p`
+`;var SH=Object.defineProperty,Ho=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&SH(t,e,r),r},Ut;const Oe=(Ut=class extends f{constructor(){super(...arguments),this.value=0,this.type="line",this.status="normal",this.showText=!0,this.indeterminate=!1}get percentage(){return Math.max(0,Math.min(100,this.value))}get displayText(){return this.format?this.format(this.percentage):`${this.percentage}%`}renderLineProgress(){return p`
       <div part="progress">
         <div part="track">
           <div
@@ -32348,7 +32348,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         </svg>
         ${this.showText?p`<span part="text">${this.displayText}</span>`:k}
       </div>
-    `}render(){return this.type==="circle"?this.renderCircleProgress():this.renderLineProgress()}},Dt.baseName="progress",Dt.register=H(Dt),Dt.styles=[f.styles,jH],Dt);Ho([h({type:Number})],Oe.prototype,"value");Ho([h({type:String,reflect:!0})],Oe.prototype,"type");Ho([h({type:String,reflect:!0})],Oe.prototype,"status");Ho([h({type:Boolean,attribute:"show-text"})],Oe.prototype,"showText");Ho([h({type:Boolean,reflect:!0})],Oe.prototype,"indeterminate");Ho([h({attribute:!1})],Oe.prototype,"format");let LH=Oe;const SH=j`
+    `}render(){return this.type==="circle"?this.renderCircleProgress():this.renderLineProgress()}},Ut.baseName="progress",Ut.register=H(Ut),Ut.styles=[f.styles,LH],Ut);Ho([h({type:Number})],Oe.prototype,"value");Ho([h({type:String,reflect:!0})],Oe.prototype,"type");Ho([h({type:String,reflect:!0})],Oe.prototype,"status");Ho([h({type:Boolean,attribute:"show-text"})],Oe.prototype,"showText");Ho([h({type:Boolean,reflect:!0})],Oe.prototype,"indeterminate");Ho([h({attribute:!1})],Oe.prototype,"format");let HH=Oe;const RH=j`
   :host {
     display: inline-flex;
     align-items: center;
@@ -32522,7 +32522,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   :host([size='lg']) [part='label'] {
     font-size: var(--radio-label-font-size-lg);
   }
-`,HH=j`
+`,VH=j`
   :host {
     display: inline-block;
   }
@@ -32538,7 +32538,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     align-items: flex-start;
     gap: var(--radio-group-gap, 8px);
   }
-`;var RH=Object.defineProperty,lr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&RH(t,e,r),r},Ut;const Ro=(Ut=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;t.target.checked&&(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleClick(){this.disabled||this.checked||(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return p`
+`;var zH=Object.defineProperty,lr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&zH(t,e,r),r},Dt;const Ro=(Dt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;t.target.checked&&(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleClick(){this.disabled||this.checked||(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return p`
       <label part="radio" @click=${this.handleClick}>
         <input
           part="input"
@@ -32557,11 +32557,11 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           <slot></slot>
         </span>
       </label>
-    `}},Ut.baseName="radio",Ut.register=H(Ut),Ut.styles=[f.styles,SH],Ut);lr([h({type:String,reflect:!0})],Ro.prototype,"size");lr([h({type:Boolean,reflect:!0})],Ro.prototype,"checked");lr([h({type:Boolean,reflect:!0})],Ro.prototype,"disabled");lr([h({type:String})],Ro.prototype,"name");lr([h({type:String})],Ro.prototype,"value");let VH=Ro;var zH=Object.defineProperty,ar=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&zH(t,e,r),r},Ft;const Vo=(Ft=class extends f{constructor(){super(...arguments),this.value="",this.name="",this.disabled=!1,this.vertical=!1,this.gap="",this.handleRadioChange=t=>{const i=t.detail?.value;i&&(this.value=i,this.updateRadios(),this.emit("change",{value:this.value}))},this.handleSlotChange=()=>{this.updateRadios(),this.bindRadioListeners()}}get radios(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-radio"))}bindRadioListeners(){this.radios.forEach(t=>{t.removeEventListener("ik-change",this.handleRadioChange),t.addEventListener("ik-change",this.handleRadioChange)})}updateRadios(){this.radios.forEach(t=>{t.checked=t.value===this.value,this.name&&(t.name=this.name),this.disabled&&(t.disabled=!0)})}firstUpdated(){this.updateRadios(),this.bindRadioListeners()}updated(t){(t.has("value")||t.has("disabled")||t.has("name"))&&this.updateRadios()}render(){const t=this.gap?`gap: ${this.gap}`:"";return p`
+    `}},Dt.baseName="radio",Dt.register=H(Dt),Dt.styles=[f.styles,RH],Dt);lr([h({type:String,reflect:!0})],Ro.prototype,"size");lr([h({type:Boolean,reflect:!0})],Ro.prototype,"checked");lr([h({type:Boolean,reflect:!0})],Ro.prototype,"disabled");lr([h({type:String})],Ro.prototype,"name");lr([h({type:String})],Ro.prototype,"value");let $H=Ro;var UH=Object.defineProperty,ar=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&UH(t,e,r),r},Ft;const Vo=(Ft=class extends f{constructor(){super(...arguments),this.value="",this.name="",this.disabled=!1,this.vertical=!1,this.gap="",this.handleRadioChange=t=>{const i=t.detail?.value;i&&(this.value=i,this.updateRadios(),this.emit("change",{value:this.value}))},this.handleSlotChange=()=>{this.updateRadios(),this.bindRadioListeners()}}get radios(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-radio"))}bindRadioListeners(){this.radios.forEach(t=>{t.removeEventListener("ik-change",this.handleRadioChange),t.addEventListener("ik-change",this.handleRadioChange)})}updateRadios(){this.radios.forEach(t=>{t.checked=t.value===this.value,this.name&&(t.name=this.name),this.disabled&&(t.disabled=!0)})}firstUpdated(){this.updateRadios(),this.bindRadioListeners()}updated(t){(t.has("value")||t.has("disabled")||t.has("name"))&&this.updateRadios()}render(){const t=this.gap?`gap: ${this.gap}`:"";return p`
       <div part="group" role="radiogroup" style=${t}>
         <slot @slotchange=${this.handleSlotChange}></slot>
       </div>
-    `}},Ft.baseName="radio-group",Ft.register=H(Ft),Ft.styles=[f.styles,HH],Ft);ar([h({type:String})],Vo.prototype,"value");ar([h({type:String})],Vo.prototype,"name");ar([h({type:Boolean,reflect:!0})],Vo.prototype,"disabled");ar([h({type:Boolean,reflect:!0})],Vo.prototype,"vertical");ar([h({type:String})],Vo.prototype,"gap");let $H=Vo;const DH=j`
+    `}},Ft.baseName="radio-group",Ft.register=H(Ft),Ft.styles=[f.styles,VH],Ft);ar([h({type:String})],Vo.prototype,"value");ar([h({type:String})],Vo.prototype,"name");ar([h({type:Boolean,reflect:!0})],Vo.prototype,"disabled");ar([h({type:Boolean,reflect:!0})],Vo.prototype,"vertical");ar([h({type:String})],Vo.prototype,"gap");let DH=Vo;const FH=j`
   /* Host iku-select 本身） */
   :host {
     display: inline-block;
@@ -32683,7 +32683,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     font-size: var(--select-empty-font-size);
     color: var(--select-empty-color);
   }
-`,ao=class ao extends NL{};ao.baseName="select",ao.register=$(ao),ao.styles=[DH];let Fi=ao;const UH=j`
+`,ao=class ao extends ZL{};ao.baseName="select",ao.register=$(ao),ao.styles=[FH];let Fi=ao;const PH=j`
   :host {
     display: block;
     box-sizing: border-box;
@@ -32745,7 +32745,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     opacity: var(--select-option-disabled-opacity);
     cursor: not-allowed;
   }
-`,ho=class ho extends ZL{};ho.baseName="select-option",ho.register=$(ho),ho.styles=[UH];let Pi=ho;const FH=j`
+`,ho=class ho extends WL{};ho.baseName="select-option",ho.register=$(ho),ho.styles=[PH];let Pi=ho;const EH=j`
   :host {
     display: block;
   }
@@ -32800,9 +32800,9 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: translateX(100%);
     }
   }
-`;var PH=Object.defineProperty,dr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&PH(t,e,r),r},Pt;const zo=(Pt=class extends f{constructor(){super(...arguments),this.variant="text",this.animated=!0}render(){const t=[this.width?`width:${this.width}`:"",this.height?`height:${this.height}`:"",this.radius?`border-radius:${this.radius}`:""].filter(Boolean).join(";");return p`
+`;var TH=Object.defineProperty,dr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&TH(t,e,r),r},Pt;const zo=(Pt=class extends f{constructor(){super(...arguments),this.variant="text",this.animated=!0}render(){const t=[this.width?`width:${this.width}`:"",this.height?`height:${this.height}`:"",this.radius?`border-radius:${this.radius}`:""].filter(Boolean).join(";");return p`
       <div part="skeleton" style=${t||""}></div>
-    `}},Pt.baseName="skeleton",Pt.register=H(Pt),Pt.styles=[f.styles,FH],Pt);dr([h({type:String,reflect:!0})],zo.prototype,"variant");dr([h({type:Boolean,reflect:!0})],zo.prototype,"animated");dr([h({type:String})],zo.prototype,"width");dr([h({type:String})],zo.prototype,"height");dr([h({type:String})],zo.prototype,"radius");let EH=zo;const TH=j`
+    `}},Pt.baseName="skeleton",Pt.register=H(Pt),Pt.styles=[f.styles,EH],Pt);dr([h({type:String,reflect:!0})],zo.prototype,"variant");dr([h({type:Boolean,reflect:!0})],zo.prototype,"animated");dr([h({type:String})],zo.prototype,"width");dr([h({type:String})],zo.prototype,"height");dr([h({type:String})],zo.prototype,"radius");let YH=zo;const OH=j`
   :host {
     display: block;
     padding: var(--slider-padding);
@@ -32996,7 +32996,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     margin-top: 0;
     margin-left: 12px;
   }
-`;var YH=Object.defineProperty,rt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&YH(t,e,r),r},Et;const Q=(Et=class extends f{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal",this.showMarks=!1,this.showTooltip=!1,this.activeThumb=null,this.isDragging=!1,this.isHovering=!1}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}get defaultMarks(){if(this.marks)return this.marks;if(!this.showMarks)return[];const t=[],e=this.max-this.min,i=Math.floor(e/this.step),r=10,s=i>r?Math.ceil(i/r):1;for(let n=0;n<=i;n+=s){const d=this.min+n*this.step;t.push({value:d,label:String(d)})}return t[t.length-1]?.value!==this.max&&t.push({value:this.max,label:String(this.max)}),t}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r),this.isDragging=!0,this.activeThumb=r;const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{this.isDragging=!1,this.activeThumb=null,e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}formatTooltip(t){return this.tipFormatter?this.tipFormatter(t):String(t)}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`,n=this.activeThumb===e||!this.range&&this.isDragging,d=this.showTooltip&&(n||this.isHovering);return p`
+`;var IH=Object.defineProperty,rt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&IH(t,e,r),r},Et;const Q=(Et=class extends f{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal",this.showMarks=!1,this.showTooltip=!1,this.activeThumb=null,this.isDragging=!1,this.isHovering=!1}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}get defaultMarks(){if(this.marks)return this.marks;if(!this.showMarks)return[];const t=[],e=this.max-this.min,i=Math.floor(e/this.step),r=10,s=i>r?Math.ceil(i/r):1;for(let n=0;n<=i;n+=s){const d=this.min+n*this.step;t.push({value:d,label:String(d)})}return t[t.length-1]?.value!==this.max&&t.push({value:this.max,label:String(this.max)}),t}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r),this.isDragging=!0,this.activeThumb=r;const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{this.isDragging=!1,this.activeThumb=null,e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}formatTooltip(t){return this.tipFormatter?this.tipFormatter(t):String(t)}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`,n=this.activeThumb===e||!this.range&&this.isDragging,d=this.showTooltip&&(n||this.isHovering);return p`
       <div
         part="${r}${n?" thumb-active":""}"
         role="slider"
@@ -33035,7 +33035,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
             `:this.renderThumb(Array.isArray(this.value)?this.value[1]:this.value)}
         ${this.renderMarks()}
       </div>
-    `}},Et.baseName="slider",Et.register=H(Et),Et.styles=[f.styles,TH],Et);rt([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],Q.prototype,"value");rt([h({type:Number})],Q.prototype,"min");rt([h({type:Number})],Q.prototype,"max");rt([h({type:Number})],Q.prototype,"step");rt([h({type:Boolean,reflect:!0})],Q.prototype,"range");rt([h({type:Boolean,reflect:!0})],Q.prototype,"disabled");rt([h({type:String,reflect:!0})],Q.prototype,"orientation");rt([h({type:Boolean,attribute:"show-marks"})],Q.prototype,"showMarks");rt([h({attribute:!1})],Q.prototype,"marks");rt([h({type:Boolean,attribute:"show-tooltip"})],Q.prototype,"showTooltip");rt([h({attribute:!1})],Q.prototype,"tipFormatter");rt([O()],Q.prototype,"activeThumb");rt([O()],Q.prototype,"isDragging");rt([O()],Q.prototype,"isHovering");let OH=Q;const IH=j`
+    `}},Et.baseName="slider",Et.register=H(Et),Et.styles=[f.styles,OH],Et);rt([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],Q.prototype,"value");rt([h({type:Number})],Q.prototype,"min");rt([h({type:Number})],Q.prototype,"max");rt([h({type:Number})],Q.prototype,"step");rt([h({type:Boolean,reflect:!0})],Q.prototype,"range");rt([h({type:Boolean,reflect:!0})],Q.prototype,"disabled");rt([h({type:String,reflect:!0})],Q.prototype,"orientation");rt([h({type:Boolean,attribute:"show-marks"})],Q.prototype,"showMarks");rt([h({attribute:!1})],Q.prototype,"marks");rt([h({type:Boolean,attribute:"show-tooltip"})],Q.prototype,"showTooltip");rt([h({attribute:!1})],Q.prototype,"tipFormatter");rt([O()],Q.prototype,"activeThumb");rt([O()],Q.prototype,"isDragging");rt([O()],Q.prototype,"isHovering");let qH=Q;const NH=j`
   :host {
     display: inline-flex;
     align-items: center;
@@ -33204,7 +33204,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   :host([size='lg']) [part='label'] {
     font-size: var(--switch-label-font-size-lg, 16px);
   }
-`;var qH=Object.defineProperty,hr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&qH(t,e,r),r},Tt;const $o=(Tt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.emit("change",{checked:this.checked,value:this.value})}handleClick(){this.disabled||(this.checked=!this.checked,this.emit("change",{checked:this.checked,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return p`
+`;var _H=Object.defineProperty,hr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_H(t,e,r),r},Tt;const $o=(Tt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.emit("change",{checked:this.checked,value:this.value})}handleClick(){this.disabled||(this.checked=!this.checked,this.emit("change",{checked:this.checked,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return p`
       <label part="switch">
         <input
           part="input"
@@ -33224,7 +33224,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           <slot></slot>
         </span>
       </label>
-    `}},Tt.baseName="switch",Tt.register=H(Tt),Tt.styles=[f.styles,IH],Tt);hr([h({type:String,reflect:!0})],$o.prototype,"size");hr([h({type:Boolean,reflect:!0})],$o.prototype,"checked");hr([h({type:Boolean,reflect:!0})],$o.prototype,"disabled");hr([h({type:String})],$o.prototype,"name");hr([h({type:String})],$o.prototype,"value");let NH=$o;const _H=j`
+    `}},Tt.baseName="switch",Tt.register=H(Tt),Tt.styles=[f.styles,NH],Tt);hr([h({type:String,reflect:!0})],$o.prototype,"size");hr([h({type:Boolean,reflect:!0})],$o.prototype,"checked");hr([h({type:Boolean,reflect:!0})],$o.prototype,"disabled");hr([h({type:String})],$o.prototype,"name");hr([h({type:String})],$o.prototype,"value");let ZH=$o;const GH=j`
   :host {
     display: block;
   }
@@ -33368,7 +33368,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   [part='checkbox'] {
     --checkbox-size: 16px;
   }
-`,co=class co extends PS{renderCheckbox(t,e,i,r){const s=La(No("checkbox"));return Lr`
+`,co=class co extends TS{renderCheckbox(t,e,i,r){const s=Ha(No("checkbox"));return Lr`
       <${s}
         part="checkbox"
         .checked=${t}
@@ -33376,7 +33376,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         .disabled=${i}
         @ik-change=${r}
       ></${s}>
-    `}};co.baseName="table",co.register=H(co),co.styles=[f.styles,_H];let Ei=co;const ZH=j`
+    `}};co.baseName="table",co.register=H(co),co.styles=[f.styles,GH];let Ei=co;const WH=j`
   :host {
     display: block;
   }
@@ -33442,7 +33442,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   :host [part~='tab-list-vertical'] {
     flex-direction: column;
   }
-`;const GH=j`
+`;const KH=j`
   :host {
     display: inline-block;
   }
@@ -33494,7 +33494,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     outline: var(--tabs-tab-focus-ring-width) solid var(--tabs-tab-focus-ring);
     outline-offset: var(--tabs-tab-focus-ring-offset);
   }
-`,WH=j`
+`,XH=j`
   :host {
     display: block;
   }
@@ -33507,7 +33507,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   :host [part~='tab-panel'][hidden] {
     display: none;
   }
-`,po=class po extends iS{};po.baseName="tabs",po.register=H(po),po.styles=[f.styles,ZH];let Ti=po;const uo=class uo extends nS{};uo.baseName="tab",uo.register=H(uo),uo.styles=[f.styles,GH];let Yi=uo;const wo=class wo extends aS{};wo.baseName="tab-panel",wo.register=H(wo),wo.styles=[f.styles,WH];let Oi=wo;const KH=j`
+`,po=class po extends nS{};po.baseName="tabs",po.register=H(po),po.styles=[f.styles,WH];let Ti=po;const uo=class uo extends aS{};uo.baseName="tab",uo.register=H(uo),uo.styles=[f.styles,KH];let Yi=uo;const wo=class wo extends hS{};wo.baseName="tab-panel",wo.register=H(wo),wo.styles=[f.styles,XH];let Oi=wo;const JH=j`
   :host {
     /* 布局 */
     display: inline-flex;
@@ -33605,7 +33605,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     resize: none;
     overflow: hidden;
   }
-`;var XH=Object.defineProperty,lt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&XH(t,e,r),r},Yt;const it=(Yt=class extends f{constructor(){super(...arguments),this.value="",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.error=!1,this.name="",this.autofocus=!1,this.rows=3,this.autosize=!1}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value}),this.autosize&&this.adjustHeight(e)}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}adjustHeight(t){t.style.height="auto";const e=getComputedStyle(t),i=parseFloat(e.lineHeight)||20,r=parseFloat(e.paddingTop)||0,s=parseFloat(e.paddingBottom)||0,n=parseFloat(e.borderTopWidth)||0,d=parseFloat(e.borderBottomWidth)||0,a=this.minRows?this.minRows*i+r+s+n+d:0,c=this.maxRows?this.maxRows*i+r+s+n+d:1/0,u=Math.min(Math.max(t.scrollHeight,a),c);t.style.height=`${u}px`,t.scrollHeight>c?t.style.overflowY="auto":t.style.overflowY="hidden"}focus(){this.shadowRoot?.querySelector("textarea")?.focus()}blur(){this.shadowRoot?.querySelector("textarea")?.blur()}select(){this.shadowRoot?.querySelector("textarea")?.select()}firstUpdated(){if(this.autosize){const t=this.shadowRoot?.querySelector("textarea");t&&this.adjustHeight(t)}}render(){return p`
+`;var QH=Object.defineProperty,lt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&QH(t,e,r),r},Yt;const it=(Yt=class extends f{constructor(){super(...arguments),this.value="",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.error=!1,this.name="",this.autofocus=!1,this.rows=3,this.autosize=!1}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value}),this.autosize&&this.adjustHeight(e)}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}adjustHeight(t){t.style.height="auto";const e=getComputedStyle(t),i=parseFloat(e.lineHeight)||20,r=parseFloat(e.paddingTop)||0,s=parseFloat(e.paddingBottom)||0,n=parseFloat(e.borderTopWidth)||0,d=parseFloat(e.borderBottomWidth)||0,a=this.minRows?this.minRows*i+r+s+n+d:0,c=this.maxRows?this.maxRows*i+r+s+n+d:1/0,u=Math.min(Math.max(t.scrollHeight,a),c);t.style.height=`${u}px`,t.scrollHeight>c?t.style.overflowY="auto":t.style.overflowY="hidden"}focus(){this.shadowRoot?.querySelector("textarea")?.focus()}blur(){this.shadowRoot?.querySelector("textarea")?.blur()}select(){this.shadowRoot?.querySelector("textarea")?.select()}firstUpdated(){if(this.autosize){const t=this.shadowRoot?.querySelector("textarea");t&&this.adjustHeight(t)}}render(){return p`
       <textarea
         part="textarea"
         .value=${this.value}
@@ -33621,7 +33621,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
         @focus=${this.handleFocus}
         @blur=${this.handleBlur}
       ></textarea>
-    `}},Yt.baseName="textarea",Yt.register=H(Yt),Yt.styles=[f.styles,KH],Yt);lt([h({type:String})],it.prototype,"value");lt([h({type:String,reflect:!0})],it.prototype,"size");lt([h({type:String})],it.prototype,"placeholder");lt([h({type:Boolean,reflect:!0})],it.prototype,"disabled");lt([h({type:Boolean,reflect:!0})],it.prototype,"readonly");lt([h({type:Boolean,reflect:!0})],it.prototype,"error");lt([h({type:Number})],it.prototype,"maxlength");lt([h({type:String})],it.prototype,"name");lt([h({type:Boolean})],it.prototype,"autofocus");lt([h({type:Number})],it.prototype,"rows");lt([h({type:Boolean,reflect:!0})],it.prototype,"autosize");lt([h({type:Number,attribute:"min-rows"})],it.prototype,"minRows");lt([h({type:Number,attribute:"max-rows"})],it.prototype,"maxRows");let JH=it;const QH=j`
+    `}},Yt.baseName="textarea",Yt.register=H(Yt),Yt.styles=[f.styles,JH],Yt);lt([h({type:String})],it.prototype,"value");lt([h({type:String,reflect:!0})],it.prototype,"size");lt([h({type:String})],it.prototype,"placeholder");lt([h({type:Boolean,reflect:!0})],it.prototype,"disabled");lt([h({type:Boolean,reflect:!0})],it.prototype,"readonly");lt([h({type:Boolean,reflect:!0})],it.prototype,"error");lt([h({type:Number})],it.prototype,"maxlength");lt([h({type:String})],it.prototype,"name");lt([h({type:Boolean})],it.prototype,"autofocus");lt([h({type:Number})],it.prototype,"rows");lt([h({type:Boolean,reflect:!0})],it.prototype,"autosize");lt([h({type:Number,attribute:"min-rows"})],it.prototype,"minRows");lt([h({type:Number,attribute:"max-rows"})],it.prototype,"maxRows");let tR=it;const eR=j`
   /* Host 容器 - 只控制显示/隐藏和基础布局 */
   :host {
     display: none;
@@ -33781,7 +33781,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: translateY(-8px) scale(0.96);
     }
   }
-`,go=class go extends hS{getDefaultIcon(){const t={success:p`
+`,go=class go extends pS{getDefaultIcon(){const t={success:p`
         <svg viewBox="0 0 20 20" fill="currentColor">
           <path
             fill-rule="evenodd"
@@ -33824,7 +33824,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
           />
         </svg>
       </slot>
-    `}};go.baseName="toast",go.register=H(go),go.styles=[f.styles,QH];let Ii=go;const Go=class Go extends uS{};Go.baseName="toast-region",Go.register=H(Go);let qi=Go;const tR=j`
+    `}};go.baseName="toast",go.register=H(go),go.styles=[f.styles,eR];let Ii=go;const Go=class Go extends gS{};Go.baseName="toast-region",Go.register=H(Go);let qi=Go;const oR=j`
   :host {
     display: inline-block;
     position: relative;
@@ -33928,7 +33928,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
       transform: translateX(0);
     }
   }
-`,vo=class vo extends AS{};vo.baseName="tooltip",vo.register=H(vo),vo.styles=[f.styles,tR];let Ni=vo;const eR=j`
+`,vo=class vo extends SS{};vo.baseName="tooltip",vo.register=H(vo),vo.styles=[f.styles,oR];let Ni=vo;const rR=j`
   :host {
     display: block;
   }
@@ -33937,7 +33937,7 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
     display: flex;
     flex-direction: column;
   }
-`,oR=j`
+`,iR=j`
   :host {
     display: block;
   }
@@ -34108,8 +34108,8 @@ import{F as Y,h as l,L as Wr,R as Dr,a as l1,d as la,u as aa,b as a1,c as d1,e a
   [part='children'][hidden] {
     display: none;
   }
-`,ko=class ko extends $S{getNodeTagName(){return`${this.tagName.toLowerCase().replace("-tree","")}-tree-node`}};ko.baseName="tree",ko.register=H(ko),ko.styles=[f.styles,eR];let _i=ko;const mo=class mo extends US{};mo.baseName="tree-node",mo.register=H(mo),mo.styles=[f.styles,oR];let Zi=mo;function rR(){iH.register(),Fi.register(),Pi.register(),Ri.register(),Vi.register(),zi.register(),$i.register(),Di.register(),Ti.register(),Yi.register(),Oi.register(),lH.register(),NH.register(),pH.register(),JH.register(),VH.register(),$H.register(),Ii.register(),qi.register(),EH.register(),OH.register(),gH.register(),LH.register(),QS.register(),eH.register(),Ai.register(),Li.register(),Si.register(),Ui.register(),Ni.register(),Hi.register(),CH.register(),_S.register(),GS.register(),_i.register(),Zi.register(),Ei.register()}const iR=["background","surface","surface-raised","foreground","foreground-muted","foreground-subtle","border","border-muted","border-strong","primary","primary-foreground","primary-hover","primary-active","primary-muted","secondary","secondary-foreground","secondary-hover","secondary-active","muted","muted-foreground","accent","accent-foreground","item-hover","item-hover-foreground","item-active","item-active-foreground","item-selected","item-selected-foreground","success","success-foreground","success-muted","warning","warning-foreground","warning-muted","destructive","destructive-foreground","destructive-muted","info","info-foreground","info-muted","input","input-focus","ring","ring-offset","card","card-foreground","popover","popover-foreground","overlay","selection","selection-foreground","scrollbar-thumb"],_0=[50,100,200,300,400,500,600,700,800,900,950],sR=["red","orange","yellow","green","blue","purple","pink","gray","neutral"];function nR(o){const t=o.match(/oklch\(([\d.]+)%?\s+([\d.]+)\s+([\d.]+)\)/);if(!t)throw new Error(`Invalid OKLCH color: ${o}`);return{l:parseFloat(t[1]),c:parseFloat(t[2]),h:parseFloat(t[3])}}function lR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function ui(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function aR(o,t,e){const i=ui(o),r=ui(t),s=ui(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function dR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function hR(o,t,e){const i=Math.sqrt(t*t+e*e);let r=Math.atan2(e,t)*(180/Math.PI);return r<0&&(r+=360),{l:o*100,c:i,h:r}}function ps(o){const t=lR(o),e=aR(t.r,t.g,t.b),i=dR(e.x,e.y,e.z);return hR(i.l,i.a,i.b)}function us(o,t,e){return`oklch(${o.toFixed(1)}% ${t.toFixed(3)} ${e.toFixed(3)})`}function vt(o){const{l:t,c:e,h:i}=ps(o);return us(t,e,i)}const cR={50:97.1,100:93.6,200:88.5,300:80.8,400:70.4,500:63.7,600:57.7,700:50.5,800:44.4,900:39.6,950:25.8},Z0={50:.055,100:.135,200:.261,300:.481,400:.806,500:1,600:1.034,700:.898,800:.747,900:.595,950:.388};function dt(o,t=500){let e;o.startsWith("#")?e=ps(o):e=nR(o);const i=Z0[t],r={};for(const[s,n]of Object.entries(cR)){const d=parseInt(s),a=Z0[d],c=e.c*(a/i);r[d]=us(n,c,e.h)}return r}function xo(o,t){const e=ps(o),{lightnessOffset:i=0,chromaFactor:r=1}=t,s=Math.max(0,Math.min(100,e.l+i)),n=Math.max(0,e.c*r);return us(s,n,e.h)}const Cr="oklch(98.5% 0 0)",ws={primary:"#B7410E",success:"#22c55e",warning:"#f59e0b",destructive:"#ef4444",info:"#3b82f6"};function za(o){const t=dt(o.primary,500);return{accent:t[100],accentForeground:t[700],itemHover:t[50],itemHoverForeground:t[700],itemActive:t[100],itemActiveForeground:t[800]}}function pR(o){const t=o.primary;return{accent:xo(t,{lightnessOffset:-11.5,chromaFactor:.9}),accentForeground:Cr,itemHover:xo(t,{lightnessOffset:-5.5,chromaFactor:.77}),itemHoverForeground:Cr,itemActive:xo(t,{lightnessOffset:-3.5,chromaFactor:.93}),itemActiveForeground:Cr}}function uR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function wi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function wR(o,t,e){const i=wi(o),r=wi(t),s=wi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function gR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Zt(o){const t=uR(o),e=wR(t.r,t.g,t.b);return gR(e.x,e.y,e.z).l*100}function Gt(o){return o>60?"#000":"#fff"}function $a(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Gt(Zt(o.success)),u=Gt(Zt(o.warning)),w=Gt(Zt(o.destructive)),C=Gt(Zt(o.info));return{success:s,successForeground:c,successMuted:t[50],warning:n,warningForeground:u,warningMuted:e[50],destructive:d,destructiveForeground:w,destructiveMuted:i[50],info:a,infoForeground:C,infoMuted:r[50]}}function vR(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Gt(Zt(o.success)),u=Gt(Zt(o.warning)),w=Gt(Zt(o.destructive)),C=Gt(Zt(o.info));return{success:s,successForeground:c,successMuted:t[900],warning:n,warningForeground:u,warningMuted:e[900],destructive:d,destructiveForeground:w,destructiveMuted:i[900],info:a,infoForeground:C,infoMuted:r[900]}}const kR={foreground:13,foregroundMuted:55.1,foregroundSubtle:70.7,surface:98.5,border:92.8,borderMuted:96.7,borderStrong:87.2,secondary:96.7,secondaryForeground:21,secondaryHover:92.8,secondaryActive:87.2,muted:96.7,mutedForeground:55.1,input:92.8,cardForeground:13,popoverForeground:13,scrollbarThumb:87.2},mR={background:13,foreground:98.5,foregroundMuted:70.7,foregroundSubtle:55.1,surface:21,surfaceRaised:37.3,border:27.8,borderMuted:21,borderStrong:37.3,secondary:27.8,secondaryForeground:98.5,secondaryHover:37.3,secondaryActive:44.6,muted:27.8,mutedForeground:70.7,input:37.3,ringOffset:13,card:21,cardForeground:98.5,popover:21,popoverForeground:98.5,scrollbarThumb:44.6},Da={light:{lightness:0,alpha:.5},dark:{lightness:0,alpha:.7}};function B(o,t){return t!==void 0?`oklch(${o}% 0 0 / ${t})`:`oklch(${o}% 0 0)`}function xR(){const o=kR,t=Da.light;return{background:"#fff",foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:"#fff",border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:"#fff",card:"#fff",cardForeground:B(o.cardForeground),popover:"#fff",popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function fR(){const o=mR,t=Da.dark;return{background:B(o.background),foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:B(o.surfaceRaised),border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:B(o.ringOffset),card:B(o.card),cardForeground:B(o.cardForeground),popover:B(o.popover),popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function MR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function gi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function yR(o,t,e){const i=gi(o),r=gi(t),s=gi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function bR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Ua(o){const t=MR(o),e=yR(t.r,t.g,t.b);return bR(e.x,e.y,e.z).l*100}function Fa(o){return o>60?"#000":"#fff"}function Pa(o,t){const e=dt(o,500),i=vt(o),r=Ua(o),s=Fa(r);return{primary:i,primaryForeground:s,primaryHover:e[700],primaryActive:e[800],primaryMuted:e[100],itemSelected:e[100],itemSelectedForeground:e[700],selection:e[200],selectionForeground:t.foreground,inputFocus:i,ring:i}}function CR(o,t){const e=dt(o,500),i=vt(o),r=Ua(o),s=Fa(r);return{primary:i,primaryForeground:s,primaryHover:xo(o,{lightnessOffset:6.5,chromaFactor:1.02}),primaryActive:xo(o,{lightnessOffset:2.5,chromaFactor:1.08}),primaryMuted:e[800],itemSelected:xo(o,{lightnessOffset:-7.5,chromaFactor:.83}),itemSelectedForeground:Cr,selection:e[800],selectionForeground:t.foreground,inputFocus:i,ring:i}}const BR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.25), 0 1px 2px -1px rgb(0 0 0 / 0.25)",md:"0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.35), 0 4px 6px -4px rgb(0 0 0 / 0.35)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.5)"};function jR(o=ws){const t=fR(),e=CR(o.primary,t),i=pR(o),r=vR(o);return{name:"dark",colorScheme:"dark",semantic:{...t,...e,...i,...r},shadows:BR}}jR();const AR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function LR(o=ws){const t=xR(),e=Pa(o.primary,t),i=za(o),r=$a(o);return{name:"light",colorScheme:"light",semantic:{...t,...e,...i,...r},shadows:AR}}LR();const G0={background:"oklch(98.5% 0 0)",foreground:"oklch(20.5% 0 0)",foregroundMuted:"oklch(55.6% 0 0)",foregroundSubtle:"oklch(70.8% 0 0)",surface:"oklch(97% 0 0)",surfaceRaised:"#fff",border:"oklch(87% 0 0)",borderMuted:"oklch(92.2% 0 0)",borderStrong:"oklch(70.8% 0 0)",secondary:"oklch(92.2% 0 0)",secondaryForeground:"oklch(26.9% 0 0)",secondaryHover:"oklch(87% 0 0)",secondaryActive:"oklch(70.8% 0 0)",muted:"oklch(92.2% 0 0)",mutedForeground:"oklch(55.6% 0 0)",input:"oklch(87% 0 0)",ringOffset:"oklch(98.5% 0 0)",card:"#fff",cardForeground:"oklch(20.5% 0 0)",popover:"#fff",popoverForeground:"oklch(20.5% 0 0)",overlay:"oklch(0% 0 0 / 0.4)",scrollbarThumb:"oklch(87% 0 0)"},SR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function HR(o=ws){const t=Pa(o.primary,G0),e=za(o),i=$a(o);return{name:"neutral",colorScheme:"light",semantic:{...G0,...t,...e,...i},shadows:SR}}HR();function RR(o={}){const{defaultTheme:t="light",autoFallback:e="light"}=o;let i=null,r=null,s=null;const n=new Map;function d(){return typeof window>"u"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function a(){return!s&&typeof document<"u"&&(s=document.createElement("style"),s.id="theme-registry",document.head.appendChild(s)),s}function c(x){const A=n.get(x);if(!A)return;const P=Object.entries(A.variables).map(([st,gt])=>`  ${st}: ${gt};`).join(`
+`,ko=class ko extends DS{getNodeTagName(){return`${this.tagName.toLowerCase().replace("-tree","")}-tree-node`}};ko.baseName="tree",ko.register=H(ko),ko.styles=[f.styles,rR];let _i=ko;const mo=class mo extends PS{};mo.baseName="tree-node",mo.register=H(mo),mo.styles=[f.styles,iR];let Zi=mo;function sR(){nH.register(),Fi.register(),Pi.register(),Ri.register(),Vi.register(),zi.register(),$i.register(),Ui.register(),Ti.register(),Yi.register(),Oi.register(),dH.register(),ZH.register(),wH.register(),tR.register(),$H.register(),DH.register(),Ii.register(),qi.register(),YH.register(),qH.register(),kH.register(),HH.register(),eH.register(),rH.register(),Ai.register(),Li.register(),Si.register(),Di.register(),Ni.register(),Hi.register(),jH.register(),GS.register(),KS.register(),_i.register(),Zi.register(),Ei.register()}const nR=["background","surface","surface-raised","foreground","foreground-muted","foreground-subtle","border","border-muted","border-strong","primary","primary-foreground","primary-hover","primary-active","primary-muted","secondary","secondary-foreground","secondary-hover","secondary-active","muted","muted-foreground","accent","accent-foreground","item-hover","item-hover-foreground","item-active","item-active-foreground","item-selected","item-selected-foreground","success","success-foreground","success-muted","warning","warning-foreground","warning-muted","destructive","destructive-foreground","destructive-muted","info","info-foreground","info-muted","input","input-focus","ring","ring-offset","card","card-foreground","popover","popover-foreground","overlay","selection","selection-foreground","scrollbar-thumb"],_0=[50,100,200,300,400,500,600,700,800,900,950],lR=["red","orange","yellow","green","blue","purple","pink","gray","neutral"];function aR(o){const t=o.match(/oklch\(([\d.]+)%?\s+([\d.]+)\s+([\d.]+)\)/);if(!t)throw new Error(`Invalid OKLCH color: ${o}`);return{l:parseFloat(t[1]),c:parseFloat(t[2]),h:parseFloat(t[3])}}function dR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function ui(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function hR(o,t,e){const i=ui(o),r=ui(t),s=ui(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function cR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function pR(o,t,e){const i=Math.sqrt(t*t+e*e);let r=Math.atan2(e,t)*(180/Math.PI);return r<0&&(r+=360),{l:o*100,c:i,h:r}}function ps(o){const t=dR(o),e=hR(t.r,t.g,t.b),i=cR(e.x,e.y,e.z);return pR(i.l,i.a,i.b)}function us(o,t,e){return`oklch(${o.toFixed(1)}% ${t.toFixed(3)} ${e.toFixed(3)})`}function vt(o){const{l:t,c:e,h:i}=ps(o);return us(t,e,i)}const uR={50:97.1,100:93.6,200:88.5,300:80.8,400:70.4,500:63.7,600:57.7,700:50.5,800:44.4,900:39.6,950:25.8},Z0={50:.055,100:.135,200:.261,300:.481,400:.806,500:1,600:1.034,700:.898,800:.747,900:.595,950:.388};function dt(o,t=500){let e;o.startsWith("#")?e=ps(o):e=aR(o);const i=Z0[t],r={};for(const[s,n]of Object.entries(uR)){const d=parseInt(s),a=Z0[d],c=e.c*(a/i);r[d]=us(n,c,e.h)}return r}function xo(o,t){const e=ps(o),{lightnessOffset:i=0,chromaFactor:r=1}=t,s=Math.max(0,Math.min(100,e.l+i)),n=Math.max(0,e.c*r);return us(s,n,e.h)}const Cr="oklch(98.5% 0 0)",ws={primary:"#B7410E",success:"#22c55e",warning:"#f59e0b",destructive:"#ef4444",info:"#3b82f6"};function Ua(o){const t=dt(o.primary,500);return{accent:t[100],accentForeground:t[700],itemHover:t[50],itemHoverForeground:t[700],itemActive:t[100],itemActiveForeground:t[800]}}function wR(o){const t=o.primary;return{accent:xo(t,{lightnessOffset:-11.5,chromaFactor:.9}),accentForeground:Cr,itemHover:xo(t,{lightnessOffset:-5.5,chromaFactor:.77}),itemHoverForeground:Cr,itemActive:xo(t,{lightnessOffset:-3.5,chromaFactor:.93}),itemActiveForeground:Cr}}function gR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function wi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function vR(o,t,e){const i=wi(o),r=wi(t),s=wi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function kR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Zt(o){const t=gR(o),e=vR(t.r,t.g,t.b);return kR(e.x,e.y,e.z).l*100}function Gt(o){return o>60?"#000":"#fff"}function Da(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Gt(Zt(o.success)),u=Gt(Zt(o.warning)),w=Gt(Zt(o.destructive)),C=Gt(Zt(o.info));return{success:s,successForeground:c,successMuted:t[50],warning:n,warningForeground:u,warningMuted:e[50],destructive:d,destructiveForeground:w,destructiveMuted:i[50],info:a,infoForeground:C,infoMuted:r[50]}}function mR(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Gt(Zt(o.success)),u=Gt(Zt(o.warning)),w=Gt(Zt(o.destructive)),C=Gt(Zt(o.info));return{success:s,successForeground:c,successMuted:t[900],warning:n,warningForeground:u,warningMuted:e[900],destructive:d,destructiveForeground:w,destructiveMuted:i[900],info:a,infoForeground:C,infoMuted:r[900]}}const xR={foreground:13,foregroundMuted:55.1,foregroundSubtle:70.7,surface:98.5,border:92.8,borderMuted:96.7,borderStrong:87.2,secondary:96.7,secondaryForeground:21,secondaryHover:92.8,secondaryActive:87.2,muted:96.7,mutedForeground:55.1,input:92.8,cardForeground:13,popoverForeground:13,scrollbarThumb:87.2},fR={background:13,foreground:98.5,foregroundMuted:70.7,foregroundSubtle:55.1,surface:21,surfaceRaised:37.3,border:27.8,borderMuted:21,borderStrong:37.3,secondary:27.8,secondaryForeground:98.5,secondaryHover:37.3,secondaryActive:44.6,muted:27.8,mutedForeground:70.7,input:37.3,ringOffset:13,card:21,cardForeground:98.5,popover:21,popoverForeground:98.5,scrollbarThumb:44.6},Fa={light:{lightness:0,alpha:.5},dark:{lightness:0,alpha:.7}};function B(o,t){return t!==void 0?`oklch(${o}% 0 0 / ${t})`:`oklch(${o}% 0 0)`}function MR(){const o=xR,t=Fa.light;return{background:"#fff",foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:"#fff",border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:"#fff",card:"#fff",cardForeground:B(o.cardForeground),popover:"#fff",popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function yR(){const o=fR,t=Fa.dark;return{background:B(o.background),foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:B(o.surfaceRaised),border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:B(o.ringOffset),card:B(o.card),cardForeground:B(o.cardForeground),popover:B(o.popover),popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function bR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function gi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function CR(o,t,e){const i=gi(o),r=gi(t),s=gi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function BR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Pa(o){const t=bR(o),e=CR(t.r,t.g,t.b);return BR(e.x,e.y,e.z).l*100}function Ea(o){return o>60?"#000":"#fff"}function Ta(o,t){const e=dt(o,500),i=vt(o),r=Pa(o),s=Ea(r);return{primary:i,primaryForeground:s,primaryHover:e[700],primaryActive:e[800],primaryMuted:e[100],itemSelected:e[100],itemSelectedForeground:e[700],selection:e[200],selectionForeground:t.foreground,inputFocus:i,ring:i}}function jR(o,t){const e=dt(o,500),i=vt(o),r=Pa(o),s=Ea(r);return{primary:i,primaryForeground:s,primaryHover:xo(o,{lightnessOffset:6.5,chromaFactor:1.02}),primaryActive:xo(o,{lightnessOffset:2.5,chromaFactor:1.08}),primaryMuted:e[800],itemSelected:xo(o,{lightnessOffset:-7.5,chromaFactor:.83}),itemSelectedForeground:Cr,selection:e[800],selectionForeground:t.foreground,inputFocus:i,ring:i}}const AR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.25), 0 1px 2px -1px rgb(0 0 0 / 0.25)",md:"0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.35), 0 4px 6px -4px rgb(0 0 0 / 0.35)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.5)"};function LR(o=ws){const t=yR(),e=jR(o.primary,t),i=wR(o),r=mR(o);return{name:"dark",colorScheme:"dark",semantic:{...t,...e,...i,...r},shadows:AR}}LR();const SR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function HR(o=ws){const t=MR(),e=Ta(o.primary,t),i=Ua(o),r=Da(o);return{name:"light",colorScheme:"light",semantic:{...t,...e,...i,...r},shadows:SR}}HR();const G0={background:"oklch(98.5% 0 0)",foreground:"oklch(20.5% 0 0)",foregroundMuted:"oklch(55.6% 0 0)",foregroundSubtle:"oklch(70.8% 0 0)",surface:"oklch(97% 0 0)",surfaceRaised:"#fff",border:"oklch(87% 0 0)",borderMuted:"oklch(92.2% 0 0)",borderStrong:"oklch(70.8% 0 0)",secondary:"oklch(92.2% 0 0)",secondaryForeground:"oklch(26.9% 0 0)",secondaryHover:"oklch(87% 0 0)",secondaryActive:"oklch(70.8% 0 0)",muted:"oklch(92.2% 0 0)",mutedForeground:"oklch(55.6% 0 0)",input:"oklch(87% 0 0)",ringOffset:"oklch(98.5% 0 0)",card:"#fff",cardForeground:"oklch(20.5% 0 0)",popover:"#fff",popoverForeground:"oklch(20.5% 0 0)",overlay:"oklch(0% 0 0 / 0.4)",scrollbarThumb:"oklch(87% 0 0)"},RR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function VR(o=ws){const t=Ta(o.primary,G0),e=Ua(o),i=Da(o);return{name:"neutral",colorScheme:"light",semantic:{...G0,...t,...e,...i},shadows:RR}}VR();function zR(o={}){const{defaultTheme:t="light",autoFallback:e="light"}=o;let i=null,r=null,s=null;const n=new Map;function d(){return typeof window>"u"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function a(){return!s&&typeof document<"u"&&(s=document.createElement("style"),s.id="theme-registry",document.head.appendChild(s)),s}function c(x){const A=n.get(x);if(!A)return;const E=Object.entries(A.variables).map(([st,gt])=>`  ${st}: ${gt};`).join(`
 `),q=`[data-theme="${x}"] {
   color-scheme: ${A.colorScheme};
-${P}
-}`,b=a();b.textContent=q}function u(x){if(typeof document>"u")return;const A=document.documentElement;if(x==="light"||x==="dark")A.dataset.theme="default",A.dataset.colorScheme=x,A.style.colorScheme=x;else if(x==="neutral")A.dataset.theme="neutral",A.dataset.colorScheme="light",A.style.colorScheme="light";else if(x==="auto"){const P=d();A.dataset.theme="default",A.dataset.colorScheme=P,A.style.colorScheme=P}else{const q=n.get(x)?.colorScheme||"light";A.dataset.theme=x,A.dataset.colorScheme=q,A.style.colorScheme=q,c(x)}}function w(x,A){typeof window>"u"||window.dispatchEvent(new CustomEvent("theme-change",{detail:{theme:x,previous:A}}))}function C(){if(typeof window>"u")return()=>{};r=window.matchMedia("(prefers-color-scheme: dark)");const x=()=>{i==="auto"&&(u("auto"),w("auto","auto"))};return r.addEventListener("change",x),()=>{r?.removeEventListener("change",x)}}function m(x,A,P="light"){n.set(x,{variables:A,colorScheme:P}),i===x&&c(x)}function S(x){const A=i;i=x,u(x),w(x,A)}function z(){return i}function D(){return i==="auto"?d():i||t}function M(x){if(typeof window>"u")return()=>{};const A=P=>{x(P.detail)};return window.addEventListener("theme-change",A),()=>{window.removeEventListener("theme-change",A)}}function R(){return C()}function I(x){if(x==="light"||x==="dark")return{colorScheme:x};if(x==="neutral")return{colorScheme:"light"};if(x==="auto")return{colorScheme:d()};const A=n.get(x);return A?{colorScheme:A.colorScheme}:null}return{register:m,setTheme:S,getTheme:z,getActiveTheme:D,getThemeInfo:I,subscribe:M,init:R}}const He=RR();function VR(o={}){const{target:t=typeof document<"u"?document.documentElement:null}=o,e=new Set,i=new Set;function r(M,R){t&&t.style.setProperty(`--${M}`,R)}function s(M){t&&t.style.removeProperty(`--${M}`)}function n(M){return t?getComputedStyle(t).getPropertyValue(`--${M}`).trim():""}function d(M,R,I=500){const x=dt(R,I);for(const[A,P]of Object.entries(x))r(`color-${M}-${A}`,P);return e.add(M),x}function a(M,R){return M[R]}function c(M,R={}){const{scale:I=600,hoverScale:x,activeScale:A,mutedScale:P=100}=R,q=d("primary-custom",M,500),b=x??Math.min(I+100,950),st=A??Math.min(I+200,950),gt=a(q,I),cr=a(q,b),Ie=a(q,st),qe=a(q,P);return u("primary",gt),u("primary-hover",cr),u("primary-active",Ie),u("primary-foreground","#fff"),u("primary-muted",qe),u("ring",gt),u("input-focus",gt),u("item-selected",qe),u("item-selected-foreground",gt),u("info",gt),u("info-muted",qe),u("selection",a(q,200)),u("selection-foreground",a(q,900)),q}function u(M,R){r(`color-${M}`,R),i.add(M)}function w(M){for(const[R,I]of Object.entries(M))I&&u(R,I)}function C(M){for(const R of _0)s(`color-${M}-${R}`);e.delete(M)}function m(M){s(`color-${M}`),i.delete(M)}function S(){for(const M of e)C(M);for(const M of i)m(M);e.clear(),i.clear()}function z(){return[...e]}function D(){return[...i]}return{applyPalette:d,applyPrimaryColor:c,resetPalette:C,setSemanticColor:u,setSemanticColors:w,resetSemanticColor:m,reset:S,setVar:r,getVar:n,removeVar:s,getAppliedPalettes:z,getAppliedSemanticColors:D,COLOR_SCALE_VALUES:_0,BUILTIN_PALETTES:sR,SEMANTIC_COLOR_NAMES:iR}}typeof document<"u"&&VR();const _o=[{key:"light",label:"浅色",icon:"○"},{key:"dark",label:"深色",icon:"●"},{key:"neutral",label:"中性",icon:"◐"},{key:"auto",label:"跟随系统",icon:"◑"}];function Ea(){return He?.getTheme()||"light"}function zR(){const o=Ea();return _o.find(t=>t.key===o)||_o[0]}function $R(o){He?.setTheme(o)}function DR(o){return He?He.subscribe(t=>{o(t.theme)}):()=>{}}function Ta(o){var t,e,i="";if(typeof o=="string"||typeof o=="number")i+=o;else if(typeof o=="object")if(Array.isArray(o)){var r=o.length;for(t=0;t<r;t++)o[t]&&(e=Ta(o[t]))&&(i&&(i+=" "),i+=e)}else for(e in o)o[e]&&(i&&(i+=" "),i+=e);return i}function UR(){for(var o,t,e=0,i="",r=arguments.length;e<r;e++)(o=arguments[e])&&(t=Ta(o))&&(i&&(i+=" "),i+=t);return i}const FR=(o,t)=>{const e=new Array(o.length+t.length);for(let i=0;i<o.length;i++)e[i]=o[i];for(let i=0;i<t.length;i++)e[o.length+i]=t[i];return e},PR=(o,t)=>({classGroupId:o,validator:t}),Ya=(o=new Map,t=null,e)=>({nextPart:o,validators:t,classGroupId:e}),Sr="-",W0=[],ER="arbitrary..",TR=o=>{const t=OR(o),{conflictingClassGroups:e,conflictingClassGroupModifiers:i}=o;return{getClassGroupId:n=>{if(n.startsWith("[")&&n.endsWith("]"))return YR(n);const d=n.split(Sr),a=d[0]===""&&d.length>1?1:0;return Oa(d,a,t)},getConflictingClassGroupIds:(n,d)=>{if(d){const a=i[n],c=e[n];return a?c?FR(c,a):a:c||W0}return e[n]||W0}}},Oa=(o,t,e)=>{if(o.length-t===0)return e.classGroupId;const r=o[t],s=e.nextPart.get(r);if(s){const c=Oa(o,t+1,s);if(c)return c}const n=e.validators;if(n===null)return;const d=t===0?o.join(Sr):o.slice(t).join(Sr),a=n.length;for(let c=0;c<a;c++){const u=n[c];if(u.validator(d))return u.classGroupId}},YR=o=>o.slice(1,-1).indexOf(":")===-1?void 0:(()=>{const t=o.slice(1,-1),e=t.indexOf(":"),i=t.slice(0,e);return i?ER+i:void 0})(),OR=o=>{const{theme:t,classGroups:e}=o;return IR(e,t)},IR=(o,t)=>{const e=Ya();for(const i in o){const r=o[i];gs(r,e,i,t)}return e},gs=(o,t,e,i)=>{const r=o.length;for(let s=0;s<r;s++){const n=o[s];qR(n,t,e,i)}},qR=(o,t,e,i)=>{if(typeof o=="string"){NR(o,t,e);return}if(typeof o=="function"){_R(o,t,e,i);return}ZR(o,t,e,i)},NR=(o,t,e)=>{const i=o===""?t:Ia(t,o);i.classGroupId=e},_R=(o,t,e,i)=>{if(GR(o)){gs(o(i),t,e,i);return}t.validators===null&&(t.validators=[]),t.validators.push(PR(e,o))},ZR=(o,t,e,i)=>{const r=Object.entries(o),s=r.length;for(let n=0;n<s;n++){const[d,a]=r[n];gs(a,Ia(t,d),e,i)}},Ia=(o,t)=>{let e=o;const i=t.split(Sr),r=i.length;for(let s=0;s<r;s++){const n=i[s];let d=e.nextPart.get(n);d||(d=Ya(),e.nextPart.set(n,d)),e=d}return e},GR=o=>"isThemeGetter"in o&&o.isThemeGetter===!0,WR=o=>{if(o<1)return{get:()=>{},set:()=>{}};let t=0,e=Object.create(null),i=Object.create(null);const r=(s,n)=>{e[s]=n,t++,t>o&&(t=0,i=e,e=Object.create(null))};return{get(s){let n=e[s];if(n!==void 0)return n;if((n=i[s])!==void 0)return r(s,n),n},set(s,n){s in e?e[s]=n:r(s,n)}}},Gi="!",K0=":",KR=[],X0=(o,t,e,i,r)=>({modifiers:o,hasImportantModifier:t,baseClassName:e,maybePostfixModifierPosition:i,isExternal:r}),XR=o=>{const{prefix:t,experimentalParseClassName:e}=o;let i=r=>{const s=[];let n=0,d=0,a=0,c;const u=r.length;for(let z=0;z<u;z++){const D=r[z];if(n===0&&d===0){if(D===K0){s.push(r.slice(a,z)),a=z+1;continue}if(D==="/"){c=z;continue}}D==="["?n++:D==="]"?n--:D==="("?d++:D===")"&&d--}const w=s.length===0?r:r.slice(a);let C=w,m=!1;w.endsWith(Gi)?(C=w.slice(0,-1),m=!0):w.startsWith(Gi)&&(C=w.slice(1),m=!0);const S=c&&c>a?c-a:void 0;return X0(s,m,C,S)};if(t){const r=t+K0,s=i;i=n=>n.startsWith(r)?s(n.slice(r.length)):X0(KR,!1,n,void 0,!0)}if(e){const r=i;i=s=>e({className:s,parseClassName:r})}return i},JR=o=>{const t=new Map;return o.orderSensitiveModifiers.forEach((e,i)=>{t.set(e,1e6+i)}),e=>{const i=[];let r=[];for(let s=0;s<e.length;s++){const n=e[s],d=n[0]==="[",a=t.has(n);d||a?(r.length>0&&(r.sort(),i.push(...r),r=[]),i.push(n)):r.push(n)}return r.length>0&&(r.sort(),i.push(...r)),i}},QR=o=>({cache:WR(o.cacheSize),parseClassName:XR(o),sortModifiers:JR(o),...TR(o)}),tV=/\s+/,eV=(o,t)=>{const{parseClassName:e,getClassGroupId:i,getConflictingClassGroupIds:r,sortModifiers:s}=t,n=[],d=o.trim().split(tV);let a="";for(let c=d.length-1;c>=0;c-=1){const u=d[c],{isExternal:w,modifiers:C,hasImportantModifier:m,baseClassName:S,maybePostfixModifierPosition:z}=e(u);if(w){a=u+(a.length>0?" "+a:a);continue}let D=!!z,M=i(D?S.substring(0,z):S);if(!M){if(!D){a=u+(a.length>0?" "+a:a);continue}if(M=i(S),!M){a=u+(a.length>0?" "+a:a);continue}D=!1}const R=C.length===0?"":C.length===1?C[0]:s(C).join(":"),I=m?R+Gi:R,x=I+M;if(n.indexOf(x)>-1)continue;n.push(x);const A=r(M,D);for(let P=0;P<A.length;++P){const q=A[P];n.push(I+q)}a=u+(a.length>0?" "+a:a)}return a},oV=(...o)=>{let t=0,e,i,r="";for(;t<o.length;)(e=o[t++])&&(i=qa(e))&&(r&&(r+=" "),r+=i);return r},qa=o=>{if(typeof o=="string")return o;let t,e="";for(let i=0;i<o.length;i++)o[i]&&(t=qa(o[i]))&&(e&&(e+=" "),e+=t);return e},rV=(o,...t)=>{let e,i,r,s;const n=a=>{const c=t.reduce((u,w)=>w(u),o());return e=QR(c),i=e.cache.get,r=e.cache.set,s=d,d(a)},d=a=>{const c=i(a);if(c)return c;const u=eV(a,e);return r(a,u),u};return s=n,(...a)=>s(oV(...a))},iV=[],N=o=>{const t=e=>e[o]||iV;return t.isThemeGetter=!0,t},Na=/^\[(?:(\w[\w-]*):)?(.+)\]$/i,_a=/^\((?:(\w[\w-]*):)?(.+)\)$/i,sV=/^\d+\/\d+$/,nV=/^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/,lV=/\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/,aV=/^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/,dV=/^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/,hV=/^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/,_e=o=>sV.test(o),L=o=>!!o&&!Number.isNaN(Number(o)),It=o=>!!o&&Number.isInteger(Number(o)),vi=o=>o.endsWith("%")&&L(o.slice(0,-1)),bt=o=>nV.test(o),cV=()=>!0,pV=o=>lV.test(o)&&!aV.test(o),Za=()=>!1,uV=o=>dV.test(o),wV=o=>hV.test(o),gV=o=>!g(o)&&!v(o),vV=o=>Do(o,Ka,Za),g=o=>Na.test(o),je=o=>Do(o,Xa,pV),ki=o=>Do(o,MV,L),J0=o=>Do(o,Ga,Za),kV=o=>Do(o,Wa,wV),mr=o=>Do(o,Ja,uV),v=o=>_a.test(o),Po=o=>Uo(o,Xa),mV=o=>Uo(o,yV),Q0=o=>Uo(o,Ga),xV=o=>Uo(o,Ka),fV=o=>Uo(o,Wa),xr=o=>Uo(o,Ja,!0),Do=(o,t,e)=>{const i=Na.exec(o);return i?i[1]?t(i[1]):e(i[2]):!1},Uo=(o,t,e=!1)=>{const i=_a.exec(o);return i?i[1]?t(i[1]):e:!1},Ga=o=>o==="position"||o==="percentage",Wa=o=>o==="image"||o==="url",Ka=o=>o==="length"||o==="size"||o==="bg-size",Xa=o=>o==="length",MV=o=>o==="number",yV=o=>o==="family-name",Ja=o=>o==="shadow",bV=()=>{const o=N("color"),t=N("font"),e=N("text"),i=N("font-weight"),r=N("tracking"),s=N("leading"),n=N("breakpoint"),d=N("container"),a=N("spacing"),c=N("radius"),u=N("shadow"),w=N("inset-shadow"),C=N("text-shadow"),m=N("drop-shadow"),S=N("blur"),z=N("perspective"),D=N("aspect"),M=N("ease"),R=N("animate"),I=()=>["auto","avoid","all","avoid-page","page","left","right","column"],x=()=>["center","top","bottom","left","right","top-left","left-top","top-right","right-top","bottom-right","right-bottom","bottom-left","left-bottom"],A=()=>[...x(),v,g],P=()=>["auto","hidden","clip","visible","scroll"],q=()=>["auto","contain","none"],b=()=>[v,g,a],st=()=>[_e,"full","auto",...b()],gt=()=>[It,"none","subgrid",v,g],cr=()=>["auto",{span:["full",It,v,g]},It,v,g],Ie=()=>[It,"auto",v,g],qe=()=>["auto","min","max","fr",v,g],_r=()=>["start","end","center","between","around","evenly","stretch","baseline","center-safe","end-safe"],Ne=()=>["start","end","center","stretch","center-safe","end-safe"],yt=()=>["auto",...b()],be=()=>[_e,"auto","full","dvw","dvh","lvw","lvh","svw","svh","min","max","fit",...b()],y=()=>[o,v,g],ms=()=>[...x(),Q0,J0,{position:[v,g]}],xs=()=>["no-repeat",{repeat:["","x","y","space","round"]}],fs=()=>["auto","cover","contain",xV,vV,{size:[v,g]}],Zr=()=>[vi,Po,je],K=()=>["","none","full",c,v,g],nt=()=>["",L,Po,je],pr=()=>["solid","dashed","dotted","double"],Ms=()=>["normal","multiply","screen","overlay","darken","lighten","color-dodge","color-burn","hard-light","soft-light","difference","exclusion","hue","saturation","color","luminosity"],Z=()=>[L,vi,Q0,J0],ys=()=>["","none",S,v,g],ur=()=>["none",L,v,g],wr=()=>["none",L,v,g],Gr=()=>[L,v,g],gr=()=>[_e,"full",...b()];return{cacheSize:500,theme:{animate:["spin","ping","pulse","bounce"],aspect:["video"],blur:[bt],breakpoint:[bt],color:[cV],container:[bt],"drop-shadow":[bt],ease:["in","out","in-out"],font:[gV],"font-weight":["thin","extralight","light","normal","medium","semibold","bold","extrabold","black"],"inset-shadow":[bt],leading:["none","tight","snug","normal","relaxed","loose"],perspective:["dramatic","near","normal","midrange","distant","none"],radius:[bt],shadow:[bt],spacing:["px",L],text:[bt],"text-shadow":[bt],tracking:["tighter","tight","normal","wide","wider","widest"]},classGroups:{aspect:[{aspect:["auto","square",_e,g,v,D]}],container:["container"],columns:[{columns:[L,g,v,d]}],"break-after":[{"break-after":I()}],"break-before":[{"break-before":I()}],"break-inside":[{"break-inside":["auto","avoid","avoid-page","avoid-column"]}],"box-decoration":[{"box-decoration":["slice","clone"]}],box:[{box:["border","content"]}],display:["block","inline-block","inline","flex","inline-flex","table","inline-table","table-caption","table-cell","table-column","table-column-group","table-footer-group","table-header-group","table-row-group","table-row","flow-root","grid","inline-grid","contents","list-item","hidden"],sr:["sr-only","not-sr-only"],float:[{float:["right","left","none","start","end"]}],clear:[{clear:["left","right","both","none","start","end"]}],isolation:["isolate","isolation-auto"],"object-fit":[{object:["contain","cover","fill","none","scale-down"]}],"object-position":[{object:A()}],overflow:[{overflow:P()}],"overflow-x":[{"overflow-x":P()}],"overflow-y":[{"overflow-y":P()}],overscroll:[{overscroll:q()}],"overscroll-x":[{"overscroll-x":q()}],"overscroll-y":[{"overscroll-y":q()}],position:["static","fixed","absolute","relative","sticky"],inset:[{inset:st()}],"inset-x":[{"inset-x":st()}],"inset-y":[{"inset-y":st()}],start:[{start:st()}],end:[{end:st()}],top:[{top:st()}],right:[{right:st()}],bottom:[{bottom:st()}],left:[{left:st()}],visibility:["visible","invisible","collapse"],z:[{z:[It,"auto",v,g]}],basis:[{basis:[_e,"full","auto",d,...b()]}],"flex-direction":[{flex:["row","row-reverse","col","col-reverse"]}],"flex-wrap":[{flex:["nowrap","wrap","wrap-reverse"]}],flex:[{flex:[L,_e,"auto","initial","none",g]}],grow:[{grow:["",L,v,g]}],shrink:[{shrink:["",L,v,g]}],order:[{order:[It,"first","last","none",v,g]}],"grid-cols":[{"grid-cols":gt()}],"col-start-end":[{col:cr()}],"col-start":[{"col-start":Ie()}],"col-end":[{"col-end":Ie()}],"grid-rows":[{"grid-rows":gt()}],"row-start-end":[{row:cr()}],"row-start":[{"row-start":Ie()}],"row-end":[{"row-end":Ie()}],"grid-flow":[{"grid-flow":["row","col","dense","row-dense","col-dense"]}],"auto-cols":[{"auto-cols":qe()}],"auto-rows":[{"auto-rows":qe()}],gap:[{gap:b()}],"gap-x":[{"gap-x":b()}],"gap-y":[{"gap-y":b()}],"justify-content":[{justify:[..._r(),"normal"]}],"justify-items":[{"justify-items":[...Ne(),"normal"]}],"justify-self":[{"justify-self":["auto",...Ne()]}],"align-content":[{content:["normal",..._r()]}],"align-items":[{items:[...Ne(),{baseline:["","last"]}]}],"align-self":[{self:["auto",...Ne(),{baseline:["","last"]}]}],"place-content":[{"place-content":_r()}],"place-items":[{"place-items":[...Ne(),"baseline"]}],"place-self":[{"place-self":["auto",...Ne()]}],p:[{p:b()}],px:[{px:b()}],py:[{py:b()}],ps:[{ps:b()}],pe:[{pe:b()}],pt:[{pt:b()}],pr:[{pr:b()}],pb:[{pb:b()}],pl:[{pl:b()}],m:[{m:yt()}],mx:[{mx:yt()}],my:[{my:yt()}],ms:[{ms:yt()}],me:[{me:yt()}],mt:[{mt:yt()}],mr:[{mr:yt()}],mb:[{mb:yt()}],ml:[{ml:yt()}],"space-x":[{"space-x":b()}],"space-x-reverse":["space-x-reverse"],"space-y":[{"space-y":b()}],"space-y-reverse":["space-y-reverse"],size:[{size:be()}],w:[{w:[d,"screen",...be()]}],"min-w":[{"min-w":[d,"screen","none",...be()]}],"max-w":[{"max-w":[d,"screen","none","prose",{screen:[n]},...be()]}],h:[{h:["screen","lh",...be()]}],"min-h":[{"min-h":["screen","lh","none",...be()]}],"max-h":[{"max-h":["screen","lh",...be()]}],"font-size":[{text:["base",e,Po,je]}],"font-smoothing":["antialiased","subpixel-antialiased"],"font-style":["italic","not-italic"],"font-weight":[{font:[i,v,ki]}],"font-stretch":[{"font-stretch":["ultra-condensed","extra-condensed","condensed","semi-condensed","normal","semi-expanded","expanded","extra-expanded","ultra-expanded",vi,g]}],"font-family":[{font:[mV,g,t]}],"fvn-normal":["normal-nums"],"fvn-ordinal":["ordinal"],"fvn-slashed-zero":["slashed-zero"],"fvn-figure":["lining-nums","oldstyle-nums"],"fvn-spacing":["proportional-nums","tabular-nums"],"fvn-fraction":["diagonal-fractions","stacked-fractions"],tracking:[{tracking:[r,v,g]}],"line-clamp":[{"line-clamp":[L,"none",v,ki]}],leading:[{leading:[s,...b()]}],"list-image":[{"list-image":["none",v,g]}],"list-style-position":[{list:["inside","outside"]}],"list-style-type":[{list:["disc","decimal","none",v,g]}],"text-alignment":[{text:["left","center","right","justify","start","end"]}],"placeholder-color":[{placeholder:y()}],"text-color":[{text:y()}],"text-decoration":["underline","overline","line-through","no-underline"],"text-decoration-style":[{decoration:[...pr(),"wavy"]}],"text-decoration-thickness":[{decoration:[L,"from-font","auto",v,je]}],"text-decoration-color":[{decoration:y()}],"underline-offset":[{"underline-offset":[L,"auto",v,g]}],"text-transform":["uppercase","lowercase","capitalize","normal-case"],"text-overflow":["truncate","text-ellipsis","text-clip"],"text-wrap":[{text:["wrap","nowrap","balance","pretty"]}],indent:[{indent:b()}],"vertical-align":[{align:["baseline","top","middle","bottom","text-top","text-bottom","sub","super",v,g]}],whitespace:[{whitespace:["normal","nowrap","pre","pre-line","pre-wrap","break-spaces"]}],break:[{break:["normal","words","all","keep"]}],wrap:[{wrap:["break-word","anywhere","normal"]}],hyphens:[{hyphens:["none","manual","auto"]}],content:[{content:["none",v,g]}],"bg-attachment":[{bg:["fixed","local","scroll"]}],"bg-clip":[{"bg-clip":["border","padding","content","text"]}],"bg-origin":[{"bg-origin":["border","padding","content"]}],"bg-position":[{bg:ms()}],"bg-repeat":[{bg:xs()}],"bg-size":[{bg:fs()}],"bg-image":[{bg:["none",{linear:[{to:["t","tr","r","br","b","bl","l","tl"]},It,v,g],radial:["",v,g],conic:[It,v,g]},fV,kV]}],"bg-color":[{bg:y()}],"gradient-from-pos":[{from:Zr()}],"gradient-via-pos":[{via:Zr()}],"gradient-to-pos":[{to:Zr()}],"gradient-from":[{from:y()}],"gradient-via":[{via:y()}],"gradient-to":[{to:y()}],rounded:[{rounded:K()}],"rounded-s":[{"rounded-s":K()}],"rounded-e":[{"rounded-e":K()}],"rounded-t":[{"rounded-t":K()}],"rounded-r":[{"rounded-r":K()}],"rounded-b":[{"rounded-b":K()}],"rounded-l":[{"rounded-l":K()}],"rounded-ss":[{"rounded-ss":K()}],"rounded-se":[{"rounded-se":K()}],"rounded-ee":[{"rounded-ee":K()}],"rounded-es":[{"rounded-es":K()}],"rounded-tl":[{"rounded-tl":K()}],"rounded-tr":[{"rounded-tr":K()}],"rounded-br":[{"rounded-br":K()}],"rounded-bl":[{"rounded-bl":K()}],"border-w":[{border:nt()}],"border-w-x":[{"border-x":nt()}],"border-w-y":[{"border-y":nt()}],"border-w-s":[{"border-s":nt()}],"border-w-e":[{"border-e":nt()}],"border-w-t":[{"border-t":nt()}],"border-w-r":[{"border-r":nt()}],"border-w-b":[{"border-b":nt()}],"border-w-l":[{"border-l":nt()}],"divide-x":[{"divide-x":nt()}],"divide-x-reverse":["divide-x-reverse"],"divide-y":[{"divide-y":nt()}],"divide-y-reverse":["divide-y-reverse"],"border-style":[{border:[...pr(),"hidden","none"]}],"divide-style":[{divide:[...pr(),"hidden","none"]}],"border-color":[{border:y()}],"border-color-x":[{"border-x":y()}],"border-color-y":[{"border-y":y()}],"border-color-s":[{"border-s":y()}],"border-color-e":[{"border-e":y()}],"border-color-t":[{"border-t":y()}],"border-color-r":[{"border-r":y()}],"border-color-b":[{"border-b":y()}],"border-color-l":[{"border-l":y()}],"divide-color":[{divide:y()}],"outline-style":[{outline:[...pr(),"none","hidden"]}],"outline-offset":[{"outline-offset":[L,v,g]}],"outline-w":[{outline:["",L,Po,je]}],"outline-color":[{outline:y()}],shadow:[{shadow:["","none",u,xr,mr]}],"shadow-color":[{shadow:y()}],"inset-shadow":[{"inset-shadow":["none",w,xr,mr]}],"inset-shadow-color":[{"inset-shadow":y()}],"ring-w":[{ring:nt()}],"ring-w-inset":["ring-inset"],"ring-color":[{ring:y()}],"ring-offset-w":[{"ring-offset":[L,je]}],"ring-offset-color":[{"ring-offset":y()}],"inset-ring-w":[{"inset-ring":nt()}],"inset-ring-color":[{"inset-ring":y()}],"text-shadow":[{"text-shadow":["none",C,xr,mr]}],"text-shadow-color":[{"text-shadow":y()}],opacity:[{opacity:[L,v,g]}],"mix-blend":[{"mix-blend":[...Ms(),"plus-darker","plus-lighter"]}],"bg-blend":[{"bg-blend":Ms()}],"mask-clip":[{"mask-clip":["border","padding","content","fill","stroke","view"]},"mask-no-clip"],"mask-composite":[{mask:["add","subtract","intersect","exclude"]}],"mask-image-linear-pos":[{"mask-linear":[L]}],"mask-image-linear-from-pos":[{"mask-linear-from":Z()}],"mask-image-linear-to-pos":[{"mask-linear-to":Z()}],"mask-image-linear-from-color":[{"mask-linear-from":y()}],"mask-image-linear-to-color":[{"mask-linear-to":y()}],"mask-image-t-from-pos":[{"mask-t-from":Z()}],"mask-image-t-to-pos":[{"mask-t-to":Z()}],"mask-image-t-from-color":[{"mask-t-from":y()}],"mask-image-t-to-color":[{"mask-t-to":y()}],"mask-image-r-from-pos":[{"mask-r-from":Z()}],"mask-image-r-to-pos":[{"mask-r-to":Z()}],"mask-image-r-from-color":[{"mask-r-from":y()}],"mask-image-r-to-color":[{"mask-r-to":y()}],"mask-image-b-from-pos":[{"mask-b-from":Z()}],"mask-image-b-to-pos":[{"mask-b-to":Z()}],"mask-image-b-from-color":[{"mask-b-from":y()}],"mask-image-b-to-color":[{"mask-b-to":y()}],"mask-image-l-from-pos":[{"mask-l-from":Z()}],"mask-image-l-to-pos":[{"mask-l-to":Z()}],"mask-image-l-from-color":[{"mask-l-from":y()}],"mask-image-l-to-color":[{"mask-l-to":y()}],"mask-image-x-from-pos":[{"mask-x-from":Z()}],"mask-image-x-to-pos":[{"mask-x-to":Z()}],"mask-image-x-from-color":[{"mask-x-from":y()}],"mask-image-x-to-color":[{"mask-x-to":y()}],"mask-image-y-from-pos":[{"mask-y-from":Z()}],"mask-image-y-to-pos":[{"mask-y-to":Z()}],"mask-image-y-from-color":[{"mask-y-from":y()}],"mask-image-y-to-color":[{"mask-y-to":y()}],"mask-image-radial":[{"mask-radial":[v,g]}],"mask-image-radial-from-pos":[{"mask-radial-from":Z()}],"mask-image-radial-to-pos":[{"mask-radial-to":Z()}],"mask-image-radial-from-color":[{"mask-radial-from":y()}],"mask-image-radial-to-color":[{"mask-radial-to":y()}],"mask-image-radial-shape":[{"mask-radial":["circle","ellipse"]}],"mask-image-radial-size":[{"mask-radial":[{closest:["side","corner"],farthest:["side","corner"]}]}],"mask-image-radial-pos":[{"mask-radial-at":x()}],"mask-image-conic-pos":[{"mask-conic":[L]}],"mask-image-conic-from-pos":[{"mask-conic-from":Z()}],"mask-image-conic-to-pos":[{"mask-conic-to":Z()}],"mask-image-conic-from-color":[{"mask-conic-from":y()}],"mask-image-conic-to-color":[{"mask-conic-to":y()}],"mask-mode":[{mask:["alpha","luminance","match"]}],"mask-origin":[{"mask-origin":["border","padding","content","fill","stroke","view"]}],"mask-position":[{mask:ms()}],"mask-repeat":[{mask:xs()}],"mask-size":[{mask:fs()}],"mask-type":[{"mask-type":["alpha","luminance"]}],"mask-image":[{mask:["none",v,g]}],filter:[{filter:["","none",v,g]}],blur:[{blur:ys()}],brightness:[{brightness:[L,v,g]}],contrast:[{contrast:[L,v,g]}],"drop-shadow":[{"drop-shadow":["","none",m,xr,mr]}],"drop-shadow-color":[{"drop-shadow":y()}],grayscale:[{grayscale:["",L,v,g]}],"hue-rotate":[{"hue-rotate":[L,v,g]}],invert:[{invert:["",L,v,g]}],saturate:[{saturate:[L,v,g]}],sepia:[{sepia:["",L,v,g]}],"backdrop-filter":[{"backdrop-filter":["","none",v,g]}],"backdrop-blur":[{"backdrop-blur":ys()}],"backdrop-brightness":[{"backdrop-brightness":[L,v,g]}],"backdrop-contrast":[{"backdrop-contrast":[L,v,g]}],"backdrop-grayscale":[{"backdrop-grayscale":["",L,v,g]}],"backdrop-hue-rotate":[{"backdrop-hue-rotate":[L,v,g]}],"backdrop-invert":[{"backdrop-invert":["",L,v,g]}],"backdrop-opacity":[{"backdrop-opacity":[L,v,g]}],"backdrop-saturate":[{"backdrop-saturate":[L,v,g]}],"backdrop-sepia":[{"backdrop-sepia":["",L,v,g]}],"border-collapse":[{border:["collapse","separate"]}],"border-spacing":[{"border-spacing":b()}],"border-spacing-x":[{"border-spacing-x":b()}],"border-spacing-y":[{"border-spacing-y":b()}],"table-layout":[{table:["auto","fixed"]}],caption:[{caption:["top","bottom"]}],transition:[{transition:["","all","colors","opacity","shadow","transform","none",v,g]}],"transition-behavior":[{transition:["normal","discrete"]}],duration:[{duration:[L,"initial",v,g]}],ease:[{ease:["linear","initial",M,v,g]}],delay:[{delay:[L,v,g]}],animate:[{animate:["none",R,v,g]}],backface:[{backface:["hidden","visible"]}],perspective:[{perspective:[z,v,g]}],"perspective-origin":[{"perspective-origin":A()}],rotate:[{rotate:ur()}],"rotate-x":[{"rotate-x":ur()}],"rotate-y":[{"rotate-y":ur()}],"rotate-z":[{"rotate-z":ur()}],scale:[{scale:wr()}],"scale-x":[{"scale-x":wr()}],"scale-y":[{"scale-y":wr()}],"scale-z":[{"scale-z":wr()}],"scale-3d":["scale-3d"],skew:[{skew:Gr()}],"skew-x":[{"skew-x":Gr()}],"skew-y":[{"skew-y":Gr()}],transform:[{transform:[v,g,"","none","gpu","cpu"]}],"transform-origin":[{origin:A()}],"transform-style":[{transform:["3d","flat"]}],translate:[{translate:gr()}],"translate-x":[{"translate-x":gr()}],"translate-y":[{"translate-y":gr()}],"translate-z":[{"translate-z":gr()}],"translate-none":["translate-none"],accent:[{accent:y()}],appearance:[{appearance:["none","auto"]}],"caret-color":[{caret:y()}],"color-scheme":[{scheme:["normal","dark","light","light-dark","only-dark","only-light"]}],cursor:[{cursor:["auto","default","pointer","wait","text","move","help","not-allowed","none","context-menu","progress","cell","crosshair","vertical-text","alias","copy","no-drop","grab","grabbing","all-scroll","col-resize","row-resize","n-resize","e-resize","s-resize","w-resize","ne-resize","nw-resize","se-resize","sw-resize","ew-resize","ns-resize","nesw-resize","nwse-resize","zoom-in","zoom-out",v,g]}],"field-sizing":[{"field-sizing":["fixed","content"]}],"pointer-events":[{"pointer-events":["auto","none"]}],resize:[{resize:["none","","y","x"]}],"scroll-behavior":[{scroll:["auto","smooth"]}],"scroll-m":[{"scroll-m":b()}],"scroll-mx":[{"scroll-mx":b()}],"scroll-my":[{"scroll-my":b()}],"scroll-ms":[{"scroll-ms":b()}],"scroll-me":[{"scroll-me":b()}],"scroll-mt":[{"scroll-mt":b()}],"scroll-mr":[{"scroll-mr":b()}],"scroll-mb":[{"scroll-mb":b()}],"scroll-ml":[{"scroll-ml":b()}],"scroll-p":[{"scroll-p":b()}],"scroll-px":[{"scroll-px":b()}],"scroll-py":[{"scroll-py":b()}],"scroll-ps":[{"scroll-ps":b()}],"scroll-pe":[{"scroll-pe":b()}],"scroll-pt":[{"scroll-pt":b()}],"scroll-pr":[{"scroll-pr":b()}],"scroll-pb":[{"scroll-pb":b()}],"scroll-pl":[{"scroll-pl":b()}],"snap-align":[{snap:["start","end","center","align-none"]}],"snap-stop":[{snap:["normal","always"]}],"snap-type":[{snap:["none","x","y","both"]}],"snap-strictness":[{snap:["mandatory","proximity"]}],touch:[{touch:["auto","none","manipulation"]}],"touch-x":[{"touch-pan":["x","left","right"]}],"touch-y":[{"touch-pan":["y","up","down"]}],"touch-pz":["touch-pinch-zoom"],select:[{select:["none","text","all","auto"]}],"will-change":[{"will-change":["auto","scroll","contents","transform",v,g]}],fill:[{fill:["none",...y()]}],"stroke-w":[{stroke:[L,Po,je,ki]}],stroke:[{stroke:["none",...y()]}],"forced-color-adjust":[{"forced-color-adjust":["auto","none"]}]},conflictingClassGroups:{overflow:["overflow-x","overflow-y"],overscroll:["overscroll-x","overscroll-y"],inset:["inset-x","inset-y","start","end","top","right","bottom","left"],"inset-x":["right","left"],"inset-y":["top","bottom"],flex:["basis","grow","shrink"],gap:["gap-x","gap-y"],p:["px","py","ps","pe","pt","pr","pb","pl"],px:["pr","pl"],py:["pt","pb"],m:["mx","my","ms","me","mt","mr","mb","ml"],mx:["mr","ml"],my:["mt","mb"],size:["w","h"],"font-size":["leading"],"fvn-normal":["fvn-ordinal","fvn-slashed-zero","fvn-figure","fvn-spacing","fvn-fraction"],"fvn-ordinal":["fvn-normal"],"fvn-slashed-zero":["fvn-normal"],"fvn-figure":["fvn-normal"],"fvn-spacing":["fvn-normal"],"fvn-fraction":["fvn-normal"],"line-clamp":["display","overflow"],rounded:["rounded-s","rounded-e","rounded-t","rounded-r","rounded-b","rounded-l","rounded-ss","rounded-se","rounded-ee","rounded-es","rounded-tl","rounded-tr","rounded-br","rounded-bl"],"rounded-s":["rounded-ss","rounded-es"],"rounded-e":["rounded-se","rounded-ee"],"rounded-t":["rounded-tl","rounded-tr"],"rounded-r":["rounded-tr","rounded-br"],"rounded-b":["rounded-br","rounded-bl"],"rounded-l":["rounded-tl","rounded-bl"],"border-spacing":["border-spacing-x","border-spacing-y"],"border-w":["border-w-x","border-w-y","border-w-s","border-w-e","border-w-t","border-w-r","border-w-b","border-w-l"],"border-w-x":["border-w-r","border-w-l"],"border-w-y":["border-w-t","border-w-b"],"border-color":["border-color-x","border-color-y","border-color-s","border-color-e","border-color-t","border-color-r","border-color-b","border-color-l"],"border-color-x":["border-color-r","border-color-l"],"border-color-y":["border-color-t","border-color-b"],translate:["translate-x","translate-y","translate-none"],"translate-none":["translate","translate-x","translate-y","translate-z"],"scroll-m":["scroll-mx","scroll-my","scroll-ms","scroll-me","scroll-mt","scroll-mr","scroll-mb","scroll-ml"],"scroll-mx":["scroll-mr","scroll-ml"],"scroll-my":["scroll-mt","scroll-mb"],"scroll-p":["scroll-px","scroll-py","scroll-ps","scroll-pe","scroll-pt","scroll-pr","scroll-pb","scroll-pl"],"scroll-px":["scroll-pr","scroll-pl"],"scroll-py":["scroll-pt","scroll-pb"],touch:["touch-x","touch-y","touch-pz"],"touch-x":["touch"],"touch-y":["touch"],"touch-pz":["touch"]},conflictingClassGroupModifiers:{"font-size":["leading"]},orderSensitiveModifiers:["*","**","after","backdrop","before","details-content","file","first-letter","first-line","marker","placeholder","selection"]}},CV=rV(bV);function F(...o){return CV(UR(o))}const ta=F("text-sm","text-(--color-foreground-muted)","hover:text-(--color-foreground)","transition-colors"),ea=F("text-sm","text-(--color-primary)","font-medium");class BV extends Y{constructor(){super(...arguments),this.menuOpen=!1,this.unsubscribe=null,this.handleDocumentClick=t=>{t.target.closest(".theme-menu-container")||(this.menuOpen=!1,this.update())},this.toggleMenu=t=>{t.stopPropagation(),this.menuOpen=!this.menuOpen,this.update()},this.handleThemeSelect=t=>{const e=t.detail.value;$R(e),this.menuOpen=!1,this.update()}}mounted(){this.unsubscribe=DR(()=>{this.update()}),document.addEventListener("click",this.handleDocumentClick)}beforeUnmount(){document.removeEventListener("click",this.handleDocumentClick),this.unsubscribe?.()}isActive(t){const e=window.location.pathname;return t==="/"?e==="/"||e==="":e.startsWith(t)}render(){const t=zR();return l("header",{class:F("sticky top-0 z-50","border-b border-(--color-border)","bg-(--color-surface)/80 backdrop-blur-md")},[l("div",{class:F("flex items-center justify-between","h-14 px-6")},[l(Wr,{to:"/",class:F("flex items-center gap-2","text-lg font-bold","text-(--color-foreground) hover:text-(--color-primary)","transition-colors")},["Ikun Cube Trainer"]),l("nav",{class:"flex items-center gap-5"},[l(Wr,{to:"/",class:this.isActive("/")&&!this.isActive("/settings")?ea:ta},["训练"]),l(Wr,{to:"/settings",class:this.isActive("/settings")?ea:ta},["设置"]),l("div",{class:"theme-menu-container relative"},[l("button",{"on:click":this.toggleMenu,class:F("flex items-center justify-center","h-8 w-8","rounded-full","border-none","bg-(--color-surface) text-(--color-foreground-muted)","hover:bg-accent hover:text-(--color-foreground)","transition-all"),title:`当前: ${t.label}`},[l("span",{class:"text-sm"},[t.icon])]),this.menuOpen&&l("div",{class:"absolute top-full right-0 mt-2"},[l("iku-menu",{value:Ea(),"on:ik-change":this.handleThemeSelect},[...Array.isArray(_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])))?_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])):[_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i]))]])])])])])])}}class jV extends Dr{render(){return l("div",{class:"bg-background flex h-full flex-col"},[l(BV,null,[]),l("main",{class:"min-h-0 flex-1 overflow-y-auto"},[l(l1,{router:this.router},[])])])}}const AV={id:"builtin-f2l",name:"F2L 公式",formulas:[{id:"f2l-01",name:"F2L-01",formulas:["U (R U' R')"],viewMode:"none"},{id:"f2l-02",name:"F2L-02",formulas:["F' U' F"],viewMode:"none"},{id:"f2l-03",name:"F2L-03",formulas:["U' (F' U F)"],viewMode:"none"},{id:"f2l-04",name:"F2L-04",formulas:["R U R'"],viewMode:"none"},{id:"f2l-05",name:"F2L-05",formulas:["U' (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-06",name:"F2L-06",formulas:["U' (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-07",name:"F2L-07",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"},{id:"f2l-08",name:"F2L-08",formulas:["d (R' U R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-09",name:"F2L-09",formulas:["U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-10",name:"F2L-10",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-11",name:"F2L-11",formulas:["U (F' U2 F) U' (F' U F)"],viewMode:"none"},{id:"f2l-12",name:"F2L-12",formulas:["U' (F' U F) U' (F' U' F)"],viewMode:"none"},{id:"f2l-13",name:"F2L-13",formulas:["(R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-14",name:"F2L-14",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-15",name:"F2L-15",formulas:["(R U R' U') (R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-16",name:"F2L-16",formulas:["R U' R' d R' U R"],viewMode:"none"},{id:"f2l-17",name:"F2L-17",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-18",name:"F2L-18",formulas:["(R U R' U') (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-19",name:"F2L-19",formulas:["(R U' R' U') (R U R' U') (R U2 R')"],viewMode:"none"},{id:"f2l-20",name:"F2L-20",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-21",name:"F2L-21",formulas:["R2 U R2 U R2 U2 R2"],viewMode:"none"},{id:"f2l-22",name:"F2L-22",formulas:["U (R U' R') U' (F' U F)"],viewMode:"none"},{id:"f2l-23",name:"F2L-23",formulas:["U2 (R U' R') U (F' U' F)"],viewMode:"none"},{id:"f2l-24",name:"F2L-24",formulas:["(F' U F) U2 (R U R')"],viewMode:"none"},{id:"f2l-25",name:"F2L-25",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-26",name:"F2L-26",formulas:["d (R' U' R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-27",name:"F2L-27",formulas:["(R U' R') U2 (F' U' F)"],viewMode:"none"},{id:"f2l-28",name:"F2L-28",formulas:["(R U R') U2 (R U R')"],viewMode:"none"},{id:"f2l-29",name:"F2L-29",formulas:["(R' F R F') (R U R')"],viewMode:"none"},{id:"f2l-30",name:"F2L-30",formulas:["R U' R' d (R' U' R)"],viewMode:"none"},{id:"f2l-31",name:"F2L-31",formulas:["U' (R U2 R') U2 (R U' R')"],viewMode:"none"},{id:"f2l-32",name:"F2L-32",formulas:["U (F' U2 F) U2 (F' U F)"],viewMode:"none"},{id:"f2l-33",name:"F2L-33",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-34",name:"F2L-34",formulas:["U (R U' R') U' (R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-35",name:"F2L-35",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-36",name:"F2L-36",formulas:["U2 (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-37",name:"F2L-37",formulas:["R2 U2 (F R2 F') U2 (R' U R')"],viewMode:"none"},{id:"f2l-38",name:"F2L-38",formulas:["(R U' R' U') (R U R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-39",name:"F2L-39",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-40",name:"F2L-40",formulas:["(R U R' U') (R U' R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-41",name:"F2L-41",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"}],createdAt:0,updatedAt:0},LV={id:"builtin-oll",name:"OLL 公式",formulas:[{id:"oll-01",name:"OLL-01",formulas:["(R U'2)R' U' (R U' R')"],viewMode:"oll",viewData:{top:[".YY","YYY",".Y."],sides:{back:"...",right:"..Y",front:"Y..",left:"Y.."}}},{id:"oll-02",name:"OLL-02",formulas:["R UR'UR U'2 R'"],viewMode:"oll",viewData:{top:[".Y.","YYY","YY."],sides:{back:"Y..",right:"Y..",front:"..Y",left:"..."}}},{id:"oll-03",name:"OLL-03",formulas:["(R U'2)(R'U'R)(UR'U')(RU'R')"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"Y.Y",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-04",name:"OLL-04",formulas:["R U'2 (R'2 U')(R2 U') R'2 U'2 R"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"..Y",right:"...",front:"..Y",left:"Y.Y"}}},{id:"oll-05",name:"OLL-05",formulas:["(rUR'U')(r'F R F')"],viewMode:"oll",viewData:{top:[".YY","YYY",".YY"],sides:{back:"Y..",right:"...",front:"Y..",left:"..."}}},{id:"oll-06",name:"OLL-06",formulas:["(RUR'U R U'2 R'U)(R U'2 R'U' R U'R')"],viewMode:"oll",viewData:{top:["YYY","YYY",".Y."],sides:{back:"...",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-07",name:"OLL-07",formulas:["F'(r U R' U)(r' F R)"],viewMode:"oll",viewData:{top:[".YY","YYY","YY."],sides:{back:"Y..",right:"...",front:"..Y",left:"..."}}},{id:"oll-08",name:"OLL-08",formulas:["(R U'2)(R'2 F R F')U2(R' F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".Y.",right:"YYY",front:".Y.",left:"YYY"}}},{id:"oll-09",name:"OLL-09",formulas:["(F R U R' U' F')(f R U R' U' f')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".YY",right:".Y.",front:".YY",left:"YYY"}}},{id:"oll-10",name:"OLL-10",formulas:["f (R U R' U' f')U'(F R U R' U' F')"],viewMode:"oll",viewData:{top:["...",".Y.","..Y"],sides:{back:"YY.",right:"YY.",front:".Y.",left:".YY"}}},{id:"oll-11",name:"OLL-11",formulas:["(f R U R' U' f')y(F R U R' U' F')"],viewMode:"oll",viewData:{top:["..Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:"YY.",left:"YY."}}},{id:"oll-12",name:"OLL-12",formulas:["(RUR'U)(R'FRF')U2(R'FRF')"],viewMode:"oll",viewData:{top:["Y..",".Y.","..Y"],sides:{back:".YY",right:".Y.",front:".Y.",left:".YY"}}},{id:"oll-13",name:"OLL-13",formulas:["F(R U R' U)y'(R'U2)(R'F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","Y.Y"],sides:{back:"YYY",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-14",name:"OLL-14",formulas:["r'(R U R U R'U')r(R'2 F R F')"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:".Y.",left:".YY"}}},{id:"oll-15",name:"OLL-15",formulas:["r'(R U R U R'U')r2(R'2 U R U')r'"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","Y.Y"],sides:{back:".Y.",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-16",name:"OLL-16",formulas:["f(R U R'U')2f'"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".YY",right:"...",front:".YY",left:"Y.Y"}}},{id:"oll-17",name:"OLL-17",formulas:["(R' U'R U' R'U)y'(R'U R B)"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"Y..",right:"YYY",front:"Y..",left:".Y."}}},{id:"oll-18",name:"OLL-18",formulas:["(rUr')(U R U'R')2(rU'r')"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".Y.",right:"Y.Y",front:".Y.",left:"Y.Y"}}},{id:"oll-19",name:"OLL-19",formulas:["(RU'2)(R'2 U')(R U'R'U2)(F R F')"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"...",right:"YYY",front:"...",left:"YYY"}}},{id:"oll-20",name:"OLL-20",formulas:["(rU'r'U')(rUr')y'(R'U R)"],viewMode:"oll",viewData:{top:["...","YYY","Y.."],sides:{back:"YY.",right:"Y..",front:".YY",left:"..."}}},{id:"oll-21",name:"OLL-21",formulas:["(R'F' R U R'F'R)y'(R U'R')"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:".YY",right:"...",front:"YY.",left:"Y.."}}},{id:"oll-22",name:"OLL-22",formulas:["(r'U'r)(R'U'RU)(r'Ur)"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:"YY.",right:"Y..",front:".Y.",left:"..Y"}}},{id:"oll-23",name:"OLL-23",formulas:["(rUr')(RUR'U')(rU'r')"],viewMode:"oll",viewData:{top:["..Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:"YY.",left:"Y.."}}},{id:"oll-24",name:"OLL-24",formulas:["(R U R' U')(R' F R F')"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:"YY.",right:"...",front:"YY.",left:"..."}}},{id:"oll-25",name:"OLL-25",formulas:["(F(R U R' U')F'"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"Y.Y"}}},{id:"oll-26",name:"OLL-26",formulas:["(R U R' U' r)(R' U R U' r')"],viewMode:"oll",viewData:{top:["Y.Y","YYY","Y.Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"..."}}},{id:"oll-27",name:"OLL-27",formulas:["(r U R' U')(r' R U)(R U' R')"],viewMode:"oll",viewData:{top:["YYY","YY.","Y.Y"],sides:{back:"...",right:".Y.",front:".Y.",left:"..."}}},{id:"oll-28",name:"OLL-28",formulas:["(r U' r' U' r)y(R U R' f')"],viewMode:"oll",viewData:{top:["..Y","YYY","Y.."],sides:{back:"YY.",right:"..Y",front:".Y.",left:"..."}}},{id:"oll-29",name:"OLL-29",formulas:["(R'F R U R'U')(F'U R)"],viewMode:"oll",viewData:{top:["Y..","YYY","..Y"],sides:{back:".YY",right:"...",front:".Y.",left:"..Y"}}},{id:"oll-30",name:"OLL-30",formulas:["(R' U' R U)y(r U R' U')r'R"],viewMode:"oll",viewData:{top:["Y.Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:".Y.",left:"..Y"}}},{id:"oll-31",name:"OLL-31",formulas:["(R'U')(R'F R F')(U R)"],viewMode:"oll",viewData:{top:["YY.",".Y.","YY."],sides:{back:"...",right:"YYY",front:"...",left:".Y."}}},{id:"oll-32",name:"OLL-32",formulas:["(R'U' F)(U R U'R'F'R)"],viewMode:"oll",viewData:{top:[".YY",".YY","..Y"],sides:{back:"Y..",right:"...",front:"YY.",left:".Y."}}},{id:"oll-33",name:"OLL-33",formulas:["(R U B'U')(R'U R B R')"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:"YY.",right:"...",front:"Y..",left:".Y."}}},{id:"oll-34",name:"OLL-34",formulas:["x'U'F'R'F R U"],viewMode:"oll",viewData:{top:["Y..","YY.","YY."],sides:{back:".Y.",right:"YYY",front:"...",left:"..."}}},{id:"oll-35",name:"OLL-35",formulas:["f(R U R'U')f'"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:".Y.",right:"...",front:"...",left:"YYY"}}},{id:"oll-36",name:"OLL-36",formulas:["F(RU'R'U')(R U R'F')"],viewMode:"oll",viewData:{top:["YY.","YY.","..Y"],sides:{back:"...",right:"YY..",front:"YY.",left:"..."}}},{id:"oll-37",name:"OLL-37",formulas:["RU'2(R'2 F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["Y..",".YY",".YY"],sides:{back:".Y.",right:"Y..",front:"Y..",left:".Y."}}},{id:"oll-38",name:"OLL-38",formulas:["(r' U2)(R U R' U)r"],viewMode:"oll",viewData:{top:["...",".YY",".YY"],sides:{back:"YY.",right:"Y..",front:"...",left:".YY"}}},{id:"oll-39",name:"OLL-39",formulas:["(r U2)(R' U' R U'r')"],viewMode:"oll",viewData:{top:[".YY",".YY","..."],sides:{back:"...",right:"..Y",front:"YY.",left:"YY."}}},{id:"oll-40",name:"OLL-40",formulas:["r' U' R U' R' U2 r"],viewMode:"oll",viewData:{top:["Y..","YY.",".Y."],sides:{back:".YY",right:".YY",front:"Y..",left:"..."}}},{id:"oll-41",name:"OLL-41",formulas:["r U R' U R U'2 r'"],viewMode:"oll",viewData:{top:[".Y.","YY.","Y.."],sides:{back:"Y..",right:"YY.",front:".YY",left:"..."}}},{id:"oll-42",name:"OLL-42",formulas:["r'(R2 U)(R'U R)U'2(R' U R')r"],viewMode:"oll",viewData:{top:["...",".YY","YY."],sides:{back:"YY.",right:"Y..",front:"..Y",left:".Y."}}},{id:"oll-43",name:"OLL-43",formulas:["r(R'2 U')(R U'R' U2)(RU'R)r'"],viewMode:"oll",viewData:{top:["YY.",".YY","..."],sides:{back:"..Y",right:"..Y",front:"YY.",left:".Y."}}},{id:"oll-44",name:"OLL-44",formulas:["(R'U'R)y'x'(R U'R' F)(R U R')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..Y"],sides:{back:"..Y",right:".Y.",front:"YY.",left:"Y.."}}},{id:"oll-45",name:"OLL-45",formulas:["(R U R' U)(R'F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["..Y","YY.",".Y."],sides:{back:"YY.",right:".Y.",front:"..Y",left:"..Y"}}},{id:"oll-46",name:"OLL-46",formulas:["(r U'2)(R'U'R)(UR'U')(R U'r')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y.Y",right:".Y.",front:"YYY",left:"..."}}},{id:"oll-47",name:"OLL-47",formulas:["B'(R'U' R U)2 B"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:".YY",right:".Y.",front:"..Y",left:"Y.Y"}}},{id:"oll-48",name:"OLL-48",formulas:["r'U2 (R U R'U')(R U R'U)r"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YYY",right:".Y.",front:"Y.Y",left:"..."}}},{id:"oll-49",name:"OLL-49",formulas:["F(R U R'U')2 F'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"..Y",right:".Y.",front:".YY",left:"Y.Y"}}},{id:"oll-50",name:"OLL-50",formulas:["R'F R2 B'R'2 F'R2 B R'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y..",right:"YYY",front:"YY.",left:"..."}}},{id:"oll-51",name:"OLL-51",formulas:["R B' R'2 F R2 B R'2 F'R"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YY.",right:"YYY",front:"Y..",left:"..."}}},{id:"oll-52",name:"OLL-52",formulas:["(R2 U R'B')(R U'R'2 U)(R B R')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"..Y",front:"...",left:".YY"}}},{id:"oll-53",name:"OLL-53",formulas:["(R U R'U')(R U'R'F')U'(F R U R')"],viewMode:"oll",viewData:{top:[".YY","YY.","..Y"],sides:{back:"Y..",right:".Y.",front:"YY.",left:"..."}}},{id:"oll-54",name:"OLL-54",formulas:["(R'U R U'2 R'U')y(L'U LU F)"],viewMode:"oll",viewData:{top:[".Y.",".YY","Y.Y"],sides:{back:"Y.Y",right:"...",front:".Y.",left:".Y."}}},{id:"oll-55",name:"OLL-55",formulas:["(R U'R' U2 R U)y(R U'R' U'F')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"...",front:"Y.Y",left:".Y."}}},{id:"oll-56",name:"OLL-56",formulas:["(R U R' U)(R U'R' U')(R'F R F')"],viewMode:"oll",viewData:{top:[".YY","YY.","Y.."],sides:{back:"Y..",right:".YY",front:".Y.",left:"..."}}},{id:"oll-57",name:"OLL-57",formulas:["(R'U' R U')(R'U R U)(R B' R'B)"],viewMode:"oll",viewData:{top:["Y..","YY.",".YY"],sides:{back:".Y.",right:"YY.",front:"Y..",left:"..."}}}],createdAt:0,updatedAt:0},SV={id:"builtin-pll",name:"PLL 公式",formulas:[{id:"pll-01",name:"PLL-01",formulas:["RU' (RURU) (RU'R'U') R2","M'2UMU2 M'UM'2"],viewMode:"pll",viewData:{moves:[{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[2,1],bidirectional:!1},{from:[2,1],to:[1,2],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-02",name:"PLL-02",formulas:["M'2U'MU2 M'U'M'2"],viewMode:"pll",viewData:{moves:[{from:[1,0],to:[1,2],bidirectional:!1},{from:[2,1],to:[1,0],bidirectional:!1},{from:[1,2],to:[2,1],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-03",name:"PLL-03",formulas:["M'2U M'2U2 M'2U M'2"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[2,1],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-04",name:"PLL-04",formulas:["MU (M'2U)2 MU2 M'2U'"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[1,2],bidirectional:!0},{from:[1,0],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-05",name:"PLL-05",formulas:["(RUR'U') R'F (R2U'R'U') (RUR'F')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!0,!1],[!0,!1,!0]]}},{id:"pll-06",name:"PLL-06",formulas:["(R'U'F')(RUR'U') R'F (R2U'R'U') (RUR'UR)"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[0,1],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-07",name:"PLL-07",formulas:["(RUR'F') (RUR'U') R'F (R2U'R'U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-08",name:"PLL-08",formulas:["(R'U2)(RU'2) R'F (RUR'U')(R'F'R2U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!1,!0],[!0,!1,!0],[!1,!0,!0]]}},{id:"pll-09",name:"PLL-09",formulas:["F(RU'R'U')(RUR'F')(RUR'U')(R'FRF')"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,0],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!0,!1],[!0,!0,!1],[!1,!1,!1]]}},{id:"pll-10",name:"PLL-10",formulas:["(R'UR'U') yR'F' (R2U'R'U) (R'FRF)","(R'UR'U') (B'R'B2) (U'B'U) (B'RBR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,1],bidirectional:!0}],sameColorEdges:[[!1,!1,!0],[!0,!1,!1],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-11",name:"PLL-11",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-12",name:"PLL-12",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-13",name:"PLL-13",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-14",name:"PLL-14",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-15",name:"PLL-15",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-16",name:"PLL-16",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-17",name:"PLL-17",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-18",name:"PLL-18",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-19",name:"PLL-19",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-20",name:"PLL-20",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-21",name:"PLL-21",formulas:[],viewMode:"pll",viewData:{moves:[]}}],createdAt:0,updatedAt:0},HV={id:"builtin-scramble",name:"打乱公式",formulas:[{id:"scr-01",name:"Scramble-01",formulas:["R' U' F L2 D' B U R2 F' L D2 B' U2 R F2 D L2 B' R' U"],viewMode:"none"},{id:"scr-02",name:"Scramble-02",formulas:["D2 R' B F2 L D' U R' B2 F D L' U2 R B' F' L D R U2"],viewMode:"none"},{id:"scr-03",name:"Scramble-03",formulas:["F2 U' L2 D B2 R' F U L D2 B R2 U' F' L2 D B2 R U' F"],viewMode:"none"},{id:"scr-04",name:"Scramble-04",formulas:["B2 L D2 F' R U B' L2 D R2 F U2 L' B D2 R F' U L2 D'"],viewMode:"none"},{id:"scr-05",name:"Scramble-05",formulas:["U R2 F' D L B2 U' R F2 D' L2 B U R' D2 F L' B2 U R'"],viewMode:"none"},{id:"scr-06",name:"Scramble-06",formulas:["L2 F D' R2 B U L' F2 D R B2 U' L D2 F' R B U2 L' D"],viewMode:"none"},{id:"scr-07",name:"Scramble-07",formulas:["D' B2 R U' F L D2 B' R2 U F' L2 D B R' U2 F D' L B'"],viewMode:"none"},{id:"scr-08",name:"Scramble-08",formulas:["R' U2 B D L' F2 U R B2 D' L F U' R2 D B' L2 F U R'"],viewMode:"none"},{id:"scr-09",name:"Scramble-09",formulas:["F D' L2 U B R' D F2 U' L B2 R D' F L' U2 B R2 D F'"],viewMode:"none"},{id:"scr-10",name:"Scramble-10",formulas:["U' L B2 R D F' U2 L' B D2 R F U L' D' B2 R' F2 U D"],viewMode:"none"},{id:"scr-11",name:"Scramble-11",formulas:["B R' D2 F U L' B2 R D F' U2 L B' R2 D' F U' L2 B D'"],viewMode:"none"},{id:"scr-12",name:"Scramble-12",formulas:["L' D F2 U' B R D2 L' F U B' R2 D L F' U2 B' D R L2"],viewMode:"none"},{id:"scr-13",name:"Scramble-13",formulas:["U2 F' R B2 L' D U2 F R' B D2 L U' F2 R B' D L2 U F'"],viewMode:"none"},{id:"scr-14",name:"Scramble-14",formulas:["D R2 B' U F L2 D' R B2 U' F' L D2 R' B U2 F L' D R2"],viewMode:"none"},{id:"scr-15",name:"Scramble-15",formulas:["B' L2 U R' D F2 B L U2 R' D' F B2 L' U R2 D' F' B L2"],viewMode:"none"},{id:"scr-16",name:"Scramble-16",formulas:["R U2 L' D B2 F R' U L2 D' B F2 R U' L D2 B' F R' U2"],viewMode:"none"},{id:"scr-17",name:"Scramble-17",formulas:["F' D2 R U' B L2 F D R' U2 B' L F2 D' R U L2 B' D R'"],viewMode:"none"},{id:"scr-18",name:"Scramble-18",formulas:["L D' F2 R U B' L2 D F R' U2 B L' D2 F' R U' B2 L D'"],viewMode:"none"},{id:"scr-19",name:"Scramble-19",formulas:["U' B R2 D' F L U2 B' R D2 F' L2 U B R' D F2 L' U R"],viewMode:"none"},{id:"scr-20",name:"Scramble-20",formulas:["D2 L' F R2 U B' D L2 F' R U2 B D' L F2 R' U B2 D L'"],viewMode:"none"},{id:"scr-21",name:"Scramble-21",formulas:["R' B2 U D' L F2 R' B U2 D L' F R2 B' U' D2 L F' R B2"],viewMode:"none"},{id:"scr-22",name:"Scramble-22",formulas:["F U' D2 R B' L2 F U D' R2 B L F' U2 D R' B2 L' F U'"],viewMode:"none"},{id:"scr-23",name:"Scramble-23",formulas:["B' D R2 U' L F D2 B R' U L2 F' D B2 R U' L' F2 D R'"],viewMode:"none"},{id:"scr-24",name:"Scramble-24",formulas:["L U2 F' D R B2 L' U F2 D' R' B U2 L D2 F R' B' U L2"],viewMode:"none"},{id:"scr-25",name:"Scramble-25",formulas:["U R' D2 B L' F2 U R D' B2 L F' U2 R' D B' L2 F U' R"],viewMode:"none"},{id:"scr-26",name:"Scramble-26",formulas:["D' F R2 B' U L D2 F' R B2 U' L' D F2 R' B U2 L D' F"],viewMode:"none"},{id:"scr-27",name:"Scramble-27",formulas:["R2 D' L U2 F' B R D' L2 U F B' R' D2 L' U' F2 B R D"],viewMode:"none"},{id:"scr-28",name:"Scramble-28",formulas:["F' L D2 R' U B F' L2 D R2 U' B' F L D' R2 U B2 F' L'"],viewMode:"none"},{id:"scr-29",name:"Scramble-29",formulas:["U2 B' L D R' F2 U B' L2 D' R F U2 B L' D2 R' F' U B2"],viewMode:"none"},{id:"scr-30",name:"Scramble-30",formulas:["D L2 B' R U F' D2 L B' R2 U' F D L2 B R' U2 F' D' L"],viewMode:"none"}],createdAt:0,updatedAt:0},at=[HV,AV,LV,SV];function mi(o){return o.startsWith("builtin-")}const RV="training-camp",VV=1,Hr="categories";function zV(){return new Promise((o,t)=>{const e=indexedDB.open(RV,VV);e.addEventListener("upgradeneeded",()=>{const i=e.result;i.objectStoreNames.contains(Hr)||i.createObjectStore(Hr,{keyPath:"id"})}),e.addEventListener("success",()=>o(e.result)),e.addEventListener("error",()=>t(e.error))})}function Eo(o,t){return zV().then(e=>new Promise((i,r)=>{const s=e.transaction(Hr,o),n=s.objectStore(Hr),d=t(n);d.addEventListener("success",()=>i(d.result)),d.addEventListener("error",()=>r(d.error)),s.addEventListener("complete",()=>e.close())}))}function $V(o){const{inverseFormula:t,...e}=o;e.proficiency==="learning"&&(e.proficiency="beginner"),typeof e.formula=="string"&&(e.formulas=[e.formula],delete e.formula);const i={...e,viewMode:e.viewMode??"none",proficiency:e.proficiency??"unlearned"};if(i.viewData&&i.viewMode==="oll"&&Array.isArray(i.viewData.top)&&typeof i.viewData.top[0]=="boolean"){const r=i.viewData,s=n=>n?"Y":".";i.viewData={top:[`${s(r.top[0])}${s(r.top[1])}${s(r.top[2])}`,`${s(r.top[3])}${s(r.top[4])}${s(r.top[5])}`,`${s(r.top[6])}${s(r.top[7])}${s(r.top[8])}`],sides:{back:`${s(r.edges.back[0])}${s(r.edges.back[1])}${s(r.edges.back[2])}`,right:`${s(r.edges.right[0])}${s(r.edges.right[1])}${s(r.edges.right[2])}`,front:`${s(r.edges.front[0])}${s(r.edges.front[1])}${s(r.edges.front[2])}`,left:`${s(r.edges.left[0])}${s(r.edges.left[1])}${s(r.edges.left[2])}`}}}return i}function Wi(o){return{...o,formulas:o.formulas.map($V)}}const V={async getAll(){return(await Eo("readonly",t=>t.getAll())).map(Wi)},async get(o){const t=await Eo("readonly",e=>e.get(o));return t?Wi(t):void 0},put(o){return Eo("readwrite",t=>t.put(o))},remove(o){return Eo("readwrite",t=>t.delete(o))},clear(){return Eo("readwrite",o=>o.clear())}},T=la({state:{categories:[],loading:!1},actions:{setCategories:(o,t)=>({categories:t}),setLoading:(o,t)=>({loading:t})},asyncActions:{async load(o){o.setState({loading:!0});const t=await V.getAll();o.setState({categories:t,loading:!1})},async addCategory(o,t){const e=Date.now(),i={id:`cat-${e}`,name:t,formulas:[],createdAt:e,updatedAt:e};await V.put(i);const r=await V.getAll();o.setState({categories:r})},async updateCategory(o,t,e){const i=await V.get(t);if(!i)return;i.name=e,i.updatedAt=Date.now(),await V.put(i);const r=await V.getAll();o.setState({categories:r})},async removeCategory(o,t){await V.remove(t);const e=await V.getAll();o.setState({categories:e})},async addFormula(o,t,e){const i=await V.get(t);if(!i)return;i.formulas.push({...e,id:`f-${Date.now()}`}),i.updatedAt=Date.now(),await V.put(i);const r=await V.getAll();o.setState({categories:r})},async addFormulas(o,t,e){const i=await V.get(t);if(!i)return;for(let s=0;s<e.length;s++)i.formulas.push({...e[s],id:`f-${Date.now()}-${s}`});i.updatedAt=Date.now(),await V.put(i);const r=await V.getAll();o.setState({categories:r})},async moveFormula(o,t,e,i){const r=await V.get(t);if(!r)return;const s=r.formulas.findIndex(a=>a.id===e);if(s===-1)return;const n=i==="up"?s-1:s+1;if(n<0||n>=r.formulas.length)return;[r.formulas[s],r.formulas[n]]=[r.formulas[n],r.formulas[s]],r.updatedAt=Date.now(),await V.put(r);const d=await V.getAll();o.setState({categories:d})},async updateFormula(o,t,e,i){const r=await V.get(t);if(!r)return;const s=r.formulas.find(d=>d.id===e);if(!s)return;Object.assign(s,i),r.updatedAt=Date.now(),await V.put(r);const n=await V.getAll();o.setState({categories:n})},async removeFormula(o,t,e){const i=await V.get(t);if(!i)return;i.formulas=i.formulas.filter(s=>s.id!==e),i.updatedAt=Date.now(),await V.put(i);const r=await V.getAll();o.setState({categories:r})},async clearFormulas(o,t){const e=await V.get(t);if(!e)return;e.formulas=[],e.updatedAt=Date.now(),await V.put(e);const i=await V.getAll();o.setState({categories:i})},async importData(o,t){await Promise.all(t.map(i=>V.put(i)));const e=await V.getAll();o.setState({categories:e})},async clearAll(o){await V.clear(),o.setState({categories:[]})}}}),Qa="training-camp-settings",oa={ollColor:"#fbbf24",formulaDisplayMode:"list"};function DV(){try{const o=localStorage.getItem(Qa);if(o){const t=JSON.parse(o);return{...oa,...t}}}catch{}return{...oa}}function ra(o){localStorage.setItem(Qa,JSON.stringify(o))}const E=la({state:DV(),actions:{setOllColor:(o,t)=>{const e={...o,ollColor:t};return ra(e),e},setFormulaDisplayMode:(o,t)=>{const e={...o,formulaDisplayMode:t};return ra(e),e}}});class UV extends Y{constructor(){super(...arguments),this.editing=!1,this.editName="",this.startEdit=()=>{this.props.builtin||(this.editing=!0,this.editName=this.props.category.name,this.update())},this.handleEditInput=t=>{this.editName=t.detail.value},this.saveEdit=async()=>{const t=this.editName.trim();t&&t!==this.props.category.name&&await T.asyncActions.updateCategory(this.props.category.id,t),this.editing=!1,this.update()},this.cancelEdit=()=>{this.editing=!1,this.update()},this.handleClearFormulas=async()=>{await T.asyncActions.clearFormulas(this.props.category.id)}}render(){const{category:t,builtin:e,onAddFormula:i,onImportBuiltin:r}=this.props;return l("div",{class:"mb-8 flex items-start justify-between"},[l("div",{class:"flex items-center gap-3"},[l("div",{class:F("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),l("div",null,[this.editing?l("div",{class:"flex items-center gap-2"},[l("iku-input",{value:this.editName,size:"sm","on:ik-input":this.handleEditInput,autofocus:!0},[]),l("iku-button",{size:"sm",variant:"primary","on:click":this.saveEdit},["保存"]),l("iku-button",{size:"sm","on:click":this.cancelEdit},["取消"])]):l("div",{class:"flex items-center gap-2"},[l("h1",{class:"text-foreground text-xl font-bold"},[t.name]),!e&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.startEdit},[l("ik-icon",{name:"pencil",size:14},[])])]),l("p",{class:"mt-0.5 text-xs text-(--color-foreground-muted)"},[t.formulas.length,"条公式"])])]),!e&&l("div",{class:"flex items-center gap-2"},[t.formulas.length>0&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleClearFormulas},[l("ik-icon",{name:"trash",size:14,slot:"prefix"},[]),"清空"]),r&&l("iku-button",{size:"sm",variant:"outlined","on:click":r},[l("ik-icon",{name:"download",size:14,slot:"prefix"},[]),"引用内置"]),l("iku-button",{size:"sm",variant:"primary","on:click":i},[l("ik-icon",{name:"plus",size:14,slot:"prefix"},[]),"添加公式"])]),e&&l("div",{class:"flex items-center gap-1.5 text-xs text-(--color-foreground-muted)"},[l("ik-icon",{name:"lock",size:12},[]),l("span",null,["内置栏目, 只读"])])])}}const U=30,Wt=2,ct=U*3+Wt*2,Co="#888",FV=1.2;function Nr(o,t,e,i){const r=[];for(let s=0;s<3;s++)for(let n=0;n<3;n++)r.push(l("rect",{x:o+n*(U+Wt),y:t+s*(U+Wt),width:U,height:U,rx:2,fill:e(s,n),stroke:Co,"stroke-width":FV,...i?.(s,n)??{}},[]));return r}const Nt=10,Ke=1,To=1,t1=4,Se=t1+Nt+Ke,Xe=t1+Nt+Ke,Rr=Se*2+ct,fo=["front","right","back","left"];function e1(o,t){const e=U-To*2;switch(o){case"back":return{x:Se+t*(U+Wt)+To,y:Xe-Ke-Nt,w:e,h:Nt};case"front":return{x:Se+t*(U+Wt)+To,y:Xe+ct+Ke,w:e,h:Nt};case"left":return{x:Se-Ke-Nt,y:Xe+t*(U+Wt)+To,w:Nt,h:e};case"right":return{x:Se+ct+Ke,y:Xe+t*(U+Wt)+To,w:Nt,h:e}}}const o1=16,ht=o1,kt=o1,Vr=ht*2+ct,fr=ht+ct/2,zr="#333",PV=1.8,tt=4,Ze=3,Mr=3;function r1(o,t){const e=t*(U+Wt);switch(o){case 0:return{x:ht+e,y:kt-Mr-Ze,w:U,h:Ze};case 1:return{x:ht+ct+Mr,y:kt+e,w:Ze,h:U};case 2:return{x:ht+e,y:kt+ct+Mr,w:U,h:Ze};case 3:return{x:ht-Mr-Ze,y:kt+e,w:Ze,h:U};default:throw new Error(`Invalid side index: ${o}`)}}function xi(o,t){if(!o)return[];const e=[];for(let i=0;i<4;i++)for(let r=0;r<3;r++){if(!o[i][r])continue;const{x:s,y:n,w:d,h:a}=r1(i,r);e.push(l("rect",{x:s,y:n,width:d,height:a,rx:1.5,fill:t,stroke:Co,"stroke-width":.8},[]))}return e}const qt=.2;function Ki(o,t){if((o===0||o===2)&&(t===0||t===2)){const i=t===0?ht+U*qt:ht+ct-U*qt,r=o===0?kt+U*qt:kt+ct-U*qt;return[i,r]}return o===0?[fr,kt+U*qt]:o===2?[fr,kt+ct-U*qt]:t===0?[ht+U*qt,fr]:[ht+ct-U*qt,fr]}let EV=0;function $r(o){return`${o}-${++EV}`}function Mo(o,t){return l("defs",null,[l("marker",{id:o,markerWidth:tt,markerHeight:tt,refX:tt-.5,refY:tt/2,orient:"auto"},[l("path",{d:`M 0 0 L ${tt} ${tt/2} L 0 ${tt} Z`,fill:zr},[])]),l("marker",{id:t,markerWidth:tt,markerHeight:tt,refX:.5,refY:tt/2,orient:"auto"},[l("path",{d:`M ${tt} 0 L 0 ${tt/2} L ${tt} ${tt} Z`,fill:zr},[])])])}const yr=4;function yo(o,t,e){return o.map(i=>{const[r,s]=Ki(i.from[0],i.from[1]),[n,d]=Ki(i.to[0],i.to[1]),a=n-r,c=d-s,u=Math.sqrt(a*a+c*c)||1,w=r+a/u*yr,C=s+c/u*yr,m=n-a/u*yr,S=d-c/u*yr;return l("path",{d:`M ${w} ${C} L ${m} ${S}`,fill:"none",stroke:zr,"stroke-width":PV,"marker-start":i.bidirectional?`url(#${e})`:void 0,"marker-end":`url(#${t})`},[])})}const ia="transparent";function TV(){return{top:["...",".Y.","..."],sides:{back:"...",right:"...",front:"...",left:"..."}}}function fi(o){return{top:[...o.top],sides:{...o.sides}}}class YV extends Y{constructor(){super(...arguments),this.data=TV()}mounted(){this.props.value&&(this.data=fi(this.props.value)),this.unsubscribe=E.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}toggleTop(t,e){if(t===1&&e===1)return;const i=this.data.top[t],r=i[e]==="Y"?".":"Y";this.data.top[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(fi(this.data)),this.update()}toggleEdge(t,e){const i=this.data.sides[t],r=i[e]==="Y"?".":"Y";this.data.sides[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(fi(this.data)),this.update()}renderEdgeCells(t){const e=this.data.sides[t],i=E.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=e1(t,s);r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:e[s]==="Y"?i:ia,stroke:Co,"stroke-width":.8,style:"cursor: pointer;","on:click":()=>this.toggleEdge(t,s)},[]))}return r}render(){const t=E.state.ollColor,e=Nr(Se,Xe,(i,r)=>i===1&&r===1||this.data.top[i][r]==="Y"?t:ia,(i,r)=>({style:i===1&&r===1?"cursor: default;":"cursor: pointer;","on:click":()=>this.toggleTop(i,r)}));return l("svg",{viewBox:`0 0 ${Rr} ${Rr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[e,...Array.isArray(fo.map(i=>this.renderEdgeCells(i)))?fo.map(i=>this.renderEdgeCells(i)):[fo.map(i=>this.renderEdgeCells(i))]])}}const OV=4,IV="#ef4444",qV="#666",Xi=[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]];function sa(){return{moves:[],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]]}}function Mi(o){return{moves:o.moves.map(t=>({...t,from:[...t.from],to:[...t.to]})),sameColorEdges:(o.sameColorEdges??Xi).map(t=>[...t])}}const NV=[[0,0],[0,1],[0,2],[1,0],[1,2],[2,0],[2,1],[2,2]];class _V extends Y{constructor(){super(...arguments),this.data=sa(),this.selected=null,this.markerEndId=$r("pll-ed")+"-end",this.markerStartId=$r("pll-ed")+"-start",this.handleReset=()=>{this.data=sa(),this.selected=null,this.props.onChange(Mi(this.data)),this.update()}}mounted(){this.props.value&&(this.data=Mi(this.props.value)),this.unsubscribe=E.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}findMoveAt(t,e){return this.data.moves.findIndex(i=>i.from[0]===t&&i.from[1]===e||i.to[0]===t&&i.to[1]===e)}findMoveBetween(t,e,i,r){return this.data.moves.findIndex(s=>s.from[0]===t&&s.from[1]===e&&s.to[0]===i&&s.to[1]===r||s.from[0]===i&&s.from[1]===r&&s.to[0]===t&&s.to[1]===e)}handlePieceClick(t,e){if(!this.selected){const r=this.findMoveAt(t,e);if(r!==-1){const s=this.data.moves[r];s.bidirectional?this.data.moves.splice(r,1):s.bidirectional=!0,this.emitChange();return}this.selected=[t,e],this.update();return}if(this.selected[0]===t&&this.selected[1]===e){this.selected=null,this.update();return}const i=this.findMoveBetween(this.selected[0],this.selected[1],t,e);if(i!==-1){const r=this.data.moves[i];r.bidirectional?this.data.moves.splice(i,1):r.bidirectional=!0}else this.data.moves.push({from:[this.selected[0],this.selected[1]],to:[t,e],bidirectional:!0});this.emitChange()}emitChange(){this.selected=null,this.props.onChange(Mi(this.data)),this.update()}handleEdgeMarkerToggle(t,e){const i=this.data.sameColorEdges??Xi;i[t][e]=!i[t][e],this.data.sameColorEdges=i.map(r=>[...r]),this.emitChange()}renderPieceMarkers(){const t=[];for(const[e,i]of NV){const[r,s]=Ki(e,i),n=this.selected?.[0]===e&&this.selected?.[1]===i,d=this.findMoveAt(e,i)!==-1;t.push(l("circle",{cx:r,cy:s,r:OV,fill:n?IV:d?zr:qV,stroke:"white","stroke-width":1,style:"cursor: pointer;",opacity:n?1:.8,"on:click":()=>this.handlePieceClick(e,i)},[]))}return t}renderEdgeMarkerEditors(){const t=E.state.ollColor,e=this.data.sameColorEdges??Xi,i=[],r=3;for(let s=0;s<4;s++)for(let n=0;n<3;n++){const{x:d,y:a,w:c,h:u}=r1(s,n),w=e[s][n];i.push(l("rect",{x:d-r,y:a-r,width:c+r*2,height:u+r*2,rx:2,fill:"transparent",style:"cursor: pointer;","on:click":()=>this.handleEdgeMarkerToggle(s,n)},[])),w?i.push(l("rect",{x:d,y:a,width:c,height:u,rx:1.5,fill:t,stroke:Co,"stroke-width":.8,style:"pointer-events: none;"},[])):i.push(l("rect",{x:d,y:a,width:c,height:u,rx:1.5,fill:"none",stroke:Co,"stroke-width":.6,"stroke-dasharray":"2,2",opacity:.5,style:"pointer-events: none;"},[]))}return i}render(){const t=E.state.ollColor,e=Nr(ht,kt,()=>t);return l("div",null,[l("svg",{viewBox:`0 0 ${Vr} ${Vr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],e,...Array.isArray(this.renderEdgeMarkerEditors())?this.renderEdgeMarkerEditors():[this.renderEdgeMarkerEditors()],...Array.isArray(yo(this.data.moves,this.markerEndId,this.markerStartId))?yo(this.data.moves,this.markerEndId,this.markerStartId):[yo(this.data.moves,this.markerEndId,this.markerStartId)],...Array.isArray(this.renderPieceMarkers())?this.renderPieceMarkers():[this.renderPieceMarkers()]]),l("div",{class:"mt-2 flex justify-end"},[l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleReset},[l("ik-icon",{name:"rotate-ccw",size:12,slot:"prefix"},[]),"重置"])])])}}const vs={unlearned:"未学习",beginner:"初学",proficient:"熟练",mastered:"精通"},i1={none:"无",oll:"OLL",pll:"PLL"},yi=Object.entries(i1).map(([o,t])=>({value:o,label:t})),bi=Object.entries(vs).map(([o,t])=>({value:o,label:t}));class ZV extends Y{constructor(){super(...arguments),this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned",this.handleSubmit=async()=>{const t=this.name.trim(),e=this.formulas.map(s=>s.trim()).filter(s=>s.length>0);if(!t||e.length===0)return;const{categoryId:i,editTarget:r}=this.props;r?await T.asyncActions.updateFormula(i,r.formulaId,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}):await T.asyncActions.addFormula(i,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}syncFromProps(){const{editTarget:t}=this.props;t?(this.name=t.name,this.formulas=t.formulas.length>0?[...t.formulas]:[""],this.viewMode=t.viewMode,this.viewData=t.viewData,this.proficiency=t.proficiency):this.resetFields()}resetFields(){this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned"}resetAndClose(){this.resetFields(),this.props.onClose()}render(){if(!this.props.open)return null;this.props.open&&!this.synced&&(this.synced=!0,this.syncFromProps());const t=!!this.props.editTarget;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":t?"编辑公式":"添加公式",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"space-y-4 px-1 py-2"},[l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式名",l("span",{class:"text-(--color-destructive)"},["*"])]),l("iku-input",{placeholder:"例如: OLL-06",value:this.name,"on:ik-input":e=>{this.name=e.detail.value}},[])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式",l("span",{class:"text-(--color-destructive)"},["*"])]),l("div",{class:"space-y-2"},[...Array.isArray(this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])))?this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])):[this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])]))],l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.push(""),this.update()}},[l("ik-icon",{name:"plus",size:14},[]),l("span",{class:"ml-1"},["添加公式"])])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["视图模式"]),l("iku-radio-group",{value:this.viewMode,"on:ik-change":e=>{const i=e.detail.value;if(this.viewData&&i!==this.viewMode){if(!window.confirm("切换视图模式将清空已编辑的视图数据，确认切换？")){this.update();return}this.viewData=void 0}this.viewMode=i,this.update()}},[...Array.isArray(yi.map(e=>l("iku-radio",{value:e.value},[e.label])))?yi.map(e=>l("iku-radio",{value:e.value},[e.label])):[yi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])]),this.viewMode==="oll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["OLL 视图编辑"]),l("div",{class:"w-32"},[l(YV,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),this.viewMode==="pll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["PLL 视图编辑"]),l("div",{class:"w-32"},[l(_V,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["熟练程度"]),l("iku-radio-group",{value:this.proficiency,"on:ik-change":e=>{this.proficiency=e.detail.value,this.update()}},[...Array.isArray(bi.map(e=>l("iku-radio",{value:e.value},[e.label])))?bi.map(e=>l("iku-radio",{value:e.value},[e.label])):[bi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},[t?"保存":"添加"])])])])}}class s1 extends Y{mounted(){this.unsubscribe=E.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderEdgeCells(t){const e=this.props.viewData.sides[t],i=E.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=e1(t,s),u=e[s]==="Y";r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:u?i:"none",stroke:u?Co:"none","stroke-width":u?.8:0},[]))}return r}render(){const{viewData:t}=this.props,e=E.state.ollColor,i=Nr(Se,Xe,(r,s)=>r===1&&s===1||t.top[r][s]==="Y"?e:"transparent");return l("svg",{viewBox:`0 0 ${Rr} ${Rr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[i,...Array.isArray(fo.map(r=>this.renderEdgeCells(r)))?fo.map(r=>this.renderEdgeCells(r)):[fo.map(r=>this.renderEdgeCells(r))]])}}class n1 extends Y{constructor(){super(...arguments),this.markerEndId=$r("pll")+"-end",this.markerStartId=$r("pll")+"-start"}mounted(){this.unsubscribe=E.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}render(){const{viewData:t}=this.props,e=E.state.ollColor,i=Nr(ht,kt,()=>e);return l("svg",{viewBox:`0 0 ${Vr} ${Vr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],i,...Array.isArray(xi(t.sameColorEdges,e))?xi(t.sameColorEdges,e):[xi(t.sameColorEdges,e)],...Array.isArray(yo(t.moves,this.markerEndId,this.markerStartId))?yo(t.moves,this.markerEndId,this.markerStartId):[yo(t.moves,this.markerEndId,this.markerStartId)]])}}const GV={unlearned:"border-(--color-foreground-muted)/30 text-(--color-foreground-muted)",beginner:"border-(--color-warning)/30 text-(--color-warning)",proficient:"border-(--color-info)/30 text-(--color-info)",mastered:"border-(--color-success)/30 text-(--color-success)"};class WV extends Y{constructor(){super(...arguments),this.handleEdit=()=>{this.props.onEdit(this.props.formula.id)},this.handleDelete=async()=>{await T.asyncActions.removeFormula(this.props.categoryId,this.props.formula.id)}}render(){const{formula:t,builtin:e,onMoveUp:i,onMoveDown:r,isFirst:s,isLast:n}=this.props,d=t.proficiency??"unlearned";return l("div",{class:"group flex flex-col rounded-xl border border-(--color-border) bg-(--color-surface) p-5 transition-colors hover:border-(--color-primary)/30"},[l("div",{class:"mb-3 flex items-center gap-2"},[l("span",{class:"text-base font-semibold text-(--color-foreground)"},[t.name]),!e&&l("span",{class:F("rounded-full border px-2 py-0.5 text-xs",GV[d])},[vs[d]])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(s1,{viewData:t.viewData},[])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(n1,{viewData:t.viewData},[])]),t.viewMode!=="none"&&!t.viewData&&l("div",{class:"mb-3 flex h-20 items-center justify-center rounded-lg border border-dashed border-(--color-border)"},[l("span",{class:"text-xs text-(--color-foreground-muted)/50"},[i1[t.viewMode],"俯视图"])]),l("div",{class:"mb-3"},[l("span",{class:"mb-1 block text-xs text-(--color-foreground-muted)"},["公式"]),t.formulas.length===1?l("span",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[t.formulas[0]]):l("div",{class:"space-y-1"},[...Array.isArray(t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a])))?t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a])):[t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a]))]])]),!e&&l("div",{class:"flex items-center gap-1 border-t border-(--color-border)/50 pt-3 opacity-0 transition-opacity group-hover:opacity-100"},[i&&l("iku-button",{size:"sm",variant:"ghost",disabled:s,"on:click":i},[l("ik-icon",{name:"chevron-up",size:14},[])]),r&&l("iku-button",{size:"sm",variant:"ghost",disabled:n,"on:click":r},[l("ik-icon",{name:"chevron-down",size:14},[])]),l("div",{class:"flex-1"},[]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleEdit},[l("ik-icon",{name:"pencil",size:14},[])]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14},[])])])])}}const na=["mastered","proficient","beginner","unlearned"];class KV extends Y{mounted(){this.unsubscribe=E.subscribe(t=>t.formulaDisplayMode,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderCard(t,e,i){const{category:r,builtin:s,onEdit:n,onMove:d}=this.props;return l(WV,{categoryId:r.id,formula:t,builtin:s,onEdit:n,onMoveUp:d?()=>d(t.id,"up"):void 0,onMoveDown:d?()=>d(t.id,"down"):void 0,isFirst:e===0,isLast:e===i-1},[])}renderGrid(t){return l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map((e,i)=>this.renderCard(e,i,t.length)))?t.map((e,i)=>this.renderCard(e,i,t.length)):[t.map((e,i)=>this.renderCard(e,i,t.length))]])}renderGrouped(){const{category:t}=this.props,e=new Map;for(const n of na)e.set(n,[]);for(const n of t.formulas){const d=n.proficiency??"unlearned";e.get(d).push(n)}const i=t.formulas.length,r=new Map;t.formulas.forEach((n,d)=>r.set(n.id,d));const s=[];for(const n of na){const d=e.get(n);d.length!==0&&s.push(l("div",{class:"space-y-3"},[l("div",{class:"flex items-center gap-2"},[l("h3",{class:"text-sm font-semibold text-(--color-foreground-muted)"},[vs[n]]),l("span",{class:"text-xs text-(--color-foreground-muted)/60"},[d.length])]),l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}))?d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}):[d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)})]])]))}return l("div",{class:"space-y-6"},[s])}render(){const{category:t,builtin:e}=this.props;return t.formulas.length===0?l("div",{class:"flex flex-col items-center justify-center rounded-xl border border-dashed border-(--color-border) py-16 text-(--color-foreground-muted)"},[l("ik-icon",{name:"inbox",size:32},[]),l("p",{class:"mt-3 text-sm"},["暂无公式"])]):(e?"list":E.state.formulaDisplayMode)==="grouped"?this.renderGrouped():this.renderGrid(t.formulas)}}class XV extends Y{constructor(){super(...arguments),this.selectedIds=new Set,this.activeTab=at[0].id,this.handleImport=async()=>{if(this.selectedIds.size===0)return;const t=[];for(const e of at)for(const i of e.formulas)this.selectedIds.has(i.id)&&t.push({name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:"unlearned",sourceRef:i.id});await T.asyncActions.addFormulas(this.props.categoryId,t),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}toggleFormula(t){this.selectedIds.has(t)?this.selectedIds.delete(t):this.selectedIds.add(t),this.update()}toggleAll(){const t=at.find(i=>i.id===this.activeTab);if(!t)return;const e=t.formulas.every(i=>this.selectedIds.has(i.id));for(const i of t.formulas)e?this.selectedIds.delete(i.id):this.selectedIds.add(i.id);this.update()}resetAndClose(){this.selectedIds.clear(),this.activeTab=at[0].id,this.props.onClose()}getImportedRefs(){const t=T.state.categories.find(i=>i.id===this.props.categoryId);if(!t)return new Set;const e=new Set;for(const i of t.formulas)i.sourceRef&&e.add(i.sourceRef);return e}renderFormulaCard(t,e){const i=this.selectedIds.has(t.id);return l("div",{class:F("flex cursor-pointer flex-col rounded-lg border p-3","transition-colors hover:border-(--color-primary)/50",i?"border-(--color-primary) bg-(--color-primary)/5":"border-(--color-border)"),"on:click":()=>this.toggleFormula(t.id)},[l("div",{class:"mb-2 flex items-center gap-2"},[l("iku-checkbox",{checked:i,"on:ik-change":r=>{r.stopPropagation(),this.toggleFormula(t.id)}},[]),l("span",{class:"text-sm font-medium text-(--color-foreground)"},[t.name]),e&&l("span",{class:"rounded-full border border-(--color-success)/30 px-1.5 py-0.5 text-[10px] leading-none text-(--color-success)"},["已选取"])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(s1,{viewData:t.viewData},[])])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(n1,{viewData:t.viewData},[])])]),l("span",{class:"truncate font-mono text-xs text-(--color-foreground-muted)"},[t.formulas[0]||""])])}render(){if(!this.props.open)return null;const t=this.selectedIds.size,e=this.getImportedRefs(),i=at.find(s=>s.id===this.activeTab),r=i?.formulas.every(s=>this.selectedIds.has(s.id))??!1;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"引用内置公式",closable:!0,"on:ik-close":this.handleCancel,style:"--dialog-width: 720px"},[l("div",{class:"flex gap-4 px-1 py-2",style:"height: 420px;"},[l("iku-tabs",{orientation:"vertical",value:this.activeTab,"on:ik-change":s=>{this.activeTab=s.detail.value,this.update()},class:"shrink-0"},[...Array.isArray(at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])))?at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])):[at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])]))]]),l("div",{class:"flex min-w-0 flex-1 flex-col"},[l("div",{class:"mb-3 flex items-center"},[l("iku-button",{size:"sm",variant:"ghost","on:click":()=>this.toggleAll()},[r?"取消全选":"全选当前栏目"])]),l("div",{class:"flex-1 overflow-y-auto"},[l("div",{class:"grid gap-3",style:"grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));"},[i?.formulas.map(s=>this.renderFormulaCard(s,e.has(s.id)))])])])]),l("div",{class:"mt-4 flex items-center justify-between",slot:"footer"},[l("span",{class:"pr-2 text-xs text-(--color-foreground-muted)"},[`已选 ${t} 条`]),l("div",{class:"flex gap-3"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary",disabled:t===0,"on:click":this.handleImport},["导入"])])])])])}}class JV extends Y{constructor(){super(...arguments),this.unsubscribes=[],this.showFormulaDialog=!1,this.showImportDialog=!1,this.editTarget=null,this.openAddDialog=()=>{this.editTarget=null,this.showFormulaDialog=!0,this.update()},this.openEditDialog=t=>{const i=this.getCategory()?.formulas.find(r=>r.id===t);i&&(this.editTarget={formulaId:i.id,name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:i.proficiency??"unlearned"},this.showFormulaDialog=!0,this.update())},this.closeFormulaDialog=()=>{this.showFormulaDialog=!1,this.editTarget=null,this.update()},this.openImportDialog=()=>{this.showImportDialog=!0,this.update()},this.closeImportDialog=()=>{this.showImportDialog=!1,this.update()},this.handleMoveFormula=(t,e)=>{T.asyncActions.moveFormula(this.props.categoryId,t,e)},this.setDisplayMode=t=>{E.actions.setFormulaDisplayMode(t)},this.navigateHome=t=>{t.preventDefault(),aa(this).push("/")}}mounted(){this.unsubscribes.push(T.subscribe(()=>this.update())),this.unsubscribes.push(E.subscribe(t=>t.formulaDisplayMode,()=>this.update())),mi(this.props.categoryId)||T.asyncActions.load()}beforeUnmount(){this.unsubscribes.forEach(t=>t())}getCategory(){const t=this.props.categoryId;return mi(t)?at.find(e=>e.id===t):T.state.categories.find(e=>e.id===t)}render(){const t=this.getCategory(),e=mi(this.props.categoryId);return t?l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-8")},[l("nav",{class:"mb-6 flex items-center gap-1.5 text-sm text-(--color-foreground-muted)"},[l("a",{href:"/",class:"hover:text-foreground cursor-pointer transition-colors","on:click":this.navigateHome},["训练栏目"]),l("ik-icon",{name:"chevron-right",size:14},[]),l("span",{class:"text-foreground"},[t.name])]),l(UV,{category:t,builtin:e,onAddFormula:this.openAddDialog,onImportBuiltin:e?void 0:this.openImportDialog},[]),!e&&t.formulas.length>0&&l("div",{class:"mb-4 flex justify-end"},[l("div",{class:"flex items-center gap-1"},[...Array.isArray(["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:E.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])])))?["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:E.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])])):[["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:E.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])]))]])]),l(KV,{category:t,builtin:e,onEdit:this.openEditDialog,onMove:e?void 0:this.handleMoveFormula},[]),l(ZV,{open:this.showFormulaDialog,categoryId:t.id,editTarget:this.editTarget,onClose:this.closeFormulaDialog},[]),!e&&l(XV,{open:this.showImportDialog,categoryId:t.id,onClose:this.closeImportDialog},[])]):l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-20 text-center")},[l("p",{class:"text-(--color-foreground-muted)"},["栏目不存在"]),l("iku-button",{class:"mt-4","on:click":this.navigateHome},["返回首页"])])}}class QV extends Dr{render(){return l(JV,{categoryId:this.params.id},[])}}class Ge extends Y{constructor(){super(...arguments),this.handleClick=()=>{aa(this).push(`/category/${this.props.category.id}`)},this.handleDelete=async t=>{t.stopPropagation(),await fS.confirm({title:"确认删除",content:`确定要删除公式栏 "${this.props.category.name}" 吗？`})&&this.props.onDelete?.(this.props.category.id)}}render(){const{category:t,builtin:e}=this.props;return l("div",{class:F("group cursor-pointer rounded-xl border border-(--color-border) bg-(--color-surface) p-5","transition-colors hover:border-(--color-primary)/40"),"on:click":this.handleClick},[l("div",{class:"mb-3 flex items-start justify-between"},[l("div",{class:F("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),e?l("span",{class:"bg-accent inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium text-(--color-foreground-muted)"},["内置"]):l("iku-button",{class:"opacity-0 transition-all group-hover:opacity-100",variant:"destructive",title:"删除","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14,color:"var(--color-foreground)"},[])])]),l("h3",{class:"text-foreground text-sm font-semibold transition-colors group-hover:text-(--color-primary)"},[t.name]),l("div",{class:"mt-3 flex items-center gap-1 text-xs text-(--color-foreground-muted)/60"},[l("ik-icon",{name:"list",size:12},[]),l("span",null,[t.formulas.length,"条公式"])])])}}class tz extends Y{constructor(){super(...arguments),this.handleDelete=async t=>{await T.asyncActions.removeCategory(t)}}mounted(){this.unsubscribe=T.subscribe(()=>this.update()),T.asyncActions.load()}beforeUnmount(){this.unsubscribe?.()}render(){const{categories:t,loading:e}=T.state;return e?l("div",{class:"flex items-center justify-center py-20"},[l("iku-loading",{size:"md"},[])]):l("div",{class:"space-y-8"},[l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["内置"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(at.map(i=>l(Ge,{category:i,builtin:!0},[])))?at.map(i=>l(Ge,{category:i,builtin:!0},[])):[at.map(i=>l(Ge,{category:i,builtin:!0},[]))]])]),l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["自定义"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[])))?t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[])):[t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[]))],l("button",{class:F("flex min-h-[148px] flex-col items-center justify-center","rounded-xl border border-dashed border-(--color-border) bg-(--color-surface)/50","text-(--color-foreground-muted) transition-colors","hover:border-(--color-primary)/50 hover:text-(--color-primary)"),"on:click":()=>this.props.onCreateClick()},[l("ik-icon",{name:"plus",size:"lg"},[]),l("span",{class:"mt-2 text-sm"},["新建栏目"])])])])])}}class ez extends Y{constructor(){super(...arguments),this.name="",this.handleInput=t=>{this.name=t.detail.value},this.handleSubmit=async()=>{const t=this.name.trim();t&&(await T.asyncActions.addCategory(t),this.name="",this.props.onClose())},this.handleCancel=()=>{this.name="",this.props.onClose()}}render(){return this.props.open?l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"新建训练栏目",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"px-1 py-2"},[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["栏目名称"]),l("iku-input",{placeholder:"例如: OLL 训练",value:this.name,"on:ik-input":this.handleInput},[])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},["创建"])])])]):null}}class oz extends Y{constructor(){super(...arguments),this.showCreateDialog=!1,this.openCreate=()=>{this.showCreateDialog=!0,this.update()},this.closeCreate=()=>{this.showCreateDialog=!1,this.update()}}render(){return l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-8")},[l("div",{class:"mb-8 flex items-center justify-between"},[l("div",null,[l("h1",{class:"text-foreground text-2xl font-bold"},["训练栏目"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理你的魔方训练公式集"])]),l("iku-button",{variant:"primary","on:click":this.openCreate},[l("ik-icon",{name:"plus",size:"sm",slot:"prefix"},[]),"新建栏目"])]),l(tz,{onCreateClick:this.openCreate},[]),l(ez,{open:this.showCreateDialog,onClose:this.closeCreate},[])])}}class rz extends Dr{render(){return l(oz,null,[])}}class iz extends Y{constructor(){super(...arguments),this.handleClearAll=async()=>{await T.asyncActions.clearAll()}}render(){return l("div",{class:"rounded-xl border border-(--color-destructive)/20 bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-destructive)/10 text-(--color-destructive)"},[l("ik-icon",{name:"alert-triangle",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["清空数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["删除所有自定义训练栏目。此操作不可撤销，建议先导出备份。"]),l("iku-button",{variant:"destructive","on:click":this.handleClearAll},[l("ik-icon",{name:"trash-2",size:"sm",slot:"prefix"},[]),"清空所有数据"])])])])}}class sz extends Y{constructor(){super(...arguments),this.handleExport=()=>{const t=T.state.categories,e={version:2,exportedAt:Date.now(),categories:t},i=JSON.stringify(e,null,2),r=new Blob([i],{type:"application/json"}),s=URL.createObjectURL(r),n=document.createElement("a");n.href=s,n.download=`cube-training-${new Date().toISOString().slice(0,10)}.json`,n.click(),URL.revokeObjectURL(s)}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-success)/10 text-(--color-success)"},[l("ik-icon",{name:"download",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导出数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["将所有自定义训练栏目导出为 JSON 文件。内置栏目不参与导出。"]),l("iku-button",{variant:"primary","on:click":this.handleExport},[l("ik-icon",{name:"file-down",size:"sm",slot:"prefix"},[]),"导出 JSON"])])])])}}class nz extends Y{constructor(){super(...arguments),this.preview=null,this.fileName="",this.handleFileChange=t=>{const i=t.target.files?.[0];if(!i)return;this.fileName=i.name;const r=new FileReader;r.addEventListener("load",()=>{try{const s=JSON.parse(r.result);if(s.version!==1&&s.version!==2||!Array.isArray(s.categories)){this.preview=null,this.update();return}const n=s.categories.map(Wi),d=new Set(T.state.categories.map(a=>a.id));this.preview=n.map(a=>({category:a,conflict:d.has(a.id)})),this.update()}catch{this.preview=null,this.update()}}),r.readAsText(i)},this.handleImport=async()=>{if(!this.preview)return;const t=this.preview.map(e=>e.category);await T.asyncActions.importData(t),this.preview=null,this.fileName="",this.update()},this.handleCancel=()=>{this.preview=null,this.fileName="",this.update()}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-info)/10 text-(--color-info)"},[l("ik-icon",{name:"upload",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导入数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["从 JSON 文件导入训练栏目。同名栏目将被覆盖，不冲突的栏目保留。"]),l("label",{class:F("bg-background/50 relative flex cursor-pointer flex-col items-center rounded-lg border-2 border-dashed border-(--color-border) p-8 text-center","transition-colors hover:border-(--color-primary)/50")},[l("input",{type:"file",accept:".json",class:"absolute inset-0 h-full w-full cursor-pointer opacity-0","on:change":this.handleFileChange},[]),l("ik-icon",{name:"file-up",size:32,color:"var(--color-border)"},[]),l("p",{class:"mt-3 text-sm text-(--color-foreground-muted)"},["点击或拖拽 JSON 文件到此处"]),l("p",{class:"mt-1 text-xs text-(--color-foreground-muted)/60"},["仅支持 .json 格式"])]),this.preview&&this.renderPreview()])])])}renderPreview(){const t=this.preview,e=t.filter(i=>i.conflict).length;return l("div",{class:"bg-background mt-5 rounded-lg border border-(--color-border) p-4"},[l("div",{class:"mb-3 flex items-center justify-between"},[l("h4",{class:"text-foreground text-sm font-medium"},["导入预览"]),l("span",{class:"text-xs text-(--color-foreground-muted)"},[this.fileName])]),l("div",{class:"space-y-2"},[...Array.isArray(t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])))?t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])):[t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])]))]]),l("div",{class:"mt-4 flex items-center justify-between border-t border-(--color-border) pt-3"},[l("span",{class:"text-xs text-(--color-foreground-muted)"},["共",t.length,"个栏目",e>0&&`，其中 ${e} 个将覆盖已有数据`]),l("div",{class:"flex gap-2"},[l("iku-button",{size:"sm","on:click":this.handleCancel},["取消"]),l("iku-button",{size:"sm",variant:"primary","on:click":this.handleImport},["确认导入"])])])])}}class lz extends Y{constructor(){super(...arguments),this.handleColorChange=t=>{const e=t.target;E.actions.setOllColor(e.value)}}mounted(){this.unsubscribe=E.subscribe(()=>{this.update()})}beforeUnmount(){this.unsubscribe?.()}render(){const{ollColor:t}=E.state;return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-primary)/10 text-(--color-primary)"},[l("ik-icon",{name:"palette",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["俯视图配置"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["自定义 OLL 俯视图中填色块的颜色。"]),l("div",{class:"flex items-center gap-3"},[l("label",{class:"text-sm text-(--color-foreground-muted)"},["OLL 填色颜色"]),l("input",{type:"color",value:t,"on:input":this.handleColorChange,class:"h-8 w-10 cursor-pointer rounded border border-(--color-border)"},[]),l("span",{class:"font-mono text-xs text-(--color-foreground-muted)"},[t])])])])])}}class az extends Dr{render(){return l("div",{class:F("mx-auto w-full max-w-3xl px-6 py-8")},[l("div",{class:"mb-8"},[l("h1",{class:"text-foreground text-2xl font-bold"},["设置"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理训练数据的导入与导出"])]),l("div",{class:"space-y-6"},[l(lz,null,[]),l(sz,null,[]),l(nz,null,[]),l(iz,null,[])])])}}const dz=[{path:"/",component:jV,children:[{path:"",component:rz,meta:{title:"Ikun Cube Trainer"}},{path:"category/:id",component:QV,meta:{title:"Ikun Cube Trainer - 栏目详情"}},{path:"settings",component:az,meta:{title:"Ikun Cube Trainer - 设置"}}]}];class hz extends Y{render(){return l(d1,null,[l(a1,{routes:dz,beforeEach:(t,e,i)=>{t.meta?.title&&(document.title=t.meta.title),i()}},[]),l("div",{"data-container":"global-overlays"},[l("iku-toast-region",{"auto-hide-duration":3e3},[]),l("iku-dialog-region",null,[])])])}}function cz(){CL(),ES(),rR(),He.init(),He.setTheme(localStorage.getItem("app-theme")||"dark"),He.subscribe(o=>{localStorage.setItem("app-theme",o.theme)})}function pz(){cz(),h1(l(hz,null,[]),document.getElementById("app"))}pz();
+${E}
+}`,b=a();b.textContent=q}function u(x){if(typeof document>"u")return;const A=document.documentElement;if(x==="light"||x==="dark")A.dataset.theme="default",A.dataset.colorScheme=x,A.style.colorScheme=x;else if(x==="neutral")A.dataset.theme="neutral",A.dataset.colorScheme="light",A.style.colorScheme="light";else if(x==="auto"){const E=d();A.dataset.theme="default",A.dataset.colorScheme=E,A.style.colorScheme=E}else{const q=n.get(x)?.colorScheme||"light";A.dataset.theme=x,A.dataset.colorScheme=q,A.style.colorScheme=q,c(x)}}function w(x,A){typeof window>"u"||window.dispatchEvent(new CustomEvent("theme-change",{detail:{theme:x,previous:A}}))}function C(){if(typeof window>"u")return()=>{};r=window.matchMedia("(prefers-color-scheme: dark)");const x=()=>{i==="auto"&&(u("auto"),w("auto","auto"))};return r.addEventListener("change",x),()=>{r?.removeEventListener("change",x)}}function m(x,A,E="light"){n.set(x,{variables:A,colorScheme:E}),i===x&&c(x)}function S(x){const A=i;i=x,u(x),w(x,A)}function z(){return i}function U(){return i==="auto"?d():i||t}function M(x){if(typeof window>"u")return()=>{};const A=E=>{x(E.detail)};return window.addEventListener("theme-change",A),()=>{window.removeEventListener("theme-change",A)}}function V(){return C()}function I(x){if(x==="light"||x==="dark")return{colorScheme:x};if(x==="neutral")return{colorScheme:"light"};if(x==="auto")return{colorScheme:d()};const A=n.get(x);return A?{colorScheme:A.colorScheme}:null}return{register:m,setTheme:S,getTheme:z,getActiveTheme:U,getThemeInfo:I,subscribe:M,init:V}}const He=zR();function $R(o={}){const{target:t=typeof document<"u"?document.documentElement:null}=o,e=new Set,i=new Set;function r(M,V){t&&t.style.setProperty(`--${M}`,V)}function s(M){t&&t.style.removeProperty(`--${M}`)}function n(M){return t?getComputedStyle(t).getPropertyValue(`--${M}`).trim():""}function d(M,V,I=500){const x=dt(V,I);for(const[A,E]of Object.entries(x))r(`color-${M}-${A}`,E);return e.add(M),x}function a(M,V){return M[V]}function c(M,V={}){const{scale:I=600,hoverScale:x,activeScale:A,mutedScale:E=100}=V,q=d("primary-custom",M,500),b=x??Math.min(I+100,950),st=A??Math.min(I+200,950),gt=a(q,I),cr=a(q,b),Ie=a(q,st),qe=a(q,E);return u("primary",gt),u("primary-hover",cr),u("primary-active",Ie),u("primary-foreground","#fff"),u("primary-muted",qe),u("ring",gt),u("input-focus",gt),u("item-selected",qe),u("item-selected-foreground",gt),u("info",gt),u("info-muted",qe),u("selection",a(q,200)),u("selection-foreground",a(q,900)),q}function u(M,V){r(`color-${M}`,V),i.add(M)}function w(M){for(const[V,I]of Object.entries(M))I&&u(V,I)}function C(M){for(const V of _0)s(`color-${M}-${V}`);e.delete(M)}function m(M){s(`color-${M}`),i.delete(M)}function S(){for(const M of e)C(M);for(const M of i)m(M);e.clear(),i.clear()}function z(){return[...e]}function U(){return[...i]}return{applyPalette:d,applyPrimaryColor:c,resetPalette:C,setSemanticColor:u,setSemanticColors:w,resetSemanticColor:m,reset:S,setVar:r,getVar:n,removeVar:s,getAppliedPalettes:z,getAppliedSemanticColors:U,COLOR_SCALE_VALUES:_0,BUILTIN_PALETTES:lR,SEMANTIC_COLOR_NAMES:nR}}typeof document<"u"&&$R();const _o=[{key:"light",label:"浅色",icon:"○"},{key:"dark",label:"深色",icon:"●"},{key:"neutral",label:"中性",icon:"◐"},{key:"auto",label:"跟随系统",icon:"◑"}];function Ya(){return He?.getTheme()||"light"}function UR(){const o=Ya();return _o.find(t=>t.key===o)||_o[0]}function DR(o){He?.setTheme(o)}function FR(o){return He?He.subscribe(t=>{o(t.theme)}):()=>{}}function Oa(o){var t,e,i="";if(typeof o=="string"||typeof o=="number")i+=o;else if(typeof o=="object")if(Array.isArray(o)){var r=o.length;for(t=0;t<r;t++)o[t]&&(e=Oa(o[t]))&&(i&&(i+=" "),i+=e)}else for(e in o)o[e]&&(i&&(i+=" "),i+=e);return i}function PR(){for(var o,t,e=0,i="",r=arguments.length;e<r;e++)(o=arguments[e])&&(t=Oa(o))&&(i&&(i+=" "),i+=t);return i}const ER=(o,t)=>{const e=new Array(o.length+t.length);for(let i=0;i<o.length;i++)e[i]=o[i];for(let i=0;i<t.length;i++)e[o.length+i]=t[i];return e},TR=(o,t)=>({classGroupId:o,validator:t}),Ia=(o=new Map,t=null,e)=>({nextPart:o,validators:t,classGroupId:e}),Sr="-",W0=[],YR="arbitrary..",OR=o=>{const t=qR(o),{conflictingClassGroups:e,conflictingClassGroupModifiers:i}=o;return{getClassGroupId:n=>{if(n.startsWith("[")&&n.endsWith("]"))return IR(n);const d=n.split(Sr),a=d[0]===""&&d.length>1?1:0;return qa(d,a,t)},getConflictingClassGroupIds:(n,d)=>{if(d){const a=i[n],c=e[n];return a?c?ER(c,a):a:c||W0}return e[n]||W0}}},qa=(o,t,e)=>{if(o.length-t===0)return e.classGroupId;const r=o[t],s=e.nextPart.get(r);if(s){const c=qa(o,t+1,s);if(c)return c}const n=e.validators;if(n===null)return;const d=t===0?o.join(Sr):o.slice(t).join(Sr),a=n.length;for(let c=0;c<a;c++){const u=n[c];if(u.validator(d))return u.classGroupId}},IR=o=>o.slice(1,-1).indexOf(":")===-1?void 0:(()=>{const t=o.slice(1,-1),e=t.indexOf(":"),i=t.slice(0,e);return i?YR+i:void 0})(),qR=o=>{const{theme:t,classGroups:e}=o;return NR(e,t)},NR=(o,t)=>{const e=Ia();for(const i in o){const r=o[i];gs(r,e,i,t)}return e},gs=(o,t,e,i)=>{const r=o.length;for(let s=0;s<r;s++){const n=o[s];_R(n,t,e,i)}},_R=(o,t,e,i)=>{if(typeof o=="string"){ZR(o,t,e);return}if(typeof o=="function"){GR(o,t,e,i);return}WR(o,t,e,i)},ZR=(o,t,e)=>{const i=o===""?t:Na(t,o);i.classGroupId=e},GR=(o,t,e,i)=>{if(KR(o)){gs(o(i),t,e,i);return}t.validators===null&&(t.validators=[]),t.validators.push(TR(e,o))},WR=(o,t,e,i)=>{const r=Object.entries(o),s=r.length;for(let n=0;n<s;n++){const[d,a]=r[n];gs(a,Na(t,d),e,i)}},Na=(o,t)=>{let e=o;const i=t.split(Sr),r=i.length;for(let s=0;s<r;s++){const n=i[s];let d=e.nextPart.get(n);d||(d=Ia(),e.nextPart.set(n,d)),e=d}return e},KR=o=>"isThemeGetter"in o&&o.isThemeGetter===!0,XR=o=>{if(o<1)return{get:()=>{},set:()=>{}};let t=0,e=Object.create(null),i=Object.create(null);const r=(s,n)=>{e[s]=n,t++,t>o&&(t=0,i=e,e=Object.create(null))};return{get(s){let n=e[s];if(n!==void 0)return n;if((n=i[s])!==void 0)return r(s,n),n},set(s,n){s in e?e[s]=n:r(s,n)}}},Gi="!",K0=":",JR=[],X0=(o,t,e,i,r)=>({modifiers:o,hasImportantModifier:t,baseClassName:e,maybePostfixModifierPosition:i,isExternal:r}),QR=o=>{const{prefix:t,experimentalParseClassName:e}=o;let i=r=>{const s=[];let n=0,d=0,a=0,c;const u=r.length;for(let z=0;z<u;z++){const U=r[z];if(n===0&&d===0){if(U===K0){s.push(r.slice(a,z)),a=z+1;continue}if(U==="/"){c=z;continue}}U==="["?n++:U==="]"?n--:U==="("?d++:U===")"&&d--}const w=s.length===0?r:r.slice(a);let C=w,m=!1;w.endsWith(Gi)?(C=w.slice(0,-1),m=!0):w.startsWith(Gi)&&(C=w.slice(1),m=!0);const S=c&&c>a?c-a:void 0;return X0(s,m,C,S)};if(t){const r=t+K0,s=i;i=n=>n.startsWith(r)?s(n.slice(r.length)):X0(JR,!1,n,void 0,!0)}if(e){const r=i;i=s=>e({className:s,parseClassName:r})}return i},tV=o=>{const t=new Map;return o.orderSensitiveModifiers.forEach((e,i)=>{t.set(e,1e6+i)}),e=>{const i=[];let r=[];for(let s=0;s<e.length;s++){const n=e[s],d=n[0]==="[",a=t.has(n);d||a?(r.length>0&&(r.sort(),i.push(...r),r=[]),i.push(n)):r.push(n)}return r.length>0&&(r.sort(),i.push(...r)),i}},eV=o=>({cache:XR(o.cacheSize),parseClassName:QR(o),sortModifiers:tV(o),...OR(o)}),oV=/\s+/,rV=(o,t)=>{const{parseClassName:e,getClassGroupId:i,getConflictingClassGroupIds:r,sortModifiers:s}=t,n=[],d=o.trim().split(oV);let a="";for(let c=d.length-1;c>=0;c-=1){const u=d[c],{isExternal:w,modifiers:C,hasImportantModifier:m,baseClassName:S,maybePostfixModifierPosition:z}=e(u);if(w){a=u+(a.length>0?" "+a:a);continue}let U=!!z,M=i(U?S.substring(0,z):S);if(!M){if(!U){a=u+(a.length>0?" "+a:a);continue}if(M=i(S),!M){a=u+(a.length>0?" "+a:a);continue}U=!1}const V=C.length===0?"":C.length===1?C[0]:s(C).join(":"),I=m?V+Gi:V,x=I+M;if(n.indexOf(x)>-1)continue;n.push(x);const A=r(M,U);for(let E=0;E<A.length;++E){const q=A[E];n.push(I+q)}a=u+(a.length>0?" "+a:a)}return a},iV=(...o)=>{let t=0,e,i,r="";for(;t<o.length;)(e=o[t++])&&(i=_a(e))&&(r&&(r+=" "),r+=i);return r},_a=o=>{if(typeof o=="string")return o;let t,e="";for(let i=0;i<o.length;i++)o[i]&&(t=_a(o[i]))&&(e&&(e+=" "),e+=t);return e},sV=(o,...t)=>{let e,i,r,s;const n=a=>{const c=t.reduce((u,w)=>w(u),o());return e=eV(c),i=e.cache.get,r=e.cache.set,s=d,d(a)},d=a=>{const c=i(a);if(c)return c;const u=rV(a,e);return r(a,u),u};return s=n,(...a)=>s(iV(...a))},nV=[],N=o=>{const t=e=>e[o]||nV;return t.isThemeGetter=!0,t},Za=/^\[(?:(\w[\w-]*):)?(.+)\]$/i,Ga=/^\((?:(\w[\w-]*):)?(.+)\)$/i,lV=/^\d+\/\d+$/,aV=/^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/,dV=/\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/,hV=/^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/,cV=/^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/,pV=/^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/,_e=o=>lV.test(o),L=o=>!!o&&!Number.isNaN(Number(o)),It=o=>!!o&&Number.isInteger(Number(o)),vi=o=>o.endsWith("%")&&L(o.slice(0,-1)),bt=o=>aV.test(o),uV=()=>!0,wV=o=>dV.test(o)&&!hV.test(o),Wa=()=>!1,gV=o=>cV.test(o),vV=o=>pV.test(o),kV=o=>!g(o)&&!v(o),mV=o=>Uo(o,Ja,Wa),g=o=>Za.test(o),je=o=>Uo(o,Qa,wV),ki=o=>Uo(o,bV,L),J0=o=>Uo(o,Ka,Wa),xV=o=>Uo(o,Xa,vV),mr=o=>Uo(o,t1,gV),v=o=>Ga.test(o),Po=o=>Do(o,Qa),fV=o=>Do(o,CV),Q0=o=>Do(o,Ka),MV=o=>Do(o,Ja),yV=o=>Do(o,Xa),xr=o=>Do(o,t1,!0),Uo=(o,t,e)=>{const i=Za.exec(o);return i?i[1]?t(i[1]):e(i[2]):!1},Do=(o,t,e=!1)=>{const i=Ga.exec(o);return i?i[1]?t(i[1]):e:!1},Ka=o=>o==="position"||o==="percentage",Xa=o=>o==="image"||o==="url",Ja=o=>o==="length"||o==="size"||o==="bg-size",Qa=o=>o==="length",bV=o=>o==="number",CV=o=>o==="family-name",t1=o=>o==="shadow",BV=()=>{const o=N("color"),t=N("font"),e=N("text"),i=N("font-weight"),r=N("tracking"),s=N("leading"),n=N("breakpoint"),d=N("container"),a=N("spacing"),c=N("radius"),u=N("shadow"),w=N("inset-shadow"),C=N("text-shadow"),m=N("drop-shadow"),S=N("blur"),z=N("perspective"),U=N("aspect"),M=N("ease"),V=N("animate"),I=()=>["auto","avoid","all","avoid-page","page","left","right","column"],x=()=>["center","top","bottom","left","right","top-left","left-top","top-right","right-top","bottom-right","right-bottom","bottom-left","left-bottom"],A=()=>[...x(),v,g],E=()=>["auto","hidden","clip","visible","scroll"],q=()=>["auto","contain","none"],b=()=>[v,g,a],st=()=>[_e,"full","auto",...b()],gt=()=>[It,"none","subgrid",v,g],cr=()=>["auto",{span:["full",It,v,g]},It,v,g],Ie=()=>[It,"auto",v,g],qe=()=>["auto","min","max","fr",v,g],_r=()=>["start","end","center","between","around","evenly","stretch","baseline","center-safe","end-safe"],Ne=()=>["start","end","center","stretch","center-safe","end-safe"],yt=()=>["auto",...b()],be=()=>[_e,"auto","full","dvw","dvh","lvw","lvh","svw","svh","min","max","fit",...b()],y=()=>[o,v,g],ms=()=>[...x(),Q0,J0,{position:[v,g]}],xs=()=>["no-repeat",{repeat:["","x","y","space","round"]}],fs=()=>["auto","cover","contain",MV,mV,{size:[v,g]}],Zr=()=>[vi,Po,je],K=()=>["","none","full",c,v,g],nt=()=>["",L,Po,je],pr=()=>["solid","dashed","dotted","double"],Ms=()=>["normal","multiply","screen","overlay","darken","lighten","color-dodge","color-burn","hard-light","soft-light","difference","exclusion","hue","saturation","color","luminosity"],Z=()=>[L,vi,Q0,J0],ys=()=>["","none",S,v,g],ur=()=>["none",L,v,g],wr=()=>["none",L,v,g],Gr=()=>[L,v,g],gr=()=>[_e,"full",...b()];return{cacheSize:500,theme:{animate:["spin","ping","pulse","bounce"],aspect:["video"],blur:[bt],breakpoint:[bt],color:[uV],container:[bt],"drop-shadow":[bt],ease:["in","out","in-out"],font:[kV],"font-weight":["thin","extralight","light","normal","medium","semibold","bold","extrabold","black"],"inset-shadow":[bt],leading:["none","tight","snug","normal","relaxed","loose"],perspective:["dramatic","near","normal","midrange","distant","none"],radius:[bt],shadow:[bt],spacing:["px",L],text:[bt],"text-shadow":[bt],tracking:["tighter","tight","normal","wide","wider","widest"]},classGroups:{aspect:[{aspect:["auto","square",_e,g,v,U]}],container:["container"],columns:[{columns:[L,g,v,d]}],"break-after":[{"break-after":I()}],"break-before":[{"break-before":I()}],"break-inside":[{"break-inside":["auto","avoid","avoid-page","avoid-column"]}],"box-decoration":[{"box-decoration":["slice","clone"]}],box:[{box:["border","content"]}],display:["block","inline-block","inline","flex","inline-flex","table","inline-table","table-caption","table-cell","table-column","table-column-group","table-footer-group","table-header-group","table-row-group","table-row","flow-root","grid","inline-grid","contents","list-item","hidden"],sr:["sr-only","not-sr-only"],float:[{float:["right","left","none","start","end"]}],clear:[{clear:["left","right","both","none","start","end"]}],isolation:["isolate","isolation-auto"],"object-fit":[{object:["contain","cover","fill","none","scale-down"]}],"object-position":[{object:A()}],overflow:[{overflow:E()}],"overflow-x":[{"overflow-x":E()}],"overflow-y":[{"overflow-y":E()}],overscroll:[{overscroll:q()}],"overscroll-x":[{"overscroll-x":q()}],"overscroll-y":[{"overscroll-y":q()}],position:["static","fixed","absolute","relative","sticky"],inset:[{inset:st()}],"inset-x":[{"inset-x":st()}],"inset-y":[{"inset-y":st()}],start:[{start:st()}],end:[{end:st()}],top:[{top:st()}],right:[{right:st()}],bottom:[{bottom:st()}],left:[{left:st()}],visibility:["visible","invisible","collapse"],z:[{z:[It,"auto",v,g]}],basis:[{basis:[_e,"full","auto",d,...b()]}],"flex-direction":[{flex:["row","row-reverse","col","col-reverse"]}],"flex-wrap":[{flex:["nowrap","wrap","wrap-reverse"]}],flex:[{flex:[L,_e,"auto","initial","none",g]}],grow:[{grow:["",L,v,g]}],shrink:[{shrink:["",L,v,g]}],order:[{order:[It,"first","last","none",v,g]}],"grid-cols":[{"grid-cols":gt()}],"col-start-end":[{col:cr()}],"col-start":[{"col-start":Ie()}],"col-end":[{"col-end":Ie()}],"grid-rows":[{"grid-rows":gt()}],"row-start-end":[{row:cr()}],"row-start":[{"row-start":Ie()}],"row-end":[{"row-end":Ie()}],"grid-flow":[{"grid-flow":["row","col","dense","row-dense","col-dense"]}],"auto-cols":[{"auto-cols":qe()}],"auto-rows":[{"auto-rows":qe()}],gap:[{gap:b()}],"gap-x":[{"gap-x":b()}],"gap-y":[{"gap-y":b()}],"justify-content":[{justify:[..._r(),"normal"]}],"justify-items":[{"justify-items":[...Ne(),"normal"]}],"justify-self":[{"justify-self":["auto",...Ne()]}],"align-content":[{content:["normal",..._r()]}],"align-items":[{items:[...Ne(),{baseline:["","last"]}]}],"align-self":[{self:["auto",...Ne(),{baseline:["","last"]}]}],"place-content":[{"place-content":_r()}],"place-items":[{"place-items":[...Ne(),"baseline"]}],"place-self":[{"place-self":["auto",...Ne()]}],p:[{p:b()}],px:[{px:b()}],py:[{py:b()}],ps:[{ps:b()}],pe:[{pe:b()}],pt:[{pt:b()}],pr:[{pr:b()}],pb:[{pb:b()}],pl:[{pl:b()}],m:[{m:yt()}],mx:[{mx:yt()}],my:[{my:yt()}],ms:[{ms:yt()}],me:[{me:yt()}],mt:[{mt:yt()}],mr:[{mr:yt()}],mb:[{mb:yt()}],ml:[{ml:yt()}],"space-x":[{"space-x":b()}],"space-x-reverse":["space-x-reverse"],"space-y":[{"space-y":b()}],"space-y-reverse":["space-y-reverse"],size:[{size:be()}],w:[{w:[d,"screen",...be()]}],"min-w":[{"min-w":[d,"screen","none",...be()]}],"max-w":[{"max-w":[d,"screen","none","prose",{screen:[n]},...be()]}],h:[{h:["screen","lh",...be()]}],"min-h":[{"min-h":["screen","lh","none",...be()]}],"max-h":[{"max-h":["screen","lh",...be()]}],"font-size":[{text:["base",e,Po,je]}],"font-smoothing":["antialiased","subpixel-antialiased"],"font-style":["italic","not-italic"],"font-weight":[{font:[i,v,ki]}],"font-stretch":[{"font-stretch":["ultra-condensed","extra-condensed","condensed","semi-condensed","normal","semi-expanded","expanded","extra-expanded","ultra-expanded",vi,g]}],"font-family":[{font:[fV,g,t]}],"fvn-normal":["normal-nums"],"fvn-ordinal":["ordinal"],"fvn-slashed-zero":["slashed-zero"],"fvn-figure":["lining-nums","oldstyle-nums"],"fvn-spacing":["proportional-nums","tabular-nums"],"fvn-fraction":["diagonal-fractions","stacked-fractions"],tracking:[{tracking:[r,v,g]}],"line-clamp":[{"line-clamp":[L,"none",v,ki]}],leading:[{leading:[s,...b()]}],"list-image":[{"list-image":["none",v,g]}],"list-style-position":[{list:["inside","outside"]}],"list-style-type":[{list:["disc","decimal","none",v,g]}],"text-alignment":[{text:["left","center","right","justify","start","end"]}],"placeholder-color":[{placeholder:y()}],"text-color":[{text:y()}],"text-decoration":["underline","overline","line-through","no-underline"],"text-decoration-style":[{decoration:[...pr(),"wavy"]}],"text-decoration-thickness":[{decoration:[L,"from-font","auto",v,je]}],"text-decoration-color":[{decoration:y()}],"underline-offset":[{"underline-offset":[L,"auto",v,g]}],"text-transform":["uppercase","lowercase","capitalize","normal-case"],"text-overflow":["truncate","text-ellipsis","text-clip"],"text-wrap":[{text:["wrap","nowrap","balance","pretty"]}],indent:[{indent:b()}],"vertical-align":[{align:["baseline","top","middle","bottom","text-top","text-bottom","sub","super",v,g]}],whitespace:[{whitespace:["normal","nowrap","pre","pre-line","pre-wrap","break-spaces"]}],break:[{break:["normal","words","all","keep"]}],wrap:[{wrap:["break-word","anywhere","normal"]}],hyphens:[{hyphens:["none","manual","auto"]}],content:[{content:["none",v,g]}],"bg-attachment":[{bg:["fixed","local","scroll"]}],"bg-clip":[{"bg-clip":["border","padding","content","text"]}],"bg-origin":[{"bg-origin":["border","padding","content"]}],"bg-position":[{bg:ms()}],"bg-repeat":[{bg:xs()}],"bg-size":[{bg:fs()}],"bg-image":[{bg:["none",{linear:[{to:["t","tr","r","br","b","bl","l","tl"]},It,v,g],radial:["",v,g],conic:[It,v,g]},yV,xV]}],"bg-color":[{bg:y()}],"gradient-from-pos":[{from:Zr()}],"gradient-via-pos":[{via:Zr()}],"gradient-to-pos":[{to:Zr()}],"gradient-from":[{from:y()}],"gradient-via":[{via:y()}],"gradient-to":[{to:y()}],rounded:[{rounded:K()}],"rounded-s":[{"rounded-s":K()}],"rounded-e":[{"rounded-e":K()}],"rounded-t":[{"rounded-t":K()}],"rounded-r":[{"rounded-r":K()}],"rounded-b":[{"rounded-b":K()}],"rounded-l":[{"rounded-l":K()}],"rounded-ss":[{"rounded-ss":K()}],"rounded-se":[{"rounded-se":K()}],"rounded-ee":[{"rounded-ee":K()}],"rounded-es":[{"rounded-es":K()}],"rounded-tl":[{"rounded-tl":K()}],"rounded-tr":[{"rounded-tr":K()}],"rounded-br":[{"rounded-br":K()}],"rounded-bl":[{"rounded-bl":K()}],"border-w":[{border:nt()}],"border-w-x":[{"border-x":nt()}],"border-w-y":[{"border-y":nt()}],"border-w-s":[{"border-s":nt()}],"border-w-e":[{"border-e":nt()}],"border-w-t":[{"border-t":nt()}],"border-w-r":[{"border-r":nt()}],"border-w-b":[{"border-b":nt()}],"border-w-l":[{"border-l":nt()}],"divide-x":[{"divide-x":nt()}],"divide-x-reverse":["divide-x-reverse"],"divide-y":[{"divide-y":nt()}],"divide-y-reverse":["divide-y-reverse"],"border-style":[{border:[...pr(),"hidden","none"]}],"divide-style":[{divide:[...pr(),"hidden","none"]}],"border-color":[{border:y()}],"border-color-x":[{"border-x":y()}],"border-color-y":[{"border-y":y()}],"border-color-s":[{"border-s":y()}],"border-color-e":[{"border-e":y()}],"border-color-t":[{"border-t":y()}],"border-color-r":[{"border-r":y()}],"border-color-b":[{"border-b":y()}],"border-color-l":[{"border-l":y()}],"divide-color":[{divide:y()}],"outline-style":[{outline:[...pr(),"none","hidden"]}],"outline-offset":[{"outline-offset":[L,v,g]}],"outline-w":[{outline:["",L,Po,je]}],"outline-color":[{outline:y()}],shadow:[{shadow:["","none",u,xr,mr]}],"shadow-color":[{shadow:y()}],"inset-shadow":[{"inset-shadow":["none",w,xr,mr]}],"inset-shadow-color":[{"inset-shadow":y()}],"ring-w":[{ring:nt()}],"ring-w-inset":["ring-inset"],"ring-color":[{ring:y()}],"ring-offset-w":[{"ring-offset":[L,je]}],"ring-offset-color":[{"ring-offset":y()}],"inset-ring-w":[{"inset-ring":nt()}],"inset-ring-color":[{"inset-ring":y()}],"text-shadow":[{"text-shadow":["none",C,xr,mr]}],"text-shadow-color":[{"text-shadow":y()}],opacity:[{opacity:[L,v,g]}],"mix-blend":[{"mix-blend":[...Ms(),"plus-darker","plus-lighter"]}],"bg-blend":[{"bg-blend":Ms()}],"mask-clip":[{"mask-clip":["border","padding","content","fill","stroke","view"]},"mask-no-clip"],"mask-composite":[{mask:["add","subtract","intersect","exclude"]}],"mask-image-linear-pos":[{"mask-linear":[L]}],"mask-image-linear-from-pos":[{"mask-linear-from":Z()}],"mask-image-linear-to-pos":[{"mask-linear-to":Z()}],"mask-image-linear-from-color":[{"mask-linear-from":y()}],"mask-image-linear-to-color":[{"mask-linear-to":y()}],"mask-image-t-from-pos":[{"mask-t-from":Z()}],"mask-image-t-to-pos":[{"mask-t-to":Z()}],"mask-image-t-from-color":[{"mask-t-from":y()}],"mask-image-t-to-color":[{"mask-t-to":y()}],"mask-image-r-from-pos":[{"mask-r-from":Z()}],"mask-image-r-to-pos":[{"mask-r-to":Z()}],"mask-image-r-from-color":[{"mask-r-from":y()}],"mask-image-r-to-color":[{"mask-r-to":y()}],"mask-image-b-from-pos":[{"mask-b-from":Z()}],"mask-image-b-to-pos":[{"mask-b-to":Z()}],"mask-image-b-from-color":[{"mask-b-from":y()}],"mask-image-b-to-color":[{"mask-b-to":y()}],"mask-image-l-from-pos":[{"mask-l-from":Z()}],"mask-image-l-to-pos":[{"mask-l-to":Z()}],"mask-image-l-from-color":[{"mask-l-from":y()}],"mask-image-l-to-color":[{"mask-l-to":y()}],"mask-image-x-from-pos":[{"mask-x-from":Z()}],"mask-image-x-to-pos":[{"mask-x-to":Z()}],"mask-image-x-from-color":[{"mask-x-from":y()}],"mask-image-x-to-color":[{"mask-x-to":y()}],"mask-image-y-from-pos":[{"mask-y-from":Z()}],"mask-image-y-to-pos":[{"mask-y-to":Z()}],"mask-image-y-from-color":[{"mask-y-from":y()}],"mask-image-y-to-color":[{"mask-y-to":y()}],"mask-image-radial":[{"mask-radial":[v,g]}],"mask-image-radial-from-pos":[{"mask-radial-from":Z()}],"mask-image-radial-to-pos":[{"mask-radial-to":Z()}],"mask-image-radial-from-color":[{"mask-radial-from":y()}],"mask-image-radial-to-color":[{"mask-radial-to":y()}],"mask-image-radial-shape":[{"mask-radial":["circle","ellipse"]}],"mask-image-radial-size":[{"mask-radial":[{closest:["side","corner"],farthest:["side","corner"]}]}],"mask-image-radial-pos":[{"mask-radial-at":x()}],"mask-image-conic-pos":[{"mask-conic":[L]}],"mask-image-conic-from-pos":[{"mask-conic-from":Z()}],"mask-image-conic-to-pos":[{"mask-conic-to":Z()}],"mask-image-conic-from-color":[{"mask-conic-from":y()}],"mask-image-conic-to-color":[{"mask-conic-to":y()}],"mask-mode":[{mask:["alpha","luminance","match"]}],"mask-origin":[{"mask-origin":["border","padding","content","fill","stroke","view"]}],"mask-position":[{mask:ms()}],"mask-repeat":[{mask:xs()}],"mask-size":[{mask:fs()}],"mask-type":[{"mask-type":["alpha","luminance"]}],"mask-image":[{mask:["none",v,g]}],filter:[{filter:["","none",v,g]}],blur:[{blur:ys()}],brightness:[{brightness:[L,v,g]}],contrast:[{contrast:[L,v,g]}],"drop-shadow":[{"drop-shadow":["","none",m,xr,mr]}],"drop-shadow-color":[{"drop-shadow":y()}],grayscale:[{grayscale:["",L,v,g]}],"hue-rotate":[{"hue-rotate":[L,v,g]}],invert:[{invert:["",L,v,g]}],saturate:[{saturate:[L,v,g]}],sepia:[{sepia:["",L,v,g]}],"backdrop-filter":[{"backdrop-filter":["","none",v,g]}],"backdrop-blur":[{"backdrop-blur":ys()}],"backdrop-brightness":[{"backdrop-brightness":[L,v,g]}],"backdrop-contrast":[{"backdrop-contrast":[L,v,g]}],"backdrop-grayscale":[{"backdrop-grayscale":["",L,v,g]}],"backdrop-hue-rotate":[{"backdrop-hue-rotate":[L,v,g]}],"backdrop-invert":[{"backdrop-invert":["",L,v,g]}],"backdrop-opacity":[{"backdrop-opacity":[L,v,g]}],"backdrop-saturate":[{"backdrop-saturate":[L,v,g]}],"backdrop-sepia":[{"backdrop-sepia":["",L,v,g]}],"border-collapse":[{border:["collapse","separate"]}],"border-spacing":[{"border-spacing":b()}],"border-spacing-x":[{"border-spacing-x":b()}],"border-spacing-y":[{"border-spacing-y":b()}],"table-layout":[{table:["auto","fixed"]}],caption:[{caption:["top","bottom"]}],transition:[{transition:["","all","colors","opacity","shadow","transform","none",v,g]}],"transition-behavior":[{transition:["normal","discrete"]}],duration:[{duration:[L,"initial",v,g]}],ease:[{ease:["linear","initial",M,v,g]}],delay:[{delay:[L,v,g]}],animate:[{animate:["none",V,v,g]}],backface:[{backface:["hidden","visible"]}],perspective:[{perspective:[z,v,g]}],"perspective-origin":[{"perspective-origin":A()}],rotate:[{rotate:ur()}],"rotate-x":[{"rotate-x":ur()}],"rotate-y":[{"rotate-y":ur()}],"rotate-z":[{"rotate-z":ur()}],scale:[{scale:wr()}],"scale-x":[{"scale-x":wr()}],"scale-y":[{"scale-y":wr()}],"scale-z":[{"scale-z":wr()}],"scale-3d":["scale-3d"],skew:[{skew:Gr()}],"skew-x":[{"skew-x":Gr()}],"skew-y":[{"skew-y":Gr()}],transform:[{transform:[v,g,"","none","gpu","cpu"]}],"transform-origin":[{origin:A()}],"transform-style":[{transform:["3d","flat"]}],translate:[{translate:gr()}],"translate-x":[{"translate-x":gr()}],"translate-y":[{"translate-y":gr()}],"translate-z":[{"translate-z":gr()}],"translate-none":["translate-none"],accent:[{accent:y()}],appearance:[{appearance:["none","auto"]}],"caret-color":[{caret:y()}],"color-scheme":[{scheme:["normal","dark","light","light-dark","only-dark","only-light"]}],cursor:[{cursor:["auto","default","pointer","wait","text","move","help","not-allowed","none","context-menu","progress","cell","crosshair","vertical-text","alias","copy","no-drop","grab","grabbing","all-scroll","col-resize","row-resize","n-resize","e-resize","s-resize","w-resize","ne-resize","nw-resize","se-resize","sw-resize","ew-resize","ns-resize","nesw-resize","nwse-resize","zoom-in","zoom-out",v,g]}],"field-sizing":[{"field-sizing":["fixed","content"]}],"pointer-events":[{"pointer-events":["auto","none"]}],resize:[{resize:["none","","y","x"]}],"scroll-behavior":[{scroll:["auto","smooth"]}],"scroll-m":[{"scroll-m":b()}],"scroll-mx":[{"scroll-mx":b()}],"scroll-my":[{"scroll-my":b()}],"scroll-ms":[{"scroll-ms":b()}],"scroll-me":[{"scroll-me":b()}],"scroll-mt":[{"scroll-mt":b()}],"scroll-mr":[{"scroll-mr":b()}],"scroll-mb":[{"scroll-mb":b()}],"scroll-ml":[{"scroll-ml":b()}],"scroll-p":[{"scroll-p":b()}],"scroll-px":[{"scroll-px":b()}],"scroll-py":[{"scroll-py":b()}],"scroll-ps":[{"scroll-ps":b()}],"scroll-pe":[{"scroll-pe":b()}],"scroll-pt":[{"scroll-pt":b()}],"scroll-pr":[{"scroll-pr":b()}],"scroll-pb":[{"scroll-pb":b()}],"scroll-pl":[{"scroll-pl":b()}],"snap-align":[{snap:["start","end","center","align-none"]}],"snap-stop":[{snap:["normal","always"]}],"snap-type":[{snap:["none","x","y","both"]}],"snap-strictness":[{snap:["mandatory","proximity"]}],touch:[{touch:["auto","none","manipulation"]}],"touch-x":[{"touch-pan":["x","left","right"]}],"touch-y":[{"touch-pan":["y","up","down"]}],"touch-pz":["touch-pinch-zoom"],select:[{select:["none","text","all","auto"]}],"will-change":[{"will-change":["auto","scroll","contents","transform",v,g]}],fill:[{fill:["none",...y()]}],"stroke-w":[{stroke:[L,Po,je,ki]}],stroke:[{stroke:["none",...y()]}],"forced-color-adjust":[{"forced-color-adjust":["auto","none"]}]},conflictingClassGroups:{overflow:["overflow-x","overflow-y"],overscroll:["overscroll-x","overscroll-y"],inset:["inset-x","inset-y","start","end","top","right","bottom","left"],"inset-x":["right","left"],"inset-y":["top","bottom"],flex:["basis","grow","shrink"],gap:["gap-x","gap-y"],p:["px","py","ps","pe","pt","pr","pb","pl"],px:["pr","pl"],py:["pt","pb"],m:["mx","my","ms","me","mt","mr","mb","ml"],mx:["mr","ml"],my:["mt","mb"],size:["w","h"],"font-size":["leading"],"fvn-normal":["fvn-ordinal","fvn-slashed-zero","fvn-figure","fvn-spacing","fvn-fraction"],"fvn-ordinal":["fvn-normal"],"fvn-slashed-zero":["fvn-normal"],"fvn-figure":["fvn-normal"],"fvn-spacing":["fvn-normal"],"fvn-fraction":["fvn-normal"],"line-clamp":["display","overflow"],rounded:["rounded-s","rounded-e","rounded-t","rounded-r","rounded-b","rounded-l","rounded-ss","rounded-se","rounded-ee","rounded-es","rounded-tl","rounded-tr","rounded-br","rounded-bl"],"rounded-s":["rounded-ss","rounded-es"],"rounded-e":["rounded-se","rounded-ee"],"rounded-t":["rounded-tl","rounded-tr"],"rounded-r":["rounded-tr","rounded-br"],"rounded-b":["rounded-br","rounded-bl"],"rounded-l":["rounded-tl","rounded-bl"],"border-spacing":["border-spacing-x","border-spacing-y"],"border-w":["border-w-x","border-w-y","border-w-s","border-w-e","border-w-t","border-w-r","border-w-b","border-w-l"],"border-w-x":["border-w-r","border-w-l"],"border-w-y":["border-w-t","border-w-b"],"border-color":["border-color-x","border-color-y","border-color-s","border-color-e","border-color-t","border-color-r","border-color-b","border-color-l"],"border-color-x":["border-color-r","border-color-l"],"border-color-y":["border-color-t","border-color-b"],translate:["translate-x","translate-y","translate-none"],"translate-none":["translate","translate-x","translate-y","translate-z"],"scroll-m":["scroll-mx","scroll-my","scroll-ms","scroll-me","scroll-mt","scroll-mr","scroll-mb","scroll-ml"],"scroll-mx":["scroll-mr","scroll-ml"],"scroll-my":["scroll-mt","scroll-mb"],"scroll-p":["scroll-px","scroll-py","scroll-ps","scroll-pe","scroll-pt","scroll-pr","scroll-pb","scroll-pl"],"scroll-px":["scroll-pr","scroll-pl"],"scroll-py":["scroll-pt","scroll-pb"],touch:["touch-x","touch-y","touch-pz"],"touch-x":["touch"],"touch-y":["touch"],"touch-pz":["touch"]},conflictingClassGroupModifiers:{"font-size":["leading"]},orderSensitiveModifiers:["*","**","after","backdrop","before","details-content","file","first-letter","first-line","marker","placeholder","selection"]}},jV=sV(BV);function F(...o){return jV(PR(o))}const ta=F("text-sm","text-(--color-foreground-muted)","hover:text-(--color-foreground)","transition-colors"),ea=F("text-sm","text-(--color-primary)","font-medium");class AV extends Y{constructor(){super(...arguments),this.menuOpen=!1,this.unsubscribe=null,this.handleDocumentClick=t=>{t.target.closest(".theme-menu-container")||(this.menuOpen=!1,this.update())},this.toggleMenu=t=>{t.stopPropagation(),this.menuOpen=!this.menuOpen,this.update()},this.handleThemeSelect=t=>{const e=t.detail.value;DR(e),this.menuOpen=!1,this.update()}}mounted(){this.unsubscribe=FR(()=>{this.update()}),document.addEventListener("click",this.handleDocumentClick)}beforeUnmount(){document.removeEventListener("click",this.handleDocumentClick),this.unsubscribe?.()}isActive(t){const e=window.location.pathname;return t==="/"?e==="/"||e==="":e.startsWith(t)}render(){const t=UR();return l("header",{class:F("sticky top-0 z-50","border-b border-(--color-border)","bg-(--color-surface)/80 backdrop-blur-md")},[l("div",{class:F("flex items-center justify-between","h-14 px-6")},[l(Wr,{to:"/",class:F("flex items-center gap-2","text-lg font-bold","text-(--color-foreground) hover:text-(--color-primary)","transition-colors")},["Ikun Cube Trainer"]),l("nav",{class:"flex items-center gap-5"},[l(Wr,{to:"/",class:this.isActive("/")&&!this.isActive("/settings")?ea:ta},["训练"]),l(Wr,{to:"/settings",class:this.isActive("/settings")?ea:ta},["设置"]),l("div",{class:"theme-menu-container relative"},[l("button",{"on:click":this.toggleMenu,class:F("flex items-center justify-center","h-8 w-8","rounded-full","border-none","bg-(--color-surface) text-(--color-foreground-muted)","hover:bg-accent hover:text-(--color-foreground)","transition-all"),title:`当前: ${t.label}`},[l("span",{class:"text-sm"},[t.icon])]),this.menuOpen&&l("div",{class:"absolute top-full right-0 mt-2"},[l("iku-menu",{value:Ya(),"on:ik-change":this.handleThemeSelect},[...Array.isArray(_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])))?_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])):[_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i]))]])])])])])])}}class LV extends Ur{render(){return l("div",{class:"bg-background flex h-full flex-col"},[l(AV,null,[]),l("main",{class:"min-h-0 flex-1 overflow-y-auto"},[l(d1,{router:this.router},[])])])}}const SV={id:"builtin-f2l",name:"F2L 公式",formulas:[{id:"f2l-01",name:"F2L-01",formulas:["U (R U' R')"],viewMode:"none"},{id:"f2l-02",name:"F2L-02",formulas:["F' U' F"],viewMode:"none"},{id:"f2l-03",name:"F2L-03",formulas:["U' (F' U F)"],viewMode:"none"},{id:"f2l-04",name:"F2L-04",formulas:["R U R'"],viewMode:"none"},{id:"f2l-05",name:"F2L-05",formulas:["U' (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-06",name:"F2L-06",formulas:["U' (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-07",name:"F2L-07",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"},{id:"f2l-08",name:"F2L-08",formulas:["d (R' U R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-09",name:"F2L-09",formulas:["U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-10",name:"F2L-10",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-11",name:"F2L-11",formulas:["U (F' U2 F) U' (F' U F)"],viewMode:"none"},{id:"f2l-12",name:"F2L-12",formulas:["U' (F' U F) U' (F' U' F)"],viewMode:"none"},{id:"f2l-13",name:"F2L-13",formulas:["(R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-14",name:"F2L-14",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-15",name:"F2L-15",formulas:["(R U R' U') (R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-16",name:"F2L-16",formulas:["R U' R' d R' U R"],viewMode:"none"},{id:"f2l-17",name:"F2L-17",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-18",name:"F2L-18",formulas:["(R U R' U') (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-19",name:"F2L-19",formulas:["(R U' R' U') (R U R' U') (R U2 R')"],viewMode:"none"},{id:"f2l-20",name:"F2L-20",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-21",name:"F2L-21",formulas:["R2 U R2 U R2 U2 R2"],viewMode:"none"},{id:"f2l-22",name:"F2L-22",formulas:["U (R U' R') U' (F' U F)"],viewMode:"none"},{id:"f2l-23",name:"F2L-23",formulas:["U2 (R U' R') U (F' U' F)"],viewMode:"none"},{id:"f2l-24",name:"F2L-24",formulas:["(F' U F) U2 (R U R')"],viewMode:"none"},{id:"f2l-25",name:"F2L-25",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-26",name:"F2L-26",formulas:["d (R' U' R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-27",name:"F2L-27",formulas:["(R U' R') U2 (F' U' F)"],viewMode:"none"},{id:"f2l-28",name:"F2L-28",formulas:["(R U R') U2 (R U R')"],viewMode:"none"},{id:"f2l-29",name:"F2L-29",formulas:["(R' F R F') (R U R')"],viewMode:"none"},{id:"f2l-30",name:"F2L-30",formulas:["R U' R' d (R' U' R)"],viewMode:"none"},{id:"f2l-31",name:"F2L-31",formulas:["U' (R U2 R') U2 (R U' R')"],viewMode:"none"},{id:"f2l-32",name:"F2L-32",formulas:["U (F' U2 F) U2 (F' U F)"],viewMode:"none"},{id:"f2l-33",name:"F2L-33",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-34",name:"F2L-34",formulas:["U (R U' R') U' (R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-35",name:"F2L-35",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-36",name:"F2L-36",formulas:["U2 (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-37",name:"F2L-37",formulas:["R2 U2 (F R2 F') U2 (R' U R')"],viewMode:"none"},{id:"f2l-38",name:"F2L-38",formulas:["(R U' R' U') (R U R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-39",name:"F2L-39",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-40",name:"F2L-40",formulas:["(R U R' U') (R U' R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-41",name:"F2L-41",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"}],createdAt:0,updatedAt:0},HV={id:"builtin-oll",name:"OLL 公式",formulas:[{id:"oll-01",name:"OLL-01",formulas:["(R U'2)R' U' (R U' R')"],viewMode:"oll",viewData:{top:[".YY","YYY",".Y."],sides:{back:"...",right:"..Y",front:"Y..",left:"Y.."}}},{id:"oll-02",name:"OLL-02",formulas:["R UR'UR U'2 R'"],viewMode:"oll",viewData:{top:[".Y.","YYY","YY."],sides:{back:"Y..",right:"Y..",front:"..Y",left:"..."}}},{id:"oll-03",name:"OLL-03",formulas:["(R U'2)(R'U'R)(UR'U')(RU'R')"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"Y.Y",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-04",name:"OLL-04",formulas:["R U'2 (R'2 U')(R2 U') R'2 U'2 R"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"..Y",right:"...",front:"..Y",left:"Y.Y"}}},{id:"oll-05",name:"OLL-05",formulas:["(rUR'U')(r'F R F')"],viewMode:"oll",viewData:{top:[".YY","YYY",".YY"],sides:{back:"Y..",right:"...",front:"Y..",left:"..."}}},{id:"oll-06",name:"OLL-06",formulas:["(RUR'U R U'2 R'U)(R U'2 R'U' R U'R')"],viewMode:"oll",viewData:{top:["YYY","YYY",".Y."],sides:{back:"...",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-07",name:"OLL-07",formulas:["F'(r U R' U)(r' F R)"],viewMode:"oll",viewData:{top:[".YY","YYY","YY."],sides:{back:"Y..",right:"...",front:"..Y",left:"..."}}},{id:"oll-08",name:"OLL-08",formulas:["(R U'2)(R'2 F R F')U2(R' F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".Y.",right:"YYY",front:".Y.",left:"YYY"}}},{id:"oll-09",name:"OLL-09",formulas:["(F R U R' U' F')(f R U R' U' f')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".YY",right:".Y.",front:".YY",left:"YYY"}}},{id:"oll-10",name:"OLL-10",formulas:["f (R U R' U' f')U'(F R U R' U' F')"],viewMode:"oll",viewData:{top:["...",".Y.","..Y"],sides:{back:"YY.",right:"YY.",front:".Y.",left:".YY"}}},{id:"oll-11",name:"OLL-11",formulas:["(f R U R' U' f')y(F R U R' U' F')"],viewMode:"oll",viewData:{top:["..Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:"YY.",left:"YY."}}},{id:"oll-12",name:"OLL-12",formulas:["(RUR'U)(R'FRF')U2(R'FRF')"],viewMode:"oll",viewData:{top:["Y..",".Y.","..Y"],sides:{back:".YY",right:".Y.",front:".Y.",left:".YY"}}},{id:"oll-13",name:"OLL-13",formulas:["F(R U R' U)y'(R'U2)(R'F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","Y.Y"],sides:{back:"YYY",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-14",name:"OLL-14",formulas:["r'(R U R U R'U')r(R'2 F R F')"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:".Y.",left:".YY"}}},{id:"oll-15",name:"OLL-15",formulas:["r'(R U R U R'U')r2(R'2 U R U')r'"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","Y.Y"],sides:{back:".Y.",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-16",name:"OLL-16",formulas:["f(R U R'U')2f'"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".YY",right:"...",front:".YY",left:"Y.Y"}}},{id:"oll-17",name:"OLL-17",formulas:["(R' U'R U' R'U)y'(R'U R B)"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"Y..",right:"YYY",front:"Y..",left:".Y."}}},{id:"oll-18",name:"OLL-18",formulas:["(rUr')(U R U'R')2(rU'r')"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".Y.",right:"Y.Y",front:".Y.",left:"Y.Y"}}},{id:"oll-19",name:"OLL-19",formulas:["(RU'2)(R'2 U')(R U'R'U2)(F R F')"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"...",right:"YYY",front:"...",left:"YYY"}}},{id:"oll-20",name:"OLL-20",formulas:["(rU'r'U')(rUr')y'(R'U R)"],viewMode:"oll",viewData:{top:["...","YYY","Y.."],sides:{back:"YY.",right:"Y..",front:".YY",left:"..."}}},{id:"oll-21",name:"OLL-21",formulas:["(R'F' R U R'F'R)y'(R U'R')"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:".YY",right:"...",front:"YY.",left:"Y.."}}},{id:"oll-22",name:"OLL-22",formulas:["(r'U'r)(R'U'RU)(r'Ur)"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:"YY.",right:"Y..",front:".Y.",left:"..Y"}}},{id:"oll-23",name:"OLL-23",formulas:["(rUr')(RUR'U')(rU'r')"],viewMode:"oll",viewData:{top:["..Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:"YY.",left:"Y.."}}},{id:"oll-24",name:"OLL-24",formulas:["(R U R' U')(R' F R F')"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:"YY.",right:"...",front:"YY.",left:"..."}}},{id:"oll-25",name:"OLL-25",formulas:["(F(R U R' U')F'"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"Y.Y"}}},{id:"oll-26",name:"OLL-26",formulas:["(R U R' U' r)(R' U R U' r')"],viewMode:"oll",viewData:{top:["Y.Y","YYY","Y.Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"..."}}},{id:"oll-27",name:"OLL-27",formulas:["(r U R' U')(r' R U)(R U' R')"],viewMode:"oll",viewData:{top:["YYY","YY.","Y.Y"],sides:{back:"...",right:".Y.",front:".Y.",left:"..."}}},{id:"oll-28",name:"OLL-28",formulas:["(r U' r' U' r)y(R U R' f')"],viewMode:"oll",viewData:{top:["..Y","YYY","Y.."],sides:{back:"YY.",right:"..Y",front:".Y.",left:"..."}}},{id:"oll-29",name:"OLL-29",formulas:["(R'F R U R'U')(F'U R)"],viewMode:"oll",viewData:{top:["Y..","YYY","..Y"],sides:{back:".YY",right:"...",front:".Y.",left:"..Y"}}},{id:"oll-30",name:"OLL-30",formulas:["(R' U' R U)y(r U R' U')r'R"],viewMode:"oll",viewData:{top:["Y.Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:".Y.",left:"..Y"}}},{id:"oll-31",name:"OLL-31",formulas:["(R'U')(R'F R F')(U R)"],viewMode:"oll",viewData:{top:["YY.",".Y.","YY."],sides:{back:"...",right:"YYY",front:"...",left:".Y."}}},{id:"oll-32",name:"OLL-32",formulas:["(R'U' F)(U R U'R'F'R)"],viewMode:"oll",viewData:{top:[".YY",".YY","..Y"],sides:{back:"Y..",right:"...",front:"YY.",left:".Y."}}},{id:"oll-33",name:"OLL-33",formulas:["(R U B'U')(R'U R B R')"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:"YY.",right:"...",front:"Y..",left:".Y."}}},{id:"oll-34",name:"OLL-34",formulas:["x'U'F'R'F R U"],viewMode:"oll",viewData:{top:["Y..","YY.","YY."],sides:{back:".Y.",right:"YYY",front:"...",left:"..."}}},{id:"oll-35",name:"OLL-35",formulas:["f(R U R'U')f'"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:".Y.",right:"...",front:"...",left:"YYY"}}},{id:"oll-36",name:"OLL-36",formulas:["F(RU'R'U')(R U R'F')"],viewMode:"oll",viewData:{top:["YY.","YY.","..Y"],sides:{back:"...",right:"YY..",front:"YY.",left:"..."}}},{id:"oll-37",name:"OLL-37",formulas:["RU'2(R'2 F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["Y..",".YY",".YY"],sides:{back:".Y.",right:"Y..",front:"Y..",left:".Y."}}},{id:"oll-38",name:"OLL-38",formulas:["(r' U2)(R U R' U)r"],viewMode:"oll",viewData:{top:["...",".YY",".YY"],sides:{back:"YY.",right:"Y..",front:"...",left:".YY"}}},{id:"oll-39",name:"OLL-39",formulas:["(r U2)(R' U' R U'r')"],viewMode:"oll",viewData:{top:[".YY",".YY","..."],sides:{back:"...",right:"..Y",front:"YY.",left:"YY."}}},{id:"oll-40",name:"OLL-40",formulas:["r' U' R U' R' U2 r"],viewMode:"oll",viewData:{top:["Y..","YY.",".Y."],sides:{back:".YY",right:".YY",front:"Y..",left:"..."}}},{id:"oll-41",name:"OLL-41",formulas:["r U R' U R U'2 r'"],viewMode:"oll",viewData:{top:[".Y.","YY.","Y.."],sides:{back:"Y..",right:"YY.",front:".YY",left:"..."}}},{id:"oll-42",name:"OLL-42",formulas:["r'(R2 U)(R'U R)U'2(R' U R')r"],viewMode:"oll",viewData:{top:["...",".YY","YY."],sides:{back:"YY.",right:"Y..",front:"..Y",left:".Y."}}},{id:"oll-43",name:"OLL-43",formulas:["r(R'2 U')(R U'R' U2)(RU'R)r'"],viewMode:"oll",viewData:{top:["YY.",".YY","..."],sides:{back:"..Y",right:"..Y",front:"YY.",left:".Y."}}},{id:"oll-44",name:"OLL-44",formulas:["(R'U'R)y'x'(R U'R' F)(R U R')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..Y"],sides:{back:"..Y",right:".Y.",front:"YY.",left:"Y.."}}},{id:"oll-45",name:"OLL-45",formulas:["(R U R' U)(R'F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["..Y","YY.",".Y."],sides:{back:"YY.",right:".Y.",front:"..Y",left:"..Y"}}},{id:"oll-46",name:"OLL-46",formulas:["(r U'2)(R'U'R)(UR'U')(R U'r')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y.Y",right:".Y.",front:"YYY",left:"..."}}},{id:"oll-47",name:"OLL-47",formulas:["B'(R'U' R U)2 B"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:".YY",right:".Y.",front:"..Y",left:"Y.Y"}}},{id:"oll-48",name:"OLL-48",formulas:["r'U2 (R U R'U')(R U R'U)r"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YYY",right:".Y.",front:"Y.Y",left:"..."}}},{id:"oll-49",name:"OLL-49",formulas:["F(R U R'U')2 F'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"..Y",right:".Y.",front:".YY",left:"Y.Y"}}},{id:"oll-50",name:"OLL-50",formulas:["R'F R2 B'R'2 F'R2 B R'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y..",right:"YYY",front:"YY.",left:"..."}}},{id:"oll-51",name:"OLL-51",formulas:["R B' R'2 F R2 B R'2 F'R"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YY.",right:"YYY",front:"Y..",left:"..."}}},{id:"oll-52",name:"OLL-52",formulas:["(R2 U R'B')(R U'R'2 U)(R B R')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"..Y",front:"...",left:".YY"}}},{id:"oll-53",name:"OLL-53",formulas:["(R U R'U')(R U'R'F')U'(F R U R')"],viewMode:"oll",viewData:{top:[".YY","YY.","..Y"],sides:{back:"Y..",right:".Y.",front:"YY.",left:"..."}}},{id:"oll-54",name:"OLL-54",formulas:["(R'U R U'2 R'U')y(L'U LU F)"],viewMode:"oll",viewData:{top:[".Y.",".YY","Y.Y"],sides:{back:"Y.Y",right:"...",front:".Y.",left:".Y."}}},{id:"oll-55",name:"OLL-55",formulas:["(R U'R' U2 R U)y(R U'R' U'F')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"...",front:"Y.Y",left:".Y."}}},{id:"oll-56",name:"OLL-56",formulas:["(R U R' U)(R U'R' U')(R'F R F')"],viewMode:"oll",viewData:{top:[".YY","YY.","Y.."],sides:{back:"Y..",right:".YY",front:".Y.",left:"..."}}},{id:"oll-57",name:"OLL-57",formulas:["(R'U' R U')(R'U R U)(R B' R'B)"],viewMode:"oll",viewData:{top:["Y..","YY.",".YY"],sides:{back:".Y.",right:"YY.",front:"Y..",left:"..."}}}],createdAt:0,updatedAt:0},RV={id:"builtin-pll",name:"PLL 公式",formulas:[{id:"pll-01",name:"PLL-01",formulas:["RU' (RURU) (RU'R'U') R2","M'2UMU2 M'UM'2"],viewMode:"pll",viewData:{moves:[{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[2,1],bidirectional:!1},{from:[2,1],to:[1,2],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-02",name:"PLL-02",formulas:["M'2U'MU2 M'U'M'2"],viewMode:"pll",viewData:{moves:[{from:[1,0],to:[1,2],bidirectional:!1},{from:[2,1],to:[1,0],bidirectional:!1},{from:[1,2],to:[2,1],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-03",name:"PLL-03",formulas:["M'2U M'2U2 M'2U M'2"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[2,1],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-04",name:"PLL-04",formulas:["MU (M'2U)2 MU2 M'2U'"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[1,2],bidirectional:!0},{from:[1,0],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"T-PERM",name:"T-PERM",formulas:["(RUR'U') R'F (R2U'R'U') (RUR'F')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!0,!1],[!0,!1,!0]]}},{id:"pll-06",name:"PLL-06",formulas:["(R'U'F')(RUR'U') R'F (R2U'R'U') (RUR'UR)"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[0,1],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-07",name:"PLL-07",formulas:["(RUR'F') (RUR'U') R'F (R2U'R'U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-08",name:"PLL-08",formulas:["(RUR'U)(R'U'RF')(RUR'U')(R'FR2U')(R'2UR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!0},{from:[0,2],to:[2,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!0,!1],[!1,!0,!1],[!1,!0,!1]]}},{id:"pll-09",name:"PLL-09",formulas:["F(RU'R'U')(RUR'F')(RUR'U')(R'FRF')"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,0],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!0,!1],[!0,!0,!1],[!1,!1,!1]]}},{id:"pll-10",name:"PLL-10",formulas:["(R'UR'U') yR'F' (R2U'R'U) (R'FRF)","(R'UR'U') (B'R'B2) (U'B'U) (B'RBR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,1],bidirectional:!0}],sameColorEdges:[[!1,!1,!0],[!0,!1,!1],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-11",name:"PLL-11",formulas:["(R'U2)(RU'2) R'F (RUR'U')(R'F'R2U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!1,!0],[!0,!1,!0],[!1,!0,!0]]}},{id:"pll-12",name:"PLL-12",formulas:["(F'U'F)R2u(R'URU')(Ru'R2)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!1},{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[0,1],bidirectional:!1}],sameColorEdges:[[!0,!1,!0],[!1,!1,!1],[!1,!0,!0],[!1,!1,!1]]}},{id:"pll-13",name:"PLL-13",formulas:["(R2uR')(UR'U'Ru')(R'2F'UF)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,0],bidirectional:!1},{from:[1,0],to:[1,2],bidirectional:!1},{from:[1,2],to:[0,1],bidirectional:!1}],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!0,!0],[!0,!1,!0]]}},{id:"pll-14",name:"PLL-14",formulas:["x(R'2D2)(RUR'D2)(RU'R)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!1},{from:[2,2],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!1,!0],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-15",name:"PLL-15",formulas:["(R'URU')(R'F'U'F)(RUR'F)(R'F'RU'R)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!0],[!0,!1,!1],[!0,!0,!1],[!1,!1,!0]]}},{id:"pll-16",name:"PLL-16",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-17",name:"PLL-17",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-18",name:"PLL-18",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-19",name:"PLL-19",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-20",name:"PLL-20",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-21",name:"PLL-21",formulas:[],viewMode:"pll",viewData:{moves:[]}}],createdAt:0,updatedAt:0},oa={name:"OLL 自定义",formulas:[]},ra={name:"PLL 自定义",formulas:[]},VV={id:"builtin-scramble",name:"打乱公式",formulas:[{id:"scr-01",name:"Scramble-01",formulas:["R' U' F L2 D' B U R2 F' L D2 B' U2 R F2 D L2 B' R' U"],viewMode:"none"},{id:"scr-02",name:"Scramble-02",formulas:["D2 R' B F2 L D' U R' B2 F D L' U2 R B' F' L D R U2"],viewMode:"none"},{id:"scr-03",name:"Scramble-03",formulas:["F2 U' L2 D B2 R' F U L D2 B R2 U' F' L2 D B2 R U' F"],viewMode:"none"},{id:"scr-04",name:"Scramble-04",formulas:["B2 L D2 F' R U B' L2 D R2 F U2 L' B D2 R F' U L2 D'"],viewMode:"none"},{id:"scr-05",name:"Scramble-05",formulas:["U R2 F' D L B2 U' R F2 D' L2 B U R' D2 F L' B2 U R'"],viewMode:"none"},{id:"scr-06",name:"Scramble-06",formulas:["L2 F D' R2 B U L' F2 D R B2 U' L D2 F' R B U2 L' D"],viewMode:"none"},{id:"scr-07",name:"Scramble-07",formulas:["D' B2 R U' F L D2 B' R2 U F' L2 D B R' U2 F D' L B'"],viewMode:"none"},{id:"scr-08",name:"Scramble-08",formulas:["R' U2 B D L' F2 U R B2 D' L F U' R2 D B' L2 F U R'"],viewMode:"none"},{id:"scr-09",name:"Scramble-09",formulas:["F D' L2 U B R' D F2 U' L B2 R D' F L' U2 B R2 D F'"],viewMode:"none"},{id:"scr-10",name:"Scramble-10",formulas:["U' L B2 R D F' U2 L' B D2 R F U L' D' B2 R' F2 U D"],viewMode:"none"},{id:"scr-11",name:"Scramble-11",formulas:["B R' D2 F U L' B2 R D F' U2 L B' R2 D' F U' L2 B D'"],viewMode:"none"},{id:"scr-12",name:"Scramble-12",formulas:["L' D F2 U' B R D2 L' F U B' R2 D L F' U2 B' D R L2"],viewMode:"none"},{id:"scr-13",name:"Scramble-13",formulas:["U2 F' R B2 L' D U2 F R' B D2 L U' F2 R B' D L2 U F'"],viewMode:"none"},{id:"scr-14",name:"Scramble-14",formulas:["D R2 B' U F L2 D' R B2 U' F' L D2 R' B U2 F L' D R2"],viewMode:"none"},{id:"scr-15",name:"Scramble-15",formulas:["B' L2 U R' D F2 B L U2 R' D' F B2 L' U R2 D' F' B L2"],viewMode:"none"},{id:"scr-16",name:"Scramble-16",formulas:["R U2 L' D B2 F R' U L2 D' B F2 R U' L D2 B' F R' U2"],viewMode:"none"},{id:"scr-17",name:"Scramble-17",formulas:["F' D2 R U' B L2 F D R' U2 B' L F2 D' R U L2 B' D R'"],viewMode:"none"},{id:"scr-18",name:"Scramble-18",formulas:["L D' F2 R U B' L2 D F R' U2 B L' D2 F' R U' B2 L D'"],viewMode:"none"},{id:"scr-19",name:"Scramble-19",formulas:["U' B R2 D' F L U2 B' R D2 F' L2 U B R' D F2 L' U R"],viewMode:"none"},{id:"scr-20",name:"Scramble-20",formulas:["D2 L' F R2 U B' D L2 F' R U2 B D' L F2 R' U B2 D L'"],viewMode:"none"},{id:"scr-21",name:"Scramble-21",formulas:["R' B2 U D' L F2 R' B U2 D L' F R2 B' U' D2 L F' R B2"],viewMode:"none"},{id:"scr-22",name:"Scramble-22",formulas:["F U' D2 R B' L2 F U D' R2 B L F' U2 D R' B2 L' F U'"],viewMode:"none"},{id:"scr-23",name:"Scramble-23",formulas:["B' D R2 U' L F D2 B R' U L2 F' D B2 R U' L' F2 D R'"],viewMode:"none"},{id:"scr-24",name:"Scramble-24",formulas:["L U2 F' D R B2 L' U F2 D' R' B U2 L D2 F R' B' U L2"],viewMode:"none"},{id:"scr-25",name:"Scramble-25",formulas:["U R' D2 B L' F2 U R D' B2 L F' U2 R' D B' L2 F U' R"],viewMode:"none"},{id:"scr-26",name:"Scramble-26",formulas:["D' F R2 B' U L D2 F' R B2 U' L' D F2 R' B U2 L D' F"],viewMode:"none"},{id:"scr-27",name:"Scramble-27",formulas:["R2 D' L U2 F' B R D' L2 U F B' R' D2 L' U' F2 B R D"],viewMode:"none"},{id:"scr-28",name:"Scramble-28",formulas:["F' L D2 R' U B F' L2 D R2 U' B' F L D' R2 U B2 F' L'"],viewMode:"none"},{id:"scr-29",name:"Scramble-29",formulas:["U2 B' L D R' F2 U B' L2 D' R F U2 B L' D2 R' F' U B2"],viewMode:"none"},{id:"scr-30",name:"Scramble-30",formulas:["D L2 B' R U F' D2 L B' R2 U' F D L2 B R' U2 F' D' L"],viewMode:"none"}],createdAt:0,updatedAt:0},at=[VV,SV,HV,RV];function mi(o){return o.startsWith("builtin-")}const zV="training-camp",$V=1,Hr="categories";function UV(){return new Promise((o,t)=>{const e=indexedDB.open(zV,$V);e.addEventListener("upgradeneeded",()=>{const i=e.result;i.objectStoreNames.contains(Hr)||i.createObjectStore(Hr,{keyPath:"id"})}),e.addEventListener("success",()=>o(e.result)),e.addEventListener("error",()=>t(e.error))})}function Eo(o,t){return UV().then(e=>new Promise((i,r)=>{const s=e.transaction(Hr,o),n=s.objectStore(Hr),d=t(n);d.addEventListener("success",()=>i(d.result)),d.addEventListener("error",()=>r(d.error)),s.addEventListener("complete",()=>e.close())}))}function DV(o){const{inverseFormula:t,...e}=o;e.proficiency==="learning"&&(e.proficiency="beginner"),typeof e.formula=="string"&&(e.formulas=[e.formula],delete e.formula);const i={...e,viewMode:e.viewMode??"none",proficiency:e.proficiency??"unlearned"};if(i.viewData&&i.viewMode==="oll"&&Array.isArray(i.viewData.top)&&typeof i.viewData.top[0]=="boolean"){const r=n=>n?"Y":".",s=i.viewData;i.viewData={top:[`${r(s.top[0])}${r(s.top[1])}${r(s.top[2])}`,`${r(s.top[3])}${r(s.top[4])}${r(s.top[5])}`,`${r(s.top[6])}${r(s.top[7])}${r(s.top[8])}`],sides:{back:`${r(s.edges.back[0])}${r(s.edges.back[1])}${r(s.edges.back[2])}`,right:`${r(s.edges.right[0])}${r(s.edges.right[1])}${r(s.edges.right[2])}`,front:`${r(s.edges.front[0])}${r(s.edges.front[1])}${r(s.edges.front[2])}`,left:`${r(s.edges.left[0])}${r(s.edges.left[1])}${r(s.edges.left[2])}`}}}return i}function Wi(o){return{...o,formulas:o.formulas.map(DV)}}const R={async getAll(){return(await Eo("readonly",t=>t.getAll())).map(Wi)},async get(o){const t=await Eo("readonly",e=>e.get(o));return t?Wi(t):void 0},put(o){return Eo("readwrite",t=>t.put(o))},remove(o){return Eo("readwrite",t=>t.delete(o))},clear(){return Eo("readwrite",o=>o.clear())}},P=da({state:{categories:[],loading:!1},actions:{setCategories:(o,t)=>({categories:t}),setLoading:(o,t)=>({loading:t})},asyncActions:{async load(o){o.setState({loading:!0});const t=await R.getAll();o.setState({categories:t,loading:!1})},async addCategory(o,t){const e=Date.now(),i={id:`cat-${e}`,name:t,formulas:[],createdAt:e,updatedAt:e};await R.put(i);const r=await R.getAll();o.setState({categories:r})},async updateCategory(o,t,e){const i=await R.get(t);if(!i)return;i.name=e,i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async removeCategory(o,t){await R.remove(t);const e=await R.getAll();o.setState({categories:e})},async addFormula(o,t,e){const i=await R.get(t);if(!i)return;i.formulas.push({...e,id:`f-${Date.now()}`}),i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async addFormulas(o,t,e){const i=await R.get(t);if(!i)return;for(let s=0;s<e.length;s++)i.formulas.push({...e[s],id:`f-${Date.now()}-${s}`});i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async moveFormula(o,t,e,i){const r=await R.get(t);if(!r)return;const s=r.formulas.findIndex(a=>a.id===e);if(s===-1)return;const n=i==="up"?s-1:s+1;if(n<0||n>=r.formulas.length)return;[r.formulas[s],r.formulas[n]]=[r.formulas[n],r.formulas[s]],r.updatedAt=Date.now(),await R.put(r);const d=await R.getAll();o.setState({categories:d})},async updateFormula(o,t,e,i){const r=await R.get(t);if(!r)return;const s=r.formulas.find(d=>d.id===e);if(!s)return;Object.assign(s,i),r.updatedAt=Date.now(),await R.put(r);const n=await R.getAll();o.setState({categories:n})},async removeFormula(o,t,e){const i=await R.get(t);if(!i)return;i.formulas=i.formulas.filter(s=>s.id!==e),i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async clearFormulas(o,t){const e=await R.get(t);if(!e)return;e.formulas=[],e.updatedAt=Date.now(),await R.put(e);const i=await R.getAll();o.setState({categories:i})},async addPresetCategory(o,t,e){const i=Date.now(),r={id:`cat-${i}`,name:t,formulas:e.map((n,d)=>({...n,id:`f-${i}-${d}`})),createdAt:i,updatedAt:i};await R.put(r);const s=await R.getAll();o.setState({categories:s})},async importData(o,t){await Promise.all(t.map(i=>R.put(i)));const e=await R.getAll();o.setState({categories:e})},async clearAll(o){await R.clear(),o.setState({categories:[]})}}}),e1="training-camp-settings",ia={ollColor:"#fbbf24",formulaDisplayMode:"list"};function FV(){try{const o=localStorage.getItem(e1);if(o){const t=JSON.parse(o);return{...ia,...t}}}catch{}return{...ia}}function sa(o){localStorage.setItem(e1,JSON.stringify(o))}const T=da({state:FV(),actions:{setOllColor:(o,t)=>{const e={...o,ollColor:t};return sa(e),e},setFormulaDisplayMode:(o,t)=>{const e={...o,formulaDisplayMode:t};return sa(e),e}}});class PV extends Y{constructor(){super(...arguments),this.editing=!1,this.editName="",this.startEdit=()=>{this.props.builtin||(this.editing=!0,this.editName=this.props.category.name,this.update())},this.handleEditInput=t=>{this.editName=t.detail.value},this.saveEdit=async()=>{const t=this.editName.trim();t&&t!==this.props.category.name&&await P.asyncActions.updateCategory(this.props.category.id,t),this.editing=!1,this.update()},this.cancelEdit=()=>{this.editing=!1,this.update()},this.handleClearFormulas=async()=>{await P.asyncActions.clearFormulas(this.props.category.id)}}render(){const{category:t,builtin:e,onAddFormula:i,onImportBuiltin:r}=this.props;return l("div",{class:"mb-8 flex items-start justify-between"},[l("div",{class:"flex items-center gap-3"},[l("div",{class:F("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),l("div",null,[this.editing?l("div",{class:"flex items-center gap-2"},[l("iku-input",{value:this.editName,size:"sm","on:ik-input":this.handleEditInput,autofocus:!0},[]),l("iku-button",{size:"sm",variant:"primary","on:click":this.saveEdit},["保存"]),l("iku-button",{size:"sm","on:click":this.cancelEdit},["取消"])]):l("div",{class:"flex items-center gap-2"},[l("h1",{class:"text-foreground text-xl font-bold"},[t.name]),!e&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.startEdit},[l("ik-icon",{name:"pencil",size:14},[])])]),l("p",{class:"mt-0.5 text-xs text-(--color-foreground-muted)"},[t.formulas.length,"条公式"])])]),!e&&l("div",{class:"flex items-center gap-2"},[t.formulas.length>0&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleClearFormulas},[l("ik-icon",{name:"trash",size:14,slot:"prefix"},[]),"清空"]),r&&l("iku-button",{size:"sm",variant:"outlined","on:click":r},[l("ik-icon",{name:"download",size:14,slot:"prefix"},[]),"引用内置"]),l("iku-button",{size:"sm",variant:"primary","on:click":i},[l("ik-icon",{name:"plus",size:14,slot:"prefix"},[]),"添加公式"])]),e&&l("div",{class:"flex items-center gap-1.5 text-xs text-(--color-foreground-muted)"},[l("ik-icon",{name:"lock",size:12},[]),l("span",null,["内置栏目, 只读"])])])}}const D=30,Wt=2,ct=D*3+Wt*2,Co="#888",EV=1.2;function Nr(o,t,e,i){const r=[];for(let s=0;s<3;s++)for(let n=0;n<3;n++)r.push(l("rect",{x:o+n*(D+Wt),y:t+s*(D+Wt),width:D,height:D,rx:2,fill:e(s,n),stroke:Co,"stroke-width":EV,...i?.(s,n)??{}},[]));return r}const Nt=10,Ke=1,To=1,o1=4,Se=o1+Nt+Ke,Xe=o1+Nt+Ke,Rr=Se*2+ct,fo=["front","right","back","left"];function r1(o,t){const e=D-To*2;switch(o){case"back":return{x:Se+t*(D+Wt)+To,y:Xe-Ke-Nt,w:e,h:Nt};case"front":return{x:Se+t*(D+Wt)+To,y:Xe+ct+Ke,w:e,h:Nt};case"left":return{x:Se-Ke-Nt,y:Xe+t*(D+Wt)+To,w:Nt,h:e};case"right":return{x:Se+ct+Ke,y:Xe+t*(D+Wt)+To,w:Nt,h:e}}}const i1=16,ht=i1,kt=i1,Vr=ht*2+ct,fr=ht+ct/2,zr="#333",TV=1.8,tt=4,Ze=3,Mr=3;function s1(o,t){const e=t*(D+Wt);switch(o){case 0:return{x:ht+e,y:kt-Mr-Ze,w:D,h:Ze};case 1:return{x:ht+ct+Mr,y:kt+e,w:Ze,h:D};case 2:return{x:ht+e,y:kt+ct+Mr,w:D,h:Ze};case 3:return{x:ht-Mr-Ze,y:kt+e,w:Ze,h:D};default:throw new Error(`Invalid side index: ${o}`)}}function xi(o,t){if(!o)return[];const e=[];for(let i=0;i<4;i++)for(let r=0;r<3;r++){if(!o[i][r])continue;const{x:s,y:n,w:d,h:a}=s1(i,r);e.push(l("rect",{x:s,y:n,width:d,height:a,rx:1.5,fill:t,stroke:Co,"stroke-width":.8},[]))}return e}const qt=.2;function Ki(o,t){if((o===0||o===2)&&(t===0||t===2)){const i=t===0?ht+D*qt:ht+ct-D*qt,r=o===0?kt+D*qt:kt+ct-D*qt;return[i,r]}return o===0?[fr,kt+D*qt]:o===2?[fr,kt+ct-D*qt]:t===0?[ht+D*qt,fr]:[ht+ct-D*qt,fr]}let YV=0;function $r(o){return`${o}-${++YV}`}function Mo(o,t){return l("defs",null,[l("marker",{id:o,markerWidth:tt,markerHeight:tt,refX:tt-.5,refY:tt/2,orient:"auto"},[l("path",{d:`M 0 0 L ${tt} ${tt/2} L 0 ${tt} Z`,fill:zr},[])]),l("marker",{id:t,markerWidth:tt,markerHeight:tt,refX:.5,refY:tt/2,orient:"auto"},[l("path",{d:`M ${tt} 0 L 0 ${tt/2} L ${tt} ${tt} Z`,fill:zr},[])])])}const yr=4;function yo(o,t,e){return o.map(i=>{const[r,s]=Ki(i.from[0],i.from[1]),[n,d]=Ki(i.to[0],i.to[1]),a=n-r,c=d-s,u=Math.sqrt(a*a+c*c)||1,w=r+a/u*yr,C=s+c/u*yr,m=n-a/u*yr,S=d-c/u*yr;return l("path",{d:`M ${w} ${C} L ${m} ${S}`,fill:"none",stroke:zr,"stroke-width":TV,"marker-start":i.bidirectional?`url(#${e})`:void 0,"marker-end":`url(#${t})`},[])})}const na="transparent";function OV(){return{top:["...",".Y.","..."],sides:{back:"...",right:"...",front:"...",left:"..."}}}function fi(o){return{top:[...o.top],sides:{...o.sides}}}class IV extends Y{constructor(){super(...arguments),this.data=OV()}mounted(){this.props.value&&(this.data=fi(this.props.value)),this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}toggleTop(t,e){if(t===1&&e===1)return;const i=this.data.top[t],r=i[e]==="Y"?".":"Y";this.data.top[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(fi(this.data)),this.update()}toggleEdge(t,e){const i=this.data.sides[t],r=i[e]==="Y"?".":"Y";this.data.sides[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(fi(this.data)),this.update()}renderEdgeCells(t){const e=this.data.sides[t],i=T.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=r1(t,s);r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:e[s]==="Y"?i:na,stroke:Co,"stroke-width":.8,style:"cursor: pointer;","on:click":()=>this.toggleEdge(t,s)},[]))}return r}render(){const t=T.state.ollColor,e=Nr(Se,Xe,(i,r)=>i===1&&r===1||this.data.top[i][r]==="Y"?t:na,(i,r)=>({style:i===1&&r===1?"cursor: default;":"cursor: pointer;","on:click":()=>this.toggleTop(i,r)}));return l("svg",{viewBox:`0 0 ${Rr} ${Rr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[e,...Array.isArray(fo.map(i=>this.renderEdgeCells(i)))?fo.map(i=>this.renderEdgeCells(i)):[fo.map(i=>this.renderEdgeCells(i))]])}}const qV=4,NV="#ef4444",_V="#666",Xi=[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]];function la(){return{moves:[],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]]}}function Mi(o){return{moves:o.moves.map(t=>({...t,from:[...t.from],to:[...t.to]})),sameColorEdges:(o.sameColorEdges??Xi).map(t=>[...t])}}const ZV=[[0,0],[0,1],[0,2],[1,0],[1,2],[2,0],[2,1],[2,2]];class GV extends Y{constructor(){super(...arguments),this.data=la(),this.selected=null,this.markerEndId=$r("pll-ed")+"-end",this.markerStartId=$r("pll-ed")+"-start",this.handleReset=()=>{this.data=la(),this.selected=null,this.props.onChange(Mi(this.data)),this.update()}}mounted(){this.props.value&&(this.data=Mi(this.props.value)),this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}findMoveAt(t,e){return this.data.moves.findIndex(i=>i.from[0]===t&&i.from[1]===e||i.to[0]===t&&i.to[1]===e)}findMoveBetween(t,e,i,r){return this.data.moves.findIndex(s=>s.from[0]===t&&s.from[1]===e&&s.to[0]===i&&s.to[1]===r||s.from[0]===i&&s.from[1]===r&&s.to[0]===t&&s.to[1]===e)}handlePieceClick(t,e){if(!this.selected){const r=this.findMoveAt(t,e);if(r!==-1){const s=this.data.moves[r];s.bidirectional?this.data.moves.splice(r,1):s.bidirectional=!0,this.emitChange();return}this.selected=[t,e],this.update();return}if(this.selected[0]===t&&this.selected[1]===e){this.selected=null,this.update();return}const i=this.findMoveBetween(this.selected[0],this.selected[1],t,e);if(i!==-1){const r=this.data.moves[i];r.bidirectional?this.data.moves.splice(i,1):r.bidirectional=!0}else this.data.moves.push({from:[this.selected[0],this.selected[1]],to:[t,e],bidirectional:!0});this.emitChange()}emitChange(){this.selected=null,this.props.onChange(Mi(this.data)),this.update()}handleEdgeMarkerToggle(t,e){const i=this.data.sameColorEdges??Xi;i[t][e]=!i[t][e],this.data.sameColorEdges=i.map(r=>[...r]),this.emitChange()}renderPieceMarkers(){const t=[];for(const[e,i]of ZV){const[r,s]=Ki(e,i),n=this.selected?.[0]===e&&this.selected?.[1]===i,d=this.findMoveAt(e,i)!==-1;t.push(l("circle",{cx:r,cy:s,r:qV,fill:n?NV:d?zr:_V,stroke:"white","stroke-width":1,style:"cursor: pointer;",opacity:n?1:.8,"on:click":()=>this.handlePieceClick(e,i)},[]))}return t}renderEdgeMarkerEditors(){const t=T.state.ollColor,e=this.data.sameColorEdges??Xi,i=[],r=3;for(let s=0;s<4;s++)for(let n=0;n<3;n++){const{x:d,y:a,w:c,h:u}=s1(s,n),w=e[s][n];i.push(l("rect",{x:d-r,y:a-r,width:c+r*2,height:u+r*2,rx:2,fill:"transparent",style:"cursor: pointer;","on:click":()=>this.handleEdgeMarkerToggle(s,n)},[])),w?i.push(l("rect",{x:d,y:a,width:c,height:u,rx:1.5,fill:t,stroke:Co,"stroke-width":.8,style:"pointer-events: none;"},[])):i.push(l("rect",{x:d,y:a,width:c,height:u,rx:1.5,fill:"none",stroke:Co,"stroke-width":.6,"stroke-dasharray":"2,2",opacity:.5,style:"pointer-events: none;"},[]))}return i}render(){const t=T.state.ollColor,e=Nr(ht,kt,()=>t);return l("div",null,[l("svg",{viewBox:`0 0 ${Vr} ${Vr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],e,...Array.isArray(this.renderEdgeMarkerEditors())?this.renderEdgeMarkerEditors():[this.renderEdgeMarkerEditors()],...Array.isArray(yo(this.data.moves,this.markerEndId,this.markerStartId))?yo(this.data.moves,this.markerEndId,this.markerStartId):[yo(this.data.moves,this.markerEndId,this.markerStartId)],...Array.isArray(this.renderPieceMarkers())?this.renderPieceMarkers():[this.renderPieceMarkers()]]),l("div",{class:"mt-2 flex justify-end"},[l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleReset},[l("ik-icon",{name:"rotate-ccw",size:12,slot:"prefix"},[]),"重置"])])])}}const vs={unlearned:"未学习",beginner:"初学",proficient:"熟练",mastered:"精通"},n1={none:"无",oll:"OLL",pll:"PLL"},yi=Object.entries(n1).map(([o,t])=>({value:o,label:t})),bi=Object.entries(vs).map(([o,t])=>({value:o,label:t}));class WV extends Y{constructor(){super(...arguments),this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned",this.handleSubmit=async()=>{const t=this.name.trim(),e=this.formulas.map(s=>s.trim()).filter(s=>s.length>0);if(!t||e.length===0)return;const{categoryId:i,editTarget:r}=this.props;r?await P.asyncActions.updateFormula(i,r.formulaId,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}):await P.asyncActions.addFormula(i,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}syncFromProps(){const{editTarget:t}=this.props;t?(this.name=t.name,this.formulas=t.formulas.length>0?[...t.formulas]:[""],this.viewMode=t.viewMode,this.viewData=t.viewData,this.proficiency=t.proficiency):this.resetFields()}resetFields(){this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned"}resetAndClose(){this.resetFields(),this.props.onClose()}render(){if(!this.props.open)return null;this.props.open&&!this.synced&&(this.synced=!0,this.syncFromProps());const t=!!this.props.editTarget;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":t?"编辑公式":"添加公式",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"space-y-4 px-1 py-2"},[l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式名",l("span",{class:"text-(--color-destructive)"},["*"])]),l("iku-input",{placeholder:"例如: OLL-06",value:this.name,"on:ik-input":e=>{this.name=e.detail.value}},[])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式",l("span",{class:"text-(--color-destructive)"},["*"])]),l("div",{class:"space-y-2"},[...Array.isArray(this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])))?this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])):[this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])]))],l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.push(""),this.update()}},[l("ik-icon",{name:"plus",size:14},[]),l("span",{class:"ml-1"},["添加公式"])])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["视图模式"]),l("iku-radio-group",{value:this.viewMode,"on:ik-change":e=>{const i=e.detail.value;if(this.viewData&&i!==this.viewMode){if(!window.confirm("切换视图模式将清空已编辑的视图数据，确认切换？")){this.update();return}this.viewData=void 0}this.viewMode=i,this.update()}},[...Array.isArray(yi.map(e=>l("iku-radio",{value:e.value},[e.label])))?yi.map(e=>l("iku-radio",{value:e.value},[e.label])):[yi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])]),this.viewMode==="oll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["OLL 视图编辑"]),l("div",{class:"w-32"},[l(IV,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),this.viewMode==="pll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["PLL 视图编辑"]),l("div",{class:"w-32"},[l(GV,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["熟练程度"]),l("iku-radio-group",{value:this.proficiency,"on:ik-change":e=>{this.proficiency=e.detail.value,this.update()}},[...Array.isArray(bi.map(e=>l("iku-radio",{value:e.value},[e.label])))?bi.map(e=>l("iku-radio",{value:e.value},[e.label])):[bi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},[t?"保存":"添加"])])])])}}class l1 extends Y{mounted(){this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderEdgeCells(t){const e=this.props.viewData.sides[t],i=T.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=r1(t,s),u=e[s]==="Y";r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:u?i:"none",stroke:u?Co:"none","stroke-width":u?.8:0},[]))}return r}render(){const{viewData:t}=this.props,e=T.state.ollColor,i=Nr(Se,Xe,(r,s)=>r===1&&s===1||t.top[r][s]==="Y"?e:"transparent");return l("svg",{viewBox:`0 0 ${Rr} ${Rr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[i,...Array.isArray(fo.map(r=>this.renderEdgeCells(r)))?fo.map(r=>this.renderEdgeCells(r)):[fo.map(r=>this.renderEdgeCells(r))]])}}class a1 extends Y{constructor(){super(...arguments),this.markerEndId=$r("pll")+"-end",this.markerStartId=$r("pll")+"-start"}mounted(){this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}render(){const{viewData:t}=this.props,e=T.state.ollColor,i=Nr(ht,kt,()=>e);return l("svg",{viewBox:`0 0 ${Vr} ${Vr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],i,...Array.isArray(xi(t.sameColorEdges,e))?xi(t.sameColorEdges,e):[xi(t.sameColorEdges,e)],...Array.isArray(yo(t.moves,this.markerEndId,this.markerStartId))?yo(t.moves,this.markerEndId,this.markerStartId):[yo(t.moves,this.markerEndId,this.markerStartId)]])}}const KV={unlearned:"border-(--color-foreground-muted)/30 text-(--color-foreground-muted)",beginner:"border-(--color-warning)/30 text-(--color-warning)",proficient:"border-(--color-info)/30 text-(--color-info)",mastered:"border-(--color-success)/30 text-(--color-success)"};class XV extends Y{constructor(){super(...arguments),this.handleEdit=()=>{this.props.onEdit(this.props.formula.id)},this.handleDelete=async()=>{await P.asyncActions.removeFormula(this.props.categoryId,this.props.formula.id)}}render(){const{formula:t,builtin:e,onMoveUp:i,onMoveDown:r,isFirst:s,isLast:n}=this.props,d=t.proficiency??"unlearned";return l("div",{class:"group flex flex-col rounded-xl border border-(--color-border) bg-(--color-surface) p-5 transition-colors hover:border-(--color-primary)/30"},[l("div",{class:"mb-3 flex items-center gap-2"},[l("span",{class:"text-base font-semibold text-(--color-foreground)"},[t.name]),!e&&l("span",{class:F("rounded-full border px-2 py-0.5 text-xs",KV[d])},[vs[d]])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(l1,{viewData:t.viewData},[])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(a1,{viewData:t.viewData},[])]),t.viewMode!=="none"&&!t.viewData&&l("div",{class:"mb-3 flex h-20 items-center justify-center rounded-lg border border-dashed border-(--color-border)"},[l("span",{class:"text-xs text-(--color-foreground-muted)/50"},[n1[t.viewMode],"俯视图"])]),l("div",{class:"mb-3"},[l("span",{class:"mb-1 block text-xs text-(--color-foreground-muted)"},["公式"]),t.formulas.length===1?l("span",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[t.formulas[0]]):l("div",{class:"space-y-1"},[...Array.isArray(t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a])))?t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a])):[t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a]))]])]),!e&&l("div",{class:"flex items-center gap-1 border-t border-(--color-border)/50 pt-3 opacity-0 transition-opacity group-hover:opacity-100"},[i&&l("iku-button",{size:"sm",variant:"ghost",disabled:s,"on:click":i},[l("ik-icon",{name:"chevron-up",size:14},[])]),r&&l("iku-button",{size:"sm",variant:"ghost",disabled:n,"on:click":r},[l("ik-icon",{name:"chevron-down",size:14},[])]),l("div",{class:"flex-1"},[]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleEdit},[l("ik-icon",{name:"pencil",size:14},[])]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14},[])])])])}}const aa=["mastered","proficient","beginner","unlearned"];class JV extends Y{mounted(){this.unsubscribe=T.subscribe(t=>t.formulaDisplayMode,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderCard(t,e,i){const{category:r,builtin:s,onEdit:n,onMove:d}=this.props;return l(XV,{categoryId:r.id,formula:t,builtin:s,onEdit:n,onMoveUp:d?()=>d(t.id,"up"):void 0,onMoveDown:d?()=>d(t.id,"down"):void 0,isFirst:e===0,isLast:e===i-1},[])}renderGrid(t){return l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map((e,i)=>this.renderCard(e,i,t.length)))?t.map((e,i)=>this.renderCard(e,i,t.length)):[t.map((e,i)=>this.renderCard(e,i,t.length))]])}renderGrouped(){const{category:t}=this.props,e=new Map;for(const n of aa)e.set(n,[]);for(const n of t.formulas){const d=n.proficiency??"unlearned";e.get(d).push(n)}const i=t.formulas.length,r=new Map;t.formulas.forEach((n,d)=>r.set(n.id,d));const s=[];for(const n of aa){const d=e.get(n);d.length!==0&&s.push(l("div",{class:"space-y-3"},[l("div",{class:"flex items-center gap-2"},[l("h3",{class:"text-sm font-semibold text-(--color-foreground-muted)"},[vs[n]]),l("span",{class:"text-xs text-(--color-foreground-muted)/60"},[d.length])]),l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}))?d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}):[d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)})]])]))}return l("div",{class:"space-y-6"},[s])}render(){const{category:t,builtin:e}=this.props;return t.formulas.length===0?l("div",{class:"flex flex-col items-center justify-center rounded-xl border border-dashed border-(--color-border) py-16 text-(--color-foreground-muted)"},[l("ik-icon",{name:"inbox",size:32},[]),l("p",{class:"mt-3 text-sm"},["暂无公式"])]):(e?"list":T.state.formulaDisplayMode)==="grouped"?this.renderGrouped():this.renderGrid(t.formulas)}}class QV extends Y{constructor(){super(...arguments),this.selectedIds=new Set,this.activeTab=at[0].id,this.handleImport=async()=>{if(this.selectedIds.size===0)return;const t=[];for(const e of at)for(const i of e.formulas)this.selectedIds.has(i.id)&&t.push({name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:"unlearned",sourceRef:i.id});await P.asyncActions.addFormulas(this.props.categoryId,t),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}toggleFormula(t){this.selectedIds.has(t)?this.selectedIds.delete(t):this.selectedIds.add(t),this.update()}toggleAll(){const t=at.find(i=>i.id===this.activeTab);if(!t)return;const e=t.formulas.every(i=>this.selectedIds.has(i.id));for(const i of t.formulas)e?this.selectedIds.delete(i.id):this.selectedIds.add(i.id);this.update()}resetAndClose(){this.selectedIds.clear(),this.activeTab=at[0].id,this.props.onClose()}getImportedRefs(){const t=P.state.categories.find(i=>i.id===this.props.categoryId);if(!t)return new Set;const e=new Set;for(const i of t.formulas)i.sourceRef&&e.add(i.sourceRef);return e}renderFormulaCard(t,e){const i=this.selectedIds.has(t.id);return l("div",{class:F("flex cursor-pointer flex-col rounded-lg border p-3","transition-colors hover:border-(--color-primary)/50",i?"border-(--color-primary) bg-(--color-primary)/5":"border-(--color-border)"),"on:click":()=>this.toggleFormula(t.id)},[l("div",{class:"mb-2 flex items-center gap-2"},[l("iku-checkbox",{checked:i,"on:ik-change":r=>{r.stopPropagation(),this.toggleFormula(t.id)}},[]),l("span",{class:"text-sm font-medium text-(--color-foreground)"},[t.name]),e&&l("span",{class:"rounded-full border border-(--color-success)/30 px-1.5 py-0.5 text-[10px] leading-none text-(--color-success)"},["已选取"])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(l1,{viewData:t.viewData},[])])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(a1,{viewData:t.viewData},[])])]),l("span",{class:"truncate font-mono text-xs text-(--color-foreground-muted)"},[t.formulas[0]||""])])}render(){if(!this.props.open)return null;const t=this.selectedIds.size,e=this.getImportedRefs(),i=at.find(s=>s.id===this.activeTab),r=i?.formulas.every(s=>this.selectedIds.has(s.id))??!1;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"引用内置公式",closable:!0,"on:ik-close":this.handleCancel,style:"--dialog-width: 720px"},[l("div",{class:"flex gap-4 px-1 py-2",style:"height: 420px;"},[l("iku-tabs",{orientation:"vertical",value:this.activeTab,"on:ik-change":s=>{this.activeTab=s.detail.value,this.update()},class:"shrink-0"},[...Array.isArray(at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])))?at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])):[at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])]))]]),l("div",{class:"flex min-w-0 flex-1 flex-col"},[l("div",{class:"mb-3 flex items-center"},[l("iku-button",{size:"sm",variant:"ghost","on:click":()=>this.toggleAll()},[r?"取消全选":"全选当前栏目"])]),l("div",{class:"flex-1 overflow-y-auto"},[l("div",{class:"grid gap-3",style:"grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));"},[i?.formulas.map(s=>this.renderFormulaCard(s,e.has(s.id)))])])])]),l("div",{class:"mt-4 flex items-center justify-between",slot:"footer"},[l("span",{class:"pr-2 text-xs text-(--color-foreground-muted)"},[`已选 ${t} 条`]),l("div",{class:"flex gap-3"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary",disabled:t===0,"on:click":this.handleImport},["导入"])])])])])}}class tz extends Y{constructor(){super(...arguments),this.unsubscribes=[],this.showFormulaDialog=!1,this.showImportDialog=!1,this.editTarget=null,this.openAddDialog=()=>{this.editTarget=null,this.showFormulaDialog=!0,this.update()},this.openEditDialog=t=>{const i=this.getCategory()?.formulas.find(r=>r.id===t);i&&(this.editTarget={formulaId:i.id,name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:i.proficiency??"unlearned"},this.showFormulaDialog=!0,this.update())},this.closeFormulaDialog=()=>{this.showFormulaDialog=!1,this.editTarget=null,this.update()},this.openImportDialog=()=>{this.showImportDialog=!0,this.update()},this.closeImportDialog=()=>{this.showImportDialog=!1,this.update()},this.handleMoveFormula=(t,e)=>{P.asyncActions.moveFormula(this.props.categoryId,t,e)},this.setDisplayMode=t=>{T.actions.setFormulaDisplayMode(t)},this.navigateHome=t=>{t.preventDefault(),ha(this).push("/")}}mounted(){this.unsubscribes.push(P.subscribe(()=>this.update())),this.unsubscribes.push(T.subscribe(t=>t.formulaDisplayMode,()=>this.update())),mi(this.props.categoryId)||P.asyncActions.load()}beforeUnmount(){this.unsubscribes.forEach(t=>t())}getCategory(){const t=this.props.categoryId;return mi(t)?at.find(e=>e.id===t):P.state.categories.find(e=>e.id===t)}render(){const t=this.getCategory(),e=mi(this.props.categoryId);return t?l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-8")},[l("nav",{class:"mb-6 flex items-center gap-1.5 text-sm text-(--color-foreground-muted)"},[l("a",{href:"/",class:"hover:text-foreground cursor-pointer transition-colors","on:click":this.navigateHome},["训练栏目"]),l("ik-icon",{name:"chevron-right",size:14},[]),l("span",{class:"text-foreground"},[t.name])]),l(PV,{category:t,builtin:e,onAddFormula:this.openAddDialog,onImportBuiltin:e?void 0:this.openImportDialog},[]),!e&&t.formulas.length>0&&l("div",{class:"mb-4 flex justify-end"},[l("div",{class:"flex items-center gap-1"},[...Array.isArray(["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:T.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])])))?["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:T.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])])):[["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:T.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])]))]])]),l(JV,{category:t,builtin:e,onEdit:this.openEditDialog,onMove:e?void 0:this.handleMoveFormula},[]),l(WV,{open:this.showFormulaDialog,categoryId:t.id,editTarget:this.editTarget,onClose:this.closeFormulaDialog},[]),!e&&l(QV,{open:this.showImportDialog,categoryId:t.id,onClose:this.closeImportDialog},[])]):l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-20 text-center")},[l("p",{class:"text-(--color-foreground-muted)"},["栏目不存在"]),l("iku-button",{class:"mt-4","on:click":this.navigateHome},["返回首页"])])}}class ez extends Ur{render(){return l(tz,{categoryId:this.params.id},[])}}class Ge extends Y{constructor(){super(...arguments),this.handleClick=()=>{ha(this).push(`/category/${this.props.category.id}`)},this.handleDelete=async t=>{t.stopPropagation(),await yS.confirm({title:"确认删除",content:`确定要删除公式栏 "${this.props.category.name}" 吗？`})&&this.props.onDelete?.(this.props.category.id)}}render(){const{category:t,builtin:e}=this.props;return l("div",{class:F("group cursor-pointer rounded-xl border border-(--color-border) bg-(--color-surface) p-5","transition-colors hover:border-(--color-primary)/40"),"on:click":this.handleClick},[l("div",{class:"mb-3 flex items-start justify-between"},[l("div",{class:F("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),e?l("span",{class:"bg-accent inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium text-(--color-foreground-muted)"},["内置"]):l("iku-button",{class:"opacity-0 transition-all group-hover:opacity-100",variant:"destructive",title:"删除","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14,color:"var(--color-foreground)"},[])])]),l("h3",{class:"text-foreground text-sm font-semibold transition-colors group-hover:text-(--color-primary)"},[t.name]),l("div",{class:"mt-3 flex items-center gap-1 text-xs text-(--color-foreground-muted)/60"},[l("ik-icon",{name:"list",size:12},[]),l("span",null,[t.formulas.length,"条公式"])])])}}class oz extends Y{constructor(){super(...arguments),this.handleDelete=async t=>{await P.asyncActions.removeCategory(t)}}mounted(){this.unsubscribe=P.subscribe(()=>this.update()),P.asyncActions.load()}beforeUnmount(){this.unsubscribe?.()}render(){const{categories:t,loading:e}=P.state;return e?l("div",{class:"flex items-center justify-center py-20"},[l("iku-loading",{size:"md"},[])]):l("div",{class:"space-y-8"},[l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["内置"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(at.map(i=>l(Ge,{category:i,builtin:!0},[])))?at.map(i=>l(Ge,{category:i,builtin:!0},[])):[at.map(i=>l(Ge,{category:i,builtin:!0},[]))]])]),l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["自定义"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[])))?t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[])):[t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[]))],l("button",{class:F("flex min-h-[148px] flex-col items-center justify-center","rounded-xl border border-dashed border-(--color-border) bg-(--color-surface)/50","text-(--color-foreground-muted) transition-colors","hover:border-(--color-primary)/50 hover:text-(--color-primary)"),"on:click":()=>this.props.onCreateClick()},[l("ik-icon",{name:"plus",size:"lg"},[]),l("span",{class:"mt-2 text-sm"},["新建栏目"])])])])])}}class rz extends Y{constructor(){super(...arguments),this.name="",this.handleInput=t=>{this.name=t.detail.value},this.handleSubmit=async()=>{const t=this.name.trim();t&&(await P.asyncActions.addCategory(t),this.name="",this.props.onClose())},this.handleCancel=()=>{this.name="",this.props.onClose()}}render(){return this.props.open?l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"新建训练栏目",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"px-1 py-2"},[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["栏目名称"]),l("iku-input",{placeholder:"例如: OLL 训练",value:this.name,"on:ik-input":this.handleInput},[])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},["创建"])])])]):null}}class iz extends Y{constructor(){super(...arguments),this.showCreateDialog=!1,this.openCreate=()=>{this.showCreateDialog=!0,this.update()},this.closeCreate=()=>{this.showCreateDialog=!1,this.update()},this.handleMenuSelect=async t=>{const{value:e}=t.detail;if(e==="create")this.openCreate();else if(e==="preset-oll"){const i=oa.formulas.map(({id:r,...s})=>s);await P.asyncActions.addPresetCategory(oa.name,i)}else if(e==="preset-pll"){const i=ra.formulas.map(({id:r,...s})=>s);await P.asyncActions.addPresetCategory(ra.name,i)}}}render(){return l("div",{class:"mx-auto w-full max-w-5xl px-6 py-8"},[l("div",{class:"mb-8 flex items-center justify-between"},[l("div",null,[l("h1",{class:"text-2xl font-bold text-(--color-foreground)"},["训练栏目"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理你的魔方训练公式集"])]),l("iku-dropdown",{"on:ik-select":this.handleMenuSelect},[l("iku-button",{variant:"primary",slot:"trigger"},[l("ik-icon",{name:"menu",size:"sm",slot:"prefix"},[])]),l("iku-menu",{slot:"menu"},[l("iku-menu-item",{value:"create"},["空白栏目"]),l("iku-menu-item",{value:"preset-oll"},["OLL 预设"]),l("iku-menu-item",{value:"preset-pll"},["PLL 预设"])])])]),l(oz,{onCreateClick:this.openCreate},[]),l(rz,{open:this.showCreateDialog,onClose:this.closeCreate},[])])}}class sz extends Ur{render(){return l(iz,null,[])}}class nz extends Y{constructor(){super(...arguments),this.handleClearAll=async()=>{await P.asyncActions.clearAll()}}render(){return l("div",{class:"rounded-xl border border-(--color-destructive)/20 bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-destructive)/10 text-(--color-destructive)"},[l("ik-icon",{name:"alert-triangle",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["清空数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["删除所有自定义训练栏目。此操作不可撤销，建议先导出备份。"]),l("iku-button",{variant:"destructive","on:click":this.handleClearAll},[l("ik-icon",{name:"trash-2",size:"sm",slot:"prefix"},[]),"清空所有数据"])])])])}}class lz extends Y{constructor(){super(...arguments),this.handleExport=()=>{const t=P.state.categories,e={version:2,exportedAt:Date.now(),categories:t},i=JSON.stringify(e,null,2),r=new Blob([i],{type:"application/json"}),s=URL.createObjectURL(r),n=document.createElement("a");n.href=s,n.download=`cube-training-${new Date().toISOString().slice(0,10)}.json`,n.click(),URL.revokeObjectURL(s)}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-success)/10 text-(--color-success)"},[l("ik-icon",{name:"download",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导出数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["将所有自定义训练栏目导出为 JSON 文件。内置栏目不参与导出。"]),l("iku-button",{variant:"primary","on:click":this.handleExport},[l("ik-icon",{name:"file-down",size:"sm",slot:"prefix"},[]),"导出 JSON"])])])])}}class az extends Y{constructor(){super(...arguments),this.preview=null,this.fileName="",this.handleFileChange=t=>{const i=t.target.files?.[0];if(!i)return;this.fileName=i.name;const r=new FileReader;r.addEventListener("load",()=>{try{const s=JSON.parse(r.result);if(s.version!==1&&s.version!==2||!Array.isArray(s.categories)){this.preview=null,this.update();return}const n=s.categories.map(Wi),d=new Set(P.state.categories.map(a=>a.id));this.preview=n.map(a=>({category:a,conflict:d.has(a.id)})),this.update()}catch{this.preview=null,this.update()}}),r.readAsText(i)},this.handleImport=async()=>{if(!this.preview)return;const t=this.preview.map(e=>e.category);await P.asyncActions.importData(t),this.preview=null,this.fileName="",this.update()},this.handleCancel=()=>{this.preview=null,this.fileName="",this.update()}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-info)/10 text-(--color-info)"},[l("ik-icon",{name:"upload",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导入数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["从 JSON 文件导入训练栏目。同名栏目将被覆盖，不冲突的栏目保留。"]),l("label",{class:F("bg-background/50 relative flex cursor-pointer flex-col items-center rounded-lg border-2 border-dashed border-(--color-border) p-8 text-center","transition-colors hover:border-(--color-primary)/50")},[l("input",{type:"file",accept:".json",class:"absolute inset-0 h-full w-full cursor-pointer opacity-0","on:change":this.handleFileChange},[]),l("ik-icon",{name:"file-up",size:32,color:"var(--color-border)"},[]),l("p",{class:"mt-3 text-sm text-(--color-foreground-muted)"},["点击或拖拽 JSON 文件到此处"]),l("p",{class:"mt-1 text-xs text-(--color-foreground-muted)/60"},["仅支持 .json 格式"])]),this.preview&&this.renderPreview()])])])}renderPreview(){const t=this.preview,e=t.filter(i=>i.conflict).length;return l("div",{class:"bg-background mt-5 rounded-lg border border-(--color-border) p-4"},[l("div",{class:"mb-3 flex items-center justify-between"},[l("h4",{class:"text-foreground text-sm font-medium"},["导入预览"]),l("span",{class:"text-xs text-(--color-foreground-muted)"},[this.fileName])]),l("div",{class:"space-y-2"},[...Array.isArray(t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])))?t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])):[t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])]))]]),l("div",{class:"mt-4 flex items-center justify-between border-t border-(--color-border) pt-3"},[l("span",{class:"text-xs text-(--color-foreground-muted)"},["共",t.length,"个栏目",e>0&&`，其中 ${e} 个将覆盖已有数据`]),l("div",{class:"flex gap-2"},[l("iku-button",{size:"sm","on:click":this.handleCancel},["取消"]),l("iku-button",{size:"sm",variant:"primary","on:click":this.handleImport},["确认导入"])])])])}}class dz extends Y{constructor(){super(...arguments),this.handleColorChange=t=>{const e=t.target;T.actions.setOllColor(e.value)}}mounted(){this.unsubscribe=T.subscribe(()=>{this.update()})}beforeUnmount(){this.unsubscribe?.()}render(){const{ollColor:t}=T.state;return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-primary)/10 text-(--color-primary)"},[l("ik-icon",{name:"palette",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["俯视图配置"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["自定义 OLL 俯视图中填色块的颜色。"]),l("div",{class:"flex items-center gap-3"},[l("label",{class:"text-sm text-(--color-foreground-muted)"},["OLL 填色颜色"]),l("input",{type:"color",value:t,"on:input":this.handleColorChange,class:"h-8 w-10 cursor-pointer rounded border border-(--color-border)"},[]),l("span",{class:"font-mono text-xs text-(--color-foreground-muted)"},[t])])])])])}}class hz extends Ur{render(){return l("div",{class:F("mx-auto w-full max-w-3xl px-6 py-8")},[l("div",{class:"mb-8"},[l("h1",{class:"text-foreground text-2xl font-bold"},["设置"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理训练数据的导入与导出"])]),l("div",{class:"space-y-6"},[l(dz,null,[]),l(lz,null,[]),l(az,null,[]),l(nz,null,[])])])}}const cz=[{path:"/",component:LV,children:[{path:"",component:sz,meta:{title:"Ikun Cube Trainer"}},{path:"category/:id",component:ez,meta:{title:"Ikun Cube Trainer - 栏目详情"}},{path:"settings",component:hz,meta:{title:"Ikun Cube Trainer - 设置"}}]}];class pz extends Y{render(){return l(c1,null,[l(h1,{routes:cz,beforeEach:(t,e,i)=>{t.meta?.title&&(document.title=t.meta.title),i()}},[]),l("div",{"data-container":"global-overlays"},[l("iku-toast-region",{"auto-hide-duration":3e3},[]),l("iku-dialog-region",null,[])])])}}function uz(){jL(),YS(),sR(),He.init(),He.setTheme(localStorage.getItem("app-theme")||"dark"),He.subscribe(o=>{localStorage.setItem("app-theme",o.theme)})}function wz(){uz(),p1(l(pz,null,[]),document.getElementById("app"))}wz();
