@@ -1,6 +1,6 @@
-import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e as p1}from"./vendor-CbFPICe_.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function e(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(r){if(r.ep)return;r.ep=!0;const s=e(r);fetch(r.href,s)}})();const br=globalThis,Ji=br.ShadowRoot&&(br.ShadyCSS===void 0||br.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,Qi=Symbol(),bs=new WeakMap;let ca=class{constructor(t,e,i){if(this._$cssResult$=!0,i!==Qi)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if(Ji&&t===void 0){const i=e!==void 0&&e.length===1;i&&(t=bs.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),i&&bs.set(e,t))}return t}toString(){return this.cssText}};const u1=o=>new ca(typeof o=="string"?o:o+"",void 0,Qi),j=(o,...t)=>{const e=o.length===1?o[0]:t.reduce((i,r,s)=>i+(n=>{if(n._$cssResult$===!0)return n.cssText;if(typeof n=="number")return n;throw Error("Value passed to 'css' function must be a 'css' function result: "+n+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(r)+o[s+1],o[0]);return new ca(e,o,Qi)},w1=(o,t)=>{if(Ji)o.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const e of t){const i=document.createElement("style"),r=br.litNonce;r!==void 0&&i.setAttribute("nonce",r),i.textContent=e.cssText,o.appendChild(i)}},Cs=Ji?o=>o:o=>o instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return u1(e)})(o):o;const{is:g1,defineProperty:v1,getOwnPropertyDescriptor:k1,getOwnPropertyNames:m1,getOwnPropertySymbols:x1,getPrototypeOf:f1}=Object,Kt=globalThis,Bs=Kt.trustedTypes,M1=Bs?Bs.emptyScript:"",y1=Kt.reactiveElementPolyfillSupport,Yo=(o,t)=>o,Br={toAttribute(o,t){switch(t){case Boolean:o=o?M1:null;break;case Object:case Array:o=o==null?o:JSON.stringify(o)}return o},fromAttribute(o,t){let e=o;switch(t){case Boolean:e=o!==null;break;case Number:e=o===null?null:Number(o);break;case Object:case Array:try{e=JSON.parse(o)}catch{e=null}}return e}},ts=(o,t)=>!g1(o,t),js={attribute:!0,type:String,converter:Br,reflect:!1,useDefault:!1,hasChanged:ts};Symbol.metadata??(Symbol.metadata=Symbol("metadata")),Kt.litPropertyMetadata??(Kt.litPropertyMetadata=new WeakMap);let We=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??(this.l=[])).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=js){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){const i=Symbol(),r=this.getPropertyDescriptor(t,i,e);r!==void 0&&v1(this.prototype,t,r)}}static getPropertyDescriptor(t,e,i){const{get:r,set:s}=k1(this.prototype,t)??{get(){return this[e]},set(n){this[e]=n}};return{get:r,set(n){const d=r?.call(this);s?.call(this,n),this.requestUpdate(t,d,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??js}static _$Ei(){if(this.hasOwnProperty(Yo("elementProperties")))return;const t=f1(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(Yo("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(Yo("properties"))){const e=this.properties,i=[...m1(e),...x1(e)];for(const r of i)this.createProperty(r,e[r])}const t=this[Symbol.metadata];if(t!==null){const e=litPropertyMetadata.get(t);if(e!==void 0)for(const[i,r]of e)this.elementProperties.set(i,r)}this._$Eh=new Map;for(const[e,i]of this.elementProperties){const r=this._$Eu(e,i);r!==void 0&&this._$Eh.set(r,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const r of i)e.unshift(Cs(r))}else t!==void 0&&e.push(Cs(t));return e}static _$Eu(t,e){const i=e.attribute;return i===!1?void 0:typeof i=="string"?i:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??(this._$EO=new Set)).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){const t=new Map,e=this.constructor.elementProperties;for(const i of e.keys())this.hasOwnProperty(i)&&(t.set(i,this[i]),delete this[i]);t.size>0&&(this._$Ep=t)}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return w1(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$ET(t,e){const i=this.constructor.elementProperties.get(t),r=this.constructor._$Eu(t,i);if(r!==void 0&&i.reflect===!0){const s=(i.converter?.toAttribute!==void 0?i.converter:Br).toAttribute(e,i.type);this._$Em=t,s==null?this.removeAttribute(r):this.setAttribute(r,s),this._$Em=null}}_$AK(t,e){const i=this.constructor,r=i._$Eh.get(t);if(r!==void 0&&this._$Em!==r){const s=i.getPropertyOptions(r),n=typeof s.converter=="function"?{fromAttribute:s.converter}:s.converter?.fromAttribute!==void 0?s.converter:Br;this._$Em=r;const d=n.fromAttribute(e,s.type);this[r]=d??this._$Ej?.get(r)??d,this._$Em=null}}requestUpdate(t,e,i,r=!1,s){if(t!==void 0){const n=this.constructor;if(r===!1&&(s=this[t]),i??(i=n.getPropertyOptions(t)),!((i.hasChanged??ts)(s,e)||i.useDefault&&i.reflect&&s===this._$Ej?.get(t)&&!this.hasAttribute(n._$Eu(t,i))))return;this.C(t,e,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:i,reflect:r,wrapped:s},n){i&&!(this._$Ej??(this._$Ej=new Map)).has(t)&&(this._$Ej.set(t,n??e??this[t]),s!==!0||n!==void 0)||(this._$AL.has(t)||(this.hasUpdated||i||(e=void 0),this._$AL.set(t,e)),r===!0&&this._$Em!==t&&(this._$Eq??(this._$Eq=new Set)).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??(this.renderRoot=this.createRenderRoot()),this._$Ep){for(const[r,s]of this._$Ep)this[r]=s;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[r,s]of i){const{wrapped:n}=s,d=this[r];n!==!0||this._$AL.has(r)||d===void 0||this.C(r,void 0,s,d)}}let t=!1;const e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(e)):this._$EM()}catch(i){throw t=!1,this._$EM(),i}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&(this._$Eq=this._$Eq.forEach(e=>this._$ET(e,this[e]))),this._$EM()}updated(t){}firstUpdated(t){}};We.elementStyles=[],We.shadowRootOptions={mode:"open"},We[Yo("elementProperties")]=new Map,We[Yo("finalized")]=new Map,y1?.({ReactiveElement:We}),(Kt.reactiveElementVersions??(Kt.reactiveElementVersions=[])).push("2.1.2");const Oo=globalThis,As=o=>o,jr=Oo.trustedTypes,Ls=jr?jr.createPolicy("lit-html",{createHTML:o=>o}):void 0,pa="$lit$",_t=`lit$${Math.random().toFixed(9).slice(2)}$`,ua="?"+_t,b1=`<${ua}>`,Re=document,Wo=()=>Re.createComment(""),Ko=o=>o===null||typeof o!="object"&&typeof o!="function",es=Array.isArray,C1=o=>es(o)||typeof o?.[Symbol.iterator]=="function",Kr=`[ 	
-\f\r]`,Fo=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Ss=/-->/g,Hs=/>/g,Ce=RegExp(`>|${Kr}(?:([^\\s"'>=/]+)(${Kr}*=${Kr}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`,"g"),Rs=/'/g,Vs=/"/g,wa=/^(?:script|style|textarea|title)$/i,B1=o=>(t,...e)=>({_$litType$:o,strings:t,values:e}),p=B1(1),Ve=Symbol.for("lit-noChange"),k=Symbol.for("lit-nothing"),zs=new WeakMap,Le=Re.createTreeWalker(Re,129);function ga(o,t){if(!es(o)||!o.hasOwnProperty("raw"))throw Error("invalid template strings array");return Ls!==void 0?Ls.createHTML(t):t}const j1=(o,t)=>{const e=o.length-1,i=[];let r,s=t===2?"<svg>":t===3?"<math>":"",n=Fo;for(let d=0;d<e;d++){const a=o[d];let c,u,w=-1,C=0;for(;C<a.length&&(n.lastIndex=C,u=n.exec(a),u!==null);)C=n.lastIndex,n===Fo?u[1]==="!--"?n=Ss:u[1]!==void 0?n=Hs:u[2]!==void 0?(wa.test(u[2])&&(r=RegExp("</"+u[2],"g")),n=Ce):u[3]!==void 0&&(n=Ce):n===Ce?u[0]===">"?(n=r??Fo,w=-1):u[1]===void 0?w=-2:(w=n.lastIndex-u[2].length,c=u[1],n=u[3]===void 0?Ce:u[3]==='"'?Vs:Rs):n===Vs||n===Rs?n=Ce:n===Ss||n===Hs?n=Fo:(n=Ce,r=void 0);const m=n===Ce&&o[d+1].startsWith("/>")?" ":"";s+=n===Fo?a+b1:w>=0?(i.push(c),a.slice(0,w)+pa+a.slice(w)+_t+m):a+_t+(w===-2?d:m)}return[ga(o,s+(o[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),i]};class Xo{constructor({strings:t,_$litType$:e},i){let r;this.parts=[];let s=0,n=0;const d=t.length-1,a=this.parts,[c,u]=j1(t,e);if(this.el=Xo.createElement(c,i),Le.currentNode=this.el.content,e===2||e===3){const w=this.el.content.firstChild;w.replaceWith(...w.childNodes)}for(;(r=Le.nextNode())!==null&&a.length<d;){if(r.nodeType===1){if(r.hasAttributes())for(const w of r.getAttributeNames())if(w.endsWith(pa)){const C=u[n++],m=r.getAttribute(w).split(_t),S=/([.?@])?(.*)/.exec(C);a.push({type:1,index:s,name:S[2],strings:m,ctor:S[1]==="."?L1:S[1]==="?"?S1:S[1]==="@"?H1:Dr}),r.removeAttribute(w)}else w.startsWith(_t)&&(a.push({type:6,index:s}),r.removeAttribute(w));if(wa.test(r.tagName)){const w=r.textContent.split(_t),C=w.length-1;if(C>0){r.textContent=jr?jr.emptyScript:"";for(let m=0;m<C;m++)r.append(w[m],Wo()),Le.nextNode(),a.push({type:2,index:++s});r.append(w[C],Wo())}}}else if(r.nodeType===8)if(r.data===ua)a.push({type:2,index:s});else{let w=-1;for(;(w=r.data.indexOf(_t,w+1))!==-1;)a.push({type:7,index:s}),w+=_t.length-1}s++}}static createElement(t,e){const i=Re.createElement("template");return i.innerHTML=t,i}}function bo(o,t,e=o,i){if(t===Ve)return t;let r=i!==void 0?e._$Co?.[i]:e._$Cl;const s=Ko(t)?void 0:t._$litDirective$;return r?.constructor!==s&&(r?._$AO?.(!1),s===void 0?r=void 0:(r=new s(o),r._$AT(o,e,i)),i!==void 0?(e._$Co??(e._$Co=[]))[i]=r:e._$Cl=r),r!==void 0&&(t=bo(o,r._$AS(o,t.values),r,i)),t}class A1{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:e},parts:i}=this._$AD,r=(t?.creationScope??Re).importNode(e,!0);Le.currentNode=r;let s=Le.nextNode(),n=0,d=0,a=i[0];for(;a!==void 0;){if(n===a.index){let c;a.type===2?c=new Qo(s,s.nextSibling,this,t):a.type===1?c=new a.ctor(s,a.name,a.strings,this,t):a.type===6&&(c=new R1(s,this,t)),this._$AV.push(c),a=i[++d]}n!==a?.index&&(s=Le.nextNode(),n++)}return Le.currentNode=Re,r}p(t){let e=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class Qo{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,i,r){this.type=2,this._$AH=k,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=r,this._$Cv=r?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=bo(this,t,e),Ko(t)?t===k||t==null||t===""?(this._$AH!==k&&this._$AR(),this._$AH=k):t!==this._$AH&&t!==Ve&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):C1(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==k&&Ko(this._$AH)?this._$AA.nextSibling.data=t:this.T(Re.createTextNode(t)),this._$AH=t}$(t){const{values:e,_$litType$:i}=t,r=typeof i=="number"?this._$AC(t):(i.el===void 0&&(i.el=Xo.createElement(ga(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===r)this._$AH.p(e);else{const s=new A1(r,this),n=s.u(this.options);s.p(e),this.T(n),this._$AH=s}}_$AC(t){let e=zs.get(t.strings);return e===void 0&&zs.set(t.strings,e=new Xo(t)),e}k(t){es(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,r=0;for(const s of t)r===e.length?e.push(i=new Qo(this.O(Wo()),this.O(Wo()),this,this.options)):i=e[r],i._$AI(s),r++;r<e.length&&(this._$AR(i&&i._$AB.nextSibling,r),e.length=r)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){const i=As(t).nextSibling;As(t).remove(),t=i}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}}class Dr{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,i,r,s){this.type=1,this._$AH=k,this._$AN=void 0,this.element=t,this.name=e,this._$AM=r,this.options=s,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=k}_$AI(t,e=this,i,r){const s=this.strings;let n=!1;if(s===void 0)t=bo(this,t,e,0),n=!Ko(t)||t!==this._$AH&&t!==Ve,n&&(this._$AH=t);else{const d=t;let a,c;for(t=s[0],a=0;a<s.length-1;a++)c=bo(this,d[i+a],e,a),c===Ve&&(c=this._$AH[a]),n||(n=!Ko(c)||c!==this._$AH[a]),c===k?t=k:t!==k&&(t+=(c??"")+s[a+1]),this._$AH[a]=c}n&&!r&&this.j(t)}j(t){t===k?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}}class L1 extends Dr{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===k?void 0:t}}class S1 extends Dr{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==k)}}class H1 extends Dr{constructor(t,e,i,r,s){super(t,e,i,r,s),this.type=5}_$AI(t,e=this){if((t=bo(this,t,e,0)??k)===Ve)return;const i=this._$AH,r=t===k&&i!==k||t.capture!==i.capture||t.once!==i.once||t.passive!==i.passive,s=t!==k&&(i===k||r);r&&this.element.removeEventListener(this.name,this,i),s&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}}class R1{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){bo(this,t)}}const V1=Oo.litHtmlPolyfillSupport;V1?.(Xo,Qo),(Oo.litHtmlVersions??(Oo.litHtmlVersions=[])).push("3.3.2");const z1=(o,t,e)=>{const i=e?.renderBefore??t;let r=i._$litPart$;if(r===void 0){const s=e?.renderBefore??null;i._$litPart$=r=new Qo(t.insertBefore(Wo(),s),s,void 0,e??{})}return r._$AI(o),r};const Io=globalThis;let Xt=class extends We{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var e;const t=super.createRenderRoot();return(e=this.renderOptions).renderBefore??(e.renderBefore=t.firstChild),t}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=z1(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Ve}};Xt._$litElement$=!0,Xt.finalized=!0,Io.litElementHydrateSupport?.({LitElement:Xt});const $1=Io.litElementPolyfillSupport;$1?.({LitElement:Xt});(Io.litElementVersions??(Io.litElementVersions=[])).push("4.2.2");const U1=o=>(t,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(o,t)}):customElements.define(o,t)};const D1={attribute:!0,type:String,converter:Br,reflect:!1,hasChanged:ts},F1=(o=D1,t,e)=>{const{kind:i,metadata:r}=e;let s=globalThis.litPropertyMetadata.get(r);if(s===void 0&&globalThis.litPropertyMetadata.set(r,s=new Map),i==="setter"&&((o=Object.create(o)).wrapped=!0),s.set(e.name,o),i==="accessor"){const{name:n}=e;return{set(d){const a=t.get.call(this);t.set.call(this,d),this.requestUpdate(n,a,o,!0,d)},init(d){return d!==void 0&&this.C(n,void 0,o,d),d}}}if(i==="setter"){const{name:n}=e;return function(d){const a=this[n];t.call(this,d),this.requestUpdate(n,a,o,!0,d)}}throw Error("Unsupported decorator location: "+i)};function h(o){return(t,e)=>typeof e=="object"?F1(o,t,e):((i,r,s)=>{const n=r.hasOwnProperty(s);return r.constructor.createProperty(s,i),n?Object.getOwnPropertyDescriptor(r,s):void 0})(o,t,e)}function O(o){return h({...o,state:!0,attribute:!1})}const P1=(o,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(o,t,e),e);function Fr(o,t){return(e,i,r)=>{const s=n=>n.renderRoot?.querySelector(o)??null;return P1(e,i,{get(){return s(this)}})}}const va={CHILD:2},ka=o=>(...t)=>({_$litDirective$:o,values:t});class ma{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}let Ci=class extends ma{constructor(t){if(super(t),this.it=k,t.type!==va.CHILD)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(t){if(t===k||t==null)return this._t=void 0,this.it=t;if(t===Ve)return t;if(typeof t!="string")throw Error(this.constructor.directiveName+"() called with a non-string value");if(t===this.it)return this._t;this.it=t;const e=[t];return e.raw=e,this._t={_$litType$:this.constructor.resultType,strings:e,values:[]}}};Ci.directiveName="unsafeHTML",Ci.resultType=1;class Bi extends Ci{}Bi.directiveName="unsafeSVG",Bi.resultType=2;const E1=ka(Bi),os=new Map,Xr=new Map;function T1(o){Object.entries(o).forEach(([t,e])=>{os.set(t,e)})}function Y1(o){return os.get(o)}function O1(o){return os.has(o)}async function I1(o){if(Xr.has(o))return Xr.get(o);const t=await fetch(o);if(!t.ok)throw new Error(`Failed to load icon from ${o}: ${t.statusText}`);const e=await t.text();return Xr.set(o,e),e}var q1=Object.defineProperty,N1=Object.getOwnPropertyDescriptor,ke=(o,t,e,i)=>{for(var r=i>1?void 0:i?N1(t,e):t,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=(i?n(t,e,r):n(r))||r);return i&&r&&q1(t,e,r),r};const $s={xs:"12px",sm:"14px",md:"16px",lg:"20px",xl:"24px"};let mt=class extends Xt{constructor(){super(...arguments),this.name="",this.src="",this.size="md",this.spin=!1,this.rotate=0,this.svgContent=""}willUpdate(o){(o.has("name")||o.has("src"))&&this.loadIcon()}async loadIcon(){if(this.name){O1(this.name)?(this.svgContent=Y1(this.name),this.dispatchEvent(new CustomEvent("ik-load",{detail:{name:this.name},bubbles:!1}))):(this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{name:this.name,error:"Icon not registered"},bubbles:!1})));return}if(this.src){try{this.svgContent=await I1(this.src),this.dispatchEvent(new CustomEvent("ik-load",{detail:{src:this.src},bubbles:!1}))}catch(o){this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{src:this.src,error:String(o)},bubbles:!1}))}return}this.svgContent=""}get sizeValue(){return typeof this.size=="number"?`${this.size}px`:$s[this.size]||$s.md}get iconStyle(){const o=[];return o.push(`width: ${this.sizeValue}`),o.push(`height: ${this.sizeValue}`),this.color&&o.push(`color: ${this.color}`),this.rotate&&!this.spin&&o.push(`transform: rotate(${this.rotate}deg)`),o.join("; ")}render(){return this.svgContent?p`
+import{F as T,h as l,L as Kr,R as $r,a as d1,d as a0,u as d0,b as h1,c as c1,e as p1}from"./vendor-CbFPICe_.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function e(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(r){if(r.ep)return;r.ep=!0;const s=e(r);fetch(r.href,s)}})();const br=globalThis,Qi=br.ShadowRoot&&(br.ShadyCSS===void 0||br.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,ts=Symbol(),Cs=new WeakMap;let h0=class{constructor(t,e,i){if(this._$cssResult$=!0,i!==ts)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if(Qi&&t===void 0){const i=e!==void 0&&e.length===1;i&&(t=Cs.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),i&&Cs.set(e,t))}return t}toString(){return this.cssText}};const u1=o=>new h0(typeof o=="string"?o:o+"",void 0,ts),j=(o,...t)=>{const e=o.length===1?o[0]:t.reduce((i,r,s)=>i+(n=>{if(n._$cssResult$===!0)return n.cssText;if(typeof n=="number")return n;throw Error("Value passed to 'css' function must be a 'css' function result: "+n+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(r)+o[s+1],o[0]);return new h0(e,o,ts)},w1=(o,t)=>{if(Qi)o.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const e of t){const i=document.createElement("style"),r=br.litNonce;r!==void 0&&i.setAttribute("nonce",r),i.textContent=e.cssText,o.appendChild(i)}},Bs=Qi?o=>o:o=>o instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return u1(e)})(o):o;const{is:g1,defineProperty:v1,getOwnPropertyDescriptor:k1,getOwnPropertyNames:m1,getOwnPropertySymbols:x1,getPrototypeOf:f1}=Object,Xt=globalThis,js=Xt.trustedTypes,M1=js?js.emptyScript:"",y1=Xt.reactiveElementPolyfillSupport,To=(o,t)=>o,jr={toAttribute(o,t){switch(t){case Boolean:o=o?M1:null;break;case Object:case Array:o=o==null?o:JSON.stringify(o)}return o},fromAttribute(o,t){let e=o;switch(t){case Boolean:e=o!==null;break;case Number:e=o===null?null:Number(o);break;case Object:case Array:try{e=JSON.parse(o)}catch{e=null}}return e}},es=(o,t)=>!g1(o,t),As={attribute:!0,type:String,converter:jr,reflect:!1,useDefault:!1,hasChanged:es};Symbol.metadata??(Symbol.metadata=Symbol("metadata")),Xt.litPropertyMetadata??(Xt.litPropertyMetadata=new WeakMap);let We=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??(this.l=[])).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=As){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){const i=Symbol(),r=this.getPropertyDescriptor(t,i,e);r!==void 0&&v1(this.prototype,t,r)}}static getPropertyDescriptor(t,e,i){const{get:r,set:s}=k1(this.prototype,t)??{get(){return this[e]},set(n){this[e]=n}};return{get:r,set(n){const d=r?.call(this);s?.call(this,n),this.requestUpdate(t,d,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??As}static _$Ei(){if(this.hasOwnProperty(To("elementProperties")))return;const t=f1(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(To("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(To("properties"))){const e=this.properties,i=[...m1(e),...x1(e)];for(const r of i)this.createProperty(r,e[r])}const t=this[Symbol.metadata];if(t!==null){const e=litPropertyMetadata.get(t);if(e!==void 0)for(const[i,r]of e)this.elementProperties.set(i,r)}this._$Eh=new Map;for(const[e,i]of this.elementProperties){const r=this._$Eu(e,i);r!==void 0&&this._$Eh.set(r,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const r of i)e.unshift(Bs(r))}else t!==void 0&&e.push(Bs(t));return e}static _$Eu(t,e){const i=e.attribute;return i===!1?void 0:typeof i=="string"?i:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??(this._$EO=new Set)).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){const t=new Map,e=this.constructor.elementProperties;for(const i of e.keys())this.hasOwnProperty(i)&&(t.set(i,this[i]),delete this[i]);t.size>0&&(this._$Ep=t)}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return w1(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$ET(t,e){const i=this.constructor.elementProperties.get(t),r=this.constructor._$Eu(t,i);if(r!==void 0&&i.reflect===!0){const s=(i.converter?.toAttribute!==void 0?i.converter:jr).toAttribute(e,i.type);this._$Em=t,s==null?this.removeAttribute(r):this.setAttribute(r,s),this._$Em=null}}_$AK(t,e){const i=this.constructor,r=i._$Eh.get(t);if(r!==void 0&&this._$Em!==r){const s=i.getPropertyOptions(r),n=typeof s.converter=="function"?{fromAttribute:s.converter}:s.converter?.fromAttribute!==void 0?s.converter:jr;this._$Em=r;const d=n.fromAttribute(e,s.type);this[r]=d??this._$Ej?.get(r)??d,this._$Em=null}}requestUpdate(t,e,i,r=!1,s){if(t!==void 0){const n=this.constructor;if(r===!1&&(s=this[t]),i??(i=n.getPropertyOptions(t)),!((i.hasChanged??es)(s,e)||i.useDefault&&i.reflect&&s===this._$Ej?.get(t)&&!this.hasAttribute(n._$Eu(t,i))))return;this.C(t,e,i)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:i,reflect:r,wrapped:s},n){i&&!(this._$Ej??(this._$Ej=new Map)).has(t)&&(this._$Ej.set(t,n??e??this[t]),s!==!0||n!==void 0)||(this._$AL.has(t)||(this.hasUpdated||i||(e=void 0),this._$AL.set(t,e)),r===!0&&this._$Em!==t&&(this._$Eq??(this._$Eq=new Set)).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??(this.renderRoot=this.createRenderRoot()),this._$Ep){for(const[r,s]of this._$Ep)this[r]=s;this._$Ep=void 0}const i=this.constructor.elementProperties;if(i.size>0)for(const[r,s]of i){const{wrapped:n}=s,d=this[r];n!==!0||this._$AL.has(r)||d===void 0||this.C(r,void 0,s,d)}}let t=!1;const e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(i=>i.hostUpdate?.()),this.update(e)):this._$EM()}catch(i){throw t=!1,this._$EM(),i}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&(this._$Eq=this._$Eq.forEach(e=>this._$ET(e,this[e]))),this._$EM()}updated(t){}firstUpdated(t){}};We.elementStyles=[],We.shadowRootOptions={mode:"open"},We[To("elementProperties")]=new Map,We[To("finalized")]=new Map,y1?.({ReactiveElement:We}),(Xt.reactiveElementVersions??(Xt.reactiveElementVersions=[])).push("2.1.2");const Oo=globalThis,Rs=o=>o,Ar=Oo.trustedTypes,Ls=Ar?Ar.createPolicy("lit-html",{createHTML:o=>o}):void 0,c0="$lit$",Zt=`lit$${Math.random().toFixed(9).slice(2)}$`,p0="?"+Zt,b1=`<${p0}>`,Ye=document,Wo=()=>Ye.createComment(""),Ko=o=>o===null||typeof o!="object"&&typeof o!="function",os=Array.isArray,C1=o=>os(o)||typeof o?.[Symbol.iterator]=="function",Xr=`[ 	
+\f\r]`,Do=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Ss=/-->/g,Hs=/>/g,Be=RegExp(`>|${Xr}(?:([^\\s"'>=/]+)(${Xr}*=${Xr}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),Ys=/'/g,Us=/"/g,u0=/^(?:script|style|textarea|title)$/i,B1=o=>(t,...e)=>({_$litType$:o,strings:t,values:e}),u=B1(1),Ue=Symbol.for("lit-noChange"),k=Symbol.for("lit-nothing"),Vs=new WeakMap,Le=Ye.createTreeWalker(Ye,129);function w0(o,t){if(!os(o)||!o.hasOwnProperty("raw"))throw Error("invalid template strings array");return Ls!==void 0?Ls.createHTML(t):t}const j1=(o,t)=>{const e=o.length-1,i=[];let r,s=t===2?"<svg>":t===3?"<math>":"",n=Do;for(let d=0;d<e;d++){const a=o[d];let c,p,w=-1,C=0;for(;C<a.length&&(n.lastIndex=C,p=n.exec(a),p!==null);)C=n.lastIndex,n===Do?p[1]==="!--"?n=Ss:p[1]!==void 0?n=Hs:p[2]!==void 0?(u0.test(p[2])&&(r=RegExp("</"+p[2],"g")),n=Be):p[3]!==void 0&&(n=Be):n===Be?p[0]===">"?(n=r??Do,w=-1):p[1]===void 0?w=-2:(w=n.lastIndex-p[2].length,c=p[1],n=p[3]===void 0?Be:p[3]==='"'?Us:Ys):n===Us||n===Ys?n=Be:n===Ss||n===Hs?n=Do:(n=Be,r=void 0);const m=n===Be&&o[d+1].startsWith("/>")?" ":"";s+=n===Do?a+b1:w>=0?(i.push(c),a.slice(0,w)+c0+a.slice(w)+Zt+m):a+Zt+(w===-2?d:m)}return[w0(o,s+(o[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),i]};class Xo{constructor({strings:t,_$litType$:e},i){let r;this.parts=[];let s=0,n=0;const d=t.length-1,a=this.parts,[c,p]=j1(t,e);if(this.el=Xo.createElement(c,i),Le.currentNode=this.el.content,e===2||e===3){const w=this.el.content.firstChild;w.replaceWith(...w.childNodes)}for(;(r=Le.nextNode())!==null&&a.length<d;){if(r.nodeType===1){if(r.hasAttributes())for(const w of r.getAttributeNames())if(w.endsWith(c0)){const C=p[n++],m=r.getAttribute(w).split(Zt),L=/([.?@])?(.*)/.exec(C);a.push({type:1,index:s,name:L[2],strings:m,ctor:L[1]==="."?R1:L[1]==="?"?L1:L[1]==="@"?S1:Dr}),r.removeAttribute(w)}else w.startsWith(Zt)&&(a.push({type:6,index:s}),r.removeAttribute(w));if(u0.test(r.tagName)){const w=r.textContent.split(Zt),C=w.length-1;if(C>0){r.textContent=Ar?Ar.emptyScript:"";for(let m=0;m<C;m++)r.append(w[m],Wo()),Le.nextNode(),a.push({type:2,index:++s});r.append(w[C],Wo())}}}else if(r.nodeType===8)if(r.data===p0)a.push({type:2,index:s});else{let w=-1;for(;(w=r.data.indexOf(Zt,w+1))!==-1;)a.push({type:7,index:s}),w+=Zt.length-1}s++}}static createElement(t,e){const i=Ye.createElement("template");return i.innerHTML=t,i}}function bo(o,t,e=o,i){if(t===Ue)return t;let r=i!==void 0?e._$Co?.[i]:e._$Cl;const s=Ko(t)?void 0:t._$litDirective$;return r?.constructor!==s&&(r?._$AO?.(!1),s===void 0?r=void 0:(r=new s(o),r._$AT(o,e,i)),i!==void 0?(e._$Co??(e._$Co=[]))[i]=r:e._$Cl=r),r!==void 0&&(t=bo(o,r._$AS(o,t.values),r,i)),t}class A1{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:e},parts:i}=this._$AD,r=(t?.creationScope??Ye).importNode(e,!0);Le.currentNode=r;let s=Le.nextNode(),n=0,d=0,a=i[0];for(;a!==void 0;){if(n===a.index){let c;a.type===2?c=new Qo(s,s.nextSibling,this,t):a.type===1?c=new a.ctor(s,a.name,a.strings,this,t):a.type===6&&(c=new H1(s,this,t)),this._$AV.push(c),a=i[++d]}n!==a?.index&&(s=Le.nextNode(),n++)}return Le.currentNode=Ye,r}p(t){let e=0;for(const i of this._$AV)i!==void 0&&(i.strings!==void 0?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class Qo{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,i,r){this.type=2,this._$AH=k,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=r,this._$Cv=r?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=bo(this,t,e),Ko(t)?t===k||t==null||t===""?(this._$AH!==k&&this._$AR(),this._$AH=k):t!==this._$AH&&t!==Ue&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):C1(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==k&&Ko(this._$AH)?this._$AA.nextSibling.data=t:this.T(Ye.createTextNode(t)),this._$AH=t}$(t){const{values:e,_$litType$:i}=t,r=typeof i=="number"?this._$AC(t):(i.el===void 0&&(i.el=Xo.createElement(w0(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===r)this._$AH.p(e);else{const s=new A1(r,this),n=s.u(this.options);s.p(e),this.T(n),this._$AH=s}}_$AC(t){let e=Vs.get(t.strings);return e===void 0&&Vs.set(t.strings,e=new Xo(t)),e}k(t){os(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,r=0;for(const s of t)r===e.length?e.push(i=new Qo(this.O(Wo()),this.O(Wo()),this,this.options)):i=e[r],i._$AI(s),r++;r<e.length&&(this._$AR(i&&i._$AB.nextSibling,r),e.length=r)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){const i=Rs(t).nextSibling;Rs(t).remove(),t=i}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}}class Dr{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,i,r,s){this.type=1,this._$AH=k,this._$AN=void 0,this.element=t,this.name=e,this._$AM=r,this.options=s,i.length>2||i[0]!==""||i[1]!==""?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=k}_$AI(t,e=this,i,r){const s=this.strings;let n=!1;if(s===void 0)t=bo(this,t,e,0),n=!Ko(t)||t!==this._$AH&&t!==Ue,n&&(this._$AH=t);else{const d=t;let a,c;for(t=s[0],a=0;a<s.length-1;a++)c=bo(this,d[i+a],e,a),c===Ue&&(c=this._$AH[a]),n||(n=!Ko(c)||c!==this._$AH[a]),c===k?t=k:t!==k&&(t+=(c??"")+s[a+1]),this._$AH[a]=c}n&&!r&&this.j(t)}j(t){t===k?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}}class R1 extends Dr{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===k?void 0:t}}class L1 extends Dr{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==k)}}class S1 extends Dr{constructor(t,e,i,r,s){super(t,e,i,r,s),this.type=5}_$AI(t,e=this){if((t=bo(this,t,e,0)??k)===Ue)return;const i=this._$AH,r=t===k&&i!==k||t.capture!==i.capture||t.once!==i.once||t.passive!==i.passive,s=t!==k&&(i===k||r);r&&this.element.removeEventListener(this.name,this,i),s&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}}class H1{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){bo(this,t)}}const Y1=Oo.litHtmlPolyfillSupport;Y1?.(Xo,Qo),(Oo.litHtmlVersions??(Oo.litHtmlVersions=[])).push("3.3.2");const U1=(o,t,e)=>{const i=e?.renderBefore??t;let r=i._$litPart$;if(r===void 0){const s=e?.renderBefore??null;i._$litPart$=r=new Qo(t.insertBefore(Wo(),s),s,void 0,e??{})}return r._$AI(o),r};const Io=globalThis;let Jt=class extends We{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var e;const t=super.createRenderRoot();return(e=this.renderOptions).renderBefore??(e.renderBefore=t.firstChild),t}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=U1(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Ue}};Jt._$litElement$=!0,Jt.finalized=!0,Io.litElementHydrateSupport?.({LitElement:Jt});const V1=Io.litElementPolyfillSupport;V1?.({LitElement:Jt});(Io.litElementVersions??(Io.litElementVersions=[])).push("4.2.2");const z1=o=>(t,e)=>{e!==void 0?e.addInitializer(()=>{customElements.define(o,t)}):customElements.define(o,t)};const $1={attribute:!0,type:String,converter:jr,reflect:!1,hasChanged:es},D1=(o=$1,t,e)=>{const{kind:i,metadata:r}=e;let s=globalThis.litPropertyMetadata.get(r);if(s===void 0&&globalThis.litPropertyMetadata.set(r,s=new Map),i==="setter"&&((o=Object.create(o)).wrapped=!0),s.set(e.name,o),i==="accessor"){const{name:n}=e;return{set(d){const a=t.get.call(this);t.set.call(this,d),this.requestUpdate(n,a,o,!0,d)},init(d){return d!==void 0&&this.C(n,void 0,o,d),d}}}if(i==="setter"){const{name:n}=e;return function(d){const a=this[n];t.call(this,d),this.requestUpdate(n,a,o,!0,d)}}throw Error("Unsupported decorator location: "+i)};function h(o){return(t,e)=>typeof e=="object"?D1(o,t,e):((i,r,s)=>{const n=r.hasOwnProperty(s);return r.constructor.createProperty(s,i),n?Object.getOwnPropertyDescriptor(r,s):void 0})(o,t,e)}function O(o){return h({...o,state:!0,attribute:!1})}const F1=(o,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(o,t,e),e);function Fr(o,t){return(e,i,r)=>{const s=n=>n.renderRoot?.querySelector(o)??null;return F1(e,i,{get(){return s(this)}})}}const g0={CHILD:2},v0=o=>(...t)=>({_$litDirective$:o,values:t});class k0{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}let Bi=class extends k0{constructor(t){if(super(t),this.it=k,t.type!==g0.CHILD)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(t){if(t===k||t==null)return this._t=void 0,this.it=t;if(t===Ue)return t;if(typeof t!="string")throw Error(this.constructor.directiveName+"() called with a non-string value");if(t===this.it)return this._t;this.it=t;const e=[t];return e.raw=e,this._t={_$litType$:this.constructor.resultType,strings:e,values:[]}}};Bi.directiveName="unsafeHTML",Bi.resultType=1;class ji extends Bi{}ji.directiveName="unsafeSVG",ji.resultType=2;const P1=v0(ji),rs=new Map,Jr=new Map;function E1(o){Object.entries(o).forEach(([t,e])=>{rs.set(t,e)})}function T1(o){return rs.get(o)}function O1(o){return rs.has(o)}async function I1(o){if(Jr.has(o))return Jr.get(o);const t=await fetch(o);if(!t.ok)throw new Error(`Failed to load icon from ${o}: ${t.statusText}`);const e=await t.text();return Jr.set(o,e),e}var q1=Object.defineProperty,N1=Object.getOwnPropertyDescriptor,me=(o,t,e,i)=>{for(var r=i>1?void 0:i?N1(t,e):t,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=(i?n(t,e,r):n(r))||r);return i&&r&&q1(t,e,r),r};const zs={xs:"12px",sm:"14px",md:"16px",lg:"20px",xl:"24px"};let mt=class extends Jt{constructor(){super(...arguments),this.name="",this.src="",this.size="md",this.spin=!1,this.rotate=0,this.svgContent=""}willUpdate(o){(o.has("name")||o.has("src"))&&this.loadIcon()}async loadIcon(){if(this.name){O1(this.name)?(this.svgContent=T1(this.name),this.dispatchEvent(new CustomEvent("ik-load",{detail:{name:this.name},bubbles:!1}))):(this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{name:this.name,error:"Icon not registered"},bubbles:!1})));return}if(this.src){try{this.svgContent=await I1(this.src),this.dispatchEvent(new CustomEvent("ik-load",{detail:{src:this.src},bubbles:!1}))}catch(o){this.svgContent="",this.dispatchEvent(new CustomEvent("ik-error",{detail:{src:this.src,error:String(o)},bubbles:!1}))}return}this.svgContent=""}get sizeValue(){return typeof this.size=="number"?`${this.size}px`:zs[this.size]||zs.md}get iconStyle(){const o=[];return o.push(`width: ${this.sizeValue}`),o.push(`height: ${this.sizeValue}`),this.color&&o.push(`color: ${this.color}`),this.rotate&&!this.spin&&o.push(`transform: rotate(${this.rotate}deg)`),o.join("; ")}render(){return this.svgContent?u`
       <span
         part="icon"
         class="icon${this.spin?" icon-spin":""}"
@@ -8,9 +8,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         role="img"
         aria-label="${this.name||"icon"}"
       >
-        ${E1(this.svgContent)}
+        ${P1(this.svgContent)}
       </span>
-    `:p`
+    `:u`
         <span
           part="icon"
           style="${this.iconStyle}"
@@ -53,7 +53,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         transform: rotate(360deg);
       }
     }
-  `;ke([h({type:String})],mt.prototype,"name",2);ke([h({type:String})],mt.prototype,"src",2);ke([h()],mt.prototype,"size",2);ke([h({type:String})],mt.prototype,"color",2);ke([h({type:Boolean})],mt.prototype,"spin",2);ke([h({type:Number})],mt.prototype,"rotate",2);ke([O()],mt.prototype,"svgContent",2);mt=ke([U1("ik-icon")],mt);const _1=`
+  `;me([h({type:String})],mt.prototype,"name",2);me([h({type:String})],mt.prototype,"src",2);me([h()],mt.prototype,"size",2);me([h({type:String})],mt.prototype,"color",2);me([h({type:Boolean})],mt.prototype,"spin",2);me([h({type:Number})],mt.prototype,"rotate",2);me([O()],mt.prototype,"svgContent",2);mt=me([z1("ik-icon")],mt);const _1=`
 <svg
   class="lucide lucide-a-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" />
   <path d="m12 15 5 6H7Z" />
 </svg>
-`;const Us=`
+`;const $s=`
 <svg
   class="lucide lucide-alarm-clock-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -757,7 +757,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 12h3" />
   <path d="M17.5 12a8 8 0 0 1-8 8A4.5 4.5 0 0 1 5 15.5c0-6 8-4 8-8.5a3 3 0 1 0-6 0c0 3 2.5 8.5 12 13" />
 </svg>
-`;const Ld=`
+`;const Rd=`
 <svg
   class="lucide lucide-ampersands"
   xmlns="http://www.w3.org/2000/svg"
@@ -773,7 +773,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 17c-5-3-7-7-7-9a2 2 0 0 1 4 0c0 2.5-5 2.5-5 6 0 1.7 1.3 3 3 3 2.8 0 5-2.2 5-5" />
   <path d="M22 17c-5-3-7-7-7-9a2 2 0 0 1 4 0c0 2.5-5 2.5-5 6 0 1.7 1.3 3 3 3 2.8 0 5-2.2 5-5" />
 </svg>
-`;const Sd=`
+`;const Ld=`
 <svg
   class="lucide lucide-anchor"
   xmlns="http://www.w3.org/2000/svg"
@@ -791,7 +791,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 11h6" />
   <circle cx="12" cy="4" r="2" />
 </svg>
-`;const Hd=`
+`;const Sd=`
 <svg
   class="lucide lucide-annoyed"
   xmlns="http://www.w3.org/2000/svg"
@@ -809,7 +809,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 9h2" />
   <path d="M14 9h2" />
 </svg>
-`;const Rd=`
+`;const Hd=`
 <svg
   class="lucide lucide-angry"
   xmlns="http://www.w3.org/2000/svg"
@@ -829,7 +829,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 10h.01" />
   <path d="M15 10h.01" />
 </svg>
-`;const Vd=`
+`;const Yd=`
 <svg
   class="lucide lucide-antenna"
   xmlns="http://www.w3.org/2000/svg"
@@ -849,7 +849,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4.5 7h15" />
   <path d="M12 16v6" />
 </svg>
-`;const zd=`
+`;const Ud=`
 <svg
   class="lucide lucide-anvil"
   xmlns="http://www.w3.org/2000/svg"
@@ -868,7 +868,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 12v5" />
   <path d="M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3 1 1 0 0 1-1 1H6a1 1 0 0 1-1-1" />
 </svg>
-`;const $d=`
+`;const Vd=`
 <svg
   class="lucide lucide-aperture"
   xmlns="http://www.w3.org/2000/svg"
@@ -889,7 +889,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14.31 16H2.83" />
   <path d="m16.62 12-5.74 9.94" />
 </svg>
-`;const Ud=`
+`;const zd=`
 <svg
   class="lucide lucide-app-window-mac"
   xmlns="http://www.w3.org/2000/svg"
@@ -907,7 +907,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 8h.01" />
   <path d="M14 8h.01" />
 </svg>
-`;const Dd=`
+`;const $d=`
 <svg
   class="lucide lucide-app-window"
   xmlns="http://www.w3.org/2000/svg"
@@ -925,7 +925,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 8h20" />
   <path d="M6 4v4" />
 </svg>
-`;const Fd=`
+`;const Dd=`
 <svg
   class="lucide lucide-apple"
   xmlns="http://www.w3.org/2000/svg"
@@ -941,7 +941,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 6.528V3a1 1 0 0 1 1-1h0" />
   <path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21" />
 </svg>
-`;const Pd=`
+`;const Fd=`
 <svg
   class="lucide lucide-archive-restore"
   xmlns="http://www.w3.org/2000/svg"
@@ -960,7 +960,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9 15 3-3 3 3" />
   <path d="M12 12v9" />
 </svg>
-`;const Ed=`
+`;const Pd=`
 <svg
   class="lucide lucide-archive-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -978,7 +978,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9.5 17 5-5" />
   <path d="m9.5 12 5 5" />
 </svg>
-`;const Td=`
+`;const Ed=`
 <svg
   class="lucide lucide-archive"
   xmlns="http://www.w3.org/2000/svg"
@@ -995,7 +995,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
   <path d="M10 12h4" />
 </svg>
-`;const Yd=`
+`;const Td=`
 <svg
   class="lucide lucide-armchair"
   xmlns="http://www.w3.org/2000/svg"
@@ -1542,7 +1542,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 10h4" />
   <rect x="15" y="14" width="4" height="6" ry="2" />
 </svg>
-`;const Ys=`
+`;const Os=`
 <svg
   class="lucide lucide-arrow-up-a-z"
   xmlns="http://www.w3.org/2000/svg"
@@ -1629,7 +1629,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 17V7h10" />
   <path d="M17 17 7 7" />
 </svg>
-`;const Os=`
+`;const Is=`
 <svg
   class="lucide lucide-arrow-up-narrow-wide"
   xmlns="http://www.w3.org/2000/svg"
@@ -1700,7 +1700,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11 16h7" />
   <path d="M11 20h4" />
 </svg>
-`;const Is=`
+`;const qs=`
 <svg
   class="lucide lucide-arrow-up-z-a"
   xmlns="http://www.w3.org/2000/svg"
@@ -1804,7 +1804,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z" />
   <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z" />
 </svg>
-`;const Lh=`
+`;const Rh=`
 <svg
   class="lucide lucide-audio-lines"
   xmlns="http://www.w3.org/2000/svg"
@@ -1824,7 +1824,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 5v13" />
   <path d="M22 10v3" />
 </svg>
-`;const Sh=`
+`;const Lh=`
 <svg
   class="lucide lucide-audio-waveform"
   xmlns="http://www.w3.org/2000/svg"
@@ -1839,7 +1839,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2" />
 </svg>
-`;const Hh=`
+`;const Sh=`
 <svg
   class="lucide lucide-award"
   xmlns="http://www.w3.org/2000/svg"
@@ -1855,7 +1855,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
   <circle cx="12" cy="8" r="6" />
 </svg>
-`;const Rh=`
+`;const Hh=`
 <svg
   class="lucide lucide-axe"
   xmlns="http://www.w3.org/2000/svg"
@@ -1871,7 +1871,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 12-8.381 8.38a1 1 0 0 1-3.001-3L11 9" />
   <path d="M15 15.5a.5.5 0 0 0 .5.5A6.5 6.5 0 0 0 22 9.5a.5.5 0 0 0-.5-.5h-1.672a2 2 0 0 1-1.414-.586l-5.062-5.062a1.205 1.205 0 0 0-1.704 0L9.352 5.648a1.205 1.205 0 0 0 0 1.704l5.062 5.062A2 2 0 0 1 15 13.828z" />
 </svg>
-`;const qs=`
+`;const Ns=`
 <svg
   class="lucide lucide-axis-3d"
   xmlns="http://www.w3.org/2000/svg"
@@ -1889,7 +1889,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4.293 19.707 6 18" />
   <path d="m9 15 1.5-1.5" />
 </svg>
-`;const Vh=`
+`;const Yh=`
 <svg
   class="lucide lucide-baby"
   xmlns="http://www.w3.org/2000/svg"
@@ -1907,7 +1907,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1" />
   <path d="M9 12h.01" />
 </svg>
-`;const zh=`
+`;const Uh=`
 <svg
   class="lucide lucide-backpack"
   xmlns="http://www.w3.org/2000/svg"
@@ -1926,7 +1926,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" />
   <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
 </svg>
-`;const $h=`
+`;const Vh=`
 <svg
   class="lucide lucide-badge-cent"
   xmlns="http://www.w3.org/2000/svg"
@@ -1943,7 +1943,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 7v10" />
   <path d="M15.4 10a4 4 0 1 0 0 4" />
 </svg>
-`;const Uh=`
+`;const zh=`
 <svg
   class="lucide lucide-badge-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -1960,7 +1960,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="8" y2="12" />
   <line x1="12" x2="12.01" y1="16" y2="16" />
 </svg>
-`;const Ns=`
+`;const _s=`
 <svg
   class="lucide lucide-badge-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -1976,7 +1976,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
   <path d="m9 12 2 2 4-4" />
 </svg>
-`;const Dh=`
+`;const $h=`
 <svg
   class="lucide lucide-badge-dollar-sign"
   xmlns="http://www.w3.org/2000/svg"
@@ -1993,7 +1993,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
   <path d="M12 18V6" />
 </svg>
-`;const Fh=`
+`;const Dh=`
 <svg
   class="lucide lucide-badge-euro"
   xmlns="http://www.w3.org/2000/svg"
@@ -2010,7 +2010,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 12h5" />
   <path d="M15 9.4a4 4 0 1 0 0 5.2" />
 </svg>
-`;const Ph=`
+`;const Fh=`
 <svg
   class="lucide lucide-badge-indian-rupee"
   xmlns="http://www.w3.org/2000/svg"
@@ -2028,7 +2028,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 12h8" />
   <path d="m13 17-5-1h1a4 4 0 0 0 0-8" />
 </svg>
-`;const Eh=`
+`;const Ph=`
 <svg
   class="lucide lucide-badge-info"
   xmlns="http://www.w3.org/2000/svg"
@@ -2045,7 +2045,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="16" y2="12" />
   <line x1="12" x2="12.01" y1="8" y2="8" />
 </svg>
-`;const Th=`
+`;const Eh=`
 <svg
   class="lucide lucide-badge-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2061,7 +2061,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
   <line x1="8" x2="16" y1="12" y2="12" />
 </svg>
-`;const Yh=`
+`;const Th=`
 <svg
   class="lucide lucide-badge-japanese-yen"
   xmlns="http://www.w3.org/2000/svg"
@@ -2133,7 +2133,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 16V9.5a2.5 2.5 0 0 1 5 0" />
   <path d="M8 16h7" />
 </svg>
-`;const _s=`
+`;const Zs=`
 <svg
   class="lucide lucide-badge-question-mark"
   xmlns="http://www.w3.org/2000/svg"
@@ -2816,7 +2816,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 8h6" />
   <path d="M16.243 3.757A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673A9.4 9.4 0 0 1 18.667 12" />
 </svg>
-`;const Lc=`
+`;const Rc=`
 <svg
   class="lucide lucide-bell-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -2834,7 +2834,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M8.668 3.01A6 6 0 0 1 18 8c0 2.687.77 4.653 1.707 6.05" />
 </svg>
-`;const Sc=`
+`;const Lc=`
 <svg
   class="lucide lucide-bell-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -2852,7 +2852,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 5v6" />
   <path d="M20.002 14.464a9 9 0 0 0 .738.863A1 1 0 0 1 20 17H4a1 1 0 0 1-.74-1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 8.75-5.332" />
 </svg>
-`;const Hc=`
+`;const Sc=`
 <svg
   class="lucide lucide-bell-ring"
   xmlns="http://www.w3.org/2000/svg"
@@ -2870,7 +2870,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
   <path d="M4 2C2.8 3.7 2 5.7 2 8" />
 </svg>
-`;const Rc=`
+`;const Hc=`
 <svg
   class="lucide lucide-bell"
   xmlns="http://www.w3.org/2000/svg"
@@ -2886,7 +2886,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10.268 21a2 2 0 0 0 3.464 0" />
   <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
 </svg>
-`;const Zs=`
+`;const Gs=`
 <svg
   class="lucide lucide-between-horizontal-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -2903,7 +2903,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 15-3-3 3-3" />
   <rect width="13" height="7" x="3" y="14" rx="1" />
 </svg>
-`;const Gs=`
+`;const Ws=`
 <svg
   class="lucide lucide-between-horizontal-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -2920,7 +2920,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 9 3 3-3 3" />
   <rect width="13" height="7" x="8" y="14" rx="1" />
 </svg>
-`;const Vc=`
+`;const Yc=`
 <svg
   class="lucide lucide-between-vertical-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -2937,7 +2937,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9 22 3-3 3 3" />
   <rect width="7" height="13" x="14" y="3" rx="1" />
 </svg>
-`;const zc=`
+`;const Uc=`
 <svg
   class="lucide lucide-between-vertical-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -2954,7 +2954,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 2-3 3-3-3" />
   <rect width="7" height="13" x="14" y="8" rx="1" />
 </svg>
-`;const $c=`
+`;const Vc=`
 <svg
   class="lucide lucide-biceps-flexed"
   xmlns="http://www.w3.org/2000/svg"
@@ -2971,7 +2971,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 14a5 5 0 0 0-7.584 2" />
   <path d="M9.964 6.825C8.019 7.977 9.5 13 8 15" />
 </svg>
-`;const Uc=`
+`;const zc=`
 <svg
   class="lucide lucide-bike"
   xmlns="http://www.w3.org/2000/svg"
@@ -2989,7 +2989,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="15" cy="5" r="1" />
   <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
 </svg>
-`;const Dc=`
+`;const $c=`
 <svg
   class="lucide lucide-binary"
   xmlns="http://www.w3.org/2000/svg"
@@ -3009,7 +3009,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 14h2v6" />
   <path d="M14 4h2v6" />
 </svg>
-`;const Fc=`
+`;const Dc=`
 <svg
   class="lucide lucide-binoculars"
   xmlns="http://www.w3.org/2000/svg"
@@ -3029,7 +3029,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z" />
   <path d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3" />
 </svg>
-`;const Pc=`
+`;const Fc=`
 <svg
   class="lucide lucide-biohazard"
   xmlns="http://www.w3.org/2000/svg"
@@ -3053,7 +3053,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 16.4c.7-.7 1.2-1.6 1.5-2.5" />
   <path d="M5.5 13.9c.3.9.8 1.8 1.5 2.5" />
 </svg>
-`;const Ec=`
+`;const Pc=`
 <svg
   class="lucide lucide-bird"
   xmlns="http://www.w3.org/2000/svg"
@@ -3073,7 +3073,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 17.75V21" />
   <path d="M7 18a6 6 0 0 0 3.84-10.61" />
 </svg>
-`;const Tc=`
+`;const Ec=`
 <svg
   class="lucide lucide-birdhouse"
   xmlns="http://www.w3.org/2000/svg"
@@ -3093,7 +3093,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 18 5.044 6.532" />
   <circle cx="12" cy="10" r="2" />
 </svg>
-`;const Yc=`
+`;const Tc=`
 <svg
   class="lucide lucide-bitcoin"
   xmlns="http://www.w3.org/2000/svg"
@@ -3307,7 +3307,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 13 4-7 4 7" />
   <path d="M9.1 11h5.7" />
 </svg>
-`;const t4=`
+`;const tp=`
 <svg
   class="lucide lucide-book-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -3324,7 +3324,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 6v3" />
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const e4=`
+`;const ep=`
 <svg
   class="lucide lucide-book-audio"
   xmlns="http://www.w3.org/2000/svg"
@@ -3342,7 +3342,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M8 8v3" />
 </svg>
-`;const o4=`
+`;const op=`
 <svg
   class="lucide lucide-book-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -3358,7 +3358,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9 9.5 2 2 4-4" />
 </svg>
-`;const r4=`
+`;const rp=`
 <svg
   class="lucide lucide-book-copy"
   xmlns="http://www.w3.org/2000/svg"
@@ -3375,7 +3375,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5.803 18H5a2 2 0 0 0 0 4h9.5a.5.5 0 0 0 .5-.5V21" />
   <path d="M9 15V4a2 2 0 0 1 2-2h9.5a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5H11a2 2 0 0 1 0-4h10" />
 </svg>
-`;const Ws=`
+`;const Ks=`
 <svg
   class="lucide lucide-book-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -3400,7 +3400,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H8" />
   <path d="M8 22H6.5a1 1 0 0 1 0-5H8" />
 </svg>
-`;const i4=`
+`;const ip=`
 <svg
   class="lucide lucide-book-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -3417,7 +3417,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9 10 3 3 3-3" />
 </svg>
-`;const s4=`
+`;const sp=`
 <svg
   class="lucide lucide-book-headphones"
   xmlns="http://www.w3.org/2000/svg"
@@ -3435,7 +3435,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="15" cy="12" r="1" />
   <circle cx="9" cy="12" r="1" />
 </svg>
-`;const n4=`
+`;const np=`
 <svg
   class="lucide lucide-book-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -3451,7 +3451,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
 </svg>
-`;const l4=`
+`;const lp=`
 <svg
   class="lucide lucide-book-image"
   xmlns="http://www.w3.org/2000/svg"
@@ -3468,7 +3468,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <circle cx="10" cy="8" r="2" />
 </svg>
-`;const a4=`
+`;const ap=`
 <svg
   class="lucide lucide-book-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -3487,7 +3487,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2h7.844" />
   <circle cx="14" cy="8" r="2" />
 </svg>
-`;const d4=`
+`;const dp=`
 <svg
   class="lucide lucide-book-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -3505,7 +3505,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10" />
   <rect x="12" y="6" width="8" height="5" rx="1" />
 </svg>
-`;const h4=`
+`;const hp=`
 <svg
   class="lucide lucide-book-marked"
   xmlns="http://www.w3.org/2000/svg"
@@ -3521,7 +3521,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 2v8l3-3 3 3V2" />
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const c4=`
+`;const cp=`
 <svg
   class="lucide lucide-book-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3537,7 +3537,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M9 10h6" />
 </svg>
-`;const p4=`
+`;const pp=`
 <svg
   class="lucide lucide-book-open-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -3557,7 +3557,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 12h2" />
   <path d="M6 8h2" />
 </svg>
-`;const u4=`
+`;const up=`
 <svg
   class="lucide lucide-book-open-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -3574,7 +3574,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 12 2 2 4-4" />
   <path d="M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3" />
 </svg>
-`;const w4=`
+`;const wp=`
 <svg
   class="lucide lucide-book-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -3590,7 +3590,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 7v14" />
   <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
 </svg>
-`;const g4=`
+`;const gp=`
 <svg
   class="lucide lucide-book-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3607,7 +3607,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="M9 10h6" />
 </svg>
-`;const v4=`
+`;const vp=`
 <svg
   class="lucide lucide-book-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -3625,7 +3625,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 19.5v-15A2.5 2.5 0 0 1 5.5 2H18a1 1 0 0 1 1 1v8" />
   <circle cx="17" cy="18" r="3" />
 </svg>
-`;const k4=`
+`;const kp=`
 <svg
   class="lucide lucide-book-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -3642,7 +3642,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 11h8" />
   <path d="M8 7h6" />
 </svg>
-`;const m4=`
+`;const mp=`
 <svg
   class="lucide lucide-book-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -3660,7 +3660,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 8V6H8v2" />
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const x4=`
+`;const xp=`
 <svg
   class="lucide lucide-book-up-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -3679,7 +3679,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9 10 3-3 3 3" />
   <path d="m9 5 3-3 3 3" />
 </svg>
-`;const f4=`
+`;const fp=`
 <svg
   class="lucide lucide-book-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -3696,7 +3696,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9 10 3-3 3 3" />
 </svg>
-`;const M4=`
+`;const Mp=`
 <svg
   class="lucide lucide-book-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -3713,7 +3713,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <circle cx="12" cy="8" r="2" />
 </svg>
-`;const y4=`
+`;const yp=`
 <svg
   class="lucide lucide-book-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -3730,7 +3730,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
   <path d="m9.5 7 5 5" />
 </svg>
-`;const b4=`
+`;const bp=`
 <svg
   class="lucide lucide-bookmark-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -3746,7 +3746,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z" />
   <path d="m9 10 2 2 4-4" />
 </svg>
-`;const C4=`
+`;const Cp=`
 <svg
   class="lucide lucide-book"
   xmlns="http://www.w3.org/2000/svg"
@@ -3761,7 +3761,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
 </svg>
-`;const B4=`
+`;const Bp=`
 <svg
   class="lucide lucide-bookmark-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3777,7 +3777,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
   <line x1="15" x2="9" y1="10" y2="10" />
 </svg>
-`;const j4=`
+`;const jp=`
 <svg
   class="lucide lucide-bookmark-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -3794,7 +3794,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="7" y2="13" />
   <line x1="15" x2="9" y1="10" y2="10" />
 </svg>
-`;const A4=`
+`;const Ap=`
 <svg
   class="lucide lucide-bookmark-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -3811,7 +3811,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14.5 7.5-5 5" />
   <path d="m9.5 7.5 5 5" />
 </svg>
-`;const L4=`
+`;const Rp=`
 <svg
   class="lucide lucide-bookmark"
   xmlns="http://www.w3.org/2000/svg"
@@ -3826,7 +3826,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
 </svg>
-`;const S4=`
+`;const Lp=`
 <svg
   class="lucide lucide-boom-box"
   xmlns="http://www.w3.org/2000/svg"
@@ -3847,7 +3847,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="8" cy="15" r="2" />
   <circle cx="16" cy="15" r="2" />
 </svg>
-`;const H4=`
+`;const Sp=`
 <svg
   class="lucide lucide-bot-message-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -3867,7 +3867,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 16a2 2 0 0 1-2 2H8.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 4 20.286V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" />
   <path d="M9 11v2" />
 </svg>
-`;const R4=`
+`;const Hp=`
 <svg
   class="lucide lucide-bot-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -3887,7 +3887,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 8H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 1.414-.586" />
   <path d="M9 13v2" />
   <path d="M9.67 4H12v2.33" />
-</svg>`;const V4=`
+</svg>`;const Yp=`
 <svg
   class="lucide lucide-bot"
   xmlns="http://www.w3.org/2000/svg"
@@ -3907,7 +3907,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 13v2" />
   <path d="M9 13v2" />
 </svg>
-`;const z4=`
+`;const Up=`
 <svg
   class="lucide lucide-bottle-wine"
   xmlns="http://www.w3.org/2000/svg"
@@ -3923,7 +3923,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a6 6 0 0 0 1.2 3.6l.6.8A6 6 0 0 1 17 13v8a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-8a6 6 0 0 1 1.2-3.6l.6-.8A6 6 0 0 0 10 5z" />
   <path d="M17 13h-4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4" />
 </svg>
-`;const $4=`
+`;const Vp=`
 <svg
   class="lucide lucide-bow-arrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -3942,7 +3942,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 14a1.7 1.7 0 0 0-1.207.5l-2.646 2.646A.5.5 0 0 0 3.5 18H5a1 1 0 0 1 1 1v1.5a.5.5 0 0 0 .854.354L9.5 18.207A1.7 1.7 0 0 0 10 17v-2a1 1 0 0 0-1-1z" />
   <path d="M9.707 14.293 21 3" />
 </svg>
-`;const U4=`
+`;const zp=`
 <svg
   class="lucide lucide-box"
   xmlns="http://www.w3.org/2000/svg"
@@ -3959,7 +3959,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3.3 7 8.7 5 8.7-5" />
   <path d="M12 22V12" />
 </svg>
-`;const D4=`
+`;const $p=`
 <svg
   class="lucide lucide-boxes"
   xmlns="http://www.w3.org/2000/svg"
@@ -3985,7 +3985,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m12 8 4.74-2.85" />
   <path d="M12 13.5V8" />
 </svg>
-`;const Ks=`
+`;const Xs=`
 <svg
   class="lucide lucide-braces"
   xmlns="http://www.w3.org/2000/svg"
@@ -4001,7 +4001,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1" />
   <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1" />
 </svg>
-`;const F4=`
+`;const Dp=`
 <svg
   class="lucide lucide-brackets"
   xmlns="http://www.w3.org/2000/svg"
@@ -4017,7 +4017,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 3h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-3" />
   <path d="M8 21H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h3" />
 </svg>
-`;const P4=`
+`;const Fp=`
 <svg
   class="lucide lucide-brain-circuit"
   xmlns="http://www.w3.org/2000/svg"
@@ -4044,7 +4044,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="20" cy="21" r=".5" />
   <circle cx="20" cy="8" r=".5" />
 </svg>
-`;const E4=`
+`;const Pp=`
 <svg
   class="lucide lucide-brain-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -4073,7 +4073,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9.228 13.148-.923.383" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const T4=`
+`;const Ep=`
 <svg
   class="lucide lucide-brain"
   xmlns="http://www.w3.org/2000/svg"
@@ -4095,7 +4095,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 18a4 4 0 0 1-2-7.464" />
   <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
 </svg>
-`;const Y4=`
+`;const Tp=`
 <svg
   class="lucide lucide-brick-wall-fire"
   xmlns="http://www.w3.org/2000/svg"
@@ -4116,7 +4116,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 15v6" />
   <path d="M8 3v6" />
 </svg>
-`;const O4=`
+`;const Op=`
 <svg
   class="lucide lucide-brick-wall-shield"
   xmlns="http://www.w3.org/2000/svg"
@@ -4138,7 +4138,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 15v6" />
   <path d="M8 3v6" />
 </svg>
-`;const I4=`
+`;const Ip=`
 <svg
   class="lucide lucide-brick-wall"
   xmlns="http://www.w3.org/2000/svg"
@@ -4160,7 +4160,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 15v6" />
   <path d="M8 3v6" />
 </svg>
-`;const q4=`
+`;const qp=`
 <svg
   class="lucide lucide-briefcase-business"
   xmlns="http://www.w3.org/2000/svg"
@@ -4178,7 +4178,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 13a18.15 18.15 0 0 1-20 0" />
   <rect width="20" height="14" x="2" y="6" rx="2" />
 </svg>
-`;const N4=`
+`;const Np=`
 <svg
   class="lucide lucide-briefcase-medical"
   xmlns="http://www.w3.org/2000/svg"
@@ -4198,7 +4198,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 6v14" />
   <rect width="20" height="14" x="2" y="6" rx="2" />
 </svg>
-`;const _4=`
+`;const _p=`
 <svg
   class="lucide lucide-briefcase-conveyor-belt"
   xmlns="http://www.w3.org/2000/svg"
@@ -4219,7 +4219,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 16V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v12" />
   <rect x="4" y="6" width="16" height="10" rx="2" />
 </svg>
-`;const Z4=`
+`;const Zp=`
 <svg
   class="lucide lucide-briefcase"
   xmlns="http://www.w3.org/2000/svg"
@@ -4235,7 +4235,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
   <rect width="20" height="14" x="2" y="6" rx="2" />
 </svg>
-`;const G4=`
+`;const Gp=`
 <svg
   class="lucide lucide-bring-to-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -4252,7 +4252,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 10a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2" />
   <path d="M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2" />
 </svg>
-`;const W4=`
+`;const Wp=`
 <svg
   class="lucide lucide-brush-cleaning"
   xmlns="http://www.w3.org/2000/svg"
@@ -4270,7 +4270,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 14H5l-1.973 6.767A1 1 0 0 0 4 22h16a1 1 0 0 0 .973-1.233z" />
   <path d="m8 22 1-4" />
 </svg>
-`;const K4=`
+`;const Kp=`
 <svg
   class="lucide lucide-bubbles"
   xmlns="http://www.w3.org/2000/svg"
@@ -4288,7 +4288,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="7.5" cy="16.5" r="5.5" />
   <circle cx="7.5" cy="4.5" r="2.5" />
 </svg>
-`;const X4=`
+`;const Xp=`
 <svg
   class="lucide lucide-brush"
   xmlns="http://www.w3.org/2000/svg"
@@ -4305,7 +4305,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z" />
   <path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031" />
 </svg>
-`;const J4=`
+`;const Jp=`
 <svg
   class="lucide lucide-bug-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -4329,7 +4329,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 13H2" />
   <path d="M7.7 7.7A4 4 0 0 0 6 11v3a6 6 0 0 0 11.13 3.13" />
 </svg>
-`;const Q4=`
+`;const Qp=`
 <svg
   class="lucide lucide-bug-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -4352,7 +4352,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 2 1.88 1.88" />
   <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
 </svg>
-`;const tp=`
+`;const t4=`
 <svg
   class="lucide lucide-bug"
   xmlns="http://www.w3.org/2000/svg"
@@ -4377,7 +4377,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 2 1.88 1.88" />
   <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
 </svg>
-`;const ep=`
+`;const e4=`
 <svg
   class="lucide lucide-building-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4396,7 +4396,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
   <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
 </svg>
-`;const op=`
+`;const o4=`
 <svg
   class="lucide lucide-building"
   xmlns="http://www.w3.org/2000/svg"
@@ -4421,7 +4421,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
   <rect x="4" y="2" width="16" height="20" rx="2" />
 </svg>
-`;const rp=`
+`;const r4=`
 <svg
   class="lucide lucide-bus-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -4444,7 +4444,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 19v2" />
   <path d="M18 21v-2" />
 </svg>
-`;const ip=`
+`;const i4=`
 <svg
   class="lucide lucide-bus"
   xmlns="http://www.w3.org/2000/svg"
@@ -4465,7 +4465,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 18h5" />
   <circle cx="16" cy="18" r="2" />
 </svg>
-`;const sp=`
+`;const s4=`
 <svg
   class="lucide lucide-cable-car"
   xmlns="http://www.w3.org/2000/svg"
@@ -4487,7 +4487,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 12v5" />
   <path d="M4 17h16" />
 </svg>
-`;const np=`
+`;const n4=`
 <svg
   class="lucide lucide-cable"
   xmlns="http://www.w3.org/2000/svg"
@@ -4508,7 +4508,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 10a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2z" />
   <path d="M7 5V3" />
 </svg>
-`;const lp=`
+`;const l4=`
 <svg
   class="lucide lucide-cake-slice"
   xmlns="http://www.w3.org/2000/svg"
@@ -4526,7 +4526,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6" />
   <circle cx="9" cy="7" r="2" />
 </svg>
-`;const ap=`
+`;const a4=`
 <svg
   class="lucide lucide-cake"
   xmlns="http://www.w3.org/2000/svg"
@@ -4549,7 +4549,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 4h.01" />
   <path d="M17 4h.01" />
 </svg>
-`;const dp=`
+`;const d4=`
 <svg
   class="lucide lucide-calculator"
   xmlns="http://www.w3.org/2000/svg"
@@ -4573,7 +4573,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 18h.01" />
   <path d="M8 18h.01" />
 </svg>
-`;const hp=`
+`;const h4=`
 <svg
   class="lucide lucide-calendar-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -4592,7 +4592,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 2v4" />
   <rect x="3" y="4" width="18" height="18" rx="2" />
 </svg>
-`;const cp=`
+`;const c4=`
 <svg
   class="lucide lucide-calendar-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -4612,7 +4612,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const pp=`
+`;const p4=`
 <svg
   class="lucide lucide-calendar-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -4632,7 +4632,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const up=`
+`;const u4=`
 <svg
   class="lucide lucide-calendar-check-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4651,7 +4651,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="m16 20 2 2 4-4" />
 </svg>
-`;const wp=`
+`;const w4=`
 <svg
   class="lucide lucide-calendar-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -4670,7 +4670,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="m9 16 2 2 4-4" />
 </svg>
-`;const gp=`
+`;const g4=`
 <svg
   class="lucide lucide-calendar-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -4690,7 +4690,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 2v4" />
   <circle cx="16" cy="16" r="6" />
 </svg>
-`;const vp=`
+`;const v4=`
 <svg
   class="lucide lucide-calendar-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -4717,7 +4717,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 2v4" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const kp=`
+`;const k4=`
 <svg
   class="lucide lucide-calendar-days"
   xmlns="http://www.w3.org/2000/svg"
@@ -4741,7 +4741,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 18h.01" />
   <path d="M16 18h.01" />
 </svg>
-`;const mp=`
+`;const m4=`
 <svg
   class="lucide lucide-calendar-fold"
   xmlns="http://www.w3.org/2000/svg"
@@ -4760,7 +4760,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 2v4" />
   <path d="M3 10h18" />
 </svg>
-`;const xp=`
+`;const x4=`
 <svg
   class="lucide lucide-calendar-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -4779,7 +4779,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const fp=`
+`;const f4=`
 <svg
   class="lucide lucide-calendar-minus-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4798,7 +4798,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="M10 16h4" />
 </svg>
-`;const Mp=`
+`;const M4=`
 <svg
   class="lucide lucide-calendar-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -4817,7 +4817,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const yp=`
+`;const y4=`
 <svg
   class="lucide lucide-calendar-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -4837,7 +4837,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 10h-5.5" />
   <path d="m2 2 20 20" />
 </svg>
-`;const bp=`
+`;const b4=`
 <svg
   class="lucide lucide-calendar-plus-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4857,7 +4857,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 16h4" />
   <path d="M12 14v4" />
 </svg>
-`;const Cp=`
+`;const C4=`
 <svg
   class="lucide lucide-calendar-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -4877,7 +4877,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h18" />
   <path d="M8 2v4" />
 </svg>
-`;const Bp=`
+`;const B4=`
 <svg
   class="lucide lucide-calendar-range"
   xmlns="http://www.w3.org/2000/svg"
@@ -4899,7 +4899,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 14h.01" />
   <path d="M17 18h.01" />
 </svg>
-`;const jp=`
+`;const j4=`
 <svg
   class="lucide lucide-calendar-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -4919,7 +4919,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 2v4" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const Ap=`
+`;const A4=`
 <svg
   class="lucide lucide-calendar-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -4941,7 +4941,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10h4" />
   <path d="M8 2v4" />
 </svg>
-`;const Lp=`
+`;const R4=`
 <svg
   class="lucide lucide-calendar-x-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -4961,7 +4961,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 22 5-5" />
   <path d="m17 17 5 5" />
 </svg>
-`;const Sp=`
+`;const L4=`
 <svg
   class="lucide lucide-calendar-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -4981,7 +4981,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 14-4 4" />
   <path d="m10 14 4 4" />
 </svg>
-`;const Hp=`
+`;const S4=`
 <svg
   class="lucide lucide-calendar"
   xmlns="http://www.w3.org/2000/svg"
@@ -4999,7 +4999,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="4" rx="2" />
   <path d="M3 10h18" />
 </svg>
-`;const Rp=`
+`;const H4=`
 <svg
   class="lucide lucide-calendars"
   xmlns="http://www.w3.org/2000/svg"
@@ -5019,7 +5019,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 8h14" />
   <rect x="8" y="3" width="14" height="14" rx="2" />
 </svg>
-`;const Vp=`
+`;const Y4=`
 <svg
   class="lucide lucide-camera-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5037,7 +5037,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 20H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 .819-.175" />
   <path d="M9.695 4.024A2 2 0 0 1 10.004 4h3.993a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v7.344" />
 </svg>
-`;const zp=`
+`;const U4=`
 <svg
   class="lucide lucide-camera"
   xmlns="http://www.w3.org/2000/svg"
@@ -5053,7 +5053,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" />
   <circle cx="12" cy="13" r="3" />
 </svg>
-`;const $p=`
+`;const V4=`
 <svg
   class="lucide lucide-candy-cane"
   xmlns="http://www.w3.org/2000/svg"
@@ -5072,7 +5072,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7.9 9.7 2 4.4" />
   <path d="M4.9 14.7 7 18.9" />
 </svg>
-`;const Up=`
+`;const z4=`
 <svg
   class="lucide lucide-candy-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5093,7 +5093,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4" />
 </svg>
-`;const Dp=`
+`;const $4=`
 <svg
   class="lucide lucide-candy"
   xmlns="http://www.w3.org/2000/svg"
@@ -5112,7 +5112,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16.536 7.465a5 5 0 0 0-7.072 0l-2 2a5 5 0 0 0 0 7.07 5 5 0 0 0 7.072 0l2-2a5 5 0 0 0 0-7.07" />
   <path d="M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4" />
 </svg>
-`;const Fp=`
+`;const D4=`
 <svg
   class="lucide lucide-cannabis-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5132,7 +5132,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21.024 15.378A15 15 0 0 0 22 15c-.426-1.279-2.67-2.557-4.25-2.907" />
   <path d="M6.995 6.992C5.714 6.4 4.29 6 3 6c0 2 2.5 5 4 6-1.5 0-4.5 1.5-5 3 3.5 1.5 6 1 6 1-1.5 1.5-2 3.5-2 5 2.5 0 4.5-1.5 6-3" />
 </svg>
-`;const Pp=`
+`;const F4=`
 <svg
   class="lucide lucide-cannabis"
   xmlns="http://www.w3.org/2000/svg"
@@ -5148,7 +5148,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 22v-4" />
   <path d="M7 12c-1.5 0-4.5 1.5-5 3 3.5 1.5 6 1 6 1-1.5 1.5-2 3.5-2 5 2.5 0 4.5-1.5 6-3 1.5 1.5 3.5 3 6 3 0-1.5-.5-3.5-2-5 0 0 2.5.5 6-1-.5-1.5-3.5-3-5-3 1.5-1 4-4 4-6-2.5 0-5.5 1.5-7 3 0-2.5-.5-5-2-7-1.5 2-2 4.5-2 7-1.5-1.5-4.5-3-7-3 0 2 2.5 5 4 6" />
 </svg>
-`;const Ep=`
+`;const P4=`
 <svg
   class="lucide lucide-captions-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -5168,7 +5168,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 11h4" />
   <path d="M7 15h2.5" />
 </svg>
-`;const Xs=`
+`;const Js=`
 <svg
   class="lucide lucide-captions"
   xmlns="http://www.w3.org/2000/svg"
@@ -5183,7 +5183,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <rect width="18" height="14" x="3" y="5" rx="2" ry="2" />
   <path d="M7 15h4M15 15h2M7 11h2M13 11h4" />
-</svg>`;const Tp=`
+</svg>`;const E4=`
 <svg
   class="lucide lucide-car-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -5203,7 +5203,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 18v2" />
   <path d="M19 18v2" />
 </svg>
-`;const Yp=`
+`;const T4=`
 <svg
   class="lucide lucide-car-taxi-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -5224,7 +5224,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 18v2" />
   <path d="M19 18v2" />
 </svg>
-`;const Op=`
+`;const O4=`
 <svg
   class="lucide lucide-car"
   xmlns="http://www.w3.org/2000/svg"
@@ -5242,7 +5242,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 17h6" />
   <circle cx="17" cy="17" r="2" />
 </svg>
-`;const Ip=`
+`;const I4=`
 <svg
   class="lucide lucide-caravan"
   xmlns="http://www.w3.org/2000/svg"
@@ -5260,7 +5260,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 17v1a1 1 0 0 1-1 1H10v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9" />
   <circle cx="8" cy="19" r="2" />
 </svg>
-`;const qp=`
+`;const q4=`
 <svg
   class="lucide lucide-card-sim"
   xmlns="http://www.w3.org/2000/svg"
@@ -5278,7 +5278,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 14h8" />
   <rect x="8" y="10" width="8" height="8" rx="1" />
 </svg>
-`;const Np=`
+`;const N4=`
 <svg
   class="lucide lucide-carrot"
   xmlns="http://www.w3.org/2000/svg"
@@ -5295,7 +5295,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z" />
   <path d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z" />
 </svg>
-`;const _p=`
+`;const _4=`
 <svg
   class="lucide lucide-case-lower"
   xmlns="http://www.w3.org/2000/svg"
@@ -5313,7 +5313,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="17.5" cy="12.5" r="3.5" />
   <circle cx="6.5" cy="12.5" r="3.5" />
 </svg>
-`;const Zp=`
+`;const Z4=`
 <svg
   class="lucide lucide-case-sensitive"
   xmlns="http://www.w3.org/2000/svg"
@@ -5331,7 +5331,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.304 13h6.392" />
   <circle cx="18.5" cy="12.5" r="3.5" />
 </svg>
-`;const Gp=`
+`;const G4=`
 <svg
   class="lucide lucide-case-upper"
   xmlns="http://www.w3.org/2000/svg"
@@ -5348,7 +5348,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />
   <path d="M3.304 13h6.392" />
 </svg>
-`;const Wp=`
+`;const W4=`
 <svg
   class="lucide lucide-cassette-tape"
   xmlns="http://www.w3.org/2000/svg"
@@ -5367,7 +5367,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="16" cy="10" r="2" />
   <path d="m6 20 .7-2.9A1.4 1.4 0 0 1 8.1 16h7.8a1.4 1.4 0 0 1 1.4 1l.7 3" />
 </svg>
-`;const Kp=`
+`;const K4=`
 <svg
   class="lucide lucide-cast"
   xmlns="http://www.w3.org/2000/svg"
@@ -5385,7 +5385,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 16a5 5 0 0 1 4 4" />
   <line x1="2" x2="2.01" y1="20" y2="20" />
 </svg>
-`;const Xp=`
+`;const X4=`
 <svg
   class="lucide lucide-castle"
   xmlns="http://www.w3.org/2000/svg"
@@ -5407,7 +5407,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9" />
   <path d="M6 3v8" />
 </svg>
-`;const Jp=`
+`;const J4=`
 <svg
   class="lucide lucide-cat"
   xmlns="http://www.w3.org/2000/svg"
@@ -5425,7 +5425,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 14v.5" />
   <path d="M11.25 16.25h1.5L12 17l-.75-.75Z" />
 </svg>
-`;const Qp=`
+`;const Q4=`
 <svg
   class="lucide lucide-cctv"
   xmlns="http://www.w3.org/2000/svg"
@@ -5444,7 +5444,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 21v-4" />
   <path d="M7 9h.01" />
 </svg>
-`;const Js=`
+`;const Qs=`
 <svg
   class="lucide lucide-chart-area"
   xmlns="http://www.w3.org/2000/svg"
@@ -5460,7 +5460,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
   <path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z" />
 </svg>
-`;const Qs=`
+`;const t2=`
 <svg
   class="lucide lucide-chart-bar-big"
   xmlns="http://www.w3.org/2000/svg"
@@ -5532,7 +5532,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="7" y="13" width="9" height="4" rx="1" />
   <rect x="7" y="5" width="12" height="4" rx="1" />
 </svg>
-`;const t2=`
+`;const e2=`
 <svg
   class="lucide lucide-chart-bar"
   xmlns="http://www.w3.org/2000/svg"
@@ -5550,7 +5550,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 11h12" />
   <path d="M7 6h3" />
 </svg>
-`;const e2=`
+`;const o2=`
 <svg
   class="lucide lucide-chart-candlestick"
   xmlns="http://www.w3.org/2000/svg"
@@ -5571,7 +5571,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 13v3" />
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
 </svg>
-`;const o2=`
+`;const r2=`
 <svg
   class="lucide lucide-chart-column-big"
   xmlns="http://www.w3.org/2000/svg"
@@ -5606,7 +5606,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
   <path d="M8 17V5" />
 </svg>
-`;const r2=`
+`;const i2=`
 <svg
   class="lucide lucide-chart-column-increasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -5643,7 +5643,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="15" y="5" width="4" height="12" rx="1" />
   <rect x="7" y="8" width="4" height="9" rx="1" />
 </svg>
-`;const i2=`
+`;const s2=`
 <svg
   class="lucide lucide-chart-column"
   xmlns="http://www.w3.org/2000/svg"
@@ -5679,7 +5679,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 3v16a2 2 0 0 0 2 2h16" />
   <path d="M8 11h7" />
 </svg>
-`;const s2=`
+`;const n2=`
 <svg
   class="lucide lucide-chart-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -5733,7 +5733,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 21V9" />
   <path d="M19 21v-6" />
 </svg>
-`;const n2=`
+`;const l2=`
 <svg
   class="lucide lucide-chart-no-axes-column-increasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -5750,7 +5750,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 21V9" />
   <path d="M19 21V3" />
 </svg>
-`;const l2=`
+`;const a2=`
 <svg
   class="lucide lucide-chart-no-axes-column"
   xmlns="http://www.w3.org/2000/svg"
@@ -5787,7 +5787,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 18v3" />
   <path d="M8 14v7" />
 </svg>
-`;const a2=`
+`;const d2=`
 <svg
   class="lucide lucide-chart-no-axes-gantt"
   xmlns="http://www.w3.org/2000/svg"
@@ -5804,7 +5804,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 12h10" />
   <path d="M12 19h8" />
 </svg>
-`;const d2=`
+`;const h2=`
 <svg
   class="lucide lucide-chart-pie"
   xmlns="http://www.w3.org/2000/svg"
@@ -5820,7 +5820,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z" />
   <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
 </svg>
-`;const h2=`
+`;const c2=`
 <svg
   class="lucide lucide-chart-scatter"
   xmlns="http://www.w3.org/2000/svg"
@@ -6163,7 +6163,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 20 5-5 5 5" />
   <path d="m7 4 5 5 5-5" />
 </svg>
-`;const Lu=`
+`;const Ru=`
 <svg
   class="lucide lucide-chevrons-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6179,7 +6179,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 6 5 5 5-5" />
   <path d="m7 13 5 5 5-5" />
 </svg>
-`;const Su=`
+`;const Lu=`
 <svg
   class="lucide lucide-chevrons-left-right-ellipsis"
   xmlns="http://www.w3.org/2000/svg"
@@ -6198,7 +6198,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 7-5 5 5 5" />
   <path d="M8 12h.01" />
 </svg>
-`;const Hu=`
+`;const Su=`
 <svg
   class="lucide lucide-chevrons-left-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6214,7 +6214,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9 7-5 5 5 5" />
   <path d="m15 7 5 5-5 5" />
 </svg>
-`;const Ru=`
+`;const Hu=`
 <svg
   class="lucide lucide-chevrons-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6230,7 +6230,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m11 17-5-5 5-5" />
   <path d="m18 17-5-5 5-5" />
 </svg>
-`;const Vu=`
+`;const Yu=`
 <svg
   class="lucide lucide-chevrons-right-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6246,7 +6246,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m20 17-5-5 5-5" />
   <path d="m4 17 5-5-5-5" />
 </svg>
-`;const zu=`
+`;const Uu=`
 <svg
   class="lucide lucide-chevrons-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6262,7 +6262,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m6 17 5-5-5-5" />
   <path d="m13 17 5-5-5-5" />
 </svg>
-`;const $u=`
+`;const Vu=`
 <svg
   class="lucide lucide-chevrons-up-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6278,7 +6278,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 15 5 5 5-5" />
   <path d="m7 9 5-5 5 5" />
 </svg>
-`;const Uu=`
+`;const zu=`
 <svg
   class="lucide lucide-chevrons-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6294,7 +6294,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 11-5-5-5 5" />
   <path d="m17 18-5-5-5 5" />
 </svg>
-`;const c2=`
+`;const p2=`
 <svg
   class="lucide lucide-chromium"
   xmlns="http://www.w3.org/2000/svg"
@@ -6313,7 +6313,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <circle cx="12" cy="12" r="4" />
 </svg>
-`;const Du=`
+`;const $u=`
 <svg
   class="lucide lucide-church"
   xmlns="http://www.w3.org/2000/svg"
@@ -6332,7 +6332,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m18 9 3.52 2.147a1 1 0 0 1 .48.854V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6.999a1 1 0 0 1 .48-.854L6 9" />
   <path d="M6 21V7a1 1 0 0 1 .376-.782l5-3.999a1 1 0 0 1 1.249.001l5 4A1 1 0 0 1 18 7v14" />
 </svg>
-`;const Fu=`
+`;const Du=`
 <svg
   class="lucide lucide-cigarette"
   xmlns="http://www.w3.org/2000/svg"
@@ -6351,7 +6351,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 8c0-2.5-2-2.5-2-5" />
   <path d="M7 12v4" />
 </svg>
-`;const Pu=`
+`;const Fu=`
 <svg
   class="lucide lucide-cigarette-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -6371,7 +6371,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 8c0-2.5-2-2.5-2-5" />
   <path d="M7 12v4" />
 </svg>
-`;const p2=`
+`;const u2=`
 <svg
   class="lucide lucide-circle-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -6388,7 +6388,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="8" y2="12" />
   <line x1="12" x2="12.01" y1="16" y2="16" />
 </svg>
-`;const u2=`
+`;const w2=`
 <svg
   class="lucide lucide-circle-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6405,7 +6405,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 8v8" />
   <path d="m8 12 4 4 4-4" />
 </svg>
-`;const w2=`
+`;const g2=`
 <svg
   class="lucide lucide-circle-arrow-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6422,7 +6422,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m12 8-4 4 4 4" />
   <path d="M16 12H8" />
 </svg>
-`;const g2=`
+`;const v2=`
 <svg
   class="lucide lucide-circle-arrow-out-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6439,7 +6439,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 22 10-10" />
   <path d="M8 22H2v-6" />
 </svg>
-`;const v2=`
+`;const k2=`
 <svg
   class="lucide lucide-circle-arrow-out-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6456,7 +6456,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 22 12 12" />
   <path d="M22 16v6h-6" />
 </svg>
-`;const k2=`
+`;const m2=`
 <svg
   class="lucide lucide-circle-arrow-out-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6473,7 +6473,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 10 10" />
   <path d="M12 2A10 10 0 1 1 2 12" />
 </svg>
-`;const m2=`
+`;const x2=`
 <svg
   class="lucide lucide-circle-arrow-out-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6490,7 +6490,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 2 12 12" />
   <path d="M16 2h6v6" />
 </svg>
-`;const x2=`
+`;const f2=`
 <svg
   class="lucide lucide-circle-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6507,7 +6507,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m12 16 4-4-4-4" />
   <path d="M8 12h8" />
 </svg>
-`;const f2=`
+`;const M2=`
 <svg
   class="lucide lucide-circle-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6524,7 +6524,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 12-4-4-4 4" />
   <path d="M12 16V8" />
 </svg>
-`;const M2=`
+`;const y2=`
 <svg
   class="lucide lucide-circle-check-big"
   xmlns="http://www.w3.org/2000/svg"
@@ -6540,7 +6540,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21.801 10A10 10 0 1 1 17 3.335" />
   <path d="m9 11 3 3L22 4" />
 </svg>
-`;const y2=`
+`;const b2=`
 <svg
   class="lucide lucide-circle-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -6556,7 +6556,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="m9 12 2 2 4-4" />
 </svg>
-`;const b2=`
+`;const C2=`
 <svg
   class="lucide lucide-circle-chevron-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -6572,7 +6572,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="m16 10-4 4-4-4" />
 </svg>
-`;const C2=`
+`;const B2=`
 <svg
   class="lucide lucide-circle-chevron-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -6588,7 +6588,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="m14 16-4-4 4-4" />
 </svg>
-`;const B2=`
+`;const j2=`
 <svg
   class="lucide lucide-circle-chevron-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -6604,7 +6604,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="m10 8 4 4-4 4" />
 </svg>
-`;const j2=`
+`;const A2=`
 <svg
   class="lucide lucide-circle-chevron-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -6620,7 +6620,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="m8 14 4-4 4 4" />
 </svg>
-`;const Eu=`
+`;const Pu=`
 <svg
   class="lucide lucide-circle-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -6642,7 +6642,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.721 6.391a10 10 0 0 1 2.7-2.69" />
   <path d="M6.391 20.279a10 10 0 0 1-2.69-2.7" />
 </svg>
-`;const A2=`
+`;const R2=`
 <svg
   class="lucide lucide-circle-divide"
   xmlns="http://www.w3.org/2000/svg"
@@ -6660,7 +6660,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="8" y2="8" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Tu=`
+`;const Eu=`
 <svg
   class="lucide lucide-circle-dollar-sign"
   xmlns="http://www.w3.org/2000/svg"
@@ -6677,7 +6677,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
   <path d="M12 18V6" />
 </svg>
-`;const Yu=`
+`;const Tu=`
 <svg
   class="lucide lucide-circle-dot-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -6862,7 +6862,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8.357 2.687a10 10 0 0 1 12.956 12.956" />
   <path d="M9 17V9" />
 </svg>
-`;const R2=`
+`;const Y2=`
 <svg
   class="lucide lucide-circle-parking"
   xmlns="http://www.w3.org/2000/svg"
@@ -6878,7 +6878,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
 </svg>
-`;const V2=`
+`;const U2=`
 <svg
   class="lucide lucide-circle-pause"
   xmlns="http://www.w3.org/2000/svg"
@@ -6895,7 +6895,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="10" x2="10" y1="15" y2="9" />
   <line x1="14" x2="14" y1="15" y2="9" />
 </svg>
-`;const z2=`
+`;const V2=`
 <svg
   class="lucide lucide-circle-percent"
   xmlns="http://www.w3.org/2000/svg"
@@ -6923,7 +6923,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="20" cy="19" r="2" />
   <circle cx="4" cy="19" r="2" />
   <circle cx="8" cy="12" r="2" />
-</svg>`;const $2=`
+</svg>`;const z2=`
 <svg
   class="lucide lucide-circle-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -6939,7 +6939,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const U2=`
+`;const $2=`
 <svg
   class="lucide lucide-circle-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -6991,7 +6991,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7.998 9.003a5 5 0 1 0 8-.005" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Jr=`
+`;const Qr=`
 <svg
   class="lucide lucide-circle-question-mark"
   xmlns="http://www.w3.org/2000/svg"
@@ -7121,7 +7121,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="10" r="3" />
   <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
 </svg>
-`;const Y2=`
+`;const O2=`
 <svg
   class="lucide lucide-circle-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -7319,7 +7319,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 1.793-1.113" />
   <rect x="8" y="2" width="8" height="4" rx="1" />
 </svg>
-`;const O2=`
+`;const I2=`
 <svg
   class="lucide lucide-clipboard-pen-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -7338,7 +7338,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 18h1" />
   <path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
 </svg>
-`;const I2=`
+`;const q2=`
 <svg
   class="lucide lucide-clipboard-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -7673,7 +7673,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 18 4-4 4 4" />
   <path d="M18 22v-8" />
 </svg>
-`;const Lw=`
+`;const Rw=`
 <svg
   class="lucide lucide-clock-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -7690,7 +7690,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 12a10 10 0 1 0-11 9.95" />
   <path d="m22 16-5.5 5.5L14 19" />
 </svg>
-`;const Sw=`
+`;const Lw=`
 <svg
   class="lucide lucide-clock-fading"
   xmlns="http://www.w3.org/2000/svg"
@@ -7710,7 +7710,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
   <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
 </svg>
-`;const Hw=`
+`;const Sw=`
 <svg
   class="lucide lucide-clock-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -7728,7 +7728,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 16v6" />
   <path d="M21.92 13.267a10 10 0 1 0-8.653 8.653" />
 </svg>
-`;const Rw=`
+`;const Hw=`
 <svg
   class="lucide lucide-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -7744,7 +7744,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 6v6l4 2" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const Vw=`
+`;const Yw=`
 <svg
   class="lucide lucide-closed-caption"
   xmlns="http://www.w3.org/2000/svg"
@@ -7761,7 +7761,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 9.17a3 3 0 1 0 0 5.66" />
   <rect x="2" y="5" width="20" height="14" rx="2" />
 </svg>
-`;const zw=`
+`;const Uw=`
 <svg
   class="lucide lucide-cloud-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -7778,7 +7778,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 20h.01" />
   <path d="M17 18h.5a1 1 0 0 0 0-9h-1.79A7 7 0 1 0 7 17.708" />
 </svg>
-`;const $w=`
+`;const Vw=`
 <svg
   class="lucide lucide-cloud-backup"
   xmlns="http://www.w3.org/2000/svg"
@@ -7795,7 +7795,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 11v4h4" />
   <path d="M8 19a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5 4.82 4.82 0 0 0-3.41 1.41L7 15" />
 </svg>
-`;const Uw=`
+`;const zw=`
 <svg
   class="lucide lucide-cloud-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -7811,7 +7811,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 15-5.5 5.5L9 18" />
   <path d="M5 17.743A7 7 0 1 1 15.71 10h1.79a4.5 4.5 0 0 1 1.5 8.742" />
 </svg>
-`;const Dw=`
+`;const $w=`
 <svg
   class="lucide lucide-cloud-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -7834,7 +7834,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9.228 15.852-.923-.383" />
   <path d="m9.228 18.148-.923.383" />
 </svg>
-`;const q2=`
+`;const N2=`
 <svg
   class="lucide lucide-cloud-download"
   xmlns="http://www.w3.org/2000/svg"
@@ -7851,7 +7851,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m12 21 4-4" />
   <path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284" />
 </svg>
-`;const Fw=`
+`;const Dw=`
 <svg
   class="lucide lucide-cloud-drizzle"
   xmlns="http://www.w3.org/2000/svg"
@@ -7872,7 +7872,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 21v1" />
   <path d="M12 16v1" />
 </svg>
-`;const Pw=`
+`;const Fw=`
 <svg
   class="lucide lucide-cloud-fog"
   xmlns="http://www.w3.org/2000/svg"
@@ -7889,7 +7889,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 17H7" />
   <path d="M17 21H9" />
 </svg>
-`;const Ew=`
+`;const Pw=`
 <svg
   class="lucide lucide-cloud-hail"
   xmlns="http://www.w3.org/2000/svg"
@@ -7910,7 +7910,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 16v2" />
   <path d="M12 22h.01" />
 </svg>
-`;const Tw=`
+`;const Ew=`
 <svg
   class="lucide lucide-cloud-lightning"
   xmlns="http://www.w3.org/2000/svg"
@@ -7926,7 +7926,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973" />
   <path d="m13 12-3 5h4l-3 5" />
 </svg>
-`;const Yw=`
+`;const Tw=`
 <svg
   class="lucide lucide-cloud-moon"
   xmlns="http://www.w3.org/2000/svg"
@@ -8095,7 +8095,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 10v4h4" />
   <path d="m7 14 1.535-1.605a5 5 0 0 1 8 1.5" />
 </svg>
-`;const N2=`
+`;const _2=`
 <svg
   class="lucide lucide-cloud-upload"
   xmlns="http://www.w3.org/2000/svg"
@@ -8176,7 +8176,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.28 9.05a5.5 5.5 0 1 0-10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28-8.6Z" />
   <path d="M12 17.66L12 22" />
 </svg>
-`;const _2=`
+`;const Z2=`
 <svg
   class="lucide lucide-code-xml"
   xmlns="http://www.w3.org/2000/svg"
@@ -8312,7 +8312,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 6h1v4" />
   <path d="m16.71 13.88.7.71-2.82 2.82" />
 </svg>
-`;const Z2=`
+`;const G2=`
 <svg
   class="lucide lucide-columns-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -8328,7 +8328,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M12 3v18" />
 </svg>
-`;const Qr=`
+`;const ti=`
 <svg
   class="lucide lucide-columns-3-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -8353,7 +8353,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21.7 19.4-.9-.3" />
   <path d="M9 3v18" />
   <circle cx="18" cy="18" r="3" />
-</svg>`;const G2=`
+</svg>`;const W2=`
 <svg
   class="lucide lucide-columns-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -8531,7 +8531,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 6 7.7 7.7" />
   <path d="m8 6 8 8" />
 </svg>
-`;const W2=`
+`;const K2=`
 <svg
   class="lucide lucide-contact-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -8777,7 +8777,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="10" />
   <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
 </svg>
-`;const Lg=`
+`;const Rg=`
 <svg
   class="lucide lucide-corner-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -8793,7 +8793,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 4v7a4 4 0 0 1-4 4H4" />
   <path d="m9 10-5 5 5 5" />
 </svg>
-`;const Sg=`
+`;const Lg=`
 <svg
   class="lucide lucide-corner-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -8809,7 +8809,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 10 5 5-5 5" />
   <path d="M4 4v7a4 4 0 0 0 4 4h12" />
 </svg>
-`;const Hg=`
+`;const Sg=`
 <svg
   class="lucide lucide-corner-left-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -8825,7 +8825,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 15-5 5-5-5" />
   <path d="M20 4h-7a4 4 0 0 0-4 4v12" />
 </svg>
-`;const Rg=`
+`;const Hg=`
 <svg
   class="lucide lucide-corner-left-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -8841,7 +8841,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 9 9 4 4 9" />
   <path d="M20 20h-7a4 4 0 0 1-4-4V4" />
 </svg>
-`;const Vg=`
+`;const Yg=`
 <svg
   class="lucide lucide-corner-right-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -8857,7 +8857,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m10 15 5 5 5-5" />
   <path d="M4 4h7a4 4 0 0 1 4 4v12" />
 </svg>
-`;const zg=`
+`;const Ug=`
 <svg
   class="lucide lucide-corner-right-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -8873,7 +8873,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m10 9 5-5 5 5" />
   <path d="M4 20h7a4 4 0 0 0 4-4V4" />
 </svg>
-`;const $g=`
+`;const Vg=`
 <svg
   class="lucide lucide-corner-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -8889,7 +8889,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
   <path d="M9 14 4 9l5-5" />
 </svg>
-`;const Ug=`
+`;const zg=`
 <svg
   class="lucide lucide-corner-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -8905,7 +8905,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 14 5-5-5-5" />
   <path d="M4 20v-7a4 4 0 0 1 4-4h12" />
 </svg>
-`;const Dg=`
+`;const $g=`
 <svg
   class="lucide lucide-cpu"
   xmlns="http://www.w3.org/2000/svg"
@@ -8933,7 +8933,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="4" y="4" width="16" height="16" rx="2" />
   <rect x="8" y="8" width="8" height="8" rx="1" />
 </svg>
-`;const Fg=`
+`;const Dg=`
 <svg
   class="lucide lucide-credit-card"
   xmlns="http://www.w3.org/2000/svg"
@@ -8949,7 +8949,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="20" height="14" x="2" y="5" rx="2" />
   <line x1="2" x2="22" y1="10" y2="10" />
 </svg>
-`;const Pg=`
+`;const Fg=`
 <svg
   class="lucide lucide-croissant"
   xmlns="http://www.w3.org/2000/svg"
@@ -8968,7 +8968,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14" />
   <path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676" />
 </svg>
-`;const Eg=`
+`;const Pg=`
 <svg
   class="lucide lucide-creative-commons"
   xmlns="http://www.w3.org/2000/svg"
@@ -8985,7 +8985,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 9.3a2.8 2.8 0 0 0-3.5 1 3.1 3.1 0 0 0 0 3.4 2.7 2.7 0 0 0 3.5 1" />
   <path d="M17 9.3a2.8 2.8 0 0 0-3.5 1 3.1 3.1 0 0 0 0 3.4 2.7 2.7 0 0 0 3.5 1" />
 </svg>
-`;const Tg=`
+`;const Eg=`
 <svg
   class="lucide lucide-crop"
   xmlns="http://www.w3.org/2000/svg"
@@ -9001,7 +9001,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 2v14a2 2 0 0 0 2 2h14" />
   <path d="M18 22V8a2 2 0 0 0-2-2H2" />
 </svg>
-`;const Yg=`
+`;const Tg=`
 <svg
   class="lucide lucide-cross"
   xmlns="http://www.w3.org/2000/svg"
@@ -9303,7 +9303,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z" />
   <path d="M8 12h8" />
-</svg>`;const K2=`
+</svg>`;const X2=`
 <svg
   class="lucide lucide-diamond-percent"
   xmlns="http://www.w3.org/2000/svg"
@@ -9757,7 +9757,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 12h.01" />
   <path d="M22 20h-3" />
 </svg>
-`;const Lv=`
+`;const Rv=`
 <svg
   class="lucide lucide-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -9772,7 +9772,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <circle cx="12.1" cy="12.1" r="1" />
 </svg>
-`;const Sv=`
+`;const Lv=`
 <svg
   class="lucide lucide-download"
   xmlns="http://www.w3.org/2000/svg"
@@ -9789,7 +9789,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
   <path d="m7 10 5 5 5-5" />
 </svg>
-`;const Hv=`
+`;const Sv=`
 <svg
   class="lucide lucide-drafting-compass"
   xmlns="http://www.w3.org/2000/svg"
@@ -9808,7 +9808,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 21 8.02-14.26" />
   <circle cx="12" cy="5" r="2" />
 </svg>
-`;const Rv=`
+`;const Hv=`
 <svg
   class="lucide lucide-drama"
   xmlns="http://www.w3.org/2000/svg"
@@ -9830,7 +9830,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7" />
   <path d="M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4" />
 </svg>
-`;const Vv=`
+`;const Yv=`
 <svg
   class="lucide lucide-dribbble"
   xmlns="http://www.w3.org/2000/svg"
@@ -9848,7 +9848,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
   <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" />
 </svg>
-`;const zv=`
+`;const Uv=`
 <svg
   class="lucide lucide-drill"
   xmlns="http://www.w3.org/2000/svg"
@@ -9868,7 +9868,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m5 10-2 8" />
   <path d="m7 18 2-8" />
 </svg>
-`;const $v=`
+`;const Vv=`
 <svg
   class="lucide lucide-drone"
   xmlns="http://www.w3.org/2000/svg"
@@ -9891,7 +9891,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9.795 19.862a4 4 0 1 1-5.429-5.873" />
   <rect x="10" y="8" width="4" height="8" rx="1" />
 </svg>
-`;const Uv=`
+`;const zv=`
 <svg
   class="lucide lucide-droplet"
   xmlns="http://www.w3.org/2000/svg"
@@ -9906,7 +9906,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
 </svg>
-`;const Dv=`
+`;const $v=`
 <svg
   class="lucide lucide-droplet-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -9923,7 +9923,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M8.795 8.797A11 11 0 0 1 8 9.5C6 11.1 5 13 5 15a7 7 0 0 0 13.222 3.208" />
 </svg>
-`;const Fv=`
+`;const Dv=`
 <svg
   class="lucide lucide-droplets"
   xmlns="http://www.w3.org/2000/svg"
@@ -9939,7 +9939,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
   <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
 </svg>
-`;const Pv=`
+`;const Fv=`
 <svg
   class="lucide lucide-drum"
   xmlns="http://www.w3.org/2000/svg"
@@ -9960,7 +9960,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 13.4v7.9" />
   <path d="M2 9v8a10 5 0 0 0 20 0V9" />
 </svg>
-`;const Ev=`
+`;const Pv=`
 <svg
   class="lucide lucide-dumbbell"
   xmlns="http://www.w3.org/2000/svg"
@@ -9979,7 +9979,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z" />
   <path d="m9.6 14.4 4.8-4.8" />
 </svg>
-`;const Tv=`
+`;const Ev=`
 <svg
   class="lucide lucide-drumstick"
   xmlns="http://www.w3.org/2000/svg"
@@ -9995,7 +9995,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15.4 15.63a7.875 6 135 1 1 6.23-6.23 4.5 3.43 135 0 0-6.23 6.23" />
   <path d="m8.29 12.71-2.6 2.6a2.5 2.5 0 1 0-1.65 4.65A2.5 2.5 0 1 0 8.7 18.3l2.59-2.59" />
 </svg>
-`;const Yv=`
+`;const Tv=`
 <svg
   class="lucide lucide-ear-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -10050,7 +10050,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 6V4a2 2 0 1 0-4 0v2" />
   <rect width="8" height="5" x="14" y="6" rx="1" />
 </svg>
-`;const X2=`
+`;const J2=`
 <svg
   class="lucide lucide-earth"
   xmlns="http://www.w3.org/2000/svg"
@@ -10132,7 +10132,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M12 2C8 2 4 8 4 14a8 8 0 0 0 16 0c0-6-4-12-8-12" />
 </svg>
-`;const J2=`
+`;const Q2=`
 <svg
   class="lucide lucide-ellipsis-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -10149,7 +10149,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="5" r="1" />
   <circle cx="12" cy="19" r="1" />
 </svg>
-`;const Q2=`
+`;const tn=`
 <svg
   class="lucide lucide-ellipsis"
   xmlns="http://www.w3.org/2000/svg"
@@ -10543,7 +10543,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 7V6" />
   <circle cx="8" cy="20" r="2" />
 </svg>
-`;const tn=`
+`;const en=`
 <svg
   class="lucide lucide-file-axis-3d"
   xmlns="http://www.w3.org/2000/svg"
@@ -10561,7 +10561,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 18 4-4" />
   <path d="M8 10v8h8" />
 </svg>
-`;const en=`
+`;const on=`
 <svg
   class="lucide lucide-file-badge"
   xmlns="http://www.w3.org/2000/svg"
@@ -10598,7 +10598,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 13.1a2 2 0 0 0-.999 1.76v3.24a2 2 0 0 0 .969 1.78L6 21.7a2 2 0 0 0 2.03.01L11 19.9a2 2 0 0 0 1-1.76V14.9a2 2 0 0 0-.97-1.78L8 11.3a2 2 0 0 0-2.03-.01z" />
   <path d="M7 17v5" />
 </svg>
-`;const on=`
+`;const rn=`
 <svg
   class="lucide lucide-file-braces-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -10616,7 +10616,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 14a1 1 0 0 0-1 1v2a1 1 0 0 1-1 1 1 1 0 0 1 1 1v2a1 1 0 0 0 1 1" />
   <path d="M9 22a1 1 0 0 0 1-1v-2a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-2a1 1 0 0 0-1-1" />
 </svg>
-`;const rn=`
+`;const sn=`
 <svg
   class="lucide lucide-file-braces"
   xmlns="http://www.w3.org/2000/svg"
@@ -10634,7 +10634,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1" />
   <path d="M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1" />
 </svg>
-`;const sn=`
+`;const nn=`
 <svg
   class="lucide lucide-file-chart-column-increasing"
   xmlns="http://www.w3.org/2000/svg"
@@ -10653,7 +10653,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 18v-4" />
   <path d="M16 18v-6" />
 </svg>
-`;const nn=`
+`;const ln=`
 <svg
   class="lucide lucide-file-chart-column"
   xmlns="http://www.w3.org/2000/svg"
@@ -10672,7 +10672,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 18v-6" />
   <path d="M16 18v-3" />
 </svg>
-`;const ln=`
+`;const an=`
 <svg
   class="lucide lucide-file-chart-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -10689,7 +10689,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="m16 13-3.5 3.5-2-2L8 17" />
 </svg>
-`;const an=`
+`;const dn=`
 <svg
   class="lucide lucide-file-chart-pie"
   xmlns="http://www.w3.org/2000/svg"
@@ -10707,7 +10707,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4.017 11.512a6 6 0 1 0 8.466 8.475" />
   <path d="M9 16a1 1 0 0 1-1-1v-4c0-.552.45-1.008.995-.917a6 6 0 0 1 4.922 4.922c.091.544-.365.995-.917.995z" />
 </svg>
-`;const dn=`
+`;const hn=`
 <svg
   class="lucide lucide-file-check-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -10759,7 +10759,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 14v2.2l1.6 1" />
   <circle cx="8" cy="16" r="6" />
 </svg>
-`;const hn=`
+`;const cn=`
 <svg
   class="lucide lucide-file-code-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -10795,7 +10795,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 12.5 8 15l2 2.5" />
   <path d="m14 12.5 2 2.5-2 2.5" />
 </svg>
-`;const cn=`
+`;const pn=`
 <svg
   class="lucide lucide-file-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -10875,7 +10875,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 18v-6" />
   <path d="m9 15 3 3 3-3" />
 </svg>
-`;const pn=`
+`;const un=`
 <svg
   class="lucide lucide-file-exclamation-point"
   xmlns="http://www.w3.org/2000/svg"
@@ -10892,7 +10892,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 9v4" />
   <path d="M12 17h.01" />
 </svg>
-`;const ti=`
+`;const ei=`
 <svg
   class="lucide lucide-file-headphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -10962,7 +10962,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 15h10" />
   <path d="m9 18 3-3-3-3" />
 </svg>
-`;const un=`
+`;const wn=`
 <svg
   class="lucide lucide-file-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -10981,7 +10981,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m11 14-4.586 4.586" />
   <circle cx="5" cy="20" r="2" />
 </svg>
-`;const wn=`
+`;const gn=`
 <svg
   class="lucide lucide-file-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -10999,7 +10999,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 17v-2a2 2 0 0 0-4 0v2" />
   <rect width="8" height="5" x="3" y="17" rx="1" />
 </svg>
-`;const gn=`
+`;const vn=`
 <svg
   class="lucide lucide-file-minus-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -11051,7 +11051,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 20v-7l3 1.474" />
   <circle cx="6" cy="20" r="2" />
 </svg>
-`;const vn=`
+`;const kn=`
 <svg
   class="lucide lucide-file-pen-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -11086,7 +11086,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m5 11-3 3" />
   <path d="m5 17-3-3h10" />
 </svg>
-`;const kn=`
+`;const mn=`
 <svg
   class="lucide lucide-file-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -11103,7 +11103,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z" />
 </svg>
-`;const mn=`
+`;const xn=`
 <svg
   class="lucide lucide-file-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -11120,7 +11120,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M15.033 13.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56v-4.704a.645.645 0 0 1 .967-.56z" />
 </svg>
-`;const xn=`
+`;const fn=`
 <svg
   class="lucide lucide-file-plus-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -11138,7 +11138,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 19h6" />
   <path d="M17 16v6" />
 </svg>
-`;const L3=`
+`;const R3=`
 <svg
   class="lucide lucide-file-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -11156,7 +11156,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 15h6" />
   <path d="M12 18v-6" />
 </svg>
-`;const fn=`
+`;const Mn=`
 <svg
   class="lucide lucide-file-question-mark"
   xmlns="http://www.w3.org/2000/svg"
@@ -11173,7 +11173,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17h.01" />
   <path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3" />
 </svg>
-`;const S3=`
+`;const L3=`
 <svg
   class="lucide lucide-file-scan"
   xmlns="http://www.w3.org/2000/svg"
@@ -11193,7 +11193,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 14a2 2 0 0 1 2 2" />
   <path d="M20 22a2 2 0 0 0 2-2" />
 </svg>
-`;const Mn=`
+`;const yn=`
 <svg
   class="lucide lucide-file-search-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -11211,7 +11211,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 22-2.88-2.88" />
   <circle cx="16" cy="17" r="3" />
 </svg>
-`;const yn=`
+`;const bn=`
 <svg
   class="lucide lucide-file-signal"
   xmlns="http://www.w3.org/2000/svg"
@@ -11230,7 +11230,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11.5 13.5a2.5 2.5 0 0 1 0 3" />
   <path d="M15 12a5 5 0 0 1 0 6" />
 </svg>
-`;const H3=`
+`;const S3=`
 <svg
   class="lucide lucide-file-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -11248,7 +11248,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="11.5" cy="14.5" r="2.5" />
   <path d="M13.3 16.3 15 18" />
 </svg>
-`;const R3=`
+`;const H3=`
 <svg
   class="lucide lucide-file-sliders"
   xmlns="http://www.w3.org/2000/svg"
@@ -11268,7 +11268,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 17h8" />
   <path d="M14 16v2" />
 </svg>
-`;const V3=`
+`;const Y3=`
 <svg
   class="lucide lucide-file-spreadsheet"
   xmlns="http://www.w3.org/2000/svg"
@@ -11288,7 +11288,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 17h2" />
   <path d="M14 17h2" />
 </svg>
-`;const z3=`
+`;const U3=`
 <svg
   class="lucide lucide-file-stack"
   xmlns="http://www.w3.org/2000/svg"
@@ -11305,7 +11305,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 16a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1" />
   <path d="M21 6a2 2 0 0 0-.586-1.414l-2-2A2 2 0 0 0 17 2h-3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1z" />
 </svg>
-`;const $3=`
+`;const V3=`
 <svg
   class="lucide lucide-file-symlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -11322,7 +11322,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="m10 18 3-3-3-3" />
 </svg>
-`;const U3=`
+`;const z3=`
 <svg
   class="lucide lucide-file-terminal"
   xmlns="http://www.w3.org/2000/svg"
@@ -11340,7 +11340,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 16 2-2-2-2" />
   <path d="M12 18h4" />
 </svg>
-`;const D3=`
+`;const $3=`
 <svg
   class="lucide lucide-file-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -11359,7 +11359,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 13H8" />
   <path d="M16 17H8" />
 </svg>
-`;const F3=`
+`;const D3=`
 <svg
   class="lucide lucide-file-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -11378,7 +11378,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 12v6" />
   <path d="M9 13v-.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v.5" />
 </svg>
-`;const bn=`
+`;const Cn=`
 <svg
   class="lucide lucide-file-type-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -11397,7 +11397,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 22h2" />
   <path d="M7 14v8" />
 </svg>
-`;const P3=`
+`;const F3=`
 <svg
   class="lucide lucide-file-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -11415,7 +11415,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 22a4 4 0 0 0-8 0" />
   <circle cx="12" cy="15" r="3" />
 </svg>
-`;const E3=`
+`;const P3=`
 <svg
   class="lucide lucide-file-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -11433,7 +11433,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 12v6" />
   <path d="m15 15-3-3-3 3" />
 </svg>
-`;const Cn=`
+`;const Bn=`
 <svg
   class="lucide lucide-file-video-camera"
   xmlns="http://www.w3.org/2000/svg"
@@ -11451,7 +11451,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m10 17.843 3.033-1.755a.64.64 0 0 1 .967.56v4.704a.65.65 0 0 1-.967.56L10 20.157" />
   <rect width="7" height="6" x="3" y="16" rx="1" />
 </svg>
-`;const T3=`
+`;const E3=`
 <svg
   class="lucide lucide-file-volume"
   xmlns="http://www.w3.org/2000/svg"
@@ -11469,7 +11469,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 15a5 5 0 0 1 0 6" />
   <path d="M8 14.502a.5.5 0 0 0-.826-.381l-1.893 1.631a1 1 0 0 1-.651.243H3.5a.5.5 0 0 0-.5.501v3.006a.5.5 0 0 0 .5.501h1.129a1 1 0 0 1 .652.243l1.893 1.633a.5.5 0 0 0 .826-.38z" />
 </svg>
-`;const Bn=`
+`;const jn=`
 <svg
   class="lucide lucide-file-x-corner"
   xmlns="http://www.w3.org/2000/svg"
@@ -11487,7 +11487,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 17 5 5" />
   <path d="m20 17-5 5" />
 </svg>
-`;const Y3=`
+`;const T3=`
 <svg
   class="lucide lucide-file-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -11560,7 +11560,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 7.5h4" />
   <path d="M17 16.5h4" />
 </svg>
-`;const jn=`
+`;const An=`
 <svg
   class="lucide lucide-fingerprint-pattern"
   xmlns="http://www.w3.org/2000/svg"
@@ -12126,7 +12126,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 10.5 2 2.5-2 2.5" />
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z" />
 </svg>
-`;const An=`
+`;const Rn=`
 <svg
   class="lucide lucide-folder-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -12270,7 +12270,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 10v2" />
   <path d="M16 10v6" />
 </svg>
-`;const L5=`
+`;const R5=`
 <svg
   class="lucide lucide-folder-key"
   xmlns="http://www.w3.org/2000/svg"
@@ -12288,7 +12288,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 14-4.5 4.5" />
   <path d="m21 15 1 1" />
 </svg>
-`;const S5=`
+`;const L5=`
 <svg
   class="lucide lucide-folder-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -12305,7 +12305,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5" />
   <path d="M20 17v-2a2 2 0 1 0-4 0v2" />
 </svg>
-`;const H5=`
+`;const S5=`
 <svg
   class="lucide lucide-folder-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -12321,7 +12321,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 13h6" />
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
 </svg>
-`;const R5=`
+`;const H5=`
 <svg
   class="lucide lucide-folder-open-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -12337,7 +12337,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2" />
   <circle cx="14" cy="15" r="1" />
 </svg>
-`;const V5=`
+`;const Y5=`
 <svg
   class="lucide lucide-folder-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -12352,7 +12352,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" />
 </svg>
-`;const z5=`
+`;const U5=`
 <svg
   class="lucide lucide-folder-output"
   xmlns="http://www.w3.org/2000/svg"
@@ -12385,7 +12385,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 11.5V5a2 2 0 0 1 2-2h3.9c.7 0 1.3.3 1.7.9l.8 1.2c.4.6 1 .9 1.7.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5" />
   <path d="M11.378 13.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
 </svg>
-`;const $5=`
+`;const V5=`
 <svg
   class="lucide lucide-folder-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -12402,7 +12402,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 13h6" />
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
 </svg>
-`;const U5=`
+`;const z5=`
 <svg
   class="lucide lucide-folder-root"
   xmlns="http://www.w3.org/2000/svg"
@@ -12419,7 +12419,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="13" r="2" />
   <path d="M12 15v5" />
 </svg>
-`;const D5=`
+`;const $5=`
 <svg
   class="lucide lucide-folder-search-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -12436,7 +12436,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
   <path d="M13.3 14.3 15 16" />
 </svg>
-`;const F5=`
+`;const D5=`
 <svg
   class="lucide lucide-folder-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -12453,7 +12453,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 21-1.9-1.9" />
   <circle cx="17" cy="17" r="3" />
 </svg>
-`;const P5=`
+`;const F5=`
 <svg
   class="lucide lucide-folder-symlink"
   xmlns="http://www.w3.org/2000/svg"
@@ -12469,7 +12469,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 9.35V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h7" />
   <path d="m8 16 3-3-3-3" />
 </svg>
-`;const E5=`
+`;const P5=`
 <svg
   class="lucide lucide-folder-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -12488,7 +12488,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 22v-4h-4" />
   <path d="m22 18-1.535 1.605a5 5 0 0 1-8-1.5" />
 </svg>
-`;const T5=`
+`;const E5=`
 <svg
   class="lucide lucide-folder-tree"
   xmlns="http://www.w3.org/2000/svg"
@@ -12506,7 +12506,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 5a2 2 0 0 0 2 2h3" />
   <path d="M3 3v13a2 2 0 0 0 2 2h3" />
 </svg>
-`;const Y5=`
+`;const T5=`
 <svg
   class="lucide lucide-folder-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -13076,7 +13076,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="6" cy="18" r="3" />
   <path d="M18 9a9 9 0 0 1-9 9" />
 </svg>
-`;const Rn=`
+`;const Yn=`
 <svg
   class="lucide lucide-git-commit-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -13282,7 +13282,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 15v6" />
   <path d="M21 18h-6" />
 </svg>
-`;const Lk=`
+`;const Rk=`
 <svg
   class="lucide lucide-git-pull-request-draft"
   xmlns="http://www.w3.org/2000/svg"
@@ -13301,7 +13301,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 11v-1" />
   <line x1="6" x2="6" y1="9" y2="21" />
 </svg>
-`;const Sk=`
+`;const Lk=`
 <svg
   class="lucide lucide-git-pull-request"
   xmlns="http://www.w3.org/2000/svg"
@@ -13319,7 +13319,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13 6h3a2 2 0 0 1 2 2v7" />
   <line x1="6" x2="6" y1="9" y2="21" />
 </svg>
-`;const Hk=`
+`;const Sk=`
 <svg
   class="lucide lucide-github"
   xmlns="http://www.w3.org/2000/svg"
@@ -13335,7 +13335,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
   <path d="M9 18c-4.51 2-5-2-7-2" />
 </svg>
-`;const Rk=`
+`;const Hk=`
 <svg
   class="lucide lucide-gitlab"
   xmlns="http://www.w3.org/2000/svg"
@@ -13350,7 +13350,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z" />
 </svg>
-`;const Vk=`
+`;const Yk=`
 <svg
   class="lucide lucide-glass-water"
   xmlns="http://www.w3.org/2000/svg"
@@ -13366,7 +13366,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z" />
   <path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0" />
 </svg>
-`;const zk=`
+`;const Uk=`
 <svg
   class="lucide lucide-glasses"
   xmlns="http://www.w3.org/2000/svg"
@@ -13385,7 +13385,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2" />
   <path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2" />
 </svg>
-`;const $k=`
+`;const Vk=`
 <svg
   class="lucide lucide-globe-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -13403,7 +13403,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 6V4a2 2 0 1 0-4 0v2" />
   <rect width="8" height="5" x="14" y="6" rx="1" />
 </svg>
-`;const Uk=`
+`;const zk=`
 <svg
   class="lucide lucide-globe"
   xmlns="http://www.w3.org/2000/svg"
@@ -13420,7 +13420,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
   <path d="M2 12h20" />
 </svg>
-`;const Dk=`
+`;const $k=`
 <svg
   class="lucide lucide-goal"
   xmlns="http://www.w3.org/2000/svg"
@@ -13437,7 +13437,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20.561 10.222a9 9 0 1 1-12.55-5.29" />
   <path d="M8.002 9.997a5 5 0 1 0 8.9 2.02" />
 </svg>
-`;const Fk=`
+`;const Dk=`
 <svg
   class="lucide lucide-gpu"
   xmlns="http://www.w3.org/2000/svg"
@@ -13455,7 +13455,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 17v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3" />
   <circle cx="16" cy="11" r="2" />
   <circle cx="8" cy="11" r="2" />
-</svg>`;const Pk=`
+</svg>`;const Fk=`
 <svg
   class="lucide lucide-graduation-cap"
   xmlns="http://www.w3.org/2000/svg"
@@ -13472,7 +13472,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 10v6" />
   <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
 </svg>
-`;const Ek=`
+`;const Pk=`
 <svg
   class="lucide lucide-grape"
   xmlns="http://www.w3.org/2000/svg"
@@ -13495,7 +13495,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="10.8" cy="17.44" r="3" />
   <circle cx="5" cy="19" r="3" />
 </svg>
-`;const Vn=`
+`;const Un=`
 <svg
   class="lucide lucide-grid-2x2-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -13511,7 +13511,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3" />
   <path d="m16 19 2 2 4-4" />
 </svg>
-`;const zn=`
+`;const Vn=`
 <svg
   class="lucide lucide-grid-2x2-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -13528,7 +13528,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 19h6" />
   <path d="M19 22v-6" />
 </svg>
-`;const $n=`
+`;const zn=`
 <svg
   class="lucide lucide-grid-2x2-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -13545,7 +13545,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 16 5 5" />
   <path d="m16 21 5-5" />
 </svg>
-`;const Un=`
+`;const $n=`
 <svg
   class="lucide lucide-grid-2x2"
   xmlns="http://www.w3.org/2000/svg"
@@ -13562,7 +13562,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 12h18" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const Tk=`
+`;const Ek=`
 <svg
   class="lucide lucide-grid-3x2"
   xmlns="http://www.w3.org/2000/svg"
@@ -13580,7 +13580,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 3v18" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const ei=`
+`;const oi=`
 <svg
   class="lucide lucide-grid-3x3"
   xmlns="http://www.w3.org/2000/svg"
@@ -13599,7 +13599,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 3v18" />
   <path d="M15 3v18" />
 </svg>
-`;const Yk=`
+`;const Tk=`
 <svg
   class="lucide lucide-grip-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -14379,7 +14379,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
   <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
 </svg>
-`;const Lm=`
+`;const Rm=`
 <svg
   class="lucide lucide-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -14394,7 +14394,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
 </svg>
-`;const Sm=`
+`;const Lm=`
 <svg
   class="lucide lucide-heater"
   xmlns="http://www.w3.org/2000/svg"
@@ -14418,7 +14418,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 20v2" />
   <path d="M19 20v2" />
 </svg>
-`;const Hm=`
+`;const Sm=`
 <svg
   class="lucide lucide-helicopter"
   xmlns="http://www.w3.org/2000/svg"
@@ -14440,7 +14440,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 21h14" />
   <path d="M8 13H2" />
 </svg>
-`;const Rm=`
+`;const Hm=`
 <svg
   class="lucide lucide-hexagon"
   xmlns="http://www.w3.org/2000/svg"
@@ -14455,7 +14455,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
 </svg>
-`;const Vm=`
+`;const Ym=`
 <svg
   class="lucide lucide-highlighter"
   xmlns="http://www.w3.org/2000/svg"
@@ -14471,7 +14471,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9 11-6 6v3h9l3-3" />
   <path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4" />
 </svg>
-`;const zm=`
+`;const Um=`
 <svg
   class="lucide lucide-history"
   xmlns="http://www.w3.org/2000/svg"
@@ -14488,7 +14488,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 3v5h5" />
   <path d="M12 7v5l4 2" />
 </svg>
-`;const $m=`
+`;const Vm=`
 <svg
   class="lucide lucide-hop-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -14511,7 +14511,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8.35 2.68a10 10 0 0 1 9.98 1.58c.43.35.4.96-.12 1.17-1.5.6-4.3.98-6.07 1.05" />
   <path d="m2 2 20 20" />
 </svg>
-`;const Um=`
+`;const zm=`
 <svg
   class="lucide lucide-hop"
   xmlns="http://www.w3.org/2000/svg"
@@ -14533,7 +14533,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4.93 4.93 3 3a.7.7 0 0 1 0-1" />
   <path d="M9.58 12.18c1.24 2.98 1.77 5.95 1.57 8.28a.8.8 0 0 1-1.13.68 20.82 20.82 0 0 1-4.5-3.15" />
 </svg>
-`;const Dm=`
+`;const $m=`
 <svg
   class="lucide lucide-hospital"
   xmlns="http://www.w3.org/2000/svg"
@@ -14552,7 +14552,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 11h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2" />
   <path d="M18 21V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16" />
 </svg>
-`;const Fm=`
+`;const Dm=`
 <svg
   class="lucide lucide-hotel"
   xmlns="http://www.w3.org/2000/svg"
@@ -14576,7 +14576,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 7h.01" />
   <rect x="4" y="2" width="16" height="20" rx="2" />
 </svg>
-`;const Pm=`
+`;const Fm=`
 <svg
   class="lucide lucide-hourglass"
   xmlns="http://www.w3.org/2000/svg"
@@ -14594,7 +14594,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
   <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
 </svg>
-`;const Em=`
+`;const Pm=`
 <svg
   class="lucide lucide-house-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -14610,7 +14610,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8.62 13.8A2.25 2.25 0 1 1 12 10.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
   <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
 </svg>
-`;const Tm=`
+`;const Em=`
 <svg
   class="lucide lucide-house-plug"
   xmlns="http://www.w3.org/2000/svg"
@@ -14628,7 +14628,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 12a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2a1 1 0 0 1 1-1z" />
   <path d="M8.5 21H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-2" />
 </svg>
-`;const Ym=`
+`;const Tm=`
 <svg
   class="lucide lucide-house-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -15418,7 +15418,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 22-5-10-5 10" />
   <path d="M14 18h6" />
 </svg>
-`;const Lx=`
+`;const Rx=`
 <svg
   class="lucide lucide-landmark"
   xmlns="http://www.w3.org/2000/svg"
@@ -15438,7 +15438,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 22h18" />
   <path d="M6 18v-7" />
 </svg>
-`;const Sx=`
+`;const Lx=`
 <svg
   class="lucide lucide-laptop-minimal-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -15455,7 +15455,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m9 10 2 2 4-4" />
   <rect x="3" y="4" width="18" height="12" rx="2" />
 </svg>
-`;const Yn=`
+`;const On=`
 <svg
   class="lucide lucide-laptop-minimal"
   xmlns="http://www.w3.org/2000/svg"
@@ -15471,7 +15471,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="12" x="3" y="4" rx="2" ry="2" />
   <line x1="2" x2="22" y1="20" y2="20" />
 </svg>
-`;const Hx=`
+`;const Sx=`
 <svg
   class="lucide lucide-laptop"
   xmlns="http://www.w3.org/2000/svg"
@@ -15487,7 +15487,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" />
   <path d="M20.054 15.987H3.946" />
 </svg>
-`;const Rx=`
+`;const Hx=`
 <svg
   class="lucide lucide-lasso-select"
   xmlns="http://www.w3.org/2000/svg"
@@ -15506,7 +15506,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
   <path d="M14.33 22h-.09a.35.35 0 0 1-.24-.32v-10a.34.34 0 0 1 .33-.34c.08 0 .15.03.21.08l7.34 6a.33.33 0 0 1-.21.59h-4.49l-2.57 3.85a.35.35 0 0 1-.28.14z" />
 </svg>
-`;const Vx=`
+`;const Yx=`
 <svg
   class="lucide lucide-lasso"
   xmlns="http://www.w3.org/2000/svg"
@@ -15523,7 +15523,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 22a5 5 0 0 1-2-3.994" />
   <circle cx="5" cy="16" r="2" />
 </svg>
-`;const zx=`
+`;const Ux=`
 <svg
   class="lucide lucide-laugh"
   xmlns="http://www.w3.org/2000/svg"
@@ -15541,7 +15541,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="9" x2="9.01" y1="9" y2="9" />
   <line x1="15" x2="15.01" y1="9" y2="9" />
 </svg>
-`;const $x=`
+`;const Vx=`
 <svg
   class="lucide lucide-layers-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -15557,7 +15557,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74z" />
   <path d="m20 14.285 1.5.845a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74l1.5-.845" />
 </svg>
-`;const Ux=`
+`;const zx=`
 <svg
   class="lucide lucide-layers-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -15575,7 +15575,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 14v6" />
   <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 .825.178" />
   <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l2.116-.962" />
-</svg>`;const On=`
+</svg>`;const In=`
 <svg
   class="lucide lucide-layers"
   xmlns="http://www.w3.org/2000/svg"
@@ -15592,7 +15592,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
   <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
 </svg>
-`;const Dx=`
+`;const $x=`
 <svg
   class="lucide lucide-layout-dashboard"
   xmlns="http://www.w3.org/2000/svg"
@@ -15610,7 +15610,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="7" height="9" x="14" y="12" rx="1" />
   <rect width="7" height="5" x="3" y="16" rx="1" />
 </svg>
-`;const Fx=`
+`;const Dx=`
 <svg
   class="lucide lucide-layout-grid"
   xmlns="http://www.w3.org/2000/svg"
@@ -15628,7 +15628,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="7" height="7" x="14" y="14" rx="1" />
   <rect width="7" height="7" x="3" y="14" rx="1" />
 </svg>
-`;const Px=`
+`;const Fx=`
 <svg
   class="lucide lucide-layout-list"
   xmlns="http://www.w3.org/2000/svg"
@@ -15648,7 +15648,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 15h7" />
   <path d="M14 20h7" />
 </svg>
-`;const Ex=`
+`;const Px=`
 <svg
   class="lucide lucide-layout-panel-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -15665,7 +15665,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="7" height="7" x="14" y="3" rx="1" />
   <rect width="7" height="7" x="14" y="14" rx="1" />
 </svg>
-`;const Tx=`
+`;const Ex=`
 <svg
   class="lucide lucide-layout-panel-top"
   xmlns="http://www.w3.org/2000/svg"
@@ -15682,7 +15682,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="7" height="7" x="3" y="14" rx="1" />
   <rect width="7" height="7" x="14" y="14" rx="1" />
 </svg>
-`;const Yx=`
+`;const Tx=`
 <svg
   class="lucide lucide-layout-template"
   xmlns="http://www.w3.org/2000/svg"
@@ -15907,7 +15907,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 7h2a5 5 0 1 1 0 10h-2" />
   <line x1="8" x2="16" y1="12" y2="12" />
 </svg>
-`;const t6=`
+`;const tf=`
 <svg
   class="lucide lucide-link"
   xmlns="http://www.w3.org/2000/svg"
@@ -15923,7 +15923,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
 </svg>
-`;const e6=`
+`;const ef=`
 <svg
   class="lucide lucide-linkedin"
   xmlns="http://www.w3.org/2000/svg"
@@ -15940,7 +15940,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="4" height="12" x="2" y="9" />
   <circle cx="4" cy="4" r="2" />
 </svg>
-`;const o6=`
+`;const of=`
 <svg
   class="lucide lucide-list-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -15958,7 +15958,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11 19H3" />
   <path d="m15 18 2 2 4-4" />
 </svg>
-`;const r6=`
+`;const rf=`
 <svg
   class="lucide lucide-list-checks"
   xmlns="http://www.w3.org/2000/svg"
@@ -15977,7 +15977,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 17 2 2 4-4" />
   <path d="m3 7 2 2 4-4" />
 </svg>
-`;const i6=`
+`;const sf=`
 <svg
   class="lucide lucide-list-chevrons-down-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -15996,7 +15996,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 5 3 3 3-3" />
   <path d="m15 19 3-3 3 3" />
 </svg>
-`;const s6=`
+`;const nf=`
 <svg
   class="lucide lucide-list-chevrons-up-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -16015,7 +16015,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 8 3-3 3 3" />
   <path d="m15 16 3 3 3-3" />
 </svg>
-`;const n6=`
+`;const lf=`
 <svg
   class="lucide lucide-list-collapse"
   xmlns="http://www.w3.org/2000/svg"
@@ -16034,7 +16034,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 10 3-3-3-3" />
   <path d="m3 20 3-3-3-3" />
 </svg>
-`;const l6=`
+`;const af=`
 <svg
   class="lucide lucide-list-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -16053,7 +16053,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 16-3 3 3 3" />
   <path d="M21 5v12a2 2 0 0 1-2 2h-6" />
 </svg>
-`;const a6=`
+`;const df=`
 <svg
   class="lucide lucide-list-filter-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16072,7 +16072,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 5h6" />
   <path d="M19 8V2" />
 </svg>
-`;const d6=`
+`;const hf=`
 <svg
   class="lucide lucide-list-filter"
   xmlns="http://www.w3.org/2000/svg"
@@ -16089,7 +16089,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 12h12" />
   <path d="M9 19h6" />
 </svg>
-`;const oi=`
+`;const ri=`
 <svg
   class="lucide lucide-list-indent-decrease"
   xmlns="http://www.w3.org/2000/svg"
@@ -16107,7 +16107,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 19H11" />
   <path d="m7 8-4 4 4 4" />
 </svg>
-`;const ri=`
+`;const ii=`
 <svg
   class="lucide lucide-list-indent-increase"
   xmlns="http://www.w3.org/2000/svg"
@@ -16125,7 +16125,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 19H11" />
   <path d="m3 8 4 4-4 4" />
 </svg>
-`;const h6=`
+`;const cf=`
 <svg
   class="lucide lucide-list-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16143,7 +16143,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 19H3" />
   <path d="M21 12h-6" />
 </svg>
-`;const c6=`
+`;const pf=`
 <svg
   class="lucide lucide-list-music"
   xmlns="http://www.w3.org/2000/svg"
@@ -16162,7 +16162,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 16V5" />
   <circle cx="18" cy="16" r="3" />
 </svg>
-`;const p6=`
+`;const uf=`
 <svg
   class="lucide lucide-list-ordered"
   xmlns="http://www.w3.org/2000/svg"
@@ -16182,7 +16182,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 9h2" />
   <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" />
 </svg>
-`;const u6=`
+`;const wf=`
 <svg
   class="lucide lucide-list-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16201,7 +16201,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 9v6" />
   <path d="M21 12h-6" />
 </svg>
-`;const w6=`
+`;const gf=`
 <svg
   class="lucide lucide-list-restart"
   xmlns="http://www.w3.org/2000/svg"
@@ -16220,7 +16220,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 18a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L11 14" />
   <path d="M11 10v4h4" />
 </svg>
-`;const g6=`
+`;const vf=`
 <svg
   class="lucide lucide-list-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -16239,7 +16239,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 8-3-3 3-3" />
   <path d="M21 19V7a2 2 0 0 0-2-2h-6" />
 </svg>
-`;const v6=`
+`;const kf=`
 <svg
   class="lucide lucide-list-todo"
   xmlns="http://www.w3.org/2000/svg"
@@ -16258,7 +16258,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 17 2 2 4-4" />
   <rect x="3" y="4" width="6" height="6" rx="1" />
 </svg>
-`;const k6=`
+`;const mf=`
 <svg
   class="lucide lucide-list-tree"
   xmlns="http://www.w3.org/2000/svg"
@@ -16277,7 +16277,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 10a2 2 0 0 0 2 2h3" />
   <path d="M3 5v12a2 2 0 0 0 2 2h3" />
 </svg>
-`;const m6=`
+`;const xf=`
 <svg
   class="lucide lucide-list-video"
   xmlns="http://www.w3.org/2000/svg"
@@ -16295,7 +16295,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 19H3" />
   <path d="M15 12.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1-1.517-.86z" />
 </svg>
-`;const x6=`
+`;const ff=`
 <svg
   class="lucide lucide-list-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -16314,7 +16314,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15.5 9.5 5 5" />
   <path d="m20.5 9.5-5 5" />
 </svg>
-`;const f6=`
+`;const Mf=`
 <svg
   class="lucide lucide-list"
   xmlns="http://www.w3.org/2000/svg"
@@ -16334,7 +16334,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 12h13" />
   <path d="M8 19h13" />
 </svg>
-`;const In=`
+`;const qn=`
 <svg
   class="lucide lucide-loader-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -16349,7 +16349,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M21 12a9 9 0 1 1-6.219-8.56" />
 </svg>
-`;const M6=`
+`;const yf=`
 <svg
   class="lucide lucide-loader-pinwheel"
   xmlns="http://www.w3.org/2000/svg"
@@ -16367,7 +16367,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 3.3a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const y6=`
+`;const bf=`
 <svg
   class="lucide lucide-loader"
   xmlns="http://www.w3.org/2000/svg"
@@ -16389,7 +16389,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 12h4" />
   <path d="m4.9 4.9 2.9 2.9" />
 </svg>
-`;const b6=`
+`;const Cf=`
 <svg
   class="lucide lucide-locate-fixed"
   xmlns="http://www.w3.org/2000/svg"
@@ -16409,7 +16409,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="7" />
   <circle cx="12" cy="12" r="3" />
 </svg>
-`;const C6=`
+`;const Bf=`
 <svg
   class="lucide lucide-locate-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -16430,7 +16430,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M7.05 7.05a7 7 0 0 0 9.9 9.9" />
 </svg>
-`;const B6=`
+`;const jf=`
 <svg
   class="lucide lucide-locate"
   xmlns="http://www.w3.org/2000/svg"
@@ -16449,7 +16449,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="19" y2="22" />
   <circle cx="12" cy="12" r="7" />
 </svg>
-`;const qn=`
+`;const Nn=`
 <svg
   class="lucide lucide-lock-keyhole-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -16466,7 +16466,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="12" x="3" y="10" rx="2" />
   <path d="M7 10V7a5 5 0 0 1 9.33-2.5" />
 </svg>
-`;const j6=`
+`;const Af=`
 <svg
   class="lucide lucide-lock-keyhole"
   xmlns="http://www.w3.org/2000/svg"
@@ -16483,7 +16483,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="3" y="10" width="18" height="12" rx="2" />
   <path d="M7 10V7a5 5 0 0 1 10 0v3" />
 </svg>
-`;const Nn=`
+`;const _n=`
 <svg
   class="lucide lucide-lock-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -16499,7 +16499,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
   <path d="M7 11V7a5 5 0 0 1 9.9-1" />
 </svg>
-`;const A6=`
+`;const Rf=`
 <svg
   class="lucide lucide-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -16515,7 +16515,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
 </svg>
-`;const L6=`
+`;const Lf=`
 <svg
   class="lucide lucide-log-in"
   xmlns="http://www.w3.org/2000/svg"
@@ -16532,7 +16532,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 12H3" />
   <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
 </svg>
-`;const S6=`
+`;const Sf=`
 <svg
   class="lucide lucide-log-out"
   xmlns="http://www.w3.org/2000/svg"
@@ -16549,7 +16549,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 12H9" />
   <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
 </svg>
-`;const H6=`
+`;const Hf=`
 <svg
   class="lucide lucide-logs"
   xmlns="http://www.w3.org/2000/svg"
@@ -16572,7 +16572,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13 12h8" />
   <path d="M13 19h8" />
 </svg>
-`;const R6=`
+`;const Yf=`
 <svg
   class="lucide lucide-lollipop"
   xmlns="http://www.w3.org/2000/svg"
@@ -16589,7 +16589,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 21-4.3-4.3" />
   <path d="M11 11a2 2 0 0 0 4 0 4 4 0 0 0-8 0 6 6 0 0 0 12 0" />
 </svg>
-`;const V6=`
+`;const Uf=`
 <svg
   class="lucide lucide-luggage"
   xmlns="http://www.w3.org/2000/svg"
@@ -16608,7 +16608,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="16" cy="20" r="2" />
   <circle cx="8" cy="20" r="2" />
 </svg>
-`;const z6=`
+`;const Vf=`
 <svg
   class="lucide lucide-magnet"
   xmlns="http://www.w3.org/2000/svg"
@@ -16625,7 +16625,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.029-6.029a1 1 0 1 1 3 3l-6.029 6.029a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.365-6.367A1 1 0 0 0 8.716 4.282z" />
   <path d="m5 8 4 4" />
 </svg>
-`;const $6=`
+`;const zf=`
 <svg
   class="lucide lucide-mail-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -16642,7 +16642,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   <path d="m16 19 2 2 4-4" />
 </svg>
-`;const U6=`
+`;const $f=`
 <svg
   class="lucide lucide-mail-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16659,7 +16659,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   <path d="M16 19h6" />
 </svg>
-`;const D6=`
+`;const Df=`
 <svg
   class="lucide lucide-mail-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -16675,7 +16675,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
   <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
 </svg>
-`;const F6=`
+`;const Ff=`
 <svg
   class="lucide lucide-mail-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16693,7 +16693,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 16v6" />
   <path d="M16 19h6" />
 </svg>
-`;const _n=`
+`;const Zn=`
 <svg
   class="lucide lucide-mail-question-mark"
   xmlns="http://www.w3.org/2000/svg"
@@ -16711,7 +16711,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 15.28c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2" />
   <path d="M20 22v.01" />
 </svg>
-`;const P6=`
+`;const Pf=`
 <svg
   class="lucide lucide-mail-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -16730,7 +16730,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="18" cy="18" r="3" />
   <path d="m22 22-1.5-1.5" />
 </svg>
-`;const E6=`
+`;const Ef=`
 <svg
   class="lucide lucide-mail-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -16748,7 +16748,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 14v4" />
   <path d="M20 22v.01" />
 </svg>
-`;const T6=`
+`;const Tf=`
 <svg
   class="lucide lucide-mail-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -16766,7 +16766,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 17 4 4" />
   <path d="m21 17-4 4" />
 </svg>
-`;const Y6=`
+`;const Of=`
 <svg
   class="lucide lucide-mail"
   xmlns="http://www.w3.org/2000/svg"
@@ -16782,7 +16782,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
   <rect x="2" y="4" width="20" height="16" rx="2" />
 </svg>
-`;const O6=`
+`;const If=`
 <svg
   class="lucide lucide-mailbox"
   xmlns="http://www.w3.org/2000/svg"
@@ -16800,7 +16800,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2" />
   <line x1="6" x2="7" y1="10" y2="10" />
 </svg>
-`;const I6=`
+`;const qf=`
 <svg
   class="lucide lucide-mails"
   xmlns="http://www.w3.org/2000/svg"
@@ -16817,7 +16817,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 5.5-6.419 4.179a2 2 0 0 1-2.162 0L7 5.5" />
   <rect x="7" y="3" width="15" height="12" rx="2" />
 </svg>
-`;const q6=`
+`;const Nf=`
 <svg
   class="lucide lucide-map-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16835,7 +16835,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 18h-6" />
   <path d="M9 3.236v15" />
 </svg>
-`;const N6=`
+`;const _f=`
 <svg
   class="lucide lucide-map-pin-check-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -16851,7 +16851,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <path d="m9 10 2 2 4-4" />
 </svg>
-`;const _6=`
+`;const Zf=`
 <svg
   class="lucide lucide-map-pin-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -16868,7 +16868,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="10" r="3" />
   <path d="m16 18 2 2 4-4" />
 </svg>
-`;const Z6=`
+`;const Gf=`
 <svg
   class="lucide lucide-map-pin-house"
   xmlns="http://www.w3.org/2000/svg"
@@ -16886,7 +16886,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 22v-3" />
   <circle cx="10" cy="10" r="3" />
 </svg>
-`;const G6=`
+`;const Wf=`
 <svg
   class="lucide lucide-map-pin-minus-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -16902,7 +16902,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <path d="M9 10h6" />
 </svg>
-`;const W6=`
+`;const Kf=`
 <svg
   class="lucide lucide-map-pin-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16919,7 +16919,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="10" r="3" />
   <path d="M16 18h6" />
 </svg>
-`;const K6=`
+`;const Xf=`
 <svg
   class="lucide lucide-map-pin-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -16938,7 +16938,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533" />
   <path d="M9.13 9.13a3 3 0 0 0 3.74 3.74" />
 </svg>
-`;const Zn=`
+`;const Gn=`
 <svg
   class="lucide lucide-map-pin-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -16955,7 +16955,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
   <circle cx="10" cy="10" r="3" />
 </svg>
-`;const X6=`
+`;const Jf=`
 <svg
   class="lucide lucide-map-pin-plus-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -16972,7 +16972,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 7v6" />
   <path d="M9 10h6" />
 </svg>
-`;const J6=`
+`;const Qf=`
 <svg
   class="lucide lucide-map-pin-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -16990,7 +16990,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 18h6" />
   <path d="M19 15v6" />
 </svg>
-`;const Q6=`
+`;const t6=`
 <svg
   class="lucide lucide-map-pin-x-inside"
   xmlns="http://www.w3.org/2000/svg"
@@ -17007,7 +17007,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14.5 7.5-5 5" />
   <path d="m9.5 7.5 5 5" />
 </svg>
-`;const t8=`
+`;const e6=`
 <svg
   class="lucide lucide-map-pin-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -17025,7 +17025,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21.5 15.5-5 5" />
   <path d="m21.5 20.5-5-5" />
 </svg>
-`;const e8=`
+`;const o6=`
 <svg
   class="lucide lucide-map-pin"
   xmlns="http://www.w3.org/2000/svg"
@@ -17041,7 +17041,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <circle cx="12" cy="10" r="3" />
 </svg>
-`;const o8=`
+`;const r6=`
 <svg
   class="lucide lucide-map-pinned"
   xmlns="http://www.w3.org/2000/svg"
@@ -17058,7 +17058,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="8" r="2" />
   <path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712" />
 </svg>
-`;const r8=`
+`;const i6=`
 <svg
   class="lucide lucide-map-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -17077,7 +17077,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 18h-6" />
   <path d="M9 3.236v15" />
 </svg>
-`;const i8=`
+`;const s6=`
 <svg
   class="lucide lucide-map"
   xmlns="http://www.w3.org/2000/svg"
@@ -17094,7 +17094,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 5.764v15" />
   <path d="M9 3.236v15" />
 </svg>
-`;const s8=`
+`;const n6=`
 <svg
   class="lucide lucide-mars-stroke"
   xmlns="http://www.w3.org/2000/svg"
@@ -17112,7 +17112,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 3-7.75 7.75" />
   <circle cx="9" cy="15" r="6" />
 </svg>
-`;const n8=`
+`;const l6=`
 <svg
   class="lucide lucide-mars"
   xmlns="http://www.w3.org/2000/svg"
@@ -17129,7 +17129,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 3-6.75 6.75" />
   <circle cx="10" cy="14" r="6" />
 </svg>
-`;const l8=`
+`;const a6=`
 <svg
   class="lucide lucide-martini"
   xmlns="http://www.w3.org/2000/svg"
@@ -17146,7 +17146,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 11v11" />
   <path d="m19 3-7 8-7-8Z" />
 </svg>
-`;const a8=`
+`;const d6=`
 <svg
   class="lucide lucide-maximize-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -17164,7 +17164,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 21 7-7" />
   <path d="M9 21H3v-6" />
 </svg>
-`;const d8=`
+`;const h6=`
 <svg
   class="lucide lucide-maximize"
   xmlns="http://www.w3.org/2000/svg"
@@ -17182,7 +17182,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 16v3a2 2 0 0 0 2 2h3" />
   <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
 </svg>
-`;const h8=`
+`;const c6=`
 <svg
   class="lucide lucide-medal"
   xmlns="http://www.w3.org/2000/svg"
@@ -17202,7 +17202,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="17" r="5" />
   <path d="M12 18v-2h-.5" />
 </svg>
-`;const c8=`
+`;const p6=`
 <svg
   class="lucide lucide-megaphone-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17221,7 +17221,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
   <path d="M8 8v6" />
 </svg>
-`;const p8=`
+`;const u6=`
 <svg
   class="lucide lucide-megaphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -17238,7 +17238,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
   <path d="M8 6v8" />
 </svg>
-`;const u8=`
+`;const w6=`
 <svg
   class="lucide lucide-meh"
   xmlns="http://www.w3.org/2000/svg"
@@ -17256,7 +17256,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="9" x2="9.01" y1="9" y2="9" />
   <line x1="15" x2="15.01" y1="9" y2="9" />
 </svg>
-`;const w8=`
+`;const g6=`
 <svg
   class="lucide lucide-memory-stick"
   xmlns="http://www.w3.org/2000/svg"
@@ -17281,7 +17281,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 18v-2" />
   <rect x="2" y="6" width="20" height="10" rx="2" />
 </svg>
-`;const g8=`
+`;const v6=`
 <svg
   class="lucide lucide-menu"
   xmlns="http://www.w3.org/2000/svg"
@@ -17298,7 +17298,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 12h16" />
   <path d="M4 19h16" />
 </svg>
-`;const v8=`
+`;const k6=`
 <svg
   class="lucide lucide-merge"
   xmlns="http://www.w3.org/2000/svg"
@@ -17315,7 +17315,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
   <path d="m20 22-5-5" />
 </svg>
-`;const k8=`
+`;const m6=`
 <svg
   class="lucide lucide-message-circle-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -17332,7 +17332,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 15 3-3-3-3" />
   <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
 </svg>
-`;const m8=`
+`;const x6=`
 <svg
   class="lucide lucide-message-circle-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -17354,7 +17354,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.721 6.391a10 10 0 0 1 2.7-2.69" />
   <path d="m6.163 21.117-2.906.85a1 1 0 0 1-1.236-1.169l.965-2.98" />
 </svg>
-`;const x8=`
+`;const f6=`
 <svg
   class="lucide lucide-message-circle-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -17370,7 +17370,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
   <path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z" />
 </svg>
-`;const f8=`
+`;const M6=`
 <svg
   class="lucide lucide-message-circle-more"
   xmlns="http://www.w3.org/2000/svg"
@@ -17388,7 +17388,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 12h.01" />
   <path d="M16 12h.01" />
 </svg>
-`;const M8=`
+`;const y6=`
 <svg
   class="lucide lucide-message-circle-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17405,7 +17405,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4.93 4.929a10 10 0 0 0-1.938 11.412 2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 0 0 11.302-1.989" />
   <path d="M8.35 2.69A10 10 0 0 1 21.3 15.65" />
 </svg>
-`;const y8=`
+`;const b6=`
 <svg
   class="lucide lucide-message-circle-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -17422,7 +17422,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 12h8" />
   <path d="M12 8v8" />
 </svg>
-`;const Gn=`
+`;const Wn=`
 <svg
   class="lucide lucide-message-circle-question-mark"
   xmlns="http://www.w3.org/2000/svg"
@@ -17439,7 +17439,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
   <path d="M12 17h.01" />
 </svg>
-`;const b8=`
+`;const C6=`
 <svg
   class="lucide lucide-message-circle-reply"
   xmlns="http://www.w3.org/2000/svg"
@@ -17456,7 +17456,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m10 15-3-3 3-3" />
   <path d="M7 12h8a2 2 0 0 1 2 2v1" />
 </svg>
-`;const C8=`
+`;const B6=`
 <svg
   class="lucide lucide-message-circle-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -17473,7 +17473,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 8v4" />
   <path d="M12 16h.01" />
 </svg>
-`;const B8=`
+`;const j6=`
 <svg
   class="lucide lucide-message-circle-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -17490,7 +17490,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 9-6 6" />
   <path d="m9 9 6 6" />
 </svg>
-`;const j8=`
+`;const A6=`
 <svg
   class="lucide lucide-message-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -17505,7 +17505,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
 </svg>
-`;const A8=`
+`;const R6=`
 <svg
   class="lucide lucide-message-square-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -17522,7 +17522,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m10 8-3 3 3 3" />
   <path d="m14 14 3-3-3-3" />
 </svg>
-`;const L8=`
+`;const L6=`
 <svg
   class="lucide lucide-message-square-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -17549,7 +17549,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 9h.01" />
   <path d="M8 3h.01" />
 </svg>
-`;const S8=`
+`;const S6=`
 <svg
   class="lucide lucide-message-square-diff"
   xmlns="http://www.w3.org/2000/svg"
@@ -17567,7 +17567,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 9h4" />
   <path d="M12 7v4" />
 </svg>
-`;const H8=`
+`;const H6=`
 <svg
   class="lucide lucide-message-square-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -17583,7 +17583,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12.7 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4.7" />
   <circle cx="19" cy="6" r="3" />
 </svg>
-`;const R8=`
+`;const Y6=`
 <svg
   class="lucide lucide-message-square-heart"
   xmlns="http://www.w3.org/2000/svg"
@@ -17599,7 +17599,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
   <path d="M7.5 9.5c0 .687.265 1.383.697 1.844l3.009 3.264a1.14 1.14 0 0 0 .407.314 1 1 0 0 0 .783-.004 1.14 1.14 0 0 0 .398-.31l3.008-3.264A2.77 2.77 0 0 0 16.5 9.5 2.5 2.5 0 0 0 12 8a2.5 2.5 0 0 0-4.5 1.5" />
 </svg>
-`;const V8=`
+`;const U6=`
 <svg
   class="lucide lucide-message-square-lock"
   xmlns="http://www.w3.org/2000/svg"
@@ -17616,7 +17616,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 15v-2a2 2 0 0 0-4 0v2" />
   <rect x="14" y="15" width="8" height="5" rx="1" />
 </svg>
-`;const z8=`
+`;const V6=`
 <svg
   class="lucide lucide-message-square-more"
   xmlns="http://www.w3.org/2000/svg"
@@ -17634,7 +17634,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 11h.01" />
   <path d="M8 11h.01" />
 </svg>
-`;const $8=`
+`;const z6=`
 <svg
   class="lucide lucide-message-square-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17651,7 +17651,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M8.656 3H20a2 2 0 0 1 2 2v11.344" />
 </svg>
-`;const U8=`
+`;const $6=`
 <svg
   class="lucide lucide-message-square-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -17668,7 +17668,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 8v6" />
   <path d="M9 11h6" />
 </svg>
-`;const D8=`
+`;const D6=`
 <svg
   class="lucide lucide-message-square-quote"
   xmlns="http://www.w3.org/2000/svg"
@@ -17685,7 +17685,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
   <path d="M8 14a2 2 0 0 0 2-2V8H8" />
 </svg>
-`;const F8=`
+`;const F6=`
 <svg
   class="lucide lucide-message-square-reply"
   xmlns="http://www.w3.org/2000/svg"
@@ -17702,7 +17702,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m10 8-3 3 3 3" />
   <path d="M17 14v-1a2 2 0 0 0-2-2H7" />
 </svg>
-`;const P8=`
+`;const P6=`
 <svg
   class="lucide lucide-message-square-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -17720,7 +17720,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 15h6" />
   <path d="M7 7h8" />
 </svg>
-`;const E8=`
+`;const E6=`
 <svg
   class="lucide lucide-message-square-share"
   xmlns="http://www.w3.org/2000/svg"
@@ -17737,7 +17737,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 3h6v6" />
   <path d="m16 9 6-6" />
 </svg>
-`;const T8=`
+`;const T6=`
 <svg
   class="lucide lucide-message-square-warning"
   xmlns="http://www.w3.org/2000/svg"
@@ -17754,7 +17754,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 15h.01" />
   <path d="M12 7v4" />
 </svg>
-`;const Y8=`
+`;const O6=`
 <svg
   class="lucide lucide-message-square-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -17771,7 +17771,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14.5 8.5-5 5" />
   <path d="m9.5 8.5 5 5" />
 </svg>
-`;const O8=`
+`;const I6=`
 <svg
   class="lucide lucide-message-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -17786,7 +17786,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
 </svg>
-`;const I8=`
+`;const q6=`
 <svg
   class="lucide lucide-messages-square"
   xmlns="http://www.w3.org/2000/svg"
@@ -17802,7 +17802,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
   <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" />
 </svg>
-`;const q8=`
+`;const N6=`
 <svg
   class="lucide lucide-mic-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17822,7 +17822,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M9 9v3a3 3 0 0 0 5.12 2.12" />
 </svg>
-`;const Wn=`
+`;const Kn=`
 <svg
   class="lucide lucide-mic-vocal"
   xmlns="http://www.w3.org/2000/svg"
@@ -17839,7 +17839,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5" />
   <circle cx="16" cy="7" r="5" />
 </svg>
-`;const N8=`
+`;const _6=`
 <svg
   class="lucide lucide-mic"
   xmlns="http://www.w3.org/2000/svg"
@@ -17856,7 +17856,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
   <rect x="9" y="2" width="6" height="13" rx="3" />
 </svg>
-`;const _8=`
+`;const Z6=`
 <svg
   class="lucide lucide-microchip"
   xmlns="http://www.w3.org/2000/svg"
@@ -17880,7 +17880,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 6h2" />
   <rect x="6" y="2" width="12" height="20" rx="2" />
 </svg>
-`;const Z8=`
+`;const G6=`
 <svg
   class="lucide lucide-microscope"
   xmlns="http://www.w3.org/2000/svg"
@@ -17900,7 +17900,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
   <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
 </svg>
-`;const G8=`
+`;const W6=`
 <svg
   class="lucide lucide-microwave"
   xmlns="http://www.w3.org/2000/svg"
@@ -17919,7 +17919,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 19v2" />
   <path d="M18 19v2" />
 </svg>
-`;const W8=`
+`;const K6=`
 <svg
   class="lucide lucide-milestone"
   xmlns="http://www.w3.org/2000/svg"
@@ -17936,7 +17936,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 3v3" />
   <path d="M4 6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h13a2 2 0 0 0 1.152-.365l3.424-2.317a1 1 0 0 0 0-1.635l-3.424-2.318A2 2 0 0 0 17 6z" />
 </svg>
-`;const K8=`
+`;const X6=`
 <svg
   class="lucide lucide-milk-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -17954,7 +17954,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 15a6.47 6.47 0 0 1 5 0 6.472 6.472 0 0 0 3.435.435" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const X8=`
+`;const J6=`
 <svg
   class="lucide lucide-milk"
   xmlns="http://www.w3.org/2000/svg"
@@ -17971,7 +17971,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2" />
   <path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0" />
 </svg>
-`;const J8=`
+`;const Q6=`
 <svg
   class="lucide lucide-minimize-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -17989,7 +17989,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 21 7-7" />
   <path d="M4 14h6v6" />
 </svg>
-`;const Q8=`
+`;const t8=`
 <svg
   class="lucide lucide-minimize"
   xmlns="http://www.w3.org/2000/svg"
@@ -18007,7 +18007,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 16h3a2 2 0 0 1 2 2v3" />
   <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
 </svg>
-`;const tf=`
+`;const e8=`
 <svg
   class="lucide lucide-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -18022,7 +18022,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M5 12h14" />
 </svg>
-`;const ef=`
+`;const o8=`
 <svg
   class="lucide lucide-monitor-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -18040,7 +18040,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const of=`
+`;const r8=`
 <svg
   class="lucide lucide-monitor-cloud"
   xmlns="http://www.w3.org/2000/svg"
@@ -18058,7 +18058,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 21h8" />
   <rect x="2" y="3" width="20" height="14" rx="2" />
 </svg>
-`;const rf=`
+`;const i8=`
 <svg
   class="lucide lucide-monitor-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -18084,7 +18084,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 21h8" />
   <circle cx="18" cy="6" r="3" />
 </svg>
-`;const sf=`
+`;const s8=`
 <svg
   class="lucide lucide-monitor-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -18102,7 +18102,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 21h8" />
   <circle cx="19" cy="6" r="3" />
 </svg>
-`;const nf=`
+`;const n8=`
 <svg
   class="lucide lucide-monitor-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -18121,7 +18121,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const lf=`
+`;const l8=`
 <svg
   class="lucide lucide-monitor-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18140,7 +18140,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17v4" />
   <path d="m2 2 20 20" />
 </svg>
-`;const af=`
+`;const a8=`
 <svg
   class="lucide lucide-monitor-pause"
   xmlns="http://www.w3.org/2000/svg"
@@ -18159,7 +18159,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const df=`
+`;const d8=`
 <svg
   class="lucide lucide-monitor-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -18177,7 +18177,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 21h8" />
   <rect x="2" y="3" width="20" height="14" rx="2" />
 </svg>
-`;const hf=`
+`;const h8=`
 <svg
   class="lucide lucide-monitor-smartphone"
   xmlns="http://www.w3.org/2000/svg"
@@ -18195,7 +18195,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 19h5" />
   <rect width="6" height="10" x="16" y="12" rx="2" />
 </svg>
-`;const cf=`
+`;const c8=`
 <svg
   class="lucide lucide-monitor-speaker"
   xmlns="http://www.w3.org/2000/svg"
@@ -18214,7 +18214,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4" />
   <circle cx="17" cy="15" r="1" />
 </svg>
-`;const pf=`
+`;const p8=`
 <svg
   class="lucide lucide-monitor-stop"
   xmlns="http://www.w3.org/2000/svg"
@@ -18232,7 +18232,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="2" y="3" width="20" height="14" rx="2" />
   <rect x="9" y="7" width="6" height="6" rx="1" />
 </svg>
-`;const uf=`
+`;const u8=`
 <svg
   class="lucide lucide-monitor-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -18251,7 +18251,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const wf=`
+`;const w8=`
 <svg
   class="lucide lucide-monitor-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -18270,7 +18270,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 17v4" />
   <path d="M8 21h8" />
 </svg>
-`;const gf=`
+`;const g8=`
 <svg
   class="lucide lucide-monitor"
   xmlns="http://www.w3.org/2000/svg"
@@ -18287,7 +18287,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="8" x2="16" y1="21" y2="21" />
   <line x1="12" x2="12" y1="17" y2="21" />
 </svg>
-`;const vf=`
+`;const v8=`
 <svg
   class="lucide lucide-moon-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -18304,7 +18304,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 3v4" />
   <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
 </svg>
-`;const kf=`
+`;const k8=`
 <svg
   class="lucide lucide-moon"
   xmlns="http://www.w3.org/2000/svg"
@@ -18319,7 +18319,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
 </svg>
-`;const mf=`
+`;const m8=`
 <svg
   class="lucide lucide-motorbike"
   xmlns="http://www.w3.org/2000/svg"
@@ -18338,7 +18338,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="19" cy="17" r="3" />
   <circle cx="5" cy="17" r="3" />
 </svg>
-`;const xf=`
+`;const x8=`
 <svg
   class="lucide lucide-mountain-snow"
   xmlns="http://www.w3.org/2000/svg"
@@ -18354,7 +18354,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
   <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19" />
 </svg>
-`;const ff=`
+`;const f8=`
 <svg
   class="lucide lucide-mountain"
   xmlns="http://www.w3.org/2000/svg"
@@ -18369,7 +18369,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
 </svg>
-`;const Mf=`
+`;const M8=`
 <svg
   class="lucide lucide-mouse-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18387,7 +18387,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 13.343V9A7 7 0 0 0 8.56 2.902" />
   <path d="M22 22 2 2" />
 </svg>
-`;const yf=`
+`;const y8=`
 <svg
   class="lucide lucide-mouse-pointer-2-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18404,7 +18404,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 2 2 22" />
   <path d="m6.816 11.528-2.779-6.84a.495.495 0 0 1 .651-.651l6.84 2.779" />
 </svg>
-`;const bf=`
+`;const b8=`
 <svg
   class="lucide lucide-mouse-pointer-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18419,7 +18419,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
 </svg>
-`;const Cf=`
+`;const C8=`
 <svg
   class="lucide lucide-mouse-pointer-ban"
   xmlns="http://www.w3.org/2000/svg"
@@ -18436,7 +18436,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="16" cy="16" r="6" />
   <path d="m11.8 11.8 8.4 8.4" />
 </svg>
-`;const Bf=`
+`;const B8=`
 <svg
   class="lucide lucide-mouse-pointer-click"
   xmlns="http://www.w3.org/2000/svg"
@@ -18455,7 +18455,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7.2 2.2 8 5.1" />
   <path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z" />
 </svg>
-`;const jf=`
+`;const j8=`
 <svg
   class="lucide lucide-mouse-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -18471,7 +18471,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12.586 12.586 19 19" />
   <path d="M3.688 3.037a.497.497 0 0 0-.651.651l6.5 15.999a.501.501 0 0 0 .947-.062l1.569-6.083a2 2 0 0 1 1.448-1.479l6.124-1.579a.5.5 0 0 0 .063-.947z" />
 </svg>
-`;const Af=`
+`;const A8=`
 <svg
   class="lucide lucide-mouse"
   xmlns="http://www.w3.org/2000/svg"
@@ -18487,7 +18487,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="5" y="2" width="14" height="20" rx="7" />
   <path d="M12 6v4" />
 </svg>
-`;const Kn=`
+`;const Xn=`
 <svg
   class="lucide lucide-move-3d"
   xmlns="http://www.w3.org/2000/svg"
@@ -18505,7 +18505,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 6 3-3 3 3" />
   <path d="m18 16 3 3-3 3" />
 </svg>
-`;const Lf=`
+`;const R8=`
 <svg
   class="lucide lucide-move-diagonal-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18522,7 +18522,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 11V5h6" />
   <path d="m5 5 14 14" />
 </svg>
-`;const Sf=`
+`;const L8=`
 <svg
   class="lucide lucide-move-diagonal"
   xmlns="http://www.w3.org/2000/svg"
@@ -18539,7 +18539,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13 5h6v6" />
   <path d="M19 5 5 19" />
 </svg>
-`;const Hf=`
+`;const S8=`
 <svg
   class="lucide lucide-move-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -18555,7 +18555,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11 19H5V13" />
   <path d="M19 5L5 19" />
 </svg>
-`;const Rf=`
+`;const H8=`
 <svg
   class="lucide lucide-move-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -18571,7 +18571,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 13V19H13" />
   <path d="M5 5L19 19" />
 </svg>
-`;const Vf=`
+`;const Y8=`
 <svg
   class="lucide lucide-move-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -18587,7 +18587,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 18L12 22L16 18" />
   <path d="M12 2V22" />
 </svg>
-`;const zf=`
+`;const U8=`
 <svg
   class="lucide lucide-move-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -18604,7 +18604,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 12h20" />
   <path d="m6 8-4 4 4 4" />
 </svg>
-`;const $f=`
+`;const V8=`
 <svg
   class="lucide lucide-move-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -18620,7 +18620,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 8L2 12L6 16" />
   <path d="M2 12H22" />
 </svg>
-`;const Uf=`
+`;const z8=`
 <svg
   class="lucide lucide-move-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -18636,7 +18636,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 8L22 12L18 16" />
   <path d="M2 12H22" />
 </svg>
-`;const Df=`
+`;const $8=`
 <svg
   class="lucide lucide-move-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -18652,7 +18652,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 11V5H11" />
   <path d="M5 5L19 19" />
 </svg>
-`;const Ff=`
+`;const D8=`
 <svg
   class="lucide lucide-move-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -18668,7 +18668,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13 5H19V11" />
   <path d="M19 5L5 19" />
 </svg>
-`;const Pf=`
+`;const F8=`
 <svg
   class="lucide lucide-move-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -18684,7 +18684,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 6L12 2L16 6" />
   <path d="M12 2V22" />
 </svg>
-`;const Ef=`
+`;const P8=`
 <svg
   class="lucide lucide-move-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -18701,7 +18701,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 18 4 4 4-4" />
   <path d="m8 6 4-4 4 4" />
 </svg>
-`;const Tf=`
+`;const E8=`
 <svg
   class="lucide lucide-move"
   xmlns="http://www.w3.org/2000/svg"
@@ -18721,7 +18721,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m5 9-3 3 3 3" />
   <path d="m9 5 3-3 3 3" />
 </svg>
-`;const Yf=`
+`;const T8=`
 <svg
   class="lucide lucide-music-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18737,7 +18737,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="8" cy="18" r="4" />
   <path d="M12 18V2l7 4" />
 </svg>
-`;const Of=`
+`;const O8=`
 <svg
   class="lucide lucide-music-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -18753,7 +18753,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="18" r="4" />
   <path d="M16 18V2" />
 </svg>
-`;const If=`
+`;const I8=`
 <svg
   class="lucide lucide-music-4"
   xmlns="http://www.w3.org/2000/svg"
@@ -18771,7 +18771,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="6" cy="18" r="3" />
   <circle cx="18" cy="16" r="3" />
 </svg>
-`;const qf=`
+`;const q8=`
 <svg
   class="lucide lucide-music"
   xmlns="http://www.w3.org/2000/svg"
@@ -18788,7 +18788,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="6" cy="18" r="3" />
   <circle cx="18" cy="16" r="3" />
 </svg>
-`;const Nf=`
+`;const N8=`
 <svg
   class="lucide lucide-navigation-2-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18805,7 +18805,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14.53 8.88 12 2l-1.17 3.17" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const _f=`
+`;const _8=`
 <svg
   class="lucide lucide-navigation-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -18820,7 +18820,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <polygon points="12 2 19 21 12 17 5 21 12 2" />
 </svg>
-`;const Zf=`
+`;const Z8=`
 <svg
   class="lucide lucide-navigation-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -18837,7 +18837,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.39 11.73 22 2l-9.73 4.61" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const Gf=`
+`;const G8=`
 <svg
   class="lucide lucide-navigation"
   xmlns="http://www.w3.org/2000/svg"
@@ -18852,7 +18852,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <polygon points="3 11 22 2 13 21 11 13 3 11" />
 </svg>
-`;const Wf=`
+`;const W8=`
 <svg
   class="lucide lucide-network"
   xmlns="http://www.w3.org/2000/svg"
@@ -18871,7 +18871,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
   <path d="M12 12V8" />
 </svg>
-`;const Kf=`
+`;const K8=`
 <svg
   class="lucide lucide-newspaper"
   xmlns="http://www.w3.org/2000/svg"
@@ -18889,7 +18889,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
   <rect width="8" height="4" x="10" y="6" rx="1" />
 </svg>
-`;const Xf=`
+`;const X8=`
 <svg
   class="lucide lucide-nfc"
   xmlns="http://www.w3.org/2000/svg"
@@ -18907,7 +18907,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12.91 4.1a15.91 15.91 0 0 1 .01 15.8" />
   <path d="M16.37 2a20.16 20.16 0 0 1 0 20" />
 </svg>
-`;const Jf=`
+`;const J8=`
 <svg
   class="lucide lucide-non-binary"
   xmlns="http://www.w3.org/2000/svg"
@@ -18925,7 +18925,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8.5 8 7-4" />
   <circle cx="12" cy="17" r="5" />
 </svg>
-`;const Qf=`
+`;const Q8=`
 <svg
   class="lucide lucide-notebook-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -19094,7 +19094,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 10v4a7.004 7.004 0 0 0 5.277 6.787c.412.104.802.292 1.102.592L12 22l.621-.621c.3-.3.69-.488 1.102-.592A7.003 7.003 0 0 0 19 14v-4" />
   <path d="M12 4C8 4 4.5 6 4 8c-.243.97-.919 1.952-2 3 1.31-.082 1.972-.29 3-1 .54.92.982 1.356 2 2 1.452-.647 1.954-1.098 2.5-2 .595.995 1.151 1.427 2.5 2 1.31-.621 1.862-1.058 2.5-2 .629.977 1.162 1.423 2.5 2 1.209-.548 1.68-.967 2-2 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4Z" />
 </svg>
-`;const Xn=`
+`;const Jn=`
 <svg
   class="lucide lucide-octagon-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -19127,7 +19127,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z" />
   <path d="M8 12h8" />
 </svg>
-`;const Jn=`
+`;const Qn=`
 <svg
   class="lucide lucide-octagon-pause"
   xmlns="http://www.w3.org/2000/svg"
@@ -19144,7 +19144,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 15V9" />
   <path d="M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z" />
 </svg>
-`;const Qn=`
+`;const tl=`
 <svg
   class="lucide lucide-octagon-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -19428,7 +19428,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
   <rect width="4" height="6" x="8" y="16" rx="1" />
 </svg>
-`;const tl=`
+`;const el=`
 <svg
   class="lucide lucide-paintbrush-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -19536,7 +19536,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 15h18" />
   <path d="m9 10 3-3 3 3" />
 </svg>
-`;const el=`
+`;const ol=`
 <svg
   class="lucide lucide-panel-bottom-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19555,7 +19555,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 15h2" />
   <path d="M9 15h1" />
 </svg>
-`;const L7=`
+`;const R7=`
 <svg
   class="lucide lucide-panel-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -19571,7 +19571,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M3 15h18" />
 </svg>
-`;const ol=`
+`;const rl=`
 <svg
   class="lucide lucide-panel-left-close"
   xmlns="http://www.w3.org/2000/svg"
@@ -19588,7 +19588,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 3v18" />
   <path d="m16 15-3-3 3-3" />
 </svg>
-`;const rl=`
+`;const il=`
 <svg
   class="lucide lucide-panel-left-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19605,7 +19605,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 3v18" />
   <path d="m14 9 3 3-3 3" />
 </svg>
-`;const il=`
+`;const sl=`
 <svg
   class="lucide lucide-panel-left-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19624,7 +19624,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 3v2" />
   <path d="M9 9v1" />
 </svg>
-`;const S7=`
+`;const L7=`
 <svg
   class="lucide lucide-panel-left-right-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19647,7 +19647,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 5V3" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const sl=`
+`;const nl=`
 <svg
   class="lucide lucide-panel-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -19663,7 +19663,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M9 3v18" />
 </svg>
-`;const H7=`
+`;const S7=`
 <svg
   class="lucide lucide-panel-right-close"
   xmlns="http://www.w3.org/2000/svg"
@@ -19680,7 +19680,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 3v18" />
   <path d="m8 9 3 3-3 3" />
 </svg>
-`;const R7=`
+`;const H7=`
 <svg
   class="lucide lucide-panel-right-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19697,7 +19697,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 3v18" />
   <path d="m10 15-3-3 3-3" />
 </svg>
-`;const nl=`
+`;const ll=`
 <svg
   class="lucide lucide-panel-right-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19716,7 +19716,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 3v2" />
   <path d="M15 9v1" />
 </svg>
-`;const V7=`
+`;const Y7=`
 <svg
   class="lucide lucide-panel-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -19732,7 +19732,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M15 3v18" />
 </svg>
-`;const z7=`
+`;const U7=`
 <svg
   class="lucide lucide-panel-top-bottom-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19755,7 +19755,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 9h1" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const $7=`
+`;const V7=`
 <svg
   class="lucide lucide-panel-top-close"
   xmlns="http://www.w3.org/2000/svg"
@@ -19772,7 +19772,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 9h18" />
   <path d="m9 16 3-3 3 3" />
 </svg>
-`;const ll=`
+`;const al=`
 <svg
   class="lucide lucide-panel-top-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -19791,7 +19791,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 9h2" />
   <path d="M9 9h1" />
 </svg>
-`;const U7=`
+`;const z7=`
 <svg
   class="lucide lucide-panel-top-open"
   xmlns="http://www.w3.org/2000/svg"
@@ -19808,7 +19808,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 9h18" />
   <path d="m15 14-3 3-3-3" />
 </svg>
-`;const D7=`
+`;const $7=`
 <svg
   class="lucide lucide-panel-top"
   xmlns="http://www.w3.org/2000/svg"
@@ -19824,7 +19824,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M3 9h18" />
 </svg>
-`;const F7=`
+`;const D7=`
 <svg
   class="lucide lucide-panels-left-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -19841,7 +19841,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 3v18" />
   <path d="M9 15h12" />
 </svg>
-`;const P7=`
+`;const F7=`
 <svg
   class="lucide lucide-panels-right-bottom"
   xmlns="http://www.w3.org/2000/svg"
@@ -19858,7 +19858,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 15h12" />
   <path d="M15 3v18" />
 </svg>
-`;const al=`
+`;const dl=`
 <svg
   class="lucide lucide-panels-top-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -19875,7 +19875,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 9h18" />
   <path d="M9 21V9" />
 </svg>
-`;const E7=`
+`;const P7=`
 <svg
   class="lucide lucide-paperclip"
   xmlns="http://www.w3.org/2000/svg"
@@ -19890,7 +19890,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551" />
 </svg>
-`;const T7=`
+`;const E7=`
 <svg
   class="lucide lucide-parentheses"
   xmlns="http://www.w3.org/2000/svg"
@@ -19906,7 +19906,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 21s-4-3-4-9 4-9 4-9" />
   <path d="M16 3s4 3 4 9-4 9-4 9" />
 </svg>
-`;const Y7=`
+`;const T7=`
 <svg
   class="lucide lucide-parking-meter"
   xmlns="http://www.w3.org/2000/svg"
@@ -20000,7 +20000,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 6h6" />
   <path d="M9 10h6" />
 </svg>
-`;const dl=`
+`;const hl=`
 <svg
   class="lucide lucide-pen-line"
   xmlns="http://www.w3.org/2000/svg"
@@ -20051,7 +20051,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2.3 2.3 7.286 7.286" />
   <circle cx="11" cy="11" r="2" />
 </svg>
-`;const hl=`
+`;const cl=`
 <svg
   class="lucide lucide-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -20647,7 +20647,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
 </svg>
-`;const LM=`
+`;const RM=`
 <svg
   class="lucide lucide-plug-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -20666,7 +20666,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 8h14" />
   <path d="M6 11V8h12v3a6 6 0 1 1-12 0Z" />
 </svg>
-`;const cl=`
+`;const pl=`
 <svg
   class="lucide lucide-plug-zap"
   xmlns="http://www.w3.org/2000/svg"
@@ -20685,7 +20685,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10.5 16.5 13 14" />
   <path d="m18 3-4 4h6l-4 4" />
 </svg>
-`;const SM=`
+`;const LM=`
 <svg
   class="lucide lucide-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -20701,7 +20701,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 12h14" />
   <path d="M12 5v14" />
 </svg>
-`;const HM=`
+`;const SM=`
 <svg
   class="lucide lucide-plug"
   xmlns="http://www.w3.org/2000/svg"
@@ -20719,7 +20719,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" />
   <path d="M9 8V2" />
 </svg>
-`;const RM=`
+`;const HM=`
 <svg
   class="lucide lucide-pocket-knife"
   xmlns="http://www.w3.org/2000/svg"
@@ -20738,7 +20738,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z" />
   <path d="M18 11.66V22a4 4 0 0 0 4-4V6" />
 </svg>
-`;const VM=`
+`;const YM=`
 <svg
   class="lucide lucide-pocket"
   xmlns="http://www.w3.org/2000/svg"
@@ -20754,7 +20754,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 3a2 2 0 0 1 2 2v6a1 1 0 0 1-20 0V5a2 2 0 0 1 2-2z" />
   <path d="m8 10 4 4 4-4" />
 </svg>
-`;const zM=`
+`;const UM=`
 <svg
   class="lucide lucide-podcast"
   xmlns="http://www.w3.org/2000/svg"
@@ -20772,7 +20772,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 14a5 5 0 1 1 8 0" />
   <circle cx="12" cy="11" r="1" fill="currentColor" />
 </svg>
-`;const $M=`
+`;const VM=`
 <svg
   class="lucide lucide-pointer-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20792,7 +20792,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 6v8" />
   <path d="m2 2 20 20" />
 </svg>
-`;const UM=`
+`;const zM=`
 <svg
   class="lucide lucide-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -20811,7 +20811,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10" />
   <path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
 </svg>
-`;const DM=`
+`;const $M=`
 <svg
   class="lucide lucide-popcorn"
   xmlns="http://www.w3.org/2000/svg"
@@ -20829,7 +20829,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m14 22 1-14" />
   <path d="M20 8c.5 0 .9.4.8 1l-2.6 12c-.1.5-.7 1-1.2 1H7c-.6 0-1.1-.4-1.2-1L3.2 9c-.1-.6.3-1 .8-1Z" />
 </svg>
-`;const FM=`
+`;const DM=`
 <svg
   class="lucide lucide-popsicle"
   xmlns="http://www.w3.org/2000/svg"
@@ -20845,7 +20845,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18.6 14.4c.8-.8.8-2 0-2.8l-8.1-8.1a4.95 4.95 0 1 0-7.1 7.1l8.1 8.1c.9.7 2.1.7 2.9-.1Z" />
   <path d="m22 22-5.5-5.5" />
 </svg>
-`;const PM=`
+`;const FM=`
 <svg
   class="lucide lucide-pound-sterling"
   xmlns="http://www.w3.org/2000/svg"
@@ -20863,7 +20863,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 21h12" />
   <path d="M6 13h10" />
 </svg>
-`;const EM=`
+`;const PM=`
 <svg
   class="lucide lucide-power-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -20881,7 +20881,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 2v4" />
   <path d="m2 2 20 20" />
 </svg>
-`;const TM=`
+`;const EM=`
 <svg
   class="lucide lucide-power"
   xmlns="http://www.w3.org/2000/svg"
@@ -20897,7 +20897,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 2v10" />
   <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
 </svg>
-`;const YM=`
+`;const TM=`
 <svg
   class="lucide lucide-presentation"
   xmlns="http://www.w3.org/2000/svg"
@@ -21470,7 +21470,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 4v16H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" />
   <circle cx="14" cy="12" r="8" />
 </svg>
-`;const pl=`
+`;const ul=`
 <svg
   class="lucide lucide-rectangle-ellipsis"
   xmlns="http://www.w3.org/2000/svg"
@@ -21639,7 +21639,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
   <path d="M16 16h5v5" />
 </svg>
-`;const L9=`
+`;const R9=`
 <svg
   class="lucide lucide-refresh-cw-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -21660,7 +21660,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 3v5h-5" />
   <path d="M22 22 2 2" />
 </svg>
-`;const S9=`
+`;const L9=`
 <svg
   class="lucide lucide-refresh-cw"
   xmlns="http://www.w3.org/2000/svg"
@@ -21678,7 +21678,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
   <path d="M8 16H3v5" />
 </svg>
-`;const H9=`
+`;const S9=`
 <svg
   class="lucide lucide-refrigerator"
   xmlns="http://www.w3.org/2000/svg"
@@ -21695,7 +21695,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 10h14" />
   <path d="M15 7v6" />
 </svg>
-`;const R9=`
+`;const H9=`
 <svg
   class="lucide lucide-regex"
   xmlns="http://www.w3.org/2000/svg"
@@ -21713,7 +21713,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m12.67 10.5 8.66-5" />
   <path d="M9 17a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2z" />
 </svg>
-`;const V9=`
+`;const Y9=`
 <svg
   class="lucide lucide-remove-formatting"
   xmlns="http://www.w3.org/2000/svg"
@@ -21732,7 +21732,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 15 5 5" />
   <path d="m20 15-5 5" />
 </svg>
-`;const z9=`
+`;const U9=`
 <svg
   class="lucide lucide-repeat-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -21751,7 +21751,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 13v1a4 4 0 0 1-4 4H3" />
   <path d="M11 10h1v4" />
 </svg>
-`;const $9=`
+`;const V9=`
 <svg
   class="lucide lucide-repeat-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -21769,7 +21769,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 15-3 3-3-3" />
   <path d="M11 6h6a2 2 0 0 1 2 2v10" />
 </svg>
-`;const U9=`
+`;const z9=`
 <svg
   class="lucide lucide-repeat"
   xmlns="http://www.w3.org/2000/svg"
@@ -21787,7 +21787,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 22-4-4 4-4" />
   <path d="M21 13v1a4 4 0 0 1-4 4H3" />
 </svg>
-`;const D9=`
+`;const $9=`
 <svg
   class="lucide lucide-replace-all"
   xmlns="http://www.w3.org/2000/svg"
@@ -21810,7 +21810,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 10V5a2 2 0 0 1 2-2h2" />
   <rect x="3" y="14" width="7" height="7" rx="1" />
 </svg>
-`;const F9=`
+`;const D9=`
 <svg
   class="lucide lucide-replace"
   xmlns="http://www.w3.org/2000/svg"
@@ -21831,7 +21831,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 10V5a2 2 0 0 1 2-2h2" />
   <rect x="3" y="14" width="7" height="7" rx="1" />
 </svg>
-`;const P9=`
+`;const F9=`
 <svg
   class="lucide lucide-reply-all"
   xmlns="http://www.w3.org/2000/svg"
@@ -21848,7 +21848,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 18v-2a4 4 0 0 0-4-4H7" />
   <path d="m7 17-5-5 5-5" />
 </svg>
-`;const E9=`
+`;const P9=`
 <svg
   class="lucide lucide-reply"
   xmlns="http://www.w3.org/2000/svg"
@@ -21864,7 +21864,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 18v-2a4 4 0 0 0-4-4H4" />
   <path d="m9 17-5-5 5-5" />
 </svg>
-`;const T9=`
+`;const E9=`
 <svg
   class="lucide lucide-rewind"
   xmlns="http://www.w3.org/2000/svg"
@@ -21880,7 +21880,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 12 18z" />
   <path d="M22 6a2 2 0 0 0-3.414-1.414l-6 6a2 2 0 0 0 0 2.828l6 6A2 2 0 0 0 22 18z" />
 </svg>
-`;const Y9=`
+`;const T9=`
 <svg
   class="lucide lucide-ribbon"
   xmlns="http://www.w3.org/2000/svg"
@@ -21975,7 +21975,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9.77 12C4 15 2 22 2 22" />
   <circle cx="17" cy="8" r="2" />
 </svg>
-`;const ul=`
+`;const wl=`
 <svg
   class="lucide lucide-rotate-3d"
   xmlns="http://www.w3.org/2000/svg"
@@ -22135,7 +22135,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.84 7.17a4 4 0 0 0-5.66 0" />
   <path d="M20.66 4.34a8 8 0 0 0-11.31 0" />
 </svg>
-`;const wl=`
+`;const gl=`
 <svg
   class="lucide lucide-rows-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -22151,7 +22151,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M3 12h18" />
 </svg>
-`;const gl=`
+`;const vl=`
 <svg
   class="lucide lucide-rows-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -22426,7 +22426,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
   <path d="M7 3v4a1 1 0 0 0 1 1h7" />
 </svg>
-`;const vl=`
+`;const kl=`
 <svg
   class="lucide lucide-scale-3d"
   xmlns="http://www.w3.org/2000/svg"
@@ -22722,7 +22722,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="6" cy="18" r="3" />
   <path d="M14.8 14.8 20 20" />
 </svg>
-`;const Ly=`
+`;const Ry=`
 <svg
   class="lucide lucide-scooter"
   xmlns="http://www.w3.org/2000/svg"
@@ -22739,7 +22739,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6.95 17h5.142c.523 0 .95-.406 1.063-.916a6.5 6.5 0 0 1 5.345-5.009" />
   <circle cx="19.5" cy="17.5" r="2.5" />
   <circle cx="4.5" cy="17.5" r="2.5" />
-</svg>`;const Sy=`
+</svg>`;const Ly=`
 <svg
   class="lucide lucide-screen-share"
   xmlns="http://www.w3.org/2000/svg"
@@ -22758,7 +22758,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 8 5-5" />
   <path d="M17 3h5v5" />
 </svg>
-`;const Hy=`
+`;const Sy=`
 <svg
   class="lucide lucide-screen-share-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -22777,7 +22777,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m22 3-5 5" />
   <path d="m17 3 5 5" />
 </svg>
-`;const Ry=`
+`;const Hy=`
 <svg
   class="lucide lucide-scroll-text"
   xmlns="http://www.w3.org/2000/svg"
@@ -22795,7 +22795,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 17V5a2 2 0 0 0-2-2H4" />
   <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
 </svg>
-`;const Vy=`
+`;const Yy=`
 <svg
   class="lucide lucide-scroll"
   xmlns="http://www.w3.org/2000/svg"
@@ -22811,7 +22811,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 17V5a2 2 0 0 0-2-2H4" />
   <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
 </svg>
-`;const zy=`
+`;const Uy=`
 <svg
   class="lucide lucide-search-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -22828,7 +22828,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 21-4.3-4.3" />
   <path d="M11 7v4" />
   <path d="M11 15h.01" />
-</svg>`;const $y=`
+</svg>`;const Vy=`
 <svg
   class="lucide lucide-search-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -22845,7 +22845,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="11" cy="11" r="8" />
   <path d="m21 21-4.3-4.3" />
 </svg>
-`;const Uy=`
+`;const zy=`
 <svg
   class="lucide lucide-search-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -22862,7 +22862,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="11" cy="11" r="8" />
   <path d="m21 21-4.3-4.3" />
 </svg>
-`;const Dy=`
+`;const $y=`
 <svg
   class="lucide lucide-search-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -22880,7 +22880,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 8.5 7 11l2 2.5" />
   <circle cx="11" cy="11" r="8" />
 </svg>
-`;const Fy=`
+`;const Dy=`
 <svg
   class="lucide lucide-search-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -22898,7 +22898,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="11" cy="11" r="8" />
   <path d="m21 21-4.3-4.3" />
 </svg>
-`;const Py=`
+`;const Fy=`
 <svg
   class="lucide lucide-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -22914,7 +22914,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 21-4.34-4.34" />
   <circle cx="11" cy="11" r="8" />
 </svg>
-`;const Ey=`
+`;const Py=`
 <svg
   class="lucide lucide-section"
   xmlns="http://www.w3.org/2000/svg"
@@ -22930,7 +22930,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 5a4 3 0 0 0-8 0c0 4 8 3 8 7a4 3 0 0 1-8 0" />
   <path d="M8 19a4 3 0 0 0 8 0c0-4-8-3-8-7a4 3 0 0 1 8 0" />
 </svg>
-`;const kl=`
+`;const ml=`
 <svg
   class="lucide lucide-send-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -22946,7 +22946,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z" />
   <path d="M6 12h16" />
 </svg>
-`;const Ty=`
+`;const Ey=`
 <svg
   class="lucide lucide-send-to-back"
   xmlns="http://www.w3.org/2000/svg"
@@ -22964,7 +22964,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 14v1a2 2 0 0 0 2 2h1" />
   <path d="M14 7h1a2 2 0 0 1 2 2v1" />
 </svg>
-`;const Yy=`
+`;const Ty=`
 <svg
   class="lucide lucide-send"
   xmlns="http://www.w3.org/2000/svg"
@@ -23351,7 +23351,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 5a1 1 0 0 0-1 1v7c0 5 3.5 7.5 7.67 8.94a1 1 0 0 0 .67.01c2.35-.82 4.48-1.97 5.9-3.71" />
   <path d="M9.309 3.652A12.252 12.252 0 0 0 11.24 2.28a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7a9.784 9.784 0 0 1-.08 1.264" />
 </svg>
-`;const ml=`
+`;const xl=`
 <svg
   class="lucide lucide-shield-question-mark"
   xmlns="http://www.w3.org/2000/svg"
@@ -23385,7 +23385,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6.376 18.91a6 6 0 0 1 11.249.003" />
   <circle cx="12" cy="11" r="4" />
 </svg>
-`;const xl=`
+`;const fl=`
 <svg
   class="lucide lucide-shield-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -23731,7 +23731,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 20v-4" />
   <path d="M12 20v-8" />
 </svg>
-`;const Lb=`
+`;const Rb=`
 <svg
   class="lucide lucide-signal-zero"
   xmlns="http://www.w3.org/2000/svg"
@@ -23746,7 +23746,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M2 20h.01" />
 </svg>
-`;const Sb=`
+`;const Lb=`
 <svg
   class="lucide lucide-signal"
   xmlns="http://www.w3.org/2000/svg"
@@ -23765,7 +23765,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 20V8" />
   <path d="M22 4v16" />
 </svg>
-`;const Hb=`
+`;const Sb=`
 <svg
   class="lucide lucide-signature"
   xmlns="http://www.w3.org/2000/svg"
@@ -23781,7 +23781,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284" />
   <path d="M3 21h18" />
 </svg>
-`;const Rb=`
+`;const Hb=`
 <svg
   class="lucide lucide-signpost-big"
   xmlns="http://www.w3.org/2000/svg"
@@ -23799,7 +23799,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 22V4a2 2 0 1 1 4 0v18" />
   <path d="M8 22h8" />
 </svg>
-`;const Vb=`
+`;const Yb=`
 <svg
   class="lucide lucide-signpost"
   xmlns="http://www.w3.org/2000/svg"
@@ -23816,7 +23816,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 3v3" />
   <path d="M18 6a2 2 0 0 1 1.387.56l2.307 2.22a1 1 0 0 1 0 1.44l-2.307 2.22A2 2 0 0 1 18 13H6a2 2 0 0 1-1.387-.56l-2.306-2.22a1 1 0 0 1 0-1.44l2.306-2.22A2 2 0 0 1 6 6z" />
 </svg>
-`;const zb=`
+`;const Ub=`
 <svg
   class="lucide lucide-siren"
   xmlns="http://www.w3.org/2000/svg"
@@ -23838,7 +23838,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m4.929 4.929.707.707" />
   <path d="M12 12v6" />
 </svg>
-`;const $b=`
+`;const Vb=`
 <svg
   class="lucide lucide-skip-back"
   xmlns="http://www.w3.org/2000/svg"
@@ -23854,7 +23854,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
   <path d="M3 20V4" />
 </svg>
-`;const Ub=`
+`;const zb=`
 <svg
   class="lucide lucide-skip-forward"
   xmlns="http://www.w3.org/2000/svg"
@@ -23870,7 +23870,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 4v16" />
   <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
 </svg>
-`;const Db=`
+`;const $b=`
 <svg
   class="lucide lucide-skull"
   xmlns="http://www.w3.org/2000/svg"
@@ -23888,7 +23888,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="15" cy="12" r="1" />
   <circle cx="9" cy="12" r="1" />
 </svg>
-`;const Fb=`
+`;const Db=`
 <svg
   class="lucide lucide-slack"
   xmlns="http://www.w3.org/2000/svg"
@@ -23910,7 +23910,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="8" height="3" x="2" y="8" rx="1.5" />
   <path d="M8.5 5H10V3.5A1.5 1.5 0 1 0 8.5 5" />
 </svg>
-`;const Pb=`
+`;const Fb=`
 <svg
   class="lucide lucide-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -23925,7 +23925,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M22 2 2 22" />
 </svg>
-`;const Eb=`
+`;const Pb=`
 <svg
   class="lucide lucide-sliders-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -23948,7 +23948,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 10v4" />
   <path d="M8 12H3" />
 </svg>
-`;const Tb=`
+`;const Eb=`
 <svg
   class="lucide lucide-slice"
   xmlns="http://www.w3.org/2000/svg"
@@ -23963,7 +23963,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M11 16.586V19a1 1 0 0 1-1 1H2L18.37 3.63a1 1 0 1 1 3 3l-9.663 9.663a1 1 0 0 1-1.414 0L8 14" />
 </svg>
-`;const fl=`
+`;const Ml=`
 <svg
   class="lucide lucide-sliders-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -23986,7 +23986,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 10V3" />
   <path d="M5 21v-7" />
 </svg>
-`;const Yb=`
+`;const Tb=`
 <svg
   class="lucide lucide-smartphone-charging"
   xmlns="http://www.w3.org/2000/svg"
@@ -24243,7 +24243,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
 </svg>
-`;const Ml=`
+`;const yl=`
 <svg
   class="lucide lucide-sparkles"
   xmlns="http://www.w3.org/2000/svg"
@@ -24458,7 +24458,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4" />
   <path d="M5 21h14" />
 </svg>
-`;const yl=`
+`;const bl=`
 <svg
   class="lucide lucide-square-activity"
   xmlns="http://www.w3.org/2000/svg"
@@ -24474,7 +24474,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M17 12h-2l-2 5-2-10-2 5H7" />
 </svg>
-`;const bl=`
+`;const Cl=`
 <svg
   class="lucide lucide-square-arrow-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -24491,7 +24491,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 8-8 8" />
   <path d="M16 16H8V8" />
 </svg>
-`;const Cl=`
+`;const Bl=`
 <svg
   class="lucide lucide-square-arrow-down-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -24508,7 +24508,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 8 8 8" />
   <path d="M16 8v8H8" />
 </svg>
-`;const Bl=`
+`;const jl=`
 <svg
   class="lucide lucide-square-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -24525,7 +24525,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 8v8" />
   <path d="m8 12 4 4 4-4" />
 </svg>
-`;const jl=`
+`;const Al=`
 <svg
   class="lucide lucide-square-arrow-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -24542,7 +24542,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m12 8-4 4 4 4" />
   <path d="M16 12H8" />
 </svg>
-`;const Al=`
+`;const Rl=`
 <svg
   class="lucide lucide-square-arrow-out-down-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -24610,7 +24610,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m21 3-9 9" />
   <path d="M15 3h6v6" />
 </svg>
-`;const Rl=`
+`;const Yl=`
 <svg
   class="lucide lucide-square-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -24627,7 +24627,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 12h8" />
   <path d="m12 16 4-4-4-4" />
 </svg>
-`;const Vl=`
+`;const Ul=`
 <svg
   class="lucide lucide-square-arrow-up-left"
   xmlns="http://www.w3.org/2000/svg"
@@ -24644,7 +24644,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 16V8h8" />
   <path d="M16 16 8 8" />
 </svg>
-`;const zl=`
+`;const Vl=`
 <svg
   class="lucide lucide-square-arrow-up-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -24661,7 +24661,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 8h8v8" />
   <path d="m8 16 8-8" />
 </svg>
-`;const $l=`
+`;const zl=`
 <svg
   class="lucide lucide-square-arrow-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -24678,7 +24678,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 12-4-4-4 4" />
   <path d="M12 16V8" />
 </svg>
-`;const Ul=`
+`;const $l=`
 <svg
   class="lucide lucide-square-asterisk"
   xmlns="http://www.w3.org/2000/svg"
@@ -24724,7 +24724,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="8.5" cy="15.5" r="1.5" />
   <line x1="9.56066" y1="14.43934" x2="17" y2="7" />
 </svg>
-`;const ii=`
+`;const si=`
 <svg
   class="lucide lucide-square-chart-gantt"
   xmlns="http://www.w3.org/2000/svg"
@@ -24806,7 +24806,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="m14 16-4-4 4-4" />
 </svg>
-`;const Yl=`
+`;const Ol=`
 <svg
   class="lucide lucide-square-chevron-right"
   xmlns="http://www.w3.org/2000/svg"
@@ -24822,7 +24822,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="m10 8 4 4-4 4" />
 </svg>
-`;const Ol=`
+`;const Il=`
 <svg
   class="lucide lucide-square-chevron-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -24838,7 +24838,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="m8 14 4-4 4 4" />
 </svg>
-`;const Il=`
+`;const ql=`
 <svg
   class="lucide lucide-square-code"
   xmlns="http://www.w3.org/2000/svg"
@@ -24891,7 +24891,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 21h1" />
   <path d="M14 21h1" />
 </svg>
-`;const ql=`
+`;const Nl=`
 <svg
   class="lucide lucide-square-dashed-kanban"
   xmlns="http://www.w3.org/2000/svg"
@@ -24920,7 +24920,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 14v1" />
   <path d="M3 9v1" />
 </svg>
-`;const Nl=`
+`;const _l=`
 <svg
   class="lucide lucide-square-dashed-mouse-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -24967,7 +24967,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 21a2 2 0 0 1-2-2" />
   <path d="M9 21h1" />
 </svg>
-`;const _l=`
+`;const Zl=`
 <svg
   class="lucide lucide-square-dashed"
   xmlns="http://www.w3.org/2000/svg"
@@ -24993,7 +24993,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 14v1" />
   <path d="M21 14v1" />
 </svg>
-`;const Zl=`
+`;const Gl=`
 <svg
   class="lucide lucide-square-divide"
   xmlns="http://www.w3.org/2000/svg"
@@ -25011,7 +25011,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="12" x2="12" y1="16" y2="16" />
   <line x1="12" x2="12" y1="8" y2="8" />
 </svg>
-`;const Gl=`
+`;const Wl=`
 <svg
   class="lucide lucide-square-dot"
   xmlns="http://www.w3.org/2000/svg"
@@ -25027,7 +25027,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <circle cx="12" cy="12" r="1" />
 </svg>
-`;const Wl=`
+`;const Kl=`
 <svg
   class="lucide lucide-square-equal"
   xmlns="http://www.w3.org/2000/svg"
@@ -25044,7 +25044,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 10h10" />
   <path d="M7 14h10" />
 </svg>
-`;const Kl=`
+`;const Xl=`
 <svg
   class="lucide lucide-square-function"
   xmlns="http://www.w3.org/2000/svg"
@@ -25061,7 +25061,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 17c2 0 2.8-1 2.8-2.8V10c0-2 1-3.3 3.2-3" />
   <path d="M9 11.2h5.7" />
 </svg>
-`;const Xl=`
+`;const Jl=`
 <svg
   class="lucide lucide-square-kanban"
   xmlns="http://www.w3.org/2000/svg"
@@ -25079,7 +25079,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 7v4" />
   <path d="M16 7v9" />
 </svg>
-`;const Jl=`
+`;const Ql=`
 <svg
   class="lucide lucide-square-library"
   xmlns="http://www.w3.org/2000/svg"
@@ -25097,7 +25097,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11 7v10" />
   <path d="m15 7 2 10" />
 </svg>
-`;const Ql=`
+`;const ta=`
 <svg
   class="lucide lucide-square-m"
   xmlns="http://www.w3.org/2000/svg"
@@ -25113,7 +25113,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 16V8.5a.5.5 0 0 1 .9-.3l2.7 3.599a.5.5 0 0 0 .8 0l2.7-3.6a.5.5 0 0 1 .9.3V16" />
   <rect x="3" y="3" width="18" height="18" rx="2" />
 </svg>
-`;const t0=`
+`;const ea=`
 <svg
   class="lucide lucide-square-menu"
   xmlns="http://www.w3.org/2000/svg"
@@ -25131,7 +25131,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 12h10" />
   <path d="M7 16h10" />
 </svg>
-`;const e0=`
+`;const oa=`
 <svg
   class="lucide lucide-square-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -25147,7 +25147,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M8 12h8" />
 </svg>
-`;const o0=`
+`;const ra=`
 <svg
   class="lucide lucide-square-mouse-pointer"
   xmlns="http://www.w3.org/2000/svg"
@@ -25163,7 +25163,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z" />
   <path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6" />
 </svg>
-`;const r0=`
+`;const ia=`
 <svg
   class="lucide lucide-square-parking-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -25182,7 +25182,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13 13a3 3 0 1 0 0-6H9v2" />
   <path d="M9 17v-2.3" />
 </svg>
-`;const i0=`
+`;const sa=`
 <svg
   class="lucide lucide-square-parking"
   xmlns="http://www.w3.org/2000/svg"
@@ -25231,7 +25231,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
   <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
 </svg>
-`;const s0=`
+`;const na=`
 <svg
   class="lucide lucide-square-percent"
   xmlns="http://www.w3.org/2000/svg"
@@ -25249,7 +25249,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 9h.01" />
   <path d="M15 15h.01" />
 </svg>
-`;const n0=`
+`;const la=`
 <svg
   class="lucide lucide-square-pi"
   xmlns="http://www.w3.org/2000/svg"
@@ -25267,7 +25267,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10 7v10" />
   <path d="M16 17a2 2 0 0 1-2-2V7" />
 </svg>
-`;const l0=`
+`;const aa=`
 <svg
   class="lucide lucide-square-pilcrow"
   xmlns="http://www.w3.org/2000/svg"
@@ -25285,7 +25285,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 7v10" />
   <path d="M16 7v10" />
 </svg>
-`;const a0=`
+`;const da=`
 <svg
   class="lucide lucide-square-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -25301,7 +25301,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect x="3" y="3" width="18" height="18" rx="2" />
   <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
 </svg>
-`;const d0=`
+`;const ha=`
 <svg
   class="lucide lucide-square-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -25318,7 +25318,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 12h8" />
   <path d="M12 8v8" />
 </svg>
-`;const h0=`
+`;const ca=`
 <svg
   class="lucide lucide-square-power"
   xmlns="http://www.w3.org/2000/svg"
@@ -25367,7 +25367,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 11a8 8 0 0 0-8-8" />
   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
 </svg>
-`;const c0=`
+`;const pa=`
 <svg
   class="lucide lucide-square-scissors"
   xmlns="http://www.w3.org/2000/svg"
@@ -25387,7 +25387,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="8.5" cy="15.5" r="1.5" />
   <line x1="9.56066" y1="14.43934" x2="17" y2="7" />
 </svg>
-`;const p0=`
+`;const ua=`
 <svg
   class="lucide lucide-square-sigma"
   xmlns="http://www.w3.org/2000/svg"
@@ -25403,7 +25403,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M16 8.9V7H8l4 5-4 5h8v-1.9" />
 </svg>
-`;const u0=`
+`;const wa=`
 <svg
   class="lucide lucide-square-slash"
   xmlns="http://www.w3.org/2000/svg"
@@ -25419,7 +25419,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <line x1="9" x2="15" y1="15" y2="9" />
 </svg>
-`;const w0=`
+`;const ga=`
 <svg
   class="lucide lucide-square-split-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -25436,7 +25436,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 5h3c1 0 2 1 2 2v10c0 1-1 2-2 2h-3" />
   <line x1="12" x2="12" y1="4" y2="20" />
 </svg>
-`;const g0=`
+`;const va=`
 <svg
   class="lucide lucide-square-split-vertical"
   xmlns="http://www.w3.org/2000/svg"
@@ -25518,7 +25518,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <rect width="18" height="18" x="3" y="3" rx="2" />
   <rect x="9" y="9" width="6" height="6" rx="1" />
 </svg>
-`;const v0=`
+`;const ka=`
 <svg
   class="lucide lucide-square-terminal"
   xmlns="http://www.w3.org/2000/svg"
@@ -25535,7 +25535,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11 13h4" />
   <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
 </svg>
-`;const k0=`
+`;const ma=`
 <svg
   class="lucide lucide-square-user-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -25552,7 +25552,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="11" r="4" />
   <rect width="18" height="18" x="3" y="3" rx="2" />
 </svg>
-`;const m0=`
+`;const xa=`
 <svg
   class="lucide lucide-square-user"
   xmlns="http://www.w3.org/2000/svg"
@@ -25569,7 +25569,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="10" r="3" />
   <path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
 </svg>
-`;const x0=`
+`;const fa=`
 <svg
   class="lucide lucide-square-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -25695,7 +25695,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6.26 20.179c-1.15-.508-1.93-1.29-2.44-2.438" />
   <path d="M6.26 3.82c-1.149.51-1.93 1.291-2.44 2.44" />
 </svg>
-`;const LC=`
+`;const RC=`
 <svg
   class="lucide lucide-squircle"
   xmlns="http://www.w3.org/2000/svg"
@@ -25710,7 +25710,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9" />
 </svg>
-`;const SC=`
+`;const LC=`
 <svg
   class="lucide lucide-squirrel"
   xmlns="http://www.w3.org/2000/svg"
@@ -25728,7 +25728,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 13h.01" />
   <path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10" />
 </svg>
-`;const HC=`
+`;const SC=`
 <svg
   class="lucide lucide-stamp"
   xmlns="http://www.w3.org/2000/svg"
@@ -25745,7 +25745,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z" />
   <path d="M5 22h14" />
 </svg>
-`;const RC=`
+`;const HC=`
 <svg
   class="lucide lucide-star-half"
   xmlns="http://www.w3.org/2000/svg"
@@ -25760,7 +25760,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M12 18.338a2.1 2.1 0 0 0-.987.244L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16l2.309-4.679A.53.53 0 0 1 12 2" />
 </svg>
-`;const VC=`
+`;const YC=`
 <svg
   class="lucide lucide-star-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -25777,7 +25777,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18.42 12.76 22 9.27l-6.91-1L12 2l-1.44 2.91" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const zC=`
+`;const UC=`
 <svg
   class="lucide lucide-star"
   xmlns="http://www.w3.org/2000/svg"
@@ -25792,7 +25792,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
 </svg>
-`;const $C=`
+`;const VC=`
 <svg
   class="lucide lucide-step-back"
   xmlns="http://www.w3.org/2000/svg"
@@ -25808,7 +25808,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M13.971 4.285A2 2 0 0 1 17 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
   <path d="M21 20V4" />
 </svg>
-`;const UC=`
+`;const zC=`
 <svg
   class="lucide lucide-step-forward"
   xmlns="http://www.w3.org/2000/svg"
@@ -25824,7 +25824,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M10.029 4.285A2 2 0 0 0 7 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
   <path d="M3 4v16" />
 </svg>
-`;const DC=`
+`;const $C=`
 <svg
   class="lucide lucide-stethoscope"
   xmlns="http://www.w3.org/2000/svg"
@@ -25843,7 +25843,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 15a6 6 0 0 0 12 0v-3" />
   <circle cx="20" cy="10" r="2" />
 </svg>
-`;const FC=`
+`;const DC=`
 <svg
   class="lucide lucide-sticky-note"
   xmlns="http://www.w3.org/2000/svg"
@@ -25859,7 +25859,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z" />
   <path d="M15 3v5a1 1 0 0 0 1 1h5" />
 </svg>
-`;const PC=`
+`;const FC=`
 <svg
   class="lucide lucide-sticker"
   xmlns="http://www.w3.org/2000/svg"
@@ -25878,7 +25878,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 13h.01" />
   <path d="M10 16s.8 1 2 1c1.3 0 2-1 2-1" />
 </svg>
-`;const EC=`
+`;const PC=`
 <svg
   class="lucide lucide-stone"
   xmlns="http://www.w3.org/2000/svg"
@@ -25895,7 +25895,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11.99 22 14 12l7.822 3.184" />
   <path d="M14 12 8.47 2.302" />
 </svg>
-`;const TC=`
+`;const EC=`
 <svg
   class="lucide lucide-store"
   xmlns="http://www.w3.org/2000/svg"
@@ -25912,7 +25912,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244" />
   <path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05" />
 </svg>
-`;const YC=`
+`;const TC=`
 <svg
   class="lucide lucide-stretch-horizontal"
   xmlns="http://www.w3.org/2000/svg"
@@ -26688,7 +26688,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15.5 21 12 15l-3.5 6" />
   <path d="M2 21h20" />
 </svg>
-`;const LB=`
+`;const RB=`
 <svg
   class="lucide lucide-terminal"
   xmlns="http://www.w3.org/2000/svg"
@@ -26704,7 +26704,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 19h8" />
   <path d="m4 17 6-6-6-6" />
 </svg>
-`;const f0=`
+`;const Ma=`
 <svg
   class="lucide lucide-test-tube-diagonal"
   xmlns="http://www.w3.org/2000/svg"
@@ -26721,7 +26721,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m16 2 6 6" />
   <path d="M12 16H4" />
 </svg>
-`;const SB=`
+`;const LB=`
 <svg
   class="lucide lucide-test-tube"
   xmlns="http://www.w3.org/2000/svg"
@@ -26738,7 +26738,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8.5 2h7" />
   <path d="M14.5 16h-5" />
 </svg>
-`;const HB=`
+`;const SB=`
 <svg
   class="lucide lucide-test-tubes"
   xmlns="http://www.w3.org/2000/svg"
@@ -26758,7 +26758,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 16H4" />
   <path d="M20 16h-5" />
 </svg>
-`;const M0=`
+`;const ya=`
 <svg
   class="lucide lucide-text-align-center"
   xmlns="http://www.w3.org/2000/svg"
@@ -26775,7 +26775,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 12H7" />
   <path d="M19 19H5" />
 </svg>
-`;const y0=`
+`;const ba=`
 <svg
   class="lucide lucide-text-align-end"
   xmlns="http://www.w3.org/2000/svg"
@@ -26792,7 +26792,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 12H9" />
   <path d="M21 19H7" />
 </svg>
-`;const b0=`
+`;const Ca=`
 <svg
   class="lucide lucide-text-align-justify"
   xmlns="http://www.w3.org/2000/svg"
@@ -26809,7 +26809,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 12h18" />
   <path d="M3 19h18" />
 </svg>
-`;const si=`
+`;const ni=`
 <svg
   class="lucide lucide-text-align-start"
   xmlns="http://www.w3.org/2000/svg"
@@ -26826,7 +26826,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 12H3" />
   <path d="M17 19H3" />
 </svg>
-`;const RB=`
+`;const HB=`
 <svg
   class="lucide lucide-text-cursor-input"
   xmlns="http://www.w3.org/2000/svg"
@@ -26845,7 +26845,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1" />
   <path d="M9 6v12" />
 </svg>
-`;const VB=`
+`;const YB=`
 <svg
   class="lucide lucide-text-cursor"
   xmlns="http://www.w3.org/2000/svg"
@@ -26862,7 +26862,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 22h1a4 4 0 0 0 4-4v-1" />
   <path d="M7 2h1a4 4 0 0 1 4 4v1" />
 </svg>
-`;const C0=`
+`;const Ba=`
 <svg
   class="lucide lucide-text-initial"
   xmlns="http://www.w3.org/2000/svg"
@@ -26881,7 +26881,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 12 3.553-7.724a.5.5 0 0 1 .894 0L11 12" />
   <path d="M3.92 10h6.16" />
 </svg>
-`;const zB=`
+`;const UB=`
 <svg
   class="lucide lucide-text-quote"
   xmlns="http://www.w3.org/2000/svg"
@@ -26899,7 +26899,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 19H8" />
   <path d="M3 12v7" />
 </svg>
-`;const $B=`
+`;const VB=`
 <svg
   class="lucide lucide-text-search"
   xmlns="http://www.w3.org/2000/svg"
@@ -26918,7 +26918,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="17" cy="15" r="3" />
   <path d="m21 19-1.9-1.9" />
 </svg>
-`;const B0=`
+`;const ja=`
 <svg
   class="lucide lucide-text-select"
   xmlns="http://www.w3.org/2000/svg"
@@ -26947,7 +26947,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 21h1" />
   <path d="M9 3h1" />
 </svg>
-`;const j0=`
+`;const Aa=`
 <svg
   class="lucide lucide-text-wrap"
   xmlns="http://www.w3.org/2000/svg"
@@ -26965,7 +26965,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 19h6" />
   <path d="M3 5h18" />
 </svg>
-`;const UB=`
+`;const zB=`
 <svg
   class="lucide lucide-theater"
   xmlns="http://www.w3.org/2000/svg"
@@ -26988,7 +26988,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1" />
   <path d="M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1" />
 </svg>
-`;const DB=`
+`;const $B=`
 <svg
   class="lucide lucide-thermometer-snowflake"
   xmlns="http://www.w3.org/2000/svg"
@@ -27010,7 +27010,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 21 3-6-1.5-3" />
   <path d="m7 3 3 6h2" />
 </svg>
-`;const FB=`
+`;const DB=`
 <svg
   class="lucide lucide-thermometer-sun"
   xmlns="http://www.w3.org/2000/svg"
@@ -27030,7 +27030,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m4.93 4.93 1.41 1.41" />
   <path d="m6.34 17.66-1.41 1.41" />
 </svg>
-`;const PB=`
+`;const FB=`
 <svg
   class="lucide lucide-thermometer"
   xmlns="http://www.w3.org/2000/svg"
@@ -27045,7 +27045,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
 </svg>
-`;const EB=`
+`;const PB=`
 <svg
   class="lucide lucide-thumbs-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -27061,7 +27061,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z" />
   <path d="M17 14V2" />
 </svg>
-`;const TB=`
+`;const EB=`
 <svg
   class="lucide lucide-thumbs-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -27077,7 +27077,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
   <path d="M7 10v12" />
 </svg>
-`;const YB=`
+`;const TB=`
 <svg
   class="lucide lucide-ticket-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -27565,7 +27565,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m8 19-2 3" />
   <path d="m16 19 2 3" />
 </svg>
-`;const A0=`
+`;const Ra=`
 <svg
   class="lucide lucide-tram-front"
   xmlns="http://www.w3.org/2000/svg"
@@ -27681,7 +27681,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 19a4 4 0 0 1-2.24-7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z" />
   <path d="M12 19v3" />
 </svg>
-`;const L0=`
+`;const La=`
 <svg
   class="lucide lucide-tree-palm"
   xmlns="http://www.w3.org/2000/svg"
@@ -27800,7 +27800,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 7h6v6" />
   <path d="m22 7-8.5 8.5-5-5L2 17" />
 </svg>
-`;const S0=`
+`;const Sa=`
 <svg
   class="lucide lucide-triangle-alert"
   xmlns="http://www.w3.org/2000/svg"
@@ -27870,7 +27870,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
 </svg>
-`;const Lj=`
+`;const Rj=`
 <svg
   class="lucide lucide-truck-electric"
   xmlns="http://www.w3.org/2000/svg"
@@ -27891,7 +27891,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="17" cy="19" r="2" />
   <circle cx="7" cy="19" r="2" />
 </svg>
-`;const Sj=`
+`;const Lj=`
 <svg
   class="lucide lucide-trophy"
   xmlns="http://www.w3.org/2000/svg"
@@ -27911,7 +27911,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
   <path d="M6 9H4.5a1 1 0 0 1 0-5H6" />
 </svg>
-`;const Hj=`
+`;const Sj=`
 <svg
   class="lucide lucide-truck"
   xmlns="http://www.w3.org/2000/svg"
@@ -27929,7 +27929,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
   <circle cx="17" cy="18" r="2" />
   <circle cx="7" cy="18" r="2" />
-</svg>`;const Rj=`
+</svg>`;const Hj=`
 <svg
   class="lucide lucide-turkish-lira"
   xmlns="http://www.w3.org/2000/svg"
@@ -27946,7 +27946,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 8.5-10 5" />
   <path d="M18 12a9 9 0 0 1-9 9V3" />
 </svg>
-`;const Vj=`
+`;const Yj=`
 <svg
   class="lucide lucide-turntable"
   xmlns="http://www.w3.org/2000/svg"
@@ -27964,7 +27964,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="10" cy="12" r="4" />
   <rect x="2" y="4" width="20" height="16" rx="2" />
 </svg>
-`;const zj=`
+`;const Uj=`
 <svg
   class="lucide lucide-turtle"
   xmlns="http://www.w3.org/2000/svg"
@@ -27982,7 +27982,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15.18 7.9 12 10" />
   <path d="M16.93 10H20a2 2 0 0 1 0 4H2" />
 </svg>
-`;const $j=`
+`;const Vj=`
 <svg
   class="lucide lucide-tv-minimal-play"
   xmlns="http://www.w3.org/2000/svg"
@@ -27999,7 +27999,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 21h10" />
   <rect width="20" height="14" x="2" y="3" rx="2" />
 </svg>
-`;const H0=`
+`;const Ha=`
 <svg
   class="lucide lucide-tv-minimal"
   xmlns="http://www.w3.org/2000/svg"
@@ -28015,7 +28015,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 21h10" />
   <rect width="20" height="14" x="2" y="3" rx="2" />
 </svg>
-`;const Uj=`
+`;const zj=`
 <svg
   class="lucide lucide-tv"
   xmlns="http://www.w3.org/2000/svg"
@@ -28031,7 +28031,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 2-5 5-5-5" />
   <rect width="20" height="15" x="2" y="7" rx="2" />
 </svg>
-`;const Dj=`
+`;const $j=`
 <svg
   class="lucide lucide-twitch"
   xmlns="http://www.w3.org/2000/svg"
@@ -28046,7 +28046,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
 </svg>
-`;const Fj=`
+`;const Dj=`
 <svg
   class="lucide lucide-twitter"
   xmlns="http://www.w3.org/2000/svg"
@@ -28061,7 +28061,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
 </svg>
-`;const Pj=`
+`;const Fj=`
 <svg
   class="lucide lucide-type-outline"
   xmlns="http://www.w3.org/2000/svg"
@@ -28076,7 +28076,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M14 16.5a.5.5 0 0 0 .5.5h.5a2 2 0 0 1 0 4H9a2 2 0 0 1 0-4h.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V8a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5Z" />
 </svg>
-`;const Ej=`
+`;const Pj=`
 <svg
   class="lucide lucide-type"
   xmlns="http://www.w3.org/2000/svg"
@@ -28093,7 +28093,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2" />
   <path d="M9 20h6" />
 </svg>
-`;const Tj=`
+`;const Ej=`
 <svg
   class="lucide lucide-umbrella-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -28112,7 +28112,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2 2 20 20" />
   <path d="M5.961 5.957a10.28 10.28 0 0 0-3.922 5.769A1 1 0 0 0 3 13h10" />
 </svg>
-`;const Yj=`
+`;const Tj=`
 <svg
   class="lucide lucide-umbrella"
   xmlns="http://www.w3.org/2000/svg"
@@ -28254,7 +28254,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m15 19-3 3-3-3" />
   <path d="m15 5-3-3-3 3" />
 </svg>
-`;const R0=`
+`;const Ya=`
 <svg
   class="lucide lucide-university"
   xmlns="http://www.w3.org/2000/svg"
@@ -28480,7 +28480,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="19" x2="19" y1="8" y2="14" />
   <line x1="22" x2="16" y1="11" y2="11" />
 </svg>
-`;const V0=`
+`;const Ua=`
 <svg
   class="lucide lucide-user-round-check"
   xmlns="http://www.w3.org/2000/svg"
@@ -28497,7 +28497,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="10" cy="8" r="5" />
   <path d="m16 19 2 2 4-4" />
 </svg>
-`;const z0=`
+`;const Va=`
 <svg
   class="lucide lucide-user-round-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -28522,7 +28522,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="10" cy="8" r="5" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const $0=`
+`;const za=`
 <svg
   class="lucide lucide-user-round-minus"
   xmlns="http://www.w3.org/2000/svg"
@@ -28556,7 +28556,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
   <circle cx="10" cy="8" r="5" />
 </svg>
-`;const U0=`
+`;const $a=`
 <svg
   class="lucide lucide-user-round-plus"
   xmlns="http://www.w3.org/2000/svg"
@@ -28592,7 +28592,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="18" cy="18" r="3" />
   <path d="m22 22-1.9-1.9" />
 </svg>
-`;const D0=`
+`;const Da=`
 <svg
   class="lucide lucide-user-round-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -28610,7 +28610,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m17 17 5 5" />
   <path d="m22 17-5 5" />
 </svg>
-`;const F0=`
+`;const Fa=`
 <svg
   class="lucide lucide-user-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -28695,7 +28695,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
   <circle cx="12" cy="7" r="4" />
 </svg>
-`;const P0=`
+`;const Pa=`
 <svg
   class="lucide lucide-users-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -28730,7 +28730,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
   <circle cx="9" cy="7" r="4" />
 </svg>
-`;const E0=`
+`;const Ea=`
 <svg
   class="lucide lucide-utensils-crossed"
   xmlns="http://www.w3.org/2000/svg"
@@ -28748,7 +28748,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m2.1 21.8 6.4-6.3" />
   <path d="m19 5-7 7" />
 </svg>
-`;const T0=`
+`;const Ta=`
 <svg
   class="lucide lucide-utensils"
   xmlns="http://www.w3.org/2000/svg"
@@ -29043,7 +29043,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8 12h8" />
   <circle cx="16" cy="14" r="2" />
 </svg>
-`;const LA=`
+`;const RA=`
 <svg
   class="lucide lucide-view"
   xmlns="http://www.w3.org/2000/svg"
@@ -29061,7 +29061,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="12" cy="12" r="1" />
   <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
 </svg>
-`;const SA=`
+`;const LA=`
 <svg
   class="lucide lucide-volleyball"
   xmlns="http://www.w3.org/2000/svg"
@@ -29081,7 +29081,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6.3 3.8a16.55 16.55 0 0 0 1.9 11.5" />
   <circle cx="12" cy="12" r="10" />
 </svg>
-`;const HA=`
+`;const SA=`
 <svg
   class="lucide lucide-volume-1"
   xmlns="http://www.w3.org/2000/svg"
@@ -29097,7 +29097,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
   <path d="M16 9a5 5 0 0 1 0 6" />
 </svg>
-`;const RA=`
+`;const HA=`
 <svg
   class="lucide lucide-volume-2"
   xmlns="http://www.w3.org/2000/svg"
@@ -29114,7 +29114,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16 9a5 5 0 0 1 0 6" />
   <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
 </svg>
-`;const VA=`
+`;const YA=`
 <svg
   class="lucide lucide-volume-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -29131,7 +29131,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="22" x2="16" y1="9" y2="15" />
   <line x1="16" x2="22" y1="9" y2="15" />
 </svg>
-`;const zA=`
+`;const UA=`
 <svg
   class="lucide lucide-volume-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29150,7 +29150,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m7 7-.587.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298V11" />
   <path d="M9.828 4.172A.686.686 0 0 1 11 4.657v.686" />
 </svg>
-`;const $A=`
+`;const VA=`
 <svg
   class="lucide lucide-volume"
   xmlns="http://www.w3.org/2000/svg"
@@ -29165,7 +29165,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
 </svg>
-`;const UA=`
+`;const zA=`
 <svg
   class="lucide lucide-vote"
   xmlns="http://www.w3.org/2000/svg"
@@ -29182,7 +29182,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z" />
   <path d="M22 19H2" />
 </svg>
-`;const DA=`
+`;const $A=`
 <svg
   class="lucide lucide-wallet-cards"
   xmlns="http://www.w3.org/2000/svg"
@@ -29199,7 +29199,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2" />
   <path d="M3 11h3c.8 0 1.6.3 2.1.9l1.1.9c1.6 1.6 4.1 1.6 5.7 0l1.1-.9c.5-.5 1.3-.9 2.1-.9H21" />
 </svg>
-`;const Y0=`
+`;const Oa=`
 <svg
   class="lucide lucide-wallet-minimal"
   xmlns="http://www.w3.org/2000/svg"
@@ -29215,7 +29215,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17 14h.01" />
   <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14" />
 </svg>
-`;const FA=`
+`;const DA=`
 <svg
   class="lucide lucide-wallet"
   xmlns="http://www.w3.org/2000/svg"
@@ -29231,7 +29231,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
   <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
 </svg>
-`;const PA=`
+`;const FA=`
 <svg
   class="lucide lucide-wallpaper"
   xmlns="http://www.w3.org/2000/svg"
@@ -29250,7 +29250,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <circle cx="8" cy="9" r="2" />
   <rect x="2" y="3" width="20" height="14" rx="2" />
 </svg>
-`;const O0=`
+`;const Ia=`
 <svg
   class="lucide lucide-wand-sparkles"
   xmlns="http://www.w3.org/2000/svg"
@@ -29272,7 +29272,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M21 16h-4" />
   <path d="M11 3H9" />
 </svg>
-`;const EA=`
+`;const PA=`
 <svg
   class="lucide lucide-wand"
   xmlns="http://www.w3.org/2000/svg"
@@ -29295,7 +29295,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="m3 21 9-9" />
   <path d="M12.2 6.2 11 5" />
 </svg>
-`;const TA=`
+`;const EA=`
 <svg
   class="lucide lucide-warehouse"
   xmlns="http://www.w3.org/2000/svg"
@@ -29313,7 +29313,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M6 13h12" />
   <path d="M6 17h12" />
 </svg>
-`;const YA=`
+`;const TA=`
 <svg
   class="lucide lucide-washing-machine"
   xmlns="http://www.w3.org/2000/svg"
@@ -29556,7 +29556,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18.74 13.09c.26-.15.51-.34.73-.56L21 11l-1.53-1.53a3.5 3.5 0 0 0-4.62-.28" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const tL=`
+`;const tR=`
 <svg
   class="lucide lucide-wifi-cog"
   xmlns="http://www.w3.org/2000/svg"
@@ -29582,7 +29582,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M8.5 15.429a5 5 0 0 1 2.413-1.31" />
   <circle cx="18" cy="18" r="3" />
 </svg>
-`;const eL=`
+`;const eR=`
 <svg
   class="lucide lucide-wheat"
   xmlns="http://www.w3.org/2000/svg"
@@ -29604,7 +29604,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
   <path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
 </svg>
-`;const oL=`
+`;const oR=`
 <svg
   class="lucide lucide-whole-word"
   xmlns="http://www.w3.org/2000/svg"
@@ -29623,7 +29623,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M14 7v8" />
   <path d="M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1" />
 </svg>
-`;const rL=`
+`;const rR=`
 <svg
   class="lucide lucide-wifi-high"
   xmlns="http://www.w3.org/2000/svg"
@@ -29640,7 +29640,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 12.859a10 10 0 0 1 14 0" />
   <path d="M8.5 16.429a5 5 0 0 1 7 0" />
 </svg>
-`;const iL=`
+`;const iR=`
 <svg
   class="lucide lucide-wifi-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29661,7 +29661,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M22 8.82a15 15 0 0 0-11.288-3.764" />
   <path d="m2 2 20 20" />
 </svg>
-`;const sL=`
+`;const sR=`
 <svg
   class="lucide lucide-wifi-low"
   xmlns="http://www.w3.org/2000/svg"
@@ -29677,7 +29677,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 20h.01" />
   <path d="M8.5 16.429a5 5 0 0 1 7 0" />
 </svg>
-`;const nL=`
+`;const nR=`
 <svg
   class="lucide lucide-wifi-pen"
   xmlns="http://www.w3.org/2000/svg"
@@ -29695,7 +29695,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 12.859a10 10 0 0 1 10.5-2.222" />
   <path d="M8.5 16.429a5 5 0 0 1 3-1.406" />
 </svg>
-`;const lL=`
+`;const lR=`
 <svg
   class="lucide lucide-wifi-sync"
   xmlns="http://www.w3.org/2000/svg"
@@ -29716,7 +29716,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 12.86a10 10 0 0 1 3-2.032" />
   <path d="M8.5 16.429h.01" />
 </svg>
-`;const aL=`
+`;const aR=`
 <svg
   class="lucide lucide-wifi-zero"
   xmlns="http://www.w3.org/2000/svg"
@@ -29731,7 +29731,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M12 20h.01" />
 </svg>
-`;const dL=`
+`;const dR=`
 <svg
   class="lucide lucide-wifi"
   xmlns="http://www.w3.org/2000/svg"
@@ -29749,7 +29749,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M5 12.859a10 10 0 0 1 14 0" />
   <path d="M8.5 16.429a5 5 0 0 1 7 0" />
 </svg>
-`;const hL=`
+`;const hR=`
 <svg
   class="lucide lucide-wind-arrow-down"
   xmlns="http://www.w3.org/2000/svg"
@@ -29767,7 +29767,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.5 10a2.5 2.5 0 1 1 2 4H2" />
   <path d="m6 6 4 4 4-4" />
 </svg>
-`;const cL=`
+`;const cR=`
 <svg
   class="lucide lucide-wind"
   xmlns="http://www.w3.org/2000/svg"
@@ -29784,7 +29784,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" />
   <path d="M9.8 4.4A2 2 0 1 1 11 8H2" />
 </svg>
-`;const pL=`
+`;const pR=`
 <svg
   class="lucide lucide-wine-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29803,7 +29803,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7.307 7.307A12.33 12.33 0 0 0 7 10a5 5 0 0 0 7.391 4.391M8.638 2.981C8.75 2.668 8.872 2.34 9 2h6c1.5 4 2 6 2 8 0 .407-.05.809-.145 1.198" />
   <line x1="2" x2="22" y1="2" y2="22" />
 </svg>
-`;const uL=`
+`;const uR=`
 <svg
   class="lucide lucide-wine"
   xmlns="http://www.w3.org/2000/svg"
@@ -29821,7 +29821,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M12 15v7" />
   <path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z" />
 </svg>
-`;const wL=`
+`;const wR=`
 <svg
   class="lucide lucide-workflow"
   xmlns="http://www.w3.org/2000/svg"
@@ -29838,7 +29838,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M7 11v4a2 2 0 0 0 2 2h4" />
   <rect width="8" height="8" x="13" y="13" rx="2" />
 </svg>
-`;const gL=`
+`;const gR=`
 <svg
   class="lucide lucide-worm"
   xmlns="http://www.w3.org/2000/svg"
@@ -29855,7 +29855,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M19.63 18.81 22 20" />
   <path d="M6.47 8.23a1.68 1.68 0 0 1 2.44 1.93l-.64 2.08a6.76 6.76 0 0 0 10.16 7.67l.42-.27a1 1 0 1 0-2.73-4.21l-.42.27a1.76 1.76 0 0 1-2.63-1.99l.64-2.08A6.66 6.66 0 0 0 3.94 3.9l-.7.4a1 1 0 1 0 2.55 4.34z" />
 </svg>
-`;const vL=`
+`;const vR=`
 <svg
   class="lucide lucide-wrench"
   xmlns="http://www.w3.org/2000/svg"
@@ -29870,7 +29870,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
 </svg>
-`;const kL=`
+`;const kR=`
 <svg
   class="lucide lucide-x"
   xmlns="http://www.w3.org/2000/svg"
@@ -29886,7 +29886,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M18 6 6 18" />
   <path d="m6 6 12 12" />
 </svg>
-`;const mL=`
+`;const mR=`
 <svg
   class="lucide lucide-youtube"
   xmlns="http://www.w3.org/2000/svg"
@@ -29902,7 +29902,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
   <path d="m10 15 5-3-5-3z" />
 </svg>
-`;const xL=`
+`;const xR=`
 <svg
   class="lucide lucide-zap-off"
   xmlns="http://www.w3.org/2000/svg"
@@ -29920,7 +29920,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <path d="M16.273 16.273 10.88 21.83a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4a1 1 0 0 1-.78-1.63l4.507-4.643" />
   <path d="m2 2 20 20" />
 </svg>
-`;const fL=`
+`;const fR=`
 <svg
   class="lucide lucide-zap"
   xmlns="http://www.w3.org/2000/svg"
@@ -29935,7 +29935,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
 >
   <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
 </svg>
-`;const ML=`
+`;const MR=`
 <svg
   class="lucide lucide-zoom-in"
   xmlns="http://www.w3.org/2000/svg"
@@ -29953,7 +29953,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="11" x2="11" y1="8" y2="14" />
   <line x1="8" x2="14" y1="11" y2="11" />
 </svg>
-`;const yL=`
+`;const yR=`
 <svg
   class="lucide lucide-zoom-out"
   xmlns="http://www.w3.org/2000/svg"
@@ -29970,9 +29970,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   <line x1="21" x2="16.65" y1="21" y2="16.65" />
   <line x1="8" x2="14" y1="11" y2="11" />
 </svg>
-`;const bL=Object.freeze(Object.defineProperty({__proto__:null,AArrowDown:_1,AArrowUp:Z1,ALargeSmall:G1,Accessibility:W1,Activity:K1,ActivitySquare:yl,AirVent:X1,Airplay:J1,AlarmCheck:Us,AlarmClock:td,AlarmClockCheck:Us,AlarmClockMinus:Ds,AlarmClockOff:Q1,AlarmClockPlus:Fs,AlarmMinus:Ds,AlarmPlus:Fs,AlarmSmoke:ed,Album:od,AlertCircle:p2,AlertOctagon:Xn,AlertTriangle:S0,AlignCenter:M0,AlignCenterHorizontal:rd,AlignCenterVertical:id,AlignEndHorizontal:sd,AlignEndVertical:nd,AlignHorizontalDistributeCenter:ld,AlignHorizontalDistributeEnd:ad,AlignHorizontalDistributeStart:dd,AlignHorizontalJustifyCenter:hd,AlignHorizontalJustifyEnd:cd,AlignHorizontalJustifyStart:pd,AlignHorizontalSpaceAround:ud,AlignHorizontalSpaceBetween:wd,AlignJustify:b0,AlignLeft:si,AlignRight:y0,AlignStartHorizontal:vd,AlignStartVertical:gd,AlignVerticalDistributeCenter:md,AlignVerticalDistributeEnd:kd,AlignVerticalDistributeStart:xd,AlignVerticalJustifyCenter:fd,AlignVerticalJustifyEnd:Md,AlignVerticalJustifyStart:bd,AlignVerticalSpaceAround:yd,AlignVerticalSpaceBetween:Cd,Ambulance:Bd,Ampersand:Ad,Ampersands:Ld,Amphora:jd,Anchor:Sd,Angry:Rd,Annoyed:Hd,Antenna:Vd,Anvil:zd,Aperture:$d,AppWindow:Dd,AppWindowMac:Ud,Apple:Fd,Archive:Td,ArchiveRestore:Pd,ArchiveX:Ed,AreaChart:Js,Armchair:Yd,ArrowBigDown:Id,ArrowBigDownDash:Od,ArrowBigLeft:Nd,ArrowBigLeftDash:qd,ArrowBigRight:Zd,ArrowBigRightDash:_d,ArrowBigUp:Wd,ArrowBigUpDash:Gd,ArrowDown:sh,ArrowDown01:Kd,ArrowDown10:Xd,ArrowDownAZ:Ps,ArrowDownAz:Ps,ArrowDownCircle:u2,ArrowDownFromLine:Jd,ArrowDownLeft:Qd,ArrowDownLeftFromCircle:g2,ArrowDownLeftFromSquare:Al,ArrowDownLeftSquare:bl,ArrowDownNarrowWide:th,ArrowDownRight:eh,ArrowDownRightFromCircle:v2,ArrowDownRightFromSquare:Ll,ArrowDownRightSquare:Cl,ArrowDownSquare:Bl,ArrowDownToDot:rh,ArrowDownToLine:oh,ArrowDownUp:ih,ArrowDownWideNarrow:Es,ArrowDownZA:Ts,ArrowDownZa:Ts,ArrowLeft:ah,ArrowLeftCircle:w2,ArrowLeftFromLine:lh,ArrowLeftRight:nh,ArrowLeftSquare:jl,ArrowLeftToLine:dh,ArrowRight:uh,ArrowRightCircle:x2,ArrowRightFromLine:hh,ArrowRightLeft:ch,ArrowRightSquare:Rl,ArrowRightToLine:ph,ArrowUp:bh,ArrowUp01:wh,ArrowUp10:gh,ArrowUpAZ:Ys,ArrowUpAz:Ys,ArrowUpCircle:f2,ArrowUpDown:vh,ArrowUpFromDot:kh,ArrowUpFromLine:mh,ArrowUpLeft:xh,ArrowUpLeftFromCircle:k2,ArrowUpLeftFromSquare:Sl,ArrowUpLeftSquare:Vl,ArrowUpNarrowWide:Os,ArrowUpRight:fh,ArrowUpRightFromCircle:m2,ArrowUpRightFromSquare:Hl,ArrowUpRightSquare:zl,ArrowUpSquare:$l,ArrowUpToLine:Mh,ArrowUpWideNarrow:yh,ArrowUpZA:Is,ArrowUpZa:Is,ArrowsUpFromLine:Ch,Asterisk:Bh,AsteriskSquare:Ul,AtSign:jh,Atom:Ah,AudioLines:Lh,AudioWaveform:Sh,Award:Hh,Axe:Rh,Axis3D:qs,Axis3d:qs,Baby:Vh,Backpack:zh,Badge:Wh,BadgeAlert:Uh,BadgeCent:$h,BadgeCheck:Ns,BadgeDollarSign:Dh,BadgeEuro:Fh,BadgeHelp:_s,BadgeIndianRupee:Ph,BadgeInfo:Eh,BadgeJapaneseYen:Yh,BadgeMinus:Th,BadgePercent:Oh,BadgePlus:Ih,BadgePoundSterling:qh,BadgeQuestionMark:_s,BadgeRussianRuble:Nh,BadgeSwissFranc:_h,BadgeTurkishLira:Zh,BadgeX:Gh,BaggageClaim:Kh,Balloon:Xh,Ban:Jh,Banana:Qh,Bandage:tc,Banknote:ic,BanknoteArrowDown:ec,BanknoteArrowUp:rc,BanknoteX:oc,BarChart:n2,BarChart2:l2,BarChart3:i2,BarChart4:r2,BarChartBig:o2,BarChartHorizontal:t2,BarChartHorizontalBig:Qs,Barcode:sc,Barrel:nc,Baseline:ac,Bath:lc,Battery:gc,BatteryCharging:dc,BatteryFull:hc,BatteryLow:cc,BatteryMedium:pc,BatteryPlus:uc,BatteryWarning:wc,Beaker:vc,Bean:mc,BeanOff:kc,Bed:Mc,BedDouble:xc,BedSingle:fc,Beef:yc,Beer:Cc,BeerOff:bc,Bell:Rc,BellDot:Bc,BellElectric:jc,BellMinus:Ac,BellOff:Lc,BellPlus:Sc,BellRing:Hc,BetweenHorizonalEnd:Zs,BetweenHorizonalStart:Gs,BetweenHorizontalEnd:Zs,BetweenHorizontalStart:Gs,BetweenVerticalEnd:Vc,BetweenVerticalStart:zc,BicepsFlexed:$c,Bike:Uc,Binary:Dc,Binoculars:Fc,Biohazard:Pc,Bird:Ec,Birdhouse:Tc,Bitcoin:Yc,Blend:Oc,Blinds:Ic,Blocks:qc,Bluetooth:Gc,BluetoothConnected:Nc,BluetoothOff:_c,BluetoothSearching:Zc,Bold:Wc,Bolt:Kc,Bomb:Xc,Bone:Jc,Book:C4,BookA:Qc,BookAlert:t4,BookAudio:e4,BookCheck:o4,BookCopy:r4,BookDashed:Ws,BookDown:i4,BookHeadphones:s4,BookHeart:n4,BookImage:l4,BookKey:a4,BookLock:d4,BookMarked:h4,BookMinus:c4,BookOpen:w4,BookOpenCheck:u4,BookOpenText:p4,BookPlus:g4,BookSearch:v4,BookTemplate:Ws,BookText:k4,BookType:m4,BookUp:f4,BookUp2:x4,BookUser:M4,BookX:y4,Bookmark:L4,BookmarkCheck:b4,BookmarkMinus:B4,BookmarkPlus:j4,BookmarkX:A4,BoomBox:S4,Bot:V4,BotMessageSquare:H4,BotOff:R4,BottleWine:z4,BowArrow:$4,Box:U4,BoxSelect:_l,Boxes:D4,Braces:Ks,Brackets:F4,Brain:T4,BrainCircuit:P4,BrainCog:E4,BrickWall:I4,BrickWallFire:Y4,BrickWallShield:O4,Briefcase:Z4,BriefcaseBusiness:q4,BriefcaseConveyorBelt:_4,BriefcaseMedical:N4,BringToFront:G4,Brush:X4,BrushCleaning:W4,Bubbles:K4,Bug:tp,BugOff:J4,BugPlay:Q4,Building:op,Building2:ep,Bus:ip,BusFront:rp,Cable:np,CableCar:sp,Cake:ap,CakeSlice:lp,Calculator:dp,Calendar:Hp,Calendar1:hp,CalendarArrowDown:cp,CalendarArrowUp:pp,CalendarCheck:wp,CalendarCheck2:up,CalendarClock:gp,CalendarCog:vp,CalendarDays:kp,CalendarFold:mp,CalendarHeart:xp,CalendarMinus:Mp,CalendarMinus2:fp,CalendarOff:yp,CalendarPlus:Cp,CalendarPlus2:bp,CalendarRange:Bp,CalendarSearch:jp,CalendarSync:Ap,CalendarX:Sp,CalendarX2:Lp,Calendars:Rp,Camera:zp,CameraOff:Vp,CandlestickChart:e2,Candy:Dp,CandyCane:$p,CandyOff:Up,Cannabis:Pp,CannabisOff:Fp,Captions:Xs,CaptionsOff:Ep,Car:Op,CarFront:Tp,CarTaxiFront:Yp,Caravan:Ip,CardSim:qp,Carrot:Np,CaseLower:_p,CaseSensitive:Zp,CaseUpper:Gp,CassetteTape:Wp,Cast:Kp,Castle:Xp,Cat:Jp,Cctv:Qp,ChartArea:Js,ChartBar:t2,ChartBarBig:Qs,ChartBarDecreasing:eu,ChartBarIncreasing:tu,ChartBarStacked:ou,ChartCandlestick:e2,ChartColumn:i2,ChartColumnBig:o2,ChartColumnDecreasing:ru,ChartColumnIncreasing:r2,ChartColumnStacked:iu,ChartGantt:su,ChartLine:s2,ChartNetwork:nu,ChartNoAxesColumn:l2,ChartNoAxesColumnDecreasing:lu,ChartNoAxesColumnIncreasing:n2,ChartNoAxesCombined:au,ChartNoAxesGantt:a2,ChartPie:d2,ChartScatter:h2,ChartSpline:du,Check:pu,CheckCheck:hu,CheckCircle:M2,CheckCircle2:y2,CheckLine:cu,CheckSquare:Fl,CheckSquare2:Pl,ChefHat:wu,Cherry:uu,ChessBishop:gu,ChessKing:vu,ChessKnight:ku,ChessPawn:mu,ChessQueen:xu,ChessRook:Mu,ChevronDown:fu,ChevronDownCircle:b2,ChevronDownSquare:El,ChevronFirst:yu,ChevronLast:bu,ChevronLeft:Cu,ChevronLeftCircle:C2,ChevronLeftSquare:Tl,ChevronRight:Bu,ChevronRightCircle:B2,ChevronRightSquare:Yl,ChevronUp:ju,ChevronUpCircle:j2,ChevronUpSquare:Ol,ChevronsDown:Lu,ChevronsDownUp:Au,ChevronsLeft:Ru,ChevronsLeftRight:Hu,ChevronsLeftRightEllipsis:Su,ChevronsRight:zu,ChevronsRightLeft:Vu,ChevronsUp:Uu,ChevronsUpDown:$u,Chrome:c2,Chromium:c2,Church:Du,Cigarette:Fu,CigaretteOff:Pu,Circle:Qu,CircleAlert:p2,CircleArrowDown:u2,CircleArrowLeft:w2,CircleArrowOutDownLeft:g2,CircleArrowOutDownRight:v2,CircleArrowOutUpLeft:k2,CircleArrowOutUpRight:m2,CircleArrowRight:x2,CircleArrowUp:f2,CircleCheck:y2,CircleCheckBig:M2,CircleChevronDown:b2,CircleChevronLeft:C2,CircleChevronRight:B2,CircleChevronUp:j2,CircleDashed:Eu,CircleDivide:A2,CircleDollarSign:Tu,CircleDot:Ou,CircleDotDashed:Yu,CircleEllipsis:Iu,CircleEqual:qu,CircleFadingArrowUp:Nu,CircleFadingPlus:_u,CircleGauge:L2,CircleHelp:Jr,CircleMinus:S2,CircleOff:Zu,CircleParking:R2,CircleParkingOff:H2,CirclePause:V2,CirclePercent:z2,CirclePile:Gu,CirclePlay:$2,CirclePlus:U2,CirclePoundSterling:Wu,CirclePower:D2,CircleQuestionMark:Jr,CircleSlash:Ku,CircleSlash2:F2,CircleSlashed:F2,CircleSmall:Ju,CircleStar:Xu,CircleStop:P2,CircleUser:T2,CircleUserRound:E2,CircleX:Y2,CircuitBoard:tw,Citrus:ew,Clapperboard:ow,Clipboard:pw,ClipboardCheck:rw,ClipboardClock:iw,ClipboardCopy:sw,ClipboardEdit:I2,ClipboardList:nw,ClipboardMinus:lw,ClipboardPaste:aw,ClipboardPen:I2,ClipboardPenLine:O2,ClipboardPlus:dw,ClipboardSignature:O2,ClipboardType:hw,ClipboardX:cw,Clock:Rw,Clock1:uw,Clock10:ww,Clock11:gw,Clock12:vw,Clock2:kw,Clock3:mw,Clock4:xw,Clock5:fw,Clock6:Mw,Clock7:yw,Clock8:bw,Clock9:Cw,ClockAlert:Bw,ClockArrowDown:jw,ClockArrowUp:Aw,ClockCheck:Lw,ClockFading:Sw,ClockPlus:Hw,ClosedCaption:Vw,Cloud:Kw,CloudAlert:zw,CloudBackup:$w,CloudCheck:Uw,CloudCog:Dw,CloudDownload:q2,CloudDrizzle:Fw,CloudFog:Pw,CloudHail:Ew,CloudLightning:Tw,CloudMoon:Yw,CloudMoonRain:Ow,CloudOff:Iw,CloudRain:Nw,CloudRainWind:qw,CloudSnow:_w,CloudSun:Gw,CloudSunRain:Zw,CloudSync:Ww,CloudUpload:N2,Cloudy:Xw,Clover:Jw,Club:Qw,Code:tg,Code2:_2,CodeSquare:Il,CodeXml:_2,Codepen:eg,Codesandbox:og,Coffee:rg,Cog:ig,Coins:sg,Columns:Z2,Columns2:Z2,Columns3:G2,Columns3Cog:Qr,Columns4:ng,ColumnsSettings:Qr,Combine:lg,Command:ag,Compass:dg,Component:hg,Computer:cg,ConciergeBell:pg,Cone:ug,Construction:wg,Contact:gg,Contact2:W2,ContactRound:W2,Container:vg,Contrast:kg,Cookie:mg,CookingPot:xg,Copy:Bg,CopyCheck:fg,CopyMinus:Mg,CopyPlus:yg,CopySlash:bg,CopyX:Cg,Copyleft:jg,Copyright:Ag,CornerDownLeft:Lg,CornerDownRight:Sg,CornerLeftDown:Hg,CornerLeftUp:Rg,CornerRightDown:Vg,CornerRightUp:zg,CornerUpLeft:$g,CornerUpRight:Ug,Cpu:Dg,CreativeCommons:Eg,CreditCard:Fg,Croissant:Pg,Crop:Tg,Cross:Yg,Crosshair:Og,Crown:Ig,Cuboid:qg,CupSoda:Ng,CurlyBraces:Ks,Currency:_g,Cylinder:Zg,Dam:Gg,Database:Xg,DatabaseBackup:Wg,DatabaseZap:Kg,DecimalsArrowLeft:Jg,DecimalsArrowRight:Qg,Delete:tv,Dessert:ev,Diameter:ov,Diamond:sv,DiamondMinus:rv,DiamondPercent:K2,DiamondPlus:iv,Dice1:lv,Dice2:nv,Dice3:av,Dice4:dv,Dice5:hv,Dice6:cv,Dices:pv,Diff:uv,Disc:kv,Disc2:wv,Disc3:gv,DiscAlbum:vv,Divide:mv,DivideCircle:A2,DivideSquare:Zl,Dna:fv,DnaOff:xv,Dock:Mv,Dog:yv,DollarSign:bv,Donut:Cv,DoorClosed:jv,DoorClosedLocked:Bv,DoorOpen:Av,Dot:Lv,DotSquare:Gl,Download:Sv,DownloadCloud:q2,DraftingCompass:Hv,Drama:Rv,Dribbble:Vv,Drill:zv,Drone:$v,Droplet:Uv,DropletOff:Dv,Droplets:Fv,Drum:Pv,Drumstick:Tv,Dumbbell:Ev,Ear:Ov,EarOff:Yv,Earth:X2,EarthLock:Iv,Eclipse:qv,Edit:vr,Edit2:hl,Edit3:dl,Egg:Zv,EggFried:Nv,EggOff:_v,Ellipsis:Q2,EllipsisVertical:J2,Equal:Kv,EqualApproximately:Gv,EqualNot:Wv,EqualSquare:Wl,Eraser:Xv,EthernetPort:Jv,Euro:Qv,EvCharger:t3,Expand:e3,ExternalLink:o3,Eye:s3,EyeClosed:r3,EyeOff:i3,Facebook:n3,Factory:l3,Fan:a3,FastForward:d3,Feather:h3,Fence:c3,FerrisWheel:p3,Figma:u3,File:O3,FileArchive:w3,FileAudio:ti,FileAudio2:ti,FileAxis3D:tn,FileAxis3d:tn,FileBadge:en,FileBadge2:en,FileBarChart:sn,FileBarChart2:nn,FileBox:g3,FileBraces:rn,FileBracesCorner:on,FileChartColumn:nn,FileChartColumnIncreasing:sn,FileChartLine:ln,FileChartPie:an,FileCheck:v3,FileCheck2:dn,FileCheckCorner:dn,FileClock:k3,FileCode:m3,FileCode2:hn,FileCodeCorner:hn,FileCog:cn,FileCog2:cn,FileDiff:x3,FileDigit:f3,FileDown:M3,FileEdit:kn,FileExclamationPoint:pn,FileHeadphone:ti,FileHeart:y3,FileImage:b3,FileInput:C3,FileJson:rn,FileJson2:on,FileKey:un,FileKey2:un,FileLineChart:ln,FileLock:wn,FileLock2:wn,FileMinus:B3,FileMinus2:gn,FileMinusCorner:gn,FileMusic:j3,FileOutput:A3,FilePen:kn,FilePenLine:vn,FilePieChart:an,FilePlay:mn,FilePlus:L3,FilePlus2:xn,FilePlusCorner:xn,FileQuestion:fn,FileQuestionMark:fn,FileScan:S3,FileSearch:H3,FileSearch2:Mn,FileSearchCorner:Mn,FileSignal:yn,FileSignature:vn,FileSliders:R3,FileSpreadsheet:V3,FileStack:z3,FileSymlink:$3,FileTerminal:U3,FileText:D3,FileType:F3,FileType2:bn,FileTypeCorner:bn,FileUp:E3,FileUser:P3,FileVideo:mn,FileVideo2:Cn,FileVideoCamera:Cn,FileVolume:T3,FileVolume2:yn,FileWarning:pn,FileX:Y3,FileX2:Bn,FileXCorner:Bn,Files:I3,Film:q3,Filter:Hn,FilterX:Sn,Fingerprint:jn,FingerprintPattern:jn,FireExtinguisher:N3,Fish:G3,FishOff:_3,FishSymbol:Z3,FishingHook:W3,Flag:Q3,FlagOff:K3,FlagTriangleLeft:X3,FlagTriangleRight:J3,Flame:e5,FlameKindling:t5,Flashlight:o5,FlashlightOff:r5,FlaskConical:s5,FlaskConicalOff:i5,FlaskRound:n5,FlipHorizontal:a5,FlipHorizontal2:l5,FlipVertical:h5,FlipVertical2:d5,Flower:p5,Flower2:c5,Focus:u5,FoldHorizontal:w5,FoldVertical:g5,Folder:I5,FolderArchive:v5,FolderCheck:k5,FolderClock:m5,FolderClosed:x5,FolderCode:f5,FolderCog:An,FolderCog2:An,FolderDot:M5,FolderDown:y5,FolderEdit:Ln,FolderGit:C5,FolderGit2:b5,FolderHeart:B5,FolderInput:j5,FolderKanban:A5,FolderKey:L5,FolderLock:S5,FolderMinus:H5,FolderOpen:V5,FolderOpenDot:R5,FolderOutput:z5,FolderPen:Ln,FolderPlus:$5,FolderRoot:U5,FolderSearch:F5,FolderSearch2:D5,FolderSymlink:P5,FolderSync:E5,FolderTree:T5,FolderUp:Y5,FolderX:O5,Folders:q5,Footprints:N5,ForkKnife:T0,ForkKnifeCrossed:E0,Forklift:Z5,Form:_5,FormInput:pl,Forward:G5,Frame:W5,Framer:K5,Frown:X5,Fuel:J5,Fullscreen:Q5,FunctionSquare:Kl,Funnel:Hn,FunnelPlus:tk,FunnelX:Sn,GalleryHorizontal:ok,GalleryHorizontalEnd:ek,GalleryThumbnails:rk,GalleryVertical:sk,GalleryVerticalEnd:ik,Gamepad:ak,Gamepad2:nk,GamepadDirectional:lk,GanttChart:a2,GanttChartSquare:ii,Gauge:dk,GaugeCircle:L2,Gavel:hk,Gem:ck,GeorgianLari:pk,Ghost:uk,Gift:wk,GitBranch:kk,GitBranchMinus:gk,GitBranchPlus:vk,GitCommit:Rn,GitCommitHorizontal:Rn,GitCommitVertical:mk,GitCompare:fk,GitCompareArrows:xk,GitFork:Mk,GitGraph:yk,GitMerge:bk,GitPullRequest:Sk,GitPullRequestArrow:Ck,GitPullRequestClosed:Bk,GitPullRequestCreate:Ak,GitPullRequestCreateArrow:jk,GitPullRequestDraft:Lk,Github:Hk,Gitlab:Rk,GlassWater:Vk,Glasses:zk,Globe:Uk,Globe2:X2,GlobeLock:$k,Goal:Dk,Gpu:Fk,Grab:Dn,GraduationCap:Pk,Grape:Ek,Grid:ei,Grid2X2:Un,Grid2X2Check:Vn,Grid2X2Plus:zn,Grid2X2X:$n,Grid2x2:Un,Grid2x2Check:Vn,Grid2x2Plus:zn,Grid2x2X:$n,Grid3X3:ei,Grid3x2:Tk,Grid3x3:ei,Grip:Ik,GripHorizontal:Yk,GripVertical:Ok,Group:qk,Guitar:Nk,Ham:_k,Hamburger:Zk,Hammer:Gk,Hand:tm,HandCoins:Kk,HandFist:Wk,HandGrab:Dn,HandHeart:Xk,HandHelping:Fn,HandMetal:Jk,HandPlatter:Qk,Handbag:em,Handshake:om,HardDrive:sm,HardDriveDownload:rm,HardDriveUpload:im,HardHat:nm,Hash:am,HatGlasses:lm,Haze:hm,Hd:cm,HdmiPort:dm,Heading:mm,Heading1:pm,Heading2:um,Heading3:wm,Heading4:gm,Heading5:vm,Heading6:km,HeadphoneOff:xm,Headphones:fm,Headset:Mm,Heart:Lm,HeartCrack:ym,HeartHandshake:bm,HeartMinus:Cm,HeartOff:Bm,HeartPlus:jm,HeartPulse:Am,Heater:Sm,Helicopter:Hm,HelpCircle:Jr,HelpingHand:Fn,Hexagon:Rm,Highlighter:Vm,History:zm,Home:Pn,Hop:Um,HopOff:$m,Hospital:Dm,Hotel:Fm,Hourglass:Pm,House:Pn,HouseHeart:Em,HousePlug:Tm,HousePlus:Ym,HouseWifi:Om,IceCream:Tn,IceCream2:En,IceCreamBowl:En,IceCreamCone:Tn,IdCard:qm,IdCardLanyard:Im,Image:Jm,ImageDown:Nm,ImageMinus:_m,ImageOff:Zm,ImagePlay:Gm,ImagePlus:Wm,ImageUp:Km,ImageUpscale:Xm,Images:Qm,Import:tx,Inbox:ex,Indent:ri,IndentDecrease:oi,IndentIncrease:ri,IndianRupee:ox,Infinity:rx,Info:ix,Inspect:o0,InspectionPanel:sx,Instagram:nx,Italic:lx,IterationCcw:ax,IterationCw:dx,JapaneseYen:hx,Joystick:cx,Kanban:px,KanbanSquare:Xl,KanbanSquareDashed:ql,Kayak:ux,Key:vx,KeyRound:gx,KeySquare:wx,Keyboard:xx,KeyboardMusic:kx,KeyboardOff:mx,Lamp:Bx,LampCeiling:fx,LampDesk:Mx,LampFloor:yx,LampWallDown:bx,LampWallUp:Cx,LandPlot:jx,Landmark:Lx,Languages:Ax,Laptop:Hx,Laptop2:Yn,LaptopMinimal:Yn,LaptopMinimalCheck:Sx,Lasso:Vx,LassoSelect:Rx,Laugh:zx,Layers:On,Layers2:$x,Layers3:On,LayersPlus:Ux,Layout:al,LayoutDashboard:Dx,LayoutGrid:Fx,LayoutList:Px,LayoutPanelLeft:Ex,LayoutPanelTop:Tx,LayoutTemplate:Yx,Leaf:Ox,LeafyGreen:Ix,Lectern:qx,LetterText:C0,Library:_x,LibraryBig:Nx,LibrarySquare:Jl,LifeBuoy:Zx,Ligature:Gx,Lightbulb:Kx,LightbulbOff:Wx,LineChart:s2,LineSquiggle:Xx,Link:t6,Link2:Qx,Link2Off:Jx,Linkedin:e6,List:f6,ListCheck:o6,ListChecks:r6,ListChevronsDownUp:i6,ListChevronsUpDown:s6,ListCollapse:n6,ListEnd:l6,ListFilter:d6,ListFilterPlus:a6,ListIndentDecrease:oi,ListIndentIncrease:ri,ListMinus:h6,ListMusic:c6,ListOrdered:p6,ListPlus:u6,ListRestart:w6,ListStart:g6,ListTodo:v6,ListTree:k6,ListVideo:m6,ListX:x6,Loader:y6,Loader2:In,LoaderCircle:In,LoaderPinwheel:M6,Locate:B6,LocateFixed:b6,LocateOff:C6,LocationEdit:Zn,Lock:A6,LockKeyhole:j6,LockKeyholeOpen:qn,LockOpen:Nn,LogIn:L6,LogOut:S6,Logs:H6,Lollipop:R6,Luggage:V6,MSquare:Ql,Magnet:z6,Mail:Y6,MailCheck:$6,MailMinus:U6,MailOpen:D6,MailPlus:F6,MailQuestion:_n,MailQuestionMark:_n,MailSearch:P6,MailWarning:E6,MailX:T6,Mailbox:O6,Mails:I6,Map:i8,MapMinus:q6,MapPin:e8,MapPinCheck:_6,MapPinCheckInside:N6,MapPinHouse:Z6,MapPinMinus:W6,MapPinMinusInside:G6,MapPinOff:K6,MapPinPen:Zn,MapPinPlus:J6,MapPinPlusInside:X6,MapPinX:t8,MapPinXInside:Q6,MapPinned:o8,MapPlus:r8,Mars:n8,MarsStroke:s8,Martini:l8,Maximize:d8,Maximize2:a8,Medal:h8,Megaphone:p8,MegaphoneOff:c8,Meh:u8,MemoryStick:w8,Menu:g8,MenuSquare:t0,Merge:v8,MessageCircle:j8,MessageCircleCode:k8,MessageCircleDashed:m8,MessageCircleHeart:x8,MessageCircleMore:f8,MessageCircleOff:M8,MessageCirclePlus:y8,MessageCircleQuestion:Gn,MessageCircleQuestionMark:Gn,MessageCircleReply:b8,MessageCircleWarning:C8,MessageCircleX:B8,MessageSquare:O8,MessageSquareCode:A8,MessageSquareDashed:L8,MessageSquareDiff:S8,MessageSquareDot:H8,MessageSquareHeart:R8,MessageSquareLock:V8,MessageSquareMore:z8,MessageSquareOff:$8,MessageSquarePlus:U8,MessageSquareQuote:D8,MessageSquareReply:F8,MessageSquareShare:E8,MessageSquareText:P8,MessageSquareWarning:T8,MessageSquareX:Y8,MessagesSquare:I8,Mic:N8,Mic2:Wn,MicOff:q8,MicVocal:Wn,Microchip:_8,Microscope:Z8,Microwave:G8,Milestone:W8,Milk:X8,MilkOff:K8,Minimize:Q8,Minimize2:J8,Minus:tf,MinusCircle:S2,MinusSquare:e0,Monitor:gf,MonitorCheck:ef,MonitorCloud:of,MonitorCog:rf,MonitorDot:sf,MonitorDown:nf,MonitorOff:lf,MonitorPause:af,MonitorPlay:df,MonitorSmartphone:hf,MonitorSpeaker:cf,MonitorStop:pf,MonitorUp:uf,MonitorX:wf,Moon:kf,MoonStar:vf,MoreHorizontal:Q2,MoreVertical:J2,Motorbike:mf,Mountain:ff,MountainSnow:xf,Mouse:Af,MouseOff:Mf,MousePointer:jf,MousePointer2:bf,MousePointer2Off:yf,MousePointerBan:Cf,MousePointerClick:Bf,MousePointerSquareDashed:Nl,Move:Tf,Move3D:Kn,Move3d:Kn,MoveDiagonal:Sf,MoveDiagonal2:Lf,MoveDown:Vf,MoveDownLeft:Hf,MoveDownRight:Rf,MoveHorizontal:zf,MoveLeft:$f,MoveRight:Uf,MoveUp:Pf,MoveUpLeft:Df,MoveUpRight:Ff,MoveVertical:Ef,Music:qf,Music2:Yf,Music3:Of,Music4:If,Navigation:Gf,Navigation2:_f,Navigation2Off:Nf,NavigationOff:Zf,Network:Wf,Newspaper:Kf,Nfc:Xf,NonBinary:Jf,Notebook:o7,NotebookPen:Qf,NotebookTabs:t7,NotebookText:e7,NotepadText:s7,NotepadTextDashed:r7,Nut:n7,NutOff:i7,Octagon:a7,OctagonAlert:Xn,OctagonMinus:l7,OctagonPause:Jn,OctagonX:Qn,Omega:d7,Option:h7,Orbit:c7,Origami:p7,Outdent:oi,Package:f7,Package2:u7,PackageCheck:w7,PackageMinus:g7,PackageOpen:v7,PackagePlus:k7,PackageSearch:m7,PackageX:x7,PaintBucket:M7,PaintRoller:y7,Paintbrush:b7,Paintbrush2:tl,PaintbrushVertical:tl,Palette:C7,Palmtree:L0,Panda:B7,PanelBottom:L7,PanelBottomClose:j7,PanelBottomDashed:el,PanelBottomInactive:el,PanelBottomOpen:A7,PanelLeft:sl,PanelLeftClose:ol,PanelLeftDashed:il,PanelLeftInactive:il,PanelLeftOpen:rl,PanelLeftRightDashed:S7,PanelRight:V7,PanelRightClose:H7,PanelRightDashed:nl,PanelRightInactive:nl,PanelRightOpen:R7,PanelTop:D7,PanelTopBottomDashed:z7,PanelTopClose:$7,PanelTopDashed:ll,PanelTopInactive:ll,PanelTopOpen:U7,PanelsLeftBottom:F7,PanelsLeftRight:G2,PanelsRightBottom:P7,PanelsTopBottom:gl,PanelsTopLeft:al,Paperclip:E7,Parentheses:T7,ParkingCircle:R2,ParkingCircleOff:H2,ParkingMeter:Y7,ParkingSquare:i0,ParkingSquareOff:r0,PartyPopper:O7,Pause:I7,PauseCircle:V2,PauseOctagon:Jn,PawPrint:q7,PcCase:N7,Pen:hl,PenBox:vr,PenLine:dl,PenOff:_7,PenSquare:vr,PenTool:Z7,Pencil:X7,PencilLine:G7,PencilOff:W7,PencilRuler:K7,Pentagon:J7,Percent:Q7,PercentCircle:z2,PercentDiamond:K2,PercentSquare:s0,PersonStanding:tM,PhilippinePeso:eM,Phone:aM,PhoneCall:oM,PhoneForwarded:rM,PhoneIncoming:iM,PhoneMissed:sM,PhoneOff:nM,PhoneOutgoing:lM,Pi:dM,PiSquare:n0,Piano:hM,Pickaxe:cM,PictureInPicture:uM,PictureInPicture2:pM,PieChart:d2,PiggyBank:wM,Pilcrow:kM,PilcrowLeft:gM,PilcrowRight:vM,PilcrowSquare:l0,Pill:xM,PillBottle:mM,Pin:MM,PinOff:fM,Pipette:yM,Pizza:bM,Plane:jM,PlaneLanding:CM,PlaneTakeoff:BM,Play:AM,PlayCircle:$2,PlaySquare:a0,Plug:HM,Plug2:LM,PlugZap:cl,PlugZap2:cl,Plus:SM,PlusCircle:U2,PlusSquare:d0,Pocket:VM,PocketKnife:RM,Podcast:zM,Pointer:UM,PointerOff:$M,Popcorn:DM,Popsicle:FM,PoundSterling:PM,Power:TM,PowerCircle:D2,PowerOff:EM,PowerSquare:h0,Presentation:YM,Printer:qM,PrinterCheck:OM,Projector:NM,Proportions:IM,Puzzle:_M,Pyramid:ZM,QrCode:GM,Quote:WM,Rabbit:KM,Radar:XM,Radiation:JM,Radical:QM,Radio:o9,RadioReceiver:t9,RadioTower:e9,Radius:r9,RailSymbol:i9,Rainbow:s9,Rat:n9,Ratio:l9,Receipt:k9,ReceiptCent:a9,ReceiptEuro:d9,ReceiptIndianRupee:h9,ReceiptJapaneseYen:c9,ReceiptPoundSterling:p9,ReceiptRussianRuble:u9,ReceiptSwissFranc:g9,ReceiptText:w9,ReceiptTurkishLira:v9,RectangleCircle:m9,RectangleEllipsis:pl,RectangleGoggles:x9,RectangleHorizontal:f9,RectangleVertical:M9,Recycle:y9,Redo:B9,Redo2:b9,RedoDot:C9,RefreshCcw:A9,RefreshCcwDot:j9,RefreshCw:S9,RefreshCwOff:L9,Refrigerator:H9,Regex:R9,RemoveFormatting:V9,Repeat:U9,Repeat1:z9,Repeat2:$9,Replace:F9,ReplaceAll:D9,Reply:E9,ReplyAll:P9,Rewind:T9,Ribbon:Y9,Rocket:O9,RockingChair:I9,RollerCoaster:q9,Rose:N9,Rotate3D:ul,Rotate3d:ul,RotateCcw:G9,RotateCcwKey:_9,RotateCcwSquare:Z9,RotateCw:K9,RotateCwSquare:W9,Route:J9,RouteOff:X9,Router:Q9,Rows:wl,Rows2:wl,Rows3:gl,Rows4:ty,Rss:oy,Ruler:ry,RulerDimensionLine:ey,RussianRuble:iy,Sailboat:sy,Salad:ny,Sandwich:ly,Satellite:dy,SatelliteDish:ay,SaudiRiyal:hy,Save:uy,SaveAll:cy,SaveOff:py,Scale:wy,Scale3D:vl,Scale3d:vl,Scaling:gy,Scan:Cy,ScanBarcode:vy,ScanEye:ky,ScanFace:my,ScanHeart:xy,ScanLine:fy,ScanQrCode:My,ScanSearch:yy,ScanText:by,ScatterChart:h2,School:By,School2:R0,Scissors:Ay,ScissorsLineDashed:jy,ScissorsSquare:c0,ScissorsSquareDashedBottom:Dl,Scooter:Ly,ScreenShare:Sy,ScreenShareOff:Hy,Scroll:Vy,ScrollText:Ry,Search:Py,SearchAlert:zy,SearchCheck:$y,SearchCode:Dy,SearchSlash:Uy,SearchX:Fy,Section:Ey,Send:Yy,SendHorizonal:kl,SendHorizontal:kl,SendToBack:Ty,SeparatorHorizontal:Oy,SeparatorVertical:Iy,Server:Zy,ServerCog:qy,ServerCrash:Ny,ServerOff:_y,Settings:Wy,Settings2:Gy,Shapes:Ky,Share:Jy,Share2:Xy,Sheet:Qy,Shell:tb,Shield:hb,ShieldAlert:eb,ShieldBan:ob,ShieldCheck:rb,ShieldClose:xl,ShieldEllipsis:ib,ShieldHalf:sb,ShieldMinus:nb,ShieldOff:ab,ShieldPlus:lb,ShieldQuestion:ml,ShieldQuestionMark:ml,ShieldUser:db,ShieldX:xl,Ship:pb,ShipWheel:cb,Shirt:ub,ShoppingBag:wb,ShoppingBasket:gb,ShoppingCart:vb,Shovel:kb,ShowerHead:mb,Shredder:xb,Shrimp:fb,Shrink:Mb,Shrub:yb,Shuffle:Cb,Sidebar:sl,SidebarClose:ol,SidebarOpen:rl,Sigma:bb,SigmaSquare:p0,Signal:Sb,SignalHigh:Bb,SignalLow:jb,SignalMedium:Ab,SignalZero:Lb,Signature:Hb,Signpost:Vb,SignpostBig:Rb,Siren:zb,SkipBack:$b,SkipForward:Ub,Skull:Db,Slack:Fb,Slash:Pb,SlashSquare:u0,Slice:Tb,Sliders:fl,SlidersHorizontal:Eb,SlidersVertical:fl,Smartphone:Ib,SmartphoneCharging:Yb,SmartphoneNfc:Ob,Smile:Nb,SmilePlus:qb,Snail:Zb,Snowflake:_b,SoapDispenserDroplet:Gb,Sofa:Wb,SolarPanel:Kb,SortAsc:Os,SortDesc:Es,Soup:Xb,Space:Jb,Spade:Qb,Sparkle:tC,Sparkles:Ml,Speaker:eC,Speech:oC,SpellCheck:iC,SpellCheck2:rC,Spline:nC,SplinePointer:sC,Split:lC,SplitSquareHorizontal:w0,SplitSquareVertical:g0,Spool:aC,Spotlight:dC,SprayCan:hC,Sprout:cC,Square:yC,SquareActivity:yl,SquareArrowDown:Bl,SquareArrowDownLeft:bl,SquareArrowDownRight:Cl,SquareArrowLeft:jl,SquareArrowOutDownLeft:Al,SquareArrowOutDownRight:Ll,SquareArrowOutUpLeft:Sl,SquareArrowOutUpRight:Hl,SquareArrowRight:Rl,SquareArrowUp:$l,SquareArrowUpLeft:Vl,SquareArrowUpRight:zl,SquareAsterisk:Ul,SquareBottomDashedScissors:Dl,SquareChartGantt:ii,SquareCheck:Pl,SquareCheckBig:Fl,SquareChevronDown:El,SquareChevronLeft:Tl,SquareChevronRight:Yl,SquareChevronUp:Ol,SquareCode:Il,SquareDashed:_l,SquareDashedBottom:uC,SquareDashedBottomCode:pC,SquareDashedKanban:ql,SquareDashedMousePointer:Nl,SquareDashedTopSolid:wC,SquareDivide:Zl,SquareDot:Gl,SquareEqual:Wl,SquareFunction:Kl,SquareGanttChart:ii,SquareKanban:Xl,SquareLibrary:Jl,SquareM:Ql,SquareMenu:t0,SquareMinus:e0,SquareMousePointer:o0,SquareParking:i0,SquareParkingOff:r0,SquarePause:gC,SquarePen:vr,SquarePercent:s0,SquarePi:n0,SquarePilcrow:l0,SquarePlay:a0,SquarePlus:d0,SquarePower:h0,SquareRadical:vC,SquareRoundCorner:kC,SquareScissors:c0,SquareSigma:p0,SquareSlash:u0,SquareSplitHorizontal:w0,SquareSplitVertical:g0,SquareSquare:mC,SquareStack:xC,SquareStar:fC,SquareStop:MC,SquareTerminal:v0,SquareUser:m0,SquareUserRound:k0,SquareX:x0,SquaresExclude:bC,SquaresIntersect:CC,SquaresSubtract:BC,SquaresUnite:jC,Squircle:LC,SquircleDashed:AC,Squirrel:SC,Stamp:HC,Star:zC,StarHalf:RC,StarOff:VC,Stars:Ml,StepBack:$C,StepForward:UC,Stethoscope:DC,Sticker:PC,StickyNote:FC,Stone:EC,StopCircle:P2,Store:TC,StretchHorizontal:YC,StretchVertical:OC,Strikethrough:IC,Subscript:qC,Subtitles:Xs,Sun:WC,SunDim:NC,SunMedium:_C,SunMoon:ZC,SunSnow:GC,Sunrise:KC,Sunset:XC,Superscript:JC,SwatchBook:QC,SwissFranc:tB,SwitchCamera:eB,Sword:oB,Swords:rB,Syringe:iB,Table:pB,Table2:sB,TableCellsMerge:nB,TableCellsSplit:lB,TableColumnsSplit:aB,TableConfig:Qr,TableOfContents:dB,TableProperties:hB,TableRowsSplit:cB,Tablet:gB,TabletSmartphone:uB,Tablets:wB,Tag:vB,Tags:kB,Tally1:mB,Tally2:xB,Tally3:fB,Tally4:MB,Tally5:yB,Tangent:bB,Target:CB,Telescope:BB,Tent:AB,TentTree:jB,Terminal:LB,TerminalSquare:v0,TestTube:SB,TestTube2:f0,TestTubeDiagonal:f0,TestTubes:HB,Text:si,TextAlignCenter:M0,TextAlignEnd:y0,TextAlignJustify:b0,TextAlignStart:si,TextCursor:VB,TextCursorInput:RB,TextInitial:C0,TextQuote:zB,TextSearch:$B,TextSelect:B0,TextSelection:B0,TextWrap:j0,Theater:UB,Thermometer:PB,ThermometerSnowflake:DB,ThermometerSun:FB,ThumbsDown:EB,ThumbsUp:TB,Ticket:ZB,TicketCheck:YB,TicketMinus:OB,TicketPercent:IB,TicketPlus:qB,TicketSlash:NB,TicketX:_B,Tickets:WB,TicketsPlane:GB,Timer:JB,TimerOff:KB,TimerReset:XB,ToggleLeft:QB,ToggleRight:tj,Toilet:ej,ToolCase:oj,Toolbox:rj,Tornado:ij,Torus:sj,Touchpad:lj,TouchpadOff:nj,TowerControl:aj,ToyBrick:dj,Tractor:hj,TrafficCone:cj,Train:A0,TrainFront:uj,TrainFrontTunnel:pj,TrainTrack:wj,TramFront:A0,Transgender:gj,Trash:kj,Trash2:vj,TreeDeciduous:mj,TreePalm:L0,TreePine:xj,Trees:fj,Trello:Mj,TrendingDown:yj,TrendingUp:Cj,TrendingUpDown:bj,Triangle:Aj,TriangleAlert:S0,TriangleDashed:Bj,TriangleRight:jj,Trophy:Sj,Truck:Hj,TruckElectric:Lj,TurkishLira:Rj,Turntable:Vj,Turtle:zj,Tv:Uj,Tv2:H0,TvMinimal:H0,TvMinimalPlay:$j,Twitch:Dj,Twitter:Fj,Type:Ej,TypeOutline:Pj,Umbrella:Yj,UmbrellaOff:Tj,Underline:Oj,Undo:Nj,Undo2:Ij,UndoDot:qj,UnfoldHorizontal:_j,UnfoldVertical:Gj,Ungroup:Zj,University:R0,Unlink:Kj,Unlink2:Wj,Unlock:Nn,UnlockKeyhole:qn,Unplug:Xj,Upload:Jj,UploadCloud:N2,Usb:Qj,User:cA,User2:F0,UserCheck:tA,UserCheck2:V0,UserCircle:T2,UserCircle2:E2,UserCog:eA,UserCog2:z0,UserLock:oA,UserMinus:rA,UserMinus2:$0,UserPen:iA,UserPlus:sA,UserPlus2:U0,UserRound:F0,UserRoundCheck:V0,UserRoundCog:z0,UserRoundMinus:$0,UserRoundPen:nA,UserRoundPlus:U0,UserRoundSearch:lA,UserRoundX:D0,UserSearch:aA,UserSquare:m0,UserSquare2:k0,UserStar:dA,UserX:hA,UserX2:D0,Users:pA,Users2:P0,UsersRound:P0,Utensils:T0,UtensilsCrossed:E0,UtilityPole:uA,Van:wA,Variable:gA,Vault:vA,VectorSquare:kA,Vegan:xA,VenetianMask:mA,Venus:MA,VenusAndMars:fA,Verified:Ns,Vibrate:bA,VibrateOff:yA,Video:BA,VideoOff:CA,Videotape:AA,View:LA,Voicemail:jA,Volleyball:SA,Volume:$A,Volume1:HA,Volume2:RA,VolumeOff:zA,VolumeX:VA,Vote:UA,Wallet:FA,Wallet2:Y0,WalletCards:DA,WalletMinimal:Y0,Wallpaper:PA,Wand:EA,Wand2:O0,WandSparkles:O0,Warehouse:TA,WashingMachine:YA,Watch:OA,Waves:ZA,WavesArrowDown:qA,WavesArrowUp:IA,WavesLadder:NA,Waypoints:_A,Webcam:GA,Webhook:KA,WebhookOff:WA,Weight:JA,WeightTilde:XA,Wheat:eL,WheatOff:QA,WholeWord:oL,Wifi:dL,WifiCog:tL,WifiHigh:rL,WifiLow:sL,WifiOff:iL,WifiPen:nL,WifiSync:lL,WifiZero:aL,Wind:cL,WindArrowDown:hL,Wine:uL,WineOff:pL,Workflow:wL,Worm:gL,WrapText:j0,Wrench:vL,X:kL,XCircle:Y2,XOctagon:Qn,XSquare:x0,Youtube:mL,Zap:fL,ZapOff:xL,ZoomIn:ML,ZoomOut:yL},Symbol.toStringTag,{value:"Module"}));function CL(o){return o.replace(/([a-z])([A-Z])/g,"$1-$2").replace(/([A-Z])([A-Z][a-z])/g,"$1-$2").replace(/([a-zA-Z])(\d)/g,"$1-$2").replace(/(\d)([a-zA-Z])/g,"$1-$2").toLowerCase()}function BL(){const o={};for(const[t,e]of Object.entries(bL))typeof e=="string"&&e.includes("<svg")&&(o[CL(t)]=e);return o}const xa=BL();Object.keys(xa).toSorted();function jL(){T1(xa)}const fa={prefix:"ik"};let rs={...fa};function AL(o={}){rs={...fa,...o}}function Ma(){return rs}function X(o){return`${rs.prefix}-${o}`}function $(o){const t=o.baseName;return e=>{const i=e||X(t);return customElements.get(i)||customElements.define(i,o),i}}const et="ik";class LL extends Xt{get config(){return Ma()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}createRenderRoot(){return this}}class _ extends Xt{get config(){return Ma()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}}const SL=o=>o.strings===void 0;const qo=(o,t)=>{const e=o._$AN;if(e===void 0)return!1;for(const i of e)i._$AO?.(t,!1),qo(i,t);return!0},Ar=o=>{let t,e;do{if((t=o._$AM)===void 0)break;e=t._$AN,e.delete(o),o=t}while(e?.size===0)},ya=o=>{for(let t;t=o._$AM;o=t){let e=t._$AN;if(e===void 0)t._$AN=e=new Set;else if(e.has(o))break;e.add(o),VL(t)}};function HL(o){this._$AN!==void 0?(Ar(this),this._$AM=o,ya(this)):this._$AM=o}function RL(o,t=!1,e=0){const i=this._$AH,r=this._$AN;if(r!==void 0&&r.size!==0)if(t)if(Array.isArray(i))for(let s=e;s<i.length;s++)qo(i[s],!1),Ar(i[s]);else i!=null&&(qo(i,!1),Ar(i));else qo(this,o)}const VL=o=>{o.type==va.CHILD&&(o._$AP??(o._$AP=RL),o._$AQ??(o._$AQ=HL))};class zL extends ma{constructor(){super(...arguments),this._$AN=void 0}_$AT(t,e,i){super._$AT(t,e,i),ya(this),this.isConnected=t._$AU}_$AO(t,e=!0){t!==this.isConnected&&(this.isConnected=t,t?this.reconnected?.():this.disconnected?.()),e&&(qo(this,t),Ar(this))}setValue(t){if(SL(this._$Ct))this._$Ct._$AI(t,this);else{const e=[...this._$Ct._$AH];e[this._$Ci]=t,this._$Ct._$AI(e,this,0)}}disconnected(){}reconnected(){}}const ni=()=>new $L;class $L{}const li=new WeakMap,ai=ka(class extends zL{render(o){return k}update(o,[t]){const e=t!==this.G;return e&&this.G!==void 0&&this.rt(void 0),(e||this.lt!==this.ct)&&(this.G=t,this.ht=o.options?.host,this.rt(this.ct=o.element)),k}rt(o){if(this.isConnected||(o=void 0),typeof this.G=="function"){const t=this.ht??globalThis;let e=li.get(t);e===void 0&&(e=new WeakMap,li.set(t,e)),e.get(this.G)!==void 0&&this.G.call(this.ht,void 0),e.set(this.G,o),o!==void 0&&this.G.call(this.ht,o)}else this.G.value=o}get lt(){return typeof this.G=="function"?li.get(this.ht??globalThis)?.get(this.G):this.G?.value}disconnected(){this.lt===this.ct&&this.rt(void 0)}reconnected(){this.rt(this.ct)}});function UL(o){const[t,e="center"]=o.split("-");return{side:t,alignment:e||"center"}}function DL(o){return{top:"bottom",bottom:"top",left:"right",right:"left"}[o]}function FL(o,t){return t==="center"?o:`${o}-${t}`}function ba(o,t,e={}){const{placement:i="bottom",offset:r=4,flip:s=!0,padding:n=8,boundary:d="viewport",matchWidth:a=!1}=e,c=o.getBoundingClientRect(),u=t.getBoundingClientRect(),w=a?c.width:u.width,C=u.height,m=d==="viewport"?{top:n,left:n,right:window.innerWidth-n,bottom:window.innerHeight-n}:d.getBoundingClientRect();let{side:S,alignment:z}=UL(i);const U={top:c.top-m.top,bottom:m.bottom-c.bottom,left:c.left-m.left,right:m.right-c.right};if(s){const I=S==="top"||S==="bottom"?C+r:w+r;if(U[S]<I){const x=DL(S);U[x]>=I&&(S=x)}}let M,V;if(S==="top"||S==="bottom"){switch(V=S==="top"?c.top-C-r:c.bottom+r,z){case"start":M=c.left;break;case"end":M=c.right-w;break;default:M=c.left+(c.width-w)/2}M<m.left?M=m.left:M+w>m.right&&(M=m.right-w)}else{switch(M=S==="left"?c.left-w-r:c.right+r,z){case"start":V=c.top;break;case"end":V=c.bottom-C;break;default:V=c.top+(c.height-C)/2}V<m.top?V=m.top:V+C>m.bottom&&(V=m.bottom-C)}return{x:M,y:V,placement:FL(S,z),side:S,alignment:z}}function PL(o,t,e,i={}){const{scroll:r=!0,resize:s=!0,elementResize:n=!0}=i,d=[];if(e(),r){const a=()=>e();window.addEventListener("scroll",a,!0),d.push(()=>window.removeEventListener("scroll",a,!0))}if(s){const a=()=>e();window.addEventListener("resize",a),d.push(()=>window.removeEventListener("resize",a))}if(n&&typeof ResizeObserver<"u"){const a=new ResizeObserver(()=>e());a.observe(o),a.observe(t),d.push(()=>a.disconnect())}return()=>{d.forEach(a=>a())}}function EL(o,t,e={}){o.style.position="fixed",o.style.left=`${t.x}px`,o.style.top=`${t.y}px`,e.matchWidth!==void 0&&(o.style.width=`${e.matchWidth}px`),o.dataset.side=t.side,o.dataset.alignment=t.alignment,o.dataset.placement=t.placement}function TL(){const o=[];let t=null;function e(){if(t?.(),o.length===0){t=null;return}const i=s=>{const n=s.composedPath();for(let d=o.length-1;d>=0;d--){const a=o[d];if(n.includes(a.element))return;let c=!1;for(const u of a.exclude)if(n.includes(u)){c=!0;break}if(c)return;a.onDismiss("click-outside");return}},r=s=>{s.key==="Escape"&&o.length>0&&(s.preventDefault(),s.stopPropagation(),o[o.length-1].onDismiss("escape"))};document.addEventListener("mousedown",i,!0),document.addEventListener("keydown",r,!0),t=()=>{document.removeEventListener("mousedown",i,!0),document.removeEventListener("keydown",r,!0)}}return{add(i,r,s=[]){return o.push({element:i,onDismiss:r,exclude:s}),e(),()=>{const n=o.findIndex(d=>d.element===i);n!==-1&&(o.splice(n,1),e())}},remove(i){const r=o.findIndex(s=>s.element===i);r!==-1&&(o.splice(r,1),e())},clear(){o.length=0,e()},get size(){return o.length}}}const is=TL(),di=["a[href]","button:not([disabled])","input:not([disabled])","select:not([disabled])","textarea:not([disabled])",'[tabindex]:not([tabindex="-1"])','[contenteditable="true"]'].join(",");function ss(o){const t=[],e=o.shadowRoot||o;return e.querySelectorAll(di).forEach(s=>{const n=s;hi(n)&&!ci(n)&&t.push(n)}),e.querySelectorAll("slot").forEach(s=>{s.assignedElements({flatten:!0}).forEach(d=>{const a=d;a.matches?.(di)&&hi(a)&&!ci(a)&&t.push(a),d.querySelectorAll(di).forEach(u=>{const w=u;hi(w)&&!ci(w)&&t.push(w)})})}),t}function hi(o){return o.offsetParent!==null||o.offsetWidth>0||o.offsetHeight>0}function ci(o){return o.hasAttribute("disabled")||o.getAttribute("aria-disabled")==="true"}function pi(o){return ss(o)[0]||null}function YL(o){const t=ss(o);return t[t.length-1]||null}function OL(o,t={}){const{autoFocus:e=!0,restoreFocus:i=!0,initialFocus:r,finalFocus:s,allowOutsideFocus:n=!1}=t;let d=!1,a=null;function c(m){if(!d||m.key!=="Tab")return;const S=ss(o);if(S.length===0)return;const z=S[0],U=S[S.length-1];m.shiftKey?document.activeElement===z&&(m.preventDefault(),U.focus()):document.activeElement===U&&(m.preventDefault(),z.focus())}function u(m){if(!d||n)return;const S=m.relatedTarget;S&&!o.contains(S)&&(m.preventDefault(),pi(o)?.focus())}function w(){let m=null;r&&(typeof r=="string"?m=o.querySelector(r):m=r),m||(m=pi(o)),m?.focus()}function C(){let m=null;s?typeof s=="string"?m=document.querySelector(s):m=s:i&&a&&(m=a),m?.focus()}return{activate(){d||(d=!0,a=document.activeElement,document.addEventListener("keydown",c,!0),o.addEventListener("focusout",u),e&&requestAnimationFrame(()=>{w()}))},deactivate(){d&&(d=!1,document.removeEventListener("keydown",c,!0),o.removeEventListener("focusout",u),C())},get isActive(){return d},focusFirst(){pi(o)?.focus()},focusLast(){YL(o)?.focus()}}}let kr=0,Be=null;function IL(){const o=document.createElement("div");o.style.visibility="hidden",o.style.overflow="scroll",document.body.appendChild(o);const t=document.createElement("div");o.appendChild(t);const e=o.offsetWidth-t.offsetWidth;return o.remove(),e}function qL(){return document.documentElement.scrollHeight>window.innerHeight}function NL(){const o=document.body;if(kr===0&&(Be={originalOverflow:o.style.overflow,originalPaddingRight:o.style.paddingRight,scrollbarWidth:qL()?IL():0},o.style.overflow="hidden",Be.scrollbarWidth>0)){const e=parseInt(getComputedStyle(o).paddingRight,10)||0;o.style.paddingRight=`${e+Be.scrollbarWidth}px`}kr++;let t=!1;return()=>{t||(t=!0,kr--,kr===0&&Be&&(o.style.overflow=Be.originalOverflow,o.style.paddingRight=Be.originalPaddingRight,Be=null))}}var _L=Object.defineProperty,xt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_L(t,e,r),r},Jt;const pt=(Jt=class extends _{constructor(){super(...arguments),this.optionElements=[],this.placeholder="请选择",this.disabled=!1,this.multiple=!1,this.searchable=!1,this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.placement="bottom-start",this.offset=4,this.triggerRef=ni(),this.dropdownRef=ni(),this.defaultSlotRef=ni(),this.cleanupScroll=null,this.cleanupDismissable=null,this.handleSlotChange=()=>{this.collectOptionElements()},this.handleOptionClick=t=>{const{value:e}=t.detail,i=this.optionElements.find(r=>r.value===e);!i||i.disabled||this.selectOptionByValue(e)},this.toggleDropdown=()=>{this.disabled||(this.open?this.closeDropdown():this.openDropdown())},this.updatePosition=()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;const i=ba(t,e,{placement:this.placement,offset:this.offset,flip:!0,padding:8,matchWidth:!0}),r=t.getBoundingClientRect().width;e.style.position="fixed",e.style.left=`${i.x}px`,e.style.top=`${i.y}px`,e.style.width=`${r}px`,e.style.visibility="visible",e.style.pointerEvents="auto",e.dataset.side=i.side,e.dataset.placement=i.placement},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":if(t.preventDefault(),!this.open)this.openDropdown();else if(this.highlightedIndex>=0){const e=this.filteredOptions[this.highlightedIndex];e&&this.selectOptionByValue(e.value)}break;case"ArrowDown":t.preventDefault(),this.open?this.highlightNext():this.openDropdown();break;case"ArrowUp":t.preventDefault(),this.open?this.highlightPrevious():this.openDropdown();break;case"Escape":break;case"Home":this.open&&(t.preventDefault(),this.highlightedIndex=0,this.updateOptionStates());break;case"End":this.open&&(t.preventDefault(),this.highlightedIndex=this.filteredOptions.length-1,this.updateOptionStates());break}},this.handleSearchInput=t=>{const e=t.target;this.searchKeyword=e.value,this.highlightedIndex=0,this.updateOptionStates()}}get filteredOptions(){if(!this.searchable||!this.searchKeyword.trim())return this.optionElements;const t=this.searchKeyword.toLowerCase();return this.optionElements.filter(e=>{const i=e.displayLabel.toLowerCase(),r=e.value.toLowerCase();return i.includes(t)||r.includes(t)})}collectOptionElements(){const t=this.defaultSlotRef.value;if(!t)return;const e=t.assignedElements(),i=X("select-option");this.optionElements=e.filter(s=>s.tagName.toLowerCase()===i);const r=`${et}-option-click`;this.optionElements.forEach(s=>{s.removeEventListener(r,this.handleOptionClick),s.addEventListener(r,this.handleOptionClick)}),this.updateOptionStates()}updateOptionStates(){const t=new Set(this.filteredOptions);this.optionElements.forEach(e=>{const i=this.filteredOptions.indexOf(e);e.highlighted=i===this.highlightedIndex,e.hidden=!t.has(e)})}setupOpen(){requestAnimationFrame(()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;this.updatePosition();const i=r=>{e.contains(r.target)||this.closeDropdown()};window.addEventListener("scroll",i,!0),this.cleanupScroll=()=>{window.removeEventListener("scroll",i,!0)},this.cleanupDismissable=is.add(e,r=>{(r==="escape"||r==="click-outside")&&this.closeDropdown()},[this])})}cleanupOpen(){this.cleanupScroll?.(),this.cleanupScroll=null,this.cleanupDismissable?.(),this.cleanupDismissable=null}openDropdown(){if(!(this.disabled||this.open)&&(this.open=!0,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("open",void 0,{bubbles:!1}),!this.multiple)){const t=this.filteredOptions.findIndex(e=>e.selected);t!==-1&&(this.highlightedIndex=t,this.updateOptionStates())}}closeDropdown(){this.open&&(this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("close",void 0,{bubbles:!1}))}selectOptionByValue(t){const e=this.optionElements.find(i=>i.value===t);!e||e.disabled||(this.multiple?e.selected=!e.selected:(this.optionElements.forEach(i=>{i.selected=i===e}),this.closeDropdown()),this.requestUpdate(),this.emit("change",{value:e.value,selected:e.selected,option:{value:e.value,label:e.displayLabel,disabled:e.disabled,data:e.data}},{bubbles:!1}))}highlightNext(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex+1;for(;e<t.length&&t[e].disabled;)e++;if(e>=t.length)for(e=0;e<t.length&&t[e].disabled;)e++;e<t.length&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex-1;for(;e>=0&&t[e].disabled;)e--;if(e<0)for(e=t.length-1;e>=0&&t[e].disabled;)e--;e>=0&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.filteredOptions[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}renderTrigger(){return p`
+`;const bR=Object.freeze(Object.defineProperty({__proto__:null,AArrowDown:_1,AArrowUp:Z1,ALargeSmall:G1,Accessibility:W1,Activity:K1,ActivitySquare:bl,AirVent:X1,Airplay:J1,AlarmCheck:$s,AlarmClock:td,AlarmClockCheck:$s,AlarmClockMinus:Ds,AlarmClockOff:Q1,AlarmClockPlus:Fs,AlarmMinus:Ds,AlarmPlus:Fs,AlarmSmoke:ed,Album:od,AlertCircle:u2,AlertOctagon:Jn,AlertTriangle:Sa,AlignCenter:ya,AlignCenterHorizontal:rd,AlignCenterVertical:id,AlignEndHorizontal:sd,AlignEndVertical:nd,AlignHorizontalDistributeCenter:ld,AlignHorizontalDistributeEnd:ad,AlignHorizontalDistributeStart:dd,AlignHorizontalJustifyCenter:hd,AlignHorizontalJustifyEnd:cd,AlignHorizontalJustifyStart:pd,AlignHorizontalSpaceAround:ud,AlignHorizontalSpaceBetween:wd,AlignJustify:Ca,AlignLeft:ni,AlignRight:ba,AlignStartHorizontal:vd,AlignStartVertical:gd,AlignVerticalDistributeCenter:md,AlignVerticalDistributeEnd:kd,AlignVerticalDistributeStart:xd,AlignVerticalJustifyCenter:fd,AlignVerticalJustifyEnd:Md,AlignVerticalJustifyStart:bd,AlignVerticalSpaceAround:yd,AlignVerticalSpaceBetween:Cd,Ambulance:Bd,Ampersand:Ad,Ampersands:Rd,Amphora:jd,Anchor:Ld,Angry:Hd,Annoyed:Sd,Antenna:Yd,Anvil:Ud,Aperture:Vd,AppWindow:$d,AppWindowMac:zd,Apple:Dd,Archive:Ed,ArchiveRestore:Fd,ArchiveX:Pd,AreaChart:Qs,Armchair:Td,ArrowBigDown:Id,ArrowBigDownDash:Od,ArrowBigLeft:Nd,ArrowBigLeftDash:qd,ArrowBigRight:Zd,ArrowBigRightDash:_d,ArrowBigUp:Wd,ArrowBigUpDash:Gd,ArrowDown:sh,ArrowDown01:Kd,ArrowDown10:Xd,ArrowDownAZ:Ps,ArrowDownAz:Ps,ArrowDownCircle:w2,ArrowDownFromLine:Jd,ArrowDownLeft:Qd,ArrowDownLeftFromCircle:v2,ArrowDownLeftFromSquare:Rl,ArrowDownLeftSquare:Cl,ArrowDownNarrowWide:th,ArrowDownRight:eh,ArrowDownRightFromCircle:k2,ArrowDownRightFromSquare:Ll,ArrowDownRightSquare:Bl,ArrowDownSquare:jl,ArrowDownToDot:rh,ArrowDownToLine:oh,ArrowDownUp:ih,ArrowDownWideNarrow:Es,ArrowDownZA:Ts,ArrowDownZa:Ts,ArrowLeft:ah,ArrowLeftCircle:g2,ArrowLeftFromLine:lh,ArrowLeftRight:nh,ArrowLeftSquare:Al,ArrowLeftToLine:dh,ArrowRight:uh,ArrowRightCircle:f2,ArrowRightFromLine:hh,ArrowRightLeft:ch,ArrowRightSquare:Yl,ArrowRightToLine:ph,ArrowUp:bh,ArrowUp01:wh,ArrowUp10:gh,ArrowUpAZ:Os,ArrowUpAz:Os,ArrowUpCircle:M2,ArrowUpDown:vh,ArrowUpFromDot:kh,ArrowUpFromLine:mh,ArrowUpLeft:xh,ArrowUpLeftFromCircle:m2,ArrowUpLeftFromSquare:Sl,ArrowUpLeftSquare:Ul,ArrowUpNarrowWide:Is,ArrowUpRight:fh,ArrowUpRightFromCircle:x2,ArrowUpRightFromSquare:Hl,ArrowUpRightSquare:Vl,ArrowUpSquare:zl,ArrowUpToLine:Mh,ArrowUpWideNarrow:yh,ArrowUpZA:qs,ArrowUpZa:qs,ArrowsUpFromLine:Ch,Asterisk:Bh,AsteriskSquare:$l,AtSign:jh,Atom:Ah,AudioLines:Rh,AudioWaveform:Lh,Award:Sh,Axe:Hh,Axis3D:Ns,Axis3d:Ns,Baby:Yh,Backpack:Uh,Badge:Wh,BadgeAlert:zh,BadgeCent:Vh,BadgeCheck:_s,BadgeDollarSign:$h,BadgeEuro:Dh,BadgeHelp:Zs,BadgeIndianRupee:Fh,BadgeInfo:Ph,BadgeJapaneseYen:Th,BadgeMinus:Eh,BadgePercent:Oh,BadgePlus:Ih,BadgePoundSterling:qh,BadgeQuestionMark:Zs,BadgeRussianRuble:Nh,BadgeSwissFranc:_h,BadgeTurkishLira:Zh,BadgeX:Gh,BaggageClaim:Kh,Balloon:Xh,Ban:Jh,Banana:Qh,Bandage:tc,Banknote:ic,BanknoteArrowDown:ec,BanknoteArrowUp:rc,BanknoteX:oc,BarChart:l2,BarChart2:a2,BarChart3:s2,BarChart4:i2,BarChartBig:r2,BarChartHorizontal:e2,BarChartHorizontalBig:t2,Barcode:sc,Barrel:nc,Baseline:ac,Bath:lc,Battery:gc,BatteryCharging:dc,BatteryFull:hc,BatteryLow:cc,BatteryMedium:pc,BatteryPlus:uc,BatteryWarning:wc,Beaker:vc,Bean:mc,BeanOff:kc,Bed:Mc,BedDouble:xc,BedSingle:fc,Beef:yc,Beer:Cc,BeerOff:bc,Bell:Hc,BellDot:Bc,BellElectric:jc,BellMinus:Ac,BellOff:Rc,BellPlus:Lc,BellRing:Sc,BetweenHorizonalEnd:Gs,BetweenHorizonalStart:Ws,BetweenHorizontalEnd:Gs,BetweenHorizontalStart:Ws,BetweenVerticalEnd:Yc,BetweenVerticalStart:Uc,BicepsFlexed:Vc,Bike:zc,Binary:$c,Binoculars:Dc,Biohazard:Fc,Bird:Pc,Birdhouse:Ec,Bitcoin:Tc,Blend:Oc,Blinds:Ic,Blocks:qc,Bluetooth:Gc,BluetoothConnected:Nc,BluetoothOff:_c,BluetoothSearching:Zc,Bold:Wc,Bolt:Kc,Bomb:Xc,Bone:Jc,Book:Cp,BookA:Qc,BookAlert:tp,BookAudio:ep,BookCheck:op,BookCopy:rp,BookDashed:Ks,BookDown:ip,BookHeadphones:sp,BookHeart:np,BookImage:lp,BookKey:ap,BookLock:dp,BookMarked:hp,BookMinus:cp,BookOpen:wp,BookOpenCheck:up,BookOpenText:pp,BookPlus:gp,BookSearch:vp,BookTemplate:Ks,BookText:kp,BookType:mp,BookUp:fp,BookUp2:xp,BookUser:Mp,BookX:yp,Bookmark:Rp,BookmarkCheck:bp,BookmarkMinus:Bp,BookmarkPlus:jp,BookmarkX:Ap,BoomBox:Lp,Bot:Yp,BotMessageSquare:Sp,BotOff:Hp,BottleWine:Up,BowArrow:Vp,Box:zp,BoxSelect:Zl,Boxes:$p,Braces:Xs,Brackets:Dp,Brain:Ep,BrainCircuit:Fp,BrainCog:Pp,BrickWall:Ip,BrickWallFire:Tp,BrickWallShield:Op,Briefcase:Zp,BriefcaseBusiness:qp,BriefcaseConveyorBelt:_p,BriefcaseMedical:Np,BringToFront:Gp,Brush:Xp,BrushCleaning:Wp,Bubbles:Kp,Bug:t4,BugOff:Jp,BugPlay:Qp,Building:o4,Building2:e4,Bus:i4,BusFront:r4,Cable:n4,CableCar:s4,Cake:a4,CakeSlice:l4,Calculator:d4,Calendar:S4,Calendar1:h4,CalendarArrowDown:c4,CalendarArrowUp:p4,CalendarCheck:w4,CalendarCheck2:u4,CalendarClock:g4,CalendarCog:v4,CalendarDays:k4,CalendarFold:m4,CalendarHeart:x4,CalendarMinus:M4,CalendarMinus2:f4,CalendarOff:y4,CalendarPlus:C4,CalendarPlus2:b4,CalendarRange:B4,CalendarSearch:j4,CalendarSync:A4,CalendarX:L4,CalendarX2:R4,Calendars:H4,Camera:U4,CameraOff:Y4,CandlestickChart:o2,Candy:$4,CandyCane:V4,CandyOff:z4,Cannabis:F4,CannabisOff:D4,Captions:Js,CaptionsOff:P4,Car:O4,CarFront:E4,CarTaxiFront:T4,Caravan:I4,CardSim:q4,Carrot:N4,CaseLower:_4,CaseSensitive:Z4,CaseUpper:G4,CassetteTape:W4,Cast:K4,Castle:X4,Cat:J4,Cctv:Q4,ChartArea:Qs,ChartBar:e2,ChartBarBig:t2,ChartBarDecreasing:eu,ChartBarIncreasing:tu,ChartBarStacked:ou,ChartCandlestick:o2,ChartColumn:s2,ChartColumnBig:r2,ChartColumnDecreasing:ru,ChartColumnIncreasing:i2,ChartColumnStacked:iu,ChartGantt:su,ChartLine:n2,ChartNetwork:nu,ChartNoAxesColumn:a2,ChartNoAxesColumnDecreasing:lu,ChartNoAxesColumnIncreasing:l2,ChartNoAxesCombined:au,ChartNoAxesGantt:d2,ChartPie:h2,ChartScatter:c2,ChartSpline:du,Check:pu,CheckCheck:hu,CheckCircle:y2,CheckCircle2:b2,CheckLine:cu,CheckSquare:Fl,CheckSquare2:Pl,ChefHat:wu,Cherry:uu,ChessBishop:gu,ChessKing:vu,ChessKnight:ku,ChessPawn:mu,ChessQueen:xu,ChessRook:Mu,ChevronDown:fu,ChevronDownCircle:C2,ChevronDownSquare:El,ChevronFirst:yu,ChevronLast:bu,ChevronLeft:Cu,ChevronLeftCircle:B2,ChevronLeftSquare:Tl,ChevronRight:Bu,ChevronRightCircle:j2,ChevronRightSquare:Ol,ChevronUp:ju,ChevronUpCircle:A2,ChevronUpSquare:Il,ChevronsDown:Ru,ChevronsDownUp:Au,ChevronsLeft:Hu,ChevronsLeftRight:Su,ChevronsLeftRightEllipsis:Lu,ChevronsRight:Uu,ChevronsRightLeft:Yu,ChevronsUp:zu,ChevronsUpDown:Vu,Chrome:p2,Chromium:p2,Church:$u,Cigarette:Du,CigaretteOff:Fu,Circle:Qu,CircleAlert:u2,CircleArrowDown:w2,CircleArrowLeft:g2,CircleArrowOutDownLeft:v2,CircleArrowOutDownRight:k2,CircleArrowOutUpLeft:m2,CircleArrowOutUpRight:x2,CircleArrowRight:f2,CircleArrowUp:M2,CircleCheck:b2,CircleCheckBig:y2,CircleChevronDown:C2,CircleChevronLeft:B2,CircleChevronRight:j2,CircleChevronUp:A2,CircleDashed:Pu,CircleDivide:R2,CircleDollarSign:Eu,CircleDot:Ou,CircleDotDashed:Tu,CircleEllipsis:Iu,CircleEqual:qu,CircleFadingArrowUp:Nu,CircleFadingPlus:_u,CircleGauge:L2,CircleHelp:Qr,CircleMinus:S2,CircleOff:Zu,CircleParking:Y2,CircleParkingOff:H2,CirclePause:U2,CirclePercent:V2,CirclePile:Gu,CirclePlay:z2,CirclePlus:$2,CirclePoundSterling:Wu,CirclePower:D2,CircleQuestionMark:Qr,CircleSlash:Ku,CircleSlash2:F2,CircleSlashed:F2,CircleSmall:Ju,CircleStar:Xu,CircleStop:P2,CircleUser:T2,CircleUserRound:E2,CircleX:O2,CircuitBoard:tw,Citrus:ew,Clapperboard:ow,Clipboard:pw,ClipboardCheck:rw,ClipboardClock:iw,ClipboardCopy:sw,ClipboardEdit:q2,ClipboardList:nw,ClipboardMinus:lw,ClipboardPaste:aw,ClipboardPen:q2,ClipboardPenLine:I2,ClipboardPlus:dw,ClipboardSignature:I2,ClipboardType:hw,ClipboardX:cw,Clock:Hw,Clock1:uw,Clock10:ww,Clock11:gw,Clock12:vw,Clock2:kw,Clock3:mw,Clock4:xw,Clock5:fw,Clock6:Mw,Clock7:yw,Clock8:bw,Clock9:Cw,ClockAlert:Bw,ClockArrowDown:jw,ClockArrowUp:Aw,ClockCheck:Rw,ClockFading:Lw,ClockPlus:Sw,ClosedCaption:Yw,Cloud:Kw,CloudAlert:Uw,CloudBackup:Vw,CloudCheck:zw,CloudCog:$w,CloudDownload:N2,CloudDrizzle:Dw,CloudFog:Fw,CloudHail:Pw,CloudLightning:Ew,CloudMoon:Tw,CloudMoonRain:Ow,CloudOff:Iw,CloudRain:Nw,CloudRainWind:qw,CloudSnow:_w,CloudSun:Gw,CloudSunRain:Zw,CloudSync:Ww,CloudUpload:_2,Cloudy:Xw,Clover:Jw,Club:Qw,Code:tg,Code2:Z2,CodeSquare:ql,CodeXml:Z2,Codepen:eg,Codesandbox:og,Coffee:rg,Cog:ig,Coins:sg,Columns:G2,Columns2:G2,Columns3:W2,Columns3Cog:ti,Columns4:ng,ColumnsSettings:ti,Combine:lg,Command:ag,Compass:dg,Component:hg,Computer:cg,ConciergeBell:pg,Cone:ug,Construction:wg,Contact:gg,Contact2:K2,ContactRound:K2,Container:vg,Contrast:kg,Cookie:mg,CookingPot:xg,Copy:Bg,CopyCheck:fg,CopyMinus:Mg,CopyPlus:yg,CopySlash:bg,CopyX:Cg,Copyleft:jg,Copyright:Ag,CornerDownLeft:Rg,CornerDownRight:Lg,CornerLeftDown:Sg,CornerLeftUp:Hg,CornerRightDown:Yg,CornerRightUp:Ug,CornerUpLeft:Vg,CornerUpRight:zg,Cpu:$g,CreativeCommons:Pg,CreditCard:Dg,Croissant:Fg,Crop:Eg,Cross:Tg,Crosshair:Og,Crown:Ig,Cuboid:qg,CupSoda:Ng,CurlyBraces:Xs,Currency:_g,Cylinder:Zg,Dam:Gg,Database:Xg,DatabaseBackup:Wg,DatabaseZap:Kg,DecimalsArrowLeft:Jg,DecimalsArrowRight:Qg,Delete:tv,Dessert:ev,Diameter:ov,Diamond:sv,DiamondMinus:rv,DiamondPercent:X2,DiamondPlus:iv,Dice1:lv,Dice2:nv,Dice3:av,Dice4:dv,Dice5:hv,Dice6:cv,Dices:pv,Diff:uv,Disc:kv,Disc2:wv,Disc3:gv,DiscAlbum:vv,Divide:mv,DivideCircle:R2,DivideSquare:Gl,Dna:fv,DnaOff:xv,Dock:Mv,Dog:yv,DollarSign:bv,Donut:Cv,DoorClosed:jv,DoorClosedLocked:Bv,DoorOpen:Av,Dot:Rv,DotSquare:Wl,Download:Lv,DownloadCloud:N2,DraftingCompass:Sv,Drama:Hv,Dribbble:Yv,Drill:Uv,Drone:Vv,Droplet:zv,DropletOff:$v,Droplets:Dv,Drum:Fv,Drumstick:Ev,Dumbbell:Pv,Ear:Ov,EarOff:Tv,Earth:J2,EarthLock:Iv,Eclipse:qv,Edit:vr,Edit2:cl,Edit3:hl,Egg:Zv,EggFried:Nv,EggOff:_v,Ellipsis:tn,EllipsisVertical:Q2,Equal:Kv,EqualApproximately:Gv,EqualNot:Wv,EqualSquare:Kl,Eraser:Xv,EthernetPort:Jv,Euro:Qv,EvCharger:t3,Expand:e3,ExternalLink:o3,Eye:s3,EyeClosed:r3,EyeOff:i3,Facebook:n3,Factory:l3,Fan:a3,FastForward:d3,Feather:h3,Fence:c3,FerrisWheel:p3,Figma:u3,File:O3,FileArchive:w3,FileAudio:ei,FileAudio2:ei,FileAxis3D:en,FileAxis3d:en,FileBadge:on,FileBadge2:on,FileBarChart:nn,FileBarChart2:ln,FileBox:g3,FileBraces:sn,FileBracesCorner:rn,FileChartColumn:ln,FileChartColumnIncreasing:nn,FileChartLine:an,FileChartPie:dn,FileCheck:v3,FileCheck2:hn,FileCheckCorner:hn,FileClock:k3,FileCode:m3,FileCode2:cn,FileCodeCorner:cn,FileCog:pn,FileCog2:pn,FileDiff:x3,FileDigit:f3,FileDown:M3,FileEdit:mn,FileExclamationPoint:un,FileHeadphone:ei,FileHeart:y3,FileImage:b3,FileInput:C3,FileJson:sn,FileJson2:rn,FileKey:wn,FileKey2:wn,FileLineChart:an,FileLock:gn,FileLock2:gn,FileMinus:B3,FileMinus2:vn,FileMinusCorner:vn,FileMusic:j3,FileOutput:A3,FilePen:mn,FilePenLine:kn,FilePieChart:dn,FilePlay:xn,FilePlus:R3,FilePlus2:fn,FilePlusCorner:fn,FileQuestion:Mn,FileQuestionMark:Mn,FileScan:L3,FileSearch:S3,FileSearch2:yn,FileSearchCorner:yn,FileSignal:bn,FileSignature:kn,FileSliders:H3,FileSpreadsheet:Y3,FileStack:U3,FileSymlink:V3,FileTerminal:z3,FileText:$3,FileType:D3,FileType2:Cn,FileTypeCorner:Cn,FileUp:P3,FileUser:F3,FileVideo:xn,FileVideo2:Bn,FileVideoCamera:Bn,FileVolume:E3,FileVolume2:bn,FileWarning:un,FileX:T3,FileX2:jn,FileXCorner:jn,Files:I3,Film:q3,Filter:Hn,FilterX:Sn,Fingerprint:An,FingerprintPattern:An,FireExtinguisher:N3,Fish:G3,FishOff:_3,FishSymbol:Z3,FishingHook:W3,Flag:Q3,FlagOff:K3,FlagTriangleLeft:X3,FlagTriangleRight:J3,Flame:e5,FlameKindling:t5,Flashlight:o5,FlashlightOff:r5,FlaskConical:s5,FlaskConicalOff:i5,FlaskRound:n5,FlipHorizontal:a5,FlipHorizontal2:l5,FlipVertical:h5,FlipVertical2:d5,Flower:p5,Flower2:c5,Focus:u5,FoldHorizontal:w5,FoldVertical:g5,Folder:I5,FolderArchive:v5,FolderCheck:k5,FolderClock:m5,FolderClosed:x5,FolderCode:f5,FolderCog:Rn,FolderCog2:Rn,FolderDot:M5,FolderDown:y5,FolderEdit:Ln,FolderGit:C5,FolderGit2:b5,FolderHeart:B5,FolderInput:j5,FolderKanban:A5,FolderKey:R5,FolderLock:L5,FolderMinus:S5,FolderOpen:Y5,FolderOpenDot:H5,FolderOutput:U5,FolderPen:Ln,FolderPlus:V5,FolderRoot:z5,FolderSearch:D5,FolderSearch2:$5,FolderSymlink:F5,FolderSync:P5,FolderTree:E5,FolderUp:T5,FolderX:O5,Folders:q5,Footprints:N5,ForkKnife:Ta,ForkKnifeCrossed:Ea,Forklift:Z5,Form:_5,FormInput:ul,Forward:G5,Frame:W5,Framer:K5,Frown:X5,Fuel:J5,Fullscreen:Q5,FunctionSquare:Xl,Funnel:Hn,FunnelPlus:tk,FunnelX:Sn,GalleryHorizontal:ok,GalleryHorizontalEnd:ek,GalleryThumbnails:rk,GalleryVertical:sk,GalleryVerticalEnd:ik,Gamepad:ak,Gamepad2:nk,GamepadDirectional:lk,GanttChart:d2,GanttChartSquare:si,Gauge:dk,GaugeCircle:L2,Gavel:hk,Gem:ck,GeorgianLari:pk,Ghost:uk,Gift:wk,GitBranch:kk,GitBranchMinus:gk,GitBranchPlus:vk,GitCommit:Yn,GitCommitHorizontal:Yn,GitCommitVertical:mk,GitCompare:fk,GitCompareArrows:xk,GitFork:Mk,GitGraph:yk,GitMerge:bk,GitPullRequest:Lk,GitPullRequestArrow:Ck,GitPullRequestClosed:Bk,GitPullRequestCreate:Ak,GitPullRequestCreateArrow:jk,GitPullRequestDraft:Rk,Github:Sk,Gitlab:Hk,GlassWater:Yk,Glasses:Uk,Globe:zk,Globe2:J2,GlobeLock:Vk,Goal:$k,Gpu:Dk,Grab:Dn,GraduationCap:Fk,Grape:Pk,Grid:oi,Grid2X2:$n,Grid2X2Check:Un,Grid2X2Plus:Vn,Grid2X2X:zn,Grid2x2:$n,Grid2x2Check:Un,Grid2x2Plus:Vn,Grid2x2X:zn,Grid3X3:oi,Grid3x2:Ek,Grid3x3:oi,Grip:Ik,GripHorizontal:Tk,GripVertical:Ok,Group:qk,Guitar:Nk,Ham:_k,Hamburger:Zk,Hammer:Gk,Hand:tm,HandCoins:Kk,HandFist:Wk,HandGrab:Dn,HandHeart:Xk,HandHelping:Fn,HandMetal:Jk,HandPlatter:Qk,Handbag:em,Handshake:om,HardDrive:sm,HardDriveDownload:rm,HardDriveUpload:im,HardHat:nm,Hash:am,HatGlasses:lm,Haze:hm,Hd:cm,HdmiPort:dm,Heading:mm,Heading1:pm,Heading2:um,Heading3:wm,Heading4:gm,Heading5:vm,Heading6:km,HeadphoneOff:xm,Headphones:fm,Headset:Mm,Heart:Rm,HeartCrack:ym,HeartHandshake:bm,HeartMinus:Cm,HeartOff:Bm,HeartPlus:jm,HeartPulse:Am,Heater:Lm,Helicopter:Sm,HelpCircle:Qr,HelpingHand:Fn,Hexagon:Hm,Highlighter:Ym,History:Um,Home:Pn,Hop:zm,HopOff:Vm,Hospital:$m,Hotel:Dm,Hourglass:Fm,House:Pn,HouseHeart:Pm,HousePlug:Em,HousePlus:Tm,HouseWifi:Om,IceCream:Tn,IceCream2:En,IceCreamBowl:En,IceCreamCone:Tn,IdCard:qm,IdCardLanyard:Im,Image:Jm,ImageDown:Nm,ImageMinus:_m,ImageOff:Zm,ImagePlay:Gm,ImagePlus:Wm,ImageUp:Km,ImageUpscale:Xm,Images:Qm,Import:tx,Inbox:ex,Indent:ii,IndentDecrease:ri,IndentIncrease:ii,IndianRupee:ox,Infinity:rx,Info:ix,Inspect:ra,InspectionPanel:sx,Instagram:nx,Italic:lx,IterationCcw:ax,IterationCw:dx,JapaneseYen:hx,Joystick:cx,Kanban:px,KanbanSquare:Jl,KanbanSquareDashed:Nl,Kayak:ux,Key:vx,KeyRound:gx,KeySquare:wx,Keyboard:xx,KeyboardMusic:kx,KeyboardOff:mx,Lamp:Bx,LampCeiling:fx,LampDesk:Mx,LampFloor:yx,LampWallDown:bx,LampWallUp:Cx,LandPlot:jx,Landmark:Rx,Languages:Ax,Laptop:Sx,Laptop2:On,LaptopMinimal:On,LaptopMinimalCheck:Lx,Lasso:Yx,LassoSelect:Hx,Laugh:Ux,Layers:In,Layers2:Vx,Layers3:In,LayersPlus:zx,Layout:dl,LayoutDashboard:$x,LayoutGrid:Dx,LayoutList:Fx,LayoutPanelLeft:Px,LayoutPanelTop:Ex,LayoutTemplate:Tx,Leaf:Ox,LeafyGreen:Ix,Lectern:qx,LetterText:Ba,Library:_x,LibraryBig:Nx,LibrarySquare:Ql,LifeBuoy:Zx,Ligature:Gx,Lightbulb:Kx,LightbulbOff:Wx,LineChart:n2,LineSquiggle:Xx,Link:tf,Link2:Qx,Link2Off:Jx,Linkedin:ef,List:Mf,ListCheck:of,ListChecks:rf,ListChevronsDownUp:sf,ListChevronsUpDown:nf,ListCollapse:lf,ListEnd:af,ListFilter:hf,ListFilterPlus:df,ListIndentDecrease:ri,ListIndentIncrease:ii,ListMinus:cf,ListMusic:pf,ListOrdered:uf,ListPlus:wf,ListRestart:gf,ListStart:vf,ListTodo:kf,ListTree:mf,ListVideo:xf,ListX:ff,Loader:bf,Loader2:qn,LoaderCircle:qn,LoaderPinwheel:yf,Locate:jf,LocateFixed:Cf,LocateOff:Bf,LocationEdit:Gn,Lock:Rf,LockKeyhole:Af,LockKeyholeOpen:Nn,LockOpen:_n,LogIn:Lf,LogOut:Sf,Logs:Hf,Lollipop:Yf,Luggage:Uf,MSquare:ta,Magnet:Vf,Mail:Of,MailCheck:zf,MailMinus:$f,MailOpen:Df,MailPlus:Ff,MailQuestion:Zn,MailQuestionMark:Zn,MailSearch:Pf,MailWarning:Ef,MailX:Tf,Mailbox:If,Mails:qf,Map:s6,MapMinus:Nf,MapPin:o6,MapPinCheck:Zf,MapPinCheckInside:_f,MapPinHouse:Gf,MapPinMinus:Kf,MapPinMinusInside:Wf,MapPinOff:Xf,MapPinPen:Gn,MapPinPlus:Qf,MapPinPlusInside:Jf,MapPinX:e6,MapPinXInside:t6,MapPinned:r6,MapPlus:i6,Mars:l6,MarsStroke:n6,Martini:a6,Maximize:h6,Maximize2:d6,Medal:c6,Megaphone:u6,MegaphoneOff:p6,Meh:w6,MemoryStick:g6,Menu:v6,MenuSquare:ea,Merge:k6,MessageCircle:A6,MessageCircleCode:m6,MessageCircleDashed:x6,MessageCircleHeart:f6,MessageCircleMore:M6,MessageCircleOff:y6,MessageCirclePlus:b6,MessageCircleQuestion:Wn,MessageCircleQuestionMark:Wn,MessageCircleReply:C6,MessageCircleWarning:B6,MessageCircleX:j6,MessageSquare:I6,MessageSquareCode:R6,MessageSquareDashed:L6,MessageSquareDiff:S6,MessageSquareDot:H6,MessageSquareHeart:Y6,MessageSquareLock:U6,MessageSquareMore:V6,MessageSquareOff:z6,MessageSquarePlus:$6,MessageSquareQuote:D6,MessageSquareReply:F6,MessageSquareShare:E6,MessageSquareText:P6,MessageSquareWarning:T6,MessageSquareX:O6,MessagesSquare:q6,Mic:_6,Mic2:Kn,MicOff:N6,MicVocal:Kn,Microchip:Z6,Microscope:G6,Microwave:W6,Milestone:K6,Milk:J6,MilkOff:X6,Minimize:t8,Minimize2:Q6,Minus:e8,MinusCircle:S2,MinusSquare:oa,Monitor:g8,MonitorCheck:o8,MonitorCloud:r8,MonitorCog:i8,MonitorDot:s8,MonitorDown:n8,MonitorOff:l8,MonitorPause:a8,MonitorPlay:d8,MonitorSmartphone:h8,MonitorSpeaker:c8,MonitorStop:p8,MonitorUp:u8,MonitorX:w8,Moon:k8,MoonStar:v8,MoreHorizontal:tn,MoreVertical:Q2,Motorbike:m8,Mountain:f8,MountainSnow:x8,Mouse:A8,MouseOff:M8,MousePointer:j8,MousePointer2:b8,MousePointer2Off:y8,MousePointerBan:C8,MousePointerClick:B8,MousePointerSquareDashed:_l,Move:E8,Move3D:Xn,Move3d:Xn,MoveDiagonal:L8,MoveDiagonal2:R8,MoveDown:Y8,MoveDownLeft:S8,MoveDownRight:H8,MoveHorizontal:U8,MoveLeft:V8,MoveRight:z8,MoveUp:F8,MoveUpLeft:$8,MoveUpRight:D8,MoveVertical:P8,Music:q8,Music2:T8,Music3:O8,Music4:I8,Navigation:G8,Navigation2:_8,Navigation2Off:N8,NavigationOff:Z8,Network:W8,Newspaper:K8,Nfc:X8,NonBinary:J8,Notebook:o7,NotebookPen:Q8,NotebookTabs:t7,NotebookText:e7,NotepadText:s7,NotepadTextDashed:r7,Nut:n7,NutOff:i7,Octagon:a7,OctagonAlert:Jn,OctagonMinus:l7,OctagonPause:Qn,OctagonX:tl,Omega:d7,Option:h7,Orbit:c7,Origami:p7,Outdent:ri,Package:f7,Package2:u7,PackageCheck:w7,PackageMinus:g7,PackageOpen:v7,PackagePlus:k7,PackageSearch:m7,PackageX:x7,PaintBucket:M7,PaintRoller:y7,Paintbrush:b7,Paintbrush2:el,PaintbrushVertical:el,Palette:C7,Palmtree:La,Panda:B7,PanelBottom:R7,PanelBottomClose:j7,PanelBottomDashed:ol,PanelBottomInactive:ol,PanelBottomOpen:A7,PanelLeft:nl,PanelLeftClose:rl,PanelLeftDashed:sl,PanelLeftInactive:sl,PanelLeftOpen:il,PanelLeftRightDashed:L7,PanelRight:Y7,PanelRightClose:S7,PanelRightDashed:ll,PanelRightInactive:ll,PanelRightOpen:H7,PanelTop:$7,PanelTopBottomDashed:U7,PanelTopClose:V7,PanelTopDashed:al,PanelTopInactive:al,PanelTopOpen:z7,PanelsLeftBottom:D7,PanelsLeftRight:W2,PanelsRightBottom:F7,PanelsTopBottom:vl,PanelsTopLeft:dl,Paperclip:P7,Parentheses:E7,ParkingCircle:Y2,ParkingCircleOff:H2,ParkingMeter:T7,ParkingSquare:sa,ParkingSquareOff:ia,PartyPopper:O7,Pause:I7,PauseCircle:U2,PauseOctagon:Qn,PawPrint:q7,PcCase:N7,Pen:cl,PenBox:vr,PenLine:hl,PenOff:_7,PenSquare:vr,PenTool:Z7,Pencil:X7,PencilLine:G7,PencilOff:W7,PencilRuler:K7,Pentagon:J7,Percent:Q7,PercentCircle:V2,PercentDiamond:X2,PercentSquare:na,PersonStanding:tM,PhilippinePeso:eM,Phone:aM,PhoneCall:oM,PhoneForwarded:rM,PhoneIncoming:iM,PhoneMissed:sM,PhoneOff:nM,PhoneOutgoing:lM,Pi:dM,PiSquare:la,Piano:hM,Pickaxe:cM,PictureInPicture:uM,PictureInPicture2:pM,PieChart:h2,PiggyBank:wM,Pilcrow:kM,PilcrowLeft:gM,PilcrowRight:vM,PilcrowSquare:aa,Pill:xM,PillBottle:mM,Pin:MM,PinOff:fM,Pipette:yM,Pizza:bM,Plane:jM,PlaneLanding:CM,PlaneTakeoff:BM,Play:AM,PlayCircle:z2,PlaySquare:da,Plug:SM,Plug2:RM,PlugZap:pl,PlugZap2:pl,Plus:LM,PlusCircle:$2,PlusSquare:ha,Pocket:YM,PocketKnife:HM,Podcast:UM,Pointer:zM,PointerOff:VM,Popcorn:$M,Popsicle:DM,PoundSterling:FM,Power:EM,PowerCircle:D2,PowerOff:PM,PowerSquare:ca,Presentation:TM,Printer:qM,PrinterCheck:OM,Projector:NM,Proportions:IM,Puzzle:_M,Pyramid:ZM,QrCode:GM,Quote:WM,Rabbit:KM,Radar:XM,Radiation:JM,Radical:QM,Radio:o9,RadioReceiver:t9,RadioTower:e9,Radius:r9,RailSymbol:i9,Rainbow:s9,Rat:n9,Ratio:l9,Receipt:k9,ReceiptCent:a9,ReceiptEuro:d9,ReceiptIndianRupee:h9,ReceiptJapaneseYen:c9,ReceiptPoundSterling:p9,ReceiptRussianRuble:u9,ReceiptSwissFranc:g9,ReceiptText:w9,ReceiptTurkishLira:v9,RectangleCircle:m9,RectangleEllipsis:ul,RectangleGoggles:x9,RectangleHorizontal:f9,RectangleVertical:M9,Recycle:y9,Redo:B9,Redo2:b9,RedoDot:C9,RefreshCcw:A9,RefreshCcwDot:j9,RefreshCw:L9,RefreshCwOff:R9,Refrigerator:S9,Regex:H9,RemoveFormatting:Y9,Repeat:z9,Repeat1:U9,Repeat2:V9,Replace:D9,ReplaceAll:$9,Reply:P9,ReplyAll:F9,Rewind:E9,Ribbon:T9,Rocket:O9,RockingChair:I9,RollerCoaster:q9,Rose:N9,Rotate3D:wl,Rotate3d:wl,RotateCcw:G9,RotateCcwKey:_9,RotateCcwSquare:Z9,RotateCw:K9,RotateCwSquare:W9,Route:J9,RouteOff:X9,Router:Q9,Rows:gl,Rows2:gl,Rows3:vl,Rows4:ty,Rss:oy,Ruler:ry,RulerDimensionLine:ey,RussianRuble:iy,Sailboat:sy,Salad:ny,Sandwich:ly,Satellite:dy,SatelliteDish:ay,SaudiRiyal:hy,Save:uy,SaveAll:cy,SaveOff:py,Scale:wy,Scale3D:kl,Scale3d:kl,Scaling:gy,Scan:Cy,ScanBarcode:vy,ScanEye:ky,ScanFace:my,ScanHeart:xy,ScanLine:fy,ScanQrCode:My,ScanSearch:yy,ScanText:by,ScatterChart:c2,School:By,School2:Ya,Scissors:Ay,ScissorsLineDashed:jy,ScissorsSquare:pa,ScissorsSquareDashedBottom:Dl,Scooter:Ry,ScreenShare:Ly,ScreenShareOff:Sy,Scroll:Yy,ScrollText:Hy,Search:Fy,SearchAlert:Uy,SearchCheck:Vy,SearchCode:$y,SearchSlash:zy,SearchX:Dy,Section:Py,Send:Ty,SendHorizonal:ml,SendHorizontal:ml,SendToBack:Ey,SeparatorHorizontal:Oy,SeparatorVertical:Iy,Server:Zy,ServerCog:qy,ServerCrash:Ny,ServerOff:_y,Settings:Wy,Settings2:Gy,Shapes:Ky,Share:Jy,Share2:Xy,Sheet:Qy,Shell:tb,Shield:hb,ShieldAlert:eb,ShieldBan:ob,ShieldCheck:rb,ShieldClose:fl,ShieldEllipsis:ib,ShieldHalf:sb,ShieldMinus:nb,ShieldOff:ab,ShieldPlus:lb,ShieldQuestion:xl,ShieldQuestionMark:xl,ShieldUser:db,ShieldX:fl,Ship:pb,ShipWheel:cb,Shirt:ub,ShoppingBag:wb,ShoppingBasket:gb,ShoppingCart:vb,Shovel:kb,ShowerHead:mb,Shredder:xb,Shrimp:fb,Shrink:Mb,Shrub:yb,Shuffle:Cb,Sidebar:nl,SidebarClose:rl,SidebarOpen:il,Sigma:bb,SigmaSquare:ua,Signal:Lb,SignalHigh:Bb,SignalLow:jb,SignalMedium:Ab,SignalZero:Rb,Signature:Sb,Signpost:Yb,SignpostBig:Hb,Siren:Ub,SkipBack:Vb,SkipForward:zb,Skull:$b,Slack:Db,Slash:Fb,SlashSquare:wa,Slice:Eb,Sliders:Ml,SlidersHorizontal:Pb,SlidersVertical:Ml,Smartphone:Ib,SmartphoneCharging:Tb,SmartphoneNfc:Ob,Smile:Nb,SmilePlus:qb,Snail:Zb,Snowflake:_b,SoapDispenserDroplet:Gb,Sofa:Wb,SolarPanel:Kb,SortAsc:Is,SortDesc:Es,Soup:Xb,Space:Jb,Spade:Qb,Sparkle:tC,Sparkles:yl,Speaker:eC,Speech:oC,SpellCheck:iC,SpellCheck2:rC,Spline:nC,SplinePointer:sC,Split:lC,SplitSquareHorizontal:ga,SplitSquareVertical:va,Spool:aC,Spotlight:dC,SprayCan:hC,Sprout:cC,Square:yC,SquareActivity:bl,SquareArrowDown:jl,SquareArrowDownLeft:Cl,SquareArrowDownRight:Bl,SquareArrowLeft:Al,SquareArrowOutDownLeft:Rl,SquareArrowOutDownRight:Ll,SquareArrowOutUpLeft:Sl,SquareArrowOutUpRight:Hl,SquareArrowRight:Yl,SquareArrowUp:zl,SquareArrowUpLeft:Ul,SquareArrowUpRight:Vl,SquareAsterisk:$l,SquareBottomDashedScissors:Dl,SquareChartGantt:si,SquareCheck:Pl,SquareCheckBig:Fl,SquareChevronDown:El,SquareChevronLeft:Tl,SquareChevronRight:Ol,SquareChevronUp:Il,SquareCode:ql,SquareDashed:Zl,SquareDashedBottom:uC,SquareDashedBottomCode:pC,SquareDashedKanban:Nl,SquareDashedMousePointer:_l,SquareDashedTopSolid:wC,SquareDivide:Gl,SquareDot:Wl,SquareEqual:Kl,SquareFunction:Xl,SquareGanttChart:si,SquareKanban:Jl,SquareLibrary:Ql,SquareM:ta,SquareMenu:ea,SquareMinus:oa,SquareMousePointer:ra,SquareParking:sa,SquareParkingOff:ia,SquarePause:gC,SquarePen:vr,SquarePercent:na,SquarePi:la,SquarePilcrow:aa,SquarePlay:da,SquarePlus:ha,SquarePower:ca,SquareRadical:vC,SquareRoundCorner:kC,SquareScissors:pa,SquareSigma:ua,SquareSlash:wa,SquareSplitHorizontal:ga,SquareSplitVertical:va,SquareSquare:mC,SquareStack:xC,SquareStar:fC,SquareStop:MC,SquareTerminal:ka,SquareUser:xa,SquareUserRound:ma,SquareX:fa,SquaresExclude:bC,SquaresIntersect:CC,SquaresSubtract:BC,SquaresUnite:jC,Squircle:RC,SquircleDashed:AC,Squirrel:LC,Stamp:SC,Star:UC,StarHalf:HC,StarOff:YC,Stars:yl,StepBack:VC,StepForward:zC,Stethoscope:$C,Sticker:FC,StickyNote:DC,Stone:PC,StopCircle:P2,Store:EC,StretchHorizontal:TC,StretchVertical:OC,Strikethrough:IC,Subscript:qC,Subtitles:Js,Sun:WC,SunDim:NC,SunMedium:_C,SunMoon:ZC,SunSnow:GC,Sunrise:KC,Sunset:XC,Superscript:JC,SwatchBook:QC,SwissFranc:tB,SwitchCamera:eB,Sword:oB,Swords:rB,Syringe:iB,Table:pB,Table2:sB,TableCellsMerge:nB,TableCellsSplit:lB,TableColumnsSplit:aB,TableConfig:ti,TableOfContents:dB,TableProperties:hB,TableRowsSplit:cB,Tablet:gB,TabletSmartphone:uB,Tablets:wB,Tag:vB,Tags:kB,Tally1:mB,Tally2:xB,Tally3:fB,Tally4:MB,Tally5:yB,Tangent:bB,Target:CB,Telescope:BB,Tent:AB,TentTree:jB,Terminal:RB,TerminalSquare:ka,TestTube:LB,TestTube2:Ma,TestTubeDiagonal:Ma,TestTubes:SB,Text:ni,TextAlignCenter:ya,TextAlignEnd:ba,TextAlignJustify:Ca,TextAlignStart:ni,TextCursor:YB,TextCursorInput:HB,TextInitial:Ba,TextQuote:UB,TextSearch:VB,TextSelect:ja,TextSelection:ja,TextWrap:Aa,Theater:zB,Thermometer:FB,ThermometerSnowflake:$B,ThermometerSun:DB,ThumbsDown:PB,ThumbsUp:EB,Ticket:ZB,TicketCheck:TB,TicketMinus:OB,TicketPercent:IB,TicketPlus:qB,TicketSlash:NB,TicketX:_B,Tickets:WB,TicketsPlane:GB,Timer:JB,TimerOff:KB,TimerReset:XB,ToggleLeft:QB,ToggleRight:tj,Toilet:ej,ToolCase:oj,Toolbox:rj,Tornado:ij,Torus:sj,Touchpad:lj,TouchpadOff:nj,TowerControl:aj,ToyBrick:dj,Tractor:hj,TrafficCone:cj,Train:Ra,TrainFront:uj,TrainFrontTunnel:pj,TrainTrack:wj,TramFront:Ra,Transgender:gj,Trash:kj,Trash2:vj,TreeDeciduous:mj,TreePalm:La,TreePine:xj,Trees:fj,Trello:Mj,TrendingDown:yj,TrendingUp:Cj,TrendingUpDown:bj,Triangle:Aj,TriangleAlert:Sa,TriangleDashed:Bj,TriangleRight:jj,Trophy:Lj,Truck:Sj,TruckElectric:Rj,TurkishLira:Hj,Turntable:Yj,Turtle:Uj,Tv:zj,Tv2:Ha,TvMinimal:Ha,TvMinimalPlay:Vj,Twitch:$j,Twitter:Dj,Type:Pj,TypeOutline:Fj,Umbrella:Tj,UmbrellaOff:Ej,Underline:Oj,Undo:Nj,Undo2:Ij,UndoDot:qj,UnfoldHorizontal:_j,UnfoldVertical:Gj,Ungroup:Zj,University:Ya,Unlink:Kj,Unlink2:Wj,Unlock:_n,UnlockKeyhole:Nn,Unplug:Xj,Upload:Jj,UploadCloud:_2,Usb:Qj,User:cA,User2:Fa,UserCheck:tA,UserCheck2:Ua,UserCircle:T2,UserCircle2:E2,UserCog:eA,UserCog2:Va,UserLock:oA,UserMinus:rA,UserMinus2:za,UserPen:iA,UserPlus:sA,UserPlus2:$a,UserRound:Fa,UserRoundCheck:Ua,UserRoundCog:Va,UserRoundMinus:za,UserRoundPen:nA,UserRoundPlus:$a,UserRoundSearch:lA,UserRoundX:Da,UserSearch:aA,UserSquare:xa,UserSquare2:ma,UserStar:dA,UserX:hA,UserX2:Da,Users:pA,Users2:Pa,UsersRound:Pa,Utensils:Ta,UtensilsCrossed:Ea,UtilityPole:uA,Van:wA,Variable:gA,Vault:vA,VectorSquare:kA,Vegan:xA,VenetianMask:mA,Venus:MA,VenusAndMars:fA,Verified:_s,Vibrate:bA,VibrateOff:yA,Video:BA,VideoOff:CA,Videotape:AA,View:RA,Voicemail:jA,Volleyball:LA,Volume:VA,Volume1:SA,Volume2:HA,VolumeOff:UA,VolumeX:YA,Vote:zA,Wallet:DA,Wallet2:Oa,WalletCards:$A,WalletMinimal:Oa,Wallpaper:FA,Wand:PA,Wand2:Ia,WandSparkles:Ia,Warehouse:EA,WashingMachine:TA,Watch:OA,Waves:ZA,WavesArrowDown:qA,WavesArrowUp:IA,WavesLadder:NA,Waypoints:_A,Webcam:GA,Webhook:KA,WebhookOff:WA,Weight:JA,WeightTilde:XA,Wheat:eR,WheatOff:QA,WholeWord:oR,Wifi:dR,WifiCog:tR,WifiHigh:rR,WifiLow:sR,WifiOff:iR,WifiPen:nR,WifiSync:lR,WifiZero:aR,Wind:cR,WindArrowDown:hR,Wine:uR,WineOff:pR,Workflow:wR,Worm:gR,WrapText:Aa,Wrench:vR,X:kR,XCircle:O2,XOctagon:tl,XSquare:fa,Youtube:mR,Zap:fR,ZapOff:xR,ZoomIn:MR,ZoomOut:yR},Symbol.toStringTag,{value:"Module"}));function CR(o){return o.replace(/([a-z])([A-Z])/g,"$1-$2").replace(/([A-Z])([A-Z][a-z])/g,"$1-$2").replace(/([a-zA-Z])(\d)/g,"$1-$2").replace(/(\d)([a-zA-Z])/g,"$1-$2").toLowerCase()}function BR(){const o={};for(const[t,e]of Object.entries(bR))typeof e=="string"&&e.includes("<svg")&&(o[CR(t)]=e);return o}const m0=BR();Object.keys(m0).toSorted();function jR(){E1(m0)}const x0={prefix:"ik"};let is={...x0};function AR(o={}){is={...x0,...o}}function f0(){return is}function X(o){return`${is.prefix}-${o}`}function V(o){const t=o.baseName;return e=>{const i=e||X(t);return customElements.get(i)||customElements.define(i,o),i}}const et="ik";class RR extends Jt{get config(){return f0()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}createRenderRoot(){return this}}class _ extends Jt{get config(){return f0()}emit(t,e,i){const r=`${et}-${t}`,s=new CustomEvent(r,{bubbles:!0,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}}const LR=o=>o.strings===void 0;const qo=(o,t)=>{const e=o._$AN;if(e===void 0)return!1;for(const i of e)i._$AO?.(t,!1),qo(i,t);return!0},Rr=o=>{let t,e;do{if((t=o._$AM)===void 0)break;e=t._$AN,e.delete(o),o=t}while(e?.size===0)},M0=o=>{for(let t;t=o._$AM;o=t){let e=t._$AN;if(e===void 0)t._$AN=e=new Set;else if(e.has(o))break;e.add(o),YR(t)}};function SR(o){this._$AN!==void 0?(Rr(this),this._$AM=o,M0(this)):this._$AM=o}function HR(o,t=!1,e=0){const i=this._$AH,r=this._$AN;if(r!==void 0&&r.size!==0)if(t)if(Array.isArray(i))for(let s=e;s<i.length;s++)qo(i[s],!1),Rr(i[s]);else i!=null&&(qo(i,!1),Rr(i));else qo(this,o)}const YR=o=>{o.type==g0.CHILD&&(o._$AP??(o._$AP=HR),o._$AQ??(o._$AQ=SR))};class UR extends k0{constructor(){super(...arguments),this._$AN=void 0}_$AT(t,e,i){super._$AT(t,e,i),M0(this),this.isConnected=t._$AU}_$AO(t,e=!0){t!==this.isConnected&&(this.isConnected=t,t?this.reconnected?.():this.disconnected?.()),e&&(qo(this,t),Rr(this))}setValue(t){if(LR(this._$Ct))this._$Ct._$AI(t,this);else{const e=[...this._$Ct._$AH];e[this._$Ci]=t,this._$Ct._$AI(e,this,0)}}disconnected(){}reconnected(){}}const li=()=>new VR;class VR{}const ai=new WeakMap,di=v0(class extends UR{render(o){return k}update(o,[t]){const e=t!==this.G;return e&&this.G!==void 0&&this.rt(void 0),(e||this.lt!==this.ct)&&(this.G=t,this.ht=o.options?.host,this.rt(this.ct=o.element)),k}rt(o){if(this.isConnected||(o=void 0),typeof this.G=="function"){const t=this.ht??globalThis;let e=ai.get(t);e===void 0&&(e=new WeakMap,ai.set(t,e)),e.get(this.G)!==void 0&&this.G.call(this.ht,void 0),e.set(this.G,o),o!==void 0&&this.G.call(this.ht,o)}else this.G.value=o}get lt(){return typeof this.G=="function"?ai.get(this.ht??globalThis)?.get(this.G):this.G?.value}disconnected(){this.lt===this.ct&&this.rt(void 0)}reconnected(){this.rt(this.ct)}});function zR(o){const[t,e="center"]=o.split("-");return{side:t,alignment:e||"center"}}function $R(o){return{top:"bottom",bottom:"top",left:"right",right:"left"}[o]}function DR(o,t){return t==="center"?o:`${o}-${t}`}function y0(o,t,e={}){const{placement:i="bottom",offset:r=4,flip:s=!0,padding:n=8,boundary:d="viewport",matchWidth:a=!1}=e,c=o.getBoundingClientRect(),p=t.getBoundingClientRect(),w=a?c.width:p.width,C=p.height,m=d==="viewport"?{top:n,left:n,right:window.innerWidth-n,bottom:window.innerHeight-n}:d.getBoundingClientRect();let{side:L,alignment:U}=zR(i);const z={top:c.top-m.top,bottom:m.bottom-c.bottom,left:c.left-m.left,right:m.right-c.right};if(s){const I=L==="top"||L==="bottom"?C+r:w+r;if(z[L]<I){const x=$R(L);z[x]>=I&&(L=x)}}let M,Y;if(L==="top"||L==="bottom"){switch(Y=L==="top"?c.top-C-r:c.bottom+r,U){case"start":M=c.left;break;case"end":M=c.right-w;break;default:M=c.left+(c.width-w)/2}M<m.left?M=m.left:M+w>m.right&&(M=m.right-w)}else{switch(M=L==="left"?c.left-w-r:c.right+r,U){case"start":Y=c.top;break;case"end":Y=c.bottom-C;break;default:Y=c.top+(c.height-C)/2}Y<m.top?Y=m.top:Y+C>m.bottom&&(Y=m.bottom-C)}return{x:M,y:Y,placement:DR(L,U),side:L,alignment:U}}function FR(o,t,e,i={}){const{scroll:r=!0,resize:s=!0,elementResize:n=!0}=i,d=[];if(e(),r){const a=()=>e();window.addEventListener("scroll",a,!0),d.push(()=>window.removeEventListener("scroll",a,!0))}if(s){const a=()=>e();window.addEventListener("resize",a),d.push(()=>window.removeEventListener("resize",a))}if(n&&typeof ResizeObserver<"u"){const a=new ResizeObserver(()=>e());a.observe(o),a.observe(t),d.push(()=>a.disconnect())}return()=>{d.forEach(a=>a())}}function PR(o,t,e={}){o.style.position="fixed",o.style.left=`${t.x}px`,o.style.top=`${t.y}px`,e.matchWidth!==void 0&&(o.style.width=`${e.matchWidth}px`),o.dataset.side=t.side,o.dataset.alignment=t.alignment,o.dataset.placement=t.placement}function ER(){const o=[];let t=null;function e(){if(t?.(),o.length===0){t=null;return}const i=s=>{const n=s.composedPath();for(let d=o.length-1;d>=0;d--){const a=o[d];if(n.includes(a.element))return;let c=!1;for(const p of a.exclude)if(n.includes(p)){c=!0;break}if(c)return;a.onDismiss("click-outside");return}},r=s=>{s.key==="Escape"&&o.length>0&&(s.preventDefault(),s.stopPropagation(),o[o.length-1].onDismiss("escape"))};document.addEventListener("mousedown",i,!0),document.addEventListener("keydown",r,!0),t=()=>{document.removeEventListener("mousedown",i,!0),document.removeEventListener("keydown",r,!0)}}return{add(i,r,s=[]){return o.push({element:i,onDismiss:r,exclude:s}),e(),()=>{const n=o.findIndex(d=>d.element===i);n!==-1&&(o.splice(n,1),e())}},remove(i){const r=o.findIndex(s=>s.element===i);r!==-1&&(o.splice(r,1),e())},clear(){o.length=0,e()},get size(){return o.length}}}const ss=ER(),hi=["a[href]","button:not([disabled])","input:not([disabled])","select:not([disabled])","textarea:not([disabled])",'[tabindex]:not([tabindex="-1"])','[contenteditable="true"]'].join(",");function ns(o){const t=[],e=o.shadowRoot||o;return e.querySelectorAll(hi).forEach(s=>{const n=s;ci(n)&&!pi(n)&&t.push(n)}),e.querySelectorAll("slot").forEach(s=>{s.assignedElements({flatten:!0}).forEach(d=>{const a=d;a.matches?.(hi)&&ci(a)&&!pi(a)&&t.push(a),d.querySelectorAll(hi).forEach(p=>{const w=p;ci(w)&&!pi(w)&&t.push(w)})})}),t}function ci(o){return o.offsetParent!==null||o.offsetWidth>0||o.offsetHeight>0}function pi(o){return o.hasAttribute("disabled")||o.getAttribute("aria-disabled")==="true"}function ui(o){return ns(o)[0]||null}function TR(o){const t=ns(o);return t[t.length-1]||null}function OR(o,t={}){const{autoFocus:e=!0,restoreFocus:i=!0,initialFocus:r,finalFocus:s,allowOutsideFocus:n=!1}=t;let d=!1,a=null;function c(m){if(!d||m.key!=="Tab")return;const L=ns(o);if(L.length===0)return;const U=L[0],z=L[L.length-1];m.shiftKey?document.activeElement===U&&(m.preventDefault(),z.focus()):document.activeElement===z&&(m.preventDefault(),U.focus())}function p(m){if(!d||n)return;const L=m.relatedTarget;L&&!o.contains(L)&&(m.preventDefault(),ui(o)?.focus())}function w(){let m=null;r&&(typeof r=="string"?m=o.querySelector(r):m=r),m||(m=ui(o)),m?.focus()}function C(){let m=null;s?typeof s=="string"?m=document.querySelector(s):m=s:i&&a&&(m=a),m?.focus()}return{activate(){d||(d=!0,a=document.activeElement,document.addEventListener("keydown",c,!0),o.addEventListener("focusout",p),e&&requestAnimationFrame(()=>{w()}))},deactivate(){d&&(d=!1,document.removeEventListener("keydown",c,!0),o.removeEventListener("focusout",p),C())},get isActive(){return d},focusFirst(){ui(o)?.focus()},focusLast(){TR(o)?.focus()}}}let kr=0,je=null;function IR(){const o=document.createElement("div");o.style.visibility="hidden",o.style.overflow="scroll",document.body.appendChild(o);const t=document.createElement("div");o.appendChild(t);const e=o.offsetWidth-t.offsetWidth;return o.remove(),e}function qR(){return document.documentElement.scrollHeight>window.innerHeight}function NR(){const o=document.body;if(kr===0&&(je={originalOverflow:o.style.overflow,originalPaddingRight:o.style.paddingRight,scrollbarWidth:qR()?IR():0},o.style.overflow="hidden",je.scrollbarWidth>0)){const e=parseInt(getComputedStyle(o).paddingRight,10)||0;o.style.paddingRight=`${e+je.scrollbarWidth}px`}kr++;let t=!1;return()=>{t||(t=!0,kr--,kr===0&&je&&(o.style.overflow=je.originalOverflow,o.style.paddingRight=je.originalPaddingRight,je=null))}}var _R=Object.defineProperty,xt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_R(t,e,r),r},Qt;const pt=(Qt=class extends _{constructor(){super(...arguments),this.optionElements=[],this.placeholder="请选择",this.disabled=!1,this.multiple=!1,this.searchable=!1,this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.placement="bottom-start",this.offset=4,this.triggerRef=li(),this.dropdownRef=li(),this.defaultSlotRef=li(),this.cleanupScroll=null,this.cleanupDismissable=null,this.handleSlotChange=()=>{this.collectOptionElements()},this.handleOptionClick=t=>{const{value:e}=t.detail,i=this.optionElements.find(r=>r.value===e);!i||i.disabled||this.selectOptionByValue(e)},this.toggleDropdown=()=>{this.disabled||(this.open?this.closeDropdown():this.openDropdown())},this.updatePosition=()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;const i=y0(t,e,{placement:this.placement,offset:this.offset,flip:!0,padding:8,matchWidth:!0}),r=t.getBoundingClientRect().width;e.style.position="fixed",e.style.left=`${i.x}px`,e.style.top=`${i.y}px`,e.style.width=`${r}px`,e.style.visibility="visible",e.style.pointerEvents="auto",e.dataset.side=i.side,e.dataset.placement=i.placement},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":if(t.preventDefault(),!this.open)this.openDropdown();else if(this.highlightedIndex>=0){const e=this.filteredOptions[this.highlightedIndex];e&&this.selectOptionByValue(e.value)}break;case"ArrowDown":t.preventDefault(),this.open?this.highlightNext():this.openDropdown();break;case"ArrowUp":t.preventDefault(),this.open?this.highlightPrevious():this.openDropdown();break;case"Escape":break;case"Home":this.open&&(t.preventDefault(),this.highlightedIndex=0,this.updateOptionStates());break;case"End":this.open&&(t.preventDefault(),this.highlightedIndex=this.filteredOptions.length-1,this.updateOptionStates());break}},this.handleSearchInput=t=>{const e=t.target;this.searchKeyword=e.value,this.highlightedIndex=0,this.updateOptionStates()}}get filteredOptions(){if(!this.searchable||!this.searchKeyword.trim())return this.optionElements;const t=this.searchKeyword.toLowerCase();return this.optionElements.filter(e=>{const i=e.displayLabel.toLowerCase(),r=e.value.toLowerCase();return i.includes(t)||r.includes(t)})}collectOptionElements(){const t=this.defaultSlotRef.value;if(!t)return;const e=t.assignedElements(),i=X("select-option");this.optionElements=e.filter(s=>s.tagName.toLowerCase()===i);const r=`${et}-option-click`;this.optionElements.forEach(s=>{s.removeEventListener(r,this.handleOptionClick),s.addEventListener(r,this.handleOptionClick)}),this.updateOptionStates()}updateOptionStates(){const t=new Set(this.filteredOptions);this.optionElements.forEach(e=>{const i=this.filteredOptions.indexOf(e);e.highlighted=i===this.highlightedIndex,e.hidden=!t.has(e)})}setupOpen(){requestAnimationFrame(()=>{const t=this.triggerRef.value,e=this.dropdownRef.value;if(!t||!e)return;this.updatePosition();const i=r=>{e.contains(r.target)||this.closeDropdown()};window.addEventListener("scroll",i,!0),this.cleanupScroll=()=>{window.removeEventListener("scroll",i,!0)},this.cleanupDismissable=ss.add(e,r=>{(r==="escape"||r==="click-outside")&&this.closeDropdown()},[this])})}cleanupOpen(){this.cleanupScroll?.(),this.cleanupScroll=null,this.cleanupDismissable?.(),this.cleanupDismissable=null}openDropdown(){if(!(this.disabled||this.open)&&(this.open=!0,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("open",void 0,{bubbles:!1}),!this.multiple)){const t=this.filteredOptions.findIndex(e=>e.selected);t!==-1&&(this.highlightedIndex=t,this.updateOptionStates())}}closeDropdown(){this.open&&(this.open=!1,this.highlightedIndex=-1,this.searchKeyword="",this.updateOptionStates(),this.emit("close",void 0,{bubbles:!1}))}selectOptionByValue(t){const e=this.optionElements.find(i=>i.value===t);!e||e.disabled||(this.multiple?e.selected=!e.selected:(this.optionElements.forEach(i=>{i.selected=i===e}),this.closeDropdown()),this.requestUpdate(),this.emit("change",{value:e.value,selected:e.selected,option:{value:e.value,label:e.displayLabel,disabled:e.disabled,data:e.data}},{bubbles:!1}))}highlightNext(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex+1;for(;e<t.length&&t[e].disabled;)e++;if(e>=t.length)for(e=0;e<t.length&&t[e].disabled;)e++;e<t.length&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.filteredOptions;if(t.length===0)return;let e=this.highlightedIndex-1;for(;e>=0&&t[e].disabled;)e--;if(e<0)for(e=t.length-1;e>=0&&t[e].disabled;)e--;e>=0&&(this.highlightedIndex=e,this.updateOptionStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.filteredOptions[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}renderTrigger(){return u`
       <div
-        ${ai(this.triggerRef)}
+        ${di(this.triggerRef)}
         part="trigger"
         role="combobox"
         aria-expanded=${this.open}
@@ -29984,7 +29984,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot name="trigger"></slot>
       </div>
-    `}renderSearch(){return this.searchable?p`
+    `}renderSearch(){return this.searchable?u`
       <div part="search">
         <input
           part="search-input"
@@ -29995,31 +29995,31 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           @click=${t=>t.stopPropagation()}
         />
       </div>
-    `:k}renderOptionList(){const t=this.filteredOptions.length>0;return p`
+    `:k}renderOptionList(){const t=this.filteredOptions.length>0;return u`
       <div part="options" role="listbox" aria-multiselectable=${this.multiple}>
-        ${t?k:p`
+        ${t?k:u`
                 <div part="empty">
                   <slot name="empty">无匹配选项</slot>
                 </div>
               `}
         <slot
-          ${ai(this.defaultSlotRef)}
+          ${di(this.defaultSlotRef)}
           @slotchange=${this.handleSlotChange}
         ></slot>
       </div>
-    `}renderDropdown(){return this.open?p`
+    `}renderDropdown(){return this.open?u`
       <div
-        ${ai(this.dropdownRef)}
+        ${di(this.dropdownRef)}
         part="dropdown"
         style="visibility: hidden; pointer-events: none;"
       >
         ${this.renderSearch()} ${this.renderOptionList()}
       </div>
-    `:k}disconnectedCallback(){super.disconnectedCallback(),this.cleanupOpen()}firstUpdated(){}updated(t){super.updated(t),t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen()),(t.has("searchKeyword")||t.has("highlightedIndex"))&&this.updateOptionStates()}render(){return p`
+    `:k}disconnectedCallback(){super.disconnectedCallback(),this.cleanupOpen()}firstUpdated(){}updated(t){super.updated(t),t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen()),(t.has("searchKeyword")||t.has("highlightedIndex"))&&this.updateOptionStates()}render(){return u`
       <div part="container">
         ${this.renderTrigger()} ${this.renderDropdown()}
       </div>
-    `}},Jt.baseName="select",Jt.register=$(Jt),Jt);xt([O()],pt.prototype,"optionElements");xt([h({type:String})],pt.prototype,"placeholder");xt([h({type:Boolean,reflect:!0})],pt.prototype,"disabled");xt([h({type:Boolean})],pt.prototype,"multiple");xt([h({type:Boolean})],pt.prototype,"searchable");xt([O()],pt.prototype,"open");xt([O()],pt.prototype,"highlightedIndex");xt([O()],pt.prototype,"searchKeyword");xt([h({type:String})],pt.prototype,"placement");xt([h({type:Number})],pt.prototype,"offset");let ZL=pt;var GL=Object.defineProperty,tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&GL(t,e,r),r},Qt;const Bo=(Qt=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.highlighted=!1,this.handleClick=t=>{if(this.disabled){t.preventDefault(),t.stopPropagation();return}t.stopPropagation(),this.emit("option-click",{value:this.value,label:this.displayLabel,data:this.data},{bubbles:!1})}}get displayLabel(){return this.label||this.textContent?.trim()||this.value}render(){return p`
+    `}},Qt.baseName="select",Qt.register=V(Qt),Qt);xt([O()],pt.prototype,"optionElements");xt([h({type:String})],pt.prototype,"placeholder");xt([h({type:Boolean,reflect:!0})],pt.prototype,"disabled");xt([h({type:Boolean})],pt.prototype,"multiple");xt([h({type:Boolean})],pt.prototype,"searchable");xt([O()],pt.prototype,"open");xt([O()],pt.prototype,"highlightedIndex");xt([O()],pt.prototype,"searchKeyword");xt([h({type:String})],pt.prototype,"placement");xt([h({type:Number})],pt.prototype,"offset");let ZR=pt;var GR=Object.defineProperty,tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&GR(t,e,r),r},te;const Bo=(te=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.highlighted=!1,this.handleClick=t=>{if(this.disabled){t.preventDefault(),t.stopPropagation();return}t.stopPropagation(),this.emit("option-click",{value:this.value,label:this.displayLabel,data:this.data},{bubbles:!1})}}get displayLabel(){return this.label||this.textContent?.trim()||this.value}render(){return u`
       <div
         part="option"
         role="option"
@@ -30029,7 +30029,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot></slot>
       </div>
-    `}},Qt.baseName="select-option",Qt.register=$(Qt),Qt);tr([h({type:String})],Bo.prototype,"value");tr([h({type:String})],Bo.prototype,"label");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"disabled");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"selected");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"highlighted");let WL=Bo;var KL=Object.defineProperty,me=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&KL(t,e,r),r},te;const Ot=(te=class extends _{constructor(){super(...arguments),this.mode="vertical",this.value="",this.collapsible=!1,this.collapsed=!1,this.submenuTrigger="hover",this.highlightedIndex=-1,this.menuItems=[],this.handleSlotChange=()=>{this.collectMenuItems()},this.handleItemClick=t=>{const{value:e,label:i,hasSubmenu:r}=t.detail;r?this.emit("open-change",{value:e,open:!0},{bubbles:!1}):(this.value=e,this.updateItemStates(),this.emit("change",{value:e,label:i},{bubbles:!1}))},this.handleItemHover=t=>{const{value:e}=t.detail,i=this.enabledItems.findIndex(r=>r.value===e);i!==-1&&(this.highlightedIndex=i,this.updateItemStates())},this.handleKeyDown=t=>{const e=this.enabledItems;if(e.length!==0)switch(t.key){case"ArrowDown":case"ArrowRight":t.preventDefault(),this.highlightNext();break;case"ArrowUp":case"ArrowLeft":t.preventDefault(),this.highlightPrevious();break;case"Enter":case" ":t.preventDefault(),this.highlightedIndex>=0&&this.highlightedIndex<e.length&&e[this.highlightedIndex].click();break;case"Home":t.preventDefault(),this.highlightedIndex=0,this.updateItemStates(),this.scrollToHighlighted();break;case"End":t.preventDefault(),this.highlightedIndex=e.length-1,this.updateItemStates(),this.scrollToHighlighted();break;case"Escape":this.highlightedIndex=-1,this.updateItemStates();break;default:t.key.length===1&&!t.ctrlKey&&!t.altKey&&!t.metaKey&&(t.preventDefault(),this.focusItemByChar(t.key));break}},this.handleSubmenuWillOpen=t=>{const e=t.detail.target;this.querySelectorAll("*").forEach(r=>{r.tagName.toLowerCase().endsWith("-menu-sub")&&r!==e&&r.closeImmediately()})}}get enabledItems(){return this.menuItems.filter(t=>!t.disabled)}collectMenuItems(){if(!this.defaultSlot)return;const t=this.defaultSlot.assignedElements({flatten:!0}),e=X("menu-item"),i=a=>{const c=[];return a.forEach(u=>{if(u.tagName.toLowerCase()===e&&c.push(u),u.children.length>0&&c.push(...i(Array.from(u.children))),u.shadowRoot){const w=u.shadowRoot.querySelector("slot");if(w){const C=w.assignedElements({flatten:!0});c.push(...i(C))}}}),c};this.menuItems=i(t);const r=`${et}-item-click`,s=`${et}-item-hover`;this.menuItems.forEach(a=>{a.removeEventListener(r,this.handleItemClick),a.removeEventListener(s,this.handleItemHover),a.addEventListener(r,this.handleItemClick),a.addEventListener(s,this.handleItemHover)});const n=X("menu-sub");Array.from(this.querySelectorAll(n)).forEach(a=>{a.hasAttribute("submenu-trigger")||(a.submenuTrigger=this.submenuTrigger)}),this.updateItemStates()}updateItemStates(){this.menuItems.forEach(t=>{t.selected=t.value===this.value}),this.enabledItems.forEach((t,e)=>{t.highlighted=e===this.highlightedIndex})}highlightNext(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=(this.highlightedIndex+1)%t.length,this.updateItemStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=this.highlightedIndex<=0?t.length-1:this.highlightedIndex-1,this.updateItemStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.enabledItems[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}focusItemByChar(t){const e=this.enabledItems;if(e.length===0)return;const i=t.toLowerCase(),r=this.highlightedIndex+1;for(let s=0;s<e.length;s++){const n=(r+s)%e.length;if(e[n].displayLabel.trim().toLowerCase().startsWith(i)){this.highlightedIndex=n,this.updateItemStates(),this.scrollToHighlighted();break}}}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectMenuItems(),0),this.setAttribute("role","menu"),this.setAttribute("tabindex","0"),this.addEventListener("keydown",this.handleKeyDown),this.addEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("keydown",this.handleKeyDown),this.removeEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}updated(t){super.updated(t),t.has("value")&&this.updateItemStates()}render(){return p`<slot @slotchange=${this.handleSlotChange}></slot>`}},te.baseName="menu",te.register=$(te),te);me([h({type:String,reflect:!0})],Ot.prototype,"mode");me([h({type:String})],Ot.prototype,"value");me([h({type:Boolean})],Ot.prototype,"collapsible");me([h({type:Boolean,reflect:!0})],Ot.prototype,"collapsed");me([h({type:String,attribute:"submenu-trigger"})],Ot.prototype,"submenuTrigger");me([O()],Ot.prototype,"highlightedIndex");me([O()],Ot.prototype,"menuItems");me([Fr("slot:not([name])")],Ot.prototype,"defaultSlot");let XL=Ot;var JL=Object.defineProperty,er=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&JL(t,e,r),r},ee;const jo=(ee=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.highlighted=!1,this.selected=!1,this.hasSubmenu=!1}get displayLabel(){return this.textContent?.trim()||this.value}handleClick(t){if(this.disabled){t.preventDefault(),t.stopPropagation();return}this.emit("item-click",{value:this.value,label:this.displayLabel,hasSubmenu:this.hasSubmenu},{bubbles:!1})}handleMouseEnter(){this.disabled||this.emit("item-hover",{value:this.value,hasSubmenu:this.hasSubmenu},{bubbles:!1})}render(){return p`
+    `}},te.baseName="select-option",te.register=V(te),te);tr([h({type:String})],Bo.prototype,"value");tr([h({type:String})],Bo.prototype,"label");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"disabled");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"selected");tr([h({type:Boolean,reflect:!0})],Bo.prototype,"highlighted");let WR=Bo;var KR=Object.defineProperty,xe=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&KR(t,e,r),r},ee;const It=(ee=class extends _{constructor(){super(...arguments),this.mode="vertical",this.value="",this.collapsible=!1,this.collapsed=!1,this.submenuTrigger="hover",this.highlightedIndex=-1,this.menuItems=[],this.handleSlotChange=()=>{this.collectMenuItems()},this.handleItemClick=t=>{const{value:e,label:i,hasSubmenu:r}=t.detail;r?this.emit("open-change",{value:e,open:!0},{bubbles:!1}):(this.value=e,this.updateItemStates(),this.emit("change",{value:e,label:i},{bubbles:!1}))},this.handleItemHover=t=>{const{value:e}=t.detail,i=this.enabledItems.findIndex(r=>r.value===e);i!==-1&&(this.highlightedIndex=i,this.updateItemStates())},this.handleKeyDown=t=>{const e=this.enabledItems;if(e.length!==0)switch(t.key){case"ArrowDown":case"ArrowRight":t.preventDefault(),this.highlightNext();break;case"ArrowUp":case"ArrowLeft":t.preventDefault(),this.highlightPrevious();break;case"Enter":case" ":t.preventDefault(),this.highlightedIndex>=0&&this.highlightedIndex<e.length&&e[this.highlightedIndex].click();break;case"Home":t.preventDefault(),this.highlightedIndex=0,this.updateItemStates(),this.scrollToHighlighted();break;case"End":t.preventDefault(),this.highlightedIndex=e.length-1,this.updateItemStates(),this.scrollToHighlighted();break;case"Escape":this.highlightedIndex=-1,this.updateItemStates();break;default:t.key.length===1&&!t.ctrlKey&&!t.altKey&&!t.metaKey&&(t.preventDefault(),this.focusItemByChar(t.key));break}},this.handleSubmenuWillOpen=t=>{const e=t.detail.target;this.querySelectorAll("*").forEach(r=>{r.tagName.toLowerCase().endsWith("-menu-sub")&&r!==e&&r.closeImmediately()})}}get enabledItems(){return this.menuItems.filter(t=>!t.disabled)}collectMenuItems(){if(!this.defaultSlot)return;const t=this.defaultSlot.assignedElements({flatten:!0}),e=X("menu-item"),i=a=>{const c=[];return a.forEach(p=>{if(p.tagName.toLowerCase()===e&&c.push(p),p.children.length>0&&c.push(...i(Array.from(p.children))),p.shadowRoot){const w=p.shadowRoot.querySelector("slot");if(w){const C=w.assignedElements({flatten:!0});c.push(...i(C))}}}),c};this.menuItems=i(t);const r=`${et}-item-click`,s=`${et}-item-hover`;this.menuItems.forEach(a=>{a.removeEventListener(r,this.handleItemClick),a.removeEventListener(s,this.handleItemHover),a.addEventListener(r,this.handleItemClick),a.addEventListener(s,this.handleItemHover)});const n=X("menu-sub");Array.from(this.querySelectorAll(n)).forEach(a=>{a.hasAttribute("submenu-trigger")||(a.submenuTrigger=this.submenuTrigger)}),this.updateItemStates()}updateItemStates(){this.menuItems.forEach(t=>{t.selected=t.value===this.value}),this.enabledItems.forEach((t,e)=>{t.highlighted=e===this.highlightedIndex})}highlightNext(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=(this.highlightedIndex+1)%t.length,this.updateItemStates(),this.scrollToHighlighted())}highlightPrevious(){const t=this.enabledItems;t.length!==0&&(this.highlightedIndex=this.highlightedIndex<=0?t.length-1:this.highlightedIndex-1,this.updateItemStates(),this.scrollToHighlighted())}scrollToHighlighted(){if(this.highlightedIndex<0)return;const t=this.enabledItems[this.highlightedIndex];t&&t.scrollIntoView({block:"nearest",inline:"nearest"})}focusItemByChar(t){const e=this.enabledItems;if(e.length===0)return;const i=t.toLowerCase(),r=this.highlightedIndex+1;for(let s=0;s<e.length;s++){const n=(r+s)%e.length;if(e[n].displayLabel.trim().toLowerCase().startsWith(i)){this.highlightedIndex=n,this.updateItemStates(),this.scrollToHighlighted();break}}}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectMenuItems(),0),this.setAttribute("role","menu"),this.setAttribute("tabindex","0"),this.addEventListener("keydown",this.handleKeyDown),this.addEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("keydown",this.handleKeyDown),this.removeEventListener("ik-submenu-will-open",this.handleSubmenuWillOpen)}updated(t){super.updated(t),t.has("value")&&this.updateItemStates()}render(){return u`<slot @slotchange=${this.handleSlotChange}></slot>`}},ee.baseName="menu",ee.register=V(ee),ee);xe([h({type:String,reflect:!0})],It.prototype,"mode");xe([h({type:String})],It.prototype,"value");xe([h({type:Boolean})],It.prototype,"collapsible");xe([h({type:Boolean,reflect:!0})],It.prototype,"collapsed");xe([h({type:String,attribute:"submenu-trigger"})],It.prototype,"submenuTrigger");xe([O()],It.prototype,"highlightedIndex");xe([O()],It.prototype,"menuItems");xe([Fr("slot:not([name])")],It.prototype,"defaultSlot");let XR=It;var JR=Object.defineProperty,er=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&JR(t,e,r),r},oe;const jo=(oe=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.highlighted=!1,this.selected=!1,this.hasSubmenu=!1}get displayLabel(){return this.textContent?.trim()||this.value}handleClick(t){if(this.disabled){t.preventDefault(),t.stopPropagation();return}this.emit("item-click",{value:this.value,label:this.displayLabel,hasSubmenu:this.hasSubmenu},{bubbles:!1})}handleMouseEnter(){this.disabled||this.emit("item-hover",{value:this.value,hasSubmenu:this.hasSubmenu},{bubbles:!1})}render(){return u`
       <div
         part="item${this.highlighted?" item-highlighted":""}${this.selected?" item-selected":""}${this.disabled?" item-disabled":""}"
         role="menuitem"
@@ -30043,21 +30043,21 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <slot></slot>
         </span>
         <slot name="suffix">
-          ${this.hasSubmenu?p`
+          ${this.hasSubmenu?u`
                   <span part="item-arrow">›</span>
                 `:k}
         </slot>
       </div>
-    `}},ee.baseName="menu-item",ee.register=$(ee),ee);er([h({type:String})],jo.prototype,"value");er([h({type:Boolean,reflect:!0})],jo.prototype,"disabled");er([h({type:Boolean,reflect:!0})],jo.prototype,"highlighted");er([h({type:Boolean,reflect:!0})],jo.prototype,"selected");er([h({type:Boolean,reflect:!0,attribute:"has-submenu"})],jo.prototype,"hasSubmenu");let QL=jo;var tS=Object.defineProperty,eS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&tS(t,e,r),r},oe;const Ca=(oe=class extends _{constructor(){super(...arguments),this.label=""}render(){return p`
+    `}},oe.baseName="menu-item",oe.register=V(oe),oe);er([h({type:String})],jo.prototype,"value");er([h({type:Boolean,reflect:!0})],jo.prototype,"disabled");er([h({type:Boolean,reflect:!0})],jo.prototype,"highlighted");er([h({type:Boolean,reflect:!0})],jo.prototype,"selected");er([h({type:Boolean,reflect:!0,attribute:"has-submenu"})],jo.prototype,"hasSubmenu");let QR=jo;var tL=Object.defineProperty,eL=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&tL(t,e,r),r},re;const b0=(re=class extends _{constructor(){super(...arguments),this.label=""}render(){return u`
       <div part="group" role="group" aria-label=${this.label}>
-        ${this.label?p`<div part="group-label">${this.label}</div>`:""}
+        ${this.label?u`<div part="group-label">${this.label}</div>`:""}
         <div part="group-items">
           <slot></slot>
         </div>
       </div>
-    `}},oe.baseName="menu-group",oe.register=$(oe),oe);eS([h({type:String})],Ca.prototype,"label");let oS=Ca;const Zo=class Zo extends _{render(){return p`
+    `}},re.baseName="menu-group",re.register=V(re),re);eL([h({type:String})],b0.prototype,"label");let oL=b0;const Zo=class Zo extends _{render(){return u`
       <div part="divider" role="separator"></div>
-    `}};Zo.baseName="menu-divider",Zo.register=$(Zo);let ji=Zo;var rS=Object.defineProperty,ze=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&rS(t,e,r),r},re;const xe=(re=class extends _{constructor(){super(...arguments),this.label="",this.disabled=!1,this.open=!1,this.placement="right",this.highlighted=!1,this.submenuTrigger="hover",this.closeTimer=null,this.handleTriggerClick=t=>{t.stopPropagation(),!this.disabled&&(this.submenuTrigger==="click"?this.open?this.closeSubmenu():this.openSubmenu():this.open||this.openSubmenu())},this.handleMouseEnter=()=>{this.submenuTrigger==="hover"&&this.openSubmenu()},this.handleMouseLeave=()=>{this.submenuTrigger==="hover"&&this.delayCloseSubmenu()},this.handleKeyDown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":case"ArrowRight":t.preventDefault(),t.stopPropagation(),this.openSubmenu();break;case"Escape":case"ArrowLeft":this.open&&(t.preventDefault(),t.stopPropagation(),this.closeSubmenu());break}}}openSubmenu(){this.disabled||(this.clearCloseTimer(),this.dispatchEvent(new CustomEvent("ik-submenu-will-open",{bubbles:!0,composed:!0,detail:{target:this}})),this.open=!0,this.emit("submenu-open",{label:this.label},{bubbles:!1}))}closeSubmenu(){this.open=!1,this.emit("submenu-close",{label:this.label},{bubbles:!1})}closeImmediately(){this.clearCloseTimer(),this.closeSubmenu()}delayCloseSubmenu(){this.closeTimer=window.setTimeout(()=>{this.closeSubmenu()},150)}clearCloseTimer(){this.closeTimer!==null&&(clearTimeout(this.closeTimer),this.closeTimer=null)}disconnectedCallback(){super.disconnectedCallback(),this.clearCloseTimer()}render(){return p`
+    `}};Zo.baseName="menu-divider",Zo.register=V(Zo);let Ai=Zo;var rL=Object.defineProperty,Ve=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&rL(t,e,r),r},ie;const fe=(ie=class extends _{constructor(){super(...arguments),this.label="",this.disabled=!1,this.open=!1,this.placement="right",this.highlighted=!1,this.submenuTrigger="hover",this.closeTimer=null,this.handleTriggerClick=t=>{t.stopPropagation(),!this.disabled&&(this.submenuTrigger==="click"?this.open?this.closeSubmenu():this.openSubmenu():this.open||this.openSubmenu())},this.handleMouseEnter=()=>{this.submenuTrigger==="hover"&&this.openSubmenu()},this.handleMouseLeave=()=>{this.submenuTrigger==="hover"&&this.delayCloseSubmenu()},this.handleKeyDown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":case"ArrowRight":t.preventDefault(),t.stopPropagation(),this.openSubmenu();break;case"Escape":case"ArrowLeft":this.open&&(t.preventDefault(),t.stopPropagation(),this.closeSubmenu());break}}}openSubmenu(){this.disabled||(this.clearCloseTimer(),this.dispatchEvent(new CustomEvent("ik-submenu-will-open",{bubbles:!0,composed:!0,detail:{target:this}})),this.open=!0,this.emit("submenu-open",{label:this.label},{bubbles:!1}))}closeSubmenu(){this.open=!1,this.emit("submenu-close",{label:this.label},{bubbles:!1})}closeImmediately(){this.clearCloseTimer(),this.closeSubmenu()}delayCloseSubmenu(){this.closeTimer=window.setTimeout(()=>{this.closeSubmenu()},150)}clearCloseTimer(){this.closeTimer!==null&&(clearTimeout(this.closeTimer),this.closeTimer=null)}disconnectedCallback(){super.disconnectedCallback(),this.clearCloseTimer()}render(){return u`
       <div
         part="submenu${this.open?" submenu-open":""}${this.disabled?" submenu-disabled":""}"
         @mouseenter=${this.handleMouseEnter}
@@ -30078,7 +30078,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             <span part="submenu-arrow">›</span>
           </slot>
         </div>
-        ${this.open?p`
+        ${this.open?u`
               <div
                 part="submenu-content submenu-content-${this.placement}"
                 role="menu"
@@ -30088,7 +30088,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
               </div>
             `:k}
       </div>
-    `}},re.baseName="menu-sub",re.register=$(re),re);ze([h({type:String})],xe.prototype,"label");ze([h({type:Boolean,reflect:!0})],xe.prototype,"disabled");ze([h({type:Boolean,reflect:!0})],xe.prototype,"open");ze([h({type:String})],xe.prototype,"placement");ze([h({type:Boolean,reflect:!0})],xe.prototype,"highlighted");ze([h({type:String,attribute:"submenu-trigger"})],xe.prototype,"submenuTrigger");ze([O()],xe.prototype,"closeTimer");let iS=xe;var sS=Object.defineProperty,ft=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sS(t,e,r),r},ie;const ut=(ie=class extends _{constructor(){super(...arguments),this.orientation="horizontal",this.activationMode="automatic",this.disabled=!1,this.lazy=!0,this.internalValue="",this.initialized=!1,this.tabs=[],this.panels=[],this.focusedIndex=-1,this.handleTabClick=t=>{const{value:e}=t.detail;this.selectTab(e)},this.handleKeyDown=t=>{if(this.disabled)return;const e=this.enabledTabs;if(e.length===0)return;const i=t.target;if(!this.tabs.some(a=>a===i||a.contains(i)))return;const s=this.orientation==="horizontal",n=s?"ArrowRight":"ArrowDown",d=s?"ArrowLeft":"ArrowUp";switch(t.key){case n:t.preventDefault(),this.focusNext();break;case d:t.preventDefault(),this.focusPrevious();break;case"Home":t.preventDefault(),this.focusFirst();break;case"End":t.preventDefault(),this.focusLast();break;case"Enter":case" ":if(t.preventDefault(),this.focusedIndex>=0&&this.activationMode==="manual"){const a=e[this.focusedIndex];a&&this.selectTab(a.value)}break}},this.handleFocusIn=()=>{if(this.focusedIndex<0){const t=this.enabledTabs.findIndex(e=>e.value===this.currentValue);this.focusedIndex=t>=0?t:0,this.updateStates()}},this.handleFocusOut=t=>{const e=t.relatedTarget;this.contains(e)||(this.focusedIndex=-1,this.updateStates())}}get isControlled(){return this.value!==void 0}get currentValue(){return this.isControlled?this.value:this.internalValue}get enabledTabs(){return this.tabs.filter(t=>!t.disabled)}collectElementsByTagName(t,e){const i=[],r=X("tab-panel");return t.forEach(s=>{s.tagName.toLowerCase()===e&&i.push(s),s.children.length>0&&s.tagName.toLowerCase()!==r&&i.push(...this.collectElementsByTagName(Array.from(s.children),e))}),i}collectElements(){const t=Array.from(this.children),e=X("tab"),i=X("tab-panel");this.tabs=this.collectElementsByTagName(t,e),this.panels=this.collectElementsByTagName(t,i),this.tabs.forEach(s=>{s.getAttribute("slot")!=="tab"&&s.setAttribute("slot","tab")}),this.panels.forEach(s=>{s.getAttribute("slot")!=="panel"&&s.setAttribute("slot","panel")});const r=`${et}-tab-click`;this.tabs.forEach(s=>{s.removeEventListener(r,this.handleTabClick),s.addEventListener(r,this.handleTabClick)}),!this.initialized&&!this.isControlled&&(this.internalValue=this.defaultValue||(this.enabledTabs.length>0?this.enabledTabs[0].value:""),this.initialized=!0),this.updateStates()}selectTab(t){if(this.disabled)return;const e=this.tabs.find(r=>r.value===t);if(!e||e.disabled)return;const i=this.currentValue;i!==t&&(this.isControlled||(this.internalValue=t,this.updateStates()),this.emit("change",{value:t,previousValue:i},{bubbles:!1}))}updateStates(){const t=this.currentValue;this.tabs.forEach((e,i)=>{e.selected=e.value===t,e.focused=i===this.focusedIndex}),this.panels.forEach(e=>{e.lazy=this.lazy,e.active=e.value===t})}focusNext(){const t=this.enabledTabs;if(t.length===0)return;const i=((this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue))+1)%t.length;this.focusTab(i)}focusPrevious(){const t=this.enabledTabs;if(t.length===0)return;const e=this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue),i=e<=0?t.length-1:e-1;this.focusTab(i)}focusFirst(){this.focusTab(0)}focusLast(){this.focusTab(this.enabledTabs.length-1)}focusTab(t){const e=this.enabledTabs;if(t<0||t>=e.length)return;this.focusedIndex=t;const i=e[t];this.activationMode==="automatic"&&this.selectTab(i.value),this.updateStates(),i.focus()}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectElements(),0),this.observer=new MutationObserver(()=>{this.collectElements()}),this.observer.observe(this,{childList:!0,subtree:!0})}disconnectedCallback(){super.disconnectedCallback(),this.observer?.disconnect()}updated(t){super.updated(t),(t.has("value")||t.has("lazy"))&&this.updateStates()}render(){return p`
+    `}},ie.baseName="menu-sub",ie.register=V(ie),ie);Ve([h({type:String})],fe.prototype,"label");Ve([h({type:Boolean,reflect:!0})],fe.prototype,"disabled");Ve([h({type:Boolean,reflect:!0})],fe.prototype,"open");Ve([h({type:String})],fe.prototype,"placement");Ve([h({type:Boolean,reflect:!0})],fe.prototype,"highlighted");Ve([h({type:String,attribute:"submenu-trigger"})],fe.prototype,"submenuTrigger");Ve([O()],fe.prototype,"closeTimer");let iL=fe;var sL=Object.defineProperty,ft=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sL(t,e,r),r},se;const ut=(se=class extends _{constructor(){super(...arguments),this.orientation="horizontal",this.activationMode="automatic",this.disabled=!1,this.lazy=!0,this.internalValue="",this.initialized=!1,this.tabs=[],this.panels=[],this.focusedIndex=-1,this.handleTabClick=t=>{const{value:e}=t.detail;this.selectTab(e)},this.handleKeyDown=t=>{if(this.disabled)return;const e=this.enabledTabs;if(e.length===0)return;const i=t.target;if(!this.tabs.some(a=>a===i||a.contains(i)))return;const s=this.orientation==="horizontal",n=s?"ArrowRight":"ArrowDown",d=s?"ArrowLeft":"ArrowUp";switch(t.key){case n:t.preventDefault(),this.focusNext();break;case d:t.preventDefault(),this.focusPrevious();break;case"Home":t.preventDefault(),this.focusFirst();break;case"End":t.preventDefault(),this.focusLast();break;case"Enter":case" ":if(t.preventDefault(),this.focusedIndex>=0&&this.activationMode==="manual"){const a=e[this.focusedIndex];a&&this.selectTab(a.value)}break}},this.handleFocusIn=()=>{if(this.focusedIndex<0){const t=this.enabledTabs.findIndex(e=>e.value===this.currentValue);this.focusedIndex=t>=0?t:0,this.updateStates()}},this.handleFocusOut=t=>{const e=t.relatedTarget;this.contains(e)||(this.focusedIndex=-1,this.updateStates())}}get isControlled(){return this.value!==void 0}get currentValue(){return this.isControlled?this.value:this.internalValue}get enabledTabs(){return this.tabs.filter(t=>!t.disabled)}collectElementsByTagName(t,e){const i=[],r=X("tab-panel");return t.forEach(s=>{s.tagName.toLowerCase()===e&&i.push(s),s.children.length>0&&s.tagName.toLowerCase()!==r&&i.push(...this.collectElementsByTagName(Array.from(s.children),e))}),i}collectElements(){const t=Array.from(this.children),e=X("tab"),i=X("tab-panel");this.tabs=this.collectElementsByTagName(t,e),this.panels=this.collectElementsByTagName(t,i),this.tabs.forEach(s=>{s.getAttribute("slot")!=="tab"&&s.setAttribute("slot","tab")}),this.panels.forEach(s=>{s.getAttribute("slot")!=="panel"&&s.setAttribute("slot","panel")});const r=`${et}-tab-click`;this.tabs.forEach(s=>{s.removeEventListener(r,this.handleTabClick),s.addEventListener(r,this.handleTabClick)}),!this.initialized&&!this.isControlled&&(this.internalValue=this.defaultValue||(this.enabledTabs.length>0?this.enabledTabs[0].value:""),this.initialized=!0),this.updateStates()}selectTab(t){if(this.disabled)return;const e=this.tabs.find(r=>r.value===t);if(!e||e.disabled)return;const i=this.currentValue;i!==t&&(this.isControlled||(this.internalValue=t,this.updateStates()),this.emit("change",{value:t,previousValue:i},{bubbles:!1}))}updateStates(){const t=this.currentValue;this.tabs.forEach((e,i)=>{e.selected=e.value===t,e.focused=i===this.focusedIndex}),this.panels.forEach(e=>{e.lazy=this.lazy,e.active=e.value===t})}focusNext(){const t=this.enabledTabs;if(t.length===0)return;const i=((this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue))+1)%t.length;this.focusTab(i)}focusPrevious(){const t=this.enabledTabs;if(t.length===0)return;const e=this.focusedIndex>=0?this.focusedIndex:t.findIndex(r=>r.value===this.currentValue),i=e<=0?t.length-1:e-1;this.focusTab(i)}focusFirst(){this.focusTab(0)}focusLast(){this.focusTab(this.enabledTabs.length-1)}focusTab(t){const e=this.enabledTabs;if(t<0||t>=e.length)return;this.focusedIndex=t;const i=e[t];this.activationMode==="automatic"&&this.selectTab(i.value),this.updateStates(),i.focus()}connectedCallback(){super.connectedCallback(),setTimeout(()=>this.collectElements(),0),this.observer=new MutationObserver(()=>{this.collectElements()}),this.observer.observe(this,{childList:!0,subtree:!0})}disconnectedCallback(){super.disconnectedCallback(),this.observer?.disconnect()}updated(t){super.updated(t),(t.has("value")||t.has("lazy"))&&this.updateStates()}render(){return u`
       <div
         part="tabs tabs-${this.orientation}"
         @keydown=${this.handleKeyDown}
@@ -30102,7 +30102,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <slot name="panel"></slot>
         </div>
       </div>
-    `}},ie.baseName="tabs",ie.register=$(ie),ie);ft([h({type:String,reflect:!0})],ut.prototype,"value");ft([h({type:String,attribute:"default-value"})],ut.prototype,"defaultValue");ft([h({type:String,reflect:!0})],ut.prototype,"orientation");ft([h({type:String})],ut.prototype,"activationMode");ft([h({type:Boolean,reflect:!0})],ut.prototype,"disabled");ft([h({type:Boolean})],ut.prototype,"lazy");ft([O()],ut.prototype,"internalValue");ft([O()],ut.prototype,"tabs");ft([O()],ut.prototype,"panels");ft([O()],ut.prototype,"focusedIndex");let nS=ut;var lS=Object.defineProperty,Pr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&lS(t,e,r),r},se;const or=(se=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.focused=!1,this.handleClick=()=>{this.disabled||this.emit("tab-click",{value:this.value},{bubbles:!1})},this.handleKeyDown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.emit("tab-click",{value:this.value},{bubbles:!1}))}}render(){return p`
+    `}},se.baseName="tabs",se.register=V(se),se);ft([h({type:String,reflect:!0})],ut.prototype,"value");ft([h({type:String,attribute:"default-value"})],ut.prototype,"defaultValue");ft([h({type:String,reflect:!0})],ut.prototype,"orientation");ft([h({type:String})],ut.prototype,"activationMode");ft([h({type:Boolean,reflect:!0})],ut.prototype,"disabled");ft([h({type:Boolean})],ut.prototype,"lazy");ft([O()],ut.prototype,"internalValue");ft([O()],ut.prototype,"tabs");ft([O()],ut.prototype,"panels");ft([O()],ut.prototype,"focusedIndex");let nL=ut;var lL=Object.defineProperty,Pr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&lL(t,e,r),r},ne;const or=(ne=class extends _{constructor(){super(...arguments),this.value="",this.disabled=!1,this.selected=!1,this.focused=!1,this.handleClick=()=>{this.disabled||this.emit("tab-click",{value:this.value},{bubbles:!1})},this.handleKeyDown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.emit("tab-click",{value:this.value},{bubbles:!1}))}}render(){return u`
       <button
         part="tab${this.selected?" tab-selected":""}${this.disabled?" tab-disabled":""}"
         role="tab"
@@ -30115,7 +30115,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot></slot>
       </button>
-    `}},se.baseName="tab",se.register=$(se),se);Pr([h({type:String,reflect:!0})],or.prototype,"value");Pr([h({type:Boolean,reflect:!0})],or.prototype,"disabled");Pr([h({type:Boolean,reflect:!0})],or.prototype,"selected");Pr([h({type:Boolean,reflect:!0})],or.prototype,"focused");let aS=or;var dS=Object.defineProperty,ns=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&dS(t,e,r),r},ne;const Er=(ne=class extends _{constructor(){super(...arguments),this.value="",this.active=!1,this.lazy=!0}render(){return this.lazy&&!this.active?k:p`
+    `}},ne.baseName="tab",ne.register=V(ne),ne);Pr([h({type:String,reflect:!0})],or.prototype,"value");Pr([h({type:Boolean,reflect:!0})],or.prototype,"disabled");Pr([h({type:Boolean,reflect:!0})],or.prototype,"selected");Pr([h({type:Boolean,reflect:!0})],or.prototype,"focused");let aL=or;var dL=Object.defineProperty,ls=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&dL(t,e,r),r},le;const Er=(le=class extends _{constructor(){super(...arguments),this.value="",this.active=!1,this.lazy=!0}render(){return this.lazy&&!this.active?k:u`
       <div
         part="tab-panel${this.active?" tab-panel-active":""}"
         role="tabpanel"
@@ -30124,20 +30124,20 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot></slot>
       </div>
-    `}},ne.baseName="tab-panel",ne.register=$(ne),ne);ns([h({type:String,reflect:!0})],Er.prototype,"value");ns([h({type:Boolean,reflect:!0})],Er.prototype,"active");ns([h({type:Boolean})],Er.prototype,"lazy");let hS=Er;var cS=Object.defineProperty,$e=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&cS(t,e,r),r},le;const fe=(le=class extends _{constructor(){super(...arguments),this.open=!1,this.type="info",this.title="",this.description="",this.closable=!0,this.closing=!1,this.preview=!1}handleCloseClick(){this.preview||this.emit("close",{},{bubbles:!1})}renderIcon(){return p`
+    `}},le.baseName="tab-panel",le.register=V(le),le);ls([h({type:String,reflect:!0})],Er.prototype,"value");ls([h({type:Boolean,reflect:!0})],Er.prototype,"active");ls([h({type:Boolean})],Er.prototype,"lazy");let hL=Er;var cL=Object.defineProperty,ze=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&cL(t,e,r),r},ae;const Me=(ae=class extends _{constructor(){super(...arguments),this.open=!1,this.type="info",this.title="",this.description="",this.closable=!0,this.closing=!1,this.preview=!1}handleCloseClick(){this.preview||this.emit("close",{},{bubbles:!1})}renderIcon(){return u`
       <slot name="icon"></slot>
-    `}renderCloseIcon(){return p`
+    `}renderCloseIcon(){return u`
       <slot name="close-icon"></slot>
-    `}render(){return p`
+    `}render(){return u`
       <div part="toast" role="alert" aria-live="polite">
         <span part="icon">${this.renderIcon()}</span>
 
         <div part="content">
-          ${this.title?p`<div part="title">${this.title}</div>`:k}
-          ${this.description?p`<div part="description">${this.description}</div>`:k}
+          ${this.title?u`<div part="title">${this.title}</div>`:k}
+          ${this.description?u`<div part="description">${this.description}</div>`:k}
         </div>
 
-        ${this.closable?p`
+        ${this.closable?u`
               <button
                 part="close"
                 type="button"
@@ -30148,7 +30148,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
               </button>
             `:k}
       </div>
-    `}},le.baseName="toast",le.register=$(le),le);$e([h({type:Boolean,reflect:!0})],fe.prototype,"open");$e([h({type:String,reflect:!0})],fe.prototype,"type");$e([h({type:String})],fe.prototype,"title");$e([h({type:String})],fe.prototype,"description");$e([h({type:Boolean})],fe.prototype,"closable");$e([h({type:Boolean,reflect:!0})],fe.prototype,"closing");$e([h({type:Boolean,reflect:!0})],fe.prototype,"preview");let pS=fe;class uS{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}show(t){const e=this.getRegion(t.target);if(e)return e.addToast(t)}close(t,e){this.getRegion(e)?.removeToast(t)}closeAll(t){if(t)this.getRegion(t)?.clearAll();else for(const e of this.regions.values())e.clearAll()}}const I0=new uS;var wS=Object.defineProperty,Tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&wS(t,e,r),r},Ct;const rr=(Ct=class extends _{constructor(){super(...arguments),this.name="default",this.max=5,this.autoHideDuration=3e3,this.position="top-center",this.toasts=[],this.toastIdCounter=0,this.positionContainers=new Map}connectedCallback(){super.connectedCallback(),I0.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),I0.unregisterRegion(this),this.clearAll();for(const t of this.positionContainers.values())t.remove();this.positionContainers.clear()}getPositionContainer(t){if(this.positionContainers.has(t))return this.positionContainers.get(t);const e=document.createElement("div");return e.setAttribute("data-toast-position",t),e.style.cssText=this.getPositionStyles(t),document.body.appendChild(e),this.positionContainers.set(t,e),e}getPositionStyles(t){const e=`
+    `}},ae.baseName="toast",ae.register=V(ae),ae);ze([h({type:Boolean,reflect:!0})],Me.prototype,"open");ze([h({type:String,reflect:!0})],Me.prototype,"type");ze([h({type:String})],Me.prototype,"title");ze([h({type:String})],Me.prototype,"description");ze([h({type:Boolean})],Me.prototype,"closable");ze([h({type:Boolean,reflect:!0})],Me.prototype,"closing");ze([h({type:Boolean,reflect:!0})],Me.prototype,"preview");let pL=Me;class uL{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}show(t){const e=this.getRegion(t.target);if(e)return e.addToast(t)}close(t,e){this.getRegion(e)?.removeToast(t)}closeAll(t){if(t)this.getRegion(t)?.clearAll();else for(const e of this.regions.values())e.clearAll()}}const qa=new uL;var wL=Object.defineProperty,Tr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&wL(t,e,r),r},Bt;const rr=(Bt=class extends _{constructor(){super(...arguments),this.name="default",this.max=5,this.autoHideDuration=3e3,this.position="top-center",this.toasts=[],this.toastIdCounter=0,this.positionContainers=new Map}connectedCallback(){super.connectedCallback(),qa.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),qa.unregisterRegion(this),this.clearAll();for(const t of this.positionContainers.values())t.remove();this.positionContainers.clear()}getPositionContainer(t){if(this.positionContainers.has(t))return this.positionContainers.get(t);const e=document.createElement("div");return e.setAttribute("data-toast-position",t),e.style.cssText=this.getPositionStyles(t),document.body.appendChild(e),this.positionContainers.set(t,e),e}getPositionStyles(t){const e=`
       position: fixed;
       z-index: 9999;
       display: flex;
@@ -30156,22 +30156,22 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       gap: 10px;
       pointer-events: none;
       max-height: 100vh;
-    `,i="20px",r={"top-left":`top: ${i}; left: ${i}; align-items: flex-start;`,"top-center":`top: ${i}; left: 50%; transform: translateX(-50%); align-items: center;`,"top-right":`top: ${i}; right: ${i}; align-items: flex-end;`,"bottom-left":`bottom: ${i}; left: ${i}; flex-direction: column-reverse; align-items: flex-start;`,"bottom-center":`bottom: ${i}; left: 50%; transform: translateX(-50%); flex-direction: column-reverse; align-items: center;`,"bottom-right":`bottom: ${i}; right: ${i}; flex-direction: column-reverse; align-items: flex-end;`};return e+r[t]}getToastTagName(){return X("toast")}addToast(t){const e=`toast-${++this.toastIdCounter}`,i=this.getToastTagName(),r=t.position??this.position,s=document.createElement(i);s.setAttribute("type",t.type||"info"),s.setAttribute("title",t.title),t.description&&s.setAttribute("description",t.description),t.closable===!1&&(s.closable=!1),s.setAttribute("data-toast-id",e),s.style.pointerEvents="auto",s.addEventListener(`${et}-close`,()=>{this.removeToast(e)}),this.getPositionContainer(r).appendChild(s),requestAnimationFrame(()=>{s.setAttribute("open","")});const d=t.autoHideDuration??this.autoHideDuration;let a;d>0&&(a=window.setTimeout(()=>{this.removeToast(e)},d));let c=d,u;s.addEventListener("mouseenter",()=>{a&&(clearTimeout(a),a=void 0,u=Date.now())}),s.addEventListener("mouseleave",()=>{if(u&&c>0){const C=Date.now()-u;c=Math.max(0,c-C),u=void 0,c>0?a=window.setTimeout(()=>{this.removeToast(e)},c):this.removeToast(e)}});const w={id:e,element:s,position:r,timer:a};return this.toasts.push(w),this.enforceMaxLimit(),{id:e,close:()=>this.removeToast(e)}}removeToast(t){const e=this.toasts.findIndex(s=>s.id===t);if(e===-1)return;const i=this.toasts[e];this.toasts.splice(e,1),i.timer&&clearTimeout(i.timer);const r=i.element;r.setAttribute("closing",""),setTimeout(()=>{r.remove()},200)}clearAll(){for(const t of this.toasts)t.timer&&clearTimeout(t.timer),t.element.remove();this.toasts=[]}enforceMaxLimit(){if(!(this.max<=0))for(;this.toasts.length>this.max;){const t=this.toasts[0];t&&this.removeToast(t.id)}}render(){return p`
+    `,i="20px",r={"top-left":`top: ${i}; left: ${i}; align-items: flex-start;`,"top-center":`top: ${i}; left: 50%; transform: translateX(-50%); align-items: center;`,"top-right":`top: ${i}; right: ${i}; align-items: flex-end;`,"bottom-left":`bottom: ${i}; left: ${i}; flex-direction: column-reverse; align-items: flex-start;`,"bottom-center":`bottom: ${i}; left: 50%; transform: translateX(-50%); flex-direction: column-reverse; align-items: center;`,"bottom-right":`bottom: ${i}; right: ${i}; flex-direction: column-reverse; align-items: flex-end;`};return e+r[t]}getToastTagName(){return X("toast")}addToast(t){const e=`toast-${++this.toastIdCounter}`,i=this.getToastTagName(),r=t.position??this.position,s=document.createElement(i);s.setAttribute("type",t.type||"info"),s.setAttribute("title",t.title),t.description&&s.setAttribute("description",t.description),t.closable===!1&&(s.closable=!1),s.setAttribute("data-toast-id",e),s.style.pointerEvents="auto",s.addEventListener(`${et}-close`,()=>{this.removeToast(e)}),this.getPositionContainer(r).appendChild(s),requestAnimationFrame(()=>{s.setAttribute("open","")});const d=t.autoHideDuration??this.autoHideDuration;let a;d>0&&(a=window.setTimeout(()=>{this.removeToast(e)},d));let c=d,p;s.addEventListener("mouseenter",()=>{a&&(clearTimeout(a),a=void 0,p=Date.now())}),s.addEventListener("mouseleave",()=>{if(p&&c>0){const C=Date.now()-p;c=Math.max(0,c-C),p=void 0,c>0?a=window.setTimeout(()=>{this.removeToast(e)},c):this.removeToast(e)}});const w={id:e,element:s,position:r,timer:a};return this.toasts.push(w),this.enforceMaxLimit(),{id:e,close:()=>this.removeToast(e)}}removeToast(t){const e=this.toasts.findIndex(s=>s.id===t);if(e===-1)return;const i=this.toasts[e];this.toasts.splice(e,1),i.timer&&clearTimeout(i.timer);const r=i.element;r.setAttribute("closing",""),setTimeout(()=>{r.remove()},200)}clearAll(){for(const t of this.toasts)t.timer&&clearTimeout(t.timer),t.element.remove();this.toasts=[]}enforceMaxLimit(){if(!(this.max<=0))for(;this.toasts.length>this.max;){const t=this.toasts[0];t&&this.removeToast(t.id)}}render(){return u`
       <slot></slot>
-    `}},Ct.baseName="toast-region",Ct.register=$(Ct),Ct.styles=j`
+    `}},Bt.baseName="toast-region",Bt.register=V(Bt),Bt.styles=j`
     :host {
       display: contents;
     }
-  `,Ct);Tr([h({type:String})],rr.prototype,"name");Tr([h({type:Number})],rr.prototype,"max");Tr([h({type:Number,attribute:"auto-hide-duration"})],rr.prototype,"autoHideDuration");Tr([h({type:String})],rr.prototype,"position");let gS=rr;var vS=Object.defineProperty,Ba=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vS(t,e,r),r},ae;const ls=(ae=class extends _{constructor(){super(...arguments),this.dialogTitle="",this.closable=!0,this.handleCloseClick=()=>{this.emit("close")}}renderCloseIcon(){return p`
+  `,Bt);Tr([h({type:String})],rr.prototype,"name");Tr([h({type:Number})],rr.prototype,"max");Tr([h({type:Number,attribute:"auto-hide-duration"})],rr.prototype,"autoHideDuration");Tr([h({type:String})],rr.prototype,"position");let gL=rr;var vL=Object.defineProperty,C0=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vL(t,e,r),r},de;const as=(de=class extends _{constructor(){super(...arguments),this.dialogTitle="",this.closable=!0,this.handleCloseClick=()=>{this.emit("close")}}renderCloseIcon(){return u`
       <slot name="close-icon"></slot>
-    `}render(){return p`
-      ${this.dialogTitle||this.closable?p`
+    `}render(){return u`
+      ${this.dialogTitle||this.closable?u`
             <div part="header">
-              ${this.dialogTitle?p`<div part="title" id="dialog-title">
+              ${this.dialogTitle?u`<div part="title" id="dialog-title">
                     ${this.dialogTitle}
                   </div>`:k}
               <slot name="header"></slot>
-              ${this.closable?p`
+              ${this.closable?u`
                     <button
                       part="close"
                       type="button"
@@ -30191,15 +30191,15 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       <div part="footer">
         <slot name="footer"></slot>
       </div>
-    `}},ae.baseName="dialog",ae.register=$(ae),ae);Ba([h({type:String,attribute:"dialog-title"})],ls.prototype,"dialogTitle");Ba([h({type:Boolean})],ls.prototype,"closable");let kS=ls;var mS=Object.defineProperty,Yr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&mS(t,e,r),r},de;const ir=(de=class extends _{constructor(){super(...arguments),this.open=!1,this.closeOnBackdrop=!0,this.closeOnEscape=!0,this.enableScrollLock=!0,this.focusTrap=null,this.unlockScrollFn=null,this.cleanupDismissable=null,this.handleBackdropClick=t=>{t.composedPath()[0]===this&&this.closeOnBackdrop&&this.cancel()}}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this.handleBackdropClick)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this.handleBackdropClick),this.cleanupOpen()}updated(t){t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}show(){this.open||(this.open=!0)}close(){this.open&&(this.open=!1)}cancel(){!this.emit("cancel",{},{cancelable:!0})||this.close()}setupOpen(){requestAnimationFrame(()=>{this.enableScrollLock&&(this.unlockScrollFn=NL()),this.focusTrap=OL(this,{autoFocus:!0,restoreFocus:!0}),this.focusTrap.activate(),this.closeOnEscape&&(this.cleanupDismissable=is.add(this,t=>{t==="escape"&&this.cancel()},[])),this.emit("open")})}cleanupOpen(){this.focusTrap?.deactivate(),this.focusTrap=null,this.unlockScrollFn?.(),this.unlockScrollFn=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close")}render(){return p`
+    `}},de.baseName="dialog",de.register=V(de),de);C0([h({type:String,attribute:"dialog-title"})],as.prototype,"dialogTitle");C0([h({type:Boolean})],as.prototype,"closable");let kL=as;var mL=Object.defineProperty,Or=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&mL(t,e,r),r},he;const ir=(he=class extends _{constructor(){super(...arguments),this.open=!1,this.closeOnBackdrop=!0,this.closeOnEscape=!0,this.enableScrollLock=!0,this.focusTrap=null,this.unlockScrollFn=null,this.cleanupDismissable=null,this.handleBackdropClick=t=>{t.composedPath()[0]===this&&this.closeOnBackdrop&&this.cancel()}}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this.handleBackdropClick)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this.handleBackdropClick),this.cleanupOpen()}updated(t){t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}show(){this.open||(this.open=!0)}close(){this.open&&(this.open=!1)}cancel(){!this.emit("cancel",{},{cancelable:!0})||this.close()}setupOpen(){requestAnimationFrame(()=>{this.enableScrollLock&&(this.unlockScrollFn=NR()),this.focusTrap=OR(this,{autoFocus:!0,restoreFocus:!0}),this.focusTrap.activate(),this.closeOnEscape&&(this.cleanupDismissable=ss.add(this,t=>{t==="escape"&&this.cancel()},[])),this.emit("open")})}cleanupOpen(){this.focusTrap?.deactivate(),this.focusTrap=null,this.unlockScrollFn?.(),this.unlockScrollFn=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close")}render(){return u`
       <slot></slot>
-    `}},de.baseName="dialog-backdrop",de.register=$(de),de);Yr([h({type:Boolean,reflect:!0})],ir.prototype,"open");Yr([h({type:Boolean,attribute:"close-on-backdrop"})],ir.prototype,"closeOnBackdrop");Yr([h({type:Boolean,attribute:"close-on-escape"})],ir.prototype,"closeOnEscape");Yr([h({type:Boolean,attribute:"lock-scroll"})],ir.prototype,"enableScrollLock");let xS=ir;class fS{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}open(t){const e=this.getRegion(t.target);if(e)return e.openDialog(t)}async confirm(t){const e=this.getRegion(t.target);return e?e.showConfirm(t):!1}async alert(t){const e=this.getRegion(t.target);if(e)return e.showAlert(t)}close(t,e){this.getRegion(e)?.closeDialog(t)}closeAll(t){if(t)this.getRegion(t)?.closeAllDialogs();else for(const e of this.regions.values())e.closeAllDialogs()}}const Ae=new fS;function MS(){return{open:o=>Ae.open(o),confirm:o=>Ae.confirm(o),alert:o=>Ae.alert(o),close:(o,t)=>Ae.close(o,t),closeAll:o=>Ae.closeAll(o)}}const yS=MS();var bS=Object.defineProperty,CS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&bS(t,e,r),r},Bt;const ja=(Bt=class extends _{constructor(){super(...arguments),this.name="default",this.dialogs=[],this.dialogIdCounter=0}connectedCallback(){super.connectedCallback(),Ae.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),Ae.unregisterRegion(this),this.closeAllDialogs()}getDialogBackdropTagName(){return X("dialog-backdrop")}getDialogTagName(){return X("dialog")}getButtonTagName(){return X("button")}createDialogPair(t,e){const i=this.getDialogBackdropTagName(),r=this.getDialogTagName(),s=document.createElement(i);s.setAttribute("data-dialog-id",t),e.closeOnBackdrop!==void 0&&s.setAttribute("close-on-backdrop",e.closeOnBackdrop.toString()),e.closeOnEscape!==void 0&&s.setAttribute("close-on-escape",e.closeOnEscape.toString());const n=document.createElement(r);if(e.title&&n.setAttribute("dialog-title",e.title),e.closable!==void 0&&(n.closable=e.closable),e.class&&(n.className=e.class),e.content){const d=document.createElement("div");d.innerHTML=e.content,n.appendChild(d)}return s.appendChild(n),{backdrop:s,dialog:n}}openDialog(t){const e=`dialog-${++this.dialogIdCounter}`;let i,r;const s=new Promise((c,u)=>{i=c,r=u}),{backdrop:n,dialog:d}=this.createDialogPair(e,t);n.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),n.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e,void 0,!0)}),d.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),document.body.appendChild(n),n.setAttribute("open","");const a={id:e,backdrop:n,dialog:d,resolve:i,reject:r};return this.dialogs.push(a),{id:e,close:c=>this.closeDialog(e,c),result:s}}async showConfirm(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1,closeOnBackdrop:t.closeOnBackdrop,closeOnEscape:t.closeOnEscape}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","ghost"),a.textContent=t.cancelText||"取消",a.addEventListener("click",()=>{this.closeDialog(e),r(!1)});const c=document.createElement(i);c.setAttribute("variant",t.confirmVariant||"primary"),c.textContent=t.confirmText||"确认",c.addEventListener("click",()=>{this.closeDialog(e),r(!0)}),d.appendChild(a),d.appendChild(c),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r(!1)}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}async showAlert(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","primary"),a.textContent=t.confirmText||"确定",a.addEventListener("click",()=>{this.closeDialog(e),r()}),d.appendChild(a),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r()}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}closeDialog(t,e,i=!1){const r=this.dialogs.findIndex(d=>d.id===t);if(r===-1)return;const s=this.dialogs[r];this.dialogs.splice(r,1),i?s.reject(new Error("Dialog cancelled")):s.resolve(e);const{backdrop:n}=s;n.removeAttribute("open"),setTimeout(()=>{n.remove()},200)}closeAllDialogs(){for(const t of this.dialogs)t.reject(new Error("Dialog cancelled")),t.backdrop.remove();this.dialogs=[]}render(){return p`
+    `}},he.baseName="dialog-backdrop",he.register=V(he),he);Or([h({type:Boolean,reflect:!0})],ir.prototype,"open");Or([h({type:Boolean,attribute:"close-on-backdrop"})],ir.prototype,"closeOnBackdrop");Or([h({type:Boolean,attribute:"close-on-escape"})],ir.prototype,"closeOnEscape");Or([h({type:Boolean,attribute:"lock-scroll"})],ir.prototype,"enableScrollLock");let xL=ir;class fL{constructor(){this.regions=new Map}registerRegion(t){this.regions.set(t.name,t)}unregisterRegion(t){this.regions.get(t.name)===t&&this.regions.delete(t.name)}getRegion(t="default"){if(this.regions.has(t))return this.regions.get(t);if(t==="default"&&this.regions.size>0)return this.regions.values().next().value}open(t){const e=this.getRegion(t.target);if(e)return e.openDialog(t)}async confirm(t){const e=this.getRegion(t.target);return e?e.showConfirm(t):!1}async alert(t){const e=this.getRegion(t.target);if(e)return e.showAlert(t)}close(t,e){this.getRegion(e)?.closeDialog(t)}closeAll(t){if(t)this.getRegion(t)?.closeAllDialogs();else for(const e of this.regions.values())e.closeAllDialogs()}}const Re=new fL;function ML(){return{open:o=>Re.open(o),confirm:o=>Re.confirm(o),alert:o=>Re.alert(o),close:(o,t)=>Re.close(o,t),closeAll:o=>Re.closeAll(o)}}const yL=ML();var bL=Object.defineProperty,CL=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&bL(t,e,r),r},jt;const B0=(jt=class extends _{constructor(){super(...arguments),this.name="default",this.dialogs=[],this.dialogIdCounter=0}connectedCallback(){super.connectedCallback(),Re.registerRegion(this)}disconnectedCallback(){super.disconnectedCallback(),Re.unregisterRegion(this),this.closeAllDialogs()}getDialogBackdropTagName(){return X("dialog-backdrop")}getDialogTagName(){return X("dialog")}getButtonTagName(){return X("button")}createDialogPair(t,e){const i=this.getDialogBackdropTagName(),r=this.getDialogTagName(),s=document.createElement(i);s.setAttribute("data-dialog-id",t),e.closeOnBackdrop!==void 0&&s.setAttribute("close-on-backdrop",e.closeOnBackdrop.toString()),e.closeOnEscape!==void 0&&s.setAttribute("close-on-escape",e.closeOnEscape.toString());const n=document.createElement(r);if(e.title&&n.setAttribute("dialog-title",e.title),e.closable!==void 0&&(n.closable=e.closable),e.class&&(n.className=e.class),e.content){const d=document.createElement("div");d.innerHTML=e.content,n.appendChild(d)}return s.appendChild(n),{backdrop:s,dialog:n}}openDialog(t){const e=`dialog-${++this.dialogIdCounter}`;let i,r;const s=new Promise((c,p)=>{i=c,r=p}),{backdrop:n,dialog:d}=this.createDialogPair(e,t);n.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),n.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e,void 0,!0)}),d.addEventListener(`${et}-close`,()=>{this.closeDialog(e,void 0,!0)}),document.body.appendChild(n),n.setAttribute("open","");const a={id:e,backdrop:n,dialog:d,resolve:i,reject:r};return this.dialogs.push(a),{id:e,close:c=>this.closeDialog(e,c),result:s}}async showConfirm(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1,closeOnBackdrop:t.closeOnBackdrop,closeOnEscape:t.closeOnEscape}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","ghost"),a.textContent=t.cancelText||"取消",a.addEventListener("click",()=>{this.closeDialog(e),r(!1)});const c=document.createElement(i);c.setAttribute("variant",t.confirmVariant||"primary"),c.textContent=t.confirmText||"确认",c.addEventListener("click",()=>{this.closeDialog(e),r(!0)}),d.appendChild(a),d.appendChild(c),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r(!1)}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}async showAlert(t){const e=`dialog-${++this.dialogIdCounter}`,i=this.getButtonTagName();return new Promise(r=>{const{backdrop:s,dialog:n}=this.createDialogPair(e,{title:t.title,content:t.content,closable:t.closable??!1}),d=document.createElement("div");d.setAttribute("slot","footer"),d.style.cssText="display: flex; justify-content: flex-end; gap: 12px;";const a=document.createElement(i);a.setAttribute("variant","primary"),a.textContent=t.confirmText||"确定",a.addEventListener("click",()=>{this.closeDialog(e),r()}),d.appendChild(a),n.appendChild(d),s.addEventListener(`${et}-cancel`,()=>{this.closeDialog(e),r()}),document.body.appendChild(s),s.setAttribute("open",""),this.dialogs.push({id:e,backdrop:s,dialog:n,resolve:()=>{},reject:()=>{}})})}closeDialog(t,e,i=!1){const r=this.dialogs.findIndex(d=>d.id===t);if(r===-1)return;const s=this.dialogs[r];this.dialogs.splice(r,1),i?s.reject(new Error("Dialog cancelled")):s.resolve(e);const{backdrop:n}=s;n.removeAttribute("open"),setTimeout(()=>{n.remove()},200)}closeAllDialogs(){for(const t of this.dialogs)t.reject(new Error("Dialog cancelled")),t.backdrop.remove();this.dialogs=[]}render(){return u`
       <slot></slot>
-    `}},Bt.baseName="dialog-region",Bt.register=$(Bt),Bt.styles=j`
+    `}},jt.baseName="dialog-region",jt.register=V(jt),jt.styles=j`
     :host {
       display: contents;
     }
-  `,Bt);CS([h({type:String})],ja.prototype,"name");let BS=ja;var jS=Object.defineProperty,ot=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&jS(t,e,r),r},he;const J=(he=class extends _{constructor(){super(...arguments),this.open=!1,this.trigger="click",this.placement="bottom",this.offset=8,this.flip=!0,this.padding=8,this.openDelay=100,this.closeDelay=200,this.closeOnClickOutside=!0,this.closeOnEscape=!0,this.disabled=!1,this.position=null,this.cleanupAutoUpdate=null,this.cleanupDismissable=null,this.openTimer=null,this.closeTimer=null,this.updatePosition=()=>{if(!this.triggerRef||!this.contentRef)return;const t=ba(this.triggerRef,this.contentRef,{placement:this.placement,offset:this.offset,flip:this.flip,padding:this.padding});this.position=t,EL(this.contentRef,t)},this.handleTriggerClick=()=>{this.disabled||this.trigger!=="click"||this.toggle()},this.handleTriggerKeydown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.trigger==="click"&&this.toggle())},this.handleTriggerMouseEnter=()=>{this.disabled||this.trigger!=="hover"||this.delayedShow()},this.handleTriggerMouseLeave=()=>{this.disabled||this.trigger!=="hover"||this.delayedHide()},this.handleContentMouseEnter=()=>{this.trigger==="hover"&&this.clearCloseTimer()},this.handleContentMouseLeave=()=>{this.trigger==="hover"&&this.delayedHide()},this.handleTriggerFocus=()=>{this.disabled||this.trigger!=="hover"||(this.clearTimers(),this.show())},this.handleTriggerBlur=t=>{if(this.trigger!=="hover")return;const e=t.relatedTarget;e&&this.contentRef?.contains(e)||this.delayedHide()}}show(){this.disabled||this.open||(this.clearTimers(),this.open=!0)}hide(){this.open&&(this.clearTimers(),this.open=!1)}toggle(){this.open?this.hide():this.show()}delayedShow(){this.clearCloseTimer(),!this.open&&(this.openTimer=setTimeout(()=>{this.show()},this.openDelay))}delayedHide(){this.clearOpenTimer(),this.open&&(this.closeTimer=setTimeout(()=>{this.hide()},this.closeDelay))}clearTimers(){this.clearOpenTimer(),this.clearCloseTimer()}clearOpenTimer(){this.openTimer&&(clearTimeout(this.openTimer),this.openTimer=null)}clearCloseTimer(){this.closeTimer&&(clearTimeout(this.closeTimer),this.closeTimer=null)}setupOpen(){requestAnimationFrame(()=>{this.contentRef&&(this.cleanupAutoUpdate=PL(this.triggerRef,this.contentRef,this.updatePosition),this.trigger!=="manual"&&(this.cleanupDismissable=is.add(this.contentRef,t=>{this.trigger==="hover"&&t==="click-outside"||t==="escape"&&!this.closeOnEscape||t==="click-outside"&&!this.closeOnClickOutside||this.hide()},[this.triggerRef])),this.emit("open",void 0,{bubbles:!1}))})}cleanupOpen(){this.cleanupAutoUpdate?.(),this.cleanupAutoUpdate=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close",void 0,{bubbles:!1})}updated(t){super.updated(t),t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupOpen(),this.clearTimers()}renderTrigger(){return p`
+  `,jt);CL([h({type:String})],B0.prototype,"name");let BL=B0;var jL=Object.defineProperty,ot=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&jL(t,e,r),r},ce;const J=(ce=class extends _{constructor(){super(...arguments),this.open=!1,this.trigger="click",this.placement="bottom",this.offset=8,this.flip=!0,this.padding=8,this.openDelay=100,this.closeDelay=200,this.closeOnClickOutside=!0,this.closeOnEscape=!0,this.disabled=!1,this.position=null,this.cleanupAutoUpdate=null,this.cleanupDismissable=null,this.openTimer=null,this.closeTimer=null,this.updatePosition=()=>{if(!this.triggerRef||!this.contentRef)return;const t=y0(this.triggerRef,this.contentRef,{placement:this.placement,offset:this.offset,flip:this.flip,padding:this.padding});this.position=t,PR(this.contentRef,t)},this.handleTriggerClick=()=>{this.disabled||this.trigger!=="click"||this.toggle()},this.handleTriggerKeydown=t=>{this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.trigger==="click"&&this.toggle())},this.handleTriggerMouseEnter=()=>{this.disabled||this.trigger!=="hover"||this.delayedShow()},this.handleTriggerMouseLeave=()=>{this.disabled||this.trigger!=="hover"||this.delayedHide()},this.handleContentMouseEnter=()=>{this.trigger==="hover"&&this.clearCloseTimer()},this.handleContentMouseLeave=()=>{this.trigger==="hover"&&this.delayedHide()},this.handleTriggerFocus=()=>{this.disabled||this.trigger!=="hover"||(this.clearTimers(),this.show())},this.handleTriggerBlur=t=>{if(this.trigger!=="hover")return;const e=t.relatedTarget;e&&this.contentRef?.contains(e)||this.delayedHide()}}show(){this.disabled||this.open||(this.clearTimers(),this.open=!0)}hide(){this.open&&(this.clearTimers(),this.open=!1)}toggle(){this.open?this.hide():this.show()}delayedShow(){this.clearCloseTimer(),!this.open&&(this.openTimer=setTimeout(()=>{this.show()},this.openDelay))}delayedHide(){this.clearOpenTimer(),this.open&&(this.closeTimer=setTimeout(()=>{this.hide()},this.closeDelay))}clearTimers(){this.clearOpenTimer(),this.clearCloseTimer()}clearOpenTimer(){this.openTimer&&(clearTimeout(this.openTimer),this.openTimer=null)}clearCloseTimer(){this.closeTimer&&(clearTimeout(this.closeTimer),this.closeTimer=null)}setupOpen(){requestAnimationFrame(()=>{this.contentRef&&(this.cleanupAutoUpdate=FR(this.triggerRef,this.contentRef,this.updatePosition),this.trigger!=="manual"&&(this.cleanupDismissable=ss.add(this.contentRef,t=>{this.trigger==="hover"&&t==="click-outside"||t==="escape"&&!this.closeOnEscape||t==="click-outside"&&!this.closeOnClickOutside||this.hide()},[this.triggerRef])),this.emit("open",void 0,{bubbles:!1}))})}cleanupOpen(){this.cleanupAutoUpdate?.(),this.cleanupAutoUpdate=null,this.cleanupDismissable?.(),this.cleanupDismissable=null,this.emit("close",void 0,{bubbles:!1})}updated(t){super.updated(t),t.has("open")&&(this.open?this.setupOpen():this.cleanupOpen())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupOpen(),this.clearTimers()}renderTrigger(){return u`
       <div
         part="trigger"
         @click=${this.handleTriggerClick}
@@ -30211,7 +30211,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot name="trigger"></slot>
       </div>
-    `}renderContent(){return this.open?p`
+    `}renderContent(){return this.open?u`
       <div
         part="content"
         role="tooltip"
@@ -30222,11 +30222,11 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot></slot>
       </div>
-    `:k}render(){return p`
+    `:k}render(){return u`
       <div part="container">
         ${this.renderTrigger()} ${this.renderContent()}
       </div>
-    `}},he.baseName="popover",he.register=$(he),he);ot([h({type:Boolean,reflect:!0})],J.prototype,"open");ot([h({type:String})],J.prototype,"trigger");ot([h({type:String})],J.prototype,"placement");ot([h({type:Number})],J.prototype,"offset");ot([h({type:Boolean})],J.prototype,"flip");ot([h({type:Number})],J.prototype,"padding");ot([h({type:Number,attribute:"open-delay"})],J.prototype,"openDelay");ot([h({type:Number,attribute:"close-delay"})],J.prototype,"closeDelay");ot([h({type:Boolean,attribute:"close-on-click-outside"})],J.prototype,"closeOnClickOutside");ot([h({type:Boolean,attribute:"close-on-escape"})],J.prototype,"closeOnEscape");ot([h({type:Boolean,reflect:!0})],J.prototype,"disabled");ot([O()],J.prototype,"position");ot([Fr('[part="trigger"]')],J.prototype,"triggerRef");ot([Fr('[part="content"]')],J.prototype,"contentRef");let as=J;var AS=Object.defineProperty,LS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&AS(t,e,r),r},ce;const Aa=(ce=class extends as{constructor(){super(),this.content="",this.trigger="hover",this.placement="top",this.offset=6,this.openDelay=200,this.closeDelay=0,this.closeOnClickOutside=!1,this.closeOnEscape=!0}renderTrigger(){return p`
+    `}},ce.baseName="popover",ce.register=V(ce),ce);ot([h({type:Boolean,reflect:!0})],J.prototype,"open");ot([h({type:String})],J.prototype,"trigger");ot([h({type:String})],J.prototype,"placement");ot([h({type:Number})],J.prototype,"offset");ot([h({type:Boolean})],J.prototype,"flip");ot([h({type:Number})],J.prototype,"padding");ot([h({type:Number,attribute:"open-delay"})],J.prototype,"openDelay");ot([h({type:Number,attribute:"close-delay"})],J.prototype,"closeDelay");ot([h({type:Boolean,attribute:"close-on-click-outside"})],J.prototype,"closeOnClickOutside");ot([h({type:Boolean,attribute:"close-on-escape"})],J.prototype,"closeOnEscape");ot([h({type:Boolean,reflect:!0})],J.prototype,"disabled");ot([O()],J.prototype,"position");ot([Fr('[part="trigger"]')],J.prototype,"triggerRef");ot([Fr('[part="content"]')],J.prototype,"contentRef");let ds=J;var AL=Object.defineProperty,RL=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&AL(t,e,r),r},pe;const j0=(pe=class extends ds{constructor(){super(),this.content="",this.trigger="hover",this.placement="top",this.offset=6,this.openDelay=200,this.closeDelay=0,this.closeOnClickOutside=!1,this.closeOnEscape=!0}renderTrigger(){return u`
       <div
         part="trigger"
         @click=${this.handleTriggerClick}
@@ -30238,7 +30238,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot></slot>
       </div>
-    `}renderContent(){return this.open?p`
+    `}renderContent(){return this.open?u`
       <div
         part="content"
         role="tooltip"
@@ -30247,11 +30247,11 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         @mouseenter=${this.handleContentMouseEnter}
         @mouseleave=${this.handleContentMouseLeave}
       >
-        ${this.content?this.content:p`
+        ${this.content?this.content:u`
                 <slot name="content"></slot>
               `}
       </div>
-    `:k}},ce.baseName="tooltip",ce.register=$(ce),ce);LS([h({type:String})],Aa.prototype,"content");let SS=Aa;var HS=Object.defineProperty,La=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&HS(t,e,r),r},pe;const ds=(pe=class extends as{constructor(){super(),this.closeOnSelect=!0,this.menuRef=null,this.handleMenuChange=t=>{const{value:e,label:i}=t.detail;this.emit("select",{value:e,label:i},{bubbles:!1}),this.closeOnSelect&&this.hide()},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.toggle();break;case"ArrowDown":t.preventDefault(),this.open||this.show(),requestAnimationFrame(()=>{const e=this.findMenu();if(e){const i=e.shadowRoot?.querySelector('[part^="menu"]');i instanceof HTMLElement&&i.focus()}});break;case"Escape":this.open&&(t.preventDefault(),this.hide());break}},this.trigger="click",this.placement="bottom-start",this.offset=4,this.closeOnClickOutside=!0,this.closeOnEscape=!0}findMenu(){if(!this.menuSlot)return null;const t=this.menuSlot.assignedElements({flatten:!0});for(const e of t){if(e.tagName.toLowerCase().endsWith("-menu"))return e;const i=e.querySelector('[part="menu"]');if(i)return i.closest('[part="menu"]')?.parentElement}return null}setupMenuListeners(){this.menuRef=this.findMenu(),this.menuRef&&this.menuRef.addEventListener(`${et}-change`,this.handleMenuChange)}cleanupMenuListeners(){this.menuRef&&(this.menuRef.removeEventListener(`${et}-change`,this.handleMenuChange),this.menuRef=null)}updated(t){super.updated(t),t.has("open")&&(this.open?requestAnimationFrame(()=>{this.setupMenuListeners()}):this.cleanupMenuListeners())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupMenuListeners()}renderContent(){return this.open?p`
+    `:k}},pe.baseName="tooltip",pe.register=V(pe),pe);RL([h({type:String})],j0.prototype,"content");let LL=j0;var SL=Object.defineProperty,A0=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&SL(t,e,r),r},ue;const hs=(ue=class extends ds{constructor(){super(),this.closeOnSelect=!0,this.menuRef=null,this.handleMenuChange=t=>{const{value:e,label:i}=t.detail;this.emit("select",{value:e,label:i},{bubbles:!1}),this.closeOnSelect&&this.hide()},this.handleTriggerKeydown=t=>{if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.toggle();break;case"ArrowDown":t.preventDefault(),this.open||this.show(),requestAnimationFrame(()=>{const e=this.findMenu();if(e){const i=e.shadowRoot?.querySelector('[part^="menu"]');i instanceof HTMLElement&&i.focus()}});break;case"Escape":this.open&&(t.preventDefault(),this.hide());break}},this.trigger="click",this.placement="bottom-start",this.offset=4,this.closeOnClickOutside=!0,this.closeOnEscape=!0}findMenu(){if(!this.menuSlot)return null;const t=this.menuSlot.assignedElements({flatten:!0});for(const e of t){if(e.tagName.toLowerCase().endsWith("-menu"))return e;const i=e.querySelector('[part="menu"]');if(i)return i.closest('[part="menu"]')?.parentElement}return null}setupMenuListeners(){this.menuRef=this.findMenu(),this.menuRef&&this.menuRef.addEventListener(`${et}-change`,this.handleMenuChange)}cleanupMenuListeners(){this.menuRef&&(this.menuRef.removeEventListener(`${et}-change`,this.handleMenuChange),this.menuRef=null)}updated(t){super.updated(t),t.has("open")&&(this.open?requestAnimationFrame(()=>{this.setupMenuListeners()}):this.cleanupMenuListeners())}disconnectedCallback(){super.disconnectedCallback(),this.cleanupMenuListeners()}renderContent(){return this.open?u`
       <div
         part="content"
         role="menu"
@@ -30262,7 +30262,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       >
         <slot name="menu"></slot>
       </div>
-    `:k}},pe.baseName="dropdown",pe.register=$(pe),pe);La([h({type:Boolean,attribute:"close-on-select"})],ds.prototype,"closeOnSelect");La([Fr('slot[name="menu"]')],ds.prototype,"menuSlot");let RS=ds;var VS=Object.defineProperty,Ue=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&VS(t,e,r),r},ue;const De=(ue=class extends LL{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal"}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r);const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`;return p`
+    `:k}},ue.baseName="dropdown",ue.register=V(ue),ue);A0([h({type:Boolean,attribute:"close-on-select"})],hs.prototype,"closeOnSelect");A0([Fr('slot[name="menu"]')],hs.prototype,"menuSlot");let HL=hs;var YL=Object.defineProperty,$e=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&YL(t,e,r),r},we;const De=(we=class extends RR{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal"}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r);const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`;return u`
       <div
         part="${r}"
         role="slider"
@@ -30275,17 +30275,17 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         style="${s}"
         @keydown=${n=>this.handleKeyDown(n,e)}
       ></div>
-    `}render(){const t=this.percentage;let e;if(this.range&&Array.isArray(t))this.isHorizontal?e=`left: ${t[0]}%; width: ${t[1]-t[0]}%`:e=`bottom: ${t[0]}%; height: ${t[1]-t[0]}%`;else{const i=Array.isArray(t)?t[1]:t;this.isHorizontal?e=`width: ${i}%`:e=`height: ${i}%`}return p`
+    `}render(){const t=this.percentage;let e;if(this.range&&Array.isArray(t))this.isHorizontal?e=`left: ${t[0]}%; width: ${t[1]-t[0]}%`:e=`bottom: ${t[0]}%; height: ${t[1]-t[0]}%`;else{const i=Array.isArray(t)?t[1]:t;this.isHorizontal?e=`width: ${i}%`:e=`height: ${i}%`}return u`
       <div part="slider" @pointerdown=${this.handleTrackPointerDown}>
         <div part="track">
           <div part="range" style="${e}"></div>
         </div>
-        ${this.range?p`
+        ${this.range?u`
               ${this.renderThumb(this.valueArray[0],"start")}
               ${this.renderThumb(this.valueArray[1],"end")}
             `:this.renderThumb(Array.isArray(this.value)?this.value[1]:this.value)}
       </div>
-    `}},ue.baseName="slider",ue.register=$(ue),ue);Ue([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],De.prototype,"value");Ue([h({type:Number})],De.prototype,"min");Ue([h({type:Number})],De.prototype,"max");Ue([h({type:Number})],De.prototype,"step");Ue([h({type:Boolean,reflect:!0})],De.prototype,"range");Ue([h({type:Boolean,reflect:!0})],De.prototype,"disabled");Ue([h({type:String,reflect:!0})],De.prototype,"orientation");const Sa=Symbol.for(""),zS=o=>{if(o?.r===Sa)return o?._$litStatic$},Ha=o=>({_$litStatic$:o,r:Sa}),q0=new Map,$S=o=>(t,...e)=>{const i=e.length;let r,s;const n=[],d=[];let a,c=0,u=!1;for(;c<i;){for(a=t[c];c<i&&(s=e[c],(r=zS(s))!==void 0);)a+=r+t[++c],u=!0;c!==i&&d.push(s),n.push(a),c++}if(c===i&&n.push(t[i]),u){const w=n.join("$$lit$$");(t=q0.get(w))===void 0&&(n.raw=n,q0.set(w,t=n)),e=d}return o(t,...e)},Lr=$S(p);var US=Object.defineProperty,Ao=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&US(t,e,r),r},we;const Fe=(we=class extends _{constructor(){super(...arguments),this.data=[],this.value="",this.expanded=[],this.disabled=!1,this.multiple=!1,this.showLine=!1,this.handleNodeToggle=t=>{t.stopPropagation();const{value:e,expanded:i}=t.detail;this.emit("expand",{value:e,expanded:i})},this.handleNodeSelect=t=>{t.stopPropagation();const e=t.detail.value;this.emit("select",{value:e})},this.handleNodeNavigate=t=>{t.stopPropagation();const{direction:e,value:i}=t.detail,r=this.getVisibleNodes(),s=r.findIndex(a=>a.value===i),n=X("tree-node");let d=null;switch(e){case"prev":s>0&&(d=r[s-1]);break;case"next":s<r.length-1&&(d=r[s+1]);break;case"parent":{const a=r[s];if(a){let c=a.parentElement;for(;c&&c!==this;){if(c.tagName.toLowerCase()===n){d=c;break}c=c.parentElement}}break}case"first-child":{const a=r[s];if(a&&a.expanded){const c=r[s+1];c&&c.depth>a.depth&&(d=c)}break}}d&&d.shadowRoot?.querySelector('[part="node-row"]')?.focus()}}get expandedSet(){return new Set(this.expanded)}getAllNodes(){const t=[],e=X("tree-node");return this.querySelectorAll("*").forEach(i=>{i.tagName.toLowerCase()===e&&t.push(i)}),t}getVisibleNodes(){const t=this.getAllNodes(),e=X("tree-node");return t.filter(i=>{let r=i.parentElement;for(;r&&r!==this;){if(r.tagName.toLowerCase()===e&&!r.expanded)return!1;r=r.parentElement}return!0})}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-node-toggle",this.handleNodeToggle),this.addEventListener("ik-node-select",this.handleNodeSelect),this.addEventListener("ik-node-navigate",this.handleNodeNavigate)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-node-toggle",this.handleNodeToggle),this.removeEventListener("ik-node-select",this.handleNodeSelect),this.removeEventListener("ik-node-navigate",this.handleNodeNavigate)}getNodeTagName(){return X("tree-node")}renderNode(t,e){const i=t.children&&t.children.length>0,r=this.expandedSet.has(t.value),s=this.value===t.value,n=this.disabled||t.disabled,d=Ha(this.getNodeTagName());return Lr`
+    `}},we.baseName="slider",we.register=V(we),we);$e([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],De.prototype,"value");$e([h({type:Number})],De.prototype,"min");$e([h({type:Number})],De.prototype,"max");$e([h({type:Number})],De.prototype,"step");$e([h({type:Boolean,reflect:!0})],De.prototype,"range");$e([h({type:Boolean,reflect:!0})],De.prototype,"disabled");$e([h({type:String,reflect:!0})],De.prototype,"orientation");const R0=Symbol.for(""),UL=o=>{if(o?.r===R0)return o?._$litStatic$},L0=o=>({_$litStatic$:o,r:R0}),Na=new Map,VL=o=>(t,...e)=>{const i=e.length;let r,s;const n=[],d=[];let a,c=0,p=!1;for(;c<i;){for(a=t[c];c<i&&(s=e[c],(r=UL(s))!==void 0);)a+=r+t[++c],p=!0;c!==i&&d.push(s),n.push(a),c++}if(c===i&&n.push(t[i]),p){const w=n.join("$$lit$$");(t=Na.get(w))===void 0&&(n.raw=n,Na.set(w,t=n)),e=d}return o(t,...e)},Lr=VL(u);var zL=Object.defineProperty,Ao=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&zL(t,e,r),r},ge;const Fe=(ge=class extends _{constructor(){super(...arguments),this.data=[],this.value="",this.expanded=[],this.disabled=!1,this.multiple=!1,this.showLine=!1,this.handleNodeToggle=t=>{t.stopPropagation();const{value:e,expanded:i}=t.detail;this.emit("expand",{value:e,expanded:i})},this.handleNodeSelect=t=>{t.stopPropagation();const e=t.detail.value;this.emit("select",{value:e})},this.handleNodeNavigate=t=>{t.stopPropagation();const{direction:e,value:i}=t.detail,r=this.getVisibleNodes(),s=r.findIndex(a=>a.value===i),n=X("tree-node");let d=null;switch(e){case"prev":s>0&&(d=r[s-1]);break;case"next":s<r.length-1&&(d=r[s+1]);break;case"parent":{const a=r[s];if(a){let c=a.parentElement;for(;c&&c!==this;){if(c.tagName.toLowerCase()===n){d=c;break}c=c.parentElement}}break}case"first-child":{const a=r[s];if(a&&a.expanded){const c=r[s+1];c&&c.depth>a.depth&&(d=c)}break}}d&&d.shadowRoot?.querySelector('[part="node-row"]')?.focus()}}get expandedSet(){return new Set(this.expanded)}getAllNodes(){const t=[],e=X("tree-node");return this.querySelectorAll("*").forEach(i=>{i.tagName.toLowerCase()===e&&t.push(i)}),t}getVisibleNodes(){const t=this.getAllNodes(),e=X("tree-node");return t.filter(i=>{let r=i.parentElement;for(;r&&r!==this;){if(r.tagName.toLowerCase()===e&&!r.expanded)return!1;r=r.parentElement}return!0})}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-node-toggle",this.handleNodeToggle),this.addEventListener("ik-node-select",this.handleNodeSelect),this.addEventListener("ik-node-navigate",this.handleNodeNavigate)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-node-toggle",this.handleNodeToggle),this.removeEventListener("ik-node-select",this.handleNodeSelect),this.removeEventListener("ik-node-navigate",this.handleNodeNavigate)}getNodeTagName(){return X("tree-node")}renderNode(t,e){const i=t.children&&t.children.length>0,r=this.expandedSet.has(t.value),s=this.value===t.value,n=this.disabled||t.disabled,d=L0(this.getNodeTagName());return Lr`
       <${d}
         value=${t.value}
         depth=${e}
@@ -30298,17 +30298,17 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         ${t.label}
         ${i?t.children.map(a=>Lr`<span slot="children">${this.renderNode(a,e+1)}</span>`):""}
       </${d}>
-    `}renderNodes(){return this.data.map(t=>this.renderNode(t,0))}render(){const t=this.data&&this.data.length>0;return p`
+    `}renderNodes(){return this.data.map(t=>this.renderNode(t,0))}render(){const t=this.data&&this.data.length>0;return u`
       <div part="tree" role="tree" aria-multiselectable=${this.multiple}>
-        ${t?this.renderNodes():p`
+        ${t?this.renderNodes():u`
                 <slot></slot>
               `}
       </div>
-    `}},we.baseName="tree",we.register=$(we),we);Ao([h({type:Array})],Fe.prototype,"data");Ao([h({type:String})],Fe.prototype,"value");Ao([h({type:Array})],Fe.prototype,"expanded");Ao([h({type:Boolean,reflect:!0})],Fe.prototype,"disabled");Ao([h({type:Boolean})],Fe.prototype,"multiple");Ao([h({type:Boolean,attribute:"show-line"})],Fe.prototype,"showLine");let DS=Fe;const Ra=o=>o??k;var FS=Object.defineProperty,Pe=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&FS(t,e,r),r},ge;const Me=(ge=class extends _{constructor(){super(...arguments),this.value="",this.expanded=!1,this.selected=!1,this.disabled=!1,this.depth=0,this.showLine=!1,this.isLeaf=!1}get hasChildren(){return this.isLeaf?!1:Array.from(this.querySelectorAll("*")).some(t=>t.tagName.toLowerCase().endsWith("-tree-node"))}handleExpandClick(t){t.stopPropagation(),!this.disabled&&this.dispatchEvent(new CustomEvent("ik-node-toggle",{bubbles:!0,composed:!0,detail:{value:this.value,expanded:!this.expanded}}))}handleNodeClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-node-select",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.handleNodeClick();break;case"ArrowRight":t.preventDefault(),this.hasChildren&&!this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"first-child",value:this.value}}));break;case"ArrowLeft":t.preventDefault(),this.hasChildren&&this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"parent",value:this.value}}));break;case"ArrowUp":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"prev",value:this.value}}));break;case"ArrowDown":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"next",value:this.value}}));break}}renderIndent(){const t=[];for(let e=0;e<this.depth;e++)t.push(p`
+    `}},ge.baseName="tree",ge.register=V(ge),ge);Ao([h({type:Array})],Fe.prototype,"data");Ao([h({type:String})],Fe.prototype,"value");Ao([h({type:Array})],Fe.prototype,"expanded");Ao([h({type:Boolean,reflect:!0})],Fe.prototype,"disabled");Ao([h({type:Boolean})],Fe.prototype,"multiple");Ao([h({type:Boolean,attribute:"show-line"})],Fe.prototype,"showLine");let $L=Fe;const S0=o=>o??k;var DL=Object.defineProperty,Pe=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&DL(t,e,r),r},ve;const ye=(ve=class extends _{constructor(){super(...arguments),this.value="",this.expanded=!1,this.selected=!1,this.disabled=!1,this.depth=0,this.showLine=!1,this.isLeaf=!1}get hasChildren(){return this.isLeaf?!1:Array.from(this.querySelectorAll("*")).some(t=>t.tagName.toLowerCase().endsWith("-tree-node"))}handleExpandClick(t){t.stopPropagation(),!this.disabled&&this.dispatchEvent(new CustomEvent("ik-node-toggle",{bubbles:!0,composed:!0,detail:{value:this.value,expanded:!this.expanded}}))}handleNodeClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-node-select",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){if(!this.disabled)switch(t.key){case"Enter":case" ":t.preventDefault(),this.handleNodeClick();break;case"ArrowRight":t.preventDefault(),this.hasChildren&&!this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"first-child",value:this.value}}));break;case"ArrowLeft":t.preventDefault(),this.hasChildren&&this.expanded?this.handleExpandClick(t):this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"parent",value:this.value}}));break;case"ArrowUp":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"prev",value:this.value}}));break;case"ArrowDown":t.preventDefault(),this.dispatchEvent(new CustomEvent("ik-node-navigate",{bubbles:!0,composed:!0,detail:{direction:"next",value:this.value}}));break}}renderIndent(){const t=[];for(let e=0;e<this.depth;e++)t.push(u`
           <span part="indent-unit"></span>
-        `);return t}renderExpandButton(){return this.isLeaf||!this.hasChildren?p`
+        `);return t}renderExpandButton(){return this.isLeaf||!this.hasChildren?u`
         <span part="expand-placeholder"></span>
-      `:p`
+      `:u`
       <button
         part="expand-btn"
         type="button"
@@ -30328,8 +30328,8 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           </svg>
         </slot>
       </button>
-    `}render(){const t=this.hasChildren?String(this.expanded):void 0;return p`
-      <div part="node" role="treeitem" aria-expanded=${Ra(t)}>
+    `}render(){const t=this.hasChildren?String(this.expanded):void 0;return u`
+      <div part="node" role="treeitem" aria-expanded=${S0(t)}>
         <div
           part="node-row"
           tabindex=${this.disabled?-1:0}
@@ -30346,7 +30346,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <slot name="children"></slot>
         </div>
       </div>
-    `}},ge.baseName="tree-node",ge.register=$(ge),ge);Pe([h({type:String,reflect:!0})],Me.prototype,"value");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"expanded");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"selected");Pe([h({type:Boolean,reflect:!0})],Me.prototype,"disabled");Pe([h({type:Number})],Me.prototype,"depth");Pe([h({type:Boolean,attribute:"show-line",reflect:!0})],Me.prototype,"showLine");Pe([h({type:Boolean,attribute:"is-leaf"})],Me.prototype,"isLeaf");let PS=Me;var ES=Object.defineProperty,Mt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ES(t,e,r),r},ve;const wt=(ve=class extends _{constructor(){super(...arguments),this.columns=[],this.data=[],this.selectionMode="none",this.selected=[],this.sortKey="",this.sortOrder="asc",this.stripe=!1,this.rowKey="id",this.disabled=!1,this.internalSelected=new Set}connectedCallback(){super.connectedCallback(),this.internalSelected=new Set(this.selected)}updated(t){super.updated(t),t.has("selected")&&(this.internalSelected=new Set(this.selected))}getRowId(t){return String(t[this.rowKey]??"")}isRowSelected(t){return this.internalSelected.has(this.getRowId(t))}get isAllSelected(){return this.data.length===0?!1:this.data.every(t=>this.isRowSelected(t))}get isIndeterminate(){const t=this.data.filter(e=>this.isRowSelected(e)).length;return t>0&&t<this.data.length}handleHeaderClick(t){if(!t.sortable||this.disabled)return;let e="asc";this.sortKey===t.key&&(e=this.sortOrder==="asc"?"desc":"asc"),this.emit("sort",{key:t.key,order:e})}handleRowClick(t,e){if(this.disabled)return;const i=this.getRowId(t);this.emit("row-click",{id:i,row:t}),this.selectionMode!=="none"&&(e.target.closest('[part="checkbox"]')||this.toggleRowSelection(i,t))}handleCheckboxChange(t,e){if(e.stopPropagation(),this.disabled)return;const i=this.getRowId(t);this.toggleRowSelection(i,t)}toggleRowSelection(t,e){const i=new Set(this.internalSelected);this.selectionMode==="single"?i.has(t)?i.clear():(i.clear(),i.add(t)):i.has(t)?i.delete(t):i.add(t),this.internalSelected=i,this.emit("select",{ids:Array.from(i),row:e})}handleSelectAll(t){if(t.stopPropagation(),this.disabled)return;const e=new Set;this.isAllSelected||this.data.forEach(i=>{e.add(this.getRowId(i))}),this.internalSelected=e,this.emit("select",{ids:Array.from(e)})}getGridTemplateColumns(){const t=[];return this.selectionMode!=="none"&&t.push("40px"),this.columns.forEach(e=>{t.push(e.width||"1fr")}),t.join(" ")}renderCheckbox(t,e,i,r){return Lr`
+    `}},ve.baseName="tree-node",ve.register=V(ve),ve);Pe([h({type:String,reflect:!0})],ye.prototype,"value");Pe([h({type:Boolean,reflect:!0})],ye.prototype,"expanded");Pe([h({type:Boolean,reflect:!0})],ye.prototype,"selected");Pe([h({type:Boolean,reflect:!0})],ye.prototype,"disabled");Pe([h({type:Number})],ye.prototype,"depth");Pe([h({type:Boolean,attribute:"show-line",reflect:!0})],ye.prototype,"showLine");Pe([h({type:Boolean,attribute:"is-leaf"})],ye.prototype,"isLeaf");let FL=ye;var PL=Object.defineProperty,Mt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&PL(t,e,r),r},ke;const wt=(ke=class extends _{constructor(){super(...arguments),this.columns=[],this.data=[],this.selectionMode="none",this.selected=[],this.sortKey="",this.sortOrder="asc",this.stripe=!1,this.rowKey="id",this.disabled=!1,this.internalSelected=new Set}connectedCallback(){super.connectedCallback(),this.internalSelected=new Set(this.selected)}updated(t){super.updated(t),t.has("selected")&&(this.internalSelected=new Set(this.selected))}getRowId(t){return String(t[this.rowKey]??"")}isRowSelected(t){return this.internalSelected.has(this.getRowId(t))}get isAllSelected(){return this.data.length===0?!1:this.data.every(t=>this.isRowSelected(t))}get isIndeterminate(){const t=this.data.filter(e=>this.isRowSelected(e)).length;return t>0&&t<this.data.length}handleHeaderClick(t){if(!t.sortable||this.disabled)return;let e="asc";this.sortKey===t.key&&(e=this.sortOrder==="asc"?"desc":"asc"),this.emit("sort",{key:t.key,order:e})}handleRowClick(t,e){if(this.disabled)return;const i=this.getRowId(t);this.emit("row-click",{id:i,row:t}),this.selectionMode!=="none"&&(e.target.closest('[part="checkbox"]')||this.toggleRowSelection(i,t))}handleCheckboxChange(t,e){if(e.stopPropagation(),this.disabled)return;const i=this.getRowId(t);this.toggleRowSelection(i,t)}toggleRowSelection(t,e){const i=new Set(this.internalSelected);this.selectionMode==="single"?i.has(t)?i.clear():(i.clear(),i.add(t)):i.has(t)?i.delete(t):i.add(t),this.internalSelected=i,this.emit("select",{ids:Array.from(i),row:e})}handleSelectAll(t){if(t.stopPropagation(),this.disabled)return;const e=new Set;this.isAllSelected||this.data.forEach(i=>{e.add(this.getRowId(i))}),this.internalSelected=e,this.emit("select",{ids:Array.from(e)})}getGridTemplateColumns(){const t=[];return this.selectionMode!=="none"&&t.push("40px"),this.columns.forEach(e=>{t.push(e.width||"1fr")}),t.join(" ")}renderCheckbox(t,e,i,r){return Lr`
       <input
         type="checkbox"
         part="checkbox"
@@ -30355,21 +30355,21 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         ?disabled=${i}
         @change=${r}
       />
-    `}renderSortIcon(t){if(!t.sortable)return k;const e=this.sortKey===t.key,i=this.sortOrder==="asc";return p`
+    `}renderSortIcon(t){if(!t.sortable)return k;const e=this.sortKey===t.key,i=this.sortOrder==="asc";return u`
       <span
         part="sort-icon"
         class=${e?"active":""}
         data-order=${e?this.sortOrder:""}
       >
-        ${e?i?p`
+        ${e?i?u`
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                     <path d="M7 14l5-5 5 5z" />
                   </svg>
-                `:p`
+                `:u`
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                     <path d="M7 10l5 5 5-5z" />
                   </svg>
-                `:p`
+                `:u`
                 <svg
                   viewBox="0 0 24 24"
                   width="14"
@@ -30381,20 +30381,20 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
                 </svg>
               `}
       </span>
-    `}renderHeader(){return p`
+    `}renderHeader(){return u`
       <div part="header">
         <div
           part="header-row"
           style="display: grid; grid-template-columns: ${this.getGridTemplateColumns()}"
         >
-          ${this.selectionMode==="multiple"?p`
+          ${this.selectionMode==="multiple"?u`
                 <div part="header-cell checkbox-cell">
                   ${this.renderCheckbox(this.isAllSelected,this.isIndeterminate,this.disabled,t=>this.handleSelectAll(t))}
                 </div>
-              `:this.selectionMode==="single"?p`
+              `:this.selectionMode==="single"?u`
                     <div part="header-cell checkbox-cell"></div>
                   `:k}
-          ${this.columns.map(t=>p`
+          ${this.columns.map(t=>u`
               <div
                 part="header-cell"
                 data-key=${t.key}
@@ -30409,7 +30409,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             `)}
         </div>
       </div>
-    `}renderRow(t,e){const i=this.getRowId(t),r=this.isRowSelected(t);return p`
+    `}renderRow(t,e){const i=this.getRowId(t),r=this.isRowSelected(t);return u`
       <div
         part="row"
         data-id=${i}
@@ -30419,12 +30419,12 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         @click=${s=>this.handleRowClick(t,s)}
         style="display: grid; grid-template-columns: ${this.getGridTemplateColumns()}"
       >
-        ${this.selectionMode!=="none"?p`
+        ${this.selectionMode!=="none"?u`
               <div part="cell checkbox-cell">
                 ${this.renderCheckbox(r,!1,this.disabled,s=>this.handleCheckboxChange(t,s))}
               </div>
             `:k}
-        ${this.columns.map(s=>p`
+        ${this.columns.map(s=>u`
             <div
               part="cell"
               data-key=${s.key}
@@ -30434,15 +30434,15 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             </div>
           `)}
       </div>
-    `}renderBody(){return p`
+    `}renderBody(){return u`
       <div part="body">
         ${this.data.map((t,e)=>this.renderRow(t,e))}
       </div>
-    `}render(){return p`
+    `}render(){return u`
       <div part="table" role="table">
         ${this.renderHeader()} ${this.renderBody()}
       </div>
-    `}},ve.baseName="table",ve.register=$(ve),ve);Mt([h({type:Array})],wt.prototype,"columns");Mt([h({type:Array})],wt.prototype,"data");Mt([h({type:String,attribute:"selection-mode"})],wt.prototype,"selectionMode");Mt([h({type:Array})],wt.prototype,"selected");Mt([h({type:String,attribute:"sort-key"})],wt.prototype,"sortKey");Mt([h({type:String,attribute:"sort-order"})],wt.prototype,"sortOrder");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"stripe");Mt([h({type:String,attribute:"row-key"})],wt.prototype,"rowKey");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"disabled");Mt([O()],wt.prototype,"internalSelected");let TS=wt;const N0="iku",Va={prefix:N0,cssVarPrefix:N0};let Jo={...Va};function YS(o={}){Jo={...Va,...o},AL({prefix:Jo.prefix})}function OS(){return Jo}function No(o){return`${Jo.prefix}-${o}`}function IS(o){return`--${Jo.cssVarPrefix}-${o}`}function H(o){const t=o.baseName;return e=>{const i=e||No(t);return customElements.get(i)||customElements.define(i,o),i}}const qS="ik",ks=class ks extends Xt{get config(){return OS()}cssVar(t){return IS(t)}emit(t,e,i){const r=`${qS}-${t}`,s=new CustomEvent(r,{bubbles:!1,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}};ks.styles=j`
+    `}},ke.baseName="table",ke.register=V(ke),ke);Mt([h({type:Array})],wt.prototype,"columns");Mt([h({type:Array})],wt.prototype,"data");Mt([h({type:String,attribute:"selection-mode"})],wt.prototype,"selectionMode");Mt([h({type:Array})],wt.prototype,"selected");Mt([h({type:String,attribute:"sort-key"})],wt.prototype,"sortKey");Mt([h({type:String,attribute:"sort-order"})],wt.prototype,"sortOrder");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"stripe");Mt([h({type:String,attribute:"row-key"})],wt.prototype,"rowKey");Mt([h({type:Boolean,reflect:!0})],wt.prototype,"disabled");Mt([O()],wt.prototype,"internalSelected");let EL=wt;const _a="iku",H0={prefix:_a,cssVarPrefix:_a};let Jo={...H0};function TL(o={}){Jo={...H0,...o},AR({prefix:Jo.prefix})}function OL(){return Jo}function No(o){return`${Jo.prefix}-${o}`}function IL(o){return`--${Jo.cssVarPrefix}-${o}`}function S(o){const t=o.baseName;return e=>{const i=e||No(t);return customElements.get(i)||customElements.define(i,o),i}}const qL="ik",ms=class ms extends Jt{get config(){return OL()}cssVar(t){return IL(t)}emit(t,e,i){const r=`${qL}-${t}`,s=new CustomEvent(r,{bubbles:!1,composed:!0,cancelable:!0,...i,detail:e});return this.dispatchEvent(s)}};ms.styles=j`
     :host {
       display: inline-block;
       box-sizing: border-box;
@@ -30462,7 +30462,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     *::after {
       box-sizing: inherit;
     }
-  `;let f=ks;const NS=j`
+  `;let f=ms;const NL=j`
   :host {
     display: block;
   }
@@ -30472,7 +30472,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     flex-direction: column;
     gap: var(--accordion-gap);
   }
-`,_S=j`
+`,_L=j`
   :host {
     display: block;
   }
@@ -30555,11 +30555,11 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     padding-top: 0;
     padding-bottom: 0;
   }
-`;var ZS=Object.defineProperty,Or=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ZS(t,e,r),r},jt;const sr=(jt=class extends f{constructor(){super(...arguments),this.value="",this.multiple=!1,this.collapsible=!0,this.disabled=!1,this.handleItemToggle=t=>{t.stopPropagation();const e=t.detail.value;if(this.multiple){const i=Array.isArray(this.value)?[...this.value]:this.value?[this.value]:[],r=i.indexOf(e);r===-1?i.push(e):i.splice(r,1),this.value=i}else this.value===e?this.collapsible&&(this.value=""):this.value=e;this.updateItems(),this.emit("change",{value:this.value})}}get items(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-accordion-item"))}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-item-toggle",this.handleItemToggle)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-item-toggle",this.handleItemToggle)}updateItems(){const t=this.multiple?Array.isArray(this.value)?this.value:this.value?[this.value]:[]:this.value?[this.value]:[];this.items.forEach(e=>{e.expanded=t.includes(e.value),this.disabled&&(e.disabled=!0)})}updated(t){super.updated(t),(t.has("value")||t.has("disabled"))&&this.updateItems()}firstUpdated(){this.updateItems()}render(){return p`
+`;var ZL=Object.defineProperty,Ir=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ZL(t,e,r),r},At;const sr=(At=class extends f{constructor(){super(...arguments),this.value="",this.multiple=!1,this.collapsible=!0,this.disabled=!1,this.handleItemToggle=t=>{t.stopPropagation();const e=t.detail.value;if(this.multiple){const i=Array.isArray(this.value)?[...this.value]:this.value?[this.value]:[],r=i.indexOf(e);r===-1?i.push(e):i.splice(r,1),this.value=i}else this.value===e?this.collapsible&&(this.value=""):this.value=e;this.updateItems(),this.emit("change",{value:this.value})}}get items(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-accordion-item"))}connectedCallback(){super.connectedCallback(),this.addEventListener("ik-item-toggle",this.handleItemToggle)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("ik-item-toggle",this.handleItemToggle)}updateItems(){const t=this.multiple?Array.isArray(this.value)?this.value:this.value?[this.value]:[]:this.value?[this.value]:[];this.items.forEach(e=>{e.expanded=t.includes(e.value),this.disabled&&(e.disabled=!0)})}updated(t){super.updated(t),(t.has("value")||t.has("disabled"))&&this.updateItems()}firstUpdated(){this.updateItems()}render(){return u`
       <div part="accordion" role="presentation">
         <slot></slot>
       </div>
-    `}},jt.baseName="accordion",jt.register=H(jt),jt.styles=[f.styles,NS],jt);Or([h({type:String})],sr.prototype,"value");Or([h({type:Boolean,reflect:!0})],sr.prototype,"multiple");Or([h({type:Boolean})],sr.prototype,"collapsible");Or([h({type:Boolean,reflect:!0})],sr.prototype,"disabled");let GS=sr;var WS=Object.defineProperty,Ir=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&WS(t,e,r),r},At;const nr=(At=class extends f{constructor(){super(...arguments),this.value="",this.header="",this.expanded=!1,this.disabled=!1}handleTriggerClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-item-toggle",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handleTriggerClick())}render(){const t=`trigger-${this.value}`,e=`content-${this.value}`;return p`
+    `}},At.baseName="accordion",At.register=S(At),At.styles=[f.styles,NL],At);Ir([h({type:String})],sr.prototype,"value");Ir([h({type:Boolean,reflect:!0})],sr.prototype,"multiple");Ir([h({type:Boolean})],sr.prototype,"collapsible");Ir([h({type:Boolean,reflect:!0})],sr.prototype,"disabled");let GL=sr;var WL=Object.defineProperty,qr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&WL(t,e,r),r},Rt;const nr=(Rt=class extends f{constructor(){super(...arguments),this.value="",this.header="",this.expanded=!1,this.disabled=!1}handleTriggerClick(){this.disabled||this.dispatchEvent(new CustomEvent("ik-item-toggle",{bubbles:!0,composed:!0,detail:{value:this.value}}))}handleKeyDown(t){this.disabled||(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handleTriggerClick())}render(){const t=`trigger-${this.value}`,e=`content-${this.value}`;return u`
       <div part="item">
         <button
           part="trigger"
@@ -30599,7 +30599,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           </div>
         </div>
       </div>
-    `}},At.baseName="accordion-item",At.register=H(At),At.styles=[f.styles,_S],At);Ir([h({type:String,reflect:!0})],nr.prototype,"value");Ir([h({type:String})],nr.prototype,"header");Ir([h({type:Boolean,reflect:!0})],nr.prototype,"expanded");Ir([h({type:Boolean,reflect:!0})],nr.prototype,"disabled");let KS=nr;const XS=j`
+    `}},Rt.baseName="accordion-item",Rt.register=S(Rt),Rt.styles=[f.styles,_L],Rt);qr([h({type:String,reflect:!0})],nr.prototype,"value");qr([h({type:String})],nr.prototype,"header");qr([h({type:Boolean,reflect:!0})],nr.prototype,"expanded");qr([h({type:Boolean,reflect:!0})],nr.prototype,"disabled");let KL=nr;const XL=j`
   :host {
     display: block;
   }
@@ -30611,7 +30611,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     gap: var(--breadcrumb-gap, 8px);
     font-size: var(--breadcrumb-item-font-size, 14px);
   }
-`,JS=j`
+`,JL=j`
   :host {
     display: inline-flex;
     align-items: center;
@@ -30658,16 +30658,16 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   :host(:last-child) [part='separator'] {
     display: none;
   }
-`;var QS=Object.defineProperty,tH=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&QS(t,e,r),r},Lt;const za=(Lt=class extends f{constructor(){super(...arguments),this.separator="/"}updateItems(){this.querySelectorAll("*").forEach(e=>{e.tagName.toLowerCase().endsWith("-breadcrumb-item")&&e.setAttribute("data-separator",this.separator)})}firstUpdated(){this.updateItems()}updated(t){t.has("separator")&&this.updateItems()}render(){return p`
+`;var QL=Object.defineProperty,tS=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&QL(t,e,r),r},Lt;const Y0=(Lt=class extends f{constructor(){super(...arguments),this.separator="/"}updateItems(){this.querySelectorAll("*").forEach(e=>{e.tagName.toLowerCase().endsWith("-breadcrumb-item")&&e.setAttribute("data-separator",this.separator)})}firstUpdated(){this.updateItems()}updated(t){t.has("separator")&&this.updateItems()}render(){return u`
       <nav part="breadcrumb" aria-label="Breadcrumb">
         <slot @slotchange=${this.updateItems}></slot>
       </nav>
-    `}},Lt.baseName="breadcrumb",Lt.register=H(Lt),Lt.styles=[f.styles,XS],Lt);tH([h({type:String})],za.prototype,"separator");let eH=za;var oH=Object.defineProperty,$a=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&oH(t,e,r),r},St;const hs=(St=class extends f{constructor(){super(...arguments),this.current=!1,this.separator="/"}render(){return p`
+    `}},Lt.baseName="breadcrumb",Lt.register=S(Lt),Lt.styles=[f.styles,XL],Lt);tS([h({type:String})],Y0.prototype,"separator");let eS=Y0;var oS=Object.defineProperty,U0=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&oS(t,e,r),r},St;const cs=(St=class extends f{constructor(){super(...arguments),this.current=!1,this.separator="/"}render(){return u`
       <span part="item" aria-current=${this.current?"page":"false"}>
         <slot></slot>
       </span>
       <span part="separator" aria-hidden="true">${this.separator}</span>
-    `}},St.baseName="breadcrumb-item",St.register=H(St),St.styles=[f.styles,JS],St);$a([h({type:Boolean,reflect:!0})],hs.prototype,"current");$a([h({type:String,attribute:"data-separator"})],hs.prototype,"separator");let rH=hs;const iH=j`
+    `}},St.baseName="breadcrumb-item",St.register=S(St),St.styles=[f.styles,JL],St);U0([h({type:Boolean,reflect:!0})],cs.prototype,"current");U0([h({type:String,attribute:"data-separator"})],cs.prototype,"separator");let rS=cs;const iS=j`
   :host {
     /* 布局 */
     display: inline-flex;
@@ -30838,14 +30838,14 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: rotate(360deg);
     }
   }
-`;var sH=Object.defineProperty,Lo=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sH(t,e,r),r},Ht;const Ee=(Ht=class extends f{constructor(){super(...arguments),this.type="button",this.variant="default",this.size="md",this.disabled=!1,this.loading=!1,this.block=!1}connectedCallback(){super.connectedCallback(),this.setAttribute("role","button"),this.hasAttribute("tabindex")||this.setAttribute("tabindex","0")}render(){return p`
-      ${this.loading?p`
+`;var sS=Object.defineProperty,Ro=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&sS(t,e,r),r},Ht;const Ee=(Ht=class extends f{constructor(){super(...arguments),this.type="button",this.variant="default",this.size="md",this.disabled=!1,this.loading=!1,this.block=!1}connectedCallback(){super.connectedCallback(),this.setAttribute("role","button"),this.hasAttribute("tabindex")||this.setAttribute("tabindex","0")}render(){return u`
+      ${this.loading?u`
               <span class="loading-spinner"></span>
             `:k}
       <slot name="prefix"></slot>
       <slot></slot>
       <slot name="suffix"></slot>
-    `}},Ht.baseName="button",Ht.register=H(Ht),Ht.styles=[f.styles,iH],Ht);Lo([h({type:String})],Ee.prototype,"type");Lo([h({type:String,reflect:!0})],Ee.prototype,"variant");Lo([h({type:String,reflect:!0})],Ee.prototype,"size");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"disabled");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"loading");Lo([h({type:Boolean,reflect:!0})],Ee.prototype,"block");let nH=Ee;const lH=j`
+    `}},Ht.baseName="button",Ht.register=S(Ht),Ht.styles=[f.styles,iS],Ht);Ro([h({type:String})],Ee.prototype,"type");Ro([h({type:String,reflect:!0})],Ee.prototype,"variant");Ro([h({type:String,reflect:!0})],Ee.prototype,"size");Ro([h({type:Boolean,reflect:!0})],Ee.prototype,"disabled");Ro([h({type:Boolean,reflect:!0})],Ee.prototype,"loading");Ro([h({type:Boolean,reflect:!0})],Ee.prototype,"block");let nS=Ee;const lS=j`
   :host {
     display: inline-flex;
   }
@@ -31007,7 +31007,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   :host([size='lg']) [part='label'] {
     font-size: var(--checkbox-label-font-size-lg);
   }
-`;var aH=Object.defineProperty,So=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&aH(t,e,r),r},Rt;const Te=(Rt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.indeterminate=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.disabled||(this.checked=!this.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})))}render(){return p`
+`;var aS=Object.defineProperty,Lo=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&aS(t,e,r),r},Yt;const Te=(Yt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.indeterminate=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.disabled||(this.checked=!this.checked,this.indeterminate=!1,this.emit("change",{checked:this.checked,value:this.value})))}render(){return u`
       <label part="checkbox" class=${this.indeterminate?"indeterminate":""}>
         <input
           part="input"
@@ -31021,9 +31021,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           @keydown=${this.handleKeyDown}
         />
         <span part="control">
-          ${this.checked||this.indeterminate?p`
+          ${this.checked||this.indeterminate?u`
                 <svg viewBox="0 0 16 16" fill="none">
-                  ${this.indeterminate?p`
+                  ${this.indeterminate?u`
                           <line
                             x1="4"
                             y1="8"
@@ -31033,7 +31033,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
                             stroke-width="2"
                             stroke-linecap="round"
                           />
-                        `:p`
+                        `:u`
                           <path
                             d="M3.5 8L6.5 11L12.5 5"
                             stroke="currentColor"
@@ -31049,7 +31049,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <slot></slot>
         </span>
       </label>
-    `}},Rt.baseName="checkbox",Rt.register=H(Rt),Rt.styles=[f.styles,lH],Rt);So([h({type:String,reflect:!0})],Te.prototype,"size");So([h({type:Boolean,reflect:!0})],Te.prototype,"checked");So([h({type:Boolean,reflect:!0})],Te.prototype,"disabled");So([h({type:Boolean,reflect:!0})],Te.prototype,"indeterminate");So([h({type:String})],Te.prototype,"name");So([h({type:String})],Te.prototype,"value");let dH=Te;const hH=j`
+    `}},Yt.baseName="checkbox",Yt.register=S(Yt),Yt.styles=[f.styles,lS],Yt);Lo([h({type:String,reflect:!0})],Te.prototype,"size");Lo([h({type:Boolean,reflect:!0})],Te.prototype,"checked");Lo([h({type:Boolean,reflect:!0})],Te.prototype,"disabled");Lo([h({type:Boolean,reflect:!0})],Te.prototype,"indeterminate");Lo([h({type:String})],Te.prototype,"name");Lo([h({type:String})],Te.prototype,"value");let dS=Te;const hS=j`
   :host {
     position: relative;
     display: flex;
@@ -31163,7 +31163,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: scale(1) translateY(0);
     }
   }
-`,Je=class Je extends kS{renderCloseIcon(){return p`
+`,Je=class Je extends kL{renderCloseIcon(){return u`
       <slot name="close-icon">
         <svg viewBox="0 0 16 16" fill="none">
           <path
@@ -31174,7 +31174,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           />
         </svg>
       </slot>
-    `}};Je.baseName="dialog",Je.register=H(Je),Je.styles=[f.styles,hH];let Ai=Je;const Qe=class Qe extends xS{};Qe.baseName="dialog-backdrop",Qe.register=H(Qe),Qe.styles=j`
+    `}};Je.baseName="dialog",Je.register=S(Je),Je.styles=[f.styles,hS];let Ri=Je;const Qe=class Qe extends xL{};Qe.baseName="dialog-backdrop",Qe.register=S(Qe),Qe.styles=j`
     :host {
       position: fixed;
       top: 0;
@@ -31191,11 +31191,11 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     :host([open]) {
       display: flex;
     }
-  `;let Li=Qe;const to=class to extends BS{getDialogBackdropTagName(){return No("dialog-backdrop")}getDialogTagName(){return No("dialog")}getButtonTagName(){return No("button")}};to.baseName="dialog-region",to.register=H(to),to.styles=j`
+  `;let Li=Qe;const to=class to extends BL{getDialogBackdropTagName(){return No("dialog-backdrop")}getDialogTagName(){return No("dialog")}getButtonTagName(){return No("button")}};to.baseName="dialog-region",to.register=S(to),to.styles=j`
     :host {
       display: contents;
     }
-  `;let Si=to;const cH=j`
+  `;let Si=to;const cS=j`
   :host {
     display: inline-block;
     position: relative;
@@ -31291,7 +31291,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: translateX(0);
     }
   }
-`,eo=class eo extends RS{};eo.baseName="dropdown",eo.register=H(eo),eo.styles=[f.styles,cH];let Hi=eo;const pH=j`
+`,eo=class eo extends HL{};eo.baseName="dropdown",eo.register=S(eo),eo.styles=[f.styles,cS];let Hi=eo;const pS=j`
   :host {
     /* 布局 */
     display: inline-flex;
@@ -31459,7 +31459,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     width: 18px;
     height: 18px;
   }
-`;var uH=Object.defineProperty,W=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&uH(t,e,r),r},Vt;const G=(Vt=class extends f{constructor(){super(...arguments),this.value="",this.type="text",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.clearable=!1,this.showPassword=!1,this.error=!1,this.name="",this.autofocus=!1,this.autocomplete="off",this.passwordVisible=!1,this.hasPrefix=!1,this.hasSuffix=!1}get inputType(){return this.type==="password"&&this.passwordVisible?"text":this.type}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value})}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}handleClear(){this.value="",this.emit("clear",{}),this.emit("input",{value:this.value}),this.emit("change",{value:this.value}),this.shadowRoot?.querySelector("input")?.focus()}togglePasswordVisibility(){this.passwordVisible=!this.passwordVisible}handleSlotChange(t,e){const r=t.target.assignedNodes().length>0;e==="prefix"?this.hasPrefix=r:this.hasSuffix=r}focus(){this.shadowRoot?.querySelector("input")?.focus()}blur(){this.shadowRoot?.querySelector("input")?.blur()}select(){this.shadowRoot?.querySelector("input")?.select()}render(){const t=this.clearable&&this.value&&!this.disabled&&!this.readonly,e=this.type==="password"&&this.showPassword;return p`
+`;var uS=Object.defineProperty,W=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&uS(t,e,r),r},Ut;const G=(Ut=class extends f{constructor(){super(...arguments),this.value="",this.type="text",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.clearable=!1,this.showPassword=!1,this.error=!1,this.name="",this.autofocus=!1,this.autocomplete="off",this.passwordVisible=!1,this.hasPrefix=!1,this.hasSuffix=!1}get inputType(){return this.type==="password"&&this.passwordVisible?"text":this.type}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value})}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}handleClear(){this.value="",this.emit("clear",{}),this.emit("input",{value:this.value}),this.emit("change",{value:this.value}),this.shadowRoot?.querySelector("input")?.focus()}togglePasswordVisibility(){this.passwordVisible=!this.passwordVisible}handleSlotChange(t,e){const r=t.target.assignedNodes().length>0;e==="prefix"?this.hasPrefix=r:this.hasSuffix=r}focus(){this.shadowRoot?.querySelector("input")?.focus()}blur(){this.shadowRoot?.querySelector("input")?.blur()}select(){this.shadowRoot?.querySelector("input")?.select()}render(){const t=this.clearable&&this.value&&!this.disabled&&!this.readonly,e=this.type==="password"&&this.showPassword;return u`
       <span part="prefix" ?hidden=${!this.hasPrefix}>
         <slot
           name="prefix"
@@ -31476,7 +31476,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         ?readonly=${this.readonly}
         ?autofocus=${this.autofocus}
         .autocomplete=${this.autocomplete}
-        maxlength=${Ra(this.maxlength)}
+        maxlength=${S0(this.maxlength)}
         name=${this.name}
         @input=${this.handleInput}
         @change=${this.handleChange}
@@ -31484,7 +31484,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         @blur=${this.handleBlur}
       />
 
-      ${t?p`
+      ${t?u`
             <button
               part="clear"
               type="button"
@@ -31501,14 +31501,14 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
               </svg>
             </button>
           `:k}
-      ${e?p`
+      ${e?u`
             <button
               part="password-toggle"
               type="button"
               tabindex="-1"
               @click=${this.togglePasswordVisibility}
             >
-              ${this.passwordVisible?p`
+              ${this.passwordVisible?u`
                       <svg viewBox="0 0 24 24" fill="none">
                         <path
                           d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.275.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.136.215.204.323.242.49.029.125.029.321 0 .446-.038.167-.106.275-.242.49C20.455 14.495 17.105 19 12 19s-8.455-4.505-9.58-6.287Z"
@@ -31519,7 +31519,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
                         />
                         <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
                       </svg>
-                    `:p`
+                    `:u`
                       <svg viewBox="0 0 24 24" fill="none">
                         <path
                           d="M10.743 5.092C11.149 5.032 11.569 5 12 5c5.105 0 8.455 4.505 9.58 6.287.136.215.204.323.242.49.029.125.029.321 0 .446-.038.167-.106.275-.242.49-.19.302-.466.71-.82 1.167M6.724 6.715C4.477 8.12 3.007 10.282 2.42 11.287c-.136.215-.204.323-.242.49a1.173 1.173 0 0 0 0 .446c.038.167.106.275.242.49C3.545 14.495 6.895 19 12 19c2.059 0 3.832-.732 5.289-1.723M3 3l18 18M9.88 9.879a3 3 0 1 0 4.243 4.243"
@@ -31539,7 +31539,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           @slotchange=${i=>this.handleSlotChange(i,"suffix")}
         ></slot>
       </span>
-    `}},Vt.baseName="input",Vt.register=H(Vt),Vt.styles=[f.styles,pH],Vt);W([h({type:String})],G.prototype,"value");W([h({type:String})],G.prototype,"type");W([h({type:String,reflect:!0})],G.prototype,"size");W([h({type:String})],G.prototype,"placeholder");W([h({type:Boolean,reflect:!0})],G.prototype,"disabled");W([h({type:Boolean,reflect:!0})],G.prototype,"readonly");W([h({type:Boolean})],G.prototype,"clearable");W([h({type:Boolean,attribute:"show-password"})],G.prototype,"showPassword");W([h({type:Boolean,reflect:!0})],G.prototype,"error");W([h({type:Number})],G.prototype,"maxlength");W([h({type:String})],G.prototype,"name");W([h({type:Boolean})],G.prototype,"autofocus");W([h({type:String})],G.prototype,"autocomplete");W([O()],G.prototype,"passwordVisible");W([O()],G.prototype,"hasPrefix");W([O()],G.prototype,"hasSuffix");let wH=G;const gH=j`
+    `}},Ut.baseName="input",Ut.register=S(Ut),Ut.styles=[f.styles,pS],Ut);W([h({type:String})],G.prototype,"value");W([h({type:String})],G.prototype,"type");W([h({type:String,reflect:!0})],G.prototype,"size");W([h({type:String})],G.prototype,"placeholder");W([h({type:Boolean,reflect:!0})],G.prototype,"disabled");W([h({type:Boolean,reflect:!0})],G.prototype,"readonly");W([h({type:Boolean})],G.prototype,"clearable");W([h({type:Boolean,attribute:"show-password"})],G.prototype,"showPassword");W([h({type:Boolean,reflect:!0})],G.prototype,"error");W([h({type:Number})],G.prototype,"maxlength");W([h({type:String})],G.prototype,"name");W([h({type:Boolean})],G.prototype,"autofocus");W([h({type:String})],G.prototype,"autocomplete");W([O()],G.prototype,"passwordVisible");W([O()],G.prototype,"hasPrefix");W([O()],G.prototype,"hasSuffix");let wS=G;const gS=j`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -31617,7 +31617,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       stroke-dashoffset: -124;
     }
   }
-`;var vH=Object.defineProperty,cs=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vH(t,e,r),r},zt;const qr=(zt=class extends f{constructor(){super(...arguments),this.size="md",this.text="",this.fullscreen=!1}render(){return p`
+`;var vS=Object.defineProperty,ps=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&vS(t,e,r),r},Vt;const Nr=(Vt=class extends f{constructor(){super(...arguments),this.size="md",this.text="",this.fullscreen=!1}render(){return u`
       <div part="spinner">
         <svg viewBox="0 0 ${50} ${50}">
           <circle
@@ -31638,8 +31638,8 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           />
         </svg>
       </div>
-      ${this.text?p`<span part="text">${this.text}</span>`:k}
-    `}},zt.baseName="loading",zt.register=H(zt),zt.styles=[f.styles,gH],zt);cs([h({type:String,reflect:!0})],qr.prototype,"size");cs([h({type:String})],qr.prototype,"text");cs([h({type:Boolean,reflect:!0})],qr.prototype,"fullscreen");let kH=qr;const mH=j`
+      ${this.text?u`<span part="text">${this.text}</span>`:k}
+    `}},Vt.baseName="loading",Vt.register=S(Vt),Vt.styles=[f.styles,gS],Vt);ps([h({type:String,reflect:!0})],Nr.prototype,"size");ps([h({type:String})],Nr.prototype,"text");ps([h({type:Boolean,reflect:!0})],Nr.prototype,"fullscreen");let kS=Nr;const mS=j`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -31656,7 +31656,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     flex-direction: row;
     align-items: center;
   }
-`,xH=j`
+`,xS=j`
   :host {
     display: block;
   }
@@ -31714,7 +31714,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     font-size: 0.75rem;
     color: var(--menu-arrow-color);
   }
-`,fH=j`
+`,fS=j`
   :host {
     display: block;
   }
@@ -31737,7 +31737,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     display: flex;
     flex-direction: column;
   }
-`,MH=j`
+`,MS=j`
   :host {
     display: block;
   }
@@ -31747,7 +31747,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     margin: var(--menu-divider-margin);
     background-color: var(--menu-divider-color);
   }
-`,yH=j`
+`,yS=j`
   :host {
     display: block;
     position: relative;
@@ -31822,7 +31822,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     top: 100%;
     margin-top: var(--menu-submenu-offset);
   }
-`,oo=class oo extends XL{};oo.baseName="menu",oo.register=H(oo),oo.styles=[f.styles,mH];let Ri=oo;const ro=class ro extends QL{};ro.baseName="menu-item",ro.register=H(ro),ro.styles=[f.styles,xH];let Vi=ro;const io=class io extends oS{};io.baseName="menu-group",io.register=H(io),io.styles=[f.styles,fH];let zi=io;const so=class so extends ji{};so.baseName="menu-divider",so.register=H(so),so.styles=[f.styles,MH];let $i=so;const no=class no extends iS{};no.baseName="menu-sub",no.register=H(no),no.styles=[f.styles,yH];let Ui=no;const bH=j`
+`,oo=class oo extends XR{};oo.baseName="menu",oo.register=S(oo),oo.styles=[f.styles,mS];let Yi=oo;const ro=class ro extends QR{};ro.baseName="menu-item",ro.register=S(ro),ro.styles=[f.styles,xS];let Ui=ro;const io=class io extends oL{};io.baseName="menu-group",io.register=S(io),io.styles=[f.styles,fS];let Vi=io;const so=class so extends Ai{};so.baseName="menu-divider",so.register=S(so),so.styles=[f.styles,MS];let zi=so;const no=class no extends iL{};no.baseName="menu-sub",no.register=S(no),no.styles=[f.styles,yS];let $i=no;const bS=j`
   :host {
     display: inline-flex;
   }
@@ -31966,7 +31966,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     opacity: var(--pagination-disabled-opacity);
     cursor: not-allowed;
   }
-`;var CH=Object.defineProperty,Ye=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&CH(t,e,r),r};function BH(o,t,e){const i=e*2+5;if(t<=i)return Array.from({length:t},(c,u)=>u+1);const r=Math.max(o-e,1),s=Math.min(o+e,t),n=r>2,d=s<t-1,a=[];if(a.push(1),n)a.push(-1);else for(let c=2;c<r;c++)a.push(c);for(let c=r;c<=s;c++)c!==1&&c!==t&&a.push(c);if(d)a.push(-1);else for(let c=s+1;c<t;c++)a.push(c);return t>1&&a.push(t),a}var $t;const ye=($t=class extends f{constructor(){super(...arguments),this.current=1,this.total=1,this.siblings=1,this.simple=!1,this.hideControls=!1,this.showJumper=!1,this.disabled=!1}handlePageClick(t){this.disabled||t===this.current||t<1||t>this.total||(this.current=t,this.emit("change",{page:t}))}handlePrev(){this.current>1&&this.handlePageClick(this.current-1)}handleNext(){this.current<this.total&&this.handlePageClick(this.current+1)}handleKeyDown(t,e){(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handlePageClick(e))}handleJumperKeyDown(t){if(t.key==="Enter"){const e=t.target,i=parseInt(e.value,10);!isNaN(i)&&i>=1&&i<=this.total&&this.handlePageClick(i),e.value=""}}renderJumper(){return this.showJumper?p`
+`;var CS=Object.defineProperty,Oe=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&CS(t,e,r),r};function BS(o,t,e){const i=e*2+5;if(t<=i)return Array.from({length:t},(c,p)=>p+1);const r=Math.max(o-e,1),s=Math.min(o+e,t),n=r>2,d=s<t-1,a=[];if(a.push(1),n)a.push(-1);else for(let c=2;c<r;c++)a.push(c);for(let c=r;c<=s;c++)c!==1&&c!==t&&a.push(c);if(d)a.push(-1);else for(let c=s+1;c<t;c++)a.push(c);return t>1&&a.push(t),a}var zt;const be=(zt=class extends f{constructor(){super(...arguments),this.current=1,this.total=1,this.siblings=1,this.simple=!1,this.hideControls=!1,this.showJumper=!1,this.disabled=!1}handlePageClick(t){this.disabled||t===this.current||t<1||t>this.total||(this.current=t,this.emit("change",{page:t}))}handlePrev(){this.current>1&&this.handlePageClick(this.current-1)}handleNext(){this.current<this.total&&this.handlePageClick(this.current+1)}handleKeyDown(t,e){(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),this.handlePageClick(e))}handleJumperKeyDown(t){if(t.key==="Enter"){const e=t.target,i=parseInt(e.value,10);!isNaN(i)&&i>=1&&i<=this.total&&this.handlePageClick(i),e.value=""}}renderJumper(){return this.showJumper?u`
       <span part="jumper">
         <span part="jumper-text">跳至</span>
         <input
@@ -31980,9 +31980,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         />
         <span part="jumper-text">页</span>
       </span>
-    `:k}renderSimple(){return p`
+    `:k}renderSimple(){return u`
       <nav part="pagination" role="navigation" aria-label="Pagination">
-        ${this.hideControls?k:p`
+        ${this.hideControls?k:u`
               <button
                 part="prev"
                 type="button"
@@ -32009,7 +32009,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <span>${this.total}</span>
         </span>
 
-        ${this.hideControls?k:p`
+        ${this.hideControls?k:u`
               <button
                 part="next"
                 type="button"
@@ -32031,9 +32031,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             `}
         ${this.renderJumper()}
       </nav>
-    `}render(){if(this.simple)return this.renderSimple();const t=BH(this.current,this.total,this.siblings);return p`
+    `}render(){if(this.simple)return this.renderSimple();const t=BS(this.current,this.total,this.siblings);return u`
       <nav part="pagination" role="navigation" aria-label="Pagination">
-        ${this.hideControls?k:p`
+        ${this.hideControls?k:u`
               <button
                 part="prev"
                 type="button"
@@ -32053,9 +32053,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
                 </svg>
               </button>
             `}
-        ${t.map(e=>e===-1?p`
+        ${t.map(e=>e===-1?u`
                 <span part="ellipsis" aria-hidden="true">...</span>
-              `:p`
+              `:u`
                 <button
                   part="item"
                   type="button"
@@ -32068,7 +32068,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
                   ${e}
                 </button>
               `)}
-        ${this.hideControls?k:p`
+        ${this.hideControls?k:u`
               <button
                 part="next"
                 type="button"
@@ -32090,7 +32090,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             `}
         ${this.renderJumper()}
       </nav>
-    `}},$t.baseName="pagination",$t.register=H($t),$t.styles=[f.styles,bH],$t);Ye([h({type:Number,reflect:!0})],ye.prototype,"current");Ye([h({type:Number})],ye.prototype,"total");Ye([h({type:Number})],ye.prototype,"siblings");Ye([h({type:Boolean,reflect:!0})],ye.prototype,"simple");Ye([h({type:Boolean,attribute:"hide-controls",reflect:!0})],ye.prototype,"hideControls");Ye([h({type:Boolean,attribute:"show-jumper"})],ye.prototype,"showJumper");Ye([h({type:Boolean,reflect:!0})],ye.prototype,"disabled");let jH=ye;const AH=j`
+    `}},zt.baseName="pagination",zt.register=S(zt),zt.styles=[f.styles,bS],zt);Oe([h({type:Number,reflect:!0})],be.prototype,"current");Oe([h({type:Number})],be.prototype,"total");Oe([h({type:Number})],be.prototype,"siblings");Oe([h({type:Boolean,reflect:!0})],be.prototype,"simple");Oe([h({type:Boolean,attribute:"hide-controls",reflect:!0})],be.prototype,"hideControls");Oe([h({type:Boolean,attribute:"show-jumper"})],be.prototype,"showJumper");Oe([h({type:Boolean,reflect:!0})],be.prototype,"disabled");let jS=be;const AS=j`
   :host {
     display: inline-block;
     position: relative;
@@ -32200,7 +32200,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: translateX(0);
     }
   }
-`,lo=class lo extends as{};lo.baseName="popover",lo.register=H(lo),lo.styles=[f.styles,AH];let Di=lo;const LH=j`
+`,lo=class lo extends ds{};lo.baseName="popover",lo.register=S(lo),lo.styles=[f.styles,AS];let Di=lo;const RS=j`
   :host {
     display: block;
     width: 100%;
@@ -32318,7 +32318,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     min-width: auto;
     text-align: center;
   }
-`;var SH=Object.defineProperty,Ho=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&SH(t,e,r),r},Ut;const Oe=(Ut=class extends f{constructor(){super(...arguments),this.value=0,this.type="line",this.status="normal",this.showText=!0,this.indeterminate=!1}get percentage(){return Math.max(0,Math.min(100,this.value))}get displayText(){return this.format?this.format(this.percentage):`${this.percentage}%`}renderLineProgress(){return p`
+`;var LS=Object.defineProperty,So=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&LS(t,e,r),r},$t;const Ie=($t=class extends f{constructor(){super(...arguments),this.value=0,this.type="line",this.status="normal",this.showText=!0,this.indeterminate=!1}get percentage(){return Math.max(0,Math.min(100,this.value))}get displayText(){return this.format?this.format(this.percentage):`${this.percentage}%`}renderLineProgress(){return u`
       <div part="progress">
         <div part="track">
           <div
@@ -32326,9 +32326,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             style="width: ${this.indeterminate?"30%":`${this.percentage}%`}"
           ></div>
         </div>
-        ${this.showText&&!this.indeterminate?p`<span part="text">${this.displayText}</span>`:k}
+        ${this.showText&&!this.indeterminate?u`<span part="text">${this.displayText}</span>`:k}
       </div>
-    `}renderCircleProgress(){const r=2*Math.PI*47,s=r-this.percentage/100*r;return p`
+    `}renderCircleProgress(){const r=2*Math.PI*47,s=r-this.percentage/100*r;return u`
       <div part="progress">
         <svg part="svg" viewBox="0 0 ${100} ${100}">
           <circle
@@ -32346,9 +32346,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             stroke-dashoffset="${s}"
           />
         </svg>
-        ${this.showText?p`<span part="text">${this.displayText}</span>`:k}
+        ${this.showText?u`<span part="text">${this.displayText}</span>`:k}
       </div>
-    `}render(){return this.type==="circle"?this.renderCircleProgress():this.renderLineProgress()}},Ut.baseName="progress",Ut.register=H(Ut),Ut.styles=[f.styles,LH],Ut);Ho([h({type:Number})],Oe.prototype,"value");Ho([h({type:String,reflect:!0})],Oe.prototype,"type");Ho([h({type:String,reflect:!0})],Oe.prototype,"status");Ho([h({type:Boolean,attribute:"show-text"})],Oe.prototype,"showText");Ho([h({type:Boolean,reflect:!0})],Oe.prototype,"indeterminate");Ho([h({attribute:!1})],Oe.prototype,"format");let HH=Oe;const RH=j`
+    `}render(){return this.type==="circle"?this.renderCircleProgress():this.renderLineProgress()}},$t.baseName="progress",$t.register=S($t),$t.styles=[f.styles,RS],$t);So([h({type:Number})],Ie.prototype,"value");So([h({type:String,reflect:!0})],Ie.prototype,"type");So([h({type:String,reflect:!0})],Ie.prototype,"status");So([h({type:Boolean,attribute:"show-text"})],Ie.prototype,"showText");So([h({type:Boolean,reflect:!0})],Ie.prototype,"indeterminate");So([h({attribute:!1})],Ie.prototype,"format");let SS=Ie;const HS=j`
   :host {
     display: inline-flex;
     align-items: center;
@@ -32522,7 +32522,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   :host([size='lg']) [part='label'] {
     font-size: var(--radio-label-font-size-lg);
   }
-`,VH=j`
+`,YS=j`
   :host {
     display: inline-block;
   }
@@ -32538,7 +32538,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     align-items: flex-start;
     gap: var(--radio-group-gap, 8px);
   }
-`;var zH=Object.defineProperty,lr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&zH(t,e,r),r},Dt;const Ro=(Dt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;t.target.checked&&(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleClick(){this.disabled||this.checked||(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return p`
+`;var US=Object.defineProperty,lr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&US(t,e,r),r},Dt;const Ho=(Dt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;t.target.checked&&(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleClick(){this.disabled||this.checked||(this.checked=!0,this.emit("change",{checked:!0,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return u`
       <label part="radio" @click=${this.handleClick}>
         <input
           part="input"
@@ -32557,11 +32557,11 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <slot></slot>
         </span>
       </label>
-    `}},Dt.baseName="radio",Dt.register=H(Dt),Dt.styles=[f.styles,RH],Dt);lr([h({type:String,reflect:!0})],Ro.prototype,"size");lr([h({type:Boolean,reflect:!0})],Ro.prototype,"checked");lr([h({type:Boolean,reflect:!0})],Ro.prototype,"disabled");lr([h({type:String})],Ro.prototype,"name");lr([h({type:String})],Ro.prototype,"value");let $H=Ro;var UH=Object.defineProperty,ar=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&UH(t,e,r),r},Ft;const Vo=(Ft=class extends f{constructor(){super(...arguments),this.value="",this.name="",this.disabled=!1,this.vertical=!1,this.gap="",this.handleRadioChange=t=>{const i=t.detail?.value;i&&(this.value=i,this.updateRadios(),this.emit("change",{value:this.value}))},this.handleSlotChange=()=>{this.updateRadios(),this.bindRadioListeners()}}get radios(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-radio"))}bindRadioListeners(){this.radios.forEach(t=>{t.removeEventListener("ik-change",this.handleRadioChange),t.addEventListener("ik-change",this.handleRadioChange)})}updateRadios(){this.radios.forEach(t=>{t.checked=t.value===this.value,this.name&&(t.name=this.name),this.disabled&&(t.disabled=!0)})}firstUpdated(){this.updateRadios(),this.bindRadioListeners()}updated(t){(t.has("value")||t.has("disabled")||t.has("name"))&&this.updateRadios()}render(){const t=this.gap?`gap: ${this.gap}`:"";return p`
+    `}},Dt.baseName="radio",Dt.register=S(Dt),Dt.styles=[f.styles,HS],Dt);lr([h({type:String,reflect:!0})],Ho.prototype,"size");lr([h({type:Boolean,reflect:!0})],Ho.prototype,"checked");lr([h({type:Boolean,reflect:!0})],Ho.prototype,"disabled");lr([h({type:String})],Ho.prototype,"name");lr([h({type:String})],Ho.prototype,"value");let VS=Ho;var zS=Object.defineProperty,ar=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&zS(t,e,r),r},Ft;const Yo=(Ft=class extends f{constructor(){super(...arguments),this.value="",this.name="",this.disabled=!1,this.vertical=!1,this.gap="",this.handleRadioChange=t=>{const i=t.detail?.value;i&&(this.value=i,this.updateRadios(),this.emit("change",{value:this.value}))},this.handleSlotChange=()=>{this.updateRadios(),this.bindRadioListeners()}}get radios(){return Array.from(this.querySelectorAll("*")).filter(t=>t.tagName.toLowerCase().endsWith("-radio"))}bindRadioListeners(){this.radios.forEach(t=>{t.removeEventListener("ik-change",this.handleRadioChange),t.addEventListener("ik-change",this.handleRadioChange)})}updateRadios(){this.radios.forEach(t=>{t.checked=t.value===this.value,this.name&&(t.name=this.name),this.disabled&&(t.disabled=!0)})}firstUpdated(){this.updateRadios(),this.bindRadioListeners()}updated(t){(t.has("value")||t.has("disabled")||t.has("name"))&&this.updateRadios()}render(){const t=this.gap?`gap: ${this.gap}`:"";return u`
       <div part="group" role="radiogroup" style=${t}>
         <slot @slotchange=${this.handleSlotChange}></slot>
       </div>
-    `}},Ft.baseName="radio-group",Ft.register=H(Ft),Ft.styles=[f.styles,VH],Ft);ar([h({type:String})],Vo.prototype,"value");ar([h({type:String})],Vo.prototype,"name");ar([h({type:Boolean,reflect:!0})],Vo.prototype,"disabled");ar([h({type:Boolean,reflect:!0})],Vo.prototype,"vertical");ar([h({type:String})],Vo.prototype,"gap");let DH=Vo;const FH=j`
+    `}},Ft.baseName="radio-group",Ft.register=S(Ft),Ft.styles=[f.styles,YS],Ft);ar([h({type:String})],Yo.prototype,"value");ar([h({type:String})],Yo.prototype,"name");ar([h({type:Boolean,reflect:!0})],Yo.prototype,"disabled");ar([h({type:Boolean,reflect:!0})],Yo.prototype,"vertical");ar([h({type:String})],Yo.prototype,"gap");let $S=Yo;const DS=j`
   /* Host iku-select 本身） */
   :host {
     display: inline-block;
@@ -32683,7 +32683,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     font-size: var(--select-empty-font-size);
     color: var(--select-empty-color);
   }
-`,ao=class ao extends ZL{};ao.baseName="select",ao.register=$(ao),ao.styles=[FH];let Fi=ao;const PH=j`
+`,ao=class ao extends ZR{};ao.baseName="select",ao.register=V(ao),ao.styles=[DS];let Fi=ao;const FS=j`
   :host {
     display: block;
     box-sizing: border-box;
@@ -32745,7 +32745,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     opacity: var(--select-option-disabled-opacity);
     cursor: not-allowed;
   }
-`,ho=class ho extends WL{};ho.baseName="select-option",ho.register=$(ho),ho.styles=[PH];let Pi=ho;const EH=j`
+`,ho=class ho extends WR{};ho.baseName="select-option",ho.register=V(ho),ho.styles=[FS];let Pi=ho;const PS=j`
   :host {
     display: block;
   }
@@ -32800,9 +32800,9 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: translateX(100%);
     }
   }
-`;var TH=Object.defineProperty,dr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&TH(t,e,r),r},Pt;const zo=(Pt=class extends f{constructor(){super(...arguments),this.variant="text",this.animated=!0}render(){const t=[this.width?`width:${this.width}`:"",this.height?`height:${this.height}`:"",this.radius?`border-radius:${this.radius}`:""].filter(Boolean).join(";");return p`
+`;var ES=Object.defineProperty,dr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&ES(t,e,r),r},Pt;const Uo=(Pt=class extends f{constructor(){super(...arguments),this.variant="text",this.animated=!0}render(){const t=[this.width?`width:${this.width}`:"",this.height?`height:${this.height}`:"",this.radius?`border-radius:${this.radius}`:""].filter(Boolean).join(";");return u`
       <div part="skeleton" style=${t||""}></div>
-    `}},Pt.baseName="skeleton",Pt.register=H(Pt),Pt.styles=[f.styles,EH],Pt);dr([h({type:String,reflect:!0})],zo.prototype,"variant");dr([h({type:Boolean,reflect:!0})],zo.prototype,"animated");dr([h({type:String})],zo.prototype,"width");dr([h({type:String})],zo.prototype,"height");dr([h({type:String})],zo.prototype,"radius");let YH=zo;const OH=j`
+    `}},Pt.baseName="skeleton",Pt.register=S(Pt),Pt.styles=[f.styles,PS],Pt);dr([h({type:String,reflect:!0})],Uo.prototype,"variant");dr([h({type:Boolean,reflect:!0})],Uo.prototype,"animated");dr([h({type:String})],Uo.prototype,"width");dr([h({type:String})],Uo.prototype,"height");dr([h({type:String})],Uo.prototype,"radius");let TS=Uo;const OS=j`
   :host {
     display: block;
     padding: var(--slider-padding);
@@ -32996,7 +32996,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     margin-top: 0;
     margin-left: 12px;
   }
-`;var IH=Object.defineProperty,rt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&IH(t,e,r),r},Et;const Q=(Et=class extends f{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal",this.showMarks=!1,this.showTooltip=!1,this.activeThumb=null,this.isDragging=!1,this.isHovering=!1}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}get defaultMarks(){if(this.marks)return this.marks;if(!this.showMarks)return[];const t=[],e=this.max-this.min,i=Math.floor(e/this.step),r=10,s=i>r?Math.ceil(i/r):1;for(let n=0;n<=i;n+=s){const d=this.min+n*this.step;t.push({value:d,label:String(d)})}return t[t.length-1]?.value!==this.max&&t.push({value:this.max,label:String(this.max)}),t}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r),this.isDragging=!0,this.activeThumb=r;const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{this.isDragging=!1,this.activeThumb=null,e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}formatTooltip(t){return this.tipFormatter?this.tipFormatter(t):String(t)}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`,n=this.activeThumb===e||!this.range&&this.isDragging,d=this.showTooltip&&(n||this.isHovering);return p`
+`;var IS=Object.defineProperty,rt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&IS(t,e,r),r},Et;const Q=(Et=class extends f{constructor(){super(...arguments),this.value=0,this.min=0,this.max=100,this.step=1,this.range=!1,this.disabled=!1,this.orientation="horizontal",this.showMarks=!1,this.showTooltip=!1,this.activeThumb=null,this.isDragging=!1,this.isHovering=!1}get isHorizontal(){return this.orientation==="horizontal"}get valueArray(){return Array.isArray(this.value)?this.value:[this.min,this.value]}get percentage(){const t=this.max-this.min;if(this.range){const[i,r]=this.valueArray;return[(i-this.min)/t*100,(r-this.min)/t*100]}return((Array.isArray(this.value)?this.value[1]:this.value)-this.min)/t*100}get defaultMarks(){if(this.marks)return this.marks;if(!this.showMarks)return[];const t=[],e=this.max-this.min,i=Math.floor(e/this.step),r=10,s=i>r?Math.ceil(i/r):1;for(let n=0;n<=i;n+=s){const d=this.min+n*this.step;t.push({value:d,label:String(d)})}return t[t.length-1]?.value!==this.max&&t.push({value:this.max,label:String(this.max)}),t}connectedCallback(){super.connectedCallback(),this.range&&!Array.isArray(this.value)&&(this.value=[this.min,this.value])}clamp(t){return Math.max(this.min,Math.min(this.max,t))}snapToStep(t){const e=Math.round((t-this.min)/this.step);return this.clamp(this.min+e*this.step)}getValueFromPosition(t,e){const i=this.shadowRoot?.querySelector('[part~="track"]');if(!i)return this.min;const r=i.getBoundingClientRect();let s;this.isHorizontal?s=(t-r.left)/r.width:s=1-(e-r.top)/r.height,s=Math.max(0,Math.min(1,s));const n=this.min+s*(this.max-this.min);return this.snapToStep(n)}updateValue(t,e=null){if(this.range){const[i,r]=this.valueArray;e==="start"?this.value=[Math.min(t,r),r]:e==="end"&&(this.value=[i,Math.max(t,i)])}else this.value=t;this.emit("input",{value:this.value})}getTargetThumb(t){if(!this.range)return null;const[e,i]=this.valueArray,r=Math.abs(t-e),s=Math.abs(t-i);return r<=s?"start":"end"}handleTrackPointerDown(t){if(this.disabled)return;t.preventDefault();const e=this.shadowRoot?.querySelector('[part="slider"]');if(!e)return;e.setPointerCapture(t.pointerId);const i=this.getValueFromPosition(t.clientX,t.clientY),r=this.getTargetThumb(i);this.updateValue(i,r),this.isDragging=!0,this.activeThumb=r;const s=d=>{const a=this.getValueFromPosition(d.clientX,d.clientY);this.updateValue(a,r)},n=d=>{this.isDragging=!1,this.activeThumb=null,e.releasePointerCapture(d.pointerId),e.removeEventListener("pointermove",s),e.removeEventListener("pointerup",n),this.emit("change",{value:this.value})};e.addEventListener("pointermove",s),e.addEventListener("pointerup",n)}handleKeyDown(t,e=null){if(this.disabled)return;const i=this.range?e==="start"?this.valueArray[0]:this.valueArray[1]:Array.isArray(this.value)?this.value[1]:this.value;let r=i;const s=this.step*10;switch(t.key){case"ArrowRight":case"ArrowUp":t.preventDefault(),r=this.snapToStep(i+this.step);break;case"ArrowLeft":case"ArrowDown":t.preventDefault(),r=this.snapToStep(i-this.step);break;case"PageUp":t.preventDefault(),r=this.snapToStep(i+s);break;case"PageDown":t.preventDefault(),r=this.snapToStep(i-s);break;case"Home":t.preventDefault(),r=this.min;break;case"End":t.preventDefault(),r=this.max;break;default:return}this.updateValue(r,e),this.emit("change",{value:this.value})}formatTooltip(t){return this.tipFormatter?this.tipFormatter(t):String(t)}renderThumb(t,e=null){const i=(t-this.min)/(this.max-this.min)*100,r=e?`thumb thumb-${e}`:"thumb",s=this.isHorizontal?`left: ${i}%`:`bottom: ${i}%`,n=this.activeThumb===e||!this.range&&this.isDragging,d=this.showTooltip&&(n||this.isHovering);return u`
       <div
         part="${r}${n?" thumb-active":""}"
         role="slider"
@@ -33011,31 +33011,31 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         @mouseenter=${()=>this.isHovering=!0}
         @mouseleave=${()=>this.isHovering=!1}
       >
-        ${d?p`<div part="tooltip">${this.formatTooltip(t)}</div>`:k}
+        ${d?u`<div part="tooltip">${this.formatTooltip(t)}</div>`:k}
       </div>
-    `}renderMarks(){return!this.showMarks&&!this.marks?k:p`
+    `}renderMarks(){return!this.showMarks&&!this.marks?k:u`
       <div part="marks">
-        ${this.defaultMarks.map(t=>{const e=(t.value-this.min)/(this.max-this.min)*100,i=this.isHorizontal?`left: ${e}%`:`bottom: ${e}%`;let r=!1;if(this.range){const[s,n]=this.valueArray;r=t.value>=s&&t.value<=n}else{const s=Array.isArray(this.value)?this.value[1]:this.value;r=t.value<=s}return p`
+        ${this.defaultMarks.map(t=>{const e=(t.value-this.min)/(this.max-this.min)*100,i=this.isHorizontal?`left: ${e}%`:`bottom: ${e}%`;let r=!1;if(this.range){const[s,n]=this.valueArray;r=t.value>=s&&t.value<=n}else{const s=Array.isArray(this.value)?this.value[1]:this.value;r=t.value<=s}return u`
             <div
               part="mark${r?" mark-active":""}"
               style="${i}"
             >
-              ${t.label?p`<span part="mark-label">${t.label}</span>`:k}
+              ${t.label?u`<span part="mark-label">${t.label}</span>`:k}
             </div>
           `})}
       </div>
-    `}render(){const t=this.percentage;let e;if(this.range&&Array.isArray(t))this.isHorizontal?e=`left: ${t[0]}%; width: ${t[1]-t[0]}%`:e=`bottom: ${t[0]}%; height: ${t[1]-t[0]}%`;else{const i=Array.isArray(t)?t[1]:t;this.isHorizontal?e=`width: ${i}%`:e=`height: ${i}%`}return p`
+    `}render(){const t=this.percentage;let e;if(this.range&&Array.isArray(t))this.isHorizontal?e=`left: ${t[0]}%; width: ${t[1]-t[0]}%`:e=`bottom: ${t[0]}%; height: ${t[1]-t[0]}%`;else{const i=Array.isArray(t)?t[1]:t;this.isHorizontal?e=`width: ${i}%`:e=`height: ${i}%`}return u`
       <div part="slider" @pointerdown=${this.handleTrackPointerDown}>
         <div part="track">
           <div part="range" style="${e}"></div>
         </div>
-        ${this.range?p`
+        ${this.range?u`
               ${this.renderThumb(this.valueArray[0],"start")}
               ${this.renderThumb(this.valueArray[1],"end")}
             `:this.renderThumb(Array.isArray(this.value)?this.value[1]:this.value)}
         ${this.renderMarks()}
       </div>
-    `}},Et.baseName="slider",Et.register=H(Et),Et.styles=[f.styles,OH],Et);rt([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],Q.prototype,"value");rt([h({type:Number})],Q.prototype,"min");rt([h({type:Number})],Q.prototype,"max");rt([h({type:Number})],Q.prototype,"step");rt([h({type:Boolean,reflect:!0})],Q.prototype,"range");rt([h({type:Boolean,reflect:!0})],Q.prototype,"disabled");rt([h({type:String,reflect:!0})],Q.prototype,"orientation");rt([h({type:Boolean,attribute:"show-marks"})],Q.prototype,"showMarks");rt([h({attribute:!1})],Q.prototype,"marks");rt([h({type:Boolean,attribute:"show-tooltip"})],Q.prototype,"showTooltip");rt([h({attribute:!1})],Q.prototype,"tipFormatter");rt([O()],Q.prototype,"activeThumb");rt([O()],Q.prototype,"isDragging");rt([O()],Q.prototype,"isHovering");let qH=Q;const NH=j`
+    `}},Et.baseName="slider",Et.register=S(Et),Et.styles=[f.styles,OS],Et);rt([h({type:Array,converter:{fromAttribute:o=>o?o.includes(",")?o.split(",").map(t=>parseFloat(t.trim())):parseFloat(o):0,toAttribute:o=>Array.isArray(o)?o.join(","):String(o)}})],Q.prototype,"value");rt([h({type:Number})],Q.prototype,"min");rt([h({type:Number})],Q.prototype,"max");rt([h({type:Number})],Q.prototype,"step");rt([h({type:Boolean,reflect:!0})],Q.prototype,"range");rt([h({type:Boolean,reflect:!0})],Q.prototype,"disabled");rt([h({type:String,reflect:!0})],Q.prototype,"orientation");rt([h({type:Boolean,attribute:"show-marks"})],Q.prototype,"showMarks");rt([h({attribute:!1})],Q.prototype,"marks");rt([h({type:Boolean,attribute:"show-tooltip"})],Q.prototype,"showTooltip");rt([h({attribute:!1})],Q.prototype,"tipFormatter");rt([O()],Q.prototype,"activeThumb");rt([O()],Q.prototype,"isDragging");rt([O()],Q.prototype,"isHovering");let qS=Q;const NS=j`
   :host {
     display: inline-flex;
     align-items: center;
@@ -33204,7 +33204,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   :host([size='lg']) [part='label'] {
     font-size: var(--switch-label-font-size-lg, 16px);
   }
-`;var _H=Object.defineProperty,hr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_H(t,e,r),r},Tt;const $o=(Tt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.emit("change",{checked:this.checked,value:this.value})}handleClick(){this.disabled||(this.checked=!this.checked,this.emit("change",{checked:this.checked,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return p`
+`;var _S=Object.defineProperty,hr=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&_S(t,e,r),r},Tt;const Vo=(Tt=class extends f{constructor(){super(...arguments),this.size="md",this.checked=!1,this.disabled=!1,this.name="",this.value=""}handleChange(t){if(this.disabled)return;const e=t.target;this.checked=e.checked,this.emit("change",{checked:this.checked,value:this.value})}handleClick(){this.disabled||(this.checked=!this.checked,this.emit("change",{checked:this.checked,value:this.value}))}handleKeyDown(t){t.key==="Enter"&&(t.preventDefault(),this.handleClick())}render(){return u`
       <label part="switch">
         <input
           part="input"
@@ -33224,7 +33224,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           <slot></slot>
         </span>
       </label>
-    `}},Tt.baseName="switch",Tt.register=H(Tt),Tt.styles=[f.styles,NH],Tt);hr([h({type:String,reflect:!0})],$o.prototype,"size");hr([h({type:Boolean,reflect:!0})],$o.prototype,"checked");hr([h({type:Boolean,reflect:!0})],$o.prototype,"disabled");hr([h({type:String})],$o.prototype,"name");hr([h({type:String})],$o.prototype,"value");let ZH=$o;const GH=j`
+    `}},Tt.baseName="switch",Tt.register=S(Tt),Tt.styles=[f.styles,NS],Tt);hr([h({type:String,reflect:!0})],Vo.prototype,"size");hr([h({type:Boolean,reflect:!0})],Vo.prototype,"checked");hr([h({type:Boolean,reflect:!0})],Vo.prototype,"disabled");hr([h({type:String})],Vo.prototype,"name");hr([h({type:String})],Vo.prototype,"value");let ZS=Vo;const GS=j`
   :host {
     display: block;
   }
@@ -33368,7 +33368,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   [part='checkbox'] {
     --checkbox-size: 16px;
   }
-`,co=class co extends TS{renderCheckbox(t,e,i,r){const s=Ha(No("checkbox"));return Lr`
+`,co=class co extends EL{renderCheckbox(t,e,i,r){const s=L0(No("checkbox"));return Lr`
       <${s}
         part="checkbox"
         .checked=${t}
@@ -33376,7 +33376,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         .disabled=${i}
         @ik-change=${r}
       ></${s}>
-    `}};co.baseName="table",co.register=H(co),co.styles=[f.styles,GH];let Ei=co;const WH=j`
+    `}};co.baseName="table",co.register=S(co),co.styles=[f.styles,GS];let Ei=co;const WS=j`
   :host {
     display: block;
   }
@@ -33442,7 +33442,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   :host [part~='tab-list-vertical'] {
     flex-direction: column;
   }
-`;const KH=j`
+`;const KS=j`
   :host {
     display: inline-block;
   }
@@ -33494,7 +33494,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     outline: var(--tabs-tab-focus-ring-width) solid var(--tabs-tab-focus-ring);
     outline-offset: var(--tabs-tab-focus-ring-offset);
   }
-`,XH=j`
+`,XS=j`
   :host {
     display: block;
   }
@@ -33507,7 +33507,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   :host [part~='tab-panel'][hidden] {
     display: none;
   }
-`,po=class po extends nS{};po.baseName="tabs",po.register=H(po),po.styles=[f.styles,WH];let Ti=po;const uo=class uo extends aS{};uo.baseName="tab",uo.register=H(uo),uo.styles=[f.styles,KH];let Yi=uo;const wo=class wo extends hS{};wo.baseName="tab-panel",wo.register=H(wo),wo.styles=[f.styles,XH];let Oi=wo;const JH=j`
+`,po=class po extends nL{};po.baseName="tabs",po.register=S(po),po.styles=[f.styles,WS];let Ti=po;const uo=class uo extends aL{};uo.baseName="tab",uo.register=S(uo),uo.styles=[f.styles,KS];let Oi=uo;const wo=class wo extends hL{};wo.baseName="tab-panel",wo.register=S(wo),wo.styles=[f.styles,XS];let Ii=wo;const JS=j`
   :host {
     /* 布局 */
     display: inline-flex;
@@ -33605,7 +33605,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     resize: none;
     overflow: hidden;
   }
-`;var QH=Object.defineProperty,lt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&QH(t,e,r),r},Yt;const it=(Yt=class extends f{constructor(){super(...arguments),this.value="",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.error=!1,this.name="",this.autofocus=!1,this.rows=3,this.autosize=!1}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value}),this.autosize&&this.adjustHeight(e)}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}adjustHeight(t){t.style.height="auto";const e=getComputedStyle(t),i=parseFloat(e.lineHeight)||20,r=parseFloat(e.paddingTop)||0,s=parseFloat(e.paddingBottom)||0,n=parseFloat(e.borderTopWidth)||0,d=parseFloat(e.borderBottomWidth)||0,a=this.minRows?this.minRows*i+r+s+n+d:0,c=this.maxRows?this.maxRows*i+r+s+n+d:1/0,u=Math.min(Math.max(t.scrollHeight,a),c);t.style.height=`${u}px`,t.scrollHeight>c?t.style.overflowY="auto":t.style.overflowY="hidden"}focus(){this.shadowRoot?.querySelector("textarea")?.focus()}blur(){this.shadowRoot?.querySelector("textarea")?.blur()}select(){this.shadowRoot?.querySelector("textarea")?.select()}firstUpdated(){if(this.autosize){const t=this.shadowRoot?.querySelector("textarea");t&&this.adjustHeight(t)}}render(){return p`
+`;var QS=Object.defineProperty,lt=(o,t,e,i)=>{for(var r=void 0,s=o.length-1,n;s>=0;s--)(n=o[s])&&(r=n(t,e,r)||r);return r&&QS(t,e,r),r},Ot;const it=(Ot=class extends f{constructor(){super(...arguments),this.value="",this.size="md",this.placeholder="",this.disabled=!1,this.readonly=!1,this.error=!1,this.name="",this.autofocus=!1,this.rows=3,this.autosize=!1}handleInput(t){const e=t.target;this.value=e.value,this.emit("input",{value:this.value}),this.autosize&&this.adjustHeight(e)}handleChange(t){const e=t.target;this.value=e.value,this.emit("change",{value:this.value})}handleFocus(){this.emit("focus",{value:this.value})}handleBlur(){this.emit("blur",{value:this.value})}adjustHeight(t){t.style.height="auto";const e=getComputedStyle(t),i=parseFloat(e.lineHeight)||20,r=parseFloat(e.paddingTop)||0,s=parseFloat(e.paddingBottom)||0,n=parseFloat(e.borderTopWidth)||0,d=parseFloat(e.borderBottomWidth)||0,a=this.minRows?this.minRows*i+r+s+n+d:0,c=this.maxRows?this.maxRows*i+r+s+n+d:1/0,p=Math.min(Math.max(t.scrollHeight,a),c);t.style.height=`${p}px`,t.scrollHeight>c?t.style.overflowY="auto":t.style.overflowY="hidden"}focus(){this.shadowRoot?.querySelector("textarea")?.focus()}blur(){this.shadowRoot?.querySelector("textarea")?.blur()}select(){this.shadowRoot?.querySelector("textarea")?.select()}firstUpdated(){if(this.autosize){const t=this.shadowRoot?.querySelector("textarea");t&&this.adjustHeight(t)}}render(){return u`
       <textarea
         part="textarea"
         .value=${this.value}
@@ -33621,7 +33621,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
         @focus=${this.handleFocus}
         @blur=${this.handleBlur}
       ></textarea>
-    `}},Yt.baseName="textarea",Yt.register=H(Yt),Yt.styles=[f.styles,JH],Yt);lt([h({type:String})],it.prototype,"value");lt([h({type:String,reflect:!0})],it.prototype,"size");lt([h({type:String})],it.prototype,"placeholder");lt([h({type:Boolean,reflect:!0})],it.prototype,"disabled");lt([h({type:Boolean,reflect:!0})],it.prototype,"readonly");lt([h({type:Boolean,reflect:!0})],it.prototype,"error");lt([h({type:Number})],it.prototype,"maxlength");lt([h({type:String})],it.prototype,"name");lt([h({type:Boolean})],it.prototype,"autofocus");lt([h({type:Number})],it.prototype,"rows");lt([h({type:Boolean,reflect:!0})],it.prototype,"autosize");lt([h({type:Number,attribute:"min-rows"})],it.prototype,"minRows");lt([h({type:Number,attribute:"max-rows"})],it.prototype,"maxRows");let tR=it;const eR=j`
+    `}},Ot.baseName="textarea",Ot.register=S(Ot),Ot.styles=[f.styles,JS],Ot);lt([h({type:String})],it.prototype,"value");lt([h({type:String,reflect:!0})],it.prototype,"size");lt([h({type:String})],it.prototype,"placeholder");lt([h({type:Boolean,reflect:!0})],it.prototype,"disabled");lt([h({type:Boolean,reflect:!0})],it.prototype,"readonly");lt([h({type:Boolean,reflect:!0})],it.prototype,"error");lt([h({type:Number})],it.prototype,"maxlength");lt([h({type:String})],it.prototype,"name");lt([h({type:Boolean})],it.prototype,"autofocus");lt([h({type:Number})],it.prototype,"rows");lt([h({type:Boolean,reflect:!0})],it.prototype,"autosize");lt([h({type:Number,attribute:"min-rows"})],it.prototype,"minRows");lt([h({type:Number,attribute:"max-rows"})],it.prototype,"maxRows");let tH=it;const eH=j`
   /* Host 容器 - 只控制显示/隐藏和基础布局 */
   :host {
     display: none;
@@ -33781,7 +33781,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: translateY(-8px) scale(0.96);
     }
   }
-`,go=class go extends pS{getDefaultIcon(){const t={success:p`
+`,go=class go extends pL{getDefaultIcon(){const t={success:u`
         <svg viewBox="0 0 20 20" fill="currentColor">
           <path
             fill-rule="evenodd"
@@ -33789,7 +33789,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             clip-rule="evenodd"
           />
         </svg>
-      `,error:p`
+      `,error:u`
         <svg viewBox="0 0 20 20" fill="currentColor">
           <path
             fill-rule="evenodd"
@@ -33797,7 +33797,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             clip-rule="evenodd"
           />
         </svg>
-      `,warning:p`
+      `,warning:u`
         <svg viewBox="0 0 20 20" fill="currentColor">
           <path
             fill-rule="evenodd"
@@ -33805,7 +33805,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             clip-rule="evenodd"
           />
         </svg>
-      `,info:p`
+      `,info:u`
         <svg viewBox="0 0 20 20" fill="currentColor">
           <path
             fill-rule="evenodd"
@@ -33813,7 +33813,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
             clip-rule="evenodd"
           />
         </svg>
-      `};return t[this.type]||t.info}renderIcon(){return p`<slot name="icon">${this.getDefaultIcon()}</slot>`}renderCloseIcon(){return p`
+      `};return t[this.type]||t.info}renderIcon(){return u`<slot name="icon">${this.getDefaultIcon()}</slot>`}renderCloseIcon(){return u`
       <slot name="close-icon">
         <svg viewBox="0 0 16 16" fill="none">
           <path
@@ -33824,7 +33824,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
           />
         </svg>
       </slot>
-    `}};go.baseName="toast",go.register=H(go),go.styles=[f.styles,eR];let Ii=go;const Go=class Go extends gS{};Go.baseName="toast-region",Go.register=H(Go);let qi=Go;const oR=j`
+    `}};go.baseName="toast",go.register=S(go),go.styles=[f.styles,eH];let qi=go;const Go=class Go extends gL{};Go.baseName="toast-region",Go.register=S(Go);let Ni=Go;const oH=j`
   :host {
     display: inline-block;
     position: relative;
@@ -33928,7 +33928,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
       transform: translateX(0);
     }
   }
-`,vo=class vo extends SS{};vo.baseName="tooltip",vo.register=H(vo),vo.styles=[f.styles,oR];let Ni=vo;const rR=j`
+`,vo=class vo extends LL{};vo.baseName="tooltip",vo.register=S(vo),vo.styles=[f.styles,oH];let _i=vo;const rH=j`
   :host {
     display: block;
   }
@@ -33937,7 +33937,7 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
     display: flex;
     flex-direction: column;
   }
-`,iR=j`
+`,iH=j`
   :host {
     display: block;
   }
@@ -34108,8 +34108,8 @@ import{F as Y,h as l,L as Wr,R as Ur,a as d1,d as da,u as ha,b as h1,c as c1,e a
   [part='children'][hidden] {
     display: none;
   }
-`,ko=class ko extends DS{getNodeTagName(){return`${this.tagName.toLowerCase().replace("-tree","")}-tree-node`}};ko.baseName="tree",ko.register=H(ko),ko.styles=[f.styles,rR];let _i=ko;const mo=class mo extends PS{};mo.baseName="tree-node",mo.register=H(mo),mo.styles=[f.styles,iR];let Zi=mo;function sR(){nH.register(),Fi.register(),Pi.register(),Ri.register(),Vi.register(),zi.register(),$i.register(),Ui.register(),Ti.register(),Yi.register(),Oi.register(),dH.register(),ZH.register(),wH.register(),tR.register(),$H.register(),DH.register(),Ii.register(),qi.register(),YH.register(),qH.register(),kH.register(),HH.register(),eH.register(),rH.register(),Ai.register(),Li.register(),Si.register(),Di.register(),Ni.register(),Hi.register(),jH.register(),GS.register(),KS.register(),_i.register(),Zi.register(),Ei.register()}const nR=["background","surface","surface-raised","foreground","foreground-muted","foreground-subtle","border","border-muted","border-strong","primary","primary-foreground","primary-hover","primary-active","primary-muted","secondary","secondary-foreground","secondary-hover","secondary-active","muted","muted-foreground","accent","accent-foreground","item-hover","item-hover-foreground","item-active","item-active-foreground","item-selected","item-selected-foreground","success","success-foreground","success-muted","warning","warning-foreground","warning-muted","destructive","destructive-foreground","destructive-muted","info","info-foreground","info-muted","input","input-focus","ring","ring-offset","card","card-foreground","popover","popover-foreground","overlay","selection","selection-foreground","scrollbar-thumb"],_0=[50,100,200,300,400,500,600,700,800,900,950],lR=["red","orange","yellow","green","blue","purple","pink","gray","neutral"];function aR(o){const t=o.match(/oklch\(([\d.]+)%?\s+([\d.]+)\s+([\d.]+)\)/);if(!t)throw new Error(`Invalid OKLCH color: ${o}`);return{l:parseFloat(t[1]),c:parseFloat(t[2]),h:parseFloat(t[3])}}function dR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function ui(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function hR(o,t,e){const i=ui(o),r=ui(t),s=ui(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function cR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function pR(o,t,e){const i=Math.sqrt(t*t+e*e);let r=Math.atan2(e,t)*(180/Math.PI);return r<0&&(r+=360),{l:o*100,c:i,h:r}}function ps(o){const t=dR(o),e=hR(t.r,t.g,t.b),i=cR(e.x,e.y,e.z);return pR(i.l,i.a,i.b)}function us(o,t,e){return`oklch(${o.toFixed(1)}% ${t.toFixed(3)} ${e.toFixed(3)})`}function vt(o){const{l:t,c:e,h:i}=ps(o);return us(t,e,i)}const uR={50:97.1,100:93.6,200:88.5,300:80.8,400:70.4,500:63.7,600:57.7,700:50.5,800:44.4,900:39.6,950:25.8},Z0={50:.055,100:.135,200:.261,300:.481,400:.806,500:1,600:1.034,700:.898,800:.747,900:.595,950:.388};function dt(o,t=500){let e;o.startsWith("#")?e=ps(o):e=aR(o);const i=Z0[t],r={};for(const[s,n]of Object.entries(uR)){const d=parseInt(s),a=Z0[d],c=e.c*(a/i);r[d]=us(n,c,e.h)}return r}function xo(o,t){const e=ps(o),{lightnessOffset:i=0,chromaFactor:r=1}=t,s=Math.max(0,Math.min(100,e.l+i)),n=Math.max(0,e.c*r);return us(s,n,e.h)}const Cr="oklch(98.5% 0 0)",ws={primary:"#B7410E",success:"#22c55e",warning:"#f59e0b",destructive:"#ef4444",info:"#3b82f6"};function Ua(o){const t=dt(o.primary,500);return{accent:t[100],accentForeground:t[700],itemHover:t[50],itemHoverForeground:t[700],itemActive:t[100],itemActiveForeground:t[800]}}function wR(o){const t=o.primary;return{accent:xo(t,{lightnessOffset:-11.5,chromaFactor:.9}),accentForeground:Cr,itemHover:xo(t,{lightnessOffset:-5.5,chromaFactor:.77}),itemHoverForeground:Cr,itemActive:xo(t,{lightnessOffset:-3.5,chromaFactor:.93}),itemActiveForeground:Cr}}function gR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function wi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function vR(o,t,e){const i=wi(o),r=wi(t),s=wi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function kR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Zt(o){const t=gR(o),e=vR(t.r,t.g,t.b);return kR(e.x,e.y,e.z).l*100}function Gt(o){return o>60?"#000":"#fff"}function Da(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Gt(Zt(o.success)),u=Gt(Zt(o.warning)),w=Gt(Zt(o.destructive)),C=Gt(Zt(o.info));return{success:s,successForeground:c,successMuted:t[50],warning:n,warningForeground:u,warningMuted:e[50],destructive:d,destructiveForeground:w,destructiveMuted:i[50],info:a,infoForeground:C,infoMuted:r[50]}}function mR(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Gt(Zt(o.success)),u=Gt(Zt(o.warning)),w=Gt(Zt(o.destructive)),C=Gt(Zt(o.info));return{success:s,successForeground:c,successMuted:t[900],warning:n,warningForeground:u,warningMuted:e[900],destructive:d,destructiveForeground:w,destructiveMuted:i[900],info:a,infoForeground:C,infoMuted:r[900]}}const xR={foreground:13,foregroundMuted:55.1,foregroundSubtle:70.7,surface:98.5,border:92.8,borderMuted:96.7,borderStrong:87.2,secondary:96.7,secondaryForeground:21,secondaryHover:92.8,secondaryActive:87.2,muted:96.7,mutedForeground:55.1,input:92.8,cardForeground:13,popoverForeground:13,scrollbarThumb:87.2},fR={background:13,foreground:98.5,foregroundMuted:70.7,foregroundSubtle:55.1,surface:21,surfaceRaised:37.3,border:27.8,borderMuted:21,borderStrong:37.3,secondary:27.8,secondaryForeground:98.5,secondaryHover:37.3,secondaryActive:44.6,muted:27.8,mutedForeground:70.7,input:37.3,ringOffset:13,card:21,cardForeground:98.5,popover:21,popoverForeground:98.5,scrollbarThumb:44.6},Fa={light:{lightness:0,alpha:.5},dark:{lightness:0,alpha:.7}};function B(o,t){return t!==void 0?`oklch(${o}% 0 0 / ${t})`:`oklch(${o}% 0 0)`}function MR(){const o=xR,t=Fa.light;return{background:"#fff",foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:"#fff",border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:"#fff",card:"#fff",cardForeground:B(o.cardForeground),popover:"#fff",popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function yR(){const o=fR,t=Fa.dark;return{background:B(o.background),foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:B(o.surfaceRaised),border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:B(o.ringOffset),card:B(o.card),cardForeground:B(o.cardForeground),popover:B(o.popover),popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function bR(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function gi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function CR(o,t,e){const i=gi(o),r=gi(t),s=gi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function BR(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Pa(o){const t=bR(o),e=CR(t.r,t.g,t.b);return BR(e.x,e.y,e.z).l*100}function Ea(o){return o>60?"#000":"#fff"}function Ta(o,t){const e=dt(o,500),i=vt(o),r=Pa(o),s=Ea(r);return{primary:i,primaryForeground:s,primaryHover:e[700],primaryActive:e[800],primaryMuted:e[100],itemSelected:e[100],itemSelectedForeground:e[700],selection:e[200],selectionForeground:t.foreground,inputFocus:i,ring:i}}function jR(o,t){const e=dt(o,500),i=vt(o),r=Pa(o),s=Ea(r);return{primary:i,primaryForeground:s,primaryHover:xo(o,{lightnessOffset:6.5,chromaFactor:1.02}),primaryActive:xo(o,{lightnessOffset:2.5,chromaFactor:1.08}),primaryMuted:e[800],itemSelected:xo(o,{lightnessOffset:-7.5,chromaFactor:.83}),itemSelectedForeground:Cr,selection:e[800],selectionForeground:t.foreground,inputFocus:i,ring:i}}const AR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.25), 0 1px 2px -1px rgb(0 0 0 / 0.25)",md:"0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.35), 0 4px 6px -4px rgb(0 0 0 / 0.35)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.5)"};function LR(o=ws){const t=yR(),e=jR(o.primary,t),i=wR(o),r=mR(o);return{name:"dark",colorScheme:"dark",semantic:{...t,...e,...i,...r},shadows:AR}}LR();const SR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function HR(o=ws){const t=MR(),e=Ta(o.primary,t),i=Ua(o),r=Da(o);return{name:"light",colorScheme:"light",semantic:{...t,...e,...i,...r},shadows:SR}}HR();const G0={background:"oklch(98.5% 0 0)",foreground:"oklch(20.5% 0 0)",foregroundMuted:"oklch(55.6% 0 0)",foregroundSubtle:"oklch(70.8% 0 0)",surface:"oklch(97% 0 0)",surfaceRaised:"#fff",border:"oklch(87% 0 0)",borderMuted:"oklch(92.2% 0 0)",borderStrong:"oklch(70.8% 0 0)",secondary:"oklch(92.2% 0 0)",secondaryForeground:"oklch(26.9% 0 0)",secondaryHover:"oklch(87% 0 0)",secondaryActive:"oklch(70.8% 0 0)",muted:"oklch(92.2% 0 0)",mutedForeground:"oklch(55.6% 0 0)",input:"oklch(87% 0 0)",ringOffset:"oklch(98.5% 0 0)",card:"#fff",cardForeground:"oklch(20.5% 0 0)",popover:"#fff",popoverForeground:"oklch(20.5% 0 0)",overlay:"oklch(0% 0 0 / 0.4)",scrollbarThumb:"oklch(87% 0 0)"},RR={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function VR(o=ws){const t=Ta(o.primary,G0),e=Ua(o),i=Da(o);return{name:"neutral",colorScheme:"light",semantic:{...G0,...t,...e,...i},shadows:RR}}VR();function zR(o={}){const{defaultTheme:t="light",autoFallback:e="light"}=o;let i=null,r=null,s=null;const n=new Map;function d(){return typeof window>"u"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function a(){return!s&&typeof document<"u"&&(s=document.createElement("style"),s.id="theme-registry",document.head.appendChild(s)),s}function c(x){const A=n.get(x);if(!A)return;const E=Object.entries(A.variables).map(([st,gt])=>`  ${st}: ${gt};`).join(`
+`,ko=class ko extends $L{getNodeTagName(){return`${this.tagName.toLowerCase().replace("-tree","")}-tree-node`}};ko.baseName="tree",ko.register=S(ko),ko.styles=[f.styles,rH];let Zi=ko;const mo=class mo extends FL{};mo.baseName="tree-node",mo.register=S(mo),mo.styles=[f.styles,iH];let Gi=mo;function sH(){nS.register(),Fi.register(),Pi.register(),Yi.register(),Ui.register(),Vi.register(),zi.register(),$i.register(),Ti.register(),Oi.register(),Ii.register(),dS.register(),ZS.register(),wS.register(),tH.register(),VS.register(),$S.register(),qi.register(),Ni.register(),TS.register(),qS.register(),kS.register(),SS.register(),eS.register(),rS.register(),Ri.register(),Li.register(),Si.register(),Di.register(),_i.register(),Hi.register(),jS.register(),GL.register(),KL.register(),Zi.register(),Gi.register(),Ei.register()}const nH=["background","surface","surface-raised","foreground","foreground-muted","foreground-subtle","border","border-muted","border-strong","primary","primary-foreground","primary-hover","primary-active","primary-muted","secondary","secondary-foreground","secondary-hover","secondary-active","muted","muted-foreground","accent","accent-foreground","item-hover","item-hover-foreground","item-active","item-active-foreground","item-selected","item-selected-foreground","success","success-foreground","success-muted","warning","warning-foreground","warning-muted","destructive","destructive-foreground","destructive-muted","info","info-foreground","info-muted","input","input-focus","ring","ring-offset","card","card-foreground","popover","popover-foreground","overlay","selection","selection-foreground","scrollbar-thumb"],Za=[50,100,200,300,400,500,600,700,800,900,950],lH=["red","orange","yellow","green","blue","purple","pink","gray","neutral"];function aH(o){const t=o.match(/oklch\(([\d.]+)%?\s+([\d.]+)\s+([\d.]+)\)/);if(!t)throw new Error(`Invalid OKLCH color: ${o}`);return{l:parseFloat(t[1]),c:parseFloat(t[2]),h:parseFloat(t[3])}}function dH(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function wi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function hH(o,t,e){const i=wi(o),r=wi(t),s=wi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function cH(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function pH(o,t,e){const i=Math.sqrt(t*t+e*e);let r=Math.atan2(e,t)*(180/Math.PI);return r<0&&(r+=360),{l:o*100,c:i,h:r}}function us(o){const t=dH(o),e=hH(t.r,t.g,t.b),i=cH(e.x,e.y,e.z);return pH(i.l,i.a,i.b)}function ws(o,t,e){return`oklch(${o.toFixed(1)}% ${t.toFixed(3)} ${e.toFixed(3)})`}function vt(o){const{l:t,c:e,h:i}=us(o);return ws(t,e,i)}const uH={50:97.1,100:93.6,200:88.5,300:80.8,400:70.4,500:63.7,600:57.7,700:50.5,800:44.4,900:39.6,950:25.8},Ga={50:.055,100:.135,200:.261,300:.481,400:.806,500:1,600:1.034,700:.898,800:.747,900:.595,950:.388};function dt(o,t=500){let e;o.startsWith("#")?e=us(o):e=aH(o);const i=Ga[t],r={};for(const[s,n]of Object.entries(uH)){const d=parseInt(s),a=Ga[d],c=e.c*(a/i);r[d]=ws(n,c,e.h)}return r}function xo(o,t){const e=us(o),{lightnessOffset:i=0,chromaFactor:r=1}=t,s=Math.max(0,Math.min(100,e.l+i)),n=Math.max(0,e.c*r);return ws(s,n,e.h)}const Cr="oklch(98.5% 0 0)",gs={primary:"#B7410E",success:"#22c55e",warning:"#f59e0b",destructive:"#ef4444",info:"#3b82f6"};function V0(o){const t=dt(o.primary,500);return{accent:t[100],accentForeground:t[700],itemHover:t[50],itemHoverForeground:t[700],itemActive:t[100],itemActiveForeground:t[800]}}function wH(o){const t=o.primary;return{accent:xo(t,{lightnessOffset:-11.5,chromaFactor:.9}),accentForeground:Cr,itemHover:xo(t,{lightnessOffset:-5.5,chromaFactor:.77}),itemHoverForeground:Cr,itemActive:xo(t,{lightnessOffset:-3.5,chromaFactor:.93}),itemActiveForeground:Cr}}function gH(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function gi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function vH(o,t,e){const i=gi(o),r=gi(t),s=gi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function kH(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function Gt(o){const t=gH(o),e=vH(t.r,t.g,t.b);return kH(e.x,e.y,e.z).l*100}function Wt(o){return o>60?"#000":"#fff"}function z0(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Wt(Gt(o.success)),p=Wt(Gt(o.warning)),w=Wt(Gt(o.destructive)),C=Wt(Gt(o.info));return{success:s,successForeground:c,successMuted:t[50],warning:n,warningForeground:p,warningMuted:e[50],destructive:d,destructiveForeground:w,destructiveMuted:i[50],info:a,infoForeground:C,infoMuted:r[50]}}function mH(o){const t=dt(o.success,500),e=dt(o.warning,500),i=dt(o.destructive,500),r=dt(o.info,500),s=vt(o.success),n=vt(o.warning),d=vt(o.destructive),a=vt(o.info),c=Wt(Gt(o.success)),p=Wt(Gt(o.warning)),w=Wt(Gt(o.destructive)),C=Wt(Gt(o.info));return{success:s,successForeground:c,successMuted:t[900],warning:n,warningForeground:p,warningMuted:e[900],destructive:d,destructiveForeground:w,destructiveMuted:i[900],info:a,infoForeground:C,infoMuted:r[900]}}const xH={foreground:13,foregroundMuted:55.1,foregroundSubtle:70.7,surface:98.5,border:92.8,borderMuted:96.7,borderStrong:87.2,secondary:96.7,secondaryForeground:21,secondaryHover:92.8,secondaryActive:87.2,muted:96.7,mutedForeground:55.1,input:92.8,cardForeground:13,popoverForeground:13,scrollbarThumb:87.2},fH={background:13,foreground:98.5,foregroundMuted:70.7,foregroundSubtle:55.1,surface:21,surfaceRaised:37.3,border:27.8,borderMuted:21,borderStrong:37.3,secondary:27.8,secondaryForeground:98.5,secondaryHover:37.3,secondaryActive:44.6,muted:27.8,mutedForeground:70.7,input:37.3,ringOffset:13,card:21,cardForeground:98.5,popover:21,popoverForeground:98.5,scrollbarThumb:44.6},$0={light:{lightness:0,alpha:.5},dark:{lightness:0,alpha:.7}};function B(o,t){return t!==void 0?`oklch(${o}% 0 0 / ${t})`:`oklch(${o}% 0 0)`}function MH(){const o=xH,t=$0.light;return{background:"#fff",foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:"#fff",border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:"#fff",card:"#fff",cardForeground:B(o.cardForeground),popover:"#fff",popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function yH(){const o=fH,t=$0.dark;return{background:B(o.background),foreground:B(o.foreground),foregroundMuted:B(o.foregroundMuted),foregroundSubtle:B(o.foregroundSubtle),surface:B(o.surface),surfaceRaised:B(o.surfaceRaised),border:B(o.border),borderMuted:B(o.borderMuted),borderStrong:B(o.borderStrong),secondary:B(o.secondary),secondaryForeground:B(o.secondaryForeground),secondaryHover:B(o.secondaryHover),secondaryActive:B(o.secondaryActive),muted:B(o.muted),mutedForeground:B(o.mutedForeground),input:B(o.input),ringOffset:B(o.ringOffset),card:B(o.card),cardForeground:B(o.cardForeground),popover:B(o.popover),popoverForeground:B(o.popoverForeground),overlay:B(t.lightness,t.alpha),scrollbarThumb:B(o.scrollbarThumb)}}function bH(o){const t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(o);if(!t)throw new Error(`Invalid hex color: ${o}`);return{r:parseInt(t[1],16)/255,g:parseInt(t[2],16)/255,b:parseInt(t[3],16)/255}}function vi(o){return o<=.04045?o/12.92:Math.pow((o+.055)/1.055,2.4)}function CH(o,t,e){const i=vi(o),r=vi(t),s=vi(e);return{x:.4124564*i+.3575761*r+.1804375*s,y:.2126729*i+.7151522*r+.072175*s,z:.0193339*i+.119192*r+.9503041*s}}function BH(o,t,e){const i=.8189330101*o+.3618667424*t-.1288597137*e,r=.0329845436*o+.9293118715*t+.0361456387*e,s=.0482003018*o+.2643662691*t+.633851707*e,n=Math.cbrt(i),d=Math.cbrt(r),a=Math.cbrt(s);return{l:.2104542553*n+.793617785*d-.0040720468*a,a:1.9779984951*n-2.428592205*d+.4505937099*a,b:.0259040371*n+.7827717662*d-.808675766*a}}function D0(o){const t=bH(o),e=CH(t.r,t.g,t.b);return BH(e.x,e.y,e.z).l*100}function F0(o){return o>60?"#000":"#fff"}function P0(o,t){const e=dt(o,500),i=vt(o),r=D0(o),s=F0(r);return{primary:i,primaryForeground:s,primaryHover:e[700],primaryActive:e[800],primaryMuted:e[100],itemSelected:e[100],itemSelectedForeground:e[700],selection:e[200],selectionForeground:t.foreground,inputFocus:i,ring:i}}function jH(o,t){const e=dt(o,500),i=vt(o),r=D0(o),s=F0(r);return{primary:i,primaryForeground:s,primaryHover:xo(o,{lightnessOffset:6.5,chromaFactor:1.02}),primaryActive:xo(o,{lightnessOffset:2.5,chromaFactor:1.08}),primaryMuted:e[800],itemSelected:xo(o,{lightnessOffset:-7.5,chromaFactor:.83}),itemSelectedForeground:Cr,selection:e[800],selectionForeground:t.foreground,inputFocus:i,ring:i}}const AH={sm:"0 1px 3px 0 rgb(0 0 0 / 0.25), 0 1px 2px -1px rgb(0 0 0 / 0.25)",md:"0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.35), 0 4px 6px -4px rgb(0 0 0 / 0.35)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.5)"};function RH(o=gs){const t=yH(),e=jH(o.primary,t),i=wH(o),r=mH(o);return{name:"dark",colorScheme:"dark",semantic:{...t,...e,...i,...r},shadows:AH}}RH();const LH={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function SH(o=gs){const t=MH(),e=P0(o.primary,t),i=V0(o),r=z0(o);return{name:"light",colorScheme:"light",semantic:{...t,...e,...i,...r},shadows:LH}}SH();const Wa={background:"oklch(98.5% 0 0)",foreground:"oklch(20.5% 0 0)",foregroundMuted:"oklch(55.6% 0 0)",foregroundSubtle:"oklch(70.8% 0 0)",surface:"oklch(97% 0 0)",surfaceRaised:"#fff",border:"oklch(87% 0 0)",borderMuted:"oklch(92.2% 0 0)",borderStrong:"oklch(70.8% 0 0)",secondary:"oklch(92.2% 0 0)",secondaryForeground:"oklch(26.9% 0 0)",secondaryHover:"oklch(87% 0 0)",secondaryActive:"oklch(70.8% 0 0)",muted:"oklch(92.2% 0 0)",mutedForeground:"oklch(55.6% 0 0)",input:"oklch(87% 0 0)",ringOffset:"oklch(98.5% 0 0)",card:"#fff",cardForeground:"oklch(20.5% 0 0)",popover:"#fff",popoverForeground:"oklch(20.5% 0 0)",overlay:"oklch(0% 0 0 / 0.4)",scrollbarThumb:"oklch(87% 0 0)"},HH={sm:"0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",md:"0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",lg:"0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",xl:"0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)","2xl":"0 25px 50px -12px rgb(0 0 0 / 0.25)"};function YH(o=gs){const t=P0(o.primary,Wa),e=V0(o),i=z0(o);return{name:"neutral",colorScheme:"light",semantic:{...Wa,...t,...e,...i},shadows:HH}}YH();function UH(o={}){const{defaultTheme:t="light",autoFallback:e="light"}=o;let i=null,r=null,s=null;const n=new Map;function d(){return typeof window>"u"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function a(){return!s&&typeof document<"u"&&(s=document.createElement("style"),s.id="theme-registry",document.head.appendChild(s)),s}function c(x){const A=n.get(x);if(!A)return;const F=Object.entries(A.variables).map(([st,gt])=>`  ${st}: ${gt};`).join(`
 `),q=`[data-theme="${x}"] {
   color-scheme: ${A.colorScheme};
-${E}
-}`,b=a();b.textContent=q}function u(x){if(typeof document>"u")return;const A=document.documentElement;if(x==="light"||x==="dark")A.dataset.theme="default",A.dataset.colorScheme=x,A.style.colorScheme=x;else if(x==="neutral")A.dataset.theme="neutral",A.dataset.colorScheme="light",A.style.colorScheme="light";else if(x==="auto"){const E=d();A.dataset.theme="default",A.dataset.colorScheme=E,A.style.colorScheme=E}else{const q=n.get(x)?.colorScheme||"light";A.dataset.theme=x,A.dataset.colorScheme=q,A.style.colorScheme=q,c(x)}}function w(x,A){typeof window>"u"||window.dispatchEvent(new CustomEvent("theme-change",{detail:{theme:x,previous:A}}))}function C(){if(typeof window>"u")return()=>{};r=window.matchMedia("(prefers-color-scheme: dark)");const x=()=>{i==="auto"&&(u("auto"),w("auto","auto"))};return r.addEventListener("change",x),()=>{r?.removeEventListener("change",x)}}function m(x,A,E="light"){n.set(x,{variables:A,colorScheme:E}),i===x&&c(x)}function S(x){const A=i;i=x,u(x),w(x,A)}function z(){return i}function U(){return i==="auto"?d():i||t}function M(x){if(typeof window>"u")return()=>{};const A=E=>{x(E.detail)};return window.addEventListener("theme-change",A),()=>{window.removeEventListener("theme-change",A)}}function V(){return C()}function I(x){if(x==="light"||x==="dark")return{colorScheme:x};if(x==="neutral")return{colorScheme:"light"};if(x==="auto")return{colorScheme:d()};const A=n.get(x);return A?{colorScheme:A.colorScheme}:null}return{register:m,setTheme:S,getTheme:z,getActiveTheme:U,getThemeInfo:I,subscribe:M,init:V}}const He=zR();function $R(o={}){const{target:t=typeof document<"u"?document.documentElement:null}=o,e=new Set,i=new Set;function r(M,V){t&&t.style.setProperty(`--${M}`,V)}function s(M){t&&t.style.removeProperty(`--${M}`)}function n(M){return t?getComputedStyle(t).getPropertyValue(`--${M}`).trim():""}function d(M,V,I=500){const x=dt(V,I);for(const[A,E]of Object.entries(x))r(`color-${M}-${A}`,E);return e.add(M),x}function a(M,V){return M[V]}function c(M,V={}){const{scale:I=600,hoverScale:x,activeScale:A,mutedScale:E=100}=V,q=d("primary-custom",M,500),b=x??Math.min(I+100,950),st=A??Math.min(I+200,950),gt=a(q,I),cr=a(q,b),Ie=a(q,st),qe=a(q,E);return u("primary",gt),u("primary-hover",cr),u("primary-active",Ie),u("primary-foreground","#fff"),u("primary-muted",qe),u("ring",gt),u("input-focus",gt),u("item-selected",qe),u("item-selected-foreground",gt),u("info",gt),u("info-muted",qe),u("selection",a(q,200)),u("selection-foreground",a(q,900)),q}function u(M,V){r(`color-${M}`,V),i.add(M)}function w(M){for(const[V,I]of Object.entries(M))I&&u(V,I)}function C(M){for(const V of _0)s(`color-${M}-${V}`);e.delete(M)}function m(M){s(`color-${M}`),i.delete(M)}function S(){for(const M of e)C(M);for(const M of i)m(M);e.clear(),i.clear()}function z(){return[...e]}function U(){return[...i]}return{applyPalette:d,applyPrimaryColor:c,resetPalette:C,setSemanticColor:u,setSemanticColors:w,resetSemanticColor:m,reset:S,setVar:r,getVar:n,removeVar:s,getAppliedPalettes:z,getAppliedSemanticColors:U,COLOR_SCALE_VALUES:_0,BUILTIN_PALETTES:lR,SEMANTIC_COLOR_NAMES:nR}}typeof document<"u"&&$R();const _o=[{key:"light",label:"浅色",icon:"○"},{key:"dark",label:"深色",icon:"●"},{key:"neutral",label:"中性",icon:"◐"},{key:"auto",label:"跟随系统",icon:"◑"}];function Ya(){return He?.getTheme()||"light"}function UR(){const o=Ya();return _o.find(t=>t.key===o)||_o[0]}function DR(o){He?.setTheme(o)}function FR(o){return He?He.subscribe(t=>{o(t.theme)}):()=>{}}function Oa(o){var t,e,i="";if(typeof o=="string"||typeof o=="number")i+=o;else if(typeof o=="object")if(Array.isArray(o)){var r=o.length;for(t=0;t<r;t++)o[t]&&(e=Oa(o[t]))&&(i&&(i+=" "),i+=e)}else for(e in o)o[e]&&(i&&(i+=" "),i+=e);return i}function PR(){for(var o,t,e=0,i="",r=arguments.length;e<r;e++)(o=arguments[e])&&(t=Oa(o))&&(i&&(i+=" "),i+=t);return i}const ER=(o,t)=>{const e=new Array(o.length+t.length);for(let i=0;i<o.length;i++)e[i]=o[i];for(let i=0;i<t.length;i++)e[o.length+i]=t[i];return e},TR=(o,t)=>({classGroupId:o,validator:t}),Ia=(o=new Map,t=null,e)=>({nextPart:o,validators:t,classGroupId:e}),Sr="-",W0=[],YR="arbitrary..",OR=o=>{const t=qR(o),{conflictingClassGroups:e,conflictingClassGroupModifiers:i}=o;return{getClassGroupId:n=>{if(n.startsWith("[")&&n.endsWith("]"))return IR(n);const d=n.split(Sr),a=d[0]===""&&d.length>1?1:0;return qa(d,a,t)},getConflictingClassGroupIds:(n,d)=>{if(d){const a=i[n],c=e[n];return a?c?ER(c,a):a:c||W0}return e[n]||W0}}},qa=(o,t,e)=>{if(o.length-t===0)return e.classGroupId;const r=o[t],s=e.nextPart.get(r);if(s){const c=qa(o,t+1,s);if(c)return c}const n=e.validators;if(n===null)return;const d=t===0?o.join(Sr):o.slice(t).join(Sr),a=n.length;for(let c=0;c<a;c++){const u=n[c];if(u.validator(d))return u.classGroupId}},IR=o=>o.slice(1,-1).indexOf(":")===-1?void 0:(()=>{const t=o.slice(1,-1),e=t.indexOf(":"),i=t.slice(0,e);return i?YR+i:void 0})(),qR=o=>{const{theme:t,classGroups:e}=o;return NR(e,t)},NR=(o,t)=>{const e=Ia();for(const i in o){const r=o[i];gs(r,e,i,t)}return e},gs=(o,t,e,i)=>{const r=o.length;for(let s=0;s<r;s++){const n=o[s];_R(n,t,e,i)}},_R=(o,t,e,i)=>{if(typeof o=="string"){ZR(o,t,e);return}if(typeof o=="function"){GR(o,t,e,i);return}WR(o,t,e,i)},ZR=(o,t,e)=>{const i=o===""?t:Na(t,o);i.classGroupId=e},GR=(o,t,e,i)=>{if(KR(o)){gs(o(i),t,e,i);return}t.validators===null&&(t.validators=[]),t.validators.push(TR(e,o))},WR=(o,t,e,i)=>{const r=Object.entries(o),s=r.length;for(let n=0;n<s;n++){const[d,a]=r[n];gs(a,Na(t,d),e,i)}},Na=(o,t)=>{let e=o;const i=t.split(Sr),r=i.length;for(let s=0;s<r;s++){const n=i[s];let d=e.nextPart.get(n);d||(d=Ia(),e.nextPart.set(n,d)),e=d}return e},KR=o=>"isThemeGetter"in o&&o.isThemeGetter===!0,XR=o=>{if(o<1)return{get:()=>{},set:()=>{}};let t=0,e=Object.create(null),i=Object.create(null);const r=(s,n)=>{e[s]=n,t++,t>o&&(t=0,i=e,e=Object.create(null))};return{get(s){let n=e[s];if(n!==void 0)return n;if((n=i[s])!==void 0)return r(s,n),n},set(s,n){s in e?e[s]=n:r(s,n)}}},Gi="!",K0=":",JR=[],X0=(o,t,e,i,r)=>({modifiers:o,hasImportantModifier:t,baseClassName:e,maybePostfixModifierPosition:i,isExternal:r}),QR=o=>{const{prefix:t,experimentalParseClassName:e}=o;let i=r=>{const s=[];let n=0,d=0,a=0,c;const u=r.length;for(let z=0;z<u;z++){const U=r[z];if(n===0&&d===0){if(U===K0){s.push(r.slice(a,z)),a=z+1;continue}if(U==="/"){c=z;continue}}U==="["?n++:U==="]"?n--:U==="("?d++:U===")"&&d--}const w=s.length===0?r:r.slice(a);let C=w,m=!1;w.endsWith(Gi)?(C=w.slice(0,-1),m=!0):w.startsWith(Gi)&&(C=w.slice(1),m=!0);const S=c&&c>a?c-a:void 0;return X0(s,m,C,S)};if(t){const r=t+K0,s=i;i=n=>n.startsWith(r)?s(n.slice(r.length)):X0(JR,!1,n,void 0,!0)}if(e){const r=i;i=s=>e({className:s,parseClassName:r})}return i},tV=o=>{const t=new Map;return o.orderSensitiveModifiers.forEach((e,i)=>{t.set(e,1e6+i)}),e=>{const i=[];let r=[];for(let s=0;s<e.length;s++){const n=e[s],d=n[0]==="[",a=t.has(n);d||a?(r.length>0&&(r.sort(),i.push(...r),r=[]),i.push(n)):r.push(n)}return r.length>0&&(r.sort(),i.push(...r)),i}},eV=o=>({cache:XR(o.cacheSize),parseClassName:QR(o),sortModifiers:tV(o),...OR(o)}),oV=/\s+/,rV=(o,t)=>{const{parseClassName:e,getClassGroupId:i,getConflictingClassGroupIds:r,sortModifiers:s}=t,n=[],d=o.trim().split(oV);let a="";for(let c=d.length-1;c>=0;c-=1){const u=d[c],{isExternal:w,modifiers:C,hasImportantModifier:m,baseClassName:S,maybePostfixModifierPosition:z}=e(u);if(w){a=u+(a.length>0?" "+a:a);continue}let U=!!z,M=i(U?S.substring(0,z):S);if(!M){if(!U){a=u+(a.length>0?" "+a:a);continue}if(M=i(S),!M){a=u+(a.length>0?" "+a:a);continue}U=!1}const V=C.length===0?"":C.length===1?C[0]:s(C).join(":"),I=m?V+Gi:V,x=I+M;if(n.indexOf(x)>-1)continue;n.push(x);const A=r(M,U);for(let E=0;E<A.length;++E){const q=A[E];n.push(I+q)}a=u+(a.length>0?" "+a:a)}return a},iV=(...o)=>{let t=0,e,i,r="";for(;t<o.length;)(e=o[t++])&&(i=_a(e))&&(r&&(r+=" "),r+=i);return r},_a=o=>{if(typeof o=="string")return o;let t,e="";for(let i=0;i<o.length;i++)o[i]&&(t=_a(o[i]))&&(e&&(e+=" "),e+=t);return e},sV=(o,...t)=>{let e,i,r,s;const n=a=>{const c=t.reduce((u,w)=>w(u),o());return e=eV(c),i=e.cache.get,r=e.cache.set,s=d,d(a)},d=a=>{const c=i(a);if(c)return c;const u=rV(a,e);return r(a,u),u};return s=n,(...a)=>s(iV(...a))},nV=[],N=o=>{const t=e=>e[o]||nV;return t.isThemeGetter=!0,t},Za=/^\[(?:(\w[\w-]*):)?(.+)\]$/i,Ga=/^\((?:(\w[\w-]*):)?(.+)\)$/i,lV=/^\d+\/\d+$/,aV=/^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/,dV=/\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/,hV=/^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/,cV=/^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/,pV=/^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/,_e=o=>lV.test(o),L=o=>!!o&&!Number.isNaN(Number(o)),It=o=>!!o&&Number.isInteger(Number(o)),vi=o=>o.endsWith("%")&&L(o.slice(0,-1)),bt=o=>aV.test(o),uV=()=>!0,wV=o=>dV.test(o)&&!hV.test(o),Wa=()=>!1,gV=o=>cV.test(o),vV=o=>pV.test(o),kV=o=>!g(o)&&!v(o),mV=o=>Uo(o,Ja,Wa),g=o=>Za.test(o),je=o=>Uo(o,Qa,wV),ki=o=>Uo(o,bV,L),J0=o=>Uo(o,Ka,Wa),xV=o=>Uo(o,Xa,vV),mr=o=>Uo(o,t1,gV),v=o=>Ga.test(o),Po=o=>Do(o,Qa),fV=o=>Do(o,CV),Q0=o=>Do(o,Ka),MV=o=>Do(o,Ja),yV=o=>Do(o,Xa),xr=o=>Do(o,t1,!0),Uo=(o,t,e)=>{const i=Za.exec(o);return i?i[1]?t(i[1]):e(i[2]):!1},Do=(o,t,e=!1)=>{const i=Ga.exec(o);return i?i[1]?t(i[1]):e:!1},Ka=o=>o==="position"||o==="percentage",Xa=o=>o==="image"||o==="url",Ja=o=>o==="length"||o==="size"||o==="bg-size",Qa=o=>o==="length",bV=o=>o==="number",CV=o=>o==="family-name",t1=o=>o==="shadow",BV=()=>{const o=N("color"),t=N("font"),e=N("text"),i=N("font-weight"),r=N("tracking"),s=N("leading"),n=N("breakpoint"),d=N("container"),a=N("spacing"),c=N("radius"),u=N("shadow"),w=N("inset-shadow"),C=N("text-shadow"),m=N("drop-shadow"),S=N("blur"),z=N("perspective"),U=N("aspect"),M=N("ease"),V=N("animate"),I=()=>["auto","avoid","all","avoid-page","page","left","right","column"],x=()=>["center","top","bottom","left","right","top-left","left-top","top-right","right-top","bottom-right","right-bottom","bottom-left","left-bottom"],A=()=>[...x(),v,g],E=()=>["auto","hidden","clip","visible","scroll"],q=()=>["auto","contain","none"],b=()=>[v,g,a],st=()=>[_e,"full","auto",...b()],gt=()=>[It,"none","subgrid",v,g],cr=()=>["auto",{span:["full",It,v,g]},It,v,g],Ie=()=>[It,"auto",v,g],qe=()=>["auto","min","max","fr",v,g],_r=()=>["start","end","center","between","around","evenly","stretch","baseline","center-safe","end-safe"],Ne=()=>["start","end","center","stretch","center-safe","end-safe"],yt=()=>["auto",...b()],be=()=>[_e,"auto","full","dvw","dvh","lvw","lvh","svw","svh","min","max","fit",...b()],y=()=>[o,v,g],ms=()=>[...x(),Q0,J0,{position:[v,g]}],xs=()=>["no-repeat",{repeat:["","x","y","space","round"]}],fs=()=>["auto","cover","contain",MV,mV,{size:[v,g]}],Zr=()=>[vi,Po,je],K=()=>["","none","full",c,v,g],nt=()=>["",L,Po,je],pr=()=>["solid","dashed","dotted","double"],Ms=()=>["normal","multiply","screen","overlay","darken","lighten","color-dodge","color-burn","hard-light","soft-light","difference","exclusion","hue","saturation","color","luminosity"],Z=()=>[L,vi,Q0,J0],ys=()=>["","none",S,v,g],ur=()=>["none",L,v,g],wr=()=>["none",L,v,g],Gr=()=>[L,v,g],gr=()=>[_e,"full",...b()];return{cacheSize:500,theme:{animate:["spin","ping","pulse","bounce"],aspect:["video"],blur:[bt],breakpoint:[bt],color:[uV],container:[bt],"drop-shadow":[bt],ease:["in","out","in-out"],font:[kV],"font-weight":["thin","extralight","light","normal","medium","semibold","bold","extrabold","black"],"inset-shadow":[bt],leading:["none","tight","snug","normal","relaxed","loose"],perspective:["dramatic","near","normal","midrange","distant","none"],radius:[bt],shadow:[bt],spacing:["px",L],text:[bt],"text-shadow":[bt],tracking:["tighter","tight","normal","wide","wider","widest"]},classGroups:{aspect:[{aspect:["auto","square",_e,g,v,U]}],container:["container"],columns:[{columns:[L,g,v,d]}],"break-after":[{"break-after":I()}],"break-before":[{"break-before":I()}],"break-inside":[{"break-inside":["auto","avoid","avoid-page","avoid-column"]}],"box-decoration":[{"box-decoration":["slice","clone"]}],box:[{box:["border","content"]}],display:["block","inline-block","inline","flex","inline-flex","table","inline-table","table-caption","table-cell","table-column","table-column-group","table-footer-group","table-header-group","table-row-group","table-row","flow-root","grid","inline-grid","contents","list-item","hidden"],sr:["sr-only","not-sr-only"],float:[{float:["right","left","none","start","end"]}],clear:[{clear:["left","right","both","none","start","end"]}],isolation:["isolate","isolation-auto"],"object-fit":[{object:["contain","cover","fill","none","scale-down"]}],"object-position":[{object:A()}],overflow:[{overflow:E()}],"overflow-x":[{"overflow-x":E()}],"overflow-y":[{"overflow-y":E()}],overscroll:[{overscroll:q()}],"overscroll-x":[{"overscroll-x":q()}],"overscroll-y":[{"overscroll-y":q()}],position:["static","fixed","absolute","relative","sticky"],inset:[{inset:st()}],"inset-x":[{"inset-x":st()}],"inset-y":[{"inset-y":st()}],start:[{start:st()}],end:[{end:st()}],top:[{top:st()}],right:[{right:st()}],bottom:[{bottom:st()}],left:[{left:st()}],visibility:["visible","invisible","collapse"],z:[{z:[It,"auto",v,g]}],basis:[{basis:[_e,"full","auto",d,...b()]}],"flex-direction":[{flex:["row","row-reverse","col","col-reverse"]}],"flex-wrap":[{flex:["nowrap","wrap","wrap-reverse"]}],flex:[{flex:[L,_e,"auto","initial","none",g]}],grow:[{grow:["",L,v,g]}],shrink:[{shrink:["",L,v,g]}],order:[{order:[It,"first","last","none",v,g]}],"grid-cols":[{"grid-cols":gt()}],"col-start-end":[{col:cr()}],"col-start":[{"col-start":Ie()}],"col-end":[{"col-end":Ie()}],"grid-rows":[{"grid-rows":gt()}],"row-start-end":[{row:cr()}],"row-start":[{"row-start":Ie()}],"row-end":[{"row-end":Ie()}],"grid-flow":[{"grid-flow":["row","col","dense","row-dense","col-dense"]}],"auto-cols":[{"auto-cols":qe()}],"auto-rows":[{"auto-rows":qe()}],gap:[{gap:b()}],"gap-x":[{"gap-x":b()}],"gap-y":[{"gap-y":b()}],"justify-content":[{justify:[..._r(),"normal"]}],"justify-items":[{"justify-items":[...Ne(),"normal"]}],"justify-self":[{"justify-self":["auto",...Ne()]}],"align-content":[{content:["normal",..._r()]}],"align-items":[{items:[...Ne(),{baseline:["","last"]}]}],"align-self":[{self:["auto",...Ne(),{baseline:["","last"]}]}],"place-content":[{"place-content":_r()}],"place-items":[{"place-items":[...Ne(),"baseline"]}],"place-self":[{"place-self":["auto",...Ne()]}],p:[{p:b()}],px:[{px:b()}],py:[{py:b()}],ps:[{ps:b()}],pe:[{pe:b()}],pt:[{pt:b()}],pr:[{pr:b()}],pb:[{pb:b()}],pl:[{pl:b()}],m:[{m:yt()}],mx:[{mx:yt()}],my:[{my:yt()}],ms:[{ms:yt()}],me:[{me:yt()}],mt:[{mt:yt()}],mr:[{mr:yt()}],mb:[{mb:yt()}],ml:[{ml:yt()}],"space-x":[{"space-x":b()}],"space-x-reverse":["space-x-reverse"],"space-y":[{"space-y":b()}],"space-y-reverse":["space-y-reverse"],size:[{size:be()}],w:[{w:[d,"screen",...be()]}],"min-w":[{"min-w":[d,"screen","none",...be()]}],"max-w":[{"max-w":[d,"screen","none","prose",{screen:[n]},...be()]}],h:[{h:["screen","lh",...be()]}],"min-h":[{"min-h":["screen","lh","none",...be()]}],"max-h":[{"max-h":["screen","lh",...be()]}],"font-size":[{text:["base",e,Po,je]}],"font-smoothing":["antialiased","subpixel-antialiased"],"font-style":["italic","not-italic"],"font-weight":[{font:[i,v,ki]}],"font-stretch":[{"font-stretch":["ultra-condensed","extra-condensed","condensed","semi-condensed","normal","semi-expanded","expanded","extra-expanded","ultra-expanded",vi,g]}],"font-family":[{font:[fV,g,t]}],"fvn-normal":["normal-nums"],"fvn-ordinal":["ordinal"],"fvn-slashed-zero":["slashed-zero"],"fvn-figure":["lining-nums","oldstyle-nums"],"fvn-spacing":["proportional-nums","tabular-nums"],"fvn-fraction":["diagonal-fractions","stacked-fractions"],tracking:[{tracking:[r,v,g]}],"line-clamp":[{"line-clamp":[L,"none",v,ki]}],leading:[{leading:[s,...b()]}],"list-image":[{"list-image":["none",v,g]}],"list-style-position":[{list:["inside","outside"]}],"list-style-type":[{list:["disc","decimal","none",v,g]}],"text-alignment":[{text:["left","center","right","justify","start","end"]}],"placeholder-color":[{placeholder:y()}],"text-color":[{text:y()}],"text-decoration":["underline","overline","line-through","no-underline"],"text-decoration-style":[{decoration:[...pr(),"wavy"]}],"text-decoration-thickness":[{decoration:[L,"from-font","auto",v,je]}],"text-decoration-color":[{decoration:y()}],"underline-offset":[{"underline-offset":[L,"auto",v,g]}],"text-transform":["uppercase","lowercase","capitalize","normal-case"],"text-overflow":["truncate","text-ellipsis","text-clip"],"text-wrap":[{text:["wrap","nowrap","balance","pretty"]}],indent:[{indent:b()}],"vertical-align":[{align:["baseline","top","middle","bottom","text-top","text-bottom","sub","super",v,g]}],whitespace:[{whitespace:["normal","nowrap","pre","pre-line","pre-wrap","break-spaces"]}],break:[{break:["normal","words","all","keep"]}],wrap:[{wrap:["break-word","anywhere","normal"]}],hyphens:[{hyphens:["none","manual","auto"]}],content:[{content:["none",v,g]}],"bg-attachment":[{bg:["fixed","local","scroll"]}],"bg-clip":[{"bg-clip":["border","padding","content","text"]}],"bg-origin":[{"bg-origin":["border","padding","content"]}],"bg-position":[{bg:ms()}],"bg-repeat":[{bg:xs()}],"bg-size":[{bg:fs()}],"bg-image":[{bg:["none",{linear:[{to:["t","tr","r","br","b","bl","l","tl"]},It,v,g],radial:["",v,g],conic:[It,v,g]},yV,xV]}],"bg-color":[{bg:y()}],"gradient-from-pos":[{from:Zr()}],"gradient-via-pos":[{via:Zr()}],"gradient-to-pos":[{to:Zr()}],"gradient-from":[{from:y()}],"gradient-via":[{via:y()}],"gradient-to":[{to:y()}],rounded:[{rounded:K()}],"rounded-s":[{"rounded-s":K()}],"rounded-e":[{"rounded-e":K()}],"rounded-t":[{"rounded-t":K()}],"rounded-r":[{"rounded-r":K()}],"rounded-b":[{"rounded-b":K()}],"rounded-l":[{"rounded-l":K()}],"rounded-ss":[{"rounded-ss":K()}],"rounded-se":[{"rounded-se":K()}],"rounded-ee":[{"rounded-ee":K()}],"rounded-es":[{"rounded-es":K()}],"rounded-tl":[{"rounded-tl":K()}],"rounded-tr":[{"rounded-tr":K()}],"rounded-br":[{"rounded-br":K()}],"rounded-bl":[{"rounded-bl":K()}],"border-w":[{border:nt()}],"border-w-x":[{"border-x":nt()}],"border-w-y":[{"border-y":nt()}],"border-w-s":[{"border-s":nt()}],"border-w-e":[{"border-e":nt()}],"border-w-t":[{"border-t":nt()}],"border-w-r":[{"border-r":nt()}],"border-w-b":[{"border-b":nt()}],"border-w-l":[{"border-l":nt()}],"divide-x":[{"divide-x":nt()}],"divide-x-reverse":["divide-x-reverse"],"divide-y":[{"divide-y":nt()}],"divide-y-reverse":["divide-y-reverse"],"border-style":[{border:[...pr(),"hidden","none"]}],"divide-style":[{divide:[...pr(),"hidden","none"]}],"border-color":[{border:y()}],"border-color-x":[{"border-x":y()}],"border-color-y":[{"border-y":y()}],"border-color-s":[{"border-s":y()}],"border-color-e":[{"border-e":y()}],"border-color-t":[{"border-t":y()}],"border-color-r":[{"border-r":y()}],"border-color-b":[{"border-b":y()}],"border-color-l":[{"border-l":y()}],"divide-color":[{divide:y()}],"outline-style":[{outline:[...pr(),"none","hidden"]}],"outline-offset":[{"outline-offset":[L,v,g]}],"outline-w":[{outline:["",L,Po,je]}],"outline-color":[{outline:y()}],shadow:[{shadow:["","none",u,xr,mr]}],"shadow-color":[{shadow:y()}],"inset-shadow":[{"inset-shadow":["none",w,xr,mr]}],"inset-shadow-color":[{"inset-shadow":y()}],"ring-w":[{ring:nt()}],"ring-w-inset":["ring-inset"],"ring-color":[{ring:y()}],"ring-offset-w":[{"ring-offset":[L,je]}],"ring-offset-color":[{"ring-offset":y()}],"inset-ring-w":[{"inset-ring":nt()}],"inset-ring-color":[{"inset-ring":y()}],"text-shadow":[{"text-shadow":["none",C,xr,mr]}],"text-shadow-color":[{"text-shadow":y()}],opacity:[{opacity:[L,v,g]}],"mix-blend":[{"mix-blend":[...Ms(),"plus-darker","plus-lighter"]}],"bg-blend":[{"bg-blend":Ms()}],"mask-clip":[{"mask-clip":["border","padding","content","fill","stroke","view"]},"mask-no-clip"],"mask-composite":[{mask:["add","subtract","intersect","exclude"]}],"mask-image-linear-pos":[{"mask-linear":[L]}],"mask-image-linear-from-pos":[{"mask-linear-from":Z()}],"mask-image-linear-to-pos":[{"mask-linear-to":Z()}],"mask-image-linear-from-color":[{"mask-linear-from":y()}],"mask-image-linear-to-color":[{"mask-linear-to":y()}],"mask-image-t-from-pos":[{"mask-t-from":Z()}],"mask-image-t-to-pos":[{"mask-t-to":Z()}],"mask-image-t-from-color":[{"mask-t-from":y()}],"mask-image-t-to-color":[{"mask-t-to":y()}],"mask-image-r-from-pos":[{"mask-r-from":Z()}],"mask-image-r-to-pos":[{"mask-r-to":Z()}],"mask-image-r-from-color":[{"mask-r-from":y()}],"mask-image-r-to-color":[{"mask-r-to":y()}],"mask-image-b-from-pos":[{"mask-b-from":Z()}],"mask-image-b-to-pos":[{"mask-b-to":Z()}],"mask-image-b-from-color":[{"mask-b-from":y()}],"mask-image-b-to-color":[{"mask-b-to":y()}],"mask-image-l-from-pos":[{"mask-l-from":Z()}],"mask-image-l-to-pos":[{"mask-l-to":Z()}],"mask-image-l-from-color":[{"mask-l-from":y()}],"mask-image-l-to-color":[{"mask-l-to":y()}],"mask-image-x-from-pos":[{"mask-x-from":Z()}],"mask-image-x-to-pos":[{"mask-x-to":Z()}],"mask-image-x-from-color":[{"mask-x-from":y()}],"mask-image-x-to-color":[{"mask-x-to":y()}],"mask-image-y-from-pos":[{"mask-y-from":Z()}],"mask-image-y-to-pos":[{"mask-y-to":Z()}],"mask-image-y-from-color":[{"mask-y-from":y()}],"mask-image-y-to-color":[{"mask-y-to":y()}],"mask-image-radial":[{"mask-radial":[v,g]}],"mask-image-radial-from-pos":[{"mask-radial-from":Z()}],"mask-image-radial-to-pos":[{"mask-radial-to":Z()}],"mask-image-radial-from-color":[{"mask-radial-from":y()}],"mask-image-radial-to-color":[{"mask-radial-to":y()}],"mask-image-radial-shape":[{"mask-radial":["circle","ellipse"]}],"mask-image-radial-size":[{"mask-radial":[{closest:["side","corner"],farthest:["side","corner"]}]}],"mask-image-radial-pos":[{"mask-radial-at":x()}],"mask-image-conic-pos":[{"mask-conic":[L]}],"mask-image-conic-from-pos":[{"mask-conic-from":Z()}],"mask-image-conic-to-pos":[{"mask-conic-to":Z()}],"mask-image-conic-from-color":[{"mask-conic-from":y()}],"mask-image-conic-to-color":[{"mask-conic-to":y()}],"mask-mode":[{mask:["alpha","luminance","match"]}],"mask-origin":[{"mask-origin":["border","padding","content","fill","stroke","view"]}],"mask-position":[{mask:ms()}],"mask-repeat":[{mask:xs()}],"mask-size":[{mask:fs()}],"mask-type":[{"mask-type":["alpha","luminance"]}],"mask-image":[{mask:["none",v,g]}],filter:[{filter:["","none",v,g]}],blur:[{blur:ys()}],brightness:[{brightness:[L,v,g]}],contrast:[{contrast:[L,v,g]}],"drop-shadow":[{"drop-shadow":["","none",m,xr,mr]}],"drop-shadow-color":[{"drop-shadow":y()}],grayscale:[{grayscale:["",L,v,g]}],"hue-rotate":[{"hue-rotate":[L,v,g]}],invert:[{invert:["",L,v,g]}],saturate:[{saturate:[L,v,g]}],sepia:[{sepia:["",L,v,g]}],"backdrop-filter":[{"backdrop-filter":["","none",v,g]}],"backdrop-blur":[{"backdrop-blur":ys()}],"backdrop-brightness":[{"backdrop-brightness":[L,v,g]}],"backdrop-contrast":[{"backdrop-contrast":[L,v,g]}],"backdrop-grayscale":[{"backdrop-grayscale":["",L,v,g]}],"backdrop-hue-rotate":[{"backdrop-hue-rotate":[L,v,g]}],"backdrop-invert":[{"backdrop-invert":["",L,v,g]}],"backdrop-opacity":[{"backdrop-opacity":[L,v,g]}],"backdrop-saturate":[{"backdrop-saturate":[L,v,g]}],"backdrop-sepia":[{"backdrop-sepia":["",L,v,g]}],"border-collapse":[{border:["collapse","separate"]}],"border-spacing":[{"border-spacing":b()}],"border-spacing-x":[{"border-spacing-x":b()}],"border-spacing-y":[{"border-spacing-y":b()}],"table-layout":[{table:["auto","fixed"]}],caption:[{caption:["top","bottom"]}],transition:[{transition:["","all","colors","opacity","shadow","transform","none",v,g]}],"transition-behavior":[{transition:["normal","discrete"]}],duration:[{duration:[L,"initial",v,g]}],ease:[{ease:["linear","initial",M,v,g]}],delay:[{delay:[L,v,g]}],animate:[{animate:["none",V,v,g]}],backface:[{backface:["hidden","visible"]}],perspective:[{perspective:[z,v,g]}],"perspective-origin":[{"perspective-origin":A()}],rotate:[{rotate:ur()}],"rotate-x":[{"rotate-x":ur()}],"rotate-y":[{"rotate-y":ur()}],"rotate-z":[{"rotate-z":ur()}],scale:[{scale:wr()}],"scale-x":[{"scale-x":wr()}],"scale-y":[{"scale-y":wr()}],"scale-z":[{"scale-z":wr()}],"scale-3d":["scale-3d"],skew:[{skew:Gr()}],"skew-x":[{"skew-x":Gr()}],"skew-y":[{"skew-y":Gr()}],transform:[{transform:[v,g,"","none","gpu","cpu"]}],"transform-origin":[{origin:A()}],"transform-style":[{transform:["3d","flat"]}],translate:[{translate:gr()}],"translate-x":[{"translate-x":gr()}],"translate-y":[{"translate-y":gr()}],"translate-z":[{"translate-z":gr()}],"translate-none":["translate-none"],accent:[{accent:y()}],appearance:[{appearance:["none","auto"]}],"caret-color":[{caret:y()}],"color-scheme":[{scheme:["normal","dark","light","light-dark","only-dark","only-light"]}],cursor:[{cursor:["auto","default","pointer","wait","text","move","help","not-allowed","none","context-menu","progress","cell","crosshair","vertical-text","alias","copy","no-drop","grab","grabbing","all-scroll","col-resize","row-resize","n-resize","e-resize","s-resize","w-resize","ne-resize","nw-resize","se-resize","sw-resize","ew-resize","ns-resize","nesw-resize","nwse-resize","zoom-in","zoom-out",v,g]}],"field-sizing":[{"field-sizing":["fixed","content"]}],"pointer-events":[{"pointer-events":["auto","none"]}],resize:[{resize:["none","","y","x"]}],"scroll-behavior":[{scroll:["auto","smooth"]}],"scroll-m":[{"scroll-m":b()}],"scroll-mx":[{"scroll-mx":b()}],"scroll-my":[{"scroll-my":b()}],"scroll-ms":[{"scroll-ms":b()}],"scroll-me":[{"scroll-me":b()}],"scroll-mt":[{"scroll-mt":b()}],"scroll-mr":[{"scroll-mr":b()}],"scroll-mb":[{"scroll-mb":b()}],"scroll-ml":[{"scroll-ml":b()}],"scroll-p":[{"scroll-p":b()}],"scroll-px":[{"scroll-px":b()}],"scroll-py":[{"scroll-py":b()}],"scroll-ps":[{"scroll-ps":b()}],"scroll-pe":[{"scroll-pe":b()}],"scroll-pt":[{"scroll-pt":b()}],"scroll-pr":[{"scroll-pr":b()}],"scroll-pb":[{"scroll-pb":b()}],"scroll-pl":[{"scroll-pl":b()}],"snap-align":[{snap:["start","end","center","align-none"]}],"snap-stop":[{snap:["normal","always"]}],"snap-type":[{snap:["none","x","y","both"]}],"snap-strictness":[{snap:["mandatory","proximity"]}],touch:[{touch:["auto","none","manipulation"]}],"touch-x":[{"touch-pan":["x","left","right"]}],"touch-y":[{"touch-pan":["y","up","down"]}],"touch-pz":["touch-pinch-zoom"],select:[{select:["none","text","all","auto"]}],"will-change":[{"will-change":["auto","scroll","contents","transform",v,g]}],fill:[{fill:["none",...y()]}],"stroke-w":[{stroke:[L,Po,je,ki]}],stroke:[{stroke:["none",...y()]}],"forced-color-adjust":[{"forced-color-adjust":["auto","none"]}]},conflictingClassGroups:{overflow:["overflow-x","overflow-y"],overscroll:["overscroll-x","overscroll-y"],inset:["inset-x","inset-y","start","end","top","right","bottom","left"],"inset-x":["right","left"],"inset-y":["top","bottom"],flex:["basis","grow","shrink"],gap:["gap-x","gap-y"],p:["px","py","ps","pe","pt","pr","pb","pl"],px:["pr","pl"],py:["pt","pb"],m:["mx","my","ms","me","mt","mr","mb","ml"],mx:["mr","ml"],my:["mt","mb"],size:["w","h"],"font-size":["leading"],"fvn-normal":["fvn-ordinal","fvn-slashed-zero","fvn-figure","fvn-spacing","fvn-fraction"],"fvn-ordinal":["fvn-normal"],"fvn-slashed-zero":["fvn-normal"],"fvn-figure":["fvn-normal"],"fvn-spacing":["fvn-normal"],"fvn-fraction":["fvn-normal"],"line-clamp":["display","overflow"],rounded:["rounded-s","rounded-e","rounded-t","rounded-r","rounded-b","rounded-l","rounded-ss","rounded-se","rounded-ee","rounded-es","rounded-tl","rounded-tr","rounded-br","rounded-bl"],"rounded-s":["rounded-ss","rounded-es"],"rounded-e":["rounded-se","rounded-ee"],"rounded-t":["rounded-tl","rounded-tr"],"rounded-r":["rounded-tr","rounded-br"],"rounded-b":["rounded-br","rounded-bl"],"rounded-l":["rounded-tl","rounded-bl"],"border-spacing":["border-spacing-x","border-spacing-y"],"border-w":["border-w-x","border-w-y","border-w-s","border-w-e","border-w-t","border-w-r","border-w-b","border-w-l"],"border-w-x":["border-w-r","border-w-l"],"border-w-y":["border-w-t","border-w-b"],"border-color":["border-color-x","border-color-y","border-color-s","border-color-e","border-color-t","border-color-r","border-color-b","border-color-l"],"border-color-x":["border-color-r","border-color-l"],"border-color-y":["border-color-t","border-color-b"],translate:["translate-x","translate-y","translate-none"],"translate-none":["translate","translate-x","translate-y","translate-z"],"scroll-m":["scroll-mx","scroll-my","scroll-ms","scroll-me","scroll-mt","scroll-mr","scroll-mb","scroll-ml"],"scroll-mx":["scroll-mr","scroll-ml"],"scroll-my":["scroll-mt","scroll-mb"],"scroll-p":["scroll-px","scroll-py","scroll-ps","scroll-pe","scroll-pt","scroll-pr","scroll-pb","scroll-pl"],"scroll-px":["scroll-pr","scroll-pl"],"scroll-py":["scroll-pt","scroll-pb"],touch:["touch-x","touch-y","touch-pz"],"touch-x":["touch"],"touch-y":["touch"],"touch-pz":["touch"]},conflictingClassGroupModifiers:{"font-size":["leading"]},orderSensitiveModifiers:["*","**","after","backdrop","before","details-content","file","first-letter","first-line","marker","placeholder","selection"]}},jV=sV(BV);function F(...o){return jV(PR(o))}const ta=F("text-sm","text-(--color-foreground-muted)","hover:text-(--color-foreground)","transition-colors"),ea=F("text-sm","text-(--color-primary)","font-medium");class AV extends Y{constructor(){super(...arguments),this.menuOpen=!1,this.unsubscribe=null,this.handleDocumentClick=t=>{t.target.closest(".theme-menu-container")||(this.menuOpen=!1,this.update())},this.toggleMenu=t=>{t.stopPropagation(),this.menuOpen=!this.menuOpen,this.update()},this.handleThemeSelect=t=>{const e=t.detail.value;DR(e),this.menuOpen=!1,this.update()}}mounted(){this.unsubscribe=FR(()=>{this.update()}),document.addEventListener("click",this.handleDocumentClick)}beforeUnmount(){document.removeEventListener("click",this.handleDocumentClick),this.unsubscribe?.()}isActive(t){const e=window.location.pathname;return t==="/"?e==="/"||e==="":e.startsWith(t)}render(){const t=UR();return l("header",{class:F("sticky top-0 z-50","border-b border-(--color-border)","bg-(--color-surface)/80 backdrop-blur-md")},[l("div",{class:F("flex items-center justify-between","h-14 px-6")},[l(Wr,{to:"/",class:F("flex items-center gap-2","text-lg font-bold","text-(--color-foreground) hover:text-(--color-primary)","transition-colors")},["Ikun Cube Trainer"]),l("nav",{class:"flex items-center gap-5"},[l(Wr,{to:"/",class:this.isActive("/")&&!this.isActive("/settings")?ea:ta},["训练"]),l(Wr,{to:"/settings",class:this.isActive("/settings")?ea:ta},["设置"]),l("div",{class:"theme-menu-container relative"},[l("button",{"on:click":this.toggleMenu,class:F("flex items-center justify-center","h-8 w-8","rounded-full","border-none","bg-(--color-surface) text-(--color-foreground-muted)","hover:bg-accent hover:text-(--color-foreground)","transition-all"),title:`当前: ${t.label}`},[l("span",{class:"text-sm"},[t.icon])]),this.menuOpen&&l("div",{class:"absolute top-full right-0 mt-2"},[l("iku-menu",{value:Ya(),"on:ik-change":this.handleThemeSelect},[...Array.isArray(_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])))?_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])):[_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i]))]])])])])])])}}class LV extends Ur{render(){return l("div",{class:"bg-background flex h-full flex-col"},[l(AV,null,[]),l("main",{class:"min-h-0 flex-1 overflow-y-auto"},[l(d1,{router:this.router},[])])])}}const SV={id:"builtin-f2l",name:"F2L 公式",formulas:[{id:"f2l-01",name:"F2L-01",formulas:["U (R U' R')"],viewMode:"none"},{id:"f2l-02",name:"F2L-02",formulas:["F' U' F"],viewMode:"none"},{id:"f2l-03",name:"F2L-03",formulas:["U' (F' U F)"],viewMode:"none"},{id:"f2l-04",name:"F2L-04",formulas:["R U R'"],viewMode:"none"},{id:"f2l-05",name:"F2L-05",formulas:["U' (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-06",name:"F2L-06",formulas:["U' (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-07",name:"F2L-07",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"},{id:"f2l-08",name:"F2L-08",formulas:["d (R' U R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-09",name:"F2L-09",formulas:["U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-10",name:"F2L-10",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-11",name:"F2L-11",formulas:["U (F' U2 F) U' (F' U F)"],viewMode:"none"},{id:"f2l-12",name:"F2L-12",formulas:["U' (F' U F) U' (F' U' F)"],viewMode:"none"},{id:"f2l-13",name:"F2L-13",formulas:["(R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-14",name:"F2L-14",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-15",name:"F2L-15",formulas:["(R U R' U') (R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-16",name:"F2L-16",formulas:["R U' R' d R' U R"],viewMode:"none"},{id:"f2l-17",name:"F2L-17",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-18",name:"F2L-18",formulas:["(R U R' U') (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-19",name:"F2L-19",formulas:["(R U' R' U') (R U R' U') (R U2 R')"],viewMode:"none"},{id:"f2l-20",name:"F2L-20",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-21",name:"F2L-21",formulas:["R2 U R2 U R2 U2 R2"],viewMode:"none"},{id:"f2l-22",name:"F2L-22",formulas:["U (R U' R') U' (F' U F)"],viewMode:"none"},{id:"f2l-23",name:"F2L-23",formulas:["U2 (R U' R') U (F' U' F)"],viewMode:"none"},{id:"f2l-24",name:"F2L-24",formulas:["(F' U F) U2 (R U R')"],viewMode:"none"},{id:"f2l-25",name:"F2L-25",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-26",name:"F2L-26",formulas:["d (R' U' R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-27",name:"F2L-27",formulas:["(R U' R') U2 (F' U' F)"],viewMode:"none"},{id:"f2l-28",name:"F2L-28",formulas:["(R U R') U2 (R U R')"],viewMode:"none"},{id:"f2l-29",name:"F2L-29",formulas:["(R' F R F') (R U R')"],viewMode:"none"},{id:"f2l-30",name:"F2L-30",formulas:["R U' R' d (R' U' R)"],viewMode:"none"},{id:"f2l-31",name:"F2L-31",formulas:["U' (R U2 R') U2 (R U' R')"],viewMode:"none"},{id:"f2l-32",name:"F2L-32",formulas:["U (F' U2 F) U2 (F' U F)"],viewMode:"none"},{id:"f2l-33",name:"F2L-33",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-34",name:"F2L-34",formulas:["U (R U' R') U' (R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-35",name:"F2L-35",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-36",name:"F2L-36",formulas:["U2 (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-37",name:"F2L-37",formulas:["R2 U2 (F R2 F') U2 (R' U R')"],viewMode:"none"},{id:"f2l-38",name:"F2L-38",formulas:["(R U' R' U') (R U R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-39",name:"F2L-39",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-40",name:"F2L-40",formulas:["(R U R' U') (R U' R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-41",name:"F2L-41",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"}],createdAt:0,updatedAt:0},HV={id:"builtin-oll",name:"OLL 公式",formulas:[{id:"oll-01",name:"OLL-01",formulas:["(R U'2)R' U' (R U' R')"],viewMode:"oll",viewData:{top:[".YY","YYY",".Y."],sides:{back:"...",right:"..Y",front:"Y..",left:"Y.."}}},{id:"oll-02",name:"OLL-02",formulas:["R UR'UR U'2 R'"],viewMode:"oll",viewData:{top:[".Y.","YYY","YY."],sides:{back:"Y..",right:"Y..",front:"..Y",left:"..."}}},{id:"oll-03",name:"OLL-03",formulas:["(R U'2)(R'U'R)(UR'U')(RU'R')"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"Y.Y",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-04",name:"OLL-04",formulas:["R U'2 (R'2 U')(R2 U') R'2 U'2 R"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"..Y",right:"...",front:"..Y",left:"Y.Y"}}},{id:"oll-05",name:"OLL-05",formulas:["(rUR'U')(r'F R F')"],viewMode:"oll",viewData:{top:[".YY","YYY",".YY"],sides:{back:"Y..",right:"...",front:"Y..",left:"..."}}},{id:"oll-06",name:"OLL-06",formulas:["(RUR'U R U'2 R'U)(R U'2 R'U' R U'R')"],viewMode:"oll",viewData:{top:["YYY","YYY",".Y."],sides:{back:"...",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-07",name:"OLL-07",formulas:["F'(r U R' U)(r' F R)"],viewMode:"oll",viewData:{top:[".YY","YYY","YY."],sides:{back:"Y..",right:"...",front:"..Y",left:"..."}}},{id:"oll-08",name:"OLL-08",formulas:["(R U'2)(R'2 F R F')U2(R' F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".Y.",right:"YYY",front:".Y.",left:"YYY"}}},{id:"oll-09",name:"OLL-09",formulas:["(F R U R' U' F')(f R U R' U' f')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".YY",right:".Y.",front:".YY",left:"YYY"}}},{id:"oll-10",name:"OLL-10",formulas:["f (R U R' U' f')U'(F R U R' U' F')"],viewMode:"oll",viewData:{top:["...",".Y.","..Y"],sides:{back:"YY.",right:"YY.",front:".Y.",left:".YY"}}},{id:"oll-11",name:"OLL-11",formulas:["(f R U R' U' f')y(F R U R' U' F')"],viewMode:"oll",viewData:{top:["..Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:"YY.",left:"YY."}}},{id:"oll-12",name:"OLL-12",formulas:["(RUR'U)(R'FRF')U2(R'FRF')"],viewMode:"oll",viewData:{top:["Y..",".Y.","..Y"],sides:{back:".YY",right:".Y.",front:".Y.",left:".YY"}}},{id:"oll-13",name:"OLL-13",formulas:["F(R U R' U)y'(R'U2)(R'F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","Y.Y"],sides:{back:"YYY",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-14",name:"OLL-14",formulas:["r'(R U R U R'U')r(R'2 F R F')"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:".Y.",left:".YY"}}},{id:"oll-15",name:"OLL-15",formulas:["r'(R U R U R'U')r2(R'2 U R U')r'"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","Y.Y"],sides:{back:".Y.",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-16",name:"OLL-16",formulas:["f(R U R'U')2f'"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".YY",right:"...",front:".YY",left:"Y.Y"}}},{id:"oll-17",name:"OLL-17",formulas:["(R' U'R U' R'U)y'(R'U R B)"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"Y..",right:"YYY",front:"Y..",left:".Y."}}},{id:"oll-18",name:"OLL-18",formulas:["(rUr')(U R U'R')2(rU'r')"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".Y.",right:"Y.Y",front:".Y.",left:"Y.Y"}}},{id:"oll-19",name:"OLL-19",formulas:["(RU'2)(R'2 U')(R U'R'U2)(F R F')"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"...",right:"YYY",front:"...",left:"YYY"}}},{id:"oll-20",name:"OLL-20",formulas:["(rU'r'U')(rUr')y'(R'U R)"],viewMode:"oll",viewData:{top:["...","YYY","Y.."],sides:{back:"YY.",right:"Y..",front:".YY",left:"..."}}},{id:"oll-21",name:"OLL-21",formulas:["(R'F' R U R'F'R)y'(R U'R')"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:".YY",right:"...",front:"YY.",left:"Y.."}}},{id:"oll-22",name:"OLL-22",formulas:["(r'U'r)(R'U'RU)(r'Ur)"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:"YY.",right:"Y..",front:".Y.",left:"..Y"}}},{id:"oll-23",name:"OLL-23",formulas:["(rUr')(RUR'U')(rU'r')"],viewMode:"oll",viewData:{top:["..Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:"YY.",left:"Y.."}}},{id:"oll-24",name:"OLL-24",formulas:["(R U R' U')(R' F R F')"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:"YY.",right:"...",front:"YY.",left:"..."}}},{id:"oll-25",name:"OLL-25",formulas:["(F(R U R' U')F'"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"Y.Y"}}},{id:"oll-26",name:"OLL-26",formulas:["(R U R' U' r)(R' U R U' r')"],viewMode:"oll",viewData:{top:["Y.Y","YYY","Y.Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"..."}}},{id:"oll-27",name:"OLL-27",formulas:["(r U R' U')(r' R U)(R U' R')"],viewMode:"oll",viewData:{top:["YYY","YY.","Y.Y"],sides:{back:"...",right:".Y.",front:".Y.",left:"..."}}},{id:"oll-28",name:"OLL-28",formulas:["(r U' r' U' r)y(R U R' f')"],viewMode:"oll",viewData:{top:["..Y","YYY","Y.."],sides:{back:"YY.",right:"..Y",front:".Y.",left:"..."}}},{id:"oll-29",name:"OLL-29",formulas:["(R'F R U R'U')(F'U R)"],viewMode:"oll",viewData:{top:["Y..","YYY","..Y"],sides:{back:".YY",right:"...",front:".Y.",left:"..Y"}}},{id:"oll-30",name:"OLL-30",formulas:["(R' U' R U)y(r U R' U')r'R"],viewMode:"oll",viewData:{top:["Y.Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:".Y.",left:"..Y"}}},{id:"oll-31",name:"OLL-31",formulas:["(R'U')(R'F R F')(U R)"],viewMode:"oll",viewData:{top:["YY.",".Y.","YY."],sides:{back:"...",right:"YYY",front:"...",left:".Y."}}},{id:"oll-32",name:"OLL-32",formulas:["(R'U' F)(U R U'R'F'R)"],viewMode:"oll",viewData:{top:[".YY",".YY","..Y"],sides:{back:"Y..",right:"...",front:"YY.",left:".Y."}}},{id:"oll-33",name:"OLL-33",formulas:["(R U B'U')(R'U R B R')"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:"YY.",right:"...",front:"Y..",left:".Y."}}},{id:"oll-34",name:"OLL-34",formulas:["x'U'F'R'F R U"],viewMode:"oll",viewData:{top:["Y..","YY.","YY."],sides:{back:".Y.",right:"YYY",front:"...",left:"..."}}},{id:"oll-35",name:"OLL-35",formulas:["f(R U R'U')f'"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:".Y.",right:"...",front:"...",left:"YYY"}}},{id:"oll-36",name:"OLL-36",formulas:["F(RU'R'U')(R U R'F')"],viewMode:"oll",viewData:{top:["YY.","YY.","..Y"],sides:{back:"...",right:"YY..",front:"YY.",left:"..."}}},{id:"oll-37",name:"OLL-37",formulas:["RU'2(R'2 F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["Y..",".YY",".YY"],sides:{back:".Y.",right:"Y..",front:"Y..",left:".Y."}}},{id:"oll-38",name:"OLL-38",formulas:["(r' U2)(R U R' U)r"],viewMode:"oll",viewData:{top:["...",".YY",".YY"],sides:{back:"YY.",right:"Y..",front:"...",left:".YY"}}},{id:"oll-39",name:"OLL-39",formulas:["(r U2)(R' U' R U'r')"],viewMode:"oll",viewData:{top:[".YY",".YY","..."],sides:{back:"...",right:"..Y",front:"YY.",left:"YY."}}},{id:"oll-40",name:"OLL-40",formulas:["r' U' R U' R' U2 r"],viewMode:"oll",viewData:{top:["Y..","YY.",".Y."],sides:{back:".YY",right:".YY",front:"Y..",left:"..."}}},{id:"oll-41",name:"OLL-41",formulas:["r U R' U R U'2 r'"],viewMode:"oll",viewData:{top:[".Y.","YY.","Y.."],sides:{back:"Y..",right:"YY.",front:".YY",left:"..."}}},{id:"oll-42",name:"OLL-42",formulas:["r'(R2 U)(R'U R)U'2(R' U R')r"],viewMode:"oll",viewData:{top:["...",".YY","YY."],sides:{back:"YY.",right:"Y..",front:"..Y",left:".Y."}}},{id:"oll-43",name:"OLL-43",formulas:["r(R'2 U')(R U'R' U2)(RU'R)r'"],viewMode:"oll",viewData:{top:["YY.",".YY","..."],sides:{back:"..Y",right:"..Y",front:"YY.",left:".Y."}}},{id:"oll-44",name:"OLL-44",formulas:["(R'U'R)y'x'(R U'R' F)(R U R')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..Y"],sides:{back:"..Y",right:".Y.",front:"YY.",left:"Y.."}}},{id:"oll-45",name:"OLL-45",formulas:["(R U R' U)(R'F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["..Y","YY.",".Y."],sides:{back:"YY.",right:".Y.",front:"..Y",left:"..Y"}}},{id:"oll-46",name:"OLL-46",formulas:["(r U'2)(R'U'R)(UR'U')(R U'r')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y.Y",right:".Y.",front:"YYY",left:"..."}}},{id:"oll-47",name:"OLL-47",formulas:["B'(R'U' R U)2 B"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:".YY",right:".Y.",front:"..Y",left:"Y.Y"}}},{id:"oll-48",name:"OLL-48",formulas:["r'U2 (R U R'U')(R U R'U)r"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YYY",right:".Y.",front:"Y.Y",left:"..."}}},{id:"oll-49",name:"OLL-49",formulas:["F(R U R'U')2 F'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"..Y",right:".Y.",front:".YY",left:"Y.Y"}}},{id:"oll-50",name:"OLL-50",formulas:["R'F R2 B'R'2 F'R2 B R'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y..",right:"YYY",front:"YY.",left:"..."}}},{id:"oll-51",name:"OLL-51",formulas:["R B' R'2 F R2 B R'2 F'R"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YY.",right:"YYY",front:"Y..",left:"..."}}},{id:"oll-52",name:"OLL-52",formulas:["(R2 U R'B')(R U'R'2 U)(R B R')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"..Y",front:"...",left:".YY"}}},{id:"oll-53",name:"OLL-53",formulas:["(R U R'U')(R U'R'F')U'(F R U R')"],viewMode:"oll",viewData:{top:[".YY","YY.","..Y"],sides:{back:"Y..",right:".Y.",front:"YY.",left:"..."}}},{id:"oll-54",name:"OLL-54",formulas:["(R'U R U'2 R'U')y(L'U LU F)"],viewMode:"oll",viewData:{top:[".Y.",".YY","Y.Y"],sides:{back:"Y.Y",right:"...",front:".Y.",left:".Y."}}},{id:"oll-55",name:"OLL-55",formulas:["(R U'R' U2 R U)y(R U'R' U'F')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"...",front:"Y.Y",left:".Y."}}},{id:"oll-56",name:"OLL-56",formulas:["(R U R' U)(R U'R' U')(R'F R F')"],viewMode:"oll",viewData:{top:[".YY","YY.","Y.."],sides:{back:"Y..",right:".YY",front:".Y.",left:"..."}}},{id:"oll-57",name:"OLL-57",formulas:["(R'U' R U')(R'U R U)(R B' R'B)"],viewMode:"oll",viewData:{top:["Y..","YY.",".YY"],sides:{back:".Y.",right:"YY.",front:"Y..",left:"..."}}}],createdAt:0,updatedAt:0},RV={id:"builtin-pll",name:"PLL 公式",formulas:[{id:"pll-01",name:"PLL-01",formulas:["RU' (RURU) (RU'R'U') R2","M'2UMU2 M'UM'2"],viewMode:"pll",viewData:{moves:[{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[2,1],bidirectional:!1},{from:[2,1],to:[1,2],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-02",name:"PLL-02",formulas:["M'2U'MU2 M'U'M'2"],viewMode:"pll",viewData:{moves:[{from:[1,0],to:[1,2],bidirectional:!1},{from:[2,1],to:[1,0],bidirectional:!1},{from:[1,2],to:[2,1],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-03",name:"PLL-03",formulas:["M'2U M'2U2 M'2U M'2"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[2,1],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-04",name:"PLL-04",formulas:["MU (M'2U)2 MU2 M'2U'"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[1,2],bidirectional:!0},{from:[1,0],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"T-PERM",name:"T-PERM",formulas:["(RUR'U') R'F (R2U'R'U') (RUR'F')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!0,!1],[!0,!1,!0]]}},{id:"pll-06",name:"PLL-06",formulas:["(R'U'F')(RUR'U') R'F (R2U'R'U') (RUR'UR)"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[0,1],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-07",name:"PLL-07",formulas:["(RUR'F') (RUR'U') R'F (R2U'R'U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-08",name:"PLL-08",formulas:["(RUR'U)(R'U'RF')(RUR'U')(R'FR2U')(R'2UR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!0},{from:[0,2],to:[2,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!0,!1],[!1,!0,!1],[!1,!0,!1]]}},{id:"pll-09",name:"PLL-09",formulas:["F(RU'R'U')(RUR'F')(RUR'U')(R'FRF')"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,0],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!0,!1],[!0,!0,!1],[!1,!1,!1]]}},{id:"pll-10",name:"PLL-10",formulas:["(R'UR'U') yR'F' (R2U'R'U) (R'FRF)","(R'UR'U') (B'R'B2) (U'B'U) (B'RBR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,1],bidirectional:!0}],sameColorEdges:[[!1,!1,!0],[!0,!1,!1],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-11",name:"PLL-11",formulas:["(R'U2)(RU'2) R'F (RUR'U')(R'F'R2U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!1,!0],[!0,!1,!0],[!1,!0,!0]]}},{id:"pll-12",name:"PLL-12",formulas:["(F'U'F)R2u(R'URU')(Ru'R2)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!1},{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[0,1],bidirectional:!1}],sameColorEdges:[[!0,!1,!0],[!1,!1,!1],[!1,!0,!0],[!1,!1,!1]]}},{id:"pll-13",name:"PLL-13",formulas:["(R2uR')(UR'U'Ru')(R'2F'UF)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,0],bidirectional:!1},{from:[1,0],to:[1,2],bidirectional:!1},{from:[1,2],to:[0,1],bidirectional:!1}],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!0,!0],[!0,!1,!0]]}},{id:"pll-14",name:"PLL-14",formulas:["x(R'2D2)(RUR'D2)(RU'R)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!1},{from:[2,2],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!1,!0],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-15",name:"PLL-15",formulas:["(R'URU')(R'F'U'F)(RUR'F)(R'F'RU'R)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!0],[!0,!1,!1],[!0,!0,!1],[!1,!1,!0]]}},{id:"pll-16",name:"PLL-16",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-17",name:"PLL-17",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-18",name:"PLL-18",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-19",name:"PLL-19",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-20",name:"PLL-20",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-21",name:"PLL-21",formulas:[],viewMode:"pll",viewData:{moves:[]}}],createdAt:0,updatedAt:0},oa={name:"OLL 自定义",formulas:[]},ra={name:"PLL 自定义",formulas:[]},VV={id:"builtin-scramble",name:"打乱公式",formulas:[{id:"scr-01",name:"Scramble-01",formulas:["R' U' F L2 D' B U R2 F' L D2 B' U2 R F2 D L2 B' R' U"],viewMode:"none"},{id:"scr-02",name:"Scramble-02",formulas:["D2 R' B F2 L D' U R' B2 F D L' U2 R B' F' L D R U2"],viewMode:"none"},{id:"scr-03",name:"Scramble-03",formulas:["F2 U' L2 D B2 R' F U L D2 B R2 U' F' L2 D B2 R U' F"],viewMode:"none"},{id:"scr-04",name:"Scramble-04",formulas:["B2 L D2 F' R U B' L2 D R2 F U2 L' B D2 R F' U L2 D'"],viewMode:"none"},{id:"scr-05",name:"Scramble-05",formulas:["U R2 F' D L B2 U' R F2 D' L2 B U R' D2 F L' B2 U R'"],viewMode:"none"},{id:"scr-06",name:"Scramble-06",formulas:["L2 F D' R2 B U L' F2 D R B2 U' L D2 F' R B U2 L' D"],viewMode:"none"},{id:"scr-07",name:"Scramble-07",formulas:["D' B2 R U' F L D2 B' R2 U F' L2 D B R' U2 F D' L B'"],viewMode:"none"},{id:"scr-08",name:"Scramble-08",formulas:["R' U2 B D L' F2 U R B2 D' L F U' R2 D B' L2 F U R'"],viewMode:"none"},{id:"scr-09",name:"Scramble-09",formulas:["F D' L2 U B R' D F2 U' L B2 R D' F L' U2 B R2 D F'"],viewMode:"none"},{id:"scr-10",name:"Scramble-10",formulas:["U' L B2 R D F' U2 L' B D2 R F U L' D' B2 R' F2 U D"],viewMode:"none"},{id:"scr-11",name:"Scramble-11",formulas:["B R' D2 F U L' B2 R D F' U2 L B' R2 D' F U' L2 B D'"],viewMode:"none"},{id:"scr-12",name:"Scramble-12",formulas:["L' D F2 U' B R D2 L' F U B' R2 D L F' U2 B' D R L2"],viewMode:"none"},{id:"scr-13",name:"Scramble-13",formulas:["U2 F' R B2 L' D U2 F R' B D2 L U' F2 R B' D L2 U F'"],viewMode:"none"},{id:"scr-14",name:"Scramble-14",formulas:["D R2 B' U F L2 D' R B2 U' F' L D2 R' B U2 F L' D R2"],viewMode:"none"},{id:"scr-15",name:"Scramble-15",formulas:["B' L2 U R' D F2 B L U2 R' D' F B2 L' U R2 D' F' B L2"],viewMode:"none"},{id:"scr-16",name:"Scramble-16",formulas:["R U2 L' D B2 F R' U L2 D' B F2 R U' L D2 B' F R' U2"],viewMode:"none"},{id:"scr-17",name:"Scramble-17",formulas:["F' D2 R U' B L2 F D R' U2 B' L F2 D' R U L2 B' D R'"],viewMode:"none"},{id:"scr-18",name:"Scramble-18",formulas:["L D' F2 R U B' L2 D F R' U2 B L' D2 F' R U' B2 L D'"],viewMode:"none"},{id:"scr-19",name:"Scramble-19",formulas:["U' B R2 D' F L U2 B' R D2 F' L2 U B R' D F2 L' U R"],viewMode:"none"},{id:"scr-20",name:"Scramble-20",formulas:["D2 L' F R2 U B' D L2 F' R U2 B D' L F2 R' U B2 D L'"],viewMode:"none"},{id:"scr-21",name:"Scramble-21",formulas:["R' B2 U D' L F2 R' B U2 D L' F R2 B' U' D2 L F' R B2"],viewMode:"none"},{id:"scr-22",name:"Scramble-22",formulas:["F U' D2 R B' L2 F U D' R2 B L F' U2 D R' B2 L' F U'"],viewMode:"none"},{id:"scr-23",name:"Scramble-23",formulas:["B' D R2 U' L F D2 B R' U L2 F' D B2 R U' L' F2 D R'"],viewMode:"none"},{id:"scr-24",name:"Scramble-24",formulas:["L U2 F' D R B2 L' U F2 D' R' B U2 L D2 F R' B' U L2"],viewMode:"none"},{id:"scr-25",name:"Scramble-25",formulas:["U R' D2 B L' F2 U R D' B2 L F' U2 R' D B' L2 F U' R"],viewMode:"none"},{id:"scr-26",name:"Scramble-26",formulas:["D' F R2 B' U L D2 F' R B2 U' L' D F2 R' B U2 L D' F"],viewMode:"none"},{id:"scr-27",name:"Scramble-27",formulas:["R2 D' L U2 F' B R D' L2 U F B' R' D2 L' U' F2 B R D"],viewMode:"none"},{id:"scr-28",name:"Scramble-28",formulas:["F' L D2 R' U B F' L2 D R2 U' B' F L D' R2 U B2 F' L'"],viewMode:"none"},{id:"scr-29",name:"Scramble-29",formulas:["U2 B' L D R' F2 U B' L2 D' R F U2 B L' D2 R' F' U B2"],viewMode:"none"},{id:"scr-30",name:"Scramble-30",formulas:["D L2 B' R U F' D2 L B' R2 U' F D L2 B R' U2 F' D' L"],viewMode:"none"}],createdAt:0,updatedAt:0},at=[VV,SV,HV,RV];function mi(o){return o.startsWith("builtin-")}const zV="training-camp",$V=1,Hr="categories";function UV(){return new Promise((o,t)=>{const e=indexedDB.open(zV,$V);e.addEventListener("upgradeneeded",()=>{const i=e.result;i.objectStoreNames.contains(Hr)||i.createObjectStore(Hr,{keyPath:"id"})}),e.addEventListener("success",()=>o(e.result)),e.addEventListener("error",()=>t(e.error))})}function Eo(o,t){return UV().then(e=>new Promise((i,r)=>{const s=e.transaction(Hr,o),n=s.objectStore(Hr),d=t(n);d.addEventListener("success",()=>i(d.result)),d.addEventListener("error",()=>r(d.error)),s.addEventListener("complete",()=>e.close())}))}function DV(o){const{inverseFormula:t,...e}=o;e.proficiency==="learning"&&(e.proficiency="beginner"),typeof e.formula=="string"&&(e.formulas=[e.formula],delete e.formula);const i={...e,viewMode:e.viewMode??"none",proficiency:e.proficiency??"unlearned"};if(i.viewData&&i.viewMode==="oll"&&Array.isArray(i.viewData.top)&&typeof i.viewData.top[0]=="boolean"){const r=n=>n?"Y":".",s=i.viewData;i.viewData={top:[`${r(s.top[0])}${r(s.top[1])}${r(s.top[2])}`,`${r(s.top[3])}${r(s.top[4])}${r(s.top[5])}`,`${r(s.top[6])}${r(s.top[7])}${r(s.top[8])}`],sides:{back:`${r(s.edges.back[0])}${r(s.edges.back[1])}${r(s.edges.back[2])}`,right:`${r(s.edges.right[0])}${r(s.edges.right[1])}${r(s.edges.right[2])}`,front:`${r(s.edges.front[0])}${r(s.edges.front[1])}${r(s.edges.front[2])}`,left:`${r(s.edges.left[0])}${r(s.edges.left[1])}${r(s.edges.left[2])}`}}}return i}function Wi(o){return{...o,formulas:o.formulas.map(DV)}}const R={async getAll(){return(await Eo("readonly",t=>t.getAll())).map(Wi)},async get(o){const t=await Eo("readonly",e=>e.get(o));return t?Wi(t):void 0},put(o){return Eo("readwrite",t=>t.put(o))},remove(o){return Eo("readwrite",t=>t.delete(o))},clear(){return Eo("readwrite",o=>o.clear())}},P=da({state:{categories:[],loading:!1},actions:{setCategories:(o,t)=>({categories:t}),setLoading:(o,t)=>({loading:t})},asyncActions:{async load(o){o.setState({loading:!0});const t=await R.getAll();o.setState({categories:t,loading:!1})},async addCategory(o,t){const e=Date.now(),i={id:`cat-${e}`,name:t,formulas:[],createdAt:e,updatedAt:e};await R.put(i);const r=await R.getAll();o.setState({categories:r})},async updateCategory(o,t,e){const i=await R.get(t);if(!i)return;i.name=e,i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async removeCategory(o,t){await R.remove(t);const e=await R.getAll();o.setState({categories:e})},async addFormula(o,t,e){const i=await R.get(t);if(!i)return;i.formulas.push({...e,id:`f-${Date.now()}`}),i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async addFormulas(o,t,e){const i=await R.get(t);if(!i)return;for(let s=0;s<e.length;s++)i.formulas.push({...e[s],id:`f-${Date.now()}-${s}`});i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async moveFormula(o,t,e,i){const r=await R.get(t);if(!r)return;const s=r.formulas.findIndex(a=>a.id===e);if(s===-1)return;const n=i==="up"?s-1:s+1;if(n<0||n>=r.formulas.length)return;[r.formulas[s],r.formulas[n]]=[r.formulas[n],r.formulas[s]],r.updatedAt=Date.now(),await R.put(r);const d=await R.getAll();o.setState({categories:d})},async updateFormula(o,t,e,i){const r=await R.get(t);if(!r)return;const s=r.formulas.find(d=>d.id===e);if(!s)return;Object.assign(s,i),r.updatedAt=Date.now(),await R.put(r);const n=await R.getAll();o.setState({categories:n})},async removeFormula(o,t,e){const i=await R.get(t);if(!i)return;i.formulas=i.formulas.filter(s=>s.id!==e),i.updatedAt=Date.now(),await R.put(i);const r=await R.getAll();o.setState({categories:r})},async clearFormulas(o,t){const e=await R.get(t);if(!e)return;e.formulas=[],e.updatedAt=Date.now(),await R.put(e);const i=await R.getAll();o.setState({categories:i})},async addPresetCategory(o,t,e){const i=Date.now(),r={id:`cat-${i}`,name:t,formulas:e.map((n,d)=>({...n,id:`f-${i}-${d}`})),createdAt:i,updatedAt:i};await R.put(r);const s=await R.getAll();o.setState({categories:s})},async importData(o,t){await Promise.all(t.map(i=>R.put(i)));const e=await R.getAll();o.setState({categories:e})},async clearAll(o){await R.clear(),o.setState({categories:[]})}}}),e1="training-camp-settings",ia={ollColor:"#fbbf24",formulaDisplayMode:"list"};function FV(){try{const o=localStorage.getItem(e1);if(o){const t=JSON.parse(o);return{...ia,...t}}}catch{}return{...ia}}function sa(o){localStorage.setItem(e1,JSON.stringify(o))}const T=da({state:FV(),actions:{setOllColor:(o,t)=>{const e={...o,ollColor:t};return sa(e),e},setFormulaDisplayMode:(o,t)=>{const e={...o,formulaDisplayMode:t};return sa(e),e}}});class PV extends Y{constructor(){super(...arguments),this.editing=!1,this.editName="",this.startEdit=()=>{this.props.builtin||(this.editing=!0,this.editName=this.props.category.name,this.update())},this.handleEditInput=t=>{this.editName=t.detail.value},this.saveEdit=async()=>{const t=this.editName.trim();t&&t!==this.props.category.name&&await P.asyncActions.updateCategory(this.props.category.id,t),this.editing=!1,this.update()},this.cancelEdit=()=>{this.editing=!1,this.update()},this.handleClearFormulas=async()=>{await P.asyncActions.clearFormulas(this.props.category.id)}}render(){const{category:t,builtin:e,onAddFormula:i,onImportBuiltin:r}=this.props;return l("div",{class:"mb-8 flex items-start justify-between"},[l("div",{class:"flex items-center gap-3"},[l("div",{class:F("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),l("div",null,[this.editing?l("div",{class:"flex items-center gap-2"},[l("iku-input",{value:this.editName,size:"sm","on:ik-input":this.handleEditInput,autofocus:!0},[]),l("iku-button",{size:"sm",variant:"primary","on:click":this.saveEdit},["保存"]),l("iku-button",{size:"sm","on:click":this.cancelEdit},["取消"])]):l("div",{class:"flex items-center gap-2"},[l("h1",{class:"text-foreground text-xl font-bold"},[t.name]),!e&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.startEdit},[l("ik-icon",{name:"pencil",size:14},[])])]),l("p",{class:"mt-0.5 text-xs text-(--color-foreground-muted)"},[t.formulas.length,"条公式"])])]),!e&&l("div",{class:"flex items-center gap-2"},[t.formulas.length>0&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleClearFormulas},[l("ik-icon",{name:"trash",size:14,slot:"prefix"},[]),"清空"]),r&&l("iku-button",{size:"sm",variant:"outlined","on:click":r},[l("ik-icon",{name:"download",size:14,slot:"prefix"},[]),"引用内置"]),l("iku-button",{size:"sm",variant:"primary","on:click":i},[l("ik-icon",{name:"plus",size:14,slot:"prefix"},[]),"添加公式"])]),e&&l("div",{class:"flex items-center gap-1.5 text-xs text-(--color-foreground-muted)"},[l("ik-icon",{name:"lock",size:12},[]),l("span",null,["内置栏目, 只读"])])])}}const D=30,Wt=2,ct=D*3+Wt*2,Co="#888",EV=1.2;function Nr(o,t,e,i){const r=[];for(let s=0;s<3;s++)for(let n=0;n<3;n++)r.push(l("rect",{x:o+n*(D+Wt),y:t+s*(D+Wt),width:D,height:D,rx:2,fill:e(s,n),stroke:Co,"stroke-width":EV,...i?.(s,n)??{}},[]));return r}const Nt=10,Ke=1,To=1,o1=4,Se=o1+Nt+Ke,Xe=o1+Nt+Ke,Rr=Se*2+ct,fo=["front","right","back","left"];function r1(o,t){const e=D-To*2;switch(o){case"back":return{x:Se+t*(D+Wt)+To,y:Xe-Ke-Nt,w:e,h:Nt};case"front":return{x:Se+t*(D+Wt)+To,y:Xe+ct+Ke,w:e,h:Nt};case"left":return{x:Se-Ke-Nt,y:Xe+t*(D+Wt)+To,w:Nt,h:e};case"right":return{x:Se+ct+Ke,y:Xe+t*(D+Wt)+To,w:Nt,h:e}}}const i1=16,ht=i1,kt=i1,Vr=ht*2+ct,fr=ht+ct/2,zr="#333",TV=1.8,tt=4,Ze=3,Mr=3;function s1(o,t){const e=t*(D+Wt);switch(o){case 0:return{x:ht+e,y:kt-Mr-Ze,w:D,h:Ze};case 1:return{x:ht+ct+Mr,y:kt+e,w:Ze,h:D};case 2:return{x:ht+e,y:kt+ct+Mr,w:D,h:Ze};case 3:return{x:ht-Mr-Ze,y:kt+e,w:Ze,h:D};default:throw new Error(`Invalid side index: ${o}`)}}function xi(o,t){if(!o)return[];const e=[];for(let i=0;i<4;i++)for(let r=0;r<3;r++){if(!o[i][r])continue;const{x:s,y:n,w:d,h:a}=s1(i,r);e.push(l("rect",{x:s,y:n,width:d,height:a,rx:1.5,fill:t,stroke:Co,"stroke-width":.8},[]))}return e}const qt=.2;function Ki(o,t){if((o===0||o===2)&&(t===0||t===2)){const i=t===0?ht+D*qt:ht+ct-D*qt,r=o===0?kt+D*qt:kt+ct-D*qt;return[i,r]}return o===0?[fr,kt+D*qt]:o===2?[fr,kt+ct-D*qt]:t===0?[ht+D*qt,fr]:[ht+ct-D*qt,fr]}let YV=0;function $r(o){return`${o}-${++YV}`}function Mo(o,t){return l("defs",null,[l("marker",{id:o,markerWidth:tt,markerHeight:tt,refX:tt-.5,refY:tt/2,orient:"auto"},[l("path",{d:`M 0 0 L ${tt} ${tt/2} L 0 ${tt} Z`,fill:zr},[])]),l("marker",{id:t,markerWidth:tt,markerHeight:tt,refX:.5,refY:tt/2,orient:"auto"},[l("path",{d:`M ${tt} 0 L 0 ${tt/2} L ${tt} ${tt} Z`,fill:zr},[])])])}const yr=4;function yo(o,t,e){return o.map(i=>{const[r,s]=Ki(i.from[0],i.from[1]),[n,d]=Ki(i.to[0],i.to[1]),a=n-r,c=d-s,u=Math.sqrt(a*a+c*c)||1,w=r+a/u*yr,C=s+c/u*yr,m=n-a/u*yr,S=d-c/u*yr;return l("path",{d:`M ${w} ${C} L ${m} ${S}`,fill:"none",stroke:zr,"stroke-width":TV,"marker-start":i.bidirectional?`url(#${e})`:void 0,"marker-end":`url(#${t})`},[])})}const na="transparent";function OV(){return{top:["...",".Y.","..."],sides:{back:"...",right:"...",front:"...",left:"..."}}}function fi(o){return{top:[...o.top],sides:{...o.sides}}}class IV extends Y{constructor(){super(...arguments),this.data=OV()}mounted(){this.props.value&&(this.data=fi(this.props.value)),this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}toggleTop(t,e){if(t===1&&e===1)return;const i=this.data.top[t],r=i[e]==="Y"?".":"Y";this.data.top[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(fi(this.data)),this.update()}toggleEdge(t,e){const i=this.data.sides[t],r=i[e]==="Y"?".":"Y";this.data.sides[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(fi(this.data)),this.update()}renderEdgeCells(t){const e=this.data.sides[t],i=T.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=r1(t,s);r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:e[s]==="Y"?i:na,stroke:Co,"stroke-width":.8,style:"cursor: pointer;","on:click":()=>this.toggleEdge(t,s)},[]))}return r}render(){const t=T.state.ollColor,e=Nr(Se,Xe,(i,r)=>i===1&&r===1||this.data.top[i][r]==="Y"?t:na,(i,r)=>({style:i===1&&r===1?"cursor: default;":"cursor: pointer;","on:click":()=>this.toggleTop(i,r)}));return l("svg",{viewBox:`0 0 ${Rr} ${Rr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[e,...Array.isArray(fo.map(i=>this.renderEdgeCells(i)))?fo.map(i=>this.renderEdgeCells(i)):[fo.map(i=>this.renderEdgeCells(i))]])}}const qV=4,NV="#ef4444",_V="#666",Xi=[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]];function la(){return{moves:[],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]]}}function Mi(o){return{moves:o.moves.map(t=>({...t,from:[...t.from],to:[...t.to]})),sameColorEdges:(o.sameColorEdges??Xi).map(t=>[...t])}}const ZV=[[0,0],[0,1],[0,2],[1,0],[1,2],[2,0],[2,1],[2,2]];class GV extends Y{constructor(){super(...arguments),this.data=la(),this.selected=null,this.markerEndId=$r("pll-ed")+"-end",this.markerStartId=$r("pll-ed")+"-start",this.handleReset=()=>{this.data=la(),this.selected=null,this.props.onChange(Mi(this.data)),this.update()}}mounted(){this.props.value&&(this.data=Mi(this.props.value)),this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}findMoveAt(t,e){return this.data.moves.findIndex(i=>i.from[0]===t&&i.from[1]===e||i.to[0]===t&&i.to[1]===e)}findMoveBetween(t,e,i,r){return this.data.moves.findIndex(s=>s.from[0]===t&&s.from[1]===e&&s.to[0]===i&&s.to[1]===r||s.from[0]===i&&s.from[1]===r&&s.to[0]===t&&s.to[1]===e)}handlePieceClick(t,e){if(!this.selected){const r=this.findMoveAt(t,e);if(r!==-1){const s=this.data.moves[r];s.bidirectional?this.data.moves.splice(r,1):s.bidirectional=!0,this.emitChange();return}this.selected=[t,e],this.update();return}if(this.selected[0]===t&&this.selected[1]===e){this.selected=null,this.update();return}const i=this.findMoveBetween(this.selected[0],this.selected[1],t,e);if(i!==-1){const r=this.data.moves[i];r.bidirectional?this.data.moves.splice(i,1):r.bidirectional=!0}else this.data.moves.push({from:[this.selected[0],this.selected[1]],to:[t,e],bidirectional:!0});this.emitChange()}emitChange(){this.selected=null,this.props.onChange(Mi(this.data)),this.update()}handleEdgeMarkerToggle(t,e){const i=this.data.sameColorEdges??Xi;i[t][e]=!i[t][e],this.data.sameColorEdges=i.map(r=>[...r]),this.emitChange()}renderPieceMarkers(){const t=[];for(const[e,i]of ZV){const[r,s]=Ki(e,i),n=this.selected?.[0]===e&&this.selected?.[1]===i,d=this.findMoveAt(e,i)!==-1;t.push(l("circle",{cx:r,cy:s,r:qV,fill:n?NV:d?zr:_V,stroke:"white","stroke-width":1,style:"cursor: pointer;",opacity:n?1:.8,"on:click":()=>this.handlePieceClick(e,i)},[]))}return t}renderEdgeMarkerEditors(){const t=T.state.ollColor,e=this.data.sameColorEdges??Xi,i=[],r=3;for(let s=0;s<4;s++)for(let n=0;n<3;n++){const{x:d,y:a,w:c,h:u}=s1(s,n),w=e[s][n];i.push(l("rect",{x:d-r,y:a-r,width:c+r*2,height:u+r*2,rx:2,fill:"transparent",style:"cursor: pointer;","on:click":()=>this.handleEdgeMarkerToggle(s,n)},[])),w?i.push(l("rect",{x:d,y:a,width:c,height:u,rx:1.5,fill:t,stroke:Co,"stroke-width":.8,style:"pointer-events: none;"},[])):i.push(l("rect",{x:d,y:a,width:c,height:u,rx:1.5,fill:"none",stroke:Co,"stroke-width":.6,"stroke-dasharray":"2,2",opacity:.5,style:"pointer-events: none;"},[]))}return i}render(){const t=T.state.ollColor,e=Nr(ht,kt,()=>t);return l("div",null,[l("svg",{viewBox:`0 0 ${Vr} ${Vr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],e,...Array.isArray(this.renderEdgeMarkerEditors())?this.renderEdgeMarkerEditors():[this.renderEdgeMarkerEditors()],...Array.isArray(yo(this.data.moves,this.markerEndId,this.markerStartId))?yo(this.data.moves,this.markerEndId,this.markerStartId):[yo(this.data.moves,this.markerEndId,this.markerStartId)],...Array.isArray(this.renderPieceMarkers())?this.renderPieceMarkers():[this.renderPieceMarkers()]]),l("div",{class:"mt-2 flex justify-end"},[l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleReset},[l("ik-icon",{name:"rotate-ccw",size:12,slot:"prefix"},[]),"重置"])])])}}const vs={unlearned:"未学习",beginner:"初学",proficient:"熟练",mastered:"精通"},n1={none:"无",oll:"OLL",pll:"PLL"},yi=Object.entries(n1).map(([o,t])=>({value:o,label:t})),bi=Object.entries(vs).map(([o,t])=>({value:o,label:t}));class WV extends Y{constructor(){super(...arguments),this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned",this.handleSubmit=async()=>{const t=this.name.trim(),e=this.formulas.map(s=>s.trim()).filter(s=>s.length>0);if(!t||e.length===0)return;const{categoryId:i,editTarget:r}=this.props;r?await P.asyncActions.updateFormula(i,r.formulaId,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}):await P.asyncActions.addFormula(i,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}syncFromProps(){const{editTarget:t}=this.props;t?(this.name=t.name,this.formulas=t.formulas.length>0?[...t.formulas]:[""],this.viewMode=t.viewMode,this.viewData=t.viewData,this.proficiency=t.proficiency):this.resetFields()}resetFields(){this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned"}resetAndClose(){this.resetFields(),this.props.onClose()}render(){if(!this.props.open)return null;this.props.open&&!this.synced&&(this.synced=!0,this.syncFromProps());const t=!!this.props.editTarget;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":t?"编辑公式":"添加公式",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"space-y-4 px-1 py-2"},[l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式名",l("span",{class:"text-(--color-destructive)"},["*"])]),l("iku-input",{placeholder:"例如: OLL-06",value:this.name,"on:ik-input":e=>{this.name=e.detail.value}},[])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式",l("span",{class:"text-(--color-destructive)"},["*"])]),l("div",{class:"space-y-2"},[...Array.isArray(this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])))?this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])):[this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])]))],l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.push(""),this.update()}},[l("ik-icon",{name:"plus",size:14},[]),l("span",{class:"ml-1"},["添加公式"])])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["视图模式"]),l("iku-radio-group",{value:this.viewMode,"on:ik-change":e=>{const i=e.detail.value;if(this.viewData&&i!==this.viewMode){if(!window.confirm("切换视图模式将清空已编辑的视图数据，确认切换？")){this.update();return}this.viewData=void 0}this.viewMode=i,this.update()}},[...Array.isArray(yi.map(e=>l("iku-radio",{value:e.value},[e.label])))?yi.map(e=>l("iku-radio",{value:e.value},[e.label])):[yi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])]),this.viewMode==="oll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["OLL 视图编辑"]),l("div",{class:"w-32"},[l(IV,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),this.viewMode==="pll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["PLL 视图编辑"]),l("div",{class:"w-32"},[l(GV,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["熟练程度"]),l("iku-radio-group",{value:this.proficiency,"on:ik-change":e=>{this.proficiency=e.detail.value,this.update()}},[...Array.isArray(bi.map(e=>l("iku-radio",{value:e.value},[e.label])))?bi.map(e=>l("iku-radio",{value:e.value},[e.label])):[bi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},[t?"保存":"添加"])])])])}}class l1 extends Y{mounted(){this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderEdgeCells(t){const e=this.props.viewData.sides[t],i=T.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=r1(t,s),u=e[s]==="Y";r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:u?i:"none",stroke:u?Co:"none","stroke-width":u?.8:0},[]))}return r}render(){const{viewData:t}=this.props,e=T.state.ollColor,i=Nr(Se,Xe,(r,s)=>r===1&&s===1||t.top[r][s]==="Y"?e:"transparent");return l("svg",{viewBox:`0 0 ${Rr} ${Rr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[i,...Array.isArray(fo.map(r=>this.renderEdgeCells(r)))?fo.map(r=>this.renderEdgeCells(r)):[fo.map(r=>this.renderEdgeCells(r))]])}}class a1 extends Y{constructor(){super(...arguments),this.markerEndId=$r("pll")+"-end",this.markerStartId=$r("pll")+"-start"}mounted(){this.unsubscribe=T.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}render(){const{viewData:t}=this.props,e=T.state.ollColor,i=Nr(ht,kt,()=>e);return l("svg",{viewBox:`0 0 ${Vr} ${Vr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],i,...Array.isArray(xi(t.sameColorEdges,e))?xi(t.sameColorEdges,e):[xi(t.sameColorEdges,e)],...Array.isArray(yo(t.moves,this.markerEndId,this.markerStartId))?yo(t.moves,this.markerEndId,this.markerStartId):[yo(t.moves,this.markerEndId,this.markerStartId)]])}}const KV={unlearned:"border-(--color-foreground-muted)/30 text-(--color-foreground-muted)",beginner:"border-(--color-warning)/30 text-(--color-warning)",proficient:"border-(--color-info)/30 text-(--color-info)",mastered:"border-(--color-success)/30 text-(--color-success)"};class XV extends Y{constructor(){super(...arguments),this.handleEdit=()=>{this.props.onEdit(this.props.formula.id)},this.handleDelete=async()=>{await P.asyncActions.removeFormula(this.props.categoryId,this.props.formula.id)}}render(){const{formula:t,builtin:e,onMoveUp:i,onMoveDown:r,isFirst:s,isLast:n}=this.props,d=t.proficiency??"unlearned";return l("div",{class:"group flex flex-col rounded-xl border border-(--color-border) bg-(--color-surface) p-5 transition-colors hover:border-(--color-primary)/30"},[l("div",{class:"mb-3 flex items-center gap-2"},[l("span",{class:"text-base font-semibold text-(--color-foreground)"},[t.name]),!e&&l("span",{class:F("rounded-full border px-2 py-0.5 text-xs",KV[d])},[vs[d]])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(l1,{viewData:t.viewData},[])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(a1,{viewData:t.viewData},[])]),t.viewMode!=="none"&&!t.viewData&&l("div",{class:"mb-3 flex h-20 items-center justify-center rounded-lg border border-dashed border-(--color-border)"},[l("span",{class:"text-xs text-(--color-foreground-muted)/50"},[n1[t.viewMode],"俯视图"])]),l("div",{class:"mb-3"},[l("span",{class:"mb-1 block text-xs text-(--color-foreground-muted)"},["公式"]),t.formulas.length===1?l("span",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[t.formulas[0]]):l("div",{class:"space-y-1"},[...Array.isArray(t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a])))?t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a])):[t.formulas.map((a,c)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+c))?String.fromCodePoint(9312+c):[String.fromCodePoint(9312+c)]]),a]))]])]),!e&&l("div",{class:"flex items-center gap-1 border-t border-(--color-border)/50 pt-3 opacity-0 transition-opacity group-hover:opacity-100"},[i&&l("iku-button",{size:"sm",variant:"ghost",disabled:s,"on:click":i},[l("ik-icon",{name:"chevron-up",size:14},[])]),r&&l("iku-button",{size:"sm",variant:"ghost",disabled:n,"on:click":r},[l("ik-icon",{name:"chevron-down",size:14},[])]),l("div",{class:"flex-1"},[]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleEdit},[l("ik-icon",{name:"pencil",size:14},[])]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14},[])])])])}}const aa=["mastered","proficient","beginner","unlearned"];class JV extends Y{mounted(){this.unsubscribe=T.subscribe(t=>t.formulaDisplayMode,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderCard(t,e,i){const{category:r,builtin:s,onEdit:n,onMove:d}=this.props;return l(XV,{categoryId:r.id,formula:t,builtin:s,onEdit:n,onMoveUp:d?()=>d(t.id,"up"):void 0,onMoveDown:d?()=>d(t.id,"down"):void 0,isFirst:e===0,isLast:e===i-1},[])}renderGrid(t){return l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map((e,i)=>this.renderCard(e,i,t.length)))?t.map((e,i)=>this.renderCard(e,i,t.length)):[t.map((e,i)=>this.renderCard(e,i,t.length))]])}renderGrouped(){const{category:t}=this.props,e=new Map;for(const n of aa)e.set(n,[]);for(const n of t.formulas){const d=n.proficiency??"unlearned";e.get(d).push(n)}const i=t.formulas.length,r=new Map;t.formulas.forEach((n,d)=>r.set(n.id,d));const s=[];for(const n of aa){const d=e.get(n);d.length!==0&&s.push(l("div",{class:"space-y-3"},[l("div",{class:"flex items-center gap-2"},[l("h3",{class:"text-sm font-semibold text-(--color-foreground-muted)"},[vs[n]]),l("span",{class:"text-xs text-(--color-foreground-muted)/60"},[d.length])]),l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}))?d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}):[d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)})]])]))}return l("div",{class:"space-y-6"},[s])}render(){const{category:t,builtin:e}=this.props;return t.formulas.length===0?l("div",{class:"flex flex-col items-center justify-center rounded-xl border border-dashed border-(--color-border) py-16 text-(--color-foreground-muted)"},[l("ik-icon",{name:"inbox",size:32},[]),l("p",{class:"mt-3 text-sm"},["暂无公式"])]):(e?"list":T.state.formulaDisplayMode)==="grouped"?this.renderGrouped():this.renderGrid(t.formulas)}}class QV extends Y{constructor(){super(...arguments),this.selectedIds=new Set,this.activeTab=at[0].id,this.handleImport=async()=>{if(this.selectedIds.size===0)return;const t=[];for(const e of at)for(const i of e.formulas)this.selectedIds.has(i.id)&&t.push({name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:"unlearned",sourceRef:i.id});await P.asyncActions.addFormulas(this.props.categoryId,t),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}toggleFormula(t){this.selectedIds.has(t)?this.selectedIds.delete(t):this.selectedIds.add(t),this.update()}toggleAll(){const t=at.find(i=>i.id===this.activeTab);if(!t)return;const e=t.formulas.every(i=>this.selectedIds.has(i.id));for(const i of t.formulas)e?this.selectedIds.delete(i.id):this.selectedIds.add(i.id);this.update()}resetAndClose(){this.selectedIds.clear(),this.activeTab=at[0].id,this.props.onClose()}getImportedRefs(){const t=P.state.categories.find(i=>i.id===this.props.categoryId);if(!t)return new Set;const e=new Set;for(const i of t.formulas)i.sourceRef&&e.add(i.sourceRef);return e}renderFormulaCard(t,e){const i=this.selectedIds.has(t.id);return l("div",{class:F("flex cursor-pointer flex-col rounded-lg border p-3","transition-colors hover:border-(--color-primary)/50",i?"border-(--color-primary) bg-(--color-primary)/5":"border-(--color-border)"),"on:click":()=>this.toggleFormula(t.id)},[l("div",{class:"mb-2 flex items-center gap-2"},[l("iku-checkbox",{checked:i,"on:ik-change":r=>{r.stopPropagation(),this.toggleFormula(t.id)}},[]),l("span",{class:"text-sm font-medium text-(--color-foreground)"},[t.name]),e&&l("span",{class:"rounded-full border border-(--color-success)/30 px-1.5 py-0.5 text-[10px] leading-none text-(--color-success)"},["已选取"])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(l1,{viewData:t.viewData},[])])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(a1,{viewData:t.viewData},[])])]),l("span",{class:"truncate font-mono text-xs text-(--color-foreground-muted)"},[t.formulas[0]||""])])}render(){if(!this.props.open)return null;const t=this.selectedIds.size,e=this.getImportedRefs(),i=at.find(s=>s.id===this.activeTab),r=i?.formulas.every(s=>this.selectedIds.has(s.id))??!1;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"引用内置公式",closable:!0,"on:ik-close":this.handleCancel,style:"--dialog-width: 720px"},[l("div",{class:"flex gap-4 px-1 py-2",style:"height: 420px;"},[l("iku-tabs",{orientation:"vertical",value:this.activeTab,"on:ik-change":s=>{this.activeTab=s.detail.value,this.update()},class:"shrink-0"},[...Array.isArray(at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])))?at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])):[at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])]))]]),l("div",{class:"flex min-w-0 flex-1 flex-col"},[l("div",{class:"mb-3 flex items-center"},[l("iku-button",{size:"sm",variant:"ghost","on:click":()=>this.toggleAll()},[r?"取消全选":"全选当前栏目"])]),l("div",{class:"flex-1 overflow-y-auto"},[l("div",{class:"grid gap-3",style:"grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));"},[i?.formulas.map(s=>this.renderFormulaCard(s,e.has(s.id)))])])])]),l("div",{class:"mt-4 flex items-center justify-between",slot:"footer"},[l("span",{class:"pr-2 text-xs text-(--color-foreground-muted)"},[`已选 ${t} 条`]),l("div",{class:"flex gap-3"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary",disabled:t===0,"on:click":this.handleImport},["导入"])])])])])}}class tz extends Y{constructor(){super(...arguments),this.unsubscribes=[],this.showFormulaDialog=!1,this.showImportDialog=!1,this.editTarget=null,this.openAddDialog=()=>{this.editTarget=null,this.showFormulaDialog=!0,this.update()},this.openEditDialog=t=>{const i=this.getCategory()?.formulas.find(r=>r.id===t);i&&(this.editTarget={formulaId:i.id,name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:i.proficiency??"unlearned"},this.showFormulaDialog=!0,this.update())},this.closeFormulaDialog=()=>{this.showFormulaDialog=!1,this.editTarget=null,this.update()},this.openImportDialog=()=>{this.showImportDialog=!0,this.update()},this.closeImportDialog=()=>{this.showImportDialog=!1,this.update()},this.handleMoveFormula=(t,e)=>{P.asyncActions.moveFormula(this.props.categoryId,t,e)},this.setDisplayMode=t=>{T.actions.setFormulaDisplayMode(t)},this.navigateHome=t=>{t.preventDefault(),ha(this).push("/")}}mounted(){this.unsubscribes.push(P.subscribe(()=>this.update())),this.unsubscribes.push(T.subscribe(t=>t.formulaDisplayMode,()=>this.update())),mi(this.props.categoryId)||P.asyncActions.load()}beforeUnmount(){this.unsubscribes.forEach(t=>t())}getCategory(){const t=this.props.categoryId;return mi(t)?at.find(e=>e.id===t):P.state.categories.find(e=>e.id===t)}render(){const t=this.getCategory(),e=mi(this.props.categoryId);return t?l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-8")},[l("nav",{class:"mb-6 flex items-center gap-1.5 text-sm text-(--color-foreground-muted)"},[l("a",{href:"/",class:"hover:text-foreground cursor-pointer transition-colors","on:click":this.navigateHome},["训练栏目"]),l("ik-icon",{name:"chevron-right",size:14},[]),l("span",{class:"text-foreground"},[t.name])]),l(PV,{category:t,builtin:e,onAddFormula:this.openAddDialog,onImportBuiltin:e?void 0:this.openImportDialog},[]),!e&&t.formulas.length>0&&l("div",{class:"mb-4 flex justify-end"},[l("div",{class:"flex items-center gap-1"},[...Array.isArray(["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:T.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])])))?["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:T.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])])):[["list","grouped"].map(i=>l("iku-button",{size:"sm",variant:T.state.formulaDisplayMode===i?"secondary":"ghost","on:click":()=>this.setDisplayMode(i)},[l("ik-icon",{name:i==="list"?"list":"layout-grid",size:14},[])]))]])]),l(JV,{category:t,builtin:e,onEdit:this.openEditDialog,onMove:e?void 0:this.handleMoveFormula},[]),l(WV,{open:this.showFormulaDialog,categoryId:t.id,editTarget:this.editTarget,onClose:this.closeFormulaDialog},[]),!e&&l(QV,{open:this.showImportDialog,categoryId:t.id,onClose:this.closeImportDialog},[])]):l("div",{class:F("mx-auto w-full max-w-5xl px-6 py-20 text-center")},[l("p",{class:"text-(--color-foreground-muted)"},["栏目不存在"]),l("iku-button",{class:"mt-4","on:click":this.navigateHome},["返回首页"])])}}class ez extends Ur{render(){return l(tz,{categoryId:this.params.id},[])}}class Ge extends Y{constructor(){super(...arguments),this.handleClick=()=>{ha(this).push(`/category/${this.props.category.id}`)},this.handleDelete=async t=>{t.stopPropagation(),await yS.confirm({title:"确认删除",content:`确定要删除公式栏 "${this.props.category.name}" 吗？`})&&this.props.onDelete?.(this.props.category.id)}}render(){const{category:t,builtin:e}=this.props;return l("div",{class:F("group cursor-pointer rounded-xl border border-(--color-border) bg-(--color-surface) p-5","transition-colors hover:border-(--color-primary)/40"),"on:click":this.handleClick},[l("div",{class:"mb-3 flex items-start justify-between"},[l("div",{class:F("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),e?l("span",{class:"bg-accent inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium text-(--color-foreground-muted)"},["内置"]):l("iku-button",{class:"opacity-0 transition-all group-hover:opacity-100",variant:"destructive",title:"删除","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14,color:"var(--color-foreground)"},[])])]),l("h3",{class:"text-foreground text-sm font-semibold transition-colors group-hover:text-(--color-primary)"},[t.name]),l("div",{class:"mt-3 flex items-center gap-1 text-xs text-(--color-foreground-muted)/60"},[l("ik-icon",{name:"list",size:12},[]),l("span",null,[t.formulas.length,"条公式"])])])}}class oz extends Y{constructor(){super(...arguments),this.handleDelete=async t=>{await P.asyncActions.removeCategory(t)}}mounted(){this.unsubscribe=P.subscribe(()=>this.update()),P.asyncActions.load()}beforeUnmount(){this.unsubscribe?.()}render(){const{categories:t,loading:e}=P.state;return e?l("div",{class:"flex items-center justify-center py-20"},[l("iku-loading",{size:"md"},[])]):l("div",{class:"space-y-8"},[l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["内置"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(at.map(i=>l(Ge,{category:i,builtin:!0},[])))?at.map(i=>l(Ge,{category:i,builtin:!0},[])):[at.map(i=>l(Ge,{category:i,builtin:!0},[]))]])]),l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["自定义"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[])))?t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[])):[t.map(i=>l(Ge,{category:i,onDelete:this.handleDelete},[]))],l("button",{class:F("flex min-h-[148px] flex-col items-center justify-center","rounded-xl border border-dashed border-(--color-border) bg-(--color-surface)/50","text-(--color-foreground-muted) transition-colors","hover:border-(--color-primary)/50 hover:text-(--color-primary)"),"on:click":()=>this.props.onCreateClick()},[l("ik-icon",{name:"plus",size:"lg"},[]),l("span",{class:"mt-2 text-sm"},["新建栏目"])])])])])}}class rz extends Y{constructor(){super(...arguments),this.name="",this.handleInput=t=>{this.name=t.detail.value},this.handleSubmit=async()=>{const t=this.name.trim();t&&(await P.asyncActions.addCategory(t),this.name="",this.props.onClose())},this.handleCancel=()=>{this.name="",this.props.onClose()}}render(){return this.props.open?l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"新建训练栏目",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"px-1 py-2"},[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["栏目名称"]),l("iku-input",{placeholder:"例如: OLL 训练",value:this.name,"on:ik-input":this.handleInput},[])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},["创建"])])])]):null}}class iz extends Y{constructor(){super(...arguments),this.showCreateDialog=!1,this.openCreate=()=>{this.showCreateDialog=!0,this.update()},this.closeCreate=()=>{this.showCreateDialog=!1,this.update()},this.handleMenuSelect=async t=>{const{value:e}=t.detail;if(e==="create")this.openCreate();else if(e==="preset-oll"){const i=oa.formulas.map(({id:r,...s})=>s);await P.asyncActions.addPresetCategory(oa.name,i)}else if(e==="preset-pll"){const i=ra.formulas.map(({id:r,...s})=>s);await P.asyncActions.addPresetCategory(ra.name,i)}}}render(){return l("div",{class:"mx-auto w-full max-w-5xl px-6 py-8"},[l("div",{class:"mb-8 flex items-center justify-between"},[l("div",null,[l("h1",{class:"text-2xl font-bold text-(--color-foreground)"},["训练栏目"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理你的魔方训练公式集"])]),l("iku-dropdown",{"on:ik-select":this.handleMenuSelect},[l("iku-button",{variant:"primary",slot:"trigger"},[l("ik-icon",{name:"menu",size:"sm",slot:"prefix"},[])]),l("iku-menu",{slot:"menu"},[l("iku-menu-item",{value:"create"},["空白栏目"]),l("iku-menu-item",{value:"preset-oll"},["OLL 预设"]),l("iku-menu-item",{value:"preset-pll"},["PLL 预设"])])])]),l(oz,{onCreateClick:this.openCreate},[]),l(rz,{open:this.showCreateDialog,onClose:this.closeCreate},[])])}}class sz extends Ur{render(){return l(iz,null,[])}}class nz extends Y{constructor(){super(...arguments),this.handleClearAll=async()=>{await P.asyncActions.clearAll()}}render(){return l("div",{class:"rounded-xl border border-(--color-destructive)/20 bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-destructive)/10 text-(--color-destructive)"},[l("ik-icon",{name:"alert-triangle",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["清空数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["删除所有自定义训练栏目。此操作不可撤销，建议先导出备份。"]),l("iku-button",{variant:"destructive","on:click":this.handleClearAll},[l("ik-icon",{name:"trash-2",size:"sm",slot:"prefix"},[]),"清空所有数据"])])])])}}class lz extends Y{constructor(){super(...arguments),this.handleExport=()=>{const t=P.state.categories,e={version:2,exportedAt:Date.now(),categories:t},i=JSON.stringify(e,null,2),r=new Blob([i],{type:"application/json"}),s=URL.createObjectURL(r),n=document.createElement("a");n.href=s,n.download=`cube-training-${new Date().toISOString().slice(0,10)}.json`,n.click(),URL.revokeObjectURL(s)}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-success)/10 text-(--color-success)"},[l("ik-icon",{name:"download",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导出数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["将所有自定义训练栏目导出为 JSON 文件。内置栏目不参与导出。"]),l("iku-button",{variant:"primary","on:click":this.handleExport},[l("ik-icon",{name:"file-down",size:"sm",slot:"prefix"},[]),"导出 JSON"])])])])}}class az extends Y{constructor(){super(...arguments),this.preview=null,this.fileName="",this.handleFileChange=t=>{const i=t.target.files?.[0];if(!i)return;this.fileName=i.name;const r=new FileReader;r.addEventListener("load",()=>{try{const s=JSON.parse(r.result);if(s.version!==1&&s.version!==2||!Array.isArray(s.categories)){this.preview=null,this.update();return}const n=s.categories.map(Wi),d=new Set(P.state.categories.map(a=>a.id));this.preview=n.map(a=>({category:a,conflict:d.has(a.id)})),this.update()}catch{this.preview=null,this.update()}}),r.readAsText(i)},this.handleImport=async()=>{if(!this.preview)return;const t=this.preview.map(e=>e.category);await P.asyncActions.importData(t),this.preview=null,this.fileName="",this.update()},this.handleCancel=()=>{this.preview=null,this.fileName="",this.update()}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-info)/10 text-(--color-info)"},[l("ik-icon",{name:"upload",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导入数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["从 JSON 文件导入训练栏目。同名栏目将被覆盖，不冲突的栏目保留。"]),l("label",{class:F("bg-background/50 relative flex cursor-pointer flex-col items-center rounded-lg border-2 border-dashed border-(--color-border) p-8 text-center","transition-colors hover:border-(--color-primary)/50")},[l("input",{type:"file",accept:".json",class:"absolute inset-0 h-full w-full cursor-pointer opacity-0","on:change":this.handleFileChange},[]),l("ik-icon",{name:"file-up",size:32,color:"var(--color-border)"},[]),l("p",{class:"mt-3 text-sm text-(--color-foreground-muted)"},["点击或拖拽 JSON 文件到此处"]),l("p",{class:"mt-1 text-xs text-(--color-foreground-muted)/60"},["仅支持 .json 格式"])]),this.preview&&this.renderPreview()])])])}renderPreview(){const t=this.preview,e=t.filter(i=>i.conflict).length;return l("div",{class:"bg-background mt-5 rounded-lg border border-(--color-border) p-4"},[l("div",{class:"mb-3 flex items-center justify-between"},[l("h4",{class:"text-foreground text-sm font-medium"},["导入预览"]),l("span",{class:"text-xs text-(--color-foreground-muted)"},[this.fileName])]),l("div",{class:"space-y-2"},[...Array.isArray(t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])))?t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])):[t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:F("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:F("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])]))]]),l("div",{class:"mt-4 flex items-center justify-between border-t border-(--color-border) pt-3"},[l("span",{class:"text-xs text-(--color-foreground-muted)"},["共",t.length,"个栏目",e>0&&`，其中 ${e} 个将覆盖已有数据`]),l("div",{class:"flex gap-2"},[l("iku-button",{size:"sm","on:click":this.handleCancel},["取消"]),l("iku-button",{size:"sm",variant:"primary","on:click":this.handleImport},["确认导入"])])])])}}class dz extends Y{constructor(){super(...arguments),this.handleColorChange=t=>{const e=t.target;T.actions.setOllColor(e.value)}}mounted(){this.unsubscribe=T.subscribe(()=>{this.update()})}beforeUnmount(){this.unsubscribe?.()}render(){const{ollColor:t}=T.state;return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-primary)/10 text-(--color-primary)"},[l("ik-icon",{name:"palette",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["俯视图配置"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["自定义 OLL 俯视图中填色块的颜色。"]),l("div",{class:"flex items-center gap-3"},[l("label",{class:"text-sm text-(--color-foreground-muted)"},["OLL 填色颜色"]),l("input",{type:"color",value:t,"on:input":this.handleColorChange,class:"h-8 w-10 cursor-pointer rounded border border-(--color-border)"},[]),l("span",{class:"font-mono text-xs text-(--color-foreground-muted)"},[t])])])])])}}class hz extends Ur{render(){return l("div",{class:F("mx-auto w-full max-w-3xl px-6 py-8")},[l("div",{class:"mb-8"},[l("h1",{class:"text-foreground text-2xl font-bold"},["设置"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理训练数据的导入与导出"])]),l("div",{class:"space-y-6"},[l(dz,null,[]),l(lz,null,[]),l(az,null,[]),l(nz,null,[])])])}}const cz=[{path:"/",component:LV,children:[{path:"",component:sz,meta:{title:"Ikun Cube Trainer"}},{path:"category/:id",component:ez,meta:{title:"Ikun Cube Trainer - 栏目详情"}},{path:"settings",component:hz,meta:{title:"Ikun Cube Trainer - 设置"}}]}];class pz extends Y{render(){return l(c1,null,[l(h1,{routes:cz,beforeEach:(t,e,i)=>{t.meta?.title&&(document.title=t.meta.title),i()}},[]),l("div",{"data-container":"global-overlays"},[l("iku-toast-region",{"auto-hide-duration":3e3},[]),l("iku-dialog-region",null,[])])])}}function uz(){jL(),YS(),sR(),He.init(),He.setTheme(localStorage.getItem("app-theme")||"dark"),He.subscribe(o=>{localStorage.setItem("app-theme",o.theme)})}function wz(){uz(),p1(l(pz,null,[]),document.getElementById("app"))}wz();
+${F}
+}`,b=a();b.textContent=q}function p(x){if(typeof document>"u")return;const A=document.documentElement;if(x==="light"||x==="dark")A.dataset.theme="default",A.dataset.colorScheme=x,A.style.colorScheme=x;else if(x==="neutral")A.dataset.theme="neutral",A.dataset.colorScheme="light",A.style.colorScheme="light";else if(x==="auto"){const F=d();A.dataset.theme="default",A.dataset.colorScheme=F,A.style.colorScheme=F}else{const q=n.get(x)?.colorScheme||"light";A.dataset.theme=x,A.dataset.colorScheme=q,A.style.colorScheme=q,c(x)}}function w(x,A){typeof window>"u"||window.dispatchEvent(new CustomEvent("theme-change",{detail:{theme:x,previous:A}}))}function C(){if(typeof window>"u")return()=>{};r=window.matchMedia("(prefers-color-scheme: dark)");const x=()=>{i==="auto"&&(p("auto"),w("auto","auto"))};return r.addEventListener("change",x),()=>{r?.removeEventListener("change",x)}}function m(x,A,F="light"){n.set(x,{variables:A,colorScheme:F}),i===x&&c(x)}function L(x){const A=i;i=x,p(x),w(x,A)}function U(){return i}function z(){return i==="auto"?d():i||t}function M(x){if(typeof window>"u")return()=>{};const A=F=>{x(F.detail)};return window.addEventListener("theme-change",A),()=>{window.removeEventListener("theme-change",A)}}function Y(){return C()}function I(x){if(x==="light"||x==="dark")return{colorScheme:x};if(x==="neutral")return{colorScheme:"light"};if(x==="auto")return{colorScheme:d()};const A=n.get(x);return A?{colorScheme:A.colorScheme}:null}return{register:m,setTheme:L,getTheme:U,getActiveTheme:z,getThemeInfo:I,subscribe:M,init:Y}}const He=UH();function VH(o={}){const{target:t=typeof document<"u"?document.documentElement:null}=o,e=new Set,i=new Set;function r(M,Y){t&&t.style.setProperty(`--${M}`,Y)}function s(M){t&&t.style.removeProperty(`--${M}`)}function n(M){return t?getComputedStyle(t).getPropertyValue(`--${M}`).trim():""}function d(M,Y,I=500){const x=dt(Y,I);for(const[A,F]of Object.entries(x))r(`color-${M}-${A}`,F);return e.add(M),x}function a(M,Y){return M[Y]}function c(M,Y={}){const{scale:I=600,hoverScale:x,activeScale:A,mutedScale:F=100}=Y,q=d("primary-custom",M,500),b=x??Math.min(I+100,950),st=A??Math.min(I+200,950),gt=a(q,I),cr=a(q,b),qe=a(q,st),Ne=a(q,F);return p("primary",gt),p("primary-hover",cr),p("primary-active",qe),p("primary-foreground","#fff"),p("primary-muted",Ne),p("ring",gt),p("input-focus",gt),p("item-selected",Ne),p("item-selected-foreground",gt),p("info",gt),p("info-muted",Ne),p("selection",a(q,200)),p("selection-foreground",a(q,900)),q}function p(M,Y){r(`color-${M}`,Y),i.add(M)}function w(M){for(const[Y,I]of Object.entries(M))I&&p(Y,I)}function C(M){for(const Y of Za)s(`color-${M}-${Y}`);e.delete(M)}function m(M){s(`color-${M}`),i.delete(M)}function L(){for(const M of e)C(M);for(const M of i)m(M);e.clear(),i.clear()}function U(){return[...e]}function z(){return[...i]}return{applyPalette:d,applyPrimaryColor:c,resetPalette:C,setSemanticColor:p,setSemanticColors:w,resetSemanticColor:m,reset:L,setVar:r,getVar:n,removeVar:s,getAppliedPalettes:U,getAppliedSemanticColors:z,COLOR_SCALE_VALUES:Za,BUILTIN_PALETTES:lH,SEMANTIC_COLOR_NAMES:nH}}typeof document<"u"&&VH();const _o=[{key:"light",label:"浅色",icon:"○"},{key:"dark",label:"深色",icon:"●"},{key:"neutral",label:"中性",icon:"◐"},{key:"auto",label:"跟随系统",icon:"◑"}];function E0(){return He?.getTheme()||"light"}function zH(){const o=E0();return _o.find(t=>t.key===o)||_o[0]}function $H(o){He?.setTheme(o)}function DH(o){return He?He.subscribe(t=>{o(t.theme)}):()=>{}}function T0(o){var t,e,i="";if(typeof o=="string"||typeof o=="number")i+=o;else if(typeof o=="object")if(Array.isArray(o)){var r=o.length;for(t=0;t<r;t++)o[t]&&(e=T0(o[t]))&&(i&&(i+=" "),i+=e)}else for(e in o)o[e]&&(i&&(i+=" "),i+=e);return i}function FH(){for(var o,t,e=0,i="",r=arguments.length;e<r;e++)(o=arguments[e])&&(t=T0(o))&&(i&&(i+=" "),i+=t);return i}const PH=(o,t)=>{const e=new Array(o.length+t.length);for(let i=0;i<o.length;i++)e[i]=o[i];for(let i=0;i<t.length;i++)e[o.length+i]=t[i];return e},EH=(o,t)=>({classGroupId:o,validator:t}),O0=(o=new Map,t=null,e)=>({nextPart:o,validators:t,classGroupId:e}),Sr="-",Ka=[],TH="arbitrary..",OH=o=>{const t=qH(o),{conflictingClassGroups:e,conflictingClassGroupModifiers:i}=o;return{getClassGroupId:n=>{if(n.startsWith("[")&&n.endsWith("]"))return IH(n);const d=n.split(Sr),a=d[0]===""&&d.length>1?1:0;return I0(d,a,t)},getConflictingClassGroupIds:(n,d)=>{if(d){const a=i[n],c=e[n];return a?c?PH(c,a):a:c||Ka}return e[n]||Ka}}},I0=(o,t,e)=>{if(o.length-t===0)return e.classGroupId;const r=o[t],s=e.nextPart.get(r);if(s){const c=I0(o,t+1,s);if(c)return c}const n=e.validators;if(n===null)return;const d=t===0?o.join(Sr):o.slice(t).join(Sr),a=n.length;for(let c=0;c<a;c++){const p=n[c];if(p.validator(d))return p.classGroupId}},IH=o=>o.slice(1,-1).indexOf(":")===-1?void 0:(()=>{const t=o.slice(1,-1),e=t.indexOf(":"),i=t.slice(0,e);return i?TH+i:void 0})(),qH=o=>{const{theme:t,classGroups:e}=o;return NH(e,t)},NH=(o,t)=>{const e=O0();for(const i in o){const r=o[i];vs(r,e,i,t)}return e},vs=(o,t,e,i)=>{const r=o.length;for(let s=0;s<r;s++){const n=o[s];_H(n,t,e,i)}},_H=(o,t,e,i)=>{if(typeof o=="string"){ZH(o,t,e);return}if(typeof o=="function"){GH(o,t,e,i);return}WH(o,t,e,i)},ZH=(o,t,e)=>{const i=o===""?t:q0(t,o);i.classGroupId=e},GH=(o,t,e,i)=>{if(KH(o)){vs(o(i),t,e,i);return}t.validators===null&&(t.validators=[]),t.validators.push(EH(e,o))},WH=(o,t,e,i)=>{const r=Object.entries(o),s=r.length;for(let n=0;n<s;n++){const[d,a]=r[n];vs(a,q0(t,d),e,i)}},q0=(o,t)=>{let e=o;const i=t.split(Sr),r=i.length;for(let s=0;s<r;s++){const n=i[s];let d=e.nextPart.get(n);d||(d=O0(),e.nextPart.set(n,d)),e=d}return e},KH=o=>"isThemeGetter"in o&&o.isThemeGetter===!0,XH=o=>{if(o<1)return{get:()=>{},set:()=>{}};let t=0,e=Object.create(null),i=Object.create(null);const r=(s,n)=>{e[s]=n,t++,t>o&&(t=0,i=e,e=Object.create(null))};return{get(s){let n=e[s];if(n!==void 0)return n;if((n=i[s])!==void 0)return r(s,n),n},set(s,n){s in e?e[s]=n:r(s,n)}}},Wi="!",Xa=":",JH=[],Ja=(o,t,e,i,r)=>({modifiers:o,hasImportantModifier:t,baseClassName:e,maybePostfixModifierPosition:i,isExternal:r}),QH=o=>{const{prefix:t,experimentalParseClassName:e}=o;let i=r=>{const s=[];let n=0,d=0,a=0,c;const p=r.length;for(let U=0;U<p;U++){const z=r[U];if(n===0&&d===0){if(z===Xa){s.push(r.slice(a,U)),a=U+1;continue}if(z==="/"){c=U;continue}}z==="["?n++:z==="]"?n--:z==="("?d++:z===")"&&d--}const w=s.length===0?r:r.slice(a);let C=w,m=!1;w.endsWith(Wi)?(C=w.slice(0,-1),m=!0):w.startsWith(Wi)&&(C=w.slice(1),m=!0);const L=c&&c>a?c-a:void 0;return Ja(s,m,C,L)};if(t){const r=t+Xa,s=i;i=n=>n.startsWith(r)?s(n.slice(r.length)):Ja(JH,!1,n,void 0,!0)}if(e){const r=i;i=s=>e({className:s,parseClassName:r})}return i},tY=o=>{const t=new Map;return o.orderSensitiveModifiers.forEach((e,i)=>{t.set(e,1e6+i)}),e=>{const i=[];let r=[];for(let s=0;s<e.length;s++){const n=e[s],d=n[0]==="[",a=t.has(n);d||a?(r.length>0&&(r.sort(),i.push(...r),r=[]),i.push(n)):r.push(n)}return r.length>0&&(r.sort(),i.push(...r)),i}},eY=o=>({cache:XH(o.cacheSize),parseClassName:QH(o),sortModifiers:tY(o),...OH(o)}),oY=/\s+/,rY=(o,t)=>{const{parseClassName:e,getClassGroupId:i,getConflictingClassGroupIds:r,sortModifiers:s}=t,n=[],d=o.trim().split(oY);let a="";for(let c=d.length-1;c>=0;c-=1){const p=d[c],{isExternal:w,modifiers:C,hasImportantModifier:m,baseClassName:L,maybePostfixModifierPosition:U}=e(p);if(w){a=p+(a.length>0?" "+a:a);continue}let z=!!U,M=i(z?L.substring(0,U):L);if(!M){if(!z){a=p+(a.length>0?" "+a:a);continue}if(M=i(L),!M){a=p+(a.length>0?" "+a:a);continue}z=!1}const Y=C.length===0?"":C.length===1?C[0]:s(C).join(":"),I=m?Y+Wi:Y,x=I+M;if(n.indexOf(x)>-1)continue;n.push(x);const A=r(M,z);for(let F=0;F<A.length;++F){const q=A[F];n.push(I+q)}a=p+(a.length>0?" "+a:a)}return a},iY=(...o)=>{let t=0,e,i,r="";for(;t<o.length;)(e=o[t++])&&(i=N0(e))&&(r&&(r+=" "),r+=i);return r},N0=o=>{if(typeof o=="string")return o;let t,e="";for(let i=0;i<o.length;i++)o[i]&&(t=N0(o[i]))&&(e&&(e+=" "),e+=t);return e},sY=(o,...t)=>{let e,i,r,s;const n=a=>{const c=t.reduce((p,w)=>w(p),o());return e=eY(c),i=e.cache.get,r=e.cache.set,s=d,d(a)},d=a=>{const c=i(a);if(c)return c;const p=rY(a,e);return r(a,p),p};return s=n,(...a)=>s(iY(...a))},nY=[],N=o=>{const t=e=>e[o]||nY;return t.isThemeGetter=!0,t},_0=/^\[(?:(\w[\w-]*):)?(.+)\]$/i,Z0=/^\((?:(\w[\w-]*):)?(.+)\)$/i,lY=/^\d+\/\d+$/,aY=/^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/,dY=/\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/,hY=/^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/,cY=/^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/,pY=/^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/,Ze=o=>lY.test(o),R=o=>!!o&&!Number.isNaN(Number(o)),qt=o=>!!o&&Number.isInteger(Number(o)),ki=o=>o.endsWith("%")&&R(o.slice(0,-1)),bt=o=>aY.test(o),uY=()=>!0,wY=o=>dY.test(o)&&!hY.test(o),G0=()=>!1,gY=o=>cY.test(o),vY=o=>pY.test(o),kY=o=>!g(o)&&!v(o),mY=o=>zo(o,X0,G0),g=o=>_0.test(o),Ae=o=>zo(o,J0,wY),mi=o=>zo(o,bY,R),Qa=o=>zo(o,W0,G0),xY=o=>zo(o,K0,vY),mr=o=>zo(o,Q0,gY),v=o=>Z0.test(o),Fo=o=>$o(o,J0),fY=o=>$o(o,CY),t0=o=>$o(o,W0),MY=o=>$o(o,X0),yY=o=>$o(o,K0),xr=o=>$o(o,Q0,!0),zo=(o,t,e)=>{const i=_0.exec(o);return i?i[1]?t(i[1]):e(i[2]):!1},$o=(o,t,e=!1)=>{const i=Z0.exec(o);return i?i[1]?t(i[1]):e:!1},W0=o=>o==="position"||o==="percentage",K0=o=>o==="image"||o==="url",X0=o=>o==="length"||o==="size"||o==="bg-size",J0=o=>o==="length",bY=o=>o==="number",CY=o=>o==="family-name",Q0=o=>o==="shadow",BY=()=>{const o=N("color"),t=N("font"),e=N("text"),i=N("font-weight"),r=N("tracking"),s=N("leading"),n=N("breakpoint"),d=N("container"),a=N("spacing"),c=N("radius"),p=N("shadow"),w=N("inset-shadow"),C=N("text-shadow"),m=N("drop-shadow"),L=N("blur"),U=N("perspective"),z=N("aspect"),M=N("ease"),Y=N("animate"),I=()=>["auto","avoid","all","avoid-page","page","left","right","column"],x=()=>["center","top","bottom","left","right","top-left","left-top","top-right","right-top","bottom-right","right-bottom","bottom-left","left-bottom"],A=()=>[...x(),v,g],F=()=>["auto","hidden","clip","visible","scroll"],q=()=>["auto","contain","none"],b=()=>[v,g,a],st=()=>[Ze,"full","auto",...b()],gt=()=>[qt,"none","subgrid",v,g],cr=()=>["auto",{span:["full",qt,v,g]},qt,v,g],qe=()=>[qt,"auto",v,g],Ne=()=>["auto","min","max","fr",v,g],Zr=()=>["start","end","center","between","around","evenly","stretch","baseline","center-safe","end-safe"],_e=()=>["start","end","center","stretch","center-safe","end-safe"],yt=()=>["auto",...b()],Ce=()=>[Ze,"auto","full","dvw","dvh","lvw","lvh","svw","svh","min","max","fit",...b()],y=()=>[o,v,g],xs=()=>[...x(),t0,Qa,{position:[v,g]}],fs=()=>["no-repeat",{repeat:["","x","y","space","round"]}],Ms=()=>["auto","cover","contain",MY,mY,{size:[v,g]}],Gr=()=>[ki,Fo,Ae],K=()=>["","none","full",c,v,g],nt=()=>["",R,Fo,Ae],pr=()=>["solid","dashed","dotted","double"],ys=()=>["normal","multiply","screen","overlay","darken","lighten","color-dodge","color-burn","hard-light","soft-light","difference","exclusion","hue","saturation","color","luminosity"],Z=()=>[R,ki,t0,Qa],bs=()=>["","none",L,v,g],ur=()=>["none",R,v,g],wr=()=>["none",R,v,g],Wr=()=>[R,v,g],gr=()=>[Ze,"full",...b()];return{cacheSize:500,theme:{animate:["spin","ping","pulse","bounce"],aspect:["video"],blur:[bt],breakpoint:[bt],color:[uY],container:[bt],"drop-shadow":[bt],ease:["in","out","in-out"],font:[kY],"font-weight":["thin","extralight","light","normal","medium","semibold","bold","extrabold","black"],"inset-shadow":[bt],leading:["none","tight","snug","normal","relaxed","loose"],perspective:["dramatic","near","normal","midrange","distant","none"],radius:[bt],shadow:[bt],spacing:["px",R],text:[bt],"text-shadow":[bt],tracking:["tighter","tight","normal","wide","wider","widest"]},classGroups:{aspect:[{aspect:["auto","square",Ze,g,v,z]}],container:["container"],columns:[{columns:[R,g,v,d]}],"break-after":[{"break-after":I()}],"break-before":[{"break-before":I()}],"break-inside":[{"break-inside":["auto","avoid","avoid-page","avoid-column"]}],"box-decoration":[{"box-decoration":["slice","clone"]}],box:[{box:["border","content"]}],display:["block","inline-block","inline","flex","inline-flex","table","inline-table","table-caption","table-cell","table-column","table-column-group","table-footer-group","table-header-group","table-row-group","table-row","flow-root","grid","inline-grid","contents","list-item","hidden"],sr:["sr-only","not-sr-only"],float:[{float:["right","left","none","start","end"]}],clear:[{clear:["left","right","both","none","start","end"]}],isolation:["isolate","isolation-auto"],"object-fit":[{object:["contain","cover","fill","none","scale-down"]}],"object-position":[{object:A()}],overflow:[{overflow:F()}],"overflow-x":[{"overflow-x":F()}],"overflow-y":[{"overflow-y":F()}],overscroll:[{overscroll:q()}],"overscroll-x":[{"overscroll-x":q()}],"overscroll-y":[{"overscroll-y":q()}],position:["static","fixed","absolute","relative","sticky"],inset:[{inset:st()}],"inset-x":[{"inset-x":st()}],"inset-y":[{"inset-y":st()}],start:[{start:st()}],end:[{end:st()}],top:[{top:st()}],right:[{right:st()}],bottom:[{bottom:st()}],left:[{left:st()}],visibility:["visible","invisible","collapse"],z:[{z:[qt,"auto",v,g]}],basis:[{basis:[Ze,"full","auto",d,...b()]}],"flex-direction":[{flex:["row","row-reverse","col","col-reverse"]}],"flex-wrap":[{flex:["nowrap","wrap","wrap-reverse"]}],flex:[{flex:[R,Ze,"auto","initial","none",g]}],grow:[{grow:["",R,v,g]}],shrink:[{shrink:["",R,v,g]}],order:[{order:[qt,"first","last","none",v,g]}],"grid-cols":[{"grid-cols":gt()}],"col-start-end":[{col:cr()}],"col-start":[{"col-start":qe()}],"col-end":[{"col-end":qe()}],"grid-rows":[{"grid-rows":gt()}],"row-start-end":[{row:cr()}],"row-start":[{"row-start":qe()}],"row-end":[{"row-end":qe()}],"grid-flow":[{"grid-flow":["row","col","dense","row-dense","col-dense"]}],"auto-cols":[{"auto-cols":Ne()}],"auto-rows":[{"auto-rows":Ne()}],gap:[{gap:b()}],"gap-x":[{"gap-x":b()}],"gap-y":[{"gap-y":b()}],"justify-content":[{justify:[...Zr(),"normal"]}],"justify-items":[{"justify-items":[..._e(),"normal"]}],"justify-self":[{"justify-self":["auto",..._e()]}],"align-content":[{content:["normal",...Zr()]}],"align-items":[{items:[..._e(),{baseline:["","last"]}]}],"align-self":[{self:["auto",..._e(),{baseline:["","last"]}]}],"place-content":[{"place-content":Zr()}],"place-items":[{"place-items":[..._e(),"baseline"]}],"place-self":[{"place-self":["auto",..._e()]}],p:[{p:b()}],px:[{px:b()}],py:[{py:b()}],ps:[{ps:b()}],pe:[{pe:b()}],pt:[{pt:b()}],pr:[{pr:b()}],pb:[{pb:b()}],pl:[{pl:b()}],m:[{m:yt()}],mx:[{mx:yt()}],my:[{my:yt()}],ms:[{ms:yt()}],me:[{me:yt()}],mt:[{mt:yt()}],mr:[{mr:yt()}],mb:[{mb:yt()}],ml:[{ml:yt()}],"space-x":[{"space-x":b()}],"space-x-reverse":["space-x-reverse"],"space-y":[{"space-y":b()}],"space-y-reverse":["space-y-reverse"],size:[{size:Ce()}],w:[{w:[d,"screen",...Ce()]}],"min-w":[{"min-w":[d,"screen","none",...Ce()]}],"max-w":[{"max-w":[d,"screen","none","prose",{screen:[n]},...Ce()]}],h:[{h:["screen","lh",...Ce()]}],"min-h":[{"min-h":["screen","lh","none",...Ce()]}],"max-h":[{"max-h":["screen","lh",...Ce()]}],"font-size":[{text:["base",e,Fo,Ae]}],"font-smoothing":["antialiased","subpixel-antialiased"],"font-style":["italic","not-italic"],"font-weight":[{font:[i,v,mi]}],"font-stretch":[{"font-stretch":["ultra-condensed","extra-condensed","condensed","semi-condensed","normal","semi-expanded","expanded","extra-expanded","ultra-expanded",ki,g]}],"font-family":[{font:[fY,g,t]}],"fvn-normal":["normal-nums"],"fvn-ordinal":["ordinal"],"fvn-slashed-zero":["slashed-zero"],"fvn-figure":["lining-nums","oldstyle-nums"],"fvn-spacing":["proportional-nums","tabular-nums"],"fvn-fraction":["diagonal-fractions","stacked-fractions"],tracking:[{tracking:[r,v,g]}],"line-clamp":[{"line-clamp":[R,"none",v,mi]}],leading:[{leading:[s,...b()]}],"list-image":[{"list-image":["none",v,g]}],"list-style-position":[{list:["inside","outside"]}],"list-style-type":[{list:["disc","decimal","none",v,g]}],"text-alignment":[{text:["left","center","right","justify","start","end"]}],"placeholder-color":[{placeholder:y()}],"text-color":[{text:y()}],"text-decoration":["underline","overline","line-through","no-underline"],"text-decoration-style":[{decoration:[...pr(),"wavy"]}],"text-decoration-thickness":[{decoration:[R,"from-font","auto",v,Ae]}],"text-decoration-color":[{decoration:y()}],"underline-offset":[{"underline-offset":[R,"auto",v,g]}],"text-transform":["uppercase","lowercase","capitalize","normal-case"],"text-overflow":["truncate","text-ellipsis","text-clip"],"text-wrap":[{text:["wrap","nowrap","balance","pretty"]}],indent:[{indent:b()}],"vertical-align":[{align:["baseline","top","middle","bottom","text-top","text-bottom","sub","super",v,g]}],whitespace:[{whitespace:["normal","nowrap","pre","pre-line","pre-wrap","break-spaces"]}],break:[{break:["normal","words","all","keep"]}],wrap:[{wrap:["break-word","anywhere","normal"]}],hyphens:[{hyphens:["none","manual","auto"]}],content:[{content:["none",v,g]}],"bg-attachment":[{bg:["fixed","local","scroll"]}],"bg-clip":[{"bg-clip":["border","padding","content","text"]}],"bg-origin":[{"bg-origin":["border","padding","content"]}],"bg-position":[{bg:xs()}],"bg-repeat":[{bg:fs()}],"bg-size":[{bg:Ms()}],"bg-image":[{bg:["none",{linear:[{to:["t","tr","r","br","b","bl","l","tl"]},qt,v,g],radial:["",v,g],conic:[qt,v,g]},yY,xY]}],"bg-color":[{bg:y()}],"gradient-from-pos":[{from:Gr()}],"gradient-via-pos":[{via:Gr()}],"gradient-to-pos":[{to:Gr()}],"gradient-from":[{from:y()}],"gradient-via":[{via:y()}],"gradient-to":[{to:y()}],rounded:[{rounded:K()}],"rounded-s":[{"rounded-s":K()}],"rounded-e":[{"rounded-e":K()}],"rounded-t":[{"rounded-t":K()}],"rounded-r":[{"rounded-r":K()}],"rounded-b":[{"rounded-b":K()}],"rounded-l":[{"rounded-l":K()}],"rounded-ss":[{"rounded-ss":K()}],"rounded-se":[{"rounded-se":K()}],"rounded-ee":[{"rounded-ee":K()}],"rounded-es":[{"rounded-es":K()}],"rounded-tl":[{"rounded-tl":K()}],"rounded-tr":[{"rounded-tr":K()}],"rounded-br":[{"rounded-br":K()}],"rounded-bl":[{"rounded-bl":K()}],"border-w":[{border:nt()}],"border-w-x":[{"border-x":nt()}],"border-w-y":[{"border-y":nt()}],"border-w-s":[{"border-s":nt()}],"border-w-e":[{"border-e":nt()}],"border-w-t":[{"border-t":nt()}],"border-w-r":[{"border-r":nt()}],"border-w-b":[{"border-b":nt()}],"border-w-l":[{"border-l":nt()}],"divide-x":[{"divide-x":nt()}],"divide-x-reverse":["divide-x-reverse"],"divide-y":[{"divide-y":nt()}],"divide-y-reverse":["divide-y-reverse"],"border-style":[{border:[...pr(),"hidden","none"]}],"divide-style":[{divide:[...pr(),"hidden","none"]}],"border-color":[{border:y()}],"border-color-x":[{"border-x":y()}],"border-color-y":[{"border-y":y()}],"border-color-s":[{"border-s":y()}],"border-color-e":[{"border-e":y()}],"border-color-t":[{"border-t":y()}],"border-color-r":[{"border-r":y()}],"border-color-b":[{"border-b":y()}],"border-color-l":[{"border-l":y()}],"divide-color":[{divide:y()}],"outline-style":[{outline:[...pr(),"none","hidden"]}],"outline-offset":[{"outline-offset":[R,v,g]}],"outline-w":[{outline:["",R,Fo,Ae]}],"outline-color":[{outline:y()}],shadow:[{shadow:["","none",p,xr,mr]}],"shadow-color":[{shadow:y()}],"inset-shadow":[{"inset-shadow":["none",w,xr,mr]}],"inset-shadow-color":[{"inset-shadow":y()}],"ring-w":[{ring:nt()}],"ring-w-inset":["ring-inset"],"ring-color":[{ring:y()}],"ring-offset-w":[{"ring-offset":[R,Ae]}],"ring-offset-color":[{"ring-offset":y()}],"inset-ring-w":[{"inset-ring":nt()}],"inset-ring-color":[{"inset-ring":y()}],"text-shadow":[{"text-shadow":["none",C,xr,mr]}],"text-shadow-color":[{"text-shadow":y()}],opacity:[{opacity:[R,v,g]}],"mix-blend":[{"mix-blend":[...ys(),"plus-darker","plus-lighter"]}],"bg-blend":[{"bg-blend":ys()}],"mask-clip":[{"mask-clip":["border","padding","content","fill","stroke","view"]},"mask-no-clip"],"mask-composite":[{mask:["add","subtract","intersect","exclude"]}],"mask-image-linear-pos":[{"mask-linear":[R]}],"mask-image-linear-from-pos":[{"mask-linear-from":Z()}],"mask-image-linear-to-pos":[{"mask-linear-to":Z()}],"mask-image-linear-from-color":[{"mask-linear-from":y()}],"mask-image-linear-to-color":[{"mask-linear-to":y()}],"mask-image-t-from-pos":[{"mask-t-from":Z()}],"mask-image-t-to-pos":[{"mask-t-to":Z()}],"mask-image-t-from-color":[{"mask-t-from":y()}],"mask-image-t-to-color":[{"mask-t-to":y()}],"mask-image-r-from-pos":[{"mask-r-from":Z()}],"mask-image-r-to-pos":[{"mask-r-to":Z()}],"mask-image-r-from-color":[{"mask-r-from":y()}],"mask-image-r-to-color":[{"mask-r-to":y()}],"mask-image-b-from-pos":[{"mask-b-from":Z()}],"mask-image-b-to-pos":[{"mask-b-to":Z()}],"mask-image-b-from-color":[{"mask-b-from":y()}],"mask-image-b-to-color":[{"mask-b-to":y()}],"mask-image-l-from-pos":[{"mask-l-from":Z()}],"mask-image-l-to-pos":[{"mask-l-to":Z()}],"mask-image-l-from-color":[{"mask-l-from":y()}],"mask-image-l-to-color":[{"mask-l-to":y()}],"mask-image-x-from-pos":[{"mask-x-from":Z()}],"mask-image-x-to-pos":[{"mask-x-to":Z()}],"mask-image-x-from-color":[{"mask-x-from":y()}],"mask-image-x-to-color":[{"mask-x-to":y()}],"mask-image-y-from-pos":[{"mask-y-from":Z()}],"mask-image-y-to-pos":[{"mask-y-to":Z()}],"mask-image-y-from-color":[{"mask-y-from":y()}],"mask-image-y-to-color":[{"mask-y-to":y()}],"mask-image-radial":[{"mask-radial":[v,g]}],"mask-image-radial-from-pos":[{"mask-radial-from":Z()}],"mask-image-radial-to-pos":[{"mask-radial-to":Z()}],"mask-image-radial-from-color":[{"mask-radial-from":y()}],"mask-image-radial-to-color":[{"mask-radial-to":y()}],"mask-image-radial-shape":[{"mask-radial":["circle","ellipse"]}],"mask-image-radial-size":[{"mask-radial":[{closest:["side","corner"],farthest:["side","corner"]}]}],"mask-image-radial-pos":[{"mask-radial-at":x()}],"mask-image-conic-pos":[{"mask-conic":[R]}],"mask-image-conic-from-pos":[{"mask-conic-from":Z()}],"mask-image-conic-to-pos":[{"mask-conic-to":Z()}],"mask-image-conic-from-color":[{"mask-conic-from":y()}],"mask-image-conic-to-color":[{"mask-conic-to":y()}],"mask-mode":[{mask:["alpha","luminance","match"]}],"mask-origin":[{"mask-origin":["border","padding","content","fill","stroke","view"]}],"mask-position":[{mask:xs()}],"mask-repeat":[{mask:fs()}],"mask-size":[{mask:Ms()}],"mask-type":[{"mask-type":["alpha","luminance"]}],"mask-image":[{mask:["none",v,g]}],filter:[{filter:["","none",v,g]}],blur:[{blur:bs()}],brightness:[{brightness:[R,v,g]}],contrast:[{contrast:[R,v,g]}],"drop-shadow":[{"drop-shadow":["","none",m,xr,mr]}],"drop-shadow-color":[{"drop-shadow":y()}],grayscale:[{grayscale:["",R,v,g]}],"hue-rotate":[{"hue-rotate":[R,v,g]}],invert:[{invert:["",R,v,g]}],saturate:[{saturate:[R,v,g]}],sepia:[{sepia:["",R,v,g]}],"backdrop-filter":[{"backdrop-filter":["","none",v,g]}],"backdrop-blur":[{"backdrop-blur":bs()}],"backdrop-brightness":[{"backdrop-brightness":[R,v,g]}],"backdrop-contrast":[{"backdrop-contrast":[R,v,g]}],"backdrop-grayscale":[{"backdrop-grayscale":["",R,v,g]}],"backdrop-hue-rotate":[{"backdrop-hue-rotate":[R,v,g]}],"backdrop-invert":[{"backdrop-invert":["",R,v,g]}],"backdrop-opacity":[{"backdrop-opacity":[R,v,g]}],"backdrop-saturate":[{"backdrop-saturate":[R,v,g]}],"backdrop-sepia":[{"backdrop-sepia":["",R,v,g]}],"border-collapse":[{border:["collapse","separate"]}],"border-spacing":[{"border-spacing":b()}],"border-spacing-x":[{"border-spacing-x":b()}],"border-spacing-y":[{"border-spacing-y":b()}],"table-layout":[{table:["auto","fixed"]}],caption:[{caption:["top","bottom"]}],transition:[{transition:["","all","colors","opacity","shadow","transform","none",v,g]}],"transition-behavior":[{transition:["normal","discrete"]}],duration:[{duration:[R,"initial",v,g]}],ease:[{ease:["linear","initial",M,v,g]}],delay:[{delay:[R,v,g]}],animate:[{animate:["none",Y,v,g]}],backface:[{backface:["hidden","visible"]}],perspective:[{perspective:[U,v,g]}],"perspective-origin":[{"perspective-origin":A()}],rotate:[{rotate:ur()}],"rotate-x":[{"rotate-x":ur()}],"rotate-y":[{"rotate-y":ur()}],"rotate-z":[{"rotate-z":ur()}],scale:[{scale:wr()}],"scale-x":[{"scale-x":wr()}],"scale-y":[{"scale-y":wr()}],"scale-z":[{"scale-z":wr()}],"scale-3d":["scale-3d"],skew:[{skew:Wr()}],"skew-x":[{"skew-x":Wr()}],"skew-y":[{"skew-y":Wr()}],transform:[{transform:[v,g,"","none","gpu","cpu"]}],"transform-origin":[{origin:A()}],"transform-style":[{transform:["3d","flat"]}],translate:[{translate:gr()}],"translate-x":[{"translate-x":gr()}],"translate-y":[{"translate-y":gr()}],"translate-z":[{"translate-z":gr()}],"translate-none":["translate-none"],accent:[{accent:y()}],appearance:[{appearance:["none","auto"]}],"caret-color":[{caret:y()}],"color-scheme":[{scheme:["normal","dark","light","light-dark","only-dark","only-light"]}],cursor:[{cursor:["auto","default","pointer","wait","text","move","help","not-allowed","none","context-menu","progress","cell","crosshair","vertical-text","alias","copy","no-drop","grab","grabbing","all-scroll","col-resize","row-resize","n-resize","e-resize","s-resize","w-resize","ne-resize","nw-resize","se-resize","sw-resize","ew-resize","ns-resize","nesw-resize","nwse-resize","zoom-in","zoom-out",v,g]}],"field-sizing":[{"field-sizing":["fixed","content"]}],"pointer-events":[{"pointer-events":["auto","none"]}],resize:[{resize:["none","","y","x"]}],"scroll-behavior":[{scroll:["auto","smooth"]}],"scroll-m":[{"scroll-m":b()}],"scroll-mx":[{"scroll-mx":b()}],"scroll-my":[{"scroll-my":b()}],"scroll-ms":[{"scroll-ms":b()}],"scroll-me":[{"scroll-me":b()}],"scroll-mt":[{"scroll-mt":b()}],"scroll-mr":[{"scroll-mr":b()}],"scroll-mb":[{"scroll-mb":b()}],"scroll-ml":[{"scroll-ml":b()}],"scroll-p":[{"scroll-p":b()}],"scroll-px":[{"scroll-px":b()}],"scroll-py":[{"scroll-py":b()}],"scroll-ps":[{"scroll-ps":b()}],"scroll-pe":[{"scroll-pe":b()}],"scroll-pt":[{"scroll-pt":b()}],"scroll-pr":[{"scroll-pr":b()}],"scroll-pb":[{"scroll-pb":b()}],"scroll-pl":[{"scroll-pl":b()}],"snap-align":[{snap:["start","end","center","align-none"]}],"snap-stop":[{snap:["normal","always"]}],"snap-type":[{snap:["none","x","y","both"]}],"snap-strictness":[{snap:["mandatory","proximity"]}],touch:[{touch:["auto","none","manipulation"]}],"touch-x":[{"touch-pan":["x","left","right"]}],"touch-y":[{"touch-pan":["y","up","down"]}],"touch-pz":["touch-pinch-zoom"],select:[{select:["none","text","all","auto"]}],"will-change":[{"will-change":["auto","scroll","contents","transform",v,g]}],fill:[{fill:["none",...y()]}],"stroke-w":[{stroke:[R,Fo,Ae,mi]}],stroke:[{stroke:["none",...y()]}],"forced-color-adjust":[{"forced-color-adjust":["auto","none"]}]},conflictingClassGroups:{overflow:["overflow-x","overflow-y"],overscroll:["overscroll-x","overscroll-y"],inset:["inset-x","inset-y","start","end","top","right","bottom","left"],"inset-x":["right","left"],"inset-y":["top","bottom"],flex:["basis","grow","shrink"],gap:["gap-x","gap-y"],p:["px","py","ps","pe","pt","pr","pb","pl"],px:["pr","pl"],py:["pt","pb"],m:["mx","my","ms","me","mt","mr","mb","ml"],mx:["mr","ml"],my:["mt","mb"],size:["w","h"],"font-size":["leading"],"fvn-normal":["fvn-ordinal","fvn-slashed-zero","fvn-figure","fvn-spacing","fvn-fraction"],"fvn-ordinal":["fvn-normal"],"fvn-slashed-zero":["fvn-normal"],"fvn-figure":["fvn-normal"],"fvn-spacing":["fvn-normal"],"fvn-fraction":["fvn-normal"],"line-clamp":["display","overflow"],rounded:["rounded-s","rounded-e","rounded-t","rounded-r","rounded-b","rounded-l","rounded-ss","rounded-se","rounded-ee","rounded-es","rounded-tl","rounded-tr","rounded-br","rounded-bl"],"rounded-s":["rounded-ss","rounded-es"],"rounded-e":["rounded-se","rounded-ee"],"rounded-t":["rounded-tl","rounded-tr"],"rounded-r":["rounded-tr","rounded-br"],"rounded-b":["rounded-br","rounded-bl"],"rounded-l":["rounded-tl","rounded-bl"],"border-spacing":["border-spacing-x","border-spacing-y"],"border-w":["border-w-x","border-w-y","border-w-s","border-w-e","border-w-t","border-w-r","border-w-b","border-w-l"],"border-w-x":["border-w-r","border-w-l"],"border-w-y":["border-w-t","border-w-b"],"border-color":["border-color-x","border-color-y","border-color-s","border-color-e","border-color-t","border-color-r","border-color-b","border-color-l"],"border-color-x":["border-color-r","border-color-l"],"border-color-y":["border-color-t","border-color-b"],translate:["translate-x","translate-y","translate-none"],"translate-none":["translate","translate-x","translate-y","translate-z"],"scroll-m":["scroll-mx","scroll-my","scroll-ms","scroll-me","scroll-mt","scroll-mr","scroll-mb","scroll-ml"],"scroll-mx":["scroll-mr","scroll-ml"],"scroll-my":["scroll-mt","scroll-mb"],"scroll-p":["scroll-px","scroll-py","scroll-ps","scroll-pe","scroll-pt","scroll-pr","scroll-pb","scroll-pl"],"scroll-px":["scroll-pr","scroll-pl"],"scroll-py":["scroll-pt","scroll-pb"],touch:["touch-x","touch-y","touch-pz"],"touch-x":["touch"],"touch-y":["touch"],"touch-pz":["touch"]},conflictingClassGroupModifiers:{"font-size":["leading"]},orderSensitiveModifiers:["*","**","after","backdrop","before","details-content","file","first-letter","first-line","marker","placeholder","selection"]}},jY=sY(BY);function D(...o){return jY(FH(o))}const e0=D("text-sm","text-(--color-foreground-muted)","hover:text-(--color-foreground)","transition-colors"),o0=D("text-sm","text-(--color-primary)","font-medium");class AY extends T{constructor(){super(...arguments),this.menuOpen=!1,this.unsubscribe=null,this.handleDocumentClick=t=>{t.target.closest(".theme-menu-container")||(this.menuOpen=!1,this.update())},this.toggleMenu=t=>{t.stopPropagation(),this.menuOpen=!this.menuOpen,this.update()},this.handleThemeSelect=t=>{const e=t.detail.value;$H(e),this.menuOpen=!1,this.update()}}mounted(){this.unsubscribe=DH(()=>{this.update()}),document.addEventListener("click",this.handleDocumentClick)}beforeUnmount(){document.removeEventListener("click",this.handleDocumentClick),this.unsubscribe?.()}isActive(t){const e=window.location.pathname;return t==="/"?e==="/"||e==="":e.startsWith(t)}render(){const t=zH();return l("header",{class:D("sticky top-0 z-50","border-b border-(--color-border)","bg-(--color-surface)/80 backdrop-blur-md")},[l("div",{class:D("flex items-center justify-between","h-14 px-6")},[l(Kr,{to:"/",class:D("flex items-center gap-2","text-lg font-bold","text-(--color-foreground) hover:text-(--color-primary)","transition-colors")},["Ikun Cube Trainer"]),l("nav",{class:"flex items-center gap-5"},[l(Kr,{to:"/",class:this.isActive("/")&&!this.isActive("/settings")?o0:e0},["训练"]),l(Kr,{to:"/settings",class:this.isActive("/settings")?o0:e0},["设置"]),l("div",{class:"theme-menu-container relative"},[l("button",{"on:click":this.toggleMenu,class:D("flex items-center justify-center","h-8 w-8","rounded-full","border-none","bg-(--color-surface) text-(--color-foreground-muted)","hover:bg-accent hover:text-(--color-foreground)","transition-all"),title:`当前: ${t.label}`},[l("span",{class:"text-sm"},[t.icon])]),this.menuOpen&&l("div",{class:"absolute top-full right-0 mt-2"},[l("iku-menu",{value:E0(),"on:ik-change":this.handleThemeSelect},[...Array.isArray(_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])))?_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i])):[_o.map(({key:e,label:i,icon:r})=>l("iku-menu-item",{value:e},[l("span",{class:"mr-2"},[r]),i]))]])])])])])])}}class RY extends $r{render(){return l("div",{class:"bg-background flex h-full flex-col"},[l(AY,null,[]),l("main",{class:"min-h-0 flex-1 overflow-y-auto"},[l(d1,{router:this.router},[])])])}}const LY={id:"builtin-f2l",name:"F2L 公式",formulas:[{id:"f2l-01",name:"F2L-01",formulas:["U (R U' R')"],viewMode:"none"},{id:"f2l-02",name:"F2L-02",formulas:["F' U' F"],viewMode:"none"},{id:"f2l-03",name:"F2L-03",formulas:["U' (F' U F)"],viewMode:"none"},{id:"f2l-04",name:"F2L-04",formulas:["R U R'"],viewMode:"none"},{id:"f2l-05",name:"F2L-05",formulas:["U' (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-06",name:"F2L-06",formulas:["U' (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-07",name:"F2L-07",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"},{id:"f2l-08",name:"F2L-08",formulas:["d (R' U R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-09",name:"F2L-09",formulas:["U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-10",name:"F2L-10",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-11",name:"F2L-11",formulas:["U (F' U2 F) U' (F' U F)"],viewMode:"none"},{id:"f2l-12",name:"F2L-12",formulas:["U' (F' U F) U' (F' U' F)"],viewMode:"none"},{id:"f2l-13",name:"F2L-13",formulas:["(R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-14",name:"F2L-14",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-15",name:"F2L-15",formulas:["(R U R' U') (R U R' U') (R U R')"],viewMode:"none"},{id:"f2l-16",name:"F2L-16",formulas:["R U' R' d R' U R"],viewMode:"none"},{id:"f2l-17",name:"F2L-17",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-18",name:"F2L-18",formulas:["(R U R' U') (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-19",name:"F2L-19",formulas:["(R U' R' U') (R U R' U') (R U2 R')"],viewMode:"none"},{id:"f2l-20",name:"F2L-20",formulas:["(R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-21",name:"F2L-21",formulas:["R2 U R2 U R2 U2 R2"],viewMode:"none"},{id:"f2l-22",name:"F2L-22",formulas:["U (R U' R') U' (F' U F)"],viewMode:"none"},{id:"f2l-23",name:"F2L-23",formulas:["U2 (R U' R') U (F' U' F)"],viewMode:"none"},{id:"f2l-24",name:"F2L-24",formulas:["(F' U F) U2 (R U R')"],viewMode:"none"},{id:"f2l-25",name:"F2L-25",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-26",name:"F2L-26",formulas:["d (R' U' R) U' (R' U' R)"],viewMode:"none"},{id:"f2l-27",name:"F2L-27",formulas:["(R U' R') U2 (F' U' F)"],viewMode:"none"},{id:"f2l-28",name:"F2L-28",formulas:["(R U R') U2 (R U R')"],viewMode:"none"},{id:"f2l-29",name:"F2L-29",formulas:["(R' F R F') (R U R')"],viewMode:"none"},{id:"f2l-30",name:"F2L-30",formulas:["R U' R' d (R' U' R)"],viewMode:"none"},{id:"f2l-31",name:"F2L-31",formulas:["U' (R U2 R') U2 (R U' R')"],viewMode:"none"},{id:"f2l-32",name:"F2L-32",formulas:["U (F' U2 F) U2 (F' U F)"],viewMode:"none"},{id:"f2l-33",name:"F2L-33",formulas:["U' (R U R') U (R U R')"],viewMode:"none"},{id:"f2l-34",name:"F2L-34",formulas:["U (R U' R') U' (R U' R') U (R U' R')"],viewMode:"none"},{id:"f2l-35",name:"F2L-35",formulas:["U' (R U' R') U (R U R')"],viewMode:"none"},{id:"f2l-36",name:"F2L-36",formulas:["U2 (R U R') U (R U' R')"],viewMode:"none"},{id:"f2l-37",name:"F2L-37",formulas:["R2 U2 (F R2 F') U2 (R' U R')"],viewMode:"none"},{id:"f2l-38",name:"F2L-38",formulas:["(R U' R' U') (R U R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-39",name:"F2L-39",formulas:["(R U' R') U (R U2 R') U (R U' R')"],viewMode:"none"},{id:"f2l-40",name:"F2L-40",formulas:["(R U R' U') (R U' R' U2) (R U' R')"],viewMode:"none"},{id:"f2l-41",name:"F2L-41",formulas:["(R U2 R') U' (R U R')"],viewMode:"none"}],createdAt:0,updatedAt:0},SY={id:"builtin-oll",name:"OLL 公式",formulas:[{id:"oll-01",name:"OLL-01",formulas:["(R U'2)R' U' (R U' R')"],viewMode:"oll",viewData:{top:[".YY","YYY",".Y."],sides:{back:"...",right:"..Y",front:"Y..",left:"Y.."}}},{id:"oll-02",name:"OLL-02",formulas:["R UR'UR U'2 R'"],viewMode:"oll",viewData:{top:[".Y.","YYY","YY."],sides:{back:"Y..",right:"Y..",front:"..Y",left:"..."}}},{id:"oll-03",name:"OLL-03",formulas:["(R U'2)(R'U'R)(UR'U')(RU'R')"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"Y.Y",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-04",name:"OLL-04",formulas:["R U'2 (R'2 U')(R2 U') R'2 U'2 R"],viewMode:"oll",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"..Y",right:"...",front:"..Y",left:"Y.Y"}}},{id:"oll-05",name:"OLL-05",formulas:["(rUR'U')(r'F R F')"],viewMode:"oll",viewData:{top:[".YY","YYY",".YY"],sides:{back:"Y..",right:"...",front:"Y..",left:"..."}}},{id:"oll-06",name:"OLL-06",formulas:["(RUR'U R U'2 R'U)(R U'2 R'U' R U'R')"],viewMode:"oll",viewData:{top:["YYY","YYY",".Y."],sides:{back:"...",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-07",name:"OLL-07",formulas:["F'(r U R' U)(r' F R)"],viewMode:"oll",viewData:{top:[".YY","YYY","YY."],sides:{back:"Y..",right:"...",front:"..Y",left:"..."}}},{id:"oll-08",name:"OLL-08",formulas:["(R U'2)(R'2 F R F')U2(R' F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".Y.",right:"YYY",front:".Y.",left:"YYY"}}},{id:"oll-09",name:"OLL-09",formulas:["(F R U R' U' F')(f R U R' U' f')"],viewMode:"oll",viewData:{top:["...",".Y.","..."],sides:{back:".YY",right:".Y.",front:".YY",left:"YYY"}}},{id:"oll-10",name:"OLL-10",formulas:["f (R U R' U' f')U'(F R U R' U' F')"],viewMode:"oll",viewData:{top:["...",".Y.","..Y"],sides:{back:"YY.",right:"YY.",front:".Y.",left:".YY"}}},{id:"oll-11",name:"OLL-11",formulas:["(f R U R' U' f')y(F R U R' U' F')"],viewMode:"oll",viewData:{top:["..Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:"YY.",left:"YY."}}},{id:"oll-12",name:"OLL-12",formulas:["(RUR'U)(R'FRF')U2(R'FRF')"],viewMode:"oll",viewData:{top:["Y..",".Y.","..Y"],sides:{back:".YY",right:".Y.",front:".Y.",left:".YY"}}},{id:"oll-13",name:"OLL-13",formulas:["F(R U R' U)y'(R'U2)(R'F R F')"],viewMode:"oll",viewData:{top:["...",".Y.","Y.Y"],sides:{back:"YYY",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-14",name:"OLL-14",formulas:["r'(R U R U R'U')r(R'2 F R F')"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:".Y.",left:".YY"}}},{id:"oll-15",name:"OLL-15",formulas:["r'(R U R U R'U')r2(R'2 U R U')r'"],viewMode:"oll",viewData:{top:["Y.Y",".Y.","Y.Y"],sides:{back:".Y.",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-16",name:"OLL-16",formulas:["f(R U R'U')2f'"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".YY",right:"...",front:".YY",left:"Y.Y"}}},{id:"oll-17",name:"OLL-17",formulas:["(R' U'R U' R'U)y'(R'U R B)"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"Y..",right:"YYY",front:"Y..",left:".Y."}}},{id:"oll-18",name:"OLL-18",formulas:["(rUr')(U R U'R')2(rU'r')"],viewMode:"oll",viewData:{top:["...","YYY","..."],sides:{back:".Y.",right:"Y.Y",front:".Y.",left:"Y.Y"}}},{id:"oll-19",name:"OLL-19",formulas:["(RU'2)(R'2 U')(R U'R'U2)(F R F')"],viewMode:"oll",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"...",right:"YYY",front:"...",left:"YYY"}}},{id:"oll-20",name:"OLL-20",formulas:["(rU'r'U')(rUr')y'(R'U R)"],viewMode:"oll",viewData:{top:["...","YYY","Y.."],sides:{back:"YY.",right:"Y..",front:".YY",left:"..."}}},{id:"oll-21",name:"OLL-21",formulas:["(R'F' R U R'F'R)y'(R U'R')"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:".YY",right:"...",front:"YY.",left:"Y.."}}},{id:"oll-22",name:"OLL-22",formulas:["(r'U'r)(R'U'RU)(r'Ur)"],viewMode:"oll",viewData:{top:["...","YYY","..Y"],sides:{back:"YY.",right:"Y..",front:".Y.",left:"..Y"}}},{id:"oll-23",name:"OLL-23",formulas:["(rUr')(RUR'U')(rU'r')"],viewMode:"oll",viewData:{top:["..Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:"YY.",left:"Y.."}}},{id:"oll-24",name:"OLL-24",formulas:["(R U R' U')(R' F R F')"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:"YY.",right:"...",front:"YY.",left:"..."}}},{id:"oll-25",name:"OLL-25",formulas:["(F(R U R' U')F'"],viewMode:"oll",viewData:{top:["..Y","YYY","..Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"Y.Y"}}},{id:"oll-26",name:"OLL-26",formulas:["(R U R' U' r)(R' U R U' r')"],viewMode:"oll",viewData:{top:["Y.Y","YYY","Y.Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"..."}}},{id:"oll-27",name:"OLL-27",formulas:["(r U R' U')(r' R U)(R U' R')"],viewMode:"oll",viewData:{top:["YYY","YY.","Y.Y"],sides:{back:"...",right:".Y.",front:".Y.",left:"..."}}},{id:"oll-28",name:"OLL-28",formulas:["(r U' r' U' r)y(R U R' f')"],viewMode:"oll",viewData:{top:["..Y","YYY","Y.."],sides:{back:"YY.",right:"..Y",front:".Y.",left:"..."}}},{id:"oll-29",name:"OLL-29",formulas:["(R'F R U R'U')(F'U R)"],viewMode:"oll",viewData:{top:["Y..","YYY","..Y"],sides:{back:".YY",right:"...",front:".Y.",left:"..Y"}}},{id:"oll-30",name:"OLL-30",formulas:["(R' U' R U)y(r U R' U')r'R"],viewMode:"oll",viewData:{top:["Y.Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:".Y.",left:"..Y"}}},{id:"oll-31",name:"OLL-31",formulas:["(R'U')(R'F R F')(U R)"],viewMode:"oll",viewData:{top:["YY.",".Y.","YY."],sides:{back:"...",right:"YYY",front:"...",left:".Y."}}},{id:"oll-32",name:"OLL-32",formulas:["(R'U' F)(U R U'R'F'R)"],viewMode:"oll",viewData:{top:[".YY",".YY","..Y"],sides:{back:"Y..",right:"...",front:"YY.",left:".Y."}}},{id:"oll-33",name:"OLL-33",formulas:["(R U B'U')(R'U R B R')"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:"YY.",right:"...",front:"Y..",left:".Y."}}},{id:"oll-34",name:"OLL-34",formulas:["x'U'F'R'F R U"],viewMode:"oll",viewData:{top:["Y..","YY.","YY."],sides:{back:".Y.",right:"YYY",front:"...",left:"..."}}},{id:"oll-35",name:"OLL-35",formulas:["f(R U R'U')f'"],viewMode:"oll",viewData:{top:["..Y",".YY",".YY"],sides:{back:".Y.",right:"...",front:"...",left:"YYY"}}},{id:"oll-36",name:"OLL-36",formulas:["F(RU'R'U')(R U R'F')"],viewMode:"oll",viewData:{top:["YY.","YY.","..Y"],sides:{back:"...",right:"YY..",front:"YY.",left:"..."}}},{id:"oll-37",name:"OLL-37",formulas:["RU'2(R'2 F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["Y..",".YY",".YY"],sides:{back:".Y.",right:"Y..",front:"Y..",left:".Y."}}},{id:"oll-38",name:"OLL-38",formulas:["(r' U2)(R U R' U)r"],viewMode:"oll",viewData:{top:["...",".YY",".YY"],sides:{back:"YY.",right:"Y..",front:"...",left:".YY"}}},{id:"oll-39",name:"OLL-39",formulas:["(r U2)(R' U' R U'r')"],viewMode:"oll",viewData:{top:[".YY",".YY","..."],sides:{back:"...",right:"..Y",front:"YY.",left:"YY."}}},{id:"oll-40",name:"OLL-40",formulas:["r' U' R U' R' U2 r"],viewMode:"oll",viewData:{top:["Y..","YY.",".Y."],sides:{back:".YY",right:".YY",front:"Y..",left:"..."}}},{id:"oll-41",name:"OLL-41",formulas:["r U R' U R U'2 r'"],viewMode:"oll",viewData:{top:[".Y.","YY.","Y.."],sides:{back:"Y..",right:"YY.",front:".YY",left:"..."}}},{id:"oll-42",name:"OLL-42",formulas:["r'(R2 U)(R'U R)U'2(R' U R')r"],viewMode:"oll",viewData:{top:["...",".YY","YY."],sides:{back:"YY.",right:"Y..",front:"..Y",left:".Y."}}},{id:"oll-43",name:"OLL-43",formulas:["r(R'2 U')(R U'R' U2)(RU'R)r'"],viewMode:"oll",viewData:{top:["YY.",".YY","..."],sides:{back:"..Y",right:"..Y",front:"YY.",left:".Y."}}},{id:"oll-44",name:"OLL-44",formulas:["(R'U'R)y'x'(R U'R' F)(R U R')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..Y"],sides:{back:"..Y",right:".Y.",front:"YY.",left:"Y.."}}},{id:"oll-45",name:"OLL-45",formulas:["(R U R' U)(R'F R F')(R U'2 R')"],viewMode:"oll",viewData:{top:["..Y","YY.",".Y."],sides:{back:"YY.",right:".Y.",front:"..Y",left:"..Y"}}},{id:"oll-46",name:"OLL-46",formulas:["(r U'2)(R'U'R)(UR'U')(R U'r')"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y.Y",right:".Y.",front:"YYY",left:"..."}}},{id:"oll-47",name:"OLL-47",formulas:["B'(R'U' R U)2 B"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:".YY",right:".Y.",front:"..Y",left:"Y.Y"}}},{id:"oll-48",name:"OLL-48",formulas:["r'U2 (R U R'U')(R U R'U)r"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YYY",right:".Y.",front:"Y.Y",left:"..."}}},{id:"oll-49",name:"OLL-49",formulas:["F(R U R'U')2 F'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"..Y",right:".Y.",front:".YY",left:"Y.Y"}}},{id:"oll-50",name:"OLL-50",formulas:["R'F R2 B'R'2 F'R2 B R'"],viewMode:"oll",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y..",right:"YYY",front:"YY.",left:"..."}}},{id:"oll-51",name:"OLL-51",formulas:["R B' R'2 F R2 B R'2 F'R"],viewMode:"oll",viewData:{top:["...","YY.",".Y."],sides:{back:"YY.",right:"YYY",front:"Y..",left:"..."}}},{id:"oll-52",name:"OLL-52",formulas:["(R2 U R'B')(R U'R'2 U)(R B R')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"..Y",front:"...",left:".YY"}}},{id:"oll-53",name:"OLL-53",formulas:["(R U R'U')(R U'R'F')U'(F R U R')"],viewMode:"oll",viewData:{top:[".YY","YY.","..Y"],sides:{back:"Y..",right:".Y.",front:"YY.",left:"..."}}},{id:"oll-54",name:"OLL-54",formulas:["(R'U R U'2 R'U')y(L'U LU F)"],viewMode:"oll",viewData:{top:[".Y.",".YY","Y.Y"],sides:{back:"Y.Y",right:"...",front:".Y.",left:".Y."}}},{id:"oll-55",name:"OLL-55",formulas:["(R U'R' U2 R U)y(R U'R' U'F')"],viewMode:"oll",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"...",front:"Y.Y",left:".Y."}}},{id:"oll-56",name:"OLL-56",formulas:["(R U R' U)(R U'R' U')(R'F R F')"],viewMode:"oll",viewData:{top:[".YY","YY.","Y.."],sides:{back:"Y..",right:".YY",front:".Y.",left:"..."}}},{id:"oll-57",name:"OLL-57",formulas:["(R'U' R U')(R'U R U)(R B' R'B)"],viewMode:"oll",viewData:{top:["Y..","YY.",".YY"],sides:{back:".Y.",right:"YY.",front:"Y..",left:"..."}}}],createdAt:0,updatedAt:0},HY={id:"builtin-pll",name:"PLL 公式",formulas:[{id:"pll-01",name:"PLL-01",formulas:["RU' (RURU) (RU'R'U') R2","M'2UMU2 M'UM'2"],viewMode:"pll",viewData:{moves:[{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[2,1],bidirectional:!1},{from:[2,1],to:[1,2],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-02",name:"PLL-02",formulas:["M'2U'MU2 M'U'M'2"],viewMode:"pll",viewData:{moves:[{from:[1,0],to:[1,2],bidirectional:!1},{from:[2,1],to:[1,0],bidirectional:!1},{from:[1,2],to:[2,1],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-03",name:"PLL-03",formulas:["M'2U M'2U2 M'2U M'2"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[2,1],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-04",name:"PLL-04",formulas:["MU (M'2U)2 MU2 M'2U'"],viewMode:"pll",viewData:{moves:[{from:[0,1],to:[1,2],bidirectional:!0},{from:[1,0],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"T-PERM",name:"T-PERM",formulas:["(RUR'U') R'F (R2U'R'U') (RUR'F')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!0,!1],[!0,!1,!0]]}},{id:"pll-06",name:"PLL-06",formulas:["(R'U'F')(RUR'U') R'F (R2U'R'U') (RUR'UR)"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[0,1],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-07",name:"PLL-07",formulas:["(RUR'F') (RUR'U') R'F (R2U'R'U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-08",name:"PLL-08",formulas:["(RUR'U)(R'U'RF')(RUR'U')(R'FR2U')(R'2UR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!0},{from:[0,2],to:[2,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!0,!1],[!1,!0,!1],[!1,!0,!1]]}},{id:"pll-09",name:"PLL-09",formulas:["F(RU'R'U')(RUR'F')(RUR'U')(R'FRF')"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,0],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!0,!1],[!0,!0,!1],[!1,!1,!1]]}},{id:"pll-10",name:"PLL-10",formulas:["(R'UR'U') yR'F' (R2U'R'U) (R'FRF)","(R'UR'U') (B'R'B2) (U'B'U) (B'RBR)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,1],bidirectional:!0}],sameColorEdges:[[!1,!1,!0],[!0,!1,!1],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-11",name:"PLL-11",formulas:["(R'U2)(RU'2) R'F (RUR'U')(R'F'R2U')"],viewMode:"pll",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!1,!0],[!0,!1,!0],[!1,!0,!0]]}},{id:"pll-12",name:"PLL-12",formulas:["(F'U'F)R2u(R'URU')(Ru'R2)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!1},{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[0,1],bidirectional:!1}],sameColorEdges:[[!0,!1,!0],[!1,!1,!1],[!1,!0,!0],[!1,!1,!1]]}},{id:"pll-13",name:"PLL-13",formulas:["(R2uR')(UR'U'Ru')(R'2F'UF)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,0],bidirectional:!1},{from:[1,0],to:[1,2],bidirectional:!1},{from:[1,2],to:[0,1],bidirectional:!1}],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!0,!0],[!0,!1,!0]]}},{id:"pll-14",name:"PLL-14",formulas:["x(R'2D2)(RUR'D2)(RU'R)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!1},{from:[2,2],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!1,!0],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-15",name:"PLL-15",formulas:["(R'URU')(R'F'U'F)(RUR'F)(R'F'RU'R)"],viewMode:"pll",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!0],[!0,!1,!1],[!0,!0,!1],[!1,!1,!0]]}},{id:"pll-16",name:"PLL-16",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-17",name:"PLL-17",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-18",name:"PLL-18",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-19",name:"PLL-19",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-20",name:"PLL-20",formulas:[],viewMode:"pll",viewData:{moves:[]}},{id:"pll-21",name:"PLL-21",formulas:[],viewMode:"pll",viewData:{moves:[]}}],createdAt:0,updatedAt:0},YY={id:"preset-oll",name:"OLL 自定义",formulas:[{id:"oll-01",name:"OLL-01",formulas:["(R U'2)R' U' (R U' R')"],viewMode:"oll",proficiency:"proficient",viewData:{top:[".YY","YYY",".Y."],sides:{back:"...",right:"..Y",front:"Y..",left:"Y.."}}},{id:"oll-02",name:"OLL-02",formulas:["R UR'UR U'2 R'"],viewMode:"oll",proficiency:"mastered",viewData:{top:[".Y.","YYY","YY."],sides:{back:"Y..",right:"Y..",front:"..Y",left:"..."}}},{id:"oll-03",name:"OLL-03",formulas:["(R U'2)(R'U'R)(UR'U')(RU'R')"],viewMode:"oll",proficiency:"proficient",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"Y.Y",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-04",name:"OLL-04",formulas:["R U'2 (R'2 U')(R2 U') R'2 U'2 R"],viewMode:"oll",proficiency:"beginner",viewData:{top:[".Y.","YYY",".Y."],sides:{back:"..Y",right:"...",front:"..Y",left:"Y.Y"}}},{id:"oll-05",name:"OLL-05",formulas:["(rUR'U')(r'F R F')"],viewMode:"oll",proficiency:"mastered",viewData:{top:[".YY","YYY",".YY"],sides:{back:"Y..",right:"...",front:"Y..",left:"..."}}},{id:"oll-06",name:"OLL-06",formulas:["(RUR'U R U'2 R'U)(R U'2 R'U' R U'R')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["YYY","YYY",".Y."],sides:{back:"...",right:"...",front:"Y.Y",left:"..."}}},{id:"oll-07",name:"OLL-07",formulas:["F'(r U R' U)(r' F R)"],viewMode:"oll",proficiency:"proficient",viewData:{top:[".YY","YYY","YY."],sides:{back:"Y..",right:"...",front:"..Y",left:"..."}}},{id:"oll-08",name:"OLL-08",formulas:["(R U'2)(R'2 F R F')U2(R' F R F')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["...",".Y.","..."],sides:{back:".Y.",right:"YYY",front:".Y.",left:"YYY"}}},{id:"oll-09",name:"OLL-09",formulas:["(F R U R' U' F')(f R U R' U' f')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["...",".Y.","..."],sides:{back:".YY",right:".Y.",front:".YY",left:"YYY"}}},{id:"oll-10",name:"OLL-10",formulas:["f (R U R' U' f')U'(F R U R' U' F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...",".Y.","..Y"],sides:{back:"YY.",right:"YY.",front:".Y.",left:".YY"}}},{id:"oll-11",name:"OLL-11",formulas:["(f R U R' U' f')y(F R U R' U' F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["..Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:"YY.",left:"YY."}}},{id:"oll-12",name:"OLL-12",formulas:["(RUR'U)(R'FRF')U2(R'FRF')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y..",".Y.","..Y"],sides:{back:".YY",right:".Y.",front:".Y.",left:".YY"}}},{id:"oll-13",name:"OLL-13",formulas:["F(R U R' U)y'(R'U2)(R'F R F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...",".Y.","Y.Y"],sides:{back:"YYY",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-14",name:"OLL-14",formulas:["r'(R U R U R'U')r(R'2 F R F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["Y.Y",".Y.","..."],sides:{back:".Y.",right:".YY",front:".Y.",left:".YY"}}},{id:"oll-15",name:"OLL-15",formulas:["r'(R U R U R'U')r2(R'2 U R U')r'","MU (RUR'U') M'2 (URU') r'"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y.Y",".Y.","Y.Y"],sides:{back:".Y.",right:".Y.",front:".Y.",left:".Y."}}},{id:"oll-16",name:"OLL-16",formulas:["f(R U R'U')2f'"],viewMode:"oll",proficiency:"proficient",viewData:{top:["...","YYY","..."],sides:{back:".YY",right:"...",front:".YY",left:"Y.Y"}}},{id:"oll-17",name:"OLL-17 (待调整为另一个公式)",formulas:["(R' U'R U' R'U)y'(R'U R B)"],viewMode:"oll",proficiency:"beginner",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"Y..",right:"YYY",front:"Y..",left:".Y."}}},{id:"oll-18",name:"OLL-18",formulas:["(rUr')(U R U'R')2(rU'r')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["...","YYY","..."],sides:{back:".Y.",right:"Y.Y",front:".Y.",left:"Y.Y"}}},{id:"oll-19",name:"OLL-19",formulas:["(RU'2)(R'2 U')(R U'R'U2)(F R F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".Y.",".Y.",".Y."],sides:{back:"...",right:"YYY",front:"...",left:"YYY"}}},{id:"oll-20",name:"OLL-20",formulas:["21 镜像","(rU'r'U')(rUr')y'(R'U R)"],viewMode:"oll",proficiency:"beginner",viewData:{top:["...","YYY","Y.."],sides:{back:"YY.",right:"Y..",front:".YY",left:"..."}}},{id:"oll-21",name:"OLL-21",formulas:["(R'F)(RUR'F'R)(FU'F')","(R'F' R U R'F'R)y'(R U'R')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["...","YYY","..Y"],sides:{back:".YY",right:"...",front:"YY.",left:"Y.."}}},{id:"oll-22",name:"OLL-22",formulas:["(r'U'r)(R'U'RU)(r'Ur)"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...","YYY","..Y"],sides:{back:"YY.",right:"Y..",front:".Y.",left:"..Y"}}},{id:"oll-23",name:"OLL-23",formulas:["(rUr')(RUR'U')(rU'r')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["..Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:"YY.",left:"Y.."}}},{id:"oll-24",name:"OLL-24",formulas:["(R U R' U')(R' F R F')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["..Y","YYY","..Y"],sides:{back:"YY.",right:"...",front:"YY.",left:"..."}}},{id:"oll-25",name:"OLL-25",formulas:["(F(R U R' U')F'"],viewMode:"oll",proficiency:"proficient",viewData:{top:["..Y","YYY","..Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"Y.Y"}}},{id:"oll-26",name:"OLL-26 (已学习另一公式)",formulas:["(R U R' U' r)(R' U R U' r')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["Y.Y","YYY","Y.Y"],sides:{back:".Y.",right:"...",front:".Y.",left:"..."}}},{id:"oll-27",name:"OLL-27",formulas:["(r U R' U')(r' R U)(R U' R')"],viewMode:"oll",proficiency:"proficient",viewData:{top:["YYY","YY.","Y.Y"],sides:{back:"...",right:".Y.",front:".Y.",left:"..."}}},{id:"oll-28",name:"OLL-28",formulas:["(RUR'F'U'F)U(RU2R')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["..Y","YYY","Y.."],sides:{back:".Y.",right:"...",front:".YY",left:"Y.."}}},{id:"oll-29",name:"OLL-29",formulas:["(R'F R U R'U')(F'U R)","28 镜像"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y..","YYY","..Y"],sides:{back:".YY",right:"...",front:".Y.",left:"..Y"}}},{id:"oll-30",name:"OLL-30",formulas:["F(RUR'U')R'F'(rURU'r')","(R' U' R U)y(r U R' U')r'R"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y.Y","YYY","..."],sides:{back:".Y.",right:"..Y",front:".Y.",left:"..Y"}}},{id:"oll-31",name:"OLL-31",formulas:["(R'U')(R'F R F')(U R)"],viewMode:"oll",proficiency:"beginner",viewData:{top:["YY.",".Y.","YY."],sides:{back:"...",right:"YYY",front:"...",left:".Y."}}},{id:"oll-32",name:"OLL-32",formulas:["(R'U' F)(U R U'R'F'R)"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".YY",".YY","..Y"],sides:{back:"Y..",right:"...",front:"YY.",left:".Y."}}},{id:"oll-33",name:"OLL-33",formulas:["(R U B'U')(R'U R B R')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["..Y",".YY",".YY"],sides:{back:"YY.",right:"...",front:"Y..",left:".Y."}}},{id:"oll-34",name:"OLL-34 (35 镜像)",formulas:["x'U'F'R'F R U"],viewMode:"oll",proficiency:"mastered",viewData:{top:["Y..","YY.","YY."],sides:{back:".Y.",right:"YYY",front:"...",left:"..."}}},{id:"oll-35",name:"OLL-35",formulas:["f(R U R'U')f'"],viewMode:"oll",proficiency:"mastered",viewData:{top:["..Y",".YY",".YY"],sides:{back:".Y.",right:"...",front:"...",left:"YYY"}}},{id:"oll-36",name:"OLL-36",formulas:["F(RU'R'U')(R U R'F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["YY.","YY.","..Y"],sides:{back:"...",right:"YY..",front:"YY.",left:"..."}}},{id:"oll-37",name:"OLL-37",formulas:["RU'2(R'2 F R F')(R U'2 R')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y..",".YY",".YY"],sides:{back:".Y.",right:"Y..",front:"Y..",left:".Y."}}},{id:"oll-38",name:"OLL-38",formulas:["(r' U2)(R U R' U)r"],viewMode:"oll",proficiency:"beginner",viewData:{top:["...",".YY",".YY"],sides:{back:"YY.",right:"Y..",front:"...",left:".YY"}}},{id:"oll-39",name:"OLL-39",formulas:["(r U2)(R' U' R U'r')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".YY",".YY","..."],sides:{back:"...",right:"..Y",front:"YY.",left:"YY."}}},{id:"oll-40",name:"OLL-40",formulas:["r' U' R U' R' U2 r"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["Y..","YY.",".Y."],sides:{back:".YY",right:".YY",front:"Y..",left:"..."}}},{id:"oll-41",name:"OLL-41",formulas:["r U R' U R U'2 r'"],viewMode:"oll",proficiency:"beginner",viewData:{top:[".Y.","YY.","Y.."],sides:{back:"Y..",right:"YY.",front:".YY",left:"..."}}},{id:"oll-42",name:"OLL-42 (已学习另一公式)",formulas:["r'(R2 U)(R'U R)U'2(R' U R')r"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...",".YY","YY."],sides:{back:"YY.",right:"Y..",front:"..Y",left:".Y."}}},{id:"oll-43",name:"OLL-43",formulas:["r(R'2 U')(R U'R' U2)(RU'R)r'"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["YY.",".YY","..."],sides:{back:"..Y",right:"..Y",front:"YY.",left:".Y."}}},{id:"oll-44",name:"OLL-44",formulas:["(R'U'R)y'x'(R U'R' F)(R U R')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".Y.","YY.","..Y"],sides:{back:"..Y",right:".Y.",front:"YY.",left:"Y.."}}},{id:"oll-45",name:"OLL-45",formulas:["(R U R' U)(R'F R F')(R U'2 R')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["..Y","YY.",".Y."],sides:{back:"YY.",right:".Y.",front:"..Y",left:"..Y"}}},{id:"oll-46",name:"OLL-46",formulas:["(r U'2)(R'U'R)(UR'U')(R U'r')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y.Y",right:".Y.",front:"YYY",left:"..."}}},{id:"oll-47",name:"OLL-47",formulas:["B'(R'U' R U)2 B"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...","YY.",".Y."],sides:{back:".YY",right:".Y.",front:"..Y",left:"Y.Y"}}},{id:"oll-48",name:"OLL-48",formulas:["r'U2 (R U R'U')(R U R'U)r"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...","YY.",".Y."],sides:{back:"YYY",right:".Y.",front:"Y.Y",left:"..."}}},{id:"oll-49",name:"OLL-49",formulas:["F(R U R'U')2 F'"],viewMode:"oll",proficiency:"beginner",viewData:{top:[".Y.","YY.","..."],sides:{back:"..Y",right:".Y.",front:".YY",left:"Y.Y"}}},{id:"oll-50",name:"OLL-50",formulas:["R'F R2 B'R'2 F'R2 B R'"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".Y.","YY.","..."],sides:{back:"Y..",right:"YYY",front:"YY.",left:"..."}}},{id:"oll-51",name:"OLL-51",formulas:["R B' R'2 F R2 B R'2 F'R"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["...","YY.",".Y."],sides:{back:"YY.",right:"YYY",front:"Y..",left:"..."}}},{id:"oll-52",name:"OLL-52",formulas:["(R2 U R'B')(R U'R'2 U)(R B R')"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"..Y",front:"...",left:".YY"}}},{id:"oll-53",name:"OLL-53",formulas:["(R U R'U')(R U'R'F')U'(F R U R')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".YY","YY.","..Y"],sides:{back:"Y..",right:".Y.",front:"YY.",left:"..."}}},{id:"oll-54",name:"OLL-54 (已学习另一公式)",formulas:["(R'U R U'2 R'U')y(L'U LU F)"],viewMode:"oll",proficiency:"unlearned",viewData:{top:[".Y.",".YY","Y.Y"],sides:{back:"Y.Y",right:"...",front:".Y.",left:".Y."}}},{id:"oll-55",name:"OLL-55",formulas:["(R U'R' U2 R U)y(R U'R' U'F')"],viewMode:"oll",proficiency:"unlearned",viewData:{top:["Y.Y",".YY",".Y."],sides:{back:".Y.",right:"...",front:"Y.Y",left:".Y."}}},{id:"oll-56",name:"OLL-56",formulas:["(R U R' U)(R U'R' U')(R'F R F')"],viewMode:"oll",proficiency:"beginner",viewData:{top:[".YY","YY.","Y.."],sides:{back:"Y..",right:".YY",front:".Y.",left:"..."}}},{id:"oll-57",name:"OLL-57 (56 镜像)",formulas:["(R'U' R U')(R'U R U)(R B' R'B)"],viewMode:"oll",proficiency:"beginner",viewData:{top:["Y..","YY.",".YY"],sides:{back:".Y.",right:"YY.",front:"Y..",left:"..."}}}],createdAt:0,updatedAt:0},UY={id:"preset-pll",name:"PLL 自定义",formulas:[{id:"pll-01",name:"PLL-01",formulas:["RU' (RURU) (RU'R'U') R2","M'2UMU2 M'UM'2"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[2,1],bidirectional:!1},{from:[2,1],to:[1,2],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-02",name:"PLL-02",formulas:["M'2U'MU2 M'U'M'2"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[1,0],to:[1,2],bidirectional:!1},{from:[2,1],to:[1,0],bidirectional:!1},{from:[1,2],to:[2,1],bidirectional:!1}],sameColorEdges:[[!0,!0,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-03",name:"PLL-03",formulas:["M'2U M'2U2 M'2U M'2"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,1],to:[2,1],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"pll-04",name:"PLL-04",formulas:["MU (M'2U)2 MU2 M'2U'"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,1],to:[1,2],bidirectional:!0},{from:[1,0],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!0],[!0,!1,!0],[!0,!1,!0],[!0,!1,!0]]}},{id:"T-PERM",name:"T-PERM",formulas:["(RUR'U') R'F (R2U'R'U') (RUR'F')"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!0,!1],[!0,!1,!0]]}},{id:"pll-06",name:"PLL-06",formulas:["(R'U'F')(RUR'U') R'F (R2U'R'U') (RUR'UR)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[0,1],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!1,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-07",name:"PLL-07",formulas:["(RUR'F') (RUR'U') R'F (R2U'R'U')"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!0,!0,!1],[!1,!1,!1],[!0,!1,!1],[!0,!0,!0]]}},{id:"pll-08",name:"PLL-08",formulas:["(RUR'U)(R'U'RF')(RUR'U')(R'FR2U')(R'2UR)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!0},{from:[0,2],to:[2,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!0,!1],[!1,!0,!1],[!1,!0,!1]]}},{id:"pll-09",name:"PLL-09",formulas:["F(RU'R'U')(RUR'F')(RUR'U')(R'FRF')"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,0],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!0,!1],[!0,!0,!1],[!1,!1,!1]]}},{id:"pll-10",name:"PLL-10",formulas:["(R'UR'U') yR'F' (R2U'R'U) (R'FRF)","(R'UR'U') (B'R'B2) (U'B'U) (B'RBR)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[0,1],to:[1,1],bidirectional:!0}],sameColorEdges:[[!1,!1,!0],[!0,!1,!1],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-11",name:"PLL-11",formulas:["(R'U2)(RU'2) R'F (RUR'U')(R'F'R2U')"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,2],to:[2,2],bidirectional:!0},{from:[1,2],to:[2,1],bidirectional:!0}],sameColorEdges:[[!1,!0,!1],[!1,!1,!0],[!0,!1,!0],[!1,!0,!0]]}},{id:"pll-12",name:"PLL-12",formulas:["(F'U'F)R2u(R'URU')(Ru'R2)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!1},{from:[1,2],to:[1,0],bidirectional:!1},{from:[1,0],to:[0,1],bidirectional:!1}],sameColorEdges:[[!0,!1,!0],[!1,!1,!1],[!1,!0,!0],[!1,!1,!1]]}},{id:"pll-13",name:"PLL-13",formulas:["(R2uR')(UR'U'Ru')(R'2F'UF)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[0,2],bidirectional:!1},{from:[0,2],to:[2,0],bidirectional:!1},{from:[2,0],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,0],bidirectional:!1},{from:[1,0],to:[1,2],bidirectional:!1},{from:[1,2],to:[0,1],bidirectional:!1}],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!0,!0],[!0,!1,!0]]}},{id:"pll-14",name:"PLL-14",formulas:["x(R'2D2)(RUR'D2)(RU'R)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!1},{from:[2,2],to:[0,2],bidirectional:!1},{from:[0,2],to:[0,0],bidirectional:!1},{from:[0,1],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!1,!1],[!0,!1,!0],[!0,!0,!1],[!1,!0,!0]]}},{id:"pll-15",name:"PLL-15",formulas:["(R'URU')(R'F'U'F)(RUR'F)(R'F'RU'R)"],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[{from:[0,0],to:[2,2],bidirectional:!0},{from:[1,0],to:[1,2],bidirectional:!0}],sameColorEdges:[[!1,!0,!0],[!0,!1,!1],[!0,!0,!1],[!1,!1,!0]]}},{id:"pll-16",name:"PLL-16",formulas:[],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[]}},{id:"pll-17",name:"PLL-17",formulas:[],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[]}},{id:"pll-18",name:"PLL-18",formulas:[],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[]}},{id:"pll-19",name:"PLL-19",formulas:[],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[]}},{id:"pll-20",name:"PLL-20",formulas:[],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[]}},{id:"pll-21",name:"PLL-21",formulas:[],viewMode:"pll",proficiency:"unlearned",viewData:{moves:[]}}],createdAt:0,updatedAt:0},VY={id:"builtin-scramble",name:"打乱公式",formulas:[{id:"scr-01",name:"Scramble-01",formulas:["R' U' F L2 D' B U R2 F' L D2 B' U2 R F2 D L2 B' R' U"],viewMode:"none"},{id:"scr-02",name:"Scramble-02",formulas:["D2 R' B F2 L D' U R' B2 F D L' U2 R B' F' L D R U2"],viewMode:"none"},{id:"scr-03",name:"Scramble-03",formulas:["F2 U' L2 D B2 R' F U L D2 B R2 U' F' L2 D B2 R U' F"],viewMode:"none"},{id:"scr-04",name:"Scramble-04",formulas:["B2 L D2 F' R U B' L2 D R2 F U2 L' B D2 R F' U L2 D'"],viewMode:"none"},{id:"scr-05",name:"Scramble-05",formulas:["U R2 F' D L B2 U' R F2 D' L2 B U R' D2 F L' B2 U R'"],viewMode:"none"},{id:"scr-06",name:"Scramble-06",formulas:["L2 F D' R2 B U L' F2 D R B2 U' L D2 F' R B U2 L' D"],viewMode:"none"},{id:"scr-07",name:"Scramble-07",formulas:["D' B2 R U' F L D2 B' R2 U F' L2 D B R' U2 F D' L B'"],viewMode:"none"},{id:"scr-08",name:"Scramble-08",formulas:["R' U2 B D L' F2 U R B2 D' L F U' R2 D B' L2 F U R'"],viewMode:"none"},{id:"scr-09",name:"Scramble-09",formulas:["F D' L2 U B R' D F2 U' L B2 R D' F L' U2 B R2 D F'"],viewMode:"none"},{id:"scr-10",name:"Scramble-10",formulas:["U' L B2 R D F' U2 L' B D2 R F U L' D' B2 R' F2 U D"],viewMode:"none"},{id:"scr-11",name:"Scramble-11",formulas:["B R' D2 F U L' B2 R D F' U2 L B' R2 D' F U' L2 B D'"],viewMode:"none"},{id:"scr-12",name:"Scramble-12",formulas:["L' D F2 U' B R D2 L' F U B' R2 D L F' U2 B' D R L2"],viewMode:"none"},{id:"scr-13",name:"Scramble-13",formulas:["U2 F' R B2 L' D U2 F R' B D2 L U' F2 R B' D L2 U F'"],viewMode:"none"},{id:"scr-14",name:"Scramble-14",formulas:["D R2 B' U F L2 D' R B2 U' F' L D2 R' B U2 F L' D R2"],viewMode:"none"},{id:"scr-15",name:"Scramble-15",formulas:["B' L2 U R' D F2 B L U2 R' D' F B2 L' U R2 D' F' B L2"],viewMode:"none"},{id:"scr-16",name:"Scramble-16",formulas:["R U2 L' D B2 F R' U L2 D' B F2 R U' L D2 B' F R' U2"],viewMode:"none"},{id:"scr-17",name:"Scramble-17",formulas:["F' D2 R U' B L2 F D R' U2 B' L F2 D' R U L2 B' D R'"],viewMode:"none"},{id:"scr-18",name:"Scramble-18",formulas:["L D' F2 R U B' L2 D F R' U2 B L' D2 F' R U' B2 L D'"],viewMode:"none"},{id:"scr-19",name:"Scramble-19",formulas:["U' B R2 D' F L U2 B' R D2 F' L2 U B R' D F2 L' U R"],viewMode:"none"},{id:"scr-20",name:"Scramble-20",formulas:["D2 L' F R2 U B' D L2 F' R U2 B D' L F2 R' U B2 D L'"],viewMode:"none"},{id:"scr-21",name:"Scramble-21",formulas:["R' B2 U D' L F2 R' B U2 D L' F R2 B' U' D2 L F' R B2"],viewMode:"none"},{id:"scr-22",name:"Scramble-22",formulas:["F U' D2 R B' L2 F U D' R2 B L F' U2 D R' B2 L' F U'"],viewMode:"none"},{id:"scr-23",name:"Scramble-23",formulas:["B' D R2 U' L F D2 B R' U L2 F' D B2 R U' L' F2 D R'"],viewMode:"none"},{id:"scr-24",name:"Scramble-24",formulas:["L U2 F' D R B2 L' U F2 D' R' B U2 L D2 F R' B' U L2"],viewMode:"none"},{id:"scr-25",name:"Scramble-25",formulas:["U R' D2 B L' F2 U R D' B2 L F' U2 R' D B' L2 F U' R"],viewMode:"none"},{id:"scr-26",name:"Scramble-26",formulas:["D' F R2 B' U L D2 F' R B2 U' L' D F2 R' B U2 L D' F"],viewMode:"none"},{id:"scr-27",name:"Scramble-27",formulas:["R2 D' L U2 F' B R D' L2 U F B' R' D2 L' U' F2 B R D"],viewMode:"none"},{id:"scr-28",name:"Scramble-28",formulas:["F' L D2 R' U B F' L2 D R2 U' B' F L D' R2 U B2 F' L'"],viewMode:"none"},{id:"scr-29",name:"Scramble-29",formulas:["U2 B' L D R' F2 U B' L2 D' R F U2 B L' D2 R' F' U B2"],viewMode:"none"},{id:"scr-30",name:"Scramble-30",formulas:["D L2 B' R U F' D2 L B' R2 U' F D L2 B R' U2 F' D' L"],viewMode:"none"}],createdAt:0,updatedAt:0},at=[VY,LY,SY,HY],Br=[YY,UY],zY=[...at,...Br];function $Y(o){return o.startsWith("builtin-")}function t1(o){return o.startsWith("preset-")}function xi(o){return $Y(o)||t1(o)}const DY="training-camp",FY=1,Hr="categories";function PY(){return new Promise((o,t)=>{const e=indexedDB.open(DY,FY);e.addEventListener("upgradeneeded",()=>{const i=e.result;i.objectStoreNames.contains(Hr)||i.createObjectStore(Hr,{keyPath:"id"})}),e.addEventListener("success",()=>o(e.result)),e.addEventListener("error",()=>t(e.error))})}function Po(o,t){return PY().then(e=>new Promise((i,r)=>{const s=e.transaction(Hr,o),n=s.objectStore(Hr),d=t(n);d.addEventListener("success",()=>i(d.result)),d.addEventListener("error",()=>r(d.error)),s.addEventListener("complete",()=>e.close())}))}function EY(o){const{inverseFormula:t,...e}=o;e.proficiency==="learning"&&(e.proficiency="beginner"),typeof e.formula=="string"&&(e.formulas=[e.formula],delete e.formula);const i={...e,viewMode:e.viewMode??"none",proficiency:e.proficiency??"unlearned"};if(i.viewData&&i.viewMode==="oll"&&Array.isArray(i.viewData.top)&&typeof i.viewData.top[0]=="boolean"){const r=n=>n?"Y":".",s=i.viewData;i.viewData={top:[`${r(s.top[0])}${r(s.top[1])}${r(s.top[2])}`,`${r(s.top[3])}${r(s.top[4])}${r(s.top[5])}`,`${r(s.top[6])}${r(s.top[7])}${r(s.top[8])}`],sides:{back:`${r(s.edges.back[0])}${r(s.edges.back[1])}${r(s.edges.back[2])}`,right:`${r(s.edges.right[0])}${r(s.edges.right[1])}${r(s.edges.right[2])}`,front:`${r(s.edges.front[0])}${r(s.edges.front[1])}${r(s.edges.front[2])}`,left:`${r(s.edges.left[0])}${r(s.edges.left[1])}${r(s.edges.left[2])}`}}}return i}function Ki(o){return{...o,formulas:o.formulas.map(EY)}}const H={async getAll(){return(await Po("readonly",t=>t.getAll())).map(Ki)},async get(o){const t=await Po("readonly",e=>e.get(o));return t?Ki(t):void 0},put(o){return Po("readwrite",t=>t.put(o))},remove(o){return Po("readwrite",t=>t.delete(o))},clear(){return Po("readwrite",o=>o.clear())}},E=a0({state:{categories:[],loading:!1},actions:{setCategories:(o,t)=>({categories:t}),setLoading:(o,t)=>({loading:t})},asyncActions:{async load(o){o.setState({loading:!0});const t=await H.getAll();o.setState({categories:t,loading:!1})},async addCategory(o,t){const e=Date.now(),i={id:`cat-${e}`,name:t,formulas:[],createdAt:e,updatedAt:e};await H.put(i);const r=await H.getAll();o.setState({categories:r})},async updateCategory(o,t,e){const i=await H.get(t);if(!i)return;i.name=e,i.updatedAt=Date.now(),await H.put(i);const r=await H.getAll();o.setState({categories:r})},async removeCategory(o,t){await H.remove(t);const e=await H.getAll();o.setState({categories:e})},async addFormula(o,t,e){const i=await H.get(t);if(!i)return;i.formulas.push({...e,id:`f-${Date.now()}`}),i.updatedAt=Date.now(),await H.put(i);const r=await H.getAll();o.setState({categories:r})},async addFormulas(o,t,e){const i=await H.get(t);if(!i)return;for(let s=0;s<e.length;s++)i.formulas.push({...e[s],id:`f-${Date.now()}-${s}`});i.updatedAt=Date.now(),await H.put(i);const r=await H.getAll();o.setState({categories:r})},async moveFormula(o,t,e,i){const r=await H.get(t);if(!r)return;const s=r.formulas.findIndex(a=>a.id===e);if(s===-1)return;const n=i==="up"?s-1:s+1;if(n<0||n>=r.formulas.length)return;[r.formulas[s],r.formulas[n]]=[r.formulas[n],r.formulas[s]],r.updatedAt=Date.now(),await H.put(r);const d=await H.getAll();o.setState({categories:d})},async updateFormula(o,t,e,i){const r=await H.get(t);if(!r)return;const s=r.formulas.find(d=>d.id===e);if(!s)return;Object.assign(s,i),r.updatedAt=Date.now(),await H.put(r);const n=await H.getAll();o.setState({categories:n})},async removeFormula(o,t,e){const i=await H.get(t);if(!i)return;i.formulas=i.formulas.filter(s=>s.id!==e),i.updatedAt=Date.now(),await H.put(i);const r=await H.getAll();o.setState({categories:r})},async clearFormulas(o,t){const e=await H.get(t);if(!e)return;e.formulas=[],e.updatedAt=Date.now(),await H.put(e);const i=await H.getAll();o.setState({categories:i})},async addPresetCategory(o,t,e){const i=Date.now(),r={id:`cat-${i}`,name:t,formulas:e.map((n,d)=>({...n,id:`f-${i}-${d}`})),createdAt:i,updatedAt:i};await H.put(r);const s=await H.getAll();o.setState({categories:s})},async importData(o,t){await Promise.all(t.map(i=>H.put(i)));const e=await H.getAll();o.setState({categories:e})},async clearAll(o){await H.clear(),o.setState({categories:[]})}}}),e1="training-camp-settings",r0={ollColor:"#fbbf24",formulaDisplayMode:"list"};function TY(){try{const o=localStorage.getItem(e1);if(o){const t=JSON.parse(o);return{...r0,...t}}}catch{}return{...r0}}function i0(o){localStorage.setItem(e1,JSON.stringify(o))}const P=a0({state:TY(),actions:{setOllColor:(o,t)=>{const e={...o,ollColor:t};return i0(e),e},setFormulaDisplayMode:(o,t)=>{const e={...o,formulaDisplayMode:t};return i0(e),e}}});class OY extends T{constructor(){super(...arguments),this.editing=!1,this.editName="",this.startEdit=()=>{this.props.builtin||(this.editing=!0,this.editName=this.props.category.name,this.update())},this.handleEditInput=t=>{this.editName=t.detail.value},this.saveEdit=async()=>{const t=this.editName.trim();t&&t!==this.props.category.name&&await E.asyncActions.updateCategory(this.props.category.id,t),this.editing=!1,this.update()},this.cancelEdit=()=>{this.editing=!1,this.update()},this.handleClearFormulas=async()=>{await E.asyncActions.clearFormulas(this.props.category.id)}}render(){const{category:t,builtin:e,readonlyLabel:i,onAddFormula:r,onImportBuiltin:s}=this.props;return l("div",{class:"mb-8 flex items-start justify-between"},[l("div",{class:"flex items-center gap-3"},[l("div",{class:D("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),l("div",null,[this.editing?l("div",{class:"flex items-center gap-2"},[l("iku-input",{value:this.editName,size:"sm","on:ik-input":this.handleEditInput,autofocus:!0},[]),l("iku-button",{size:"sm",variant:"primary","on:click":this.saveEdit},["保存"]),l("iku-button",{size:"sm","on:click":this.cancelEdit},["取消"])]):l("div",{class:"flex items-center gap-2"},[l("h1",{class:"text-foreground text-xl font-bold"},[t.name]),!e&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.startEdit},[l("ik-icon",{name:"pencil",size:14},[])])]),l("p",{class:"mt-0.5 text-xs text-(--color-foreground-muted)"},[t.formulas.length,"条公式"])])]),!e&&l("div",{class:"flex items-center gap-2"},[t.formulas.length>0&&l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleClearFormulas},[l("ik-icon",{name:"trash",size:14,slot:"prefix"},[]),"清空"]),s&&l("iku-button",{size:"sm",variant:"outlined","on:click":s},[l("ik-icon",{name:"download",size:14,slot:"prefix"},[]),"引用内置"]),l("iku-button",{size:"sm",variant:"primary","on:click":r},[l("ik-icon",{name:"plus",size:14,slot:"prefix"},[]),"添加公式"])]),e&&l("div",{class:"flex items-center gap-1.5 text-xs text-(--color-foreground-muted)"},[l("ik-icon",{name:"lock",size:12},[]),l("span",null,[i??"内置栏目, 只读"])])])}}const $=30,Kt=2,ct=$*3+Kt*2,Co="#888",IY=1.2;function _r(o,t,e,i){const r=[];for(let s=0;s<3;s++)for(let n=0;n<3;n++)r.push(l("rect",{x:o+n*($+Kt),y:t+s*($+Kt),width:$,height:$,rx:2,fill:e(s,n),stroke:Co,"stroke-width":IY,...i?.(s,n)??{}},[]));return r}const _t=10,Ke=1,Eo=1,o1=4,Se=o1+_t+Ke,Xe=o1+_t+Ke,Yr=Se*2+ct,fo=["front","right","back","left"];function r1(o,t){const e=$-Eo*2;switch(o){case"back":return{x:Se+t*($+Kt)+Eo,y:Xe-Ke-_t,w:e,h:_t};case"front":return{x:Se+t*($+Kt)+Eo,y:Xe+ct+Ke,w:e,h:_t};case"left":return{x:Se-Ke-_t,y:Xe+t*($+Kt)+Eo,w:_t,h:e};case"right":return{x:Se+ct+Ke,y:Xe+t*($+Kt)+Eo,w:_t,h:e}}}const i1=16,ht=i1,kt=i1,Ur=ht*2+ct,fr=ht+ct/2,Vr="#333",qY=1.8,tt=4,Ge=3,Mr=3;function s1(o,t){const e=t*($+Kt);switch(o){case 0:return{x:ht+e,y:kt-Mr-Ge,w:$,h:Ge};case 1:return{x:ht+ct+Mr,y:kt+e,w:Ge,h:$};case 2:return{x:ht+e,y:kt+ct+Mr,w:$,h:Ge};case 3:return{x:ht-Mr-Ge,y:kt+e,w:Ge,h:$};default:throw new Error(`Invalid side index: ${o}`)}}function fi(o,t){if(!o)return[];const e=[];for(let i=0;i<4;i++)for(let r=0;r<3;r++){if(!o[i][r])continue;const{x:s,y:n,w:d,h:a}=s1(i,r);e.push(l("rect",{x:s,y:n,width:d,height:a,rx:1.5,fill:t,stroke:Co,"stroke-width":.8},[]))}return e}const Nt=.2;function Xi(o,t){if((o===0||o===2)&&(t===0||t===2)){const i=t===0?ht+$*Nt:ht+ct-$*Nt,r=o===0?kt+$*Nt:kt+ct-$*Nt;return[i,r]}return o===0?[fr,kt+$*Nt]:o===2?[fr,kt+ct-$*Nt]:t===0?[ht+$*Nt,fr]:[ht+ct-$*Nt,fr]}let NY=0;function zr(o){return`${o}-${++NY}`}function Mo(o,t){return l("defs",null,[l("marker",{id:o,markerWidth:tt,markerHeight:tt,refX:tt-.5,refY:tt/2,orient:"auto"},[l("path",{d:`M 0 0 L ${tt} ${tt/2} L 0 ${tt} Z`,fill:Vr},[])]),l("marker",{id:t,markerWidth:tt,markerHeight:tt,refX:.5,refY:tt/2,orient:"auto"},[l("path",{d:`M ${tt} 0 L 0 ${tt/2} L ${tt} ${tt} Z`,fill:Vr},[])])])}const yr=4;function yo(o,t,e){return o.map(i=>{const[r,s]=Xi(i.from[0],i.from[1]),[n,d]=Xi(i.to[0],i.to[1]),a=n-r,c=d-s,p=Math.sqrt(a*a+c*c)||1,w=r+a/p*yr,C=s+c/p*yr,m=n-a/p*yr,L=d-c/p*yr;return l("path",{d:`M ${w} ${C} L ${m} ${L}`,fill:"none",stroke:Vr,"stroke-width":qY,"marker-start":i.bidirectional?`url(#${e})`:void 0,"marker-end":`url(#${t})`},[])})}const s0="transparent";function _Y(){return{top:["...",".Y.","..."],sides:{back:"...",right:"...",front:"...",left:"..."}}}function Mi(o){return{top:[...o.top],sides:{...o.sides}}}class ZY extends T{constructor(){super(...arguments),this.data=_Y()}mounted(){this.props.value&&(this.data=Mi(this.props.value)),this.unsubscribe=P.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}toggleTop(t,e){if(t===1&&e===1)return;const i=this.data.top[t],r=i[e]==="Y"?".":"Y";this.data.top[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(Mi(this.data)),this.update()}toggleEdge(t,e){const i=this.data.sides[t],r=i[e]==="Y"?".":"Y";this.data.sides[t]=i.substring(0,e)+r+i.substring(e+1),this.props.onChange(Mi(this.data)),this.update()}renderEdgeCells(t){const e=this.data.sides[t],i=P.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=r1(t,s);r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:e[s]==="Y"?i:s0,stroke:Co,"stroke-width":.8,style:"cursor: pointer;","on:click":()=>this.toggleEdge(t,s)},[]))}return r}render(){const t=P.state.ollColor,e=_r(Se,Xe,(i,r)=>i===1&&r===1||this.data.top[i][r]==="Y"?t:s0,(i,r)=>({style:i===1&&r===1?"cursor: default;":"cursor: pointer;","on:click":()=>this.toggleTop(i,r)}));return l("svg",{viewBox:`0 0 ${Yr} ${Yr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[e,...Array.isArray(fo.map(i=>this.renderEdgeCells(i)))?fo.map(i=>this.renderEdgeCells(i)):[fo.map(i=>this.renderEdgeCells(i))]])}}const GY=4,WY="#ef4444",KY="#666",Ji=[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]];function n0(){return{moves:[],sameColorEdges:[[!1,!1,!1],[!1,!1,!1],[!1,!1,!1],[!1,!1,!1]]}}function yi(o){return{moves:o.moves.map(t=>({...t,from:[...t.from],to:[...t.to]})),sameColorEdges:(o.sameColorEdges??Ji).map(t=>[...t])}}const XY=[[0,0],[0,1],[0,2],[1,0],[1,2],[2,0],[2,1],[2,2]];class JY extends T{constructor(){super(...arguments),this.data=n0(),this.selected=null,this.markerEndId=zr("pll-ed")+"-end",this.markerStartId=zr("pll-ed")+"-start",this.handleReset=()=>{this.data=n0(),this.selected=null,this.props.onChange(yi(this.data)),this.update()}}mounted(){this.props.value&&(this.data=yi(this.props.value)),this.unsubscribe=P.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}findMoveAt(t,e){return this.data.moves.findIndex(i=>i.from[0]===t&&i.from[1]===e||i.to[0]===t&&i.to[1]===e)}findMoveBetween(t,e,i,r){return this.data.moves.findIndex(s=>s.from[0]===t&&s.from[1]===e&&s.to[0]===i&&s.to[1]===r||s.from[0]===i&&s.from[1]===r&&s.to[0]===t&&s.to[1]===e)}handlePieceClick(t,e){if(!this.selected){const r=this.findMoveAt(t,e);if(r!==-1){const s=this.data.moves[r];s.bidirectional?this.data.moves.splice(r,1):s.bidirectional=!0,this.emitChange();return}this.selected=[t,e],this.update();return}if(this.selected[0]===t&&this.selected[1]===e){this.selected=null,this.update();return}const i=this.findMoveBetween(this.selected[0],this.selected[1],t,e);if(i!==-1){const r=this.data.moves[i];r.bidirectional?this.data.moves.splice(i,1):r.bidirectional=!0}else this.data.moves.push({from:[this.selected[0],this.selected[1]],to:[t,e],bidirectional:!0});this.emitChange()}emitChange(){this.selected=null,this.props.onChange(yi(this.data)),this.update()}handleEdgeMarkerToggle(t,e){const i=this.data.sameColorEdges??Ji;i[t][e]=!i[t][e],this.data.sameColorEdges=i.map(r=>[...r]),this.emitChange()}renderPieceMarkers(){const t=[];for(const[e,i]of XY){const[r,s]=Xi(e,i),n=this.selected?.[0]===e&&this.selected?.[1]===i,d=this.findMoveAt(e,i)!==-1;t.push(l("circle",{cx:r,cy:s,r:GY,fill:n?WY:d?Vr:KY,stroke:"white","stroke-width":1,style:"cursor: pointer;",opacity:n?1:.8,"on:click":()=>this.handlePieceClick(e,i)},[]))}return t}renderEdgeMarkerEditors(){const t=P.state.ollColor,e=this.data.sameColorEdges??Ji,i=[],r=3;for(let s=0;s<4;s++)for(let n=0;n<3;n++){const{x:d,y:a,w:c,h:p}=s1(s,n),w=e[s][n];i.push(l("rect",{x:d-r,y:a-r,width:c+r*2,height:p+r*2,rx:2,fill:"transparent",style:"cursor: pointer;","on:click":()=>this.handleEdgeMarkerToggle(s,n)},[])),w?i.push(l("rect",{x:d,y:a,width:c,height:p,rx:1.5,fill:t,stroke:Co,"stroke-width":.8,style:"pointer-events: none;"},[])):i.push(l("rect",{x:d,y:a,width:c,height:p,rx:1.5,fill:"none",stroke:Co,"stroke-width":.6,"stroke-dasharray":"2,2",opacity:.5,style:"pointer-events: none;"},[]))}return i}render(){const t=P.state.ollColor,e=_r(ht,kt,()=>t);return l("div",null,[l("svg",{viewBox:`0 0 ${Ur} ${Ur}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],e,...Array.isArray(this.renderEdgeMarkerEditors())?this.renderEdgeMarkerEditors():[this.renderEdgeMarkerEditors()],...Array.isArray(yo(this.data.moves,this.markerEndId,this.markerStartId))?yo(this.data.moves,this.markerEndId,this.markerStartId):[yo(this.data.moves,this.markerEndId,this.markerStartId)],...Array.isArray(this.renderPieceMarkers())?this.renderPieceMarkers():[this.renderPieceMarkers()]]),l("div",{class:"mt-2 flex justify-end"},[l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleReset},[l("ik-icon",{name:"rotate-ccw",size:12,slot:"prefix"},[]),"重置"])])])}}const ks={unlearned:"未学习",beginner:"初学",proficient:"熟练",mastered:"精通"},n1={none:"无",oll:"OLL",pll:"PLL"},bi=Object.entries(n1).map(([o,t])=>({value:o,label:t})),Ci=Object.entries(ks).map(([o,t])=>({value:o,label:t}));class QY extends T{constructor(){super(...arguments),this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned",this.handleSubmit=async()=>{const t=this.name.trim(),e=this.formulas.map(s=>s.trim()).filter(s=>s.length>0);if(!t||e.length===0)return;const{categoryId:i,editTarget:r}=this.props;r?await E.asyncActions.updateFormula(i,r.formulaId,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}):await E.asyncActions.addFormula(i,{name:t,formulas:e,viewMode:this.viewMode,viewData:this.viewData,proficiency:this.proficiency}),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}syncFromProps(){const{editTarget:t}=this.props;t?(this.name=t.name,this.formulas=t.formulas.length>0?[...t.formulas]:[""],this.viewMode=t.viewMode,this.viewData=t.viewData,this.proficiency=t.proficiency):this.resetFields()}resetFields(){this.synced=!1,this.name="",this.formulas=[""],this.viewMode="none",this.viewData=void 0,this.proficiency="unlearned"}resetAndClose(){this.resetFields(),this.props.onClose()}render(){if(!this.props.open)return null;this.props.open&&!this.synced&&(this.synced=!0,this.syncFromProps());const t=!!this.props.editTarget;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":t?"编辑公式":"添加公式",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"space-y-4 px-1 py-2"},[l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式名",l("span",{class:"text-(--color-destructive)"},["*"])]),l("iku-input",{placeholder:"例如: OLL-06",value:this.name,"on:ik-input":e=>{this.name=e.detail.value}},[])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["公式",l("span",{class:"text-(--color-destructive)"},["*"])]),l("div",{class:"space-y-2"},[...Array.isArray(this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])))?this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])])):[this.formulas.map((e,i)=>l("div",{class:"flex items-center gap-2"},[l("iku-input",{class:"flex-1",placeholder:"例如: R U R' U'",value:e,"on:ik-input":r=>{this.formulas[i]=r.detail.value}},[]),this.formulas.length>1&&l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.splice(i,1),this.update()}},[l("ik-icon",{name:"trash-2",size:14},[])])]))],l("iku-button",{size:"sm",variant:"ghost","on:click":()=>{this.formulas.push(""),this.update()}},[l("ik-icon",{name:"plus",size:14},[]),l("span",{class:"ml-1"},["添加公式"])])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["视图模式"]),l("iku-radio-group",{value:this.viewMode,"on:ik-change":e=>{const i=e.detail.value;if(this.viewData&&i!==this.viewMode){if(!window.confirm("切换视图模式将清空已编辑的视图数据，确认切换？")){this.update();return}this.viewData=void 0}this.viewMode=i,this.update()}},[...Array.isArray(bi.map(e=>l("iku-radio",{value:e.value},[e.label])))?bi.map(e=>l("iku-radio",{value:e.value},[e.label])):[bi.map(e=>l("iku-radio",{value:e.value},[e.label]))]])]),this.viewMode==="oll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["OLL 视图编辑"]),l("div",{class:"w-32"},[l(ZY,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),this.viewMode==="pll"&&l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["PLL 视图编辑"]),l("div",{class:"w-32"},[l(JY,{value:this.viewData,onChange:e=>{this.viewData=e}},[])])]),l("div",null,[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["熟练程度"]),l("iku-radio-group",{value:this.proficiency,"on:ik-change":e=>{this.proficiency=e.detail.value,this.update()}},[...Array.isArray(Ci.map(e=>l("iku-radio",{value:e.value},[e.label])))?Ci.map(e=>l("iku-radio",{value:e.value},[e.label])):[Ci.map(e=>l("iku-radio",{value:e.value},[e.label]))]])])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},[t?"保存":"添加"])])])])}}class l1 extends T{mounted(){this.unsubscribe=P.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderEdgeCells(t){const e=this.props.viewData.sides[t],i=P.state.ollColor,r=[];for(let s=0;s<3;s++){const{x:n,y:d,w:a,h:c}=r1(t,s),p=e[s]==="Y";r.push(l("rect",{x:n,y:d,width:a,height:c,rx:1.5,fill:p?i:"none",stroke:p?Co:"none","stroke-width":p?.8:0},[]))}return r}render(){const{viewData:t}=this.props,e=P.state.ollColor,i=_r(Se,Xe,(r,s)=>r===1&&s===1||t.top[r][s]==="Y"?e:"transparent");return l("svg",{viewBox:`0 0 ${Yr} ${Yr}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[i,...Array.isArray(fo.map(r=>this.renderEdgeCells(r)))?fo.map(r=>this.renderEdgeCells(r)):[fo.map(r=>this.renderEdgeCells(r))]])}}class a1 extends T{constructor(){super(...arguments),this.markerEndId=zr("pll")+"-end",this.markerStartId=zr("pll")+"-start"}mounted(){this.unsubscribe=P.subscribe(t=>t.ollColor,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}render(){const{viewData:t}=this.props,e=P.state.ollColor,i=_r(ht,kt,()=>e);return l("svg",{viewBox:`0 0 ${Ur} ${Ur}`,xmlns:"http://www.w3.org/2000/svg",style:"width: 100%; height: 100%;"},[...Array.isArray(Mo(this.markerEndId,this.markerStartId))?Mo(this.markerEndId,this.markerStartId):[Mo(this.markerEndId,this.markerStartId)],i,...Array.isArray(fi(t.sameColorEdges,e))?fi(t.sameColorEdges,e):[fi(t.sameColorEdges,e)],...Array.isArray(yo(t.moves,this.markerEndId,this.markerStartId))?yo(t.moves,this.markerEndId,this.markerStartId):[yo(t.moves,this.markerEndId,this.markerStartId)]])}}const tU={unlearned:"border-(--color-foreground-muted)/30 text-(--color-foreground-muted)",beginner:"border-(--color-warning)/30 text-(--color-warning)",proficient:"border-(--color-info)/30 text-(--color-info)",mastered:"border-(--color-success)/30 text-(--color-success)"};class eU extends T{constructor(){super(...arguments),this.handleEdit=()=>{this.props.onEdit?.(this.props.formula.id)},this.handleDelete=async()=>{await E.asyncActions.removeFormula(this.props.categoryId,this.props.formula.id)}}render(){const{formula:t,builtin:e,onMoveUp:i,onMoveDown:r,showProficiency:s,isFirst:n,isLast:d}=this.props,a=t.proficiency??"unlearned";return l("div",{class:"group flex flex-col rounded-xl border border-(--color-border) bg-(--color-surface) p-5 transition-colors hover:border-(--color-primary)/30"},[l("div",{class:"mb-3 flex items-center gap-2"},[l("span",{class:"text-base font-semibold text-(--color-foreground)"},[t.name]),(!e||s)&&l("span",{class:D("rounded-full border px-2 py-0.5 text-xs",tU[a])},[ks[a]])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(l1,{viewData:t.viewData},[])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-3 flex h-24 items-center justify-center"},[l(a1,{viewData:t.viewData},[])]),t.viewMode!=="none"&&!t.viewData&&l("div",{class:"mb-3 flex h-20 items-center justify-center rounded-lg border border-dashed border-(--color-border)"},[l("span",{class:"text-xs text-(--color-foreground-muted)/50"},[n1[t.viewMode],"俯视图"])]),l("div",{class:"mb-3"},[l("span",{class:"mb-1 block text-xs text-(--color-foreground-muted)"},["公式"]),t.formulas.length===1?l("span",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[t.formulas[0]]):l("div",{class:"space-y-1"},[...Array.isArray(t.formulas.map((c,p)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+p))?String.fromCodePoint(9312+p):[String.fromCodePoint(9312+p)]]),c])))?t.formulas.map((c,p)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+p))?String.fromCodePoint(9312+p):[String.fromCodePoint(9312+p)]]),c])):[t.formulas.map((c,p)=>l("div",{class:"font-mono text-sm leading-relaxed text-(--color-foreground-muted)"},[l("span",{class:"mr-1.5 text-xs text-(--color-foreground-muted)/50"},[...Array.isArray(String.fromCodePoint(9312+p))?String.fromCodePoint(9312+p):[String.fromCodePoint(9312+p)]]),c]))]])]),!e&&l("div",{class:"flex items-center gap-1 border-t border-(--color-border)/50 pt-3 opacity-0 transition-opacity group-hover:opacity-100"},[i&&l("iku-button",{size:"sm",variant:"ghost",disabled:n,"on:click":i},[l("ik-icon",{name:"chevron-up",size:14},[])]),r&&l("iku-button",{size:"sm",variant:"ghost",disabled:d,"on:click":r},[l("ik-icon",{name:"chevron-down",size:14},[])]),l("div",{class:"flex-1"},[]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleEdit},[l("ik-icon",{name:"pencil",size:14},[])]),l("iku-button",{size:"sm",variant:"ghost","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14},[])])])])}}const l0=["mastered","proficient","beginner","unlearned"];class oU extends T{mounted(){this.unsubscribe=P.subscribe(t=>t.formulaDisplayMode,()=>this.update())}beforeUnmount(){this.unsubscribe?.()}renderCard(t,e,i){const{category:r,builtin:s,onEdit:n,onMove:d,showProficiency:a}=this.props;return l(eU,{categoryId:r.id,formula:t,builtin:s,onEdit:n,onMoveUp:d?()=>d(t.id,"up"):void 0,onMoveDown:d?()=>d(t.id,"down"):void 0,showProficiency:a,isFirst:e===0,isLast:e===i-1},[])}renderGrid(t){return l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map((e,i)=>this.renderCard(e,i,t.length)))?t.map((e,i)=>this.renderCard(e,i,t.length)):[t.map((e,i)=>this.renderCard(e,i,t.length))]])}renderGrouped(){const{category:t}=this.props,e=new Map;for(const n of l0)e.set(n,[]);for(const n of t.formulas){const d=n.proficiency??"unlearned";e.get(d).push(n)}const i=t.formulas.length,r=new Map;t.formulas.forEach((n,d)=>r.set(n.id,d));const s=[];for(const n of l0){const d=e.get(n);d.length!==0&&s.push(l("div",{class:"space-y-3"},[l("div",{class:"flex items-center gap-2"},[l("h3",{class:"text-sm font-semibold text-(--color-foreground-muted)"},[ks[n]]),l("span",{class:"text-xs text-(--color-foreground-muted)/60"},[d.length])]),l("div",{class:"grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}))?d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)}):[d.map(a=>{const c=r.get(a.id);return this.renderCard(a,c,i)})]])]))}return l("div",{class:"space-y-6"},[s])}render(){const{category:t,builtin:e,allowGrouped:i}=this.props;return t.formulas.length===0?l("div",{class:"flex flex-col items-center justify-center rounded-xl border border-dashed border-(--color-border) py-16 text-(--color-foreground-muted)"},[l("ik-icon",{name:"inbox",size:32},[]),l("p",{class:"mt-3 text-sm"},["暂无公式"])]):(e&&!i?"list":P.state.formulaDisplayMode)==="grouped"?this.renderGrouped():this.renderGrid(t.formulas)}}class rU extends T{constructor(){super(...arguments),this.selectedIds=new Set,this.activeTab=at[0].id,this.handleImport=async()=>{if(this.selectedIds.size===0)return;const t=[];for(const e of at)for(const i of e.formulas)this.selectedIds.has(i.id)&&t.push({name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:"unlearned",sourceRef:i.id});await E.asyncActions.addFormulas(this.props.categoryId,t),this.resetAndClose()},this.handleCancel=()=>{this.resetAndClose()}}toggleFormula(t){this.selectedIds.has(t)?this.selectedIds.delete(t):this.selectedIds.add(t),this.update()}toggleAll(){const t=at.find(i=>i.id===this.activeTab);if(!t)return;const e=t.formulas.every(i=>this.selectedIds.has(i.id));for(const i of t.formulas)e?this.selectedIds.delete(i.id):this.selectedIds.add(i.id);this.update()}resetAndClose(){this.selectedIds.clear(),this.activeTab=at[0].id,this.props.onClose()}getImportedRefs(){const t=E.state.categories.find(i=>i.id===this.props.categoryId);if(!t)return new Set;const e=new Set;for(const i of t.formulas)i.sourceRef&&e.add(i.sourceRef);return e}renderFormulaCard(t,e){const i=this.selectedIds.has(t.id);return l("div",{class:D("flex cursor-pointer flex-col rounded-lg border p-3","transition-colors hover:border-(--color-primary)/50",i?"border-(--color-primary) bg-(--color-primary)/5":"border-(--color-border)"),"on:click":()=>this.toggleFormula(t.id)},[l("div",{class:"mb-2 flex items-center gap-2"},[l("iku-checkbox",{checked:i,"on:ik-change":r=>{r.stopPropagation(),this.toggleFormula(t.id)}},[]),l("span",{class:"text-sm font-medium text-(--color-foreground)"},[t.name]),e&&l("span",{class:"rounded-full border border-(--color-success)/30 px-1.5 py-0.5 text-[10px] leading-none text-(--color-success)"},["已选取"])]),t.viewMode==="oll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(l1,{viewData:t.viewData},[])])]),t.viewMode==="pll"&&t.viewData&&l("div",{class:"mb-2 flex h-16 items-center justify-center"},[l("div",{class:"h-16 w-16"},[l(a1,{viewData:t.viewData},[])])]),l("span",{class:"truncate font-mono text-xs text-(--color-foreground-muted)"},[t.formulas[0]||""])])}render(){if(!this.props.open)return null;const t=this.selectedIds.size,e=this.getImportedRefs(),i=at.find(s=>s.id===this.activeTab),r=i?.formulas.every(s=>this.selectedIds.has(s.id))??!1;return l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"引用内置公式",closable:!0,"on:ik-close":this.handleCancel,style:"--dialog-width: 720px"},[l("div",{class:"flex gap-4 px-1 py-2",style:"height: 420px;"},[l("iku-tabs",{orientation:"vertical",value:this.activeTab,"on:ik-change":s=>{this.activeTab=s.detail.value,this.update()},class:"shrink-0"},[...Array.isArray(at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])))?at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])])):[at.map(s=>l("iku-tab",{value:s.id},[s.name,l("span",{class:"ml-1 text-xs opacity-60"},["(",s.formulas.length,")"])]))]]),l("div",{class:"flex min-w-0 flex-1 flex-col"},[l("div",{class:"mb-3 flex items-center"},[l("iku-button",{size:"sm",variant:"ghost","on:click":()=>this.toggleAll()},[r?"取消全选":"全选当前栏目"])]),l("div",{class:"flex-1 overflow-y-auto"},[l("div",{class:"grid gap-3",style:"grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));"},[i?.formulas.map(s=>this.renderFormulaCard(s,e.has(s.id)))])])])]),l("div",{class:"mt-4 flex items-center justify-between",slot:"footer"},[l("span",{class:"pr-2 text-xs text-(--color-foreground-muted)"},[`已选 ${t} 条`]),l("div",{class:"flex gap-3"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary",disabled:t===0,"on:click":this.handleImport},["导入"])])])])])}}class iU extends T{constructor(){super(...arguments),this.unsubscribes=[],this.showFormulaDialog=!1,this.showImportDialog=!1,this.editTarget=null,this.openAddDialog=()=>{this.editTarget=null,this.showFormulaDialog=!0,this.update()},this.openEditDialog=t=>{const i=this.getCategory()?.formulas.find(r=>r.id===t);i&&(this.editTarget={formulaId:i.id,name:i.name,formulas:i.formulas,viewMode:i.viewMode,viewData:i.viewData,proficiency:i.proficiency??"unlearned"},this.showFormulaDialog=!0,this.update())},this.closeFormulaDialog=()=>{this.showFormulaDialog=!1,this.editTarget=null,this.update()},this.openImportDialog=()=>{this.showImportDialog=!0,this.update()},this.closeImportDialog=()=>{this.showImportDialog=!1,this.update()},this.handleMoveFormula=(t,e)=>{E.asyncActions.moveFormula(this.props.categoryId,t,e)},this.setDisplayMode=t=>{P.actions.setFormulaDisplayMode(t)},this.navigateHome=t=>{t.preventDefault(),d0(this).push("/")}}mounted(){this.unsubscribes.push(E.subscribe(()=>this.update())),this.unsubscribes.push(P.subscribe(t=>t.formulaDisplayMode,()=>this.update())),xi(this.props.categoryId)||E.asyncActions.load()}beforeUnmount(){this.unsubscribes.forEach(t=>t())}getCategory(){const t=this.props.categoryId;return xi(t)?zY.find(e=>e.id===t):E.state.categories.find(e=>e.id===t)}render(){const t=this.getCategory(),e=t1(this.props.categoryId),i=xi(this.props.categoryId);return t?l("div",{class:D("mx-auto w-full max-w-5xl px-6 py-8")},[l("nav",{class:"mb-6 flex items-center gap-1.5 text-sm text-(--color-foreground-muted)"},[l("a",{href:"/",class:"hover:text-foreground cursor-pointer transition-colors","on:click":this.navigateHome},["训练栏目"]),l("ik-icon",{name:"chevron-right",size:14},[]),l("span",{class:"text-foreground"},[t.name])]),l(OY,{category:t,builtin:i,readonlyLabel:e?"预设栏目, 只读":"内置栏目, 只读",onAddFormula:this.openAddDialog,onImportBuiltin:i?void 0:this.openImportDialog},[]),(!i||e)&&t.formulas.length>0&&l("div",{class:"mb-4 flex justify-end"},[l("div",{class:"flex items-center gap-1"},[...Array.isArray(["list","grouped"].map(r=>l("iku-button",{size:"sm",variant:P.state.formulaDisplayMode===r?"secondary":"ghost","on:click":()=>this.setDisplayMode(r)},[l("ik-icon",{name:r==="list"?"list":"layout-grid",size:14},[])])))?["list","grouped"].map(r=>l("iku-button",{size:"sm",variant:P.state.formulaDisplayMode===r?"secondary":"ghost","on:click":()=>this.setDisplayMode(r)},[l("ik-icon",{name:r==="list"?"list":"layout-grid",size:14},[])])):[["list","grouped"].map(r=>l("iku-button",{size:"sm",variant:P.state.formulaDisplayMode===r?"secondary":"ghost","on:click":()=>this.setDisplayMode(r)},[l("ik-icon",{name:r==="list"?"list":"layout-grid",size:14},[])]))]])]),l(oU,{category:t,builtin:i,onEdit:this.openEditDialog,onMove:i?void 0:this.handleMoveFormula,showProficiency:e,allowGrouped:e},[]),l(QY,{open:this.showFormulaDialog,categoryId:t.id,editTarget:this.editTarget,onClose:this.closeFormulaDialog},[]),!i&&l(rU,{open:this.showImportDialog,categoryId:t.id,onClose:this.closeImportDialog},[])]):l("div",{class:D("mx-auto w-full max-w-5xl px-6 py-20 text-center")},[l("p",{class:"text-(--color-foreground-muted)"},["栏目不存在"]),l("iku-button",{class:"mt-4","on:click":this.navigateHome},["返回首页"])])}}class sU extends $r{render(){return l(iU,{categoryId:this.params.id},[])}}class Ct extends T{constructor(){super(...arguments),this.handleClick=()=>{d0(this).push(`/category/${this.props.category.id}`)},this.handleDelete=async t=>{t.stopPropagation(),await yL.confirm({title:"确认删除",content:`确定要删除公式栏 "${this.props.category.name}" 吗？`})&&this.props.onDelete?.(this.props.category.id)}}render(){const{category:t,builtin:e,badgeLabel:i}=this.props;return l("div",{class:D("group cursor-pointer rounded-xl border border-(--color-border) bg-(--color-surface) p-5","transition-colors hover:border-(--color-primary)/40"),"on:click":this.handleClick},[l("div",{class:"mb-3 flex items-start justify-between"},[l("div",{class:D("flex h-10 w-10 items-center justify-center rounded-lg",e?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-primary)/30 text-(--color-primary)")},[l("ik-icon",{name:e?"shuffle":"box",size:"md"},[])]),e?l("span",{class:"bg-accent inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium text-(--color-foreground-muted)"},[i??"内置"]):l("iku-button",{class:"opacity-0 transition-all group-hover:opacity-100",variant:"destructive",title:"删除","on:click":this.handleDelete},[l("ik-icon",{name:"trash-2",size:14,color:"var(--color-foreground)"},[])])]),l("h3",{class:"text-foreground text-sm font-semibold transition-colors group-hover:text-(--color-primary)"},[t.name]),l("div",{class:"mt-3 flex items-center gap-1 text-xs text-(--color-foreground-muted)/60"},[l("ik-icon",{name:"list",size:12},[]),l("span",null,[t.formulas.length,"条公式"])])])}}class nU extends T{constructor(){super(...arguments),this.handleDelete=async t=>{await E.asyncActions.removeCategory(t)}}mounted(){this.unsubscribe=E.subscribe(()=>this.update()),E.asyncActions.load()}beforeUnmount(){this.unsubscribe?.()}render(){const{categories:t,loading:e}=E.state;return e?l("div",{class:"flex items-center justify-center py-20"},[l("iku-loading",{size:"md"},[])]):l("div",{class:"space-y-8"},[l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["内置"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(at.map(i=>l(Ct,{category:i,builtin:!0},[])))?at.map(i=>l(Ct,{category:i,builtin:!0},[])):[at.map(i=>l(Ct,{category:i,builtin:!0},[]))]])]),l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["预设"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(Br.map(i=>l(Ct,{category:i,builtin:!0,badgeLabel:"预设"},[])))?Br.map(i=>l(Ct,{category:i,builtin:!0,badgeLabel:"预设"},[])):[Br.map(i=>l(Ct,{category:i,builtin:!0,badgeLabel:"预设"},[]))]])]),l("div",null,[l("h2",{class:"mb-4 text-xs font-semibold tracking-wider text-(--color-foreground-muted) uppercase"},["自定义"]),l("div",{class:"grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"},[...Array.isArray(t.map(i=>l(Ct,{category:i,onDelete:this.handleDelete},[])))?t.map(i=>l(Ct,{category:i,onDelete:this.handleDelete},[])):[t.map(i=>l(Ct,{category:i,onDelete:this.handleDelete},[]))],l("button",{class:D("flex min-h-[148px] flex-col items-center justify-center","rounded-xl border border-dashed border-(--color-border) bg-(--color-surface)/50","text-(--color-foreground-muted) transition-colors","hover:border-(--color-primary)/50 hover:text-(--color-primary)"),"on:click":()=>this.props.onCreateClick()},[l("ik-icon",{name:"plus",size:"lg"},[]),l("span",{class:"mt-2 text-sm"},["新建栏目"])])])])])}}class lU extends T{constructor(){super(...arguments),this.name="",this.handleInput=t=>{this.name=t.detail.value},this.handleSubmit=async()=>{const t=this.name.trim();t&&(await E.asyncActions.addCategory(t),this.name="",this.props.onClose())},this.handleCancel=()=>{this.name="",this.props.onClose()}}render(){return this.props.open?l("iku-dialog-backdrop",{open:!0,"on:ik-cancel":this.handleCancel},[l("iku-dialog",{"dialog-title":"新建训练栏目",closable:!0,"on:ik-close":this.handleCancel},[l("div",{class:"px-1 py-2"},[l("label",{class:"mb-1.5 block text-sm text-(--color-foreground-muted)"},["栏目名称"]),l("iku-input",{placeholder:"例如: OLL 训练",value:this.name,"on:ik-input":this.handleInput},[])]),l("div",{class:"mt-4 flex justify-end gap-3",slot:"footer"},[l("iku-button",{"on:click":this.handleCancel},["取消"]),l("iku-button",{variant:"primary","on:click":this.handleSubmit},["创建"])])])]):null}}class aU extends T{constructor(){super(...arguments),this.showCreateDialog=!1,this.openCreate=()=>{this.showCreateDialog=!0,this.update()},this.closeCreate=()=>{this.showCreateDialog=!1,this.update()}}render(){return l("div",{class:"mx-auto w-full max-w-5xl px-6 py-8"},[l("div",{class:"mb-8 flex items-center justify-between"},[l("div",null,[l("h1",{class:"text-2xl font-bold text-(--color-foreground)"},["训练栏目"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理你的魔方训练公式集"])]),l("iku-button",{variant:"primary","on:click":this.openCreate},[l("ik-icon",{name:"plus",size:"sm",slot:"prefix"},[]),"新建栏目"])]),l(nU,{onCreateClick:this.openCreate},[]),l(lU,{open:this.showCreateDialog,onClose:this.closeCreate},[])])}}class dU extends $r{render(){return l(aU,null,[])}}class hU extends T{constructor(){super(...arguments),this.handleClearAll=async()=>{await E.asyncActions.clearAll()}}render(){return l("div",{class:"rounded-xl border border-(--color-destructive)/20 bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-destructive)/10 text-(--color-destructive)"},[l("ik-icon",{name:"alert-triangle",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["清空数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["删除所有自定义训练栏目。此操作不可撤销，建议先导出备份。"]),l("iku-button",{variant:"destructive","on:click":this.handleClearAll},[l("ik-icon",{name:"trash-2",size:"sm",slot:"prefix"},[]),"清空所有数据"])])])])}}class cU extends T{constructor(){super(...arguments),this.handleExport=()=>{const t=E.state.categories,e={version:2,exportedAt:Date.now(),categories:t},i=JSON.stringify(e,null,2),r=new Blob([i],{type:"application/json"}),s=URL.createObjectURL(r),n=document.createElement("a");n.href=s,n.download=`cube-training-${new Date().toISOString().slice(0,10)}.json`,n.click(),URL.revokeObjectURL(s)}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-success)/10 text-(--color-success)"},[l("ik-icon",{name:"download",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导出数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["将所有自定义训练栏目导出为 JSON 文件。内置栏目不参与导出。"]),l("iku-button",{variant:"primary","on:click":this.handleExport},[l("ik-icon",{name:"file-down",size:"sm",slot:"prefix"},[]),"导出 JSON"])])])])}}class pU extends T{constructor(){super(...arguments),this.preview=null,this.fileName="",this.handleFileChange=t=>{const i=t.target.files?.[0];if(!i)return;this.fileName=i.name;const r=new FileReader;r.addEventListener("load",()=>{try{const s=JSON.parse(r.result);if(s.version!==1&&s.version!==2||!Array.isArray(s.categories)){this.preview=null,this.update();return}const n=s.categories.map(Ki),d=new Set(E.state.categories.map(a=>a.id));this.preview=n.map(a=>({category:a,conflict:d.has(a.id)})),this.update()}catch{this.preview=null,this.update()}}),r.readAsText(i)},this.handleImport=async()=>{if(!this.preview)return;const t=this.preview.map(e=>e.category);await E.asyncActions.importData(t),this.preview=null,this.fileName="",this.update()},this.handleCancel=()=>{this.preview=null,this.fileName="",this.update()}}render(){return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-info)/10 text-(--color-info)"},[l("ik-icon",{name:"upload",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["导入数据"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["从 JSON 文件导入训练栏目。同名栏目将被覆盖，不冲突的栏目保留。"]),l("label",{class:D("bg-background/50 relative flex cursor-pointer flex-col items-center rounded-lg border-2 border-dashed border-(--color-border) p-8 text-center","transition-colors hover:border-(--color-primary)/50")},[l("input",{type:"file",accept:".json",class:"absolute inset-0 h-full w-full cursor-pointer opacity-0","on:change":this.handleFileChange},[]),l("ik-icon",{name:"file-up",size:32,color:"var(--color-border)"},[]),l("p",{class:"mt-3 text-sm text-(--color-foreground-muted)"},["点击或拖拽 JSON 文件到此处"]),l("p",{class:"mt-1 text-xs text-(--color-foreground-muted)/60"},["仅支持 .json 格式"])]),this.preview&&this.renderPreview()])])])}renderPreview(){const t=this.preview,e=t.filter(i=>i.conflict).length;return l("div",{class:"bg-background mt-5 rounded-lg border border-(--color-border) p-4"},[l("div",{class:"mb-3 flex items-center justify-between"},[l("h4",{class:"text-foreground text-sm font-medium"},["导入预览"]),l("span",{class:"text-xs text-(--color-foreground-muted)"},[this.fileName])]),l("div",{class:"space-y-2"},[...Array.isArray(t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:D("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:D("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])))?t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:D("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:D("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])])):[t.map(({category:i,conflict:r})=>l("div",{key:i.id,class:"flex items-center gap-2 text-sm"},[l("span",{class:D("flex h-5 w-5 items-center justify-center rounded-full",r?"bg-(--color-warning)/10 text-(--color-warning)":"bg-(--color-success)/10 text-(--color-success)")},[l("ik-icon",{name:r?"refresh-cw":"plus",size:12},[])]),l("span",{class:"text-foreground"},[i.name]),l("span",{class:D("text-xs",r?"text-(--color-warning)":"text-(--color-success)")},[r?"覆盖":"新增"])]))]]),l("div",{class:"mt-4 flex items-center justify-between border-t border-(--color-border) pt-3"},[l("span",{class:"text-xs text-(--color-foreground-muted)"},["共",t.length,"个栏目",e>0&&`，其中 ${e} 个将覆盖已有数据`]),l("div",{class:"flex gap-2"},[l("iku-button",{size:"sm","on:click":this.handleCancel},["取消"]),l("iku-button",{size:"sm",variant:"primary","on:click":this.handleImport},["确认导入"])])])])}}class uU extends T{constructor(){super(...arguments),this.handleColorChange=t=>{const e=t.target;P.actions.setOllColor(e.value)}}mounted(){this.unsubscribe=P.subscribe(()=>{this.update()})}beforeUnmount(){this.unsubscribe?.()}render(){const{ollColor:t}=P.state;return l("div",{class:"rounded-xl border border-(--color-border) bg-(--color-surface) p-6"},[l("div",{class:"flex items-start gap-4"},[l("div",{class:"flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-(--color-primary)/10 text-(--color-primary)"},[l("ik-icon",{name:"palette",size:"md"},[])]),l("div",{class:"flex-1"},[l("h3",{class:"text-foreground mb-1 text-base font-semibold"},["俯视图配置"]),l("p",{class:"mb-4 text-sm text-(--color-foreground-muted)"},["自定义 OLL 俯视图中填色块的颜色。"]),l("div",{class:"flex items-center gap-3"},[l("label",{class:"text-sm text-(--color-foreground-muted)"},["OLL 填色颜色"]),l("input",{type:"color",value:t,"on:input":this.handleColorChange,class:"h-8 w-10 cursor-pointer rounded border border-(--color-border)"},[]),l("span",{class:"font-mono text-xs text-(--color-foreground-muted)"},[t])])])])])}}class wU extends $r{render(){return l("div",{class:D("mx-auto w-full max-w-3xl px-6 py-8")},[l("div",{class:"mb-8"},[l("h1",{class:"text-foreground text-2xl font-bold"},["设置"]),l("p",{class:"mt-1 text-sm text-(--color-foreground-muted)"},["管理训练数据的导入与导出"])]),l("div",{class:"space-y-6"},[l(uU,null,[]),l(cU,null,[]),l(pU,null,[]),l(hU,null,[])])])}}const gU=[{path:"/",component:RY,children:[{path:"",component:dU,meta:{title:"Ikun Cube Trainer"}},{path:"category/:id",component:sU,meta:{title:"Ikun Cube Trainer - 栏目详情"}},{path:"settings",component:wU,meta:{title:"Ikun Cube Trainer - 设置"}}]}];class vU extends T{render(){return l(c1,null,[l(h1,{routes:gU,beforeEach:(t,e,i)=>{t.meta?.title&&(document.title=t.meta.title),i()}},[]),l("div",{"data-container":"global-overlays"},[l("iku-toast-region",{"auto-hide-duration":3e3},[]),l("iku-dialog-region",null,[])])])}}function kU(){jR(),TL(),sH(),He.init(),He.setTheme(localStorage.getItem("app-theme")||"dark"),He.subscribe(o=>{localStorage.setItem("app-theme",o.theme)})}function mU(){kU(),p1(l(vU,null,[]),document.getElementById("app"))}mU();
